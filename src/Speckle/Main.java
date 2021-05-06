@@ -1,6 +1,6 @@
 package Speckle;
 
-import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.FlatLightLaf;
 
 /**
  *
@@ -29,6 +29,11 @@ public class Main extends javax.swing.JFrame {
         Window_Title = new javax.swing.JLabel();
         Close = new javax.swing.JLabel();
         SideBar = new javax.swing.JPanel();
+        Home = new javax.swing.JLabel();
+        Billing = new javax.swing.JLabel();
+        Inventory = new javax.swing.JLabel();
+        Settings = new javax.swing.JLabel();
+        About = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Speckle");
@@ -56,7 +61,9 @@ public class Main extends javax.swing.JFrame {
         Window_Title.setText("S P E C K L E");
         Window_Title.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        Close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/close.png"))); // NOI18N
+        Close.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Close.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CloseMouseClicked(evt);
@@ -83,15 +90,64 @@ public class Main extends javax.swing.JFrame {
 
         SideBar.setBackground(new java.awt.Color(51, 51, 51));
 
+        Home.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/home.png"))); // NOI18N
+        Home.setToolTipText("Home");
+        Home.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        Billing.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Billing.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/bill.png"))); // NOI18N
+        Billing.setToolTipText("Billing");
+        Billing.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        Inventory.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Inventory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/inventory.png"))); // NOI18N
+        Inventory.setToolTipText("Inventory");
+        Inventory.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        Settings.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Settings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/settings.png"))); // NOI18N
+        Settings.setToolTipText("Settings");
+        Settings.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        About.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        About.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/about.png"))); // NOI18N
+        About.setToolTipText("About");
+        About.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout SideBarLayout = new javax.swing.GroupLayout(SideBar);
         SideBar.setLayout(SideBarLayout);
         SideBarLayout.setHorizontalGroup(
             SideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addGroup(SideBarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(SideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SideBarLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Inventory))
+                    .addGroup(SideBarLayout.createSequentialGroup()
+                        .addGroup(SideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Billing)
+                            .addComponent(Settings)
+                            .addComponent(About)
+                            .addComponent(Home))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         SideBarLayout.setVerticalGroup(
             SideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 567, Short.MAX_VALUE)
+            .addGroup(SideBarLayout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(Home)
+                .addGap(18, 18, 18)
+                .addComponent(Billing)
+                .addGap(18, 18, 18)
+                .addComponent(Inventory)
+                .addGap(18, 18, 18)
+                .addComponent(Settings)
+                .addGap(18, 18, 18)
+                .addComponent(About)
+                .addContainerGap(293, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout Background_PanelLayout = new javax.swing.GroupLayout(Background_Panel);
@@ -145,24 +201,18 @@ public class Main extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the FlatDarkLaf look and feel */
+        /* Set the FlatLightLaf look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If FlatDarkLaf is not available, stay with the default look and feel. */
-        FlatDarkLaf.install();
+        /* If FlatLightLafis not available, stay with the default look and feel. */
+        FlatLightLaf.install();
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("FlatDarkLaf".equals(info.getName())) {
+                if ("FlatLightLaf".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
@@ -174,9 +224,14 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel About;
     private javax.swing.JPanel Background_Panel;
+    private javax.swing.JLabel Billing;
     private javax.swing.JLabel Close;
     private javax.swing.JPanel Header;
+    private javax.swing.JLabel Home;
+    private javax.swing.JLabel Inventory;
+    private javax.swing.JLabel Settings;
     private javax.swing.JPanel SideBar;
     private javax.swing.JLabel Window_Title;
     // End of variables declaration//GEN-END:variables
