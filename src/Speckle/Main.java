@@ -1,6 +1,6 @@
 package Speckle;
 
-import com.formdev.flatlaf.FlatLightLaf;
+import com.formdev.flatlaf.FlatIntelliJLaf;
 
 /**
  *
@@ -16,6 +16,9 @@ public class Main extends javax.swing.JFrame {
         this.Hover = new java.awt.Color(0, 165, 255);
         this.White = new java.awt.Color(255, 255, 255);
         initComponents();
+        Speckle.Home scene = new Home();
+        scene.setBounds(20, 20, 915, 534);
+        Content.add(scene).setVisible(true);
     }
 
     /**
@@ -27,7 +30,7 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Background_Panel = new javax.swing.JPanel();
+        Background = new javax.swing.JPanel();
         Header = new javax.swing.JPanel();
         Window_Title = new javax.swing.JLabel();
         Close = new javax.swing.JLabel();
@@ -37,13 +40,14 @@ public class Main extends javax.swing.JFrame {
         Inventory = new javax.swing.JLabel();
         Settings = new javax.swing.JLabel();
         About = new javax.swing.JLabel();
+        Content = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Speckle");
         setUndecorated(true);
         setResizable(false);
 
-        Background_Panel.setBackground(new java.awt.Color(30, 30, 30));
+        Background.setBackground(new java.awt.Color(30, 30, 30));
 
         Header.setBackground(new java.awt.Color(60, 60, 60));
         Header.setForeground(new java.awt.Color(142, 142, 142));
@@ -244,32 +248,48 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(300, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout Background_PanelLayout = new javax.swing.GroupLayout(Background_Panel);
-        Background_Panel.setLayout(Background_PanelLayout);
-        Background_PanelLayout.setHorizontalGroup(
-            Background_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(Background_PanelLayout.createSequentialGroup()
-                .addComponent(SideBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        Content.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+
+        javax.swing.GroupLayout ContentLayout = new javax.swing.GroupLayout(Content);
+        Content.setLayout(ContentLayout);
+        ContentLayout.setHorizontalGroup(
+            ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        Background_PanelLayout.setVerticalGroup(
-            Background_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Background_PanelLayout.createSequentialGroup()
+        ContentLayout.setVerticalGroup(
+            ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
+        Background.setLayout(BackgroundLayout);
+        BackgroundLayout.setHorizontalGroup(
+            BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(BackgroundLayout.createSequentialGroup()
+                .addComponent(SideBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(Content))
+        );
+        BackgroundLayout.setVerticalGroup(
+            BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BackgroundLayout.createSequentialGroup()
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(SideBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SideBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Content)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -304,7 +324,10 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_CloseMouseExited
 
     private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
-        // TODO add your handling code here:
+        Content.removeAll();
+        Speckle.Home scene = new Home();
+        scene.setBounds(20, 20, 915, 534);
+        Content.add(scene).setVisible(true);
     }//GEN-LAST:event_HomeMouseClicked
 
     private void HomeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMousePressed
@@ -326,7 +349,10 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_HomeMouseExited
 
     private void BillingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BillingMouseClicked
-        // TODO add your handling code here:
+        Content.removeAll();
+        Speckle.Billing scene = new Billing();
+        scene.setBounds(20, 20, 915, 534);
+        Content.add(scene).setVisible(true);
     }//GEN-LAST:event_BillingMouseClicked
 
     private void BillingMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BillingMousePressed
@@ -348,7 +374,10 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_BillingMouseExited
 
     private void InventoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventoryMouseClicked
-        // TODO add your handling code here:
+        Content.removeAll();
+        Speckle.Inventory scene = new Inventory();
+        scene.setBounds(20, 20, 915, 534);
+        Content.add(scene).setVisible(true);
     }//GEN-LAST:event_InventoryMouseClicked
 
     private void InventoryMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventoryMousePressed
@@ -370,7 +399,10 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_InventoryMouseExited
 
     private void SettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsMouseClicked
-        // TODO add your handling code here:
+        Content.removeAll();
+        Speckle.Settings scene = new Settings();
+        scene.setBounds(20, 20, 915, 534);
+        Content.add(scene).setVisible(true);
     }//GEN-LAST:event_SettingsMouseClicked
 
     private void SettingsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsMousePressed
@@ -392,7 +424,10 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_SettingsMouseExited
 
     private void AboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutMouseClicked
-        // TODO add your handling code here:
+        Content.removeAll();
+        Speckle.About scene = new About();
+        scene.setBounds(20, 20, 915, 534);
+        Content.add(scene).setVisible(true);
     }//GEN-LAST:event_AboutMouseClicked
 
     private void AboutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutMousePressed
@@ -417,13 +452,13 @@ public class Main extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the FlatLightLaf look and feel */
+        /* Set the FlatIntelliJLaf look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If FlatLightLaf is not available, stay with the default look and feel. */
-        FlatLightLaf.install();
+        /* If FlatIntelliJLaf is not available, stay with the default look and feel. */
+        FlatIntelliJLaf.install();
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("FlatLightLaf".equals(info.getName())) {
+                if ("FlatIntelliJLaf".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -441,9 +476,10 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel About;
-    private javax.swing.JPanel Background_Panel;
+    private javax.swing.JPanel Background;
     private javax.swing.JLabel Billing;
     private javax.swing.JLabel Close;
+    private javax.swing.JDesktopPane Content;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel Home;
     private javax.swing.JLabel Inventory;
