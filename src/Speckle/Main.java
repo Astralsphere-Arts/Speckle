@@ -1,6 +1,7 @@
 package Speckle;
 
 import com.formdev.flatlaf.FlatLightLaf;
+import java.awt.Color;
 
 /**
  *
@@ -61,12 +62,23 @@ public class Main extends javax.swing.JFrame {
         Window_Title.setText("S P E C K L E");
         Window_Title.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        Close.setBackground(new java.awt.Color(255, 255, 255));
         Close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/close.png"))); // NOI18N
         Close.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Close.setOpaque(true);
         Close.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CloseMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CloseMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CloseMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                CloseMousePressed(evt);
             }
         });
 
@@ -90,30 +102,110 @@ public class Main extends javax.swing.JFrame {
 
         SideBar.setBackground(new java.awt.Color(51, 51, 51));
 
+        Home.setBackground(new java.awt.Color(255, 255, 255));
         Home.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/home.png"))); // NOI18N
         Home.setToolTipText("Home");
         Home.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Home.setOpaque(true);
+        Home.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HomeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                HomeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                HomeMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                HomeMousePressed(evt);
+            }
+        });
 
+        Billing.setBackground(new java.awt.Color(255, 255, 255));
         Billing.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Billing.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/bill.png"))); // NOI18N
         Billing.setToolTipText("Billing");
         Billing.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Billing.setOpaque(true);
+        Billing.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BillingMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BillingMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BillingMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                BillingMousePressed(evt);
+            }
+        });
 
+        Inventory.setBackground(new java.awt.Color(255, 255, 255));
         Inventory.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Inventory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/inventory.png"))); // NOI18N
         Inventory.setToolTipText("Inventory");
         Inventory.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Inventory.setOpaque(true);
+        Inventory.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                InventoryMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                InventoryMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                InventoryMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                InventoryMousePressed(evt);
+            }
+        });
 
+        Settings.setBackground(new java.awt.Color(255, 255, 255));
         Settings.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Settings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/settings.png"))); // NOI18N
         Settings.setToolTipText("Settings");
         Settings.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Settings.setOpaque(true);
+        Settings.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SettingsMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SettingsMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SettingsMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                SettingsMousePressed(evt);
+            }
+        });
 
+        About.setBackground(new java.awt.Color(255, 255, 255));
         About.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         About.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/about.png"))); // NOI18N
         About.setToolTipText("About");
         About.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        About.setOpaque(true);
+        About.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AboutMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                AboutMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                AboutMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                AboutMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout SideBarLayout = new javax.swing.GroupLayout(SideBar);
         SideBar.setLayout(SideBarLayout);
@@ -147,7 +239,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(Settings)
                 .addGap(18, 18, 18)
                 .addComponent(About)
-                .addContainerGap(293, Short.MAX_VALUE))
+                .addContainerGap(300, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout Background_PanelLayout = new javax.swing.GroupLayout(Background_Panel);
@@ -197,13 +289,135 @@ public class Main extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_CloseMouseClicked
 
+    private void CloseMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloseMousePressed
+        Close.setBackground(new java.awt.Color(225, 51, 51));
+    }//GEN-LAST:event_CloseMousePressed
+
+    private void CloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloseMouseEntered
+        Close.setBackground(new java.awt.Color(225, 80, 80));
+    }//GEN-LAST:event_CloseMouseEntered
+
+    private void CloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloseMouseExited
+        Close.setBackground(new java.awt.Color(255, 255, 255));
+    }//GEN-LAST:event_CloseMouseExited
+
+    private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HomeMouseClicked
+
+    private void HomeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMousePressed
+        Home.setBackground(active);
+        Billing.setBackground(white);
+        Inventory.setBackground(white);
+        Settings.setBackground(white);
+        About.setBackground(white);
+        stored = Home.getBackground();
+    }//GEN-LAST:event_HomeMousePressed
+
+    private void HomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseEntered
+        stored = Home.getBackground();
+        Home.setBackground(hover);
+    }//GEN-LAST:event_HomeMouseEntered
+
+    private void HomeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseExited
+        Home.setBackground(stored);
+    }//GEN-LAST:event_HomeMouseExited
+
+    private void BillingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BillingMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BillingMouseClicked
+
+    private void BillingMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BillingMousePressed
+        Home.setBackground(white);
+        Billing.setBackground(active);
+        Inventory.setBackground(white);
+        Settings.setBackground(white);
+        About.setBackground(white);
+        stored = Billing.getBackground();
+    }//GEN-LAST:event_BillingMousePressed
+
+    private void BillingMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BillingMouseEntered
+        stored = Billing.getBackground();
+        Billing.setBackground(hover);
+    }//GEN-LAST:event_BillingMouseEntered
+
+    private void BillingMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BillingMouseExited
+        Billing.setBackground(stored);
+    }//GEN-LAST:event_BillingMouseExited
+
+    private void InventoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventoryMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_InventoryMouseClicked
+
+    private void InventoryMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventoryMousePressed
+        Home.setBackground(white);
+        Billing.setBackground(white);
+        Inventory.setBackground(active);
+        Settings.setBackground(white);
+        About.setBackground(white);
+        stored = Inventory.getBackground();
+    }//GEN-LAST:event_InventoryMousePressed
+
+    private void InventoryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventoryMouseEntered
+        stored = Inventory.getBackground();
+        Inventory.setBackground(hover);
+    }//GEN-LAST:event_InventoryMouseEntered
+
+    private void InventoryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventoryMouseExited
+        Inventory.setBackground(stored);
+    }//GEN-LAST:event_InventoryMouseExited
+
+    private void SettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SettingsMouseClicked
+
+    private void SettingsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsMousePressed
+        Home.setBackground(white);
+        Billing.setBackground(white);
+        Inventory.setBackground(white);
+        Settings.setBackground(active);
+        About.setBackground(white);
+        stored = Settings.getBackground();
+    }//GEN-LAST:event_SettingsMousePressed
+
+    private void SettingsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsMouseEntered
+        stored = Settings.getBackground();
+        Settings.setBackground(hover);
+    }//GEN-LAST:event_SettingsMouseEntered
+
+    private void SettingsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsMouseExited
+        Settings.setBackground(stored);
+    }//GEN-LAST:event_SettingsMouseExited
+
+    private void AboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AboutMouseClicked
+
+    private void AboutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutMousePressed
+        Home.setBackground(white);
+        Billing.setBackground(white);
+        Inventory.setBackground(white);
+        Settings.setBackground(white);
+        About.setBackground(active);
+        stored = About.getBackground();
+    }//GEN-LAST:event_AboutMousePressed
+
+    private void AboutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutMouseEntered
+        stored = About.getBackground();
+        About.setBackground(hover);
+    }//GEN-LAST:event_AboutMouseEntered
+
+    private void AboutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutMouseExited
+        About.setBackground(stored);
+    }//GEN-LAST:event_AboutMouseExited
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the FlatLightLaf look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If FlatLightLafis not available, stay with the default look and feel. */
+        /* If FlatLightLaf is not available, stay with the default look and feel. */
         FlatLightLaf.install();
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -236,4 +450,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Window_Title;
     // End of variables declaration//GEN-END:variables
     int x, y;
+    Color white = new Color(255, 255, 255);
+    Color hover = new Color(0, 172, 255);
+    Color active = new Color(0, 136, 255);
+    Color stored;
 }
