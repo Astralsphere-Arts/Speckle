@@ -1,7 +1,6 @@
 package Speckle;
 
 import com.formdev.flatlaf.FlatLightLaf;
-import java.awt.Color;
 
 /**
  *
@@ -13,6 +12,9 @@ public class Main extends javax.swing.JFrame {
      * Creates new form Main
      */
     public Main() {
+        this.Active = new java.awt.Color(0, 136, 255);
+        this.Hover = new java.awt.Color(0, 165, 255);
+        this.White = new java.awt.Color(255, 255, 255);
         initComponents();
     }
 
@@ -102,7 +104,7 @@ public class Main extends javax.swing.JFrame {
 
         SideBar.setBackground(new java.awt.Color(51, 51, 51));
 
-        Home.setBackground(new java.awt.Color(255, 255, 255));
+        Home.setBackground(new java.awt.Color(0, 136, 255));
         Home.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/home.png"))); // NOI18N
         Home.setToolTipText("Home");
@@ -298,7 +300,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_CloseMouseEntered
 
     private void CloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloseMouseExited
-        Close.setBackground(new java.awt.Color(255, 255, 255));
+        Close.setBackground(White);
     }//GEN-LAST:event_CloseMouseExited
 
     private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
@@ -306,21 +308,21 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_HomeMouseClicked
 
     private void HomeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMousePressed
-        Home.setBackground(active);
-        Billing.setBackground(white);
-        Inventory.setBackground(white);
-        Settings.setBackground(white);
-        About.setBackground(white);
-        stored = Home.getBackground();
+        Home.setBackground(Active);
+        Billing.setBackground(White);
+        Inventory.setBackground(White);
+        Settings.setBackground(White);
+        About.setBackground(White);
+        Stored = Home.getBackground();
     }//GEN-LAST:event_HomeMousePressed
 
     private void HomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseEntered
-        stored = Home.getBackground();
-        Home.setBackground(hover);
+        Stored = Home.getBackground();
+        Home.setBackground(Hover);
     }//GEN-LAST:event_HomeMouseEntered
 
     private void HomeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseExited
-        Home.setBackground(stored);
+        Home.setBackground(Stored);
     }//GEN-LAST:event_HomeMouseExited
 
     private void BillingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BillingMouseClicked
@@ -328,21 +330,21 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_BillingMouseClicked
 
     private void BillingMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BillingMousePressed
-        Home.setBackground(white);
-        Billing.setBackground(active);
-        Inventory.setBackground(white);
-        Settings.setBackground(white);
-        About.setBackground(white);
-        stored = Billing.getBackground();
+        Home.setBackground(White);
+        Billing.setBackground(Active);
+        Inventory.setBackground(White);
+        Settings.setBackground(White);
+        About.setBackground(White);
+        Stored = Billing.getBackground();
     }//GEN-LAST:event_BillingMousePressed
 
     private void BillingMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BillingMouseEntered
-        stored = Billing.getBackground();
-        Billing.setBackground(hover);
+        Stored = Billing.getBackground();
+        Billing.setBackground(Hover);
     }//GEN-LAST:event_BillingMouseEntered
 
     private void BillingMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BillingMouseExited
-        Billing.setBackground(stored);
+        Billing.setBackground(Stored);
     }//GEN-LAST:event_BillingMouseExited
 
     private void InventoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventoryMouseClicked
@@ -350,21 +352,21 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_InventoryMouseClicked
 
     private void InventoryMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventoryMousePressed
-        Home.setBackground(white);
-        Billing.setBackground(white);
-        Inventory.setBackground(active);
-        Settings.setBackground(white);
-        About.setBackground(white);
-        stored = Inventory.getBackground();
+        Home.setBackground(White);
+        Billing.setBackground(White);
+        Inventory.setBackground(Active);
+        Settings.setBackground(White);
+        About.setBackground(White);
+        Stored = Inventory.getBackground();
     }//GEN-LAST:event_InventoryMousePressed
 
     private void InventoryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventoryMouseEntered
-        stored = Inventory.getBackground();
-        Inventory.setBackground(hover);
+        Stored = Inventory.getBackground();
+        Inventory.setBackground(Hover);
     }//GEN-LAST:event_InventoryMouseEntered
 
     private void InventoryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventoryMouseExited
-        Inventory.setBackground(stored);
+        Inventory.setBackground(Stored);
     }//GEN-LAST:event_InventoryMouseExited
 
     private void SettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsMouseClicked
@@ -372,21 +374,21 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_SettingsMouseClicked
 
     private void SettingsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsMousePressed
-        Home.setBackground(white);
-        Billing.setBackground(white);
-        Inventory.setBackground(white);
-        Settings.setBackground(active);
-        About.setBackground(white);
-        stored = Settings.getBackground();
+        Home.setBackground(White);
+        Billing.setBackground(White);
+        Inventory.setBackground(White);
+        Settings.setBackground(Active);
+        About.setBackground(White);
+        Stored = Settings.getBackground();
     }//GEN-LAST:event_SettingsMousePressed
 
     private void SettingsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsMouseEntered
-        stored = Settings.getBackground();
-        Settings.setBackground(hover);
+        Stored = Settings.getBackground();
+        Settings.setBackground(Hover);
     }//GEN-LAST:event_SettingsMouseEntered
 
     private void SettingsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsMouseExited
-        Settings.setBackground(stored);
+        Settings.setBackground(Stored);
     }//GEN-LAST:event_SettingsMouseExited
 
     private void AboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutMouseClicked
@@ -394,21 +396,21 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_AboutMouseClicked
 
     private void AboutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutMousePressed
-        Home.setBackground(white);
-        Billing.setBackground(white);
-        Inventory.setBackground(white);
-        Settings.setBackground(white);
-        About.setBackground(active);
-        stored = About.getBackground();
+        Home.setBackground(White);
+        Billing.setBackground(White);
+        Inventory.setBackground(White);
+        Settings.setBackground(White);
+        About.setBackground(Active);
+        Stored = About.getBackground();
     }//GEN-LAST:event_AboutMousePressed
 
     private void AboutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutMouseEntered
-        stored = About.getBackground();
-        About.setBackground(hover);
+        Stored = About.getBackground();
+        About.setBackground(Hover);
     }//GEN-LAST:event_AboutMouseEntered
 
     private void AboutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutMouseExited
-        About.setBackground(stored);
+        About.setBackground(Stored);
     }//GEN-LAST:event_AboutMouseExited
 
     /**
@@ -449,9 +451,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel SideBar;
     private javax.swing.JLabel Window_Title;
     // End of variables declaration//GEN-END:variables
-    int x, y;
-    Color white = new Color(255, 255, 255);
-    Color hover = new Color(0, 172, 255);
-    Color active = new Color(0, 136, 255);
-    Color stored;
+    private final java.awt.Color Active;
+    private final java.awt.Color Hover;
+    private final java.awt.Color White;
+    private java.awt.Color Stored;
+    private int x, y;
 }
