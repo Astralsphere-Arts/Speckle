@@ -28,6 +28,7 @@ public class Billing extends javax.swing.JPanel {
         Invoices = new javax.swing.JTable();
         Remove = new javax.swing.JButton();
         Export = new javax.swing.JButton();
+        View = new javax.swing.JButton();
 
         Heading.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         Heading.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -40,22 +41,33 @@ public class Billing extends javax.swing.JPanel {
 
         Invoices.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Customer ID", "Customer Name", "Contact Number", "Date of Sale", "Sale Amount "
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Float.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         Table_Container.setViewportView(Invoices);
 
         Remove.setText("Remove");
-        Remove.setToolTipText("Remove an Entry from Invoice History");
+        Remove.setToolTipText("Remove Selected Invoice from Invoice History");
 
         Export.setText("Export");
         Export.setToolTipText("Export Invoice History to a CSV File");
+
+        View.setText("View Invoice");
+        View.setToolTipText("View Selected Invoice from Invoice History");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -65,6 +77,8 @@ public class Billing extends javax.swing.JPanel {
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(View, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(Remove, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Export, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -88,6 +102,7 @@ public class Billing extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Export, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(View, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Remove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
@@ -101,5 +116,6 @@ public class Billing extends javax.swing.JPanel {
     private javax.swing.JButton New_Invoice;
     private javax.swing.JButton Remove;
     private javax.swing.JScrollPane Table_Container;
+    private javax.swing.JButton View;
     // End of variables declaration//GEN-END:variables
 }
