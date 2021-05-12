@@ -7,6 +7,9 @@ nbdist/
 nbactions.xml
 nb-configuration.xml
 
+# Project Specific Files #
+database/
+
 # Class Files #
 *.class
 
