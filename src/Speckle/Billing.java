@@ -39,8 +39,15 @@ public class Billing extends javax.swing.JPanel {
         New_Invoice.setText("New Invoice");
         New_Invoice.setToolTipText("Generate a New Invoice");
 
+        Invoices.setAutoCreateRowSorter(true);
         Invoices.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -58,6 +65,7 @@ public class Billing extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
+        Invoices.setShowGrid(true);
         Table_Container.setViewportView(Invoices);
 
         Remove.setText("Remove");

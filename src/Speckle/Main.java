@@ -12,6 +12,7 @@ public class Main extends javax.swing.JFrame {
      * Creates new form Main
      */
     public Main() {
+        SQLite.Main.initDB();
         this.Active = new java.awt.Color(0, 136, 255);
         this.Hover = new java.awt.Color(0, 165, 255);
         this.White = new java.awt.Color(255, 255, 255);

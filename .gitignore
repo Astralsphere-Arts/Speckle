@@ -8,7 +8,7 @@ nbactions.xml
 nb-configuration.xml
 
 # Project Specific Files #
-database/
+data/
 
 # Class Files #
 *.class

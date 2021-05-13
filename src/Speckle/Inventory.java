@@ -35,8 +35,15 @@ public class Inventory extends javax.swing.JPanel {
         Heading.setText("Inventory");
         Heading.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
+        Inventory.setAutoCreateRowSorter(true);
         Inventory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
@@ -54,6 +61,7 @@ public class Inventory extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
+        Inventory.setShowGrid(true);
         Table_Container.setViewportView(Inventory);
 
         Update.setText("Update Stock");
