@@ -1,5 +1,10 @@
 package Speckle;
 
+import java.awt.Component;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumnModel;
+import net.proteanit.sql.DbUtils;
+
 /**
  *
  * @author Astralsphere Arts
@@ -25,7 +30,7 @@ public class Billing extends javax.swing.JPanel {
         Heading = new javax.swing.JLabel();
         New_Invoice = new javax.swing.JButton();
         Table_Container = new javax.swing.JScrollPane();
-        Invoices = new javax.swing.JTable();
+        Invoice = new javax.swing.JTable();
         Remove = new javax.swing.JButton();
         Export = new javax.swing.JButton();
         View = new javax.swing.JButton();
@@ -39,34 +44,21 @@ public class Billing extends javax.swing.JPanel {
         New_Invoice.setText("New Invoice");
         New_Invoice.setToolTipText("Generate a New Invoice");
 
-        Invoices.setAutoCreateRowSorter(true);
-        Invoices.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Customer ID", "Customer Name", "Contact Number", "Date of Sale", "Sale Amount "
+        Invoice.setAutoCreateRowSorter(true);
+        Invoice.setModel(DbUtils.resultSetToTableModel(SQLite.Main.invoData()));
+        Invoice.setShowGrid(true);
+        Table_Container.setViewportView(Invoice);
+        final TableColumnModel columnModel = Invoice.getColumnModel();
+        for (int column = 0; column < Invoice.getColumnCount(); column++) {
+            int width = 15;
+            for (int row = 0; row < Invoice.getRowCount(); row++) {
+                TableCellRenderer renderer = Invoice.getCellRenderer(row, column);
+                Component comp = Invoice.prepareRenderer(renderer, row, column);
+                width = Math.max(comp.getPreferredSize().width +1 , width);
             }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Float.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        Invoices.setShowGrid(true);
-        Table_Container.setViewportView(Invoices);
+            if(width > 300) width=300;
+            columnModel.getColumn(column).setPreferredWidth(width);
+        }
 
         Remove.setText("Remove");
         Remove.setToolTipText("Remove Selected Invoice from Invoice History");
@@ -120,7 +112,7 @@ public class Billing extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Export;
     private javax.swing.JLabel Heading;
-    private javax.swing.JTable Invoices;
+    private javax.swing.JTable Invoice;
     private javax.swing.JButton New_Invoice;
     private javax.swing.JButton Remove;
     private javax.swing.JScrollPane Table_Container;

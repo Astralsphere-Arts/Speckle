@@ -1,5 +1,10 @@
 package Speckle;
 
+import java.awt.Component;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumnModel;
+import net.proteanit.sql.DbUtils;
+
 /**
  *
  * @author Astralsphere Arts
@@ -36,33 +41,20 @@ public class Inventory extends javax.swing.JPanel {
         Heading.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
         Inventory.setAutoCreateRowSorter(true);
-        Inventory.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Product ID", "Product Name", "Price", "Available Quantity"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Float.class, java.lang.Integer.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
+        Inventory.setModel(DbUtils.resultSetToTableModel(SQLite.Main.invenData()));
         Inventory.setShowGrid(true);
         Table_Container.setViewportView(Inventory);
+        final TableColumnModel columnModel = Inventory.getColumnModel();
+        for (int column = 0; column < Inventory.getColumnCount(); column++) {
+            int width = 15;
+            for (int row = 0; row < Inventory.getRowCount(); row++) {
+                TableCellRenderer renderer = Inventory.getCellRenderer(row, column);
+                Component comp = Inventory.prepareRenderer(renderer, row, column);
+                width = Math.max(comp.getPreferredSize().width +1 , width);
+            }
+            if(width > 300) width=300;
+            columnModel.getColumn(column).setPreferredWidth(width);
+        }
 
         Update.setText("Update Stock");
         Update.setToolTipText("Update Stocks for Selected Item");

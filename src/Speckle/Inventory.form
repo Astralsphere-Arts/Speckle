@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -86,16 +86,14 @@
         <Component class="javax.swing.JTable" name="Inventory">
           <Properties>
             <Property name="autoCreateRowSorter" type="boolean" value="true"/>
-            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="10">
-                <Column editable="true" title="Product ID" type="java.lang.Integer"/>
-                <Column editable="true" title="Product Name" type="java.lang.String"/>
-                <Column editable="true" title="Price" type="java.lang.Float"/>
-                <Column editable="true" title="Available Quantity" type="java.lang.Integer"/>
-              </Table>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="DbUtils.resultSetToTableModel(SQLite.Main.invenData())" type="code"/>
             </Property>
             <Property name="showGrid" type="boolean" value="true"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="final TableColumnModel columnModel = Inventory.getColumnModel();&#xd;&#xa;for (int column = 0; column &lt; Inventory.getColumnCount(); column++) {&#xd;&#xa;    int width = 15;&#xd;&#xa;    for (int row = 0; row &lt; Inventory.getRowCount(); row++) {&#xd;&#xa;        TableCellRenderer renderer = Inventory.getCellRenderer(row, column);&#xd;&#xa;        Component comp = Inventory.prepareRenderer(renderer, row, column);&#xd;&#xa;        width = Math.max(comp.getPreferredSize().width +1 , width);&#xd;&#xa;    }&#xd;&#xa;    if(width &gt; 300) width=300;&#xd;&#xa;    columnModel.getColumn(column).setPreferredWidth(width);&#xd;&#xa;}"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
