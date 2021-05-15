@@ -18,7 +18,9 @@ public class Main extends javax.swing.JFrame {
         this.White = new java.awt.Color(255, 255, 255);
         initComponents();
         Container_Deck = (java.awt.CardLayout)Container.getLayout();
-        Content_Deck = (java.awt.CardLayout)Content.getLayout();
+        Speckle.Home scene = new Home();
+        scene.setBounds(0, 0, 955, 574);
+        Content.add(scene).setVisible(true);
     }
 
     /**
@@ -44,17 +46,14 @@ public class Main extends javax.swing.JFrame {
         Inventory = new javax.swing.JLabel();
         Settings = new javax.swing.JLabel();
         About = new javax.swing.JLabel();
-        Content = new javax.swing.JPanel();
-        Home_Card = new Speckle.Home();
-        Billing_Card = new Speckle.Billing();
-        Inventory_Card = new Speckle.Inventory();
-        Settings_Card = new Speckle.Settings();
-        About_Card = new Speckle.About();
+        Content = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Speckle");
         setUndecorated(true);
         setResizable(false);
+
+        Background.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
 
         Header.setBackground(new java.awt.Color(60, 60, 60));
         Header.setForeground(new java.awt.Color(142, 142, 142));
@@ -283,13 +282,16 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(300, Short.MAX_VALUE))
         );
 
-        Content.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-        Content.setLayout(new java.awt.CardLayout());
-        Content.add(Home_Card, "home");
-        Content.add(Billing_Card, "billing");
-        Content.add(Inventory_Card, "inventory");
-        Content.add(Settings_Card, "settings");
-        Content.add(About_Card, "about");
+        javax.swing.GroupLayout ContentLayout = new javax.swing.GroupLayout(Content);
+        Content.setLayout(ContentLayout);
+        ContentLayout.setHorizontalGroup(
+            ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 948, Short.MAX_VALUE)
+        );
+        ContentLayout.setVerticalGroup(
+            ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout ApplicationLayout = new javax.swing.GroupLayout(Application);
         Application.setLayout(ApplicationLayout);
@@ -299,17 +301,15 @@ public class Main extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(SideBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(Content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+                .addComponent(Content))
         );
         ApplicationLayout.setVerticalGroup(
             ApplicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ApplicationLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addGroup(ApplicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SideBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, 0))
+                .addGroup(ApplicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(SideBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Content))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         Container.add(Application, "app");
@@ -376,7 +376,10 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_LogInActionPerformed
 
     private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
-        Content_Deck.show(Content, "home");
+        Content.removeAll();
+        Speckle.Home scene = new Home();
+        scene.setBounds(0, 0, 955, 574);
+        Content.add(scene).setVisible(true);
     }//GEN-LAST:event_HomeMouseClicked
 
     private void HomeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMousePressed
@@ -398,7 +401,10 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_HomeMouseExited
 
     private void BillingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BillingMouseClicked
-        Content_Deck.show(Content, "billing");
+        Content.removeAll();
+        Speckle.Billing scene = new Billing();
+        scene.setBounds(0, 0, 955, 574);
+        Content.add(scene).setVisible(true);
     }//GEN-LAST:event_BillingMouseClicked
 
     private void BillingMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BillingMousePressed
@@ -420,7 +426,10 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_BillingMouseExited
 
     private void InventoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventoryMouseClicked
-        Content_Deck.show(Content, "inventory");
+        Content.removeAll();
+        Speckle.Inventory scene = new Inventory();
+        scene.setBounds(0, 0, 955, 574);
+        Content.add(scene).setVisible(true);
     }//GEN-LAST:event_InventoryMouseClicked
 
     private void InventoryMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventoryMousePressed
@@ -442,7 +451,10 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_InventoryMouseExited
 
     private void SettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsMouseClicked
-        Content_Deck.show(Content, "settings");
+        Content.removeAll();
+        Speckle.Settings scene = new Settings();
+        scene.setBounds(0, 0, 955, 574);
+        Content.add(scene).setVisible(true);
     }//GEN-LAST:event_SettingsMouseClicked
 
     private void SettingsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsMousePressed
@@ -464,7 +476,10 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_SettingsMouseExited
 
     private void AboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutMouseClicked
-        Content_Deck.show(Content, "about");
+        Content.removeAll();
+        Speckle.About scene = new About();
+        scene.setBounds(0, 0, 955, 574);
+        Content.add(scene).setVisible(true);
     }//GEN-LAST:event_AboutMouseClicked
 
     private void AboutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutMousePressed
@@ -513,28 +528,22 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel About;
-    private Speckle.About About_Card;
     private javax.swing.JPanel Application;
     private javax.swing.JPanel Background;
     private javax.swing.JLabel Billing;
-    private Speckle.Billing Billing_Card;
     private javax.swing.JLabel Close;
     private javax.swing.JPanel Container;
-    private javax.swing.JPanel Content;
+    private javax.swing.JDesktopPane Content;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel Home;
-    private Speckle.Home Home_Card;
     private javax.swing.JLabel Inventory;
-    private Speckle.Inventory Inventory_Card;
     private javax.swing.JButton LogIn;
     private javax.swing.JLabel Settings;
-    private Speckle.Settings Settings_Card;
     private javax.swing.JPanel SideBar;
     private javax.swing.JPanel StartUp;
     private javax.swing.JLabel Window_Title;
     // End of variables declaration//GEN-END:variables
     private final java.awt.CardLayout Container_Deck;
-    private final java.awt.CardLayout Content_Deck;
     private final java.awt.Color Active;
     private final java.awt.Color Hover;
     private final java.awt.Color White;
