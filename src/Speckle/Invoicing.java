@@ -9,12 +9,12 @@ import net.proteanit.sql.DbUtils;
  *
  * @author Astralsphere Arts
  */
-public class Billing extends javax.swing.JPanel {
+public class Invoicing extends javax.swing.JPanel {
 
     /**
      * Creates new form Billing
      */
-    public Billing() {
+    public Invoicing() {
         initComponents();
     }
 

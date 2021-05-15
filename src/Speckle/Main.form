@@ -223,7 +223,7 @@
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="Billing" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Invoicing" min="-2" max="-2" attributes="0"/>
                                           <Component id="Settings" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="About" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="Home" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -241,7 +241,7 @@
                               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                               <Component id="Home" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="Billing" min="-2" max="-2" attributes="0"/>
+                              <Component id="Invoicing" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="Inventory" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -274,24 +274,24 @@
                         <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="HomeMousePressed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="Billing">
+                    <Component class="javax.swing.JLabel" name="Invoicing">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Resources/bill.png"/>
+                          <Image iconType="3" name="/Resources/invoice.png"/>
                         </Property>
-                        <Property name="toolTipText" type="java.lang.String" value="Billing"/>
+                        <Property name="toolTipText" type="java.lang.String" value="Invoicing"/>
                         <Property name="horizontalTextPosition" type="int" value="0"/>
                         <Property name="opaque" type="boolean" value="true"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BillingMouseClicked"/>
-                        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BillingMouseEntered"/>
-                        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BillingMouseExited"/>
-                        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BillingMousePressed"/>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="InvoicingMouseClicked"/>
+                        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="InvoicingMouseEntered"/>
+                        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="InvoicingMouseExited"/>
+                        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="InvoicingMousePressed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="Inventory">

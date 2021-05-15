@@ -42,7 +42,7 @@ public class Main extends javax.swing.JFrame {
         Application = new javax.swing.JPanel();
         SideBar = new javax.swing.JPanel();
         Home = new javax.swing.JLabel();
-        Billing = new javax.swing.JLabel();
+        Invoicing = new javax.swing.JLabel();
         Inventory = new javax.swing.JLabel();
         Settings = new javax.swing.JLabel();
         About = new javax.swing.JLabel();
@@ -163,24 +163,24 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        Billing.setBackground(new java.awt.Color(255, 255, 255));
-        Billing.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Billing.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/bill.png"))); // NOI18N
-        Billing.setToolTipText("Billing");
-        Billing.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Billing.setOpaque(true);
-        Billing.addMouseListener(new java.awt.event.MouseAdapter() {
+        Invoicing.setBackground(new java.awt.Color(255, 255, 255));
+        Invoicing.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Invoicing.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/invoice.png"))); // NOI18N
+        Invoicing.setToolTipText("Invoicing");
+        Invoicing.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Invoicing.setOpaque(true);
+        Invoicing.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BillingMouseClicked(evt);
+                InvoicingMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                BillingMouseEntered(evt);
+                InvoicingMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                BillingMouseExited(evt);
+                InvoicingMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                BillingMousePressed(evt);
+                InvoicingMousePressed(evt);
             }
         });
 
@@ -259,7 +259,7 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(Inventory))
                     .addGroup(SideBarLayout.createSequentialGroup()
                         .addGroup(SideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Billing)
+                            .addComponent(Invoicing)
                             .addComponent(Settings)
                             .addComponent(About)
                             .addComponent(Home))
@@ -272,7 +272,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addComponent(Home)
                 .addGap(18, 18, 18)
-                .addComponent(Billing)
+                .addComponent(Invoicing)
                 .addGap(18, 18, 18)
                 .addComponent(Inventory)
                 .addGap(18, 18, 18)
@@ -384,7 +384,7 @@ public class Main extends javax.swing.JFrame {
 
     private void HomeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMousePressed
         Home.setBackground(Active);
-        Billing.setBackground(White);
+        Invoicing.setBackground(White);
         Inventory.setBackground(White);
         Settings.setBackground(White);
         About.setBackground(White);
@@ -400,30 +400,30 @@ public class Main extends javax.swing.JFrame {
         Home.setBackground(Stored);
     }//GEN-LAST:event_HomeMouseExited
 
-    private void BillingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BillingMouseClicked
+    private void InvoicingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InvoicingMouseClicked
         Content.removeAll();
-        Speckle.Billing scene = new Billing();
+        Speckle.Invoicing scene = new Invoicing();
         scene.setBounds(0, 0, 955, 574);
         Content.add(scene).setVisible(true);
-    }//GEN-LAST:event_BillingMouseClicked
+    }//GEN-LAST:event_InvoicingMouseClicked
 
-    private void BillingMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BillingMousePressed
+    private void InvoicingMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InvoicingMousePressed
         Home.setBackground(White);
-        Billing.setBackground(Active);
+        Invoicing.setBackground(Active);
         Inventory.setBackground(White);
         Settings.setBackground(White);
         About.setBackground(White);
-        Stored = Billing.getBackground();
-    }//GEN-LAST:event_BillingMousePressed
+        Stored = Invoicing.getBackground();
+    }//GEN-LAST:event_InvoicingMousePressed
 
-    private void BillingMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BillingMouseEntered
-        Stored = Billing.getBackground();
-        Billing.setBackground(Hover);
-    }//GEN-LAST:event_BillingMouseEntered
+    private void InvoicingMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InvoicingMouseEntered
+        Stored = Invoicing.getBackground();
+        Invoicing.setBackground(Hover);
+    }//GEN-LAST:event_InvoicingMouseEntered
 
-    private void BillingMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BillingMouseExited
-        Billing.setBackground(Stored);
-    }//GEN-LAST:event_BillingMouseExited
+    private void InvoicingMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InvoicingMouseExited
+        Invoicing.setBackground(Stored);
+    }//GEN-LAST:event_InvoicingMouseExited
 
     private void InventoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventoryMouseClicked
         Content.removeAll();
@@ -434,7 +434,7 @@ public class Main extends javax.swing.JFrame {
 
     private void InventoryMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventoryMousePressed
         Home.setBackground(White);
-        Billing.setBackground(White);
+        Invoicing.setBackground(White);
         Inventory.setBackground(Active);
         Settings.setBackground(White);
         About.setBackground(White);
@@ -459,7 +459,7 @@ public class Main extends javax.swing.JFrame {
 
     private void SettingsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsMousePressed
         Home.setBackground(White);
-        Billing.setBackground(White);
+        Invoicing.setBackground(White);
         Inventory.setBackground(White);
         Settings.setBackground(Active);
         About.setBackground(White);
@@ -484,7 +484,7 @@ public class Main extends javax.swing.JFrame {
 
     private void AboutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutMousePressed
         Home.setBackground(White);
-        Billing.setBackground(White);
+        Invoicing.setBackground(White);
         Inventory.setBackground(White);
         Settings.setBackground(White);
         About.setBackground(Active);
@@ -530,13 +530,13 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel About;
     private javax.swing.JPanel Application;
     private javax.swing.JPanel Background;
-    private javax.swing.JLabel Billing;
     private javax.swing.JLabel Close;
     private javax.swing.JPanel Container;
     private javax.swing.JDesktopPane Content;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel Home;
     private javax.swing.JLabel Inventory;
+    private javax.swing.JLabel Invoicing;
     private javax.swing.JButton LogIn;
     private javax.swing.JLabel Settings;
     private javax.swing.JPanel SideBar;
