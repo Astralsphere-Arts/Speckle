@@ -12,7 +12,7 @@ import net.proteanit.sql.DbUtils;
 public class Invoicing extends javax.swing.JPanel {
 
     /**
-     * Creates new form Billing
+     * Creates new form Invoicing
      */
     public Invoicing() {
         initComponents();
