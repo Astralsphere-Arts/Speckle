@@ -1,6 +1,7 @@
 package Speckle;
 
 import java.awt.Component;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
 import net.proteanit.sql.DbUtils;
@@ -43,6 +44,7 @@ public class Inventory extends javax.swing.JPanel {
         Inventory.setAutoCreateRowSorter(true);
         Inventory.setModel(DbUtils.resultSetToTableModel(SQLite.Main.invenData()));
         Inventory.setShowGrid(true);
+        Inventory.getTableHeader().setReorderingAllowed(false);
         Table_Container.setViewportView(Inventory);
         final TableColumnModel columnModel = Inventory.getColumnModel();
         for (int column = 0; column < Inventory.getColumnCount(); column++) {
@@ -63,7 +65,12 @@ public class Inventory extends javax.swing.JPanel {
         Add.setToolTipText("Add a New Item to Inventory");
 
         Remove.setText("Remove");
-        Remove.setToolTipText("Remove Selected Item from Inventory");
+        Remove.setToolTipText("Remove Selected Products from Inventory");
+        Remove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RemoveActionPerformed(evt);
+            }
+        });
 
         Change.setText("Change");
         Change.setToolTipText("Change Properties of Selected Item in the Inventory");
@@ -109,6 +116,13 @@ public class Inventory extends javax.swing.JPanel {
                 .addContainerGap(70, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveActionPerformed
+        DefaultTableModel model = (DefaultTableModel) this.Inventory.getModel();
+        int[] rows = Inventory.getSelectedRows();
+        for(int i=0; i<rows.length; i++)
+            model.removeRow(rows[i]-i);
+    }//GEN-LAST:event_RemoveActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

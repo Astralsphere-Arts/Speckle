@@ -90,6 +90,9 @@
               <Connection code="DbUtils.resultSetToTableModel(SQLite.Main.invenData())" type="code"/>
             </Property>
             <Property name="showGrid" type="boolean" value="true"/>
+            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+              <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
+            </Property>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="final TableColumnModel columnModel = Inventory.getColumnModel();&#xd;&#xa;for (int column = 0; column &lt; Inventory.getColumnCount(); column++) {&#xd;&#xa;    int width = 15;&#xd;&#xa;    for (int row = 0; row &lt; Inventory.getRowCount(); row++) {&#xd;&#xa;        TableCellRenderer renderer = Inventory.getCellRenderer(row, column);&#xd;&#xa;        Component comp = Inventory.prepareRenderer(renderer, row, column);&#xd;&#xa;        width = Math.max(comp.getPreferredSize().width +1 , width);&#xd;&#xa;    }&#xd;&#xa;    if(width &gt; 300) width=300;&#xd;&#xa;    columnModel.getColumn(column).setPreferredWidth(width);&#xd;&#xa;}"/>
@@ -112,8 +115,11 @@
     <Component class="javax.swing.JButton" name="Remove">
       <Properties>
         <Property name="text" type="java.lang.String" value="Remove"/>
-        <Property name="toolTipText" type="java.lang.String" value="Remove Selected Item from Inventory"/>
+        <Property name="toolTipText" type="java.lang.String" value="Remove Selected Products from Inventory"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RemoveActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Change">
       <Properties>

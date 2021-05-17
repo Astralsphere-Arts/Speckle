@@ -16,109 +16,185 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="View" min="-2" pref="120" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="Remove" min="-2" pref="120" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="Export" min="-2" pref="120" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                      <Component id="Heading" min="-2" pref="184" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="New_Invoice" min="-2" pref="180" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="Table_Container" min="-2" pref="860" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="44" max="32767" attributes="0"/>
-          </Group>
+          <Component id="Invoice_Container" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="New_Invoice" min="-2" pref="45" max="-2" attributes="0"/>
-                  <Component id="Heading" min="-2" pref="45" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="Table_Container" min="-2" pref="347" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="Remove" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
-                  <Component id="View" alignment="0" max="32767" attributes="0"/>
-                  <Component id="Export" alignment="0" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace pref="70" max="32767" attributes="0"/>
-          </Group>
+          <Component id="Invoice_Container" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="Heading">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="24" style="0"/>
-        </Property>
-        <Property name="horizontalAlignment" type="int" value="2"/>
-        <Property name="text" type="java.lang.String" value="Invoice"/>
-        <Property name="horizontalTextPosition" type="int" value="2"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="New_Invoice">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
-          <FontInfo relative="true">
-            <Font component="New_Invoice" property="font" relativeSize="false" size="14"/>
-          </FontInfo>
-        </Property>
-        <Property name="text" type="java.lang.String" value="New Invoice"/>
-        <Property name="toolTipText" type="java.lang.String" value="Generate a New Invoice"/>
-      </Properties>
-    </Component>
-    <Container class="javax.swing.JScrollPane" name="Table_Container">
-      <AuxValues>
-        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-      </AuxValues>
+    <Container class="javax.swing.JPanel" name="Invoice_Container">
 
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="Invoice">
-          <Properties>
-            <Property name="autoCreateRowSorter" type="boolean" value="true"/>
-            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="DbUtils.resultSetToTableModel(SQLite.Main.invoData())" type="code"/>
-            </Property>
-            <Property name="showGrid" type="boolean" value="true"/>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="final TableColumnModel columnModel = Invoice.getColumnModel();&#xd;&#xa;for (int column = 0; column &lt; Invoice.getColumnCount(); column++) {&#xd;&#xa;    int width = 15;&#xd;&#xa;    for (int row = 0; row &lt; Invoice.getRowCount(); row++) {&#xd;&#xa;        TableCellRenderer renderer = Invoice.getCellRenderer(row, column);&#xd;&#xa;        Component comp = Invoice.prepareRenderer(renderer, row, column);&#xd;&#xa;        width = Math.max(comp.getPreferredSize().width +1 , width);&#xd;&#xa;    }&#xd;&#xa;    if(width &gt; 300) width=300;&#xd;&#xa;    columnModel.getColumn(column).setPreferredWidth(width);&#xd;&#xa;}"/>
-          </AuxValues>
-        </Component>
+        <Container class="javax.swing.JPanel" name="Invoice_Main">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="invMain"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="View" min="-2" pref="120" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="Remove" min="-2" pref="120" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="Export" min="-2" pref="120" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="Heading" min="-2" pref="184" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="New_Invoice" min="-2" pref="180" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="Table_Container" min="-2" pref="860" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="44" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="New_Invoice" min="-2" pref="45" max="-2" attributes="0"/>
+                          <Component id="Heading" min="-2" pref="45" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="Table_Container" min="-2" pref="347" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="Remove" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="View" alignment="0" max="32767" attributes="0"/>
+                          <Component id="Export" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="70" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="Heading">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="24" style="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="2"/>
+                <Property name="text" type="java.lang.String" value="Invoice"/>
+                <Property name="horizontalTextPosition" type="int" value="2"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="New_Invoice">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                  <FontInfo relative="true">
+                    <Font component="New_Invoice" property="font" relativeSize="false" size="14"/>
+                  </FontInfo>
+                </Property>
+                <Property name="text" type="java.lang.String" value="New Invoice"/>
+                <Property name="toolTipText" type="java.lang.String" value="Generate a New Invoice"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="New_InvoiceActionPerformed"/>
+              </Events>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="Table_Container">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="Invoice">
+                  <Properties>
+                    <Property name="autoCreateRowSorter" type="boolean" value="true"/>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="DbUtils.resultSetToTableModel(SQLite.Main.invoData())" type="code"/>
+                    </Property>
+                    <Property name="showGrid" type="boolean" value="true"/>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="final TableColumnModel columnModel = Invoice.getColumnModel();&#xd;&#xa;for (int column = 0; column &lt; Invoice.getColumnCount(); column++) {&#xd;&#xa;    int width = 15;&#xd;&#xa;    for (int row = 0; row &lt; Invoice.getRowCount(); row++) {&#xd;&#xa;        TableCellRenderer renderer = Invoice.getCellRenderer(row, column);&#xd;&#xa;        Component comp = Invoice.prepareRenderer(renderer, row, column);&#xd;&#xa;        width = Math.max(comp.getPreferredSize().width +1 , width);&#xd;&#xa;    }&#xd;&#xa;    if(width &gt; 300) width=300;&#xd;&#xa;    columnModel.getColumn(column).setPreferredWidth(width);&#xd;&#xa;}"/>
+                  </AuxValues>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JButton" name="View">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="View Invoice"/>
+                <Property name="toolTipText" type="java.lang.String" value="View Selected Invoice from Invoice History"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="Remove">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Remove"/>
+                <Property name="toolTipText" type="java.lang.String" value="Remove Selected Invoices from Invoice History"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RemoveActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="Export">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Export"/>
+                <Property name="toolTipText" type="java.lang.String" value="Export Invoice History to a CSV File"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="Invoice_New">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="invNew"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="414" max="-2" attributes="0"/>
+                      <Component id="Cancel" min="-2" pref="120" max="-2" attributes="0"/>
+                      <EmptySpace pref="414" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="269" max="-2" attributes="0"/>
+                      <Component id="Cancel" min="-2" pref="36" max="-2" attributes="0"/>
+                      <EmptySpace pref="269" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JButton" name="Cancel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cancel"/>
+                <Property name="toolTipText" type="java.lang.String" value="Return to Invoice History"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CancelActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="Remove">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Remove"/>
-        <Property name="toolTipText" type="java.lang.String" value="Remove Selected Invoice from Invoice History"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="Export">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Export"/>
-        <Property name="toolTipText" type="java.lang.String" value="Export Invoice History to a CSV File"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="View">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="View Invoice"/>
-        <Property name="toolTipText" type="java.lang.String" value="View Selected Invoice from Invoice History"/>
-      </Properties>
-    </Component>
   </SubComponents>
 </Form>

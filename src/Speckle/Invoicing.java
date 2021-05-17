@@ -1,6 +1,7 @@
 package Speckle;
 
 import java.awt.Component;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
 import net.proteanit.sql.DbUtils;
@@ -16,6 +17,7 @@ public class Invoicing extends javax.swing.JPanel {
      */
     public Invoicing() {
         initComponents();
+        Invoice_Deck = (java.awt.CardLayout)Invoice_Container.getLayout();
     }
 
     /**
@@ -27,13 +29,19 @@ public class Invoicing extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Invoice_Container = new javax.swing.JPanel();
+        Invoice_Main = new javax.swing.JPanel();
         Heading = new javax.swing.JLabel();
         New_Invoice = new javax.swing.JButton();
         Table_Container = new javax.swing.JScrollPane();
         Invoice = new javax.swing.JTable();
+        View = new javax.swing.JButton();
         Remove = new javax.swing.JButton();
         Export = new javax.swing.JButton();
-        View = new javax.swing.JButton();
+        Invoice_New = new javax.swing.JPanel();
+        Cancel = new javax.swing.JButton();
+
+        Invoice_Container.setLayout(new java.awt.CardLayout());
 
         Heading.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         Heading.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -43,10 +51,16 @@ public class Invoicing extends javax.swing.JPanel {
         New_Invoice.setFont(New_Invoice.getFont().deriveFont((float)14));
         New_Invoice.setText("New Invoice");
         New_Invoice.setToolTipText("Generate a New Invoice");
+        New_Invoice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                New_InvoiceActionPerformed(evt);
+            }
+        });
 
         Invoice.setAutoCreateRowSorter(true);
         Invoice.setModel(DbUtils.resultSetToTableModel(SQLite.Main.invoData()));
         Invoice.setShowGrid(true);
+        Invoice.getTableHeader().setReorderingAllowed(false);
         Table_Container.setViewportView(Invoice);
         final TableColumnModel columnModel = Invoice.getColumnModel();
         for (int column = 0; column < Invoice.getColumnCount(); column++) {
@@ -60,29 +74,34 @@ public class Invoicing extends javax.swing.JPanel {
             columnModel.getColumn(column).setPreferredWidth(width);
         }
 
+        View.setText("View Invoice");
+        View.setToolTipText("View Selected Invoice from Invoice History");
+
         Remove.setText("Remove");
-        Remove.setToolTipText("Remove Selected Invoice from Invoice History");
+        Remove.setToolTipText("Remove Selected Invoices from Invoice History");
+        Remove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RemoveActionPerformed(evt);
+            }
+        });
 
         Export.setText("Export");
         Export.setToolTipText("Export Invoice History to a CSV File");
 
-        View.setText("View Invoice");
-        View.setToolTipText("View Selected Invoice from Invoice History");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        javax.swing.GroupLayout Invoice_MainLayout = new javax.swing.GroupLayout(Invoice_Main);
+        Invoice_Main.setLayout(Invoice_MainLayout);
+        Invoice_MainLayout.setHorizontalGroup(
+            Invoice_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Invoice_MainLayout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(Invoice_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(Invoice_MainLayout.createSequentialGroup()
                         .addComponent(View, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(Remove, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Export, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Invoice_MainLayout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addComponent(Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -90,32 +109,92 @@ public class Invoicing extends javax.swing.JPanel {
                     .addComponent(Table_Container, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        Invoice_MainLayout.setVerticalGroup(
+            Invoice_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Invoice_MainLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(Invoice_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(New_Invoice, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(Table_Container, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(Invoice_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Remove, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(View, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Export, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Export, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(70, Short.MAX_VALUE))
+        );
+
+        Invoice_Container.add(Invoice_Main, "invMain");
+
+        Cancel.setText("Cancel");
+        Cancel.setToolTipText("Return to Invoice History");
+        Cancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Invoice_NewLayout = new javax.swing.GroupLayout(Invoice_New);
+        Invoice_New.setLayout(Invoice_NewLayout);
+        Invoice_NewLayout.setHorizontalGroup(
+            Invoice_NewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Invoice_NewLayout.createSequentialGroup()
+                .addGap(414, 414, 414)
+                .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(414, Short.MAX_VALUE))
+        );
+        Invoice_NewLayout.setVerticalGroup(
+            Invoice_NewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Invoice_NewLayout.createSequentialGroup()
+                .addGap(269, 269, 269)
+                .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(269, Short.MAX_VALUE))
+        );
+
+        Invoice_Container.add(Invoice_New, "invNew");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Invoice_Container, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Invoice_Container, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void New_InvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_New_InvoiceActionPerformed
+        Invoice_Deck.show(Invoice_Container, "invNew");
+    }//GEN-LAST:event_New_InvoiceActionPerformed
+
+    private void CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelActionPerformed
+        Invoice_Deck.show(Invoice_Container, "invMain");
+    }//GEN-LAST:event_CancelActionPerformed
+
+    private void RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveActionPerformed
+        DefaultTableModel model = (DefaultTableModel) this.Invoice.getModel();
+        int[] rows = Invoice.getSelectedRows();
+        for(int i=0; i<rows.length; i++)
+            model.removeRow(rows[i]-i);
+    }//GEN-LAST:event_RemoveActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Cancel;
     private javax.swing.JButton Export;
     private javax.swing.JLabel Heading;
     private javax.swing.JTable Invoice;
+    private javax.swing.JPanel Invoice_Container;
+    private javax.swing.JPanel Invoice_Main;
+    private javax.swing.JPanel Invoice_New;
     private javax.swing.JButton New_Invoice;
     private javax.swing.JButton Remove;
     private javax.swing.JScrollPane Table_Container;
     private javax.swing.JButton View;
     // End of variables declaration//GEN-END:variables
+    private final java.awt.CardLayout Invoice_Deck;
 }
