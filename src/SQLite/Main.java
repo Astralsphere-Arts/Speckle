@@ -34,12 +34,12 @@ public class Main {
             firstUse = dbFolder.mkdir();
             dbConnect();
         }
-        String invoice = "CREATE TABLE IF NOT EXISTS Invoice (\"Customer ID\""
-            + " INTEGER NOT NULL, \"Customer Name\" TEXT NOT NULL, \"Contact Number\""
+        String invoice = "CREATE TABLE IF NOT EXISTS Invoice (\"Invoice ID\""
+            + " TEXT NOT NULL, \"Customer Name\" TEXT NOT NULL, \"Contact Number\""
             + " INTEGER NOT NULL, \"Date of Sale\" TEXT NOT NULL, \"Sale Amount\""
             + " REAL NOT NULL, PRIMARY KEY(\"Customer ID\"));";
         String inventory = "CREATE TABLE IF NOT EXISTS Inventory (\"Product ID\""
-            + " INTEGER NOT NULL, \"Product Name\" TEXT NOT NULL, \"Price\" REAL"
+            + " TEXT NOT NULL, \"Product Name\" TEXT NOT NULL, \"Price\" REAL"
             + " NOT NULL, \"Available Quantity\" INTEGER NOT NULL, PRIMARY KEY"
             + "(\"Product ID\"));";
         try {
@@ -55,7 +55,7 @@ public class Main {
         if (mainDB == null)
             dbConnect();
         ResultSet invResult = null;
-        String invoice = "SELECT \"Customer ID\", \"Customer Name\", \"Contact Number\","
+        String invoice = "SELECT \"Invoice ID\", \"Customer Name\", \"Contact Number\","
             + " \"Date of Sale\", \"Sale Amount\" FROM Invoice;";
         try {
             Statement mainDBquery = mainDB.createStatement();
@@ -83,7 +83,7 @@ public class Main {
     public static void remRowInvo(String ID) {
         if (mainDB == null)
             dbConnect();
-        String invoice = "DELETE FROM Invoice WHERE \"Customer ID\"=?;";
+        String invoice = "DELETE FROM Invoice WHERE \"Invoice ID\"=?;";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(invoice);
             mainDBquery.setString(1,ID);

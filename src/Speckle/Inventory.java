@@ -17,6 +17,7 @@ public class Inventory extends javax.swing.JPanel {
      */
     public Inventory() {
         initComponents();
+        this.Inventory_Model = (DefaultTableModel) this.Inventory.getModel();
     }
 
     /**
@@ -31,17 +32,15 @@ public class Inventory extends javax.swing.JPanel {
         Heading = new javax.swing.JLabel();
         Table_Container = new javax.swing.JScrollPane();
         Inventory = new javax.swing.JTable();
-        Update = new javax.swing.JButton();
         Add = new javax.swing.JButton();
         Remove = new javax.swing.JButton();
-        Change = new javax.swing.JButton();
+        Update = new javax.swing.JButton();
 
         Heading.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         Heading.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Heading.setText("Inventory");
         Heading.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
-        Inventory.setAutoCreateRowSorter(true);
         Inventory.setModel(DbUtils.resultSetToTableModel(SQLite.Main.invenData()));
         Inventory.setShowGrid(true);
         Inventory.getTableHeader().setReorderingAllowed(false);
@@ -58,11 +57,13 @@ public class Inventory extends javax.swing.JPanel {
             columnModel.getColumn(column).setPreferredWidth(width);
         }
 
-        Update.setText("Update Stock");
-        Update.setToolTipText("Update Stocks for Selected Item");
-
         Add.setText("Add");
         Add.setToolTipText("Add a New Item to Inventory");
+        Add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddActionPerformed(evt);
+            }
+        });
 
         Remove.setText("Remove");
         Remove.setToolTipText("Remove Selected Products from Inventory");
@@ -72,31 +73,26 @@ public class Inventory extends javax.swing.JPanel {
             }
         });
 
-        Change.setText("Change");
-        Change.setToolTipText("Change Properties of Selected Item in the Inventory");
+        Update.setText("Update Stock");
+        Update.setToolTipText("Update Stocks for Selected Item");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addContainerGap(40, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(Remove, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(Change, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Remove, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Update, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Table_Container, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(40, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Update, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Table_Container, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(2, 2, 2)
+                        .addComponent(Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -107,34 +103,35 @@ public class Inventory extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(Table_Container, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Change, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Remove, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Remove, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Update, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(70, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
+        Inventory_Model.addRow(new Object[] {SQLite.Random.ID(8), null, null, null});
+    }//GEN-LAST:event_AddActionPerformed
+
     private void RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveActionPerformed
-        DefaultTableModel model = (DefaultTableModel) this.Inventory.getModel();
         int[] rows = Inventory.getSelectedRows();
-        for(int i=0; i<rows.length; i++) {
+        for (int i=0; i<rows.length; i++) {
             String id = Inventory.getModel().getValueAt(rows[i]-i, 0).toString();
             SQLite.Main.remRowInven(id);
-            model.removeRow(rows[i]-i);
+            Inventory_Model.removeRow(rows[i]-i);
         }
     }//GEN-LAST:event_RemoveActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Add;
-    private javax.swing.JButton Change;
     private javax.swing.JLabel Heading;
     private javax.swing.JTable Inventory;
     private javax.swing.JButton Remove;
     private javax.swing.JScrollPane Table_Container;
     private javax.swing.JButton Update;
     // End of variables declaration//GEN-END:variables
+    private final DefaultTableModel Inventory_Model;
 }
