@@ -61,6 +61,7 @@ public class Invoicing extends javax.swing.JPanel {
         Invoice.setModel(DbUtils.resultSetToTableModel(SQLite.Main.invoData()));
         Invoice.setShowGrid(true);
         Invoice.getTableHeader().setReorderingAllowed(false);
+        Invoice.setDefaultEditor(Object.class, null);
         Table_Container.setViewportView(Invoice);
         final TableColumnModel columnModel = Invoice.getColumnModel();
         for (int column = 0; column < Invoice.getColumnCount(); column++) {
@@ -178,8 +179,11 @@ public class Invoicing extends javax.swing.JPanel {
     private void RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveActionPerformed
         DefaultTableModel model = (DefaultTableModel) this.Invoice.getModel();
         int[] rows = Invoice.getSelectedRows();
-        for(int i=0; i<rows.length; i++)
+        for(int i=0; i<rows.length; i++) {
+            String id = Invoice.getModel().getValueAt(rows[i]-i, 0).toString();
+            SQLite.Main.remRowInvo(id);
             model.removeRow(rows[i]-i);
+        }
     }//GEN-LAST:event_RemoveActionPerformed
 
 

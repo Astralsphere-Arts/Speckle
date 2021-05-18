@@ -120,8 +120,11 @@ public class Inventory extends javax.swing.JPanel {
     private void RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveActionPerformed
         DefaultTableModel model = (DefaultTableModel) this.Inventory.getModel();
         int[] rows = Inventory.getSelectedRows();
-        for(int i=0; i<rows.length; i++)
+        for(int i=0; i<rows.length; i++) {
+            String id = Inventory.getModel().getValueAt(rows[i]-i, 0).toString();
+            SQLite.Main.remRowInven(id);
             model.removeRow(rows[i]-i);
+        }
     }//GEN-LAST:event_RemoveActionPerformed
 
 

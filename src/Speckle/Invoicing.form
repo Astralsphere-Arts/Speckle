@@ -127,6 +127,7 @@
                     </Property>
                   </Properties>
                   <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="Invoice.setDefaultEditor(Object.class, null);"/>
                     <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="final TableColumnModel columnModel = Invoice.getColumnModel();&#xd;&#xa;for (int column = 0; column &lt; Invoice.getColumnCount(); column++) {&#xd;&#xa;    int width = 15;&#xd;&#xa;    for (int row = 0; row &lt; Invoice.getRowCount(); row++) {&#xd;&#xa;        TableCellRenderer renderer = Invoice.getCellRenderer(row, column);&#xd;&#xa;        Component comp = Invoice.prepareRenderer(renderer, row, column);&#xd;&#xa;        width = Math.max(comp.getPreferredSize().width +1 , width);&#xd;&#xa;    }&#xd;&#xa;    if(width &gt; 300) width=300;&#xd;&#xa;    columnModel.getColumn(column).setPreferredWidth(width);&#xd;&#xa;}"/>
                   </AuxValues>
                 </Component>

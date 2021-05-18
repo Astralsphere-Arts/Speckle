@@ -3,6 +3,7 @@ package SQLite;
 import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
@@ -54,7 +55,8 @@ public class Main {
         if (mainDB == null)
             dbConnect();
         ResultSet invResult = null;
-        String invoice = "SELECT * FROM Invoice;";
+        String invoice = "SELECT \"Customer ID\", \"Customer Name\", \"Contact Number\","
+            + " \"Date of Sale\", \"Sale Amount\" FROM Invoice;";
         try {
             Statement mainDBquery = mainDB.createStatement();
             invResult = mainDBquery.executeQuery(invoice);
@@ -76,5 +78,31 @@ public class Main {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
         return invResult;
+    }
+    
+    public static void remRowInvo(String ID) {
+        if (mainDB == null)
+            dbConnect();
+        String invoice = "DELETE FROM Invoice WHERE \"Customer ID\"=?;";
+        try {
+            PreparedStatement mainDBquery = mainDB.prepareStatement(invoice);
+            mainDBquery.setString(1,ID);
+            mainDBquery.executeUpdate();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public static void remRowInven(String ID) {
+        if (mainDB == null)
+            dbConnect();
+        String inventory = "DELETE FROM Inventory WHERE \"Product ID\"=?;";
+        try {
+            PreparedStatement mainDBquery = mainDB.prepareStatement(inventory);
+            mainDBquery.setString(1,ID);
+            mainDBquery.executeUpdate();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 }
