@@ -37,7 +37,7 @@ public class Main {
         String invoice = "CREATE TABLE IF NOT EXISTS Invoice (\"Invoice ID\""
             + " TEXT NOT NULL, \"Customer Name\" TEXT NOT NULL, \"Contact Number\""
             + " INTEGER NOT NULL, \"Date of Sale\" TEXT NOT NULL, \"Sale Amount\""
-            + " REAL NOT NULL, PRIMARY KEY(\"Customer ID\"));";
+            + " REAL NOT NULL, PRIMARY KEY(\"Invoice ID\"));";
         String inventory = "CREATE TABLE IF NOT EXISTS Inventory (\"Product ID\""
             + " TEXT NOT NULL, \"Product Name\" TEXT NOT NULL, \"Price\" REAL"
             + " NOT NULL, \"Available Quantity\" INTEGER NOT NULL, PRIMARY KEY"
