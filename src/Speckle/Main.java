@@ -1,6 +1,8 @@
 package Speckle;
 
 import com.formdev.flatlaf.FlatIntelliJLaf;
+import java.awt.Insets;
+import javax.swing.UIManager;
 
 /**
  *
@@ -518,6 +520,9 @@ public class Main extends javax.swing.JFrame {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        UIManager.put("ScrollBar.thumbArc", 999);
+        UIManager.put("ScrollBar.thumbInsets", new Insets(2, 2, 2, 2));
+        UIManager.put("TabbedPane.showTabSeparators", true);
         //</editor-fold>
 
         /* Create and display the form */

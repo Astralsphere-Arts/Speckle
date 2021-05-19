@@ -176,12 +176,12 @@ public class Invoicing extends javax.swing.JPanel {
     }//GEN-LAST:event_CancelActionPerformed
 
     private void RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveActionPerformed
-        DefaultTableModel model = (DefaultTableModel) this.Invoice.getModel();
+        DefaultTableModel Invoice_Model = (DefaultTableModel) this.Invoice.getModel();
         int[] rows = Invoice.getSelectedRows();
         for (int i=0; i<rows.length; i++) {
             String id = Invoice.getModel().getValueAt(rows[i]-i, 0).toString();
             SQLite.Main.remRowInvo(id);
-            model.removeRow(rows[i]-i);
+            Invoice_Model.removeRow(rows[i]-i);
         }
     }//GEN-LAST:event_RemoveActionPerformed
 
