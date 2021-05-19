@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  */
 
 public class Main {
-    static boolean firstUse;
+    public static boolean firstUse;
     static File dbFolder = new File("data");
     static Connection mainDB = null;
     static Connection configDB = null;

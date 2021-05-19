@@ -20,6 +20,11 @@ public class Main extends javax.swing.JFrame {
         this.White = new java.awt.Color(255, 255, 255);
         initComponents();
         Container_Deck = (java.awt.CardLayout)Container.getLayout();
+        StartUp_Deck = (java.awt.CardLayout)StartUp_Container.getLayout();
+        if (SQLite.Main.firstUse)
+            StartUp_Deck.show(StartUp_Container, "signUp");
+        else
+            StartUp_Deck.show(StartUp_Container, "signIn");
         Speckle.Home scene = new Home();
         scene.setBounds(0, 0, 955, 574);
         Content.add(scene).setVisible(true);
@@ -36,11 +41,23 @@ public class Main extends javax.swing.JFrame {
 
         Background = new javax.swing.JPanel();
         Header = new javax.swing.JPanel();
+        Header_Logo = new javax.swing.JLabel();
         Window_Title = new javax.swing.JLabel();
         Close = new javax.swing.JLabel();
         Container = new javax.swing.JPanel();
         StartUp = new javax.swing.JPanel();
-        LogIn = new javax.swing.JButton();
+        Speckle_Logo = new javax.swing.JLabel();
+        StartUp_Container = new javax.swing.JPanel();
+        SignIn = new javax.swing.JPanel();
+        SignIn_Heading = new javax.swing.JLabel();
+        SignIn_Para = new javax.swing.JLabel();
+        SignIn_SubHeading = new javax.swing.JLabel();
+        Username_Label = new javax.swing.JLabel();
+        Username = new javax.swing.JTextField();
+        Password_Label = new javax.swing.JLabel();
+        Password = new javax.swing.JPasswordField();
+        SignIn_Button = new javax.swing.JButton();
+        SignUp = new javax.swing.JPanel();
         Application = new javax.swing.JPanel();
         SideBar = new javax.swing.JPanel();
         Home = new javax.swing.JLabel();
@@ -52,6 +69,7 @@ public class Main extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Speckle");
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/Resources/speckle-frame-logo.png")).getImage());
         setUndecorated(true);
         setResizable(false);
 
@@ -69,6 +87,12 @@ public class Main extends javax.swing.JFrame {
                 HeaderMousePressed(evt);
             }
         });
+
+        Header_Logo.setBackground(new java.awt.Color(60, 60, 60));
+        Header_Logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Header_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/speckle-header-logo.png"))); // NOI18N
+        Header_Logo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Header_Logo.setOpaque(true);
 
         Window_Title.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         Window_Title.setForeground(new java.awt.Color(142, 142, 142));
@@ -101,7 +125,8 @@ public class Main extends javax.swing.JFrame {
         HeaderLayout.setHorizontalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HeaderLayout.createSequentialGroup()
-                .addGap(468, 468, 468)
+                .addComponent(Header_Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(442, 442, 442)
                 .addComponent(Window_Title)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Close, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -112,32 +137,127 @@ public class Main extends javax.swing.JFrame {
             .addGroup(HeaderLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(Close, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(HeaderLayout.createSequentialGroup()
+                .addComponent(Header_Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         Container.setLayout(new java.awt.CardLayout());
 
-        LogIn.setText("Log In");
-        LogIn.addActionListener(new java.awt.event.ActionListener() {
+        Speckle_Logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Speckle_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/git2.png"))); // NOI18N
+        Speckle_Logo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        StartUp_Container.setLayout(new java.awt.CardLayout());
+
+        SignIn_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
+        SignIn_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SignIn_Heading.setText("Welcome To Speckle!");
+
+        SignIn_Para.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SignIn_Para.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SignIn_Para.setText("A Simple Invoicing and Inventory Management System");
+        SignIn_Para.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        SignIn_SubHeading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        SignIn_SubHeading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SignIn_SubHeading.setText("Please Sign In");
+        SignIn_SubHeading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        Username_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Username_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Username_Label.setText("Username");
+        Username_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        Username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        Password_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Password_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Password_Label.setText("Password");
+        Password_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        SignIn_Button.setText("Sign In");
+        SignIn_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LogInActionPerformed(evt);
+                SignIn_ButtonActionPerformed(evt);
             }
         });
+
+        javax.swing.GroupLayout SignInLayout = new javax.swing.GroupLayout(SignIn);
+        SignIn.setLayout(SignInLayout);
+        SignInLayout.setHorizontalGroup(
+            SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SignInLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(SignIn_SubHeading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(SignIn_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(SignIn_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(SignInLayout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Username)
+                            .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SignIn_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(52, Short.MAX_VALUE))
+        );
+        SignInLayout.setVerticalGroup(
+            SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SignInLayout.createSequentialGroup()
+                .addGap(122, 122, 122)
+                .addComponent(SignIn_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(SignIn_Para)
+                .addGap(55, 55, 55)
+                .addComponent(SignIn_SubHeading)
+                .addGap(18, 18, 18)
+                .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(SignIn_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(136, Short.MAX_VALUE))
+        );
+
+        StartUp_Container.add(SignIn, "signIn");
+
+        javax.swing.GroupLayout SignUpLayout = new javax.swing.GroupLayout(SignUp);
+        SignUp.setLayout(SignUpLayout);
+        SignUpLayout.setHorizontalGroup(
+            SignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        SignUpLayout.setVerticalGroup(
+            SignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        StartUp_Container.add(SignUp, "signUp");
 
         javax.swing.GroupLayout StartUpLayout = new javax.swing.GroupLayout(StartUp);
         StartUp.setLayout(StartUpLayout);
         StartUpLayout.setHorizontalGroup(
             StartUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(StartUpLayout.createSequentialGroup()
-                .addGap(440, 440, 440)
-                .addComponent(LogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(440, Short.MAX_VALUE))
+                .addComponent(Speckle_Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(StartUp_Container, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         StartUpLayout.setVerticalGroup(
             StartUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(StartUpLayout.createSequentialGroup()
-                .addGap(268, 268, 268)
-                .addComponent(LogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(269, Short.MAX_VALUE))
+            .addComponent(Speckle_Logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(StartUp_Container, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         Container.add(StartUp, "start");
@@ -373,9 +493,9 @@ public class Main extends javax.swing.JFrame {
         Close.setBackground(White);
     }//GEN-LAST:event_CloseMouseExited
 
-    private void LogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInActionPerformed
+    private void SignIn_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignIn_ButtonActionPerformed
         Container_Deck.show(Container, "app");
-    }//GEN-LAST:event_LogInActionPerformed
+    }//GEN-LAST:event_SignIn_ButtonActionPerformed
 
     private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
         Content.removeAll();
@@ -539,16 +659,29 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel Container;
     private javax.swing.JDesktopPane Content;
     private javax.swing.JPanel Header;
+    private javax.swing.JLabel Header_Logo;
     private javax.swing.JLabel Home;
     private javax.swing.JLabel Inventory;
     private javax.swing.JLabel Invoicing;
-    private javax.swing.JButton LogIn;
+    private javax.swing.JPasswordField Password;
+    private javax.swing.JLabel Password_Label;
     private javax.swing.JLabel Settings;
     private javax.swing.JPanel SideBar;
+    private javax.swing.JPanel SignIn;
+    private javax.swing.JButton SignIn_Button;
+    private javax.swing.JLabel SignIn_Heading;
+    private javax.swing.JLabel SignIn_Para;
+    private javax.swing.JLabel SignIn_SubHeading;
+    private javax.swing.JPanel SignUp;
+    private javax.swing.JLabel Speckle_Logo;
     private javax.swing.JPanel StartUp;
+    private javax.swing.JPanel StartUp_Container;
+    private javax.swing.JTextField Username;
+    private javax.swing.JLabel Username_Label;
     private javax.swing.JLabel Window_Title;
     // End of variables declaration//GEN-END:variables
     private final java.awt.CardLayout Container_Deck;
+    private final java.awt.CardLayout StartUp_Deck;
     private final java.awt.Color Active;
     private final java.awt.Color Hover;
     private final java.awt.Color White;
