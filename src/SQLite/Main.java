@@ -1,6 +1,9 @@
 package SQLite;
 
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -17,23 +20,34 @@ import javax.swing.JOptionPane;
 public class Main {
     public static boolean firstUse;
     static File dbFolder = new File("data");
+    static Path currentDirectory = Paths.get(System.getProperty("user.dir"));
     static Connection mainDB = null;
     static Connection configDB = null;
     
-    public static void dbConnect() {
+    public static void initDB() {
+        if (!Files.isWritable(currentDirectory)) {
+            File appData = new File(System.getenv("localappdata") + "\\Speckle");
+            appData.mkdir();
+            dbFolder = new File(System.getenv("localappdata") + "\\Speckle\\data");
+        }
+        firstUse = dbFolder.mkdir();
+        dbConnect();
+        if (firstUse)
+            dbTables();
+    }
+    
+    static void dbConnect() {
         try {
-            mainDB = DriverManager.getConnection("jdbc:sqlite:data/main.sqlite");
-            configDB = DriverManager.getConnection("jdbc:sqlite:data/config.sqlite");
+            mainDB = DriverManager.getConnection("jdbc:sqlite:" + dbFolder + "/main.sqlite");
+            configDB = DriverManager.getConnection("jdbc:sqlite:" + dbFolder + "/config.sqlite");
         } catch (SQLException ex) { 
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
     
-    public static void initDB() {
-        if (mainDB == null || configDB == null) {
-            firstUse = dbFolder.mkdir();
+    static void dbTables() {
+        if (mainDB == null || configDB == null)
             dbConnect();
-        }
         String invoice = "CREATE TABLE IF NOT EXISTS Invoice (\"Invoice ID\""
             + " TEXT NOT NULL, \"Customer Name\" TEXT NOT NULL, \"Contact Number\""
             + " INTEGER NOT NULL, \"Date of Sale\" TEXT NOT NULL, \"Sale Amount\""
