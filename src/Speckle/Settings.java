@@ -22,208 +22,208 @@ public class Settings extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
-        Heading = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jPasswordField2 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        Heading1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        Settings_Container = new javax.swing.JTabbedPane();
+        User_Tab = new javax.swing.JPanel();
+        User_Heading = new javax.swing.JLabel();
+        User_SubHeading = new javax.swing.JLabel();
+        Old_Pass_Label = new javax.swing.JLabel();
+        Old_Pass = new javax.swing.JPasswordField();
+        New_Pass_Label = new javax.swing.JLabel();
+        New_Pass = new javax.swing.JPasswordField();
+        Reset = new javax.swing.JButton();
+        Details_Tab = new javax.swing.JPanel();
+        Details_Heading = new javax.swing.JLabel();
+        Details_SubHeading = new javax.swing.JLabel();
+        Comp_Name_Label = new javax.swing.JLabel();
+        Comp_Name = new javax.swing.JTextField();
+        Comp_Contact_Label = new javax.swing.JLabel();
+        Comp_Contact = new javax.swing.JTextField();
+        Save = new javax.swing.JButton();
 
-        jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
-        jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Settings_Container.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        Settings_Container.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        Heading.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Heading.setText("Settings");
-        Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        User_Heading.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        User_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        User_Heading.setText("Settings");
+        User_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        jLabel1.setText("Recover Credentials");
+        User_SubHeading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
+        User_SubHeading.setText("Recover Credentials");
 
-        jPasswordField1.setPreferredSize(new java.awt.Dimension(64, 28));
+        Old_Pass_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        Old_Pass_Label.setText("Old Password");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jLabel2.setText("Old Password");
+        Old_Pass.setPreferredSize(new java.awt.Dimension(64, 28));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jLabel3.setText("New Password");
+        New_Pass_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        New_Pass_Label.setText("New Password");
 
-        jPasswordField2.setPreferredSize(new java.awt.Dimension(64, 28));
-        jPasswordField2.addActionListener(new java.awt.event.ActionListener() {
+        New_Pass.setPreferredSize(new java.awt.Dimension(64, 28));
+        New_Pass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField2ActionPerformed(evt);
+                New_PassActionPerformed(evt);
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jButton1.setText("Reset");
+        Reset.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        Reset.setText("Reset");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout User_TabLayout = new javax.swing.GroupLayout(User_Tab);
+        User_Tab.setLayout(User_TabLayout);
+        User_TabLayout.setHorizontalGroup(
+            User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(User_TabLayout.createSequentialGroup()
+                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(User_TabLayout.createSequentialGroup()
                             .addGap(251, 251, 251)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
+                            .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(User_TabLayout.createSequentialGroup()
+                                    .addComponent(Old_Pass_Label)
                                     .addGap(18, 18, 18)
-                                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jLabel1)))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                    .addComponent(Old_Pass, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(User_SubHeading)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, User_TabLayout.createSequentialGroup()
                             .addGap(248, 248, 248)
-                            .addComponent(jLabel3)
+                            .addComponent(New_Pass_Label)
                             .addGap(10, 10, 10)
-                            .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(New_Pass, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(User_TabLayout.createSequentialGroup()
                         .addGap(395, 395, 395)
-                        .addComponent(jButton1))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(Reset))
+                    .addGroup(User_TabLayout.createSequentialGroup()
                         .addGap(353, 353, 353)
-                        .addComponent(Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(User_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(375, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        User_TabLayout.setVerticalGroup(
+            User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(User_TabLayout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addComponent(Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(User_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
-                .addComponent(jLabel1)
+                .addComponent(User_SubHeading)
                 .addGap(99, 99, 99)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Old_Pass_Label)
+                    .addComponent(Old_Pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(New_Pass_Label)
+                    .addComponent(New_Pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
-                .addComponent(jButton1)
+                .addComponent(Reset)
                 .addGap(0, 171, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Login", jPanel2);
+        Settings_Container.addTab("Login", User_Tab);
 
-        Heading1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 36)); // NOI18N
-        Heading1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Heading1.setText("Settings");
-        Heading1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Details_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 36)); // NOI18N
+        Details_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Details_Heading.setText("Settings");
+        Details_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        jLabel4.setText("Change Credentials");
+        Details_SubHeading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
+        Details_SubHeading.setText("Change Credentials");
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jLabel5.setText("Company name");
+        Comp_Name_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        Comp_Name_Label.setText("Company name");
 
-        jTextField1.setPreferredSize(new java.awt.Dimension(64, 28));
+        Comp_Name.setPreferredSize(new java.awt.Dimension(64, 28));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jLabel6.setText("Contact Number");
+        Comp_Contact_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        Comp_Contact_Label.setText("Contact Number");
 
-        jTextField2.setPreferredSize(new java.awt.Dimension(64, 28));
+        Comp_Contact.setPreferredSize(new java.awt.Dimension(64, 28));
 
-        jButton2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jButton2.setText("Change");
+        Save.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        Save.setText("Save Changes");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout Details_TabLayout = new javax.swing.GroupLayout(Details_Tab);
+        Details_Tab.setLayout(Details_TabLayout);
+        Details_TabLayout.setHorizontalGroup(
+            Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Details_TabLayout.createSequentialGroup()
+                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Details_TabLayout.createSequentialGroup()
                                 .addGap(360, 360, 360)
-                                .addComponent(Heading1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(Details_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Details_TabLayout.createSequentialGroup()
                                 .addGap(351, 351, 351)
-                                .addComponent(jLabel4)))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(Details_SubHeading)))
+                        .addGroup(Details_TabLayout.createSequentialGroup()
                             .addGap(198, 198, 198)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel6))
+                            .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Comp_Name_Label)
+                                .addComponent(Comp_Contact_Label))
                             .addGap(23, 23, 23)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(378, 378, 378)
-                        .addComponent(jButton2)))
+                            .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Comp_Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Comp_Contact, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE))))
+                    .addGroup(Details_TabLayout.createSequentialGroup()
+                        .addGap(365, 365, 365)
+                        .addComponent(Save)))
                 .addContainerGap(368, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        Details_TabLayout.setVerticalGroup(
+            Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Details_TabLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addComponent(Heading1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Details_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addComponent(jLabel4)
+                .addComponent(Details_SubHeading)
                 .addGap(65, 65, 65)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Comp_Name_Label)
+                    .addComponent(Comp_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addComponent(jButton2)
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Comp_Contact_Label)
+                    .addComponent(Comp_Contact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addComponent(Save)
+                .addContainerGap(184, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Details", jPanel1);
+        Settings_Container.addTab("Details", Details_Tab);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(Settings_Container, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(Settings_Container, javax.swing.GroupLayout.Alignment.TRAILING)
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField2ActionPerformed
+    private void New_PassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_New_PassActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField2ActionPerformed
+    }//GEN-LAST:event_New_PassActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Heading;
-    private javax.swing.JLabel Heading1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField Comp_Contact;
+    private javax.swing.JLabel Comp_Contact_Label;
+    private javax.swing.JTextField Comp_Name;
+    private javax.swing.JLabel Comp_Name_Label;
+    private javax.swing.JLabel Details_Heading;
+    private javax.swing.JLabel Details_SubHeading;
+    private javax.swing.JPanel Details_Tab;
+    private javax.swing.JPasswordField New_Pass;
+    private javax.swing.JLabel New_Pass_Label;
+    private javax.swing.JPasswordField Old_Pass;
+    private javax.swing.JLabel Old_Pass_Label;
+    private javax.swing.JButton Reset;
+    private javax.swing.JButton Save;
+    private javax.swing.JTabbedPane Settings_Container;
+    private javax.swing.JLabel User_Heading;
+    private javax.swing.JLabel User_SubHeading;
+    private javax.swing.JPanel User_Tab;
     // End of variables declaration//GEN-END:variables
 }
