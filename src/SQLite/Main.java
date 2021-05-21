@@ -56,13 +56,48 @@ public class Main {
             + " TEXT NOT NULL, \"Product Name\" TEXT NOT NULL, \"Price\" REAL"
             + " NOT NULL, \"Available Quantity\" INTEGER NOT NULL, PRIMARY KEY"
             + "(\"Product ID\"));";
+        String configuration = "CREATE TABLE IF NOT EXISTS Configuration (Parameter"
+            + " TEXT NOT NULL, Value TEXT, PRIMARY KEY(Parameter));";
+        String user = "INSERT INTO Configuration (Parameter) VALUES(\"Username\");";
+        String pass = "INSERT INTO Configuration (Parameter) VALUES(\"Password\");";
+        String compName = "INSERT INTO Configuration (Parameter) VALUES(\"Company Name\");";
+        String compNum = "INSERT INTO Configuration (Parameter) VALUES(\"Company Number\");";
+        String compEmail = "INSERT INTO Configuration (Parameter) VALUES(\"Company Email\");";
+        String compAdd = "INSERT INTO Configuration (Parameter) VALUES(\"Company Address\");";
         try {
             Statement mainDBquery = mainDB.createStatement();
+            Statement configDBquery = configDB.createStatement();
             mainDBquery.execute(invoice);
             mainDBquery.execute(inventory);
+            configDBquery.execute(configuration);
+            configDBquery.execute(user);
+            configDBquery.execute(pass);
+            configDBquery.execute(compName);
+            configDBquery.execute(compNum);
+            configDBquery.execute(compEmail);
+            configDBquery.execute(compAdd);
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
+    }
+    
+    public static boolean login(String uname, String passwd) {
+        if (configDB == null)
+            dbConnect();
+        String username = null;
+        String password = null;
+        String user = "SELECT Value FROM Configuration WHERE Parameter = \"Username\";";
+        String pass = "SELECT Value FROM Configuration WHERE Parameter = \"Password\";";
+        try {
+            Statement configDBquery = configDB.createStatement();
+            ResultSet userResult = configDBquery.executeQuery(user);
+            username = userResult.getString("Value");
+            ResultSet passResult = configDBquery.executeQuery(pass);
+            password = passResult.getString("Value");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        return uname.equals(username) && passwd.equals(password);
     }
     
     public static ResultSet invoData() {

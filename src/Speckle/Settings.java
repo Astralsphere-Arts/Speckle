@@ -38,12 +38,11 @@ public class Settings extends javax.swing.JPanel {
         Comp_Name = new javax.swing.JTextField();
         Comp_Contact_Label = new javax.swing.JLabel();
         Comp_Contact = new javax.swing.JTextField();
+        Comp_Email_Label = new javax.swing.JLabel();
+        Comp_Email = new javax.swing.JTextField();
+        Comp_Address_Label = new javax.swing.JLabel();
+        Comp_Address = new javax.swing.JTextArea();
         Save = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
 
         Settings_Container.setTabPlacement(javax.swing.JTabbedPane.LEFT);
         Settings_Container.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -133,91 +132,104 @@ public class Settings extends javax.swing.JPanel {
         Details_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Details_SubHeading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
+        Details_SubHeading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Details_SubHeading.setText("Change Credentials");
+        Details_SubHeading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Comp_Name_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        Comp_Name_Label.setText("Company name");
+        Comp_Name_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Comp_Name_Label.setText("Company Name");
+        Comp_Name_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Comp_Name.setPreferredSize(new java.awt.Dimension(64, 28));
 
         Comp_Contact_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        Comp_Contact_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Comp_Contact_Label.setText("Contact Number");
+        Comp_Contact_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Comp_Contact.setPreferredSize(new java.awt.Dimension(64, 28));
 
+        Comp_Email_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        Comp_Email_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Comp_Email_Label.setText("Company Email");
+        Comp_Email_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        Comp_Address_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        Comp_Address_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Comp_Address_Label.setText("Company Address");
+        Comp_Address_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        Comp_Address.setColumns(20);
+        Comp_Address.setRows(5);
+
         Save.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         Save.setText("Save Changes");
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jLabel1.setText("Company Email");
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jLabel2.setText(" Company Address");
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout Details_TabLayout = new javax.swing.GroupLayout(Details_Tab);
         Details_Tab.setLayout(Details_TabLayout);
         Details_TabLayout.setHorizontalGroup(
             Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Details_TabLayout.createSequentialGroup()
-                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(177, 177, 177)
+                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(Details_TabLayout.createSequentialGroup()
-                        .addGap(198, 198, 198)
-                        .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Comp_Name_Label)
-                            .addComponent(Comp_Contact_Label)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(23, 23, 23)
                         .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Comp_Contact, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
-                            .addComponent(jTextField1)
-                            .addComponent(jScrollPane1)
-                            .addComponent(Comp_Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(Details_TabLayout.createSequentialGroup()
-                        .addGap(368, 368, 368)
-                        .addComponent(Save))
-                    .addGroup(Details_TabLayout.createSequentialGroup()
-                        .addGap(328, 328, 328)
-                        .addComponent(Details_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Details_TabLayout.createSequentialGroup()
-                        .addGap(318, 318, 318)
-                        .addComponent(Details_SubHeading)))
-                .addContainerGap(358, Short.MAX_VALUE))
+                            .addComponent(Comp_Address_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                            .addComponent(Comp_Email_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Comp_Contact_Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Details_TabLayout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addComponent(Comp_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Details_TabLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Comp_Contact, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Comp_Email, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Details_TabLayout.createSequentialGroup()
+                        .addComponent(Comp_Name_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Details_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Comp_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Details_SubHeading))))
+                .addContainerGap(195, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Details_TabLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Save)
+                .addGap(381, 381, 381))
         );
         Details_TabLayout.setVerticalGroup(
             Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Details_TabLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(46, 46, 46)
                 .addComponent(Details_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(18, 18, 18)
                 .addComponent(Details_SubHeading)
-                .addGap(63, 63, 63)
-                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Comp_Name_Label)
-                    .addComponent(Comp_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Comp_Contact_Label)
-                    .addComponent(Comp_Contact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
+                .addGap(47, 47, 47)
                 .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Details_TabLayout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jLabel2))
-                    .addGroup(Details_TabLayout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(29, 29, 29)
+                    .addComponent(Comp_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Comp_Name_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Comp_Contact_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Comp_Contact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Comp_Email_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Comp_Email, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Comp_Address_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                    .addComponent(Comp_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(49, 49, 49)
                 .addComponent(Save)
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
+
+        Comp_Name_Label.getAccessibleContext().setAccessibleName("Company Name");
+        Comp_Address_Label.getAccessibleContext().setAccessibleName("Company Address");
 
         Settings_Container.addTab("Details", Details_Tab);
 
@@ -239,8 +251,12 @@ public class Settings extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea Comp_Address;
+    private javax.swing.JLabel Comp_Address_Label;
     private javax.swing.JTextField Comp_Contact;
     private javax.swing.JLabel Comp_Contact_Label;
+    private javax.swing.JTextField Comp_Email;
+    private javax.swing.JLabel Comp_Email_Label;
     private javax.swing.JTextField Comp_Name;
     private javax.swing.JLabel Comp_Name_Label;
     private javax.swing.JLabel Details_Heading;
@@ -256,10 +272,5 @@ public class Settings extends javax.swing.JPanel {
     private javax.swing.JLabel User_Heading;
     private javax.swing.JLabel User_SubHeading;
     private javax.swing.JPanel User_Tab;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

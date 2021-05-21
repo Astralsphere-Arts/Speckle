@@ -2,6 +2,8 @@ package Speckle;
 
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import java.awt.Insets;
+import java.util.Arrays;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 /**
@@ -22,7 +24,7 @@ public class Main extends javax.swing.JFrame {
         Container_Deck = (java.awt.CardLayout)Container.getLayout();
         StartUp_Deck = (java.awt.CardLayout)StartUp_Container.getLayout();
         if (SQLite.Main.firstUse)
-            StartUp_Deck.show(StartUp_Container, "signUp");
+            StartUp_Deck.show(StartUp_Container, "regUser");
         else
             StartUp_Deck.show(StartUp_Container, "signIn");
         Speckle.Home scene = new Home();
@@ -57,8 +59,8 @@ public class Main extends javax.swing.JFrame {
         Password_Label = new javax.swing.JLabel();
         Password = new javax.swing.JPasswordField();
         SignIn_Button = new javax.swing.JButton();
-        SignUp = new javax.swing.JPanel();
-        SignUp2 = new javax.swing.JPanel();
+        SignUp_User = new javax.swing.JPanel();
+        SignUp_Details = new javax.swing.JPanel();
         Application = new javax.swing.JPanel();
         SideBar = new javax.swing.JPanel();
         Home = new javax.swing.JLabel();
@@ -234,31 +236,31 @@ public class Main extends javax.swing.JFrame {
 
         StartUp_Container.add(SignIn, "signIn");
 
-        javax.swing.GroupLayout SignUpLayout = new javax.swing.GroupLayout(SignUp);
-        SignUp.setLayout(SignUpLayout);
-        SignUpLayout.setHorizontalGroup(
-            SignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout SignUp_UserLayout = new javax.swing.GroupLayout(SignUp_User);
+        SignUp_User.setLayout(SignUp_UserLayout);
+        SignUp_UserLayout.setHorizontalGroup(
+            SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        SignUpLayout.setVerticalGroup(
-            SignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        SignUp_UserLayout.setVerticalGroup(
+            SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        StartUp_Container.add(SignUp, "signUp");
+        StartUp_Container.add(SignUp_User, "regUser");
 
-        javax.swing.GroupLayout SignUp2Layout = new javax.swing.GroupLayout(SignUp2);
-        SignUp2.setLayout(SignUp2Layout);
-        SignUp2Layout.setHorizontalGroup(
-            SignUp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout SignUp_DetailsLayout = new javax.swing.GroupLayout(SignUp_Details);
+        SignUp_Details.setLayout(SignUp_DetailsLayout);
+        SignUp_DetailsLayout.setHorizontalGroup(
+            SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 502, Short.MAX_VALUE)
         );
-        SignUp2Layout.setVerticalGroup(
-            SignUp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        SignUp_DetailsLayout.setVerticalGroup(
+            SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 574, Short.MAX_VALUE)
         );
 
-        StartUp_Container.add(SignUp2, "card4");
+        StartUp_Container.add(SignUp_Details, "regDetails");
 
         javax.swing.GroupLayout StartUpLayout = new javax.swing.GroupLayout(StartUp);
         StartUp.setLayout(StartUpLayout);
@@ -509,7 +511,13 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_CloseMouseExited
 
     private void SignIn_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignIn_ButtonActionPerformed
-        Container_Deck.show(Container, "app");
+        String uname = Username.getText();
+        String passwd = new String(Password.getPassword());
+        if (SQLite.Main.login(uname, passwd))
+            Container_Deck.show(Container, "app");
+        else
+            JOptionPane.showMessageDialog(null, "The Username or Password enterd are Incorrect."
+                + " Please Try Again!", "Incorrect Credentials", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_SignIn_ButtonActionPerformed
 
     private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
@@ -687,8 +695,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel SignIn_Heading;
     private javax.swing.JLabel SignIn_Para;
     private javax.swing.JLabel SignIn_SubHeading;
-    private javax.swing.JPanel SignUp;
-    private javax.swing.JPanel SignUp2;
+    private javax.swing.JPanel SignUp_Details;
+    private javax.swing.JPanel SignUp_User;
     private javax.swing.JPanel StartUp;
     private javax.swing.JLabel StartUp_Banner;
     private javax.swing.JPanel StartUp_Container;
