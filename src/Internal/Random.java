@@ -1,4 +1,4 @@
-package SQLite;
+package Internal;
 
 import java.security.SecureRandom;
 

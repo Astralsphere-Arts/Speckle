@@ -57,7 +57,7 @@ public class Invoicing extends javax.swing.JPanel {
             }
         });
 
-        Invoice.setModel(DbUtils.resultSetToTableModel(SQLite.Main.invoData()));
+        Invoice.setModel(DbUtils.resultSetToTableModel(Internal.SQLite.invoData()));
         Invoice.setShowGrid(true);
         Invoice.getTableHeader().setReorderingAllowed(false);
         Invoice.setDefaultEditor(Object.class, null);
@@ -180,7 +180,7 @@ public class Invoicing extends javax.swing.JPanel {
         int[] rows = Invoice.getSelectedRows();
         for (int i=0; i<rows.length; i++) {
             String id = Invoice.getModel().getValueAt(rows[i]-i, 0).toString();
-            SQLite.Main.remRowInvo(id);
+            Internal.SQLite.remRowInvo(id);
             Invoice_Model.removeRow(rows[i]-i);
         }
     }//GEN-LAST:event_RemoveActionPerformed

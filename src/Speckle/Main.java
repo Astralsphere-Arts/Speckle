@@ -2,7 +2,6 @@ package Speckle;
 
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import java.awt.Insets;
-import java.util.Arrays;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
@@ -16,14 +15,14 @@ public class Main extends javax.swing.JFrame {
      * Creates new form Main
      */
     public Main() {
-        SQLite.Main.initDB();
+        Internal.SQLite.initDB();
         this.Active = new java.awt.Color(0, 136, 255);
         this.Hover = new java.awt.Color(0, 165, 255);
         this.White = new java.awt.Color(255, 255, 255);
         initComponents();
         Container_Deck = (java.awt.CardLayout)Container.getLayout();
         StartUp_Deck = (java.awt.CardLayout)StartUp_Container.getLayout();
-        if (SQLite.Main.firstUse)
+        if (Internal.SQLite.firstUse)
             StartUp_Deck.show(StartUp_Container, "regUser");
         else
             StartUp_Deck.show(StartUp_Container, "signIn");
@@ -513,7 +512,7 @@ public class Main extends javax.swing.JFrame {
     private void SignIn_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignIn_ButtonActionPerformed
         String uname = Username.getText();
         String passwd = new String(Password.getPassword());
-        if (SQLite.Main.login(uname, passwd))
+        if (Internal.SQLite.login(uname, passwd))
             Container_Deck.show(Container, "app");
         else
             JOptionPane.showMessageDialog(null, "The Username or Password enterd are Incorrect."

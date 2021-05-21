@@ -1,4 +1,4 @@
-package SQLite;
+package Internal;
 
 import java.io.File;
 import java.nio.file.Files;
@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  * @author Astralsphere Arts
  */
 
-public class Main {
+public class SQLite {
     public static boolean firstUse;
     static File dbFolder = new File("data");
     static Path currentDirectory = Paths.get(System.getProperty("user.dir"));
