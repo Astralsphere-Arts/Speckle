@@ -58,6 +58,7 @@ public class Main extends javax.swing.JFrame {
         Password = new javax.swing.JPasswordField();
         SignIn_Button = new javax.swing.JButton();
         SignUp = new javax.swing.JPanel();
+        SignUp2 = new javax.swing.JPanel();
         Application = new javax.swing.JPanel();
         SideBar = new javax.swing.JPanel();
         Home = new javax.swing.JLabel();
@@ -245,6 +246,19 @@ public class Main extends javax.swing.JFrame {
         );
 
         StartUp_Container.add(SignUp, "signUp");
+
+        javax.swing.GroupLayout SignUp2Layout = new javax.swing.GroupLayout(SignUp2);
+        SignUp2.setLayout(SignUp2Layout);
+        SignUp2Layout.setHorizontalGroup(
+            SignUp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 502, Short.MAX_VALUE)
+        );
+        SignUp2Layout.setVerticalGroup(
+            SignUp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 574, Short.MAX_VALUE)
+        );
+
+        StartUp_Container.add(SignUp2, "card4");
 
         javax.swing.GroupLayout StartUpLayout = new javax.swing.GroupLayout(StartUp);
         StartUp.setLayout(StartUpLayout);
@@ -674,6 +688,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel SignIn_Para;
     private javax.swing.JLabel SignIn_SubHeading;
     private javax.swing.JPanel SignUp;
+    private javax.swing.JPanel SignUp2;
     private javax.swing.JPanel StartUp;
     private javax.swing.JLabel StartUp_Banner;
     private javax.swing.JPanel StartUp_Container;
