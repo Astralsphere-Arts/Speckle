@@ -59,26 +59,7 @@ public class Main extends javax.swing.JFrame {
         Password = new javax.swing.JPasswordField();
         SignIn_Button = new javax.swing.JButton();
         SignUp_User = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         SignUp_Details = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton2 = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
         Application = new javax.swing.JPanel();
         SideBar = new javax.swing.JPanel();
         Home = new javax.swing.JLabel();
@@ -254,177 +235,31 @@ public class Main extends javax.swing.JFrame {
 
         StartUp_Container.add(SignIn, "signIn");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jLabel1.setText("Username");
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jLabel2.setText("Password");
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        jLabel3.setText("Sign Up ");
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        jLabel4.setText("New User? ");
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        jLabel5.setText("Sign up to use Speckle");
-
-        jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jButton1.setText("Next");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout SignUp_UserLayout = new javax.swing.GroupLayout(SignUp_User);
         SignUp_User.setLayout(SignUp_UserLayout);
         SignUp_UserLayout.setHorizontalGroup(
             SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SignUp_UserLayout.createSequentialGroup()
-                .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(SignUp_UserLayout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(jLabel5))
-                    .addGroup(SignUp_UserLayout.createSequentialGroup()
-                        .addGap(167, 167, 167)
-                        .addComponent(jLabel4))
-                    .addGroup(SignUp_UserLayout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))
-                        .addGap(29, 29, 29)
-                        .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField1)
-                                .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
-                            .addGroup(SignUp_UserLayout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addComponent(jButton1)))))
-                .addContainerGap(171, Short.MAX_VALUE))
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         SignUp_UserLayout.setVerticalGroup(
             SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SignUp_UserLayout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel5)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addGap(63, 63, 63)
-                .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(29, 29, 29)
-                .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
-                .addComponent(jButton1)
-                .addContainerGap(182, Short.MAX_VALUE))
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         StartUp_Container.add(SignUp_User, "regUser");
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jLabel6.setText("Company Name");
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jLabel7.setText("Company Number");
-
-        jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jLabel8.setText("Company Email");
-
-        jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jLabel9.setText("Company Address");
-
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-        jScrollPane1.setHorizontalScrollBar(null);
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        jButton2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jButton2.setText("Signup");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jLabel10.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        jLabel10.setText("More Details");
 
         javax.swing.GroupLayout SignUp_DetailsLayout = new javax.swing.GroupLayout(SignUp_Details);
         SignUp_Details.setLayout(SignUp_DetailsLayout);
         SignUp_DetailsLayout.setHorizontalGroup(
             SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SignUp_DetailsLayout.createSequentialGroup()
-                .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(SignUp_DetailsLayout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(SignUp_DetailsLayout.createSequentialGroup()
-                                .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(18, 18, 18)
-                                .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                    .addComponent(jTextField3)
-                                    .addComponent(jTextField4)))
-                            .addGroup(SignUp_DetailsLayout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(33, 33, 33)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(SignUp_DetailsLayout.createSequentialGroup()
-                        .addGap(191, 191, 191)
-                        .addComponent(jLabel10)))
-                .addContainerGap(141, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SignUp_DetailsLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(184, 184, 184))
+            .addGap(0, 502, Short.MAX_VALUE)
         );
         SignUp_DetailsLayout.setVerticalGroup(
             SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SignUp_DetailsLayout.createSequentialGroup()
-                .addGap(86, 86, 86)
-                .addComponent(jLabel10)
-                .addGap(75, 75, 75)
-                .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(SignUp_DetailsLayout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addGap(41, 41, 41))
-                    .addGroup(SignUp_DetailsLayout.createSequentialGroup()
-                        .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                            .addComponent(jTextField3))
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)))
-                .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addGap(30, 30, 30)
-                .addComponent(jButton2)
-                .addContainerGap(125, Short.MAX_VALUE))
+            .addGap(0, 574, Short.MAX_VALUE)
         );
 
-        StartUp_Container.add(SignUp_Details, "signup");
-        SignUp_Details.getAccessibleContext().setAccessibleName("");
-        SignUp_Details.getAccessibleContext().setAccessibleDescription("");
-        SignUp_Details.getAccessibleContext().setAccessibleParent(Container);
+        StartUp_Container.add(SignUp_Details, "regDetails");
 
         javax.swing.GroupLayout StartUpLayout = new javax.swing.GroupLayout(StartUp);
         StartUp.setLayout(StartUpLayout);
@@ -438,7 +273,7 @@ public class Main extends javax.swing.JFrame {
         StartUpLayout.setVerticalGroup(
             StartUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(StartUp_Banner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(StartUp_Container, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(StartUp_Container, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         Container.add(StartUp, "start");
@@ -809,14 +644,6 @@ public class Main extends javax.swing.JFrame {
         About.setBackground(Stored);
     }//GEN-LAST:event_AboutMouseExited
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      Container_Deck.show(Container, "regDetails");
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Container_Deck.show(Container, "app");
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -875,25 +702,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField Username;
     private javax.swing.JLabel Username_Label;
     private javax.swing.JLabel Window_Title;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
     private final java.awt.CardLayout Container_Deck;
     private final java.awt.CardLayout StartUp_Deck;
