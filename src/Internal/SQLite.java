@@ -49,15 +49,14 @@ public class SQLite {
         if (mainDB == null || configDB == null)
             dbConnect();
         String invoice = "CREATE TABLE IF NOT EXISTS Invoice (\"Invoice ID\""
-            + " TEXT NOT NULL, \"Customer Name\" TEXT NOT NULL, \"Contact Number\""
-            + " INTEGER NOT NULL, \"Date of Sale\" TEXT NOT NULL, \"Sale Amount\""
-            + " REAL NOT NULL, PRIMARY KEY(\"Invoice ID\"));";
+            + " TEXT NOT NULL UNIQUE, \"Customer Name\" TEXT, \"Contact Number\""
+            + " TEXT, \"Date of Sale\" TEXT, \"Sale Amount\" TEXT, PRIMARY"
+            + " KEY(\"Invoice ID\"));";
         String inventory = "CREATE TABLE IF NOT EXISTS Inventory (\"Product ID\""
-            + " TEXT NOT NULL, \"Product Name\" TEXT NOT NULL, \"Price\" REAL"
-            + " NOT NULL, \"Available Quantity\" INTEGER NOT NULL, PRIMARY KEY"
-            + "(\"Product ID\"));";
+            + " TEXT NOT NULL UNIQUE, \"Product Name\" TEXT, \"Price\" TEXT,"
+            + " \"Available Quantity\" TEXT, PRIMARY KEY(\"Product ID\"));";
         String configuration = "CREATE TABLE IF NOT EXISTS Configuration (Parameter"
-            + " TEXT NOT NULL, Value TEXT, PRIMARY KEY(Parameter));";
+            + " TEXT NOT NULL UNIQUE, Value TEXT, PRIMARY KEY(Parameter));";
         String user = "INSERT INTO Configuration (Parameter) VALUES(\"Username\");";
         String pass = "INSERT INTO Configuration (Parameter) VALUES(\"Password\");";
         String compName = "INSERT INTO Configuration (Parameter) VALUES(\"Company Name\");";
@@ -127,6 +126,23 @@ public class SQLite {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
         return invResult;
+    }
+    
+    public static void updateInven(String id, String name, String price, String quan) {
+        if (mainDB == null)
+            dbConnect();
+        String inventory = "REPLACE INTO Inventory (\"Product ID\", \"Product Name\","
+            + " \"Price\", \"Available Quantity\") VALUES(?, ?, ?, ?);";
+        try {
+            PreparedStatement mainDBquery = mainDB.prepareStatement(inventory);
+            mainDBquery.setString(1, id);
+            mainDBquery.setString(2, name);
+            mainDBquery.setString(3, price);
+            mainDBquery.setString(4, quan);
+            mainDBquery.executeUpdate();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
     
     public static void remRowInvo(String ID) {

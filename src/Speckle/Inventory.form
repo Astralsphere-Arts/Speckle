@@ -83,7 +83,9 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="final TableColumnModel columnModel = Inventory.getColumnModel();&#xd;&#xa;for (int column = 0; column &lt; Inventory.getColumnCount(); column++) {&#xd;&#xa;    int width = 15;&#xd;&#xa;    for (int row = 0; row &lt; Inventory.getRowCount(); row++) {&#xd;&#xa;        TableCellRenderer renderer = Inventory.getCellRenderer(row, column);&#xd;&#xa;        Component comp = Inventory.prepareRenderer(renderer, row, column);&#xd;&#xa;        width = Math.max(comp.getPreferredSize().width +1 , width);&#xd;&#xa;    }&#xd;&#xa;    if(width &gt; 300) width=300;&#xd;&#xa;    columnModel.getColumn(column).setPreferredWidth(width);&#xd;&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTable() {&#xa;    @Override&#xa;    public boolean isCellEditable(int rowIndex, int columnIndex) {&#xa;        return columnIndex != 0;&#xa;    }&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="Inventory.getModel().addTableModelListener(new javax.swing.event.TableModelListener() {&#xa;    public void tableChanged(javax.swing.event.TableModelEvent evt) {&#xa;        InventoryTableChanged(evt);&#xa;    }&#xa;});"/>
+            <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="final TableColumnModel columnModel = Inventory.getColumnModel();&#xa;for (int column = 0; column &lt; Inventory.getColumnCount(); column++) {&#xa;    int width = 15;&#xa;    for (int row = 0; row &lt; Inventory.getRowCount(); row++) {&#xa;        TableCellRenderer renderer = Inventory.getCellRenderer(row, column);&#xa;        Component comp = Inventory.prepareRenderer(renderer, row, column);&#xa;        width = Math.max(comp.getPreferredSize().width +1 , width);&#xa;    }&#xa;    if(width &gt; 300) width=300;&#xa;    columnModel.getColumn(column).setPreferredWidth(width);&#xa;}"/>
           </AuxValues>
         </Component>
       </SubComponents>
@@ -111,6 +113,9 @@
         <Property name="text" type="java.lang.String" value="Update Stock"/>
         <Property name="toolTipText" type="java.lang.String" value="Update Stocks for Selected Item"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

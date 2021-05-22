@@ -1,6 +1,7 @@
 package Speckle;
 
 import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
@@ -31,7 +32,12 @@ public class Inventory extends javax.swing.JPanel {
 
         Heading = new javax.swing.JLabel();
         Table_Container = new javax.swing.JScrollPane();
-        Inventory = new javax.swing.JTable();
+        Inventory = new javax.swing.JTable() {
+            @Override
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return columnIndex != 0;
+            }
+        };
         Add = new javax.swing.JButton();
         Remove = new javax.swing.JButton();
         Update = new javax.swing.JButton();
@@ -44,6 +50,11 @@ public class Inventory extends javax.swing.JPanel {
         Inventory.setModel(DbUtils.resultSetToTableModel(Internal.SQLite.invenData()));
         Inventory.setShowGrid(true);
         Inventory.getTableHeader().setReorderingAllowed(false);
+        Inventory.getModel().addTableModelListener(new javax.swing.event.TableModelListener() {
+            public void tableChanged(javax.swing.event.TableModelEvent evt) {
+                InventoryTableChanged(evt);
+            }
+        });
         Table_Container.setViewportView(Inventory);
         final TableColumnModel columnModel = Inventory.getColumnModel();
         for (int column = 0; column < Inventory.getColumnCount(); column++) {
@@ -75,6 +86,11 @@ public class Inventory extends javax.swing.JPanel {
 
         Update.setText("Update Stock");
         Update.setToolTipText("Update Stocks for Selected Item");
+        Update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -111,6 +127,16 @@ public class Inventory extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void InventoryTableChanged(javax.swing.event.TableModelEvent evt) {
+        for (int row = 0; row < Inventory.getRowCount(); row++) {
+            String id = (String) Inventory.getValueAt(row, 0);
+            String name = (String) Inventory.getValueAt(row, 1);
+            String price = (String) Inventory.getValueAt(row, 2);
+            String quan = (String) Inventory.getValueAt(row, 3);
+            Internal.SQLite.updateInven(id, name, price, quan);
+        }
+    }
+    
     private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
         Inventory_Model.addRow(new Object[] {Internal.Random.ID(8), null, null, null});
     }//GEN-LAST:event_AddActionPerformed
@@ -118,11 +144,23 @@ public class Inventory extends javax.swing.JPanel {
     private void RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveActionPerformed
         int[] rows = Inventory.getSelectedRows();
         for (int i=0; i<rows.length; i++) {
-            String id = Inventory.getModel().getValueAt(rows[i]-i, 0).toString();
+            String id = Inventory.getValueAt(rows[i]-i, 0).toString();
             Internal.SQLite.remRowInven(id);
             Inventory_Model.removeRow(rows[i]-i);
         }
     }//GEN-LAST:event_RemoveActionPerformed
+
+    private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
+        int row = Inventory.getSelectedRow();
+        String id = Inventory.getValueAt(row, 0).toString();
+        String name = Inventory.getValueAt(row, 1).toString();
+        String price = Inventory.getValueAt(row, 2).toString();
+        String quantity = Inventory.getValueAt(row, 3).toString();
+        String update = JOptionPane.showInputDialog(null, "Enter the Amount of Stock"
+            + " You want to Increase", "Update Stock", JOptionPane.PLAIN_MESSAGE);
+        String quan = Integer.toString(Integer.parseInt(quantity) + Integer.parseInt(update));
+        Internal.SQLite.updateInven(id, name, price, quan);
+    }//GEN-LAST:event_UpdateActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
