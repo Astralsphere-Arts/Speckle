@@ -34,7 +34,12 @@ public class Invoicing extends javax.swing.JPanel {
         Heading = new javax.swing.JLabel();
         New_Invoice = new javax.swing.JButton();
         Table_Container = new javax.swing.JScrollPane();
-        Invoice = new javax.swing.JTable();
+        Invoice = new javax.swing.JTable() {
+            @Override
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return false;
+            }
+        };
         View = new javax.swing.JButton();
         Remove = new javax.swing.JButton();
         Export = new javax.swing.JButton();
@@ -60,7 +65,6 @@ public class Invoicing extends javax.swing.JPanel {
         Invoice.setModel(DbUtils.resultSetToTableModel(Internal.SQLite.invoData()));
         Invoice.setShowGrid(true);
         Invoice.getTableHeader().setReorderingAllowed(false);
-        Invoice.setDefaultEditor(Object.class, null);
         Table_Container.setViewportView(Invoice);
         final TableColumnModel columnModel = Invoice.getColumnModel();
         for (int column = 0; column < Invoice.getColumnCount(); column++) {
@@ -179,7 +183,7 @@ public class Invoicing extends javax.swing.JPanel {
         DefaultTableModel Invoice_Model = (DefaultTableModel) this.Invoice.getModel();
         int[] rows = Invoice.getSelectedRows();
         for (int i=0; i<rows.length; i++) {
-            String id = Invoice.getModel().getValueAt(rows[i]-i, 0).toString();
+            String id = Invoice.getValueAt(rows[i]-i, 0).toString();
             Internal.SQLite.remRowInvo(id);
             Invoice_Model.removeRow(rows[i]-i);
         }
