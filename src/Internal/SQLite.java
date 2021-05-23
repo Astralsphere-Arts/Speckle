@@ -48,12 +48,12 @@ public class SQLite {
     static void dbTables() {
         if (mainDB == null || configDB == null)
             dbConnect();
-        String invoice = "CREATE TABLE IF NOT EXISTS Invoice ('Invoice ID' TEXT NOT"
-            + " NULL UNIQUE, 'Customer Name' TEXT, 'Contact Number' TEXT, 'Date of"
-            + " Sale' TEXT, 'Sale Amount' TEXT, PRIMARY KEY('Invoice ID'));";
-        String inventory = "CREATE TABLE IF NOT EXISTS Inventory ('Product ID' TEXT"
-            + " NOT NULL UNIQUE, 'Product Name' TEXT, 'Price' TEXT, 'Available"
-            + " Quantity' TEXT, PRIMARY KEY('Product ID'));";
+        String invoice = "CREATE TABLE IF NOT EXISTS Invoice (\"Invoice ID\" TEXT NOT"
+            + " NULL UNIQUE, \"Customer Name\" TEXT, \"Contact Number\" TEXT, \"Date of"
+            + " Sale\" TEXT, \"Sale Amount\" TEXT, PRIMARY KEY(\"Invoice ID\"));";
+        String inventory = "CREATE TABLE IF NOT EXISTS Inventory (\"Product ID\" TEXT"
+            + " NOT NULL UNIQUE, \"Product Name\" TEXT, \"Price\" TEXT, \"Available"
+            + " Quantity\" TEXT, PRIMARY KEY(\"Product ID\"));";
         String configuration = "CREATE TABLE IF NOT EXISTS Configuration (Parameter"
             + " TEXT NOT NULL UNIQUE, Value TEXT, PRIMARY KEY(Parameter));";
         String configData = "INSERT INTO Configuration (Parameter) VALUES('Username'),"
@@ -93,8 +93,8 @@ public class SQLite {
     public static void signUp1(String usname, String pass) {
         if(configDB == null)
             dbConnect();
-        String username = "UPDATE Configuration SET Value=? WHERE Parameter='Username';"; 
-        String password = "UPDATE Configuration SET Value=? WHERE Parameter='Password';";
+        String username = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Username';"; 
+        String password = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Password';";
         try {
             PreparedStatement configDBquery = configDB.prepareStatement(username);
             configDBquery.setString(1, usname);
@@ -110,10 +110,10 @@ public class SQLite {
     public static void signUp2(String cname,  String cnumber, String cmail, String caddress) {
         if(configDB==null)
             dbConnect();
-        String name = "UPDATE Configuration SET Value=? WHERE Parameter='Company Name';";
-        String number = "UPDATE Configuration SET Value=? WHERE Parameter='Company Number';";
-        String mail = "UPDATE Configuration SET Value=? WHERE Parameter='Company Email';";
-        String address = "UPDATE Configuration SET Value=? WHERE Parameter='Company Address';";
+        String name = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Company Name';";
+        String number = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Company Number';";
+        String mail = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Company Email';";
+        String address = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Company Address';";
         try {
             PreparedStatement configDBquery = configDB.prepareStatement(name);
             configDBquery.setString(1, cname);
@@ -136,8 +136,8 @@ public class SQLite {
         if (mainDB == null)
             dbConnect();
         ResultSet invResult = null;
-        String invoice = "SELECT 'Invoice ID', 'Customer Name', 'Contact Number',"
-            + " 'Date of Sale', 'Sale Amount' FROM Invoice;";
+        String invoice = "SELECT \"Invoice ID\", \"Customer Name\", \"Contact Number\","
+            + " \"Date of Sale\", \"Sale Amount\" FROM Invoice;";
         try {
             Statement mainDBquery = mainDB.createStatement();
             invResult = mainDBquery.executeQuery(invoice);
@@ -164,8 +164,8 @@ public class SQLite {
     public static void updateInven(String id, String name, String price, String quan) {
         if (mainDB == null)
             dbConnect();
-        String inventory = "REPLACE INTO Inventory ('Product ID', 'Product Name',"
-            + " 'Price', 'Available Quantity') VALUES(?, ?, ?, ?);";
+        String inventory = "REPLACE INTO Inventory (\"Product ID\", \"Product Name\","
+            + " \"Price\", \"Available Quantity\") VALUES(?, ?, ?, ?);";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(inventory);
             mainDBquery.setString(1, id);
@@ -181,7 +181,7 @@ public class SQLite {
     public static void remRowInvo(String id) {
         if (mainDB == null)
             dbConnect();
-        String invoice = "DELETE FROM Invoice WHERE 'Invoice ID'=?;";
+        String invoice = "DELETE FROM Invoice WHERE \"Invoice ID\" = ?;";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(invoice);
             mainDBquery.setString(1,id);
@@ -194,7 +194,7 @@ public class SQLite {
     public static void remRowInven(String id) {
         if (mainDB == null)
             dbConnect();
-        String inventory = "DELETE FROM Inventory WHERE 'Product ID'=?;";
+        String inventory = "DELETE FROM Inventory WHERE \"Product ID\" = ?;";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(inventory);
             mainDBquery.setString(1,id);
@@ -207,8 +207,8 @@ public class SQLite {
     public static void updateStock(String id, String quan) {
         if (mainDB == null)
             dbConnect();
-        String inventory = "UPDATE Inventory SET 'Available Quantity'=? WHERE"
-            + " 'Product ID'=?;";
+        String inventory = "UPDATE Inventory SET \"Available Quantity\" = ? WHERE"
+            + " \"Product ID\" = ?;";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(inventory);
             mainDBquery.setString(1, quan);

@@ -334,7 +334,7 @@
                     <Container class="javax.swing.JPanel" name="SignUp_User">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                          <CardConstraints cardName="signUp"/>
+                          <CardConstraints cardName="signUp1"/>
                         </Constraint>
                       </Constraints>
 
@@ -345,31 +345,31 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="198" max="-2" attributes="0"/>
-                                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="SignUp_User_Heading" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="175" max="-2" attributes="0"/>
-                                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="SignUp_User_Para" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="SignUp_Username_Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="SignUp_Password_Label" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="Name" max="32767" attributes="0"/>
-                                              <Component id="Pass" pref="164" max="32767" attributes="0"/>
+                                              <Component id="SignUp_Username" max="32767" attributes="0"/>
+                                              <Component id="SignUp_Password" pref="164" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="207" max="-2" attributes="0"/>
-                                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Next_Button" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="215" max="-2" attributes="0"/>
-                                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="SignUp_User_SubHeading" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace pref="174" max="32767" attributes="0"/>
@@ -380,30 +380,30 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="SignUp_User_Heading" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="SignUp_User_Para" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="SignUp_User_SubHeading" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Name" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                      <Component id="SignUp_Username_Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="SignUp_Username" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Pass" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                                      <Component id="SignUp_Password_Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="SignUp_Password" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Next_Button" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace pref="185" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JLabel" name="jLabel1">
+                        <Component class="javax.swing.JLabel" name="SignUp_User_Heading">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Semibold" size="20" style="0"/>
@@ -411,7 +411,7 @@
                             <Property name="text" type="java.lang.String" value="New User?"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel2">
+                        <Component class="javax.swing.JLabel" name="SignUp_User_Para">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Semibold" size="15" style="0"/>
@@ -419,7 +419,7 @@
                             <Property name="text" type="java.lang.String" value="Sign up to use Speckle"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel3">
+                        <Component class="javax.swing.JLabel" name="SignUp_User_SubHeading">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Semibold" size="20" style="0"/>
@@ -427,7 +427,7 @@
                             <Property name="text" type="java.lang.String" value="SignUp"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel4">
+                        <Component class="javax.swing.JLabel" name="SignUp_Username_Label">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Semibold" size="15" style="0"/>
@@ -435,7 +435,9 @@
                             <Property name="text" type="java.lang.String" value="Username"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel5">
+                        <Component class="javax.swing.JTextField" name="SignUp_Username">
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="SignUp_Password_Label">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Semibold" size="15" style="0"/>
@@ -443,14 +445,9 @@
                             <Property name="text" type="java.lang.String" value="Password"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="Name">
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NameActionPerformed"/>
-                          </Events>
+                        <Component class="javax.swing.JPasswordField" name="SignUp_Password">
                         </Component>
-                        <Component class="javax.swing.JPasswordField" name="Pass">
-                        </Component>
-                        <Component class="javax.swing.JButton" name="jButton1">
+                        <Component class="javax.swing.JButton" name="Next_Button">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Semibold" size="15" style="0"/>
@@ -458,7 +455,7 @@
                             <Property name="text" type="java.lang.String" value="Next"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Next_ButtonActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -477,41 +474,41 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="188" max="-2" attributes="0"/>
-                                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                          <Component id="SignUp_Details_Heading" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Comp_Name_Label" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
-                                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="SignUp_Button" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                                                   <Group type="102" attributes="0">
                                                       <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                                                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="Comp_Email_Label" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="1" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="Comp_Contact_Label" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                                                  <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="Comp_Address_Label" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="num" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="name" max="32767" attributes="0"/>
-                                              <Component id="mail" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="jScrollPane1" pref="156" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="Comp_Address" pref="0" max="32767" attributes="0"/>
+                                              <Component id="Comp_Contact" alignment="0" pref="156" max="32767" attributes="0"/>
+                                              <Component id="Comp_Name" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="Comp_Email" alignment="1" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -523,39 +520,36 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                  <Component id="SignUp_Details_Heading" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="name" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Comp_Name" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                      <Component id="Comp_Name_Label" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="num" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                                      <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Comp_Contact" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                      <Component id="Comp_Contact_Label" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="mail" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                                      <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Comp_Email" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                      <Component id="Comp_Email_Label" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jScrollPane1" min="-2" pref="46" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="Comp_Address" pref="0" max="32767" attributes="0"/>
+                                      <Component id="Comp_Address_Label" pref="38" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="92" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="SignUp_Button" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="86" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JLabel" name="jLabel6">
+                        <Component class="javax.swing.JLabel" name="SignUp_Details_Heading">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Semibold" size="20" style="0"/>
@@ -563,7 +557,7 @@
                             <Property name="text" type="java.lang.String" value="More Details"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel7">
+                        <Component class="javax.swing.JLabel" name="Comp_Name_Label">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Semibold" size="15" style="0"/>
@@ -571,7 +565,9 @@
                             <Property name="text" type="java.lang.String" value="Company Name"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel8">
+                        <Component class="javax.swing.JTextField" name="Comp_Name">
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="Comp_Contact_Label">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Semibold" size="15" style="0"/>
@@ -579,7 +575,9 @@
                             <Property name="text" type="java.lang.String" value="Company Number"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel9">
+                        <Component class="javax.swing.JTextField" name="Comp_Contact">
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="Comp_Email_Label">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Semibold" size="15" style="0"/>
@@ -587,7 +585,9 @@
                             <Property name="text" type="java.lang.String" value="Company Email"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel10">
+                        <Component class="javax.swing.JTextField" name="Comp_Email">
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="Comp_Address_Label">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Semibold" size="15" style="0"/>
@@ -595,32 +595,13 @@
                             <Property name="text" type="java.lang.String" value="Company Address"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="name">
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="num">
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="mail">
-                        </Component>
-                        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+                        <Component class="javax.swing.JTextArea" name="Comp_Address">
                           <Properties>
-                            <Property name="horizontalScrollBarPolicy" type="int" value="31"/>
-                            <Property name="verticalScrollBarPolicy" type="int" value="21"/>
+                            <Property name="columns" type="int" value="20"/>
+                            <Property name="rows" type="int" value="5"/>
                           </Properties>
-                          <AuxValues>
-                            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                          </AuxValues>
-
-                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                          <SubComponents>
-                            <Component class="javax.swing.JTextArea" name="address">
-                              <Properties>
-                                <Property name="columns" type="int" value="20"/>
-                                <Property name="rows" type="int" value="5"/>
-                              </Properties>
-                            </Component>
-                          </SubComponents>
-                        </Container>
-                        <Component class="javax.swing.JButton" name="jButton2">
+                        </Component>
+                        <Component class="javax.swing.JButton" name="SignUp_Button">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Semibold" size="15" style="0"/>
@@ -628,7 +609,7 @@
                             <Property name="text" type="java.lang.String" value="SignUp"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SignUp_ButtonActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>

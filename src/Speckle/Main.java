@@ -23,7 +23,7 @@ public class Main extends javax.swing.JFrame {
         Container_Deck = (java.awt.CardLayout)Container.getLayout();
         StartUp_Deck = (java.awt.CardLayout)StartUp_Container.getLayout();
         if (Internal.SQLite.firstUse)
-            StartUp_Deck.show(StartUp_Container, "signUp");
+            StartUp_Deck.show(StartUp_Container, "signUp1");
         else
             StartUp_Deck.show(StartUp_Container, "signIn");
         Speckle.Home scene = new Home();
@@ -59,26 +59,25 @@ public class Main extends javax.swing.JFrame {
         Password = new javax.swing.JPasswordField();
         SignIn_Button = new javax.swing.JButton();
         SignUp_User = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        Name = new javax.swing.JTextField();
-        Pass = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        SignUp_User_Heading = new javax.swing.JLabel();
+        SignUp_User_Para = new javax.swing.JLabel();
+        SignUp_User_SubHeading = new javax.swing.JLabel();
+        SignUp_Username_Label = new javax.swing.JLabel();
+        SignUp_Username = new javax.swing.JTextField();
+        SignUp_Password_Label = new javax.swing.JLabel();
+        SignUp_Password = new javax.swing.JPasswordField();
+        Next_Button = new javax.swing.JButton();
         SignUp_Details = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        name = new javax.swing.JTextField();
-        num = new javax.swing.JTextField();
-        mail = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        address = new javax.swing.JTextArea();
-        jButton2 = new javax.swing.JButton();
+        SignUp_Details_Heading = new javax.swing.JLabel();
+        Comp_Name_Label = new javax.swing.JLabel();
+        Comp_Name = new javax.swing.JTextField();
+        Comp_Contact_Label = new javax.swing.JLabel();
+        Comp_Contact = new javax.swing.JTextField();
+        Comp_Email_Label = new javax.swing.JLabel();
+        Comp_Email = new javax.swing.JTextField();
+        Comp_Address_Label = new javax.swing.JLabel();
+        Comp_Address = new javax.swing.JTextArea();
+        SignUp_Button = new javax.swing.JButton();
         Application = new javax.swing.JPanel();
         SideBar = new javax.swing.JPanel();
         Home = new javax.swing.JLabel();
@@ -254,32 +253,26 @@ public class Main extends javax.swing.JFrame {
 
         StartUp_Container.add(SignIn, "signIn");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        jLabel1.setText("New User?");
+        SignUp_User_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
+        SignUp_User_Heading.setText("New User?");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jLabel2.setText("Sign up to use Speckle");
+        SignUp_User_Para.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        SignUp_User_Para.setText("Sign up to use Speckle");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        jLabel3.setText("SignUp");
+        SignUp_User_SubHeading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
+        SignUp_User_SubHeading.setText("SignUp");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jLabel4.setText("Username");
+        SignUp_Username_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        SignUp_Username_Label.setText("Username");
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jLabel5.setText("Password");
+        SignUp_Password_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        SignUp_Password_Label.setText("Password");
 
-        Name.addActionListener(new java.awt.event.ActionListener() {
+        Next_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        Next_Button.setText("Next");
+        Next_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NameActionPerformed(evt);
-            }
-        });
-
-        jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jButton1.setText("Next");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                Next_ButtonActionPerformed(evt);
             }
         });
 
@@ -291,78 +284,74 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(SignUp_UserLayout.createSequentialGroup()
                         .addGap(198, 198, 198)
-                        .addComponent(jLabel1))
+                        .addComponent(SignUp_User_Heading))
                     .addGroup(SignUp_UserLayout.createSequentialGroup()
                         .addGap(175, 175, 175)
-                        .addComponent(jLabel2))
+                        .addComponent(SignUp_User_Para))
                     .addGroup(SignUp_UserLayout.createSequentialGroup()
                         .addGap(77, 77, 77)
                         .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
+                            .addComponent(SignUp_Username_Label)
+                            .addComponent(SignUp_Password_Label))
                         .addGap(18, 18, 18)
                         .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Name)
-                            .addComponent(Pass, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)))
+                            .addComponent(SignUp_Username)
+                            .addComponent(SignUp_Password, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)))
                     .addGroup(SignUp_UserLayout.createSequentialGroup()
                         .addGap(207, 207, 207)
-                        .addComponent(jButton1))
+                        .addComponent(Next_Button))
                     .addGroup(SignUp_UserLayout.createSequentialGroup()
                         .addGap(215, 215, 215)
-                        .addComponent(jLabel3)))
+                        .addComponent(SignUp_User_SubHeading)))
                 .addContainerGap(174, Short.MAX_VALUE))
         );
         SignUp_UserLayout.setVerticalGroup(
             SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SignUp_UserLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(jLabel1)
+                .addComponent(SignUp_User_Heading)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addComponent(SignUp_User_Para)
                 .addGap(29, 29, 29)
-                .addComponent(jLabel3)
+                .addComponent(SignUp_User_SubHeading)
                 .addGap(66, 66, 66)
                 .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(Name, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(SignUp_Username_Label)
+                    .addComponent(SignUp_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(Pass, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(SignUp_Password_Label)
+                    .addComponent(SignUp_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44)
-                .addComponent(jButton1)
+                .addComponent(Next_Button)
                 .addContainerGap(185, Short.MAX_VALUE))
         );
 
-        StartUp_Container.add(SignUp_User, "signUp");
+        StartUp_Container.add(SignUp_User, "signUp1");
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        jLabel6.setText("More Details");
+        SignUp_Details_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
+        SignUp_Details_Heading.setText("More Details");
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jLabel7.setText("Company Name");
+        Comp_Name_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        Comp_Name_Label.setText("Company Name");
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jLabel8.setText("Company Number");
+        Comp_Contact_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        Comp_Contact_Label.setText("Company Number");
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jLabel9.setText("Company Email");
+        Comp_Email_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        Comp_Email_Label.setText("Company Email");
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jLabel10.setText("Company Address");
+        Comp_Address_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        Comp_Address_Label.setText("Company Address");
 
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        Comp_Address.setColumns(20);
+        Comp_Address.setRows(5);
 
-        address.setColumns(20);
-        address.setRows(5);
-        jScrollPane1.setViewportView(address);
-
-        jButton2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jButton2.setText("SignUp");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        SignUp_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        SignUp_Button.setText("SignUp");
+        SignUp_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                SignUp_ButtonActionPerformed(evt);
             }
         });
 
@@ -374,61 +363,59 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(SignUp_DetailsLayout.createSequentialGroup()
                         .addGap(188, 188, 188)
-                        .addComponent(jLabel6))
+                        .addComponent(SignUp_Details_Heading))
                     .addGroup(SignUp_DetailsLayout.createSequentialGroup()
                         .addGap(91, 91, 91)
-                        .addComponent(jLabel7))
+                        .addComponent(Comp_Name_Label))
                     .addGroup(SignUp_DetailsLayout.createSequentialGroup()
                         .addGap(194, 194, 194)
-                        .addComponent(jButton2))
+                        .addComponent(SignUp_Button))
                     .addGroup(SignUp_DetailsLayout.createSequentialGroup()
                         .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(SignUp_DetailsLayout.createSequentialGroup()
                                     .addGap(91, 91, 91)
-                                    .addComponent(jLabel9)
+                                    .addComponent(Comp_Email_Label)
                                     .addGap(30, 30, 30))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SignUp_DetailsLayout.createSequentialGroup()
                                     .addContainerGap()
-                                    .addComponent(jLabel8)
+                                    .addComponent(Comp_Contact_Label)
                                     .addGap(18, 18, 18)))
                             .addGroup(SignUp_DetailsLayout.createSequentialGroup()
                                 .addGap(91, 91, 91)
-                                .addComponent(jLabel10)
+                                .addComponent(Comp_Address_Label)
                                 .addGap(13, 13, 13)))
-                        .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(num, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(name)
-                            .addComponent(mail)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE))))
+                        .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Comp_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(Comp_Contact, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                            .addComponent(Comp_Name, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Comp_Email, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap(119, Short.MAX_VALUE))
         );
         SignUp_DetailsLayout.setVerticalGroup(
             SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SignUp_DetailsLayout.createSequentialGroup()
                 .addGap(93, 93, 93)
-                .addComponent(jLabel6)
+                .addComponent(SignUp_Details_Heading)
                 .addGap(77, 77, 77)
                 .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
+                    .addComponent(Comp_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Comp_Name_Label))
                 .addGap(33, 33, 33)
                 .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(num, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
+                    .addComponent(Comp_Contact, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Comp_Contact_Label))
                 .addGap(35, 35, 35)
                 .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mail, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addGap(26, 26, 26)
-                .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(SignUp_DetailsLayout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabel10)))
-                .addGap(32, 32, 32)
-                .addComponent(jButton2)
-                .addContainerGap(92, Short.MAX_VALUE))
+                    .addComponent(Comp_Email, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Comp_Email_Label))
+                .addGap(37, 37, 37)
+                .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Comp_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(Comp_Address_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                .addGap(35, 35, 35)
+                .addComponent(SignUp_Button)
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         StartUp_Container.add(SignUp_Details, "signUp2");
@@ -691,6 +678,30 @@ public class Main extends javax.swing.JFrame {
                 + " Please Try Again!", "Incorrect Credentials", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_SignIn_ButtonActionPerformed
 
+    private void Next_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Next_ButtonActionPerformed
+        String usname = SignUp_Username.getText();
+        String pass = new String(SignUp_Password.getPassword());
+        Internal.SQLite.signUp1(usname, pass);
+        if (usname.equals("") || pass.equals(""))
+            JOptionPane.showMessageDialog(null, "Username or Password cannot be Empty. Please"
+                + " Try Again!", "Username/Password Empty", JOptionPane.ERROR_MESSAGE);
+        else
+            StartUp_Deck.show(StartUp_Container,"signUp2");
+    }//GEN-LAST:event_Next_ButtonActionPerformed
+
+    private void SignUp_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUp_ButtonActionPerformed
+        String cname = Comp_Name.getText();
+        String cnum = Comp_Contact.getText();
+        String cmail = Comp_Email.getText();
+        String caddress = Comp_Address.getText();
+        Internal.SQLite.signUp2(cname, cnum, cmail, caddress);
+        if (cname.equals("") || cnum.equals("") || cmail.equals("") || caddress.equals(""))
+            JOptionPane.showMessageDialog(null, "All Feilds are Required to be Filled. Please"
+                + " Try Again!", "Empty Feilds", JOptionPane.ERROR_MESSAGE);
+        else
+            Container_Deck.show(Container, "app");
+    }//GEN-LAST:event_SignUp_ButtonActionPerformed
+
     private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
         Content.removeAll();
         Speckle.Home scene = new Home();
@@ -816,27 +827,6 @@ public class Main extends javax.swing.JFrame {
         About.setBackground(Stored);
     }//GEN-LAST:event_AboutMouseExited
 
-    private void NameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NameActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String usname = Name.getText();
-        String pass = new String(Pass.getPassword());
-        Internal.SQLite.signUp1(usname, pass);
-        StartUp_Deck.show(StartUp_Container,"signUp2");
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       String cname = name.getText();
-       String number = num.getText();
-       String cmail = mail.getText();
-       String caddress = address.getText();
-       String cnum = String.valueOf(number);
-       Internal.SQLite.signUp2(cname, cnum, cmail, caddress);
-       Container_Deck.show(Container, "app");
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -871,6 +861,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel Application;
     private javax.swing.JPanel Background;
     private javax.swing.JLabel Close;
+    private javax.swing.JTextArea Comp_Address;
+    private javax.swing.JLabel Comp_Address_Label;
+    private javax.swing.JTextField Comp_Contact;
+    private javax.swing.JLabel Comp_Contact_Label;
+    private javax.swing.JTextField Comp_Email;
+    private javax.swing.JLabel Comp_Email_Label;
+    private javax.swing.JTextField Comp_Name;
+    private javax.swing.JLabel Comp_Name_Label;
     private javax.swing.JPanel Container;
     public static javax.swing.JDesktopPane Content;
     private javax.swing.JPanel Header;
@@ -878,8 +876,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Home;
     private javax.swing.JLabel Inventory;
     private javax.swing.JLabel Invoicing;
-    private javax.swing.JTextField Name;
-    private javax.swing.JPasswordField Pass;
+    private javax.swing.JButton Next_Button;
     private javax.swing.JPasswordField Password;
     private javax.swing.JLabel Password_Label;
     private javax.swing.JLabel Settings;
@@ -889,31 +886,23 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel SignIn_Heading;
     private javax.swing.JLabel SignIn_Para;
     private javax.swing.JLabel SignIn_SubHeading;
+    private javax.swing.JButton SignUp_Button;
     private javax.swing.JPanel SignUp_Details;
+    private javax.swing.JLabel SignUp_Details_Heading;
+    private javax.swing.JPasswordField SignUp_Password;
+    private javax.swing.JLabel SignUp_Password_Label;
     private javax.swing.JPanel SignUp_User;
+    private javax.swing.JLabel SignUp_User_Heading;
+    private javax.swing.JLabel SignUp_User_Para;
+    private javax.swing.JLabel SignUp_User_SubHeading;
+    private javax.swing.JTextField SignUp_Username;
+    private javax.swing.JLabel SignUp_Username_Label;
     private javax.swing.JPanel StartUp;
     private javax.swing.JLabel StartUp_Banner;
     private javax.swing.JPanel StartUp_Container;
     private javax.swing.JTextField Username;
     private javax.swing.JLabel Username_Label;
     private javax.swing.JLabel Window_Title;
-    private javax.swing.JTextArea address;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField mail;
-    private javax.swing.JTextField name;
-    private javax.swing.JTextField num;
     // End of variables declaration//GEN-END:variables
     private final java.awt.CardLayout Container_Deck;
     private final java.awt.CardLayout StartUp_Deck;
