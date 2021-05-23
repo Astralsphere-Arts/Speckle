@@ -137,26 +137,41 @@ public class SQLite {
         }
     }
     
-    public static void remRowInvo(String ID) {
+    public static void remRowInvo(String id) {
         if (mainDB == null)
             dbConnect();
         String invoice = "DELETE FROM Invoice WHERE \"Invoice ID\"=?;";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(invoice);
-            mainDBquery.setString(1,ID);
+            mainDBquery.setString(1,id);
             mainDBquery.executeUpdate();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
     
-    public static void remRowInven(String ID) {
+    public static void remRowInven(String id) {
         if (mainDB == null)
             dbConnect();
         String inventory = "DELETE FROM Inventory WHERE \"Product ID\"=?;";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(inventory);
-            mainDBquery.setString(1,ID);
+            mainDBquery.setString(1,id);
+            mainDBquery.executeUpdate();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public static void updateStock(String id, String quan) {
+        if (mainDB == null)
+            dbConnect();
+        String inventory = "UPDATE Inventory SET \"Available Quantity\"=? WHERE"
+            + " \"Product ID\"=?;";
+        try {
+            PreparedStatement mainDBquery = mainDB.prepareStatement(inventory);
+            mainDBquery.setString(1, quan);
+            mainDBquery.setString(2, id);
             mainDBquery.executeUpdate();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);

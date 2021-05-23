@@ -146,20 +146,25 @@ public class Inventory extends javax.swing.JPanel {
         for (int i=0; i<rows.length; i++) {
             String id = Inventory.getValueAt(rows[i]-i, 0).toString();
             Internal.SQLite.remRowInven(id);
-            Inventory_Model.removeRow(rows[i]-i);
         }
+        Speckle.Main.Content.removeAll();
+        Inventory scene = new Inventory();
+        scene.setBounds(0, 0, 955, 574);
+        Speckle.Main.Content.add(scene).setVisible(true);
     }//GEN-LAST:event_RemoveActionPerformed
 
     private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
         int row = Inventory.getSelectedRow();
         String id = Inventory.getValueAt(row, 0).toString();
-        String name = Inventory.getValueAt(row, 1).toString();
-        String price = Inventory.getValueAt(row, 2).toString();
         String quantity = Inventory.getValueAt(row, 3).toString();
         String update = JOptionPane.showInputDialog(null, "Enter the Amount of Stock"
             + " You want to Increase", "Update Stock", JOptionPane.PLAIN_MESSAGE);
         String quan = Integer.toString(Integer.parseInt(quantity) + Integer.parseInt(update));
-        Internal.SQLite.updateInven(id, name, price, quan);
+        Internal.SQLite.updateStock(id, quan);
+        Speckle.Main.Content.removeAll();
+        Inventory scene = new Inventory();
+        scene.setBounds(0, 0, 955, 574);
+        Speckle.Main.Content.add(scene).setVisible(true);
     }//GEN-LAST:event_UpdateActionPerformed
 
 

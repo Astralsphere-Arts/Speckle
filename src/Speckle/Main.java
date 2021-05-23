@@ -679,7 +679,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel Background;
     private javax.swing.JLabel Close;
     private javax.swing.JPanel Container;
-    private javax.swing.JDesktopPane Content;
+    public static javax.swing.JDesktopPane Content;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel Header_Logo;
     private javax.swing.JLabel Home;
