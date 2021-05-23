@@ -99,6 +99,50 @@ public class SQLite {
         return uname.equals(username) && passwd.equals(password);
     }
     
+     public static void signup(String usname, String pass ){
+        if(configDB == null)
+            dbConnect();
+        String username = "UPDATE Configuration SET Value=? WHERE Parameter='Username';"; 
+        String password = "UPDATE Configuration SET Value=? WHERE Parameter='Password';";
+        try {
+            PreparedStatement configDBquery1 = configDB.prepareStatement(username);
+             configDBquery1.setString(1, usname);
+             configDBquery1.executeUpdate();
+            PreparedStatement configDBquery2 = configDB.prepareStatement(password);
+             configDBquery2.setString(1, pass);
+             configDBquery2.executeUpdate();
+        }
+       catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+     
+     public static void more(String cname,  String cnumber, String cmail, String caddress){
+         if(configDB==null)
+             dbConnect();
+         String name = "UPDATE Configuration SET Value=? WHERE Parameter='Company Name';";
+         String number = "UPDATE Configuration SET Value=? WHERE Parameter='Company Number';";
+         String mail = "UPDATE Configuration SET Value=? WHERE Parameter='Company Email';";
+         String address = "UPDATE Configuration SET Value=? WHERE Parameter='Company Address';";
+         try {
+             PreparedStatement configDBquery1 = configDB.prepareStatement(name);
+              configDBquery1.setString(1,cname);
+              configDBquery1.executeUpdate();
+             PreparedStatement configDBquery2 = configDB.prepareStatement(number);
+              configDBquery2.setString(1,cnumber);
+              configDBquery2.executeUpdate();
+             PreparedStatement configDBquery3 = configDB.prepareStatement(mail);
+              configDBquery3.setString(1,cmail);
+              configDBquery3.executeUpdate();
+             PreparedStatement configDBquery4 = configDB.prepareStatement(address);
+              configDBquery4.setString(1,caddress);
+              configDBquery4.executeUpdate();
+         }
+         catch(SQLException ex){
+             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+         }
+     }
+    
     public static ResultSet invoData() {
         if (mainDB == null)
             dbConnect();
