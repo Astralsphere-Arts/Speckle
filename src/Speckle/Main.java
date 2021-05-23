@@ -684,7 +684,7 @@ public class Main extends javax.swing.JFrame {
     private void SignIn_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignIn_ButtonActionPerformed
         String uname = Username.getText();
         String passwd = new String(Password.getPassword());
-        if (Internal.SQLite.login(uname, passwd))
+        if (Internal.SQLite.logIn(uname, passwd))
             Container_Deck.show(Container, "app");
         else
             JOptionPane.showMessageDialog(null, "The Username or Password enterd are Incorrect."
@@ -823,17 +823,17 @@ public class Main extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String usname = Name.getText();
         String pass = new String(Pass.getPassword());
-         Internal.SQLite.signup(usname, pass);
+        Internal.SQLite.signUp1(usname, pass);
         StartUp_Deck.show(StartUp_Container,"signUp2");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        String cname = name.getText();
-       String number =  num.getText();
+       String number = num.getText();
        String cmail = mail.getText();
        String caddress = address.getText();
        String cnum = String.valueOf(number);
-       Internal.SQLite.more(cname, cnum, cmail, caddress);
+       Internal.SQLite.signUp2(cname, cnum, cmail, caddress);
        Container_Deck.show(Container, "app");
     }//GEN-LAST:event_jButton2ActionPerformed
 
