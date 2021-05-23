@@ -57,24 +57,16 @@ public class SQLite {
             + " \"Available Quantity\" TEXT, PRIMARY KEY(\"Product ID\"));";
         String configuration = "CREATE TABLE IF NOT EXISTS Configuration (Parameter"
             + " TEXT NOT NULL UNIQUE, Value TEXT, PRIMARY KEY(Parameter));";
-        String user = "INSERT INTO Configuration (Parameter) VALUES(\"Username\");";
-        String pass = "INSERT INTO Configuration (Parameter) VALUES(\"Password\");";
-        String compName = "INSERT INTO Configuration (Parameter) VALUES(\"Company Name\");";
-        String compNum = "INSERT INTO Configuration (Parameter) VALUES(\"Company Number\");";
-        String compEmail = "INSERT INTO Configuration (Parameter) VALUES(\"Company Email\");";
-        String compAdd = "INSERT INTO Configuration (Parameter) VALUES(\"Company Address\");";
+        String configData = "INSERT INTO Configuration (Parameter) VALUES(\"Username\"),"
+            + " (\"Password\"), (\"Company Name\"), (\"Company Number\"),"
+            + " (\"Company Email\"), (\"Company Address\");";
         try {
             Statement mainDBquery = mainDB.createStatement();
             Statement configDBquery = configDB.createStatement();
             mainDBquery.execute(invoice);
             mainDBquery.execute(inventory);
             configDBquery.execute(configuration);
-            configDBquery.execute(user);
-            configDBquery.execute(pass);
-            configDBquery.execute(compName);
-            configDBquery.execute(compNum);
-            configDBquery.execute(compEmail);
-            configDBquery.execute(compAdd);
+            configDBquery.execute(configData);
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -189,26 +181,41 @@ public class SQLite {
         }
     }
     
-    public static void remRowInvo(String ID) {
+    public static void remRowInvo(String id) {
         if (mainDB == null)
             dbConnect();
         String invoice = "DELETE FROM Invoice WHERE \"Invoice ID\"=?;";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(invoice);
-            mainDBquery.setString(1,ID);
+            mainDBquery.setString(1,id);
             mainDBquery.executeUpdate();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
     
-    public static void remRowInven(String ID) {
+    public static void remRowInven(String id) {
         if (mainDB == null)
             dbConnect();
         String inventory = "DELETE FROM Inventory WHERE \"Product ID\"=?;";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(inventory);
-            mainDBquery.setString(1,ID);
+            mainDBquery.setString(1,id);
+            mainDBquery.executeUpdate();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public static void updateStock(String id, String quan) {
+        if (mainDB == null)
+            dbConnect();
+        String inventory = "UPDATE Inventory SET \"Available Quantity\"=? WHERE"
+            + " \"Product ID\"=?;";
+        try {
+            PreparedStatement mainDBquery = mainDB.prepareStatement(inventory);
+            mainDBquery.setString(1, quan);
+            mainDBquery.setString(2, id);
             mainDBquery.executeUpdate();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
