@@ -57,8 +57,8 @@ public class SQLite {
         String configuration = "CREATE TABLE IF NOT EXISTS Configuration (Parameter"
             + " TEXT NOT NULL UNIQUE, Value TEXT, PRIMARY KEY(Parameter));";
         String configData = "INSERT INTO Configuration (Parameter) VALUES('Username'),"
-            + " ('Password'), ('Company Name'), ('Company Number'), ('Company Email'),"
-            + " ('Company Address');";
+            + " ('Password'), ('Business Name'), ('Contact Number'), ('Email Address'),"
+            + " ('Business Location');";
         try {
             Statement mainDBquery = mainDB.createStatement();
             Statement configDBquery = configDB.createStatement();
@@ -71,7 +71,7 @@ public class SQLite {
         }
     }
     
-    public static boolean logIn(String uname, String passwd) {
+    public static boolean logIn(String usrname, String passwd) {
         if (configDB == null)
             dbConnect();
         String username = null;
@@ -87,33 +87,63 @@ public class SQLite {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
-        return uname.equals(username) && passwd.equals(password);
+        return usrname.equals(username) && passwd.equals(password);
     }
     
-    public static void signUp1(String usname, String pass) {
+    public static String usrname() {
+        if (configDB == null)
+            dbConnect();
+        String username = null;
+        String user = "SELECT Value FROM Configuration WHERE Parameter = 'Username';";
+        try {
+            Statement configDBquery = configDB.createStatement();
+            ResultSet userResult = configDBquery.executeQuery(user);
+            username = userResult.getString("Value");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        return username;
+    }
+    
+    public static String passwd() {
+        if (configDB == null)
+            dbConnect();
+        String password = null;
+        String pass = "SELECT Value FROM Configuration WHERE Parameter = 'Password';";
+        try {
+            Statement configDBquery = configDB.createStatement();
+            ResultSet passResult = configDBquery.executeQuery(pass);
+            password = passResult.getString("Value");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        return password;
+    }
+    
+    public static void userConfig(String usrname, String passwd) {
         if(configDB == null)
             dbConnect();
         String username = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Username';"; 
         String password = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Password';";
         try {
             PreparedStatement configDBquery = configDB.prepareStatement(username);
-            configDBquery.setString(1, usname);
+            configDBquery.setString(1, usrname);
             configDBquery.executeUpdate();
             configDBquery = configDB.prepareStatement(password);
-            configDBquery.setString(1, pass);
+            configDBquery.setString(1, passwd);
             configDBquery.executeUpdate();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
      
-    public static void signUp2(String cname,  String cnumber, String cmail, String caddress) {
+    public static void compConfig(String cname, String cnumber, String cmail, String caddress) {
         if(configDB==null)
             dbConnect();
-        String name = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Company Name';";
-        String number = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Company Number';";
-        String mail = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Company Email';";
-        String address = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Company Address';";
+        String name = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Business Name';";
+        String number = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Contact Number';";
+        String email = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Email Address';";
+        String address = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Business Location';";
         try {
             PreparedStatement configDBquery = configDB.prepareStatement(name);
             configDBquery.setString(1, cname);
@@ -121,7 +151,7 @@ public class SQLite {
             configDBquery = configDB.prepareStatement(number);
             configDBquery.setString(1, cnumber);
             configDBquery.executeUpdate();
-            configDBquery = configDB.prepareStatement(mail);
+            configDBquery = configDB.prepareStatement(email);
             configDBquery.setString(1, cmail);
             configDBquery.executeUpdate();
             configDBquery = configDB.prepareStatement(address);

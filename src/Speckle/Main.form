@@ -270,7 +270,7 @@
                         <Component class="javax.swing.JLabel" name="SignIn_Para">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI" size="14" style="0"/>
+                              <Font name="Segoe UI Semibold" size="14" style="0"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="0"/>
                             <Property name="text" type="java.lang.String" value="A Simple Invoicing and Inventory Management System"/>
@@ -342,62 +342,76 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
+                                  <EmptySpace min="0" pref="31" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="198" max="-2" attributes="0"/>
-                                          <Component id="SignUp_User_Heading" min="-2" max="-2" attributes="0"/>
+                                      <Component id="SignUp_User_Para_A" min="-2" pref="440" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="SignUp_User_Para_B" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="SignUp_User_Heading" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="SignUp_User_SubHeading" alignment="0" min="-2" pref="440" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="175" max="-2" attributes="0"/>
-                                          <Component id="SignUp_User_Para" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="SignUp_Username_Label" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="SignUp_Password_Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
+                                              <Component id="Next_Button" min="-2" pref="120" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="SignUp_Username" max="32767" attributes="0"/>
-                                              <Component id="SignUp_Password" pref="164" max="32767" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="183" max="-2" attributes="0"/>
+                                              <Component id="Confirm_Password" min="-2" pref="200" max="-2" attributes="0"/>
                                           </Group>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="207" max="-2" attributes="0"/>
-                                          <Component id="Next_Button" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="215" max="-2" attributes="0"/>
-                                          <Component id="SignUp_User_SubHeading" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="SignUp_Username_Label" max="32767" attributes="0"/>
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                      <Component id="SignUp_Username" min="-2" pref="200" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" attributes="0">
+                                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                          <Component id="Create_Password_Label" max="32767" attributes="0"/>
+                                                          <Component id="Confirm_Password_Label" pref="130" max="32767" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Component id="Create_Password" min="-2" pref="200" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="174" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                                  <Component id="SignUp_User_Heading" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="SignUp_User_Para" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Component id="SignUp_User_Heading" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="SignUp_User_SubHeading" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                                  <EmptySpace pref="51" max="32767" attributes="0"/>
+                                  <Component id="SignUp_User_Para_A" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="SignUp_User_Para_B" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="SignUp_Username_Label" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="SignUp_Username" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                      <Component id="SignUp_Username_Label" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="SignUp_Username" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="SignUp_Password_Label" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="SignUp_Password" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                                      <Component id="Create_Password_Label" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="Create_Password" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                                  <Component id="Next_Button" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="185" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="Confirm_Password_Label" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="Confirm_Password" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="Next_Button" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -406,52 +420,96 @@
                         <Component class="javax.swing.JLabel" name="SignUp_User_Heading">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI Semibold" size="20" style="0"/>
+                              <Font name="Segoe UI Semibold" size="30" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="New User?"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="SignUp_User_Para">
-                          <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI Semibold" size="15" style="0"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="Sign up to use Speckle"/>
+                            <Property name="horizontalAlignment" type="int" value="0"/>
+                            <Property name="text" type="java.lang.String" value="Welcome To Speckle!"/>
+                            <Property name="horizontalTextPosition" type="int" value="0"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="SignUp_User_SubHeading">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI Semibold" size="20" style="0"/>
+                              <Font name="Segoe UI Semibold" size="14" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="SignUp"/>
+                            <Property name="horizontalAlignment" type="int" value="0"/>
+                            <Property name="text" type="java.lang.String" value="A Simple Invoicing and Inventory Management System"/>
+                            <Property name="horizontalTextPosition" type="int" value="0"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="SignUp_User_Para_A">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI" size="14" style="0"/>
+                            </Property>
+                            <Property name="horizontalAlignment" type="int" value="0"/>
+                            <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p style=&quot;text-align: center;&quot;&gt;Since this is your first time using Speckle, we need some&lt;br&gt;details to set things up for you.&lt;/p&gt;&lt;/html&gt;"/>
+                            <Property name="horizontalTextPosition" type="int" value="0"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="SignUp_User_Para_B">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI" size="14" style="0"/>
+                            </Property>
+                            <Property name="horizontalAlignment" type="int" value="0"/>
+                            <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p style=&quot;text-align: center;&quot;&gt;First, create a Username and Password for yourself that&lt;br&gt;you&apos;ll be using every time you use Speckle.&lt;/p&gt;&lt;/html&gt;"/>
+                            <Property name="horizontalTextPosition" type="int" value="0"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="SignUp_Username_Label">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI Semibold" size="15" style="0"/>
+                              <Font name="Segoe UI Semibold" size="14" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Username"/>
+                            <Property name="horizontalAlignment" type="int" value="0"/>
+                            <Property name="text" type="java.lang.String" value=" Your Username"/>
+                            <Property name="horizontalTextPosition" type="int" value="0"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="SignUp_Username">
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="SignUp_Password_Label">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI Semibold" size="15" style="0"/>
+                              <Font name="Segoe UI" size="14" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Password"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JPasswordField" name="SignUp_Password">
+                        <Component class="javax.swing.JLabel" name="Create_Password_Label">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Semibold" size="14" style="0"/>
+                            </Property>
+                            <Property name="horizontalAlignment" type="int" value="0"/>
+                            <Property name="text" type="java.lang.String" value="Create Password"/>
+                            <Property name="horizontalTextPosition" type="int" value="0"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JPasswordField" name="Create_Password">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI" size="14" style="0"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="Confirm_Password_Label">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Semibold" size="14" style="0"/>
+                            </Property>
+                            <Property name="horizontalAlignment" type="int" value="0"/>
+                            <Property name="text" type="java.lang.String" value="Confirm Password"/>
+                            <Property name="horizontalTextPosition" type="int" value="0"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JPasswordField" name="Confirm_Password">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI" size="14" style="0"/>
+                            </Property>
+                          </Properties>
                         </Component>
                         <Component class="javax.swing.JButton" name="Next_Button">
                           <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI Semibold" size="15" style="0"/>
-                            </Property>
                             <Property name="text" type="java.lang.String" value="Next"/>
                           </Properties>
                           <Events>
@@ -471,79 +529,76 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="188" max="-2" attributes="0"/>
-                                          <Component id="SignUp_Details_Heading" min="-2" max="-2" attributes="0"/>
+                                      <Component id="SignUp_Details_Para" alignment="0" pref="443" max="32767" attributes="0"/>
+                                      <Component id="SignUp_Details_Heading" alignment="0" min="-2" pref="440" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="28" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="Business_Location_Label" min="-2" pref="130" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="Business_Location" min="-2" pref="200" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                                          <Component id="Comp_Name_Label" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Component id="Email_Address_Label" min="-2" pref="130" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="Email_Address" min="-2" pref="200" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
-                                          <Component id="SignUp_Button" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Component id="Contact_Number_Label" min="-2" pref="130" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="Contact_Number" min="-2" pref="200" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                                                      <Component id="Comp_Email_Label" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="Comp_Contact_Label" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                                                  <Component id="Comp_Address_Label" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="Comp_Address" pref="0" max="32767" attributes="0"/>
-                                              <Component id="Comp_Contact" alignment="0" pref="156" max="32767" attributes="0"/>
-                                              <Component id="Comp_Name" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="Comp_Email" alignment="1" max="32767" attributes="0"/>
-                                          </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="Business_Name_Label" min="-2" pref="130" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="Business_Name" min="-2" pref="200" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="119" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="191" max="-2" attributes="0"/>
+                                  <Component id="SignUp_Button" min="-2" pref="120" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                                   <Component id="SignUp_Details_Heading" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="SignUp_Details_Para" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="Comp_Name" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                                      <Component id="Comp_Name_Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Business_Name_Label" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="Business_Name" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="Comp_Contact" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                                      <Component id="Comp_Contact_Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Contact_Number_Label" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="Contact_Number" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="Comp_Email" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                                      <Component id="Comp_Email_Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Email_Address_Label" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="Email_Address" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="Comp_Address" pref="0" max="32767" attributes="0"/>
-                                      <Component id="Comp_Address_Label" pref="38" max="32767" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="Business_Location_Label" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="Business_Location" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Component id="SignUp_Button" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="86" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                  <Component id="SignUp_Button" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <EmptySpace pref="84" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -552,61 +607,94 @@
                         <Component class="javax.swing.JLabel" name="SignUp_Details_Heading">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI Semibold" size="20" style="0"/>
+                              <Font name="Segoe UI Semibold" size="18" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="More Details"/>
+                            <Property name="horizontalAlignment" type="int" value="0"/>
+                            <Property name="text" type="java.lang.String" value="Just a little more and you&apos;ll be all ready to go."/>
+                            <Property name="horizontalTextPosition" type="int" value="0"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="Comp_Name_Label">
+                        <Component class="javax.swing.JLabel" name="SignUp_Details_Para">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI Semibold" size="15" style="0"/>
+                              <Font name="Segoe UI" size="14" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Company Name"/>
+                            <Property name="horizontalAlignment" type="int" value="0"/>
+                            <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p style=&quot;text-align: center;&quot;&gt;Now, please provide some details about your Business.&lt;br&gt; This information will be used for the Invoices you generate using&lt;br&gt;Speckle.&lt;/p&gt;&lt;/html&gt;"/>
+                            <Property name="horizontalTextPosition" type="int" value="0"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="Comp_Name">
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="Comp_Contact_Label">
+                        <Component class="javax.swing.JLabel" name="Business_Name_Label">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI Semibold" size="15" style="0"/>
+                              <Font name="Segoe UI Semibold" size="14" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Company Number"/>
+                            <Property name="horizontalAlignment" type="int" value="0"/>
+                            <Property name="text" type="java.lang.String" value="Business Name"/>
+                            <Property name="horizontalTextPosition" type="int" value="0"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="Comp_Contact">
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="Comp_Email_Label">
+                        <Component class="javax.swing.JTextField" name="Business_Name">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI Semibold" size="15" style="0"/>
+                              <Font name="Segoe UI" size="14" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Company Email"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="Comp_Email">
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="Comp_Address_Label">
+                        <Component class="javax.swing.JLabel" name="Contact_Number_Label">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI Semibold" size="15" style="0"/>
+                              <Font name="Segoe UI Semibold" size="14" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Company Address"/>
+                            <Property name="horizontalAlignment" type="int" value="0"/>
+                            <Property name="text" type="java.lang.String" value="Contact Number"/>
+                            <Property name="horizontalTextPosition" type="int" value="0"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextArea" name="Comp_Address">
+                        <Component class="javax.swing.JTextField" name="Contact_Number">
                           <Properties>
-                            <Property name="columns" type="int" value="20"/>
-                            <Property name="rows" type="int" value="5"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI" size="14" style="0"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="Email_Address_Label">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Semibold" size="14" style="0"/>
+                            </Property>
+                            <Property name="horizontalAlignment" type="int" value="0"/>
+                            <Property name="text" type="java.lang.String" value="Email Address"/>
+                            <Property name="horizontalTextPosition" type="int" value="0"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="Email_Address">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI" size="14" style="0"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="Business_Location_Label">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Semibold" size="14" style="0"/>
+                            </Property>
+                            <Property name="horizontalAlignment" type="int" value="0"/>
+                            <Property name="text" type="java.lang.String" value="Business Location"/>
+                            <Property name="horizontalTextPosition" type="int" value="0"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="Business_Location">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI" size="14" style="0"/>
+                            </Property>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JButton" name="SignUp_Button">
                           <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI Semibold" size="15" style="0"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="SignUp"/>
+                            <Property name="text" type="java.lang.String" value="Sign Up"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SignUp_ButtonActionPerformed"/>
