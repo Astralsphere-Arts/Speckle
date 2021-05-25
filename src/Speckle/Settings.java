@@ -71,11 +71,6 @@ public class Settings extends javax.swing.JPanel {
         Current_Username.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         Current_Username.setText(Internal.SQLite.usrname());
         Current_Username.setEnabled(false);
-        Current_Username.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Current_UsernameActionPerformed(evt);
-            }
-        });
 
         New_Username_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         New_Username_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -169,7 +164,7 @@ public class Settings extends javax.swing.JPanel {
         User_TabLayout.setVerticalGroup(
             User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(User_TabLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(40, 40, 40)
                 .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Speckle_Logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(User_TabLayout.createSequentialGroup()
@@ -200,7 +195,7 @@ public class Settings extends javax.swing.JPanel {
                             .addComponent(Confirm_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(24, 24, 24)
                         .addComponent(Change_Password_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         Settings_Container.addTab("User Details", User_Tab);
@@ -279,7 +274,7 @@ public class Settings extends javax.swing.JPanel {
         Details_TabLayout.setVerticalGroup(
             Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Details_TabLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(40, 40, 40)
                 .addComponent(Update_Business_Details)
                 .addGap(24, 24, 24)
                 .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -299,7 +294,7 @@ public class Settings extends javax.swing.JPanel {
                     .addComponent(Business_Location, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addComponent(Save_Changes_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addContainerGap(182, Short.MAX_VALUE))
         );
 
         Settings_Container.addTab("Business Details", Details_Tab);
@@ -325,6 +320,10 @@ public class Settings extends javax.swing.JPanel {
             Internal.SQLite.userConfig(usrname, Internal.SQLite.passwd());
             JOptionPane.showMessageDialog(null, "Your Username changed Sucessfully!",
                 "Sucess", JOptionPane.ERROR_MESSAGE);
+            Speckle.Main.Content.removeAll();
+            Settings scene = new Settings();
+            scene.setBounds(0, 0, 955, 574);
+            Speckle.Main.Content.add(scene).setVisible(true);
         }
     }//GEN-LAST:event_Change_Username_ButtonActionPerformed
 
@@ -364,10 +363,6 @@ public class Settings extends javax.swing.JPanel {
                 "Sucess", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_Save_Changes_ButtonActionPerformed
-
-    private void Current_UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Current_UsernameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Current_UsernameActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

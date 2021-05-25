@@ -22,118 +22,124 @@ public class About extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Speckle_Logo = new javax.swing.JLabel();
         Heading = new javax.swing.JLabel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        Version = new javax.swing.JLabel();
+        About_Para = new javax.swing.JLabel();
+        About_Container = new javax.swing.JTabbedPane();
+        Authors_Tab = new javax.swing.JPanel();
+        Licence_Tab = new javax.swing.JPanel();
+        Credits_Tab = new javax.swing.JPanel();
+
+        Speckle_Logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Speckle_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/speckle-logo.png"))); // NOI18N
+        Speckle_Logo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
         Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Heading.setText("About");
+        Heading.setText("About Speckle");
         Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 698, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 374, Short.MAX_VALUE)
-        );
+        Version.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        Version.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Version.setText("Version 0.2-Alpha");
+        Version.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jTabbedPane1.addTab("Authors", jPanel1);
+        About_Para.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
+        About_Para.setText("Speckle is Software Used For Inventory and Billing(Invoice) Management");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 698, Short.MAX_VALUE)
+        Authors_Tab.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(180, 180, 180)));
+
+        javax.swing.GroupLayout Authors_TabLayout = new javax.swing.GroupLayout(Authors_Tab);
+        Authors_Tab.setLayout(Authors_TabLayout);
+        Authors_TabLayout.setHorizontalGroup(
+            Authors_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 633, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 374, Short.MAX_VALUE)
+        Authors_TabLayout.setVerticalGroup(
+            Authors_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 350, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Licence", jPanel2);
+        About_Container.addTab("Authors", Authors_Tab);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 698, Short.MAX_VALUE)
+        Licence_Tab.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(180, 180, 180)));
+
+        javax.swing.GroupLayout Licence_TabLayout = new javax.swing.GroupLayout(Licence_Tab);
+        Licence_Tab.setLayout(Licence_TabLayout);
+        Licence_TabLayout.setHorizontalGroup(
+            Licence_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 633, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 374, Short.MAX_VALUE)
+        Licence_TabLayout.setVerticalGroup(
+            Licence_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 350, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Credits", jPanel3);
+        About_Container.addTab("Licence", Licence_Tab);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/speckle-logo.png"))); // NOI18N
+        Credits_Tab.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(180, 180, 180)));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        jLabel2.setText("Version 0.1-Alpha");
+        javax.swing.GroupLayout Credits_TabLayout = new javax.swing.GroupLayout(Credits_Tab);
+        Credits_Tab.setLayout(Credits_TabLayout);
+        Credits_TabLayout.setHorizontalGroup(
+            Credits_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 633, Short.MAX_VALUE)
+        );
+        Credits_TabLayout.setVerticalGroup(
+            Credits_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 350, Short.MAX_VALUE)
+        );
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
-        jLabel3.setText("Speckle is Software Used For Inventory and Billing(Invoice) Management");
+        About_Container.addTab("Credits", Credits_Tab);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(26, 26, 26)
+                .addComponent(Speckle_Logo, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Version, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(About_Para, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(17, 17, 17)))
-                        .addGap(408, 408, 408))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(293, 293, 293)
-                .addComponent(jLabel3)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(13, 13, 13)
+                        .addComponent(About_Container, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Heading)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Heading)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Version)
+                        .addGap(18, 18, 18)
+                        .addComponent(About_Para)
+                        .addGap(26, 26, 26)
+                        .addComponent(About_Container, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Speckle_Logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTabbedPane About_Container;
+    private javax.swing.JLabel About_Para;
+    private javax.swing.JPanel Authors_Tab;
+    private javax.swing.JPanel Credits_Tab;
     private javax.swing.JLabel Heading;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JPanel Licence_Tab;
+    private javax.swing.JLabel Speckle_Logo;
+    private javax.swing.JLabel Version;
     // End of variables declaration//GEN-END:variables
 }
