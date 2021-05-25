@@ -4,7 +4,6 @@ import java.awt.Component;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
-import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -62,7 +61,7 @@ public class Invoicing extends javax.swing.JPanel {
             }
         });
 
-        Invoice.setModel(DbUtils.resultSetToTableModel(Internal.SQLite.invoData()));
+        Invoice.setModel(Internal.DbUtils.resultSetToTableModel(Internal.SQLite.invoData()));
         Invoice.setShowGrid(true);
         Invoice.getTableHeader().setReorderingAllowed(false);
         Table_Container.setViewportView(Invoice);

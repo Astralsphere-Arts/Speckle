@@ -5,7 +5,6 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
-import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -47,7 +46,7 @@ public class Inventory extends javax.swing.JPanel {
         Heading.setText("Inventory");
         Heading.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
-        Inventory.setModel(DbUtils.resultSetToTableModel(Internal.SQLite.invenData()));
+        Inventory.setModel(Internal.DbUtils.resultSetToTableModel(Internal.SQLite.invenData()));
         Inventory.setShowGrid(true);
         Inventory.getTableHeader().setReorderingAllowed(false);
         Inventory.getModel().addTableModelListener(new javax.swing.event.TableModelListener() {
