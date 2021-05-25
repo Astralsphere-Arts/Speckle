@@ -137,7 +137,8 @@ public class Inventory extends javax.swing.JPanel {
     }
     
     private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
-        Inventory_Model.addRow(new Object[] {Internal.Random.ID(8), null, null, null});
+        Inventory_Model.addRow(new Object[] {"SPK-" + Internal.Random.ID(4)
+            + "-" + Internal.Random.ID(4), null, null, null});
     }//GEN-LAST:event_AddActionPerformed
 
     private void RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveActionPerformed
@@ -145,11 +146,8 @@ public class Inventory extends javax.swing.JPanel {
         for (int i=0; i<rows.length; i++) {
             String id = Inventory.getValueAt(rows[i]-i, 0).toString();
             Internal.SQLite.remRowInven(id);
+            Inventory_Model.removeRow(rows[i]-i);
         }
-        Speckle.Main.Content.removeAll();
-        Inventory scene = new Inventory();
-        scene.setBounds(0, 0, 955, 574);
-        Speckle.Main.Content.add(scene).setVisible(true);
     }//GEN-LAST:event_RemoveActionPerformed
 
     private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed

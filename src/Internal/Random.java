@@ -8,7 +8,7 @@ import java.security.SecureRandom;
  */
 
 public class Random {
-    static String Seed = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    static String Seed = "0123456789";
     static SecureRandom random = new SecureRandom();
     
     public static String ID(int length){
