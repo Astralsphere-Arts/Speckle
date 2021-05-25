@@ -71,6 +71,11 @@ public class Settings extends javax.swing.JPanel {
         Current_Username.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         Current_Username.setText(Internal.SQLite.usrname());
         Current_Username.setEnabled(false);
+        Current_Username.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Current_UsernameActionPerformed(evt);
+            }
+        });
 
         New_Username_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         New_Username_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -359,6 +364,10 @@ public class Settings extends javax.swing.JPanel {
                 "Sucess", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_Save_Changes_ButtonActionPerformed
+
+    private void Current_UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Current_UsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Current_UsernameActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

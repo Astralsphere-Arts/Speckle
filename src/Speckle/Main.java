@@ -11,6 +11,8 @@ import javax.swing.UIManager;
  */
 public class Main extends javax.swing.JFrame {
 
+    private String uname;
+
     /**
      * Creates new form Main
      */
@@ -730,11 +732,19 @@ public class Main extends javax.swing.JFrame {
     private void SignIn_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignIn_ButtonActionPerformed
         String usrname = Username.getText();
         String passwd = new String(Password.getPassword());
-        if (Internal.SQLite.logIn(usrname, passwd))
-            Container_Deck.show(Container, "app");
-        else
-            JOptionPane.showMessageDialog(null, "The Username or Password enterd are Incorrect."
-                + " Please Try Again!", "Incorrect Credentials", JOptionPane.ERROR_MESSAGE);
+         if(!usrname.equals("") || !passwd.equals("")){
+             if(Internal.SQLite.logIn(usrname, passwd)){
+                 Container_Deck.show(Container, "app");
+             }
+             else{
+                JOptionPane.showMessageDialog(null, "The Username or Password entered are Incorrect."
+                + "Please Try Again!", "Incorrect Credentials", JOptionPane.ERROR_MESSAGE);
+             }
+    }
+         else{
+             JOptionPane.showMessageDialog(null, "Please enter Username and Password"
+             + "Please Try Again!", "Credentials are Blank", JOptionPane.ERROR_MESSAGE);
+         }
     }//GEN-LAST:event_SignIn_ButtonActionPerformed
 
     private void Next_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Next_ButtonActionPerformed

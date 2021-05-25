@@ -187,6 +187,9 @@
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Current_UsernameActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="New_Username_Label">
               <Properties>
