@@ -1,4 +1,4 @@
-﻿Some Speckle features rely on external libraries here is a list of them:
+Some Speckle features rely on external libraries here is a list of them:
 
-1. SQLite JDBC - Copyright © 2007-2021 xerial - Apache 2.0 License
-2. FlatLaf - Copyright © 2019-2021 FormDev Software GmbH. - Apache 2.0 License
+1. SQLite JDBC - Copyright (c) 2007-2021 xerial - Apache 2.0 License
+2. FlatLaf - Copyright (c) 2019-2021 FormDev Software GmbH. - Apache 2.0 License
