@@ -760,6 +760,7 @@
                                           <Component id="Settings" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="About" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="Home" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="SignOut" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
@@ -781,7 +782,9 @@
                               <Component id="Settings" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="About" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="300" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="SignOut" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -887,6 +890,26 @@
                         <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AboutMousePressed"/>
                       </Events>
                     </Component>
+                    <Component class="javax.swing.JLabel" name="SignOut">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="horizontalAlignment" type="int" value="0"/>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/Resources/sign-out.png"/>
+                        </Property>
+                        <Property name="toolTipText" type="java.lang.String" value="Sign Out"/>
+                        <Property name="horizontalTextPosition" type="int" value="0"/>
+                        <Property name="opaque" type="boolean" value="true"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="SignOutMouseClicked"/>
+                        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="SignOutMouseEntered"/>
+                        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="SignOutMouseExited"/>
+                        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="SignOutMousePressed"/>
+                      </Events>
+                    </Component>
                   </SubComponents>
                 </Container>
                 <Container class="javax.swing.JDesktopPane" name="Content">
@@ -902,7 +925,7 @@
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="574" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>

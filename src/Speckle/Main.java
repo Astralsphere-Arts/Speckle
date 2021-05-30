@@ -89,6 +89,7 @@ public class Main extends javax.swing.JFrame {
         Inventory = new javax.swing.JLabel();
         Settings = new javax.swing.JLabel();
         About = new javax.swing.JLabel();
+        SignOut = new javax.swing.JLabel();
         Content = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -603,6 +604,27 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        SignOut.setBackground(new java.awt.Color(255, 255, 255));
+        SignOut.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SignOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/sign-out.png"))); // NOI18N
+        SignOut.setToolTipText("Sign Out");
+        SignOut.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SignOut.setOpaque(true);
+        SignOut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SignOutMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SignOutMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SignOutMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                SignOutMousePressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout SideBarLayout = new javax.swing.GroupLayout(SideBar);
         SideBar.setLayout(SideBarLayout);
         SideBarLayout.setHorizontalGroup(
@@ -618,7 +640,8 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(Invoicing)
                             .addComponent(Settings)
                             .addComponent(About)
-                            .addComponent(Home))
+                            .addComponent(Home)
+                            .addComponent(SignOut))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -635,7 +658,9 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(Settings)
                 .addGap(18, 18, 18)
                 .addComponent(About)
-                .addContainerGap(300, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(SignOut)
+                .addGap(18, 18, 18))
         );
 
         javax.swing.GroupLayout ContentLayout = new javax.swing.GroupLayout(Content);
@@ -646,7 +671,7 @@ public class Main extends javax.swing.JFrame {
         );
         ContentLayout.setVerticalGroup(
             ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 574, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout ApplicationLayout = new javax.swing.GroupLayout(Application);
@@ -716,11 +741,11 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_CloseMouseClicked
 
     private void CloseMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloseMousePressed
-        Close.setBackground(new java.awt.Color(225, 51, 51));
+        Close.setBackground(new java.awt.Color(225, 48, 48));
     }//GEN-LAST:event_CloseMousePressed
 
     private void CloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloseMouseEntered
-        Close.setBackground(new java.awt.Color(225, 80, 80));
+        Close.setBackground(new java.awt.Color(225, 72, 72));
     }//GEN-LAST:event_CloseMouseEntered
 
     private void CloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloseMouseExited
@@ -895,6 +920,24 @@ public class Main extends javax.swing.JFrame {
         About.setBackground(Stored);
     }//GEN-LAST:event_AboutMouseExited
 
+    private void SignOutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignOutMouseClicked
+        Username.setText("");
+        Password.setText("");
+        Container_Deck.show(Container, "start");
+    }//GEN-LAST:event_SignOutMouseClicked
+
+    private void SignOutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignOutMousePressed
+        SignOut.setBackground(new java.awt.Color(225, 48, 48));
+    }//GEN-LAST:event_SignOutMousePressed
+
+    private void SignOutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignOutMouseEntered
+        SignOut.setBackground(new java.awt.Color(225, 56, 56));
+    }//GEN-LAST:event_SignOutMouseEntered
+
+    private void SignOutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignOutMouseExited
+        SignOut.setBackground(White);
+    }//GEN-LAST:event_SignOutMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -958,6 +1001,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel SignIn_Heading;
     private javax.swing.JLabel SignIn_Para;
     private javax.swing.JLabel SignIn_SubHeading;
+    private javax.swing.JLabel SignOut;
     private javax.swing.JButton SignUp_Button;
     private javax.swing.JPanel SignUp_Details;
     private javax.swing.JLabel SignUp_Details_Heading;
