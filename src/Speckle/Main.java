@@ -923,6 +923,7 @@ public class Main extends javax.swing.JFrame {
     private void SignOutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignOutMouseClicked
         Username.setText("");
         Password.setText("");
+        StartUp_Deck.show(StartUp_Container, "signIn");
         Container_Deck.show(Container, "start");
     }//GEN-LAST:event_SignOutMouseClicked
 

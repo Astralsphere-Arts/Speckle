@@ -33,12 +33,7 @@ public class Invoicing extends javax.swing.JPanel {
         Heading = new javax.swing.JLabel();
         New_Invoice = new javax.swing.JButton();
         Table_Container = new javax.swing.JScrollPane();
-        Invoice = new javax.swing.JTable() {
-            @Override
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return false;
-            }
-        };
+        Invoice = new javax.swing.JTable();
         View = new javax.swing.JButton();
         Remove = new javax.swing.JButton();
         Export = new javax.swing.JButton();
@@ -61,7 +56,7 @@ public class Invoicing extends javax.swing.JPanel {
             }
         });
 
-        Invoice.setModel(Internal.DbUtils.resultSetToTableModel(Internal.SQLite.invoData()));
+        Invoice.setModel(Internal.SQLite.invoData());
         Invoice.setShowGrid(true);
         Invoice.getTableHeader().setReorderingAllowed(false);
         Table_Container.setViewportView(Invoice);

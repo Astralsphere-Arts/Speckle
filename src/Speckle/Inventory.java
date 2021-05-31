@@ -31,12 +31,7 @@ public class Inventory extends javax.swing.JPanel {
 
         Heading = new javax.swing.JLabel();
         Table_Container = new javax.swing.JScrollPane();
-        Inventory = new javax.swing.JTable() {
-            @Override
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return columnIndex != 0;
-            }
-        };
+        Inventory = new javax.swing.JTable();
         Add = new javax.swing.JButton();
         Remove = new javax.swing.JButton();
         Update = new javax.swing.JButton();
@@ -46,7 +41,7 @@ public class Inventory extends javax.swing.JPanel {
         Heading.setText("Inventory");
         Heading.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
-        Inventory.setModel(Internal.DbUtils.resultSetToTableModel(Internal.SQLite.invenData()));
+        Inventory.setModel(Internal.SQLite.invenData());
         Inventory.setShowGrid(true);
         Inventory.getTableHeader().setReorderingAllowed(false);
         Inventory.getModel().addTableModelListener(new javax.swing.event.TableModelListener() {
@@ -153,7 +148,11 @@ public class Inventory extends javax.swing.JPanel {
     private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
         int row = Inventory.getSelectedRow();
         String id = Inventory.getValueAt(row, 0).toString();
-        String quantity = Inventory.getValueAt(row, 3).toString();
+        String quantity;
+        if (Inventory.getValueAt(row, 3) == null)
+            quantity = "0";
+        else
+            quantity = Inventory.getValueAt(row, 3).toString();
         String update = JOptionPane.showInputDialog(null, "Enter the Amount of Stock"
             + " You want to Increase", "Update Stock", JOptionPane.PLAIN_MESSAGE);
         String quan = Integer.toString(Integer.parseInt(quantity) + Integer.parseInt(update));

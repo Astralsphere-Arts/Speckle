@@ -10,7 +10,10 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -162,33 +165,67 @@ public class SQLite {
         }
     }
     
-    public static ResultSet invoData() {
+    public static TableModel invoData() {
         if (mainDB == null)
             dbConnect();
-        ResultSet invResult = null;
+        ResultSet invResult;
+        DefaultTableModel invTableModel = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return false;
+            }
+        };
         String invoice = "SELECT \"Invoice ID\", \"Customer Name\", \"Contact Number\","
             + " \"Date of Sale\", \"Sale Amount\" FROM Invoice;";
         try {
             Statement mainDBquery = mainDB.createStatement();
             invResult = mainDBquery.executeQuery(invoice);
+            ResultSetMetaData invMeta = invResult.getMetaData();
+            int numberOfColumns = invMeta.getColumnCount();
+            for (int columnIndex = 0; columnIndex < numberOfColumns; columnIndex++)
+                invTableModel.addColumn(invMeta.getColumnLabel(columnIndex + 1));
+            Object[] row = new Object[numberOfColumns];
+            while (invResult.next()) {
+                for (int i = 0; i < numberOfColumns; i++)
+                    row[i] = invResult.getObject(i+1);
+                invTableModel.addRow(row);
+            }
+            return invTableModel;
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+            return null;
         }
-        return invResult;
     }
     
-    public static ResultSet invenData() {
+    public static TableModel invenData() {
         if (mainDB == null)
             dbConnect();
-        ResultSet invResult = null;
+        ResultSet invResult;
+        DefaultTableModel invTableModel = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return columnIndex != 0;
+            }
+        };
         String inventory = "SELECT * FROM Inventory;";
         try {
             Statement mainDBquery = mainDB.createStatement();
             invResult = mainDBquery.executeQuery(inventory);
+            ResultSetMetaData invMeta = invResult.getMetaData();
+            int numberOfColumns = invMeta.getColumnCount();
+            for (int columnIndex = 0; columnIndex < numberOfColumns; columnIndex++)
+                invTableModel.addColumn(invMeta.getColumnLabel(columnIndex + 1));
+            Object[] row = new Object[numberOfColumns];
+            while (invResult.next()) {
+                for (int i = 0; i < numberOfColumns; i++)
+                    row[i] = invResult.getObject(i+1);
+                invTableModel.addRow(row);
+            }
+            return invTableModel;
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+            return null;
         }
-        return invResult;
     }
     
     public static void updateInven(String id, String name, String price, String quan) {
