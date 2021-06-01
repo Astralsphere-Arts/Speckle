@@ -197,6 +197,51 @@ public class SQLite {
         }
     }
     
+    public static TableModel newInvo() {
+        if (mainDB == null)
+            dbConnect();
+        ResultSet invResult;
+        DefaultTableModel invTableModel = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return columnIndex == 0 || columnIndex == 4;
+            }
+            Class[] types = new Class [] {
+                java.lang.Boolean.class, java.lang.Object.class, java.lang.Object.class,
+                java.lang.Object.class, java.lang.Object.class
+            };
+            @Override
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        };
+        String inventory = "SELECT \"Product Name\", \"Price\", \"Available Quantity\""
+            + " FROM Inventory;";
+        try {
+            Statement mainDBquery = mainDB.createStatement();
+            invResult = mainDBquery.executeQuery(inventory);
+            ResultSetMetaData invMeta = invResult.getMetaData();
+            int numberOfColumns = invMeta.getColumnCount();
+            invTableModel.addColumn("Products Purchased");
+            for (int columnIndex = 0; columnIndex < numberOfColumns; columnIndex++)
+                invTableModel.addColumn(invMeta.getColumnLabel(columnIndex + 1));
+            invTableModel.addColumn("Purchased Quantity");
+            Object[] row = new Object[numberOfColumns + 2];
+            while (invResult.next()) {
+                for (int i = 1; i < numberOfColumns + 1; i++) {
+                    row[0] = false;
+                    row[i] = invResult.getObject(i);
+                    row[4] = "";
+                }
+                invTableModel.addRow(row);
+            }
+            return invTableModel;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+    }
+    
     public static TableModel invenData() {
         if (mainDB == null)
             dbConnect();

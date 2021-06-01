@@ -76,9 +76,9 @@ public class Invoicing extends javax.swing.JPanel {
             for (int row = 0; row < Invoice.getRowCount(); row++) {
                 TableCellRenderer renderer = Invoice.getCellRenderer(row, column);
                 Component comp = Invoice.prepareRenderer(renderer, row, column);
-                width = Math.max(comp.getPreferredSize().width +1 , width);
+                width = Math.max(comp.getPreferredSize().width + 1 , width);
             }
-            if(width > 300) width=300;
+            if (width > 300) width=300;
             columnModel.getColumn(column).setPreferredWidth(width);
         }
 
@@ -141,40 +141,40 @@ public class Invoicing extends javax.swing.JPanel {
         New_Heading.setText("New Invoice");
         New_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
-        Customer_Name_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Customer_Name_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         Customer_Name_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Customer_Name_Label.setText("Customer's Name");
         Customer_Name_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Customer_Name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Customer_Name.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
 
-        Contact_Number_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Contact_Number_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         Contact_Number_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Contact_Number_Label.setText("Contact Number");
         Contact_Number_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Contact_Number.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Contact_Number.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
 
-        Customer_Address_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Customer_Address_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         Customer_Address_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Customer_Address_Label.setText("Customer's Address");
         Customer_Address_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Customer_Address.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Customer_Address.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
 
-        New_Invoice_Table.setModel(Internal.SQLite.invenData());
+        New_Invoice_Table.setModel(Internal.SQLite.newInvo());
         New_Invoice_Table.setShowGrid(true);
         New_Invoice_Table.getTableHeader().setReorderingAllowed(false);
         New_Table_Container.setViewportView(New_Invoice_Table);
         final TableColumnModel NewColumnModel = New_Invoice_Table.getColumnModel();
         for (int column = 0; column < New_Invoice_Table.getColumnCount(); column++) {
-            int width = 15;
+            int width = 10;
             for (int row = 0; row < New_Invoice_Table.getRowCount(); row++) {
                 TableCellRenderer renderer = New_Invoice_Table.getCellRenderer(row, column);
                 Component comp = New_Invoice_Table.prepareRenderer(renderer, row, column);
-                width = Math.max(comp.getPreferredSize().width +1 , width);
+                width = Math.max(comp.getPreferredSize().width + 1 , width);
             }
-            if(width > 300) width=300;
+            if (width > 200) width=200;
             NewColumnModel.getColumn(column).setPreferredWidth(width);
         }
 
@@ -210,8 +210,8 @@ public class Invoicing extends javax.swing.JPanel {
                             .addGroup(Invoice_NewLayout.createSequentialGroup()
                                 .addGap(2, 2, 2)
                                 .addGroup(Invoice_NewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Customer_Address_Label)
-                                    .addComponent(Customer_Name_Label))
+                                    .addComponent(Customer_Name_Label)
+                                    .addComponent(Customer_Address_Label))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(Invoice_NewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(Invoice_NewLayout.createSequentialGroup()
@@ -228,18 +228,18 @@ public class Invoicing extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Invoice_NewLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(New_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(Invoice_NewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Customer_Name_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Customer_Name_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Customer_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Contact_Number_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Contact_Number_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Contact_Number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Invoice_NewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Customer_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Customer_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Customer_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addComponent(New_Table_Container, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(New_Table_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(Invoice_NewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
