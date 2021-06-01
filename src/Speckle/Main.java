@@ -1,9 +1,7 @@
 package Speckle;
 
 import com.formdev.flatlaf.FlatIntelliJLaf;
-import java.awt.Insets;
 import javax.swing.JOptionPane;
-import javax.swing.UIManager;
 
 /**
  *
@@ -946,7 +944,7 @@ public class Main extends javax.swing.JFrame {
         /* Set the FlatIntelliJLaf look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If FlatIntelliJLaf is not available, stay with the default look and feel. */
-        FlatIntelliJLaf.install();
+        FlatIntelliJLaf.setup();
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("FlatIntelliJLaf".equals(info.getName())) {
@@ -957,9 +955,9 @@ public class Main extends javax.swing.JFrame {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        UIManager.put("ScrollBar.thumbArc", 999);
-        UIManager.put("ScrollBar.thumbInsets", new Insets(2, 2, 2, 2));
-        UIManager.put("TabbedPane.showTabSeparators", true);
+        javax.swing.UIManager.put("ScrollBar.thumbArc", 999);
+        javax.swing.UIManager.put("ScrollBar.thumbInsets", new java.awt.Insets(2, 2, 2, 2));
+        javax.swing.UIManager.put("TabbedPane.showTabSeparators", true);
         //</editor-fold>
 
         /* Create and display the form */
