@@ -84,7 +84,7 @@
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="Inventory.getModel().addTableModelListener(new javax.swing.event.TableModelListener() {&#xa;    public void tableChanged(javax.swing.event.TableModelEvent evt) {&#xa;        InventoryTableChanged(evt);&#xa;    }&#xa;});"/>
-            <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="final TableColumnModel columnModel = Inventory.getColumnModel();&#xa;for (int column = 0; column &lt; Inventory.getColumnCount(); column++) {&#xa;    int width = 15;&#xa;    for (int row = 0; row &lt; Inventory.getRowCount(); row++) {&#xa;        TableCellRenderer renderer = Inventory.getCellRenderer(row, column);&#xa;        Component comp = Inventory.prepareRenderer(renderer, row, column);&#xa;        width = Math.max(comp.getPreferredSize().width +1 , width);&#xa;    }&#xa;    if(width &gt; 300) width=300;&#xa;    columnModel.getColumn(column).setPreferredWidth(width);&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="final TableColumnModel columnModel = Inventory.getColumnModel();&#xa;for (int column = 0; column &lt; Inventory.getColumnCount(); column++) {&#xa;    int width = 15;&#xa;    for (int row = 0; row &lt; Inventory.getRowCount(); row++) {&#xa;        TableCellRenderer renderer = Inventory.getCellRenderer(row, column);&#xa;        Component comp = Inventory.prepareRenderer(renderer, row, column);&#xa;        width = Math.max(comp.getPreferredSize().width + 1 , width);&#xa;    }&#xa;    if (width &gt; 300) width=300;&#xa;    columnModel.getColumn(column).setPreferredWidth(width);&#xa;}"/>
           </AuxValues>
         </Component>
       </SubComponents>
@@ -92,7 +92,7 @@
     <Component class="javax.swing.JButton" name="Add">
       <Properties>
         <Property name="text" type="java.lang.String" value="Add"/>
-        <Property name="toolTipText" type="java.lang.String" value="Add a New Item to Inventory"/>
+        <Property name="toolTipText" type="java.lang.String" value="Add a New Product to Inventory"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddActionPerformed"/>
@@ -110,7 +110,7 @@
     <Component class="javax.swing.JButton" name="Update">
       <Properties>
         <Property name="text" type="java.lang.String" value="Update Stock"/>
-        <Property name="toolTipText" type="java.lang.String" value="Update Stocks for Selected Item"/>
+        <Property name="toolTipText" type="java.lang.String" value="Increase Available Quantity for Selected Product"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateActionPerformed"/>

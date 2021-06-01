@@ -56,14 +56,14 @@ public class Inventory extends javax.swing.JPanel {
             for (int row = 0; row < Inventory.getRowCount(); row++) {
                 TableCellRenderer renderer = Inventory.getCellRenderer(row, column);
                 Component comp = Inventory.prepareRenderer(renderer, row, column);
-                width = Math.max(comp.getPreferredSize().width +1 , width);
+                width = Math.max(comp.getPreferredSize().width + 1 , width);
             }
-            if(width > 300) width=300;
+            if (width > 300) width=300;
             columnModel.getColumn(column).setPreferredWidth(width);
         }
 
         Add.setText("Add");
-        Add.setToolTipText("Add a New Item to Inventory");
+        Add.setToolTipText("Add a New Product to Inventory");
         Add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddActionPerformed(evt);
@@ -79,7 +79,7 @@ public class Inventory extends javax.swing.JPanel {
         });
 
         Update.setText("Update Stock");
-        Update.setToolTipText("Update Stocks for Selected Item");
+        Update.setToolTipText("Increase Available Quantity for Selected Product");
         Update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UpdateActionPerformed(evt);
