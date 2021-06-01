@@ -9,5 +9,7 @@ A Simple Invoicing and Inventory Management System written in Java and uses SQLi
 
 ## Libraries Used
 *All Libraries are Included with the Source in __lib__ folder.*
-1. [SQLite](https://www.sqlite.org/) [(SQLite JDBC)](https://github.com/xerial/sqlite-jdbc) : Version 3.34.0
-2. [FlatLaf](https://www.formdev.com/flatlaf/) : Version 1.2
+1. **[SQLite](https://www.sqlite.org/) [(SQLite JDBC)](https://github.com/xerial/sqlite-jdbc)** : Version 3.34.0  
+   &emsp; **Copyright &copy; 2007-2021 xerial** - Apache 2.0 License
+2. **[FlatLaf](https://www.formdev.com/flatlaf/)** : Version 1.2  
+   &emsp; **Copyright &copy; 2019-2021 FormDev Software GmbH.** - Apache 2.0 License
