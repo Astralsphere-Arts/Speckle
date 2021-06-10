@@ -54,7 +54,7 @@ public class About extends javax.swing.JPanel {
 
         Version.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         Version.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Version.setText("Version 0.2-Alpha");
+        Version.setText("Version 0.5-alpha");
         Version.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         About_Para.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
