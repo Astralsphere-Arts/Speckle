@@ -24,9 +24,6 @@ public class Main extends javax.swing.JFrame {
             StartUp_Deck.show(StartUp_Container, "signUp1");
         else
             StartUp_Deck.show(StartUp_Container, "signIn");
-        Speckle.Home scene = new Home();
-        scene.setBounds(0, 0, 955, 574);
-        Content.add(scene).setVisible(true);
     }
 
     /**
@@ -756,8 +753,13 @@ public class Main extends javax.swing.JFrame {
         if (usrname.equals("") && passwd.equals(""))
             JOptionPane.showMessageDialog(null, "Please enter Username and Password they cannot be"
                 + " Blank. Please Try Again!", "Credentials are Blank", JOptionPane.ERROR_MESSAGE);
-        else if (Internal.SQLite.logIn(usrname, passwd))
+        else if (Internal.SQLite.logIn(usrname, passwd)) {
+            Content.removeAll();
+            Speckle.Home scene = new Home();
+            scene.setBounds(0, 0, 955, 574);
+            Content.add(scene).setVisible(true);
             Container_Deck.show(Container, "app");
+        }
         else
             JOptionPane.showMessageDialog(null, "The Username or Password entered are Incorrect."
                 + " Please Try Again!", "Incorrect Credentials", JOptionPane.ERROR_MESSAGE);
@@ -789,6 +791,10 @@ public class Main extends javax.swing.JFrame {
                 + " Try Again!", "Empty Feilds", JOptionPane.ERROR_MESSAGE);
         else {
             Internal.SQLite.compConfig(cname, cnum, cmail, caddress);
+            Content.removeAll();
+            Speckle.Home scene = new Home();
+            scene.setBounds(0, 0, 955, 574);
+            Content.add(scene).setVisible(true);
             Container_Deck.show(Container, "app");
         }
     }//GEN-LAST:event_SignUp_ButtonActionPerformed
@@ -923,6 +929,11 @@ public class Main extends javax.swing.JFrame {
         Password.setText("");
         StartUp_Deck.show(StartUp_Container, "signIn");
         Container_Deck.show(Container, "start");
+        Home.setBackground(Active);
+        Invoicing.setBackground(White);
+        Inventory.setBackground(White);
+        Settings.setBackground(White);
+        About.setBackground(White);
     }//GEN-LAST:event_SignOutMouseClicked
 
     private void SignOutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignOutMousePressed
