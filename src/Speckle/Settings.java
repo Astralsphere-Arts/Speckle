@@ -43,14 +43,22 @@ public class Settings extends javax.swing.JPanel {
         Change_Password_Button = new javax.swing.JButton();
         Details_Tab = new javax.swing.JPanel();
         Update_Business_Details = new javax.swing.JLabel();
+        Current_Value_Label = new javax.swing.JLabel();
+        New_Value_Label = new javax.swing.JLabel();
         Business_Name_Label = new javax.swing.JLabel();
-        Business_Name = new javax.swing.JTextField();
+        Current_Business_Name = new javax.swing.JTextField();
+        New_Business_Name = new javax.swing.JTextField();
         Contact_Number_Label = new javax.swing.JLabel();
-        Contact_Number = new javax.swing.JTextField();
+        Current_Contact_Number = new javax.swing.JTextField();
+        New_Contact_Number = new javax.swing.JTextField();
         Email_Address_Label = new javax.swing.JLabel();
-        Email_Address = new javax.swing.JTextField();
+        Current_Email_Address = new javax.swing.JTextField();
+        New_Email_Address = new javax.swing.JTextField();
         Business_Location_Label = new javax.swing.JLabel();
-        Business_Location = new javax.swing.JTextField();
+        Current_Business_Location_Label = new javax.swing.JLabel();
+        Current_Business_Location = new javax.swing.JTextField();
+        New_Business_Location_Label = new javax.swing.JLabel();
+        New_Business_Location = new javax.swing.JTextField();
         Save_Changes_Button = new javax.swing.JButton();
 
         Settings_Container.setTabPlacement(javax.swing.JTabbedPane.LEFT);
@@ -64,18 +72,14 @@ public class Settings extends javax.swing.JPanel {
         Change_Username.setText("Change Username");
 
         Current_Username_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Current_Username_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Current_Username_Label.setText("Current Username");
-        Current_Username_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Current_Username.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Current_Username.setText(Internal.SQLite.usrname());
+        Current_Username.setText(Internal.SQLite.configValue("Username"));
         Current_Username.setEnabled(false);
 
         New_Username_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        New_Username_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         New_Username_Label.setText("New Username");
-        New_Username_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         New_Username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
@@ -90,23 +94,17 @@ public class Settings extends javax.swing.JPanel {
         Change_Password.setText("Change Password");
 
         Current_Password_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Current_Password_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Current_Password_Label.setText("Current Password");
-        Current_Password_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Current_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         New_Password_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        New_Password_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         New_Password_Label.setText("New Password");
-        New_Password_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         New_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         Confirm_Password_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Confirm_Password_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Confirm_Password_Label.setText("Confirm Password");
-        Confirm_Password_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Confirm_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
@@ -132,21 +130,17 @@ public class Settings extends javax.swing.JPanel {
                                 .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(Current_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(New_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(Current_Password, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
                                     .addComponent(New_Password)))
                             .addGroup(User_TabLayout.createSequentialGroup()
                                 .addComponent(New_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(New_Username)
-                                    .addGroup(User_TabLayout.createSequentialGroup()
-                                        .addComponent(Change_Username_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 100, Short.MAX_VALUE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(New_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(User_TabLayout.createSequentialGroup()
                                 .addComponent(Confirm_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Confirm_Password)
                                     .addGroup(User_TabLayout.createSequentialGroup()
@@ -154,48 +148,50 @@ public class Settings extends javax.swing.JPanel {
                                         .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(User_TabLayout.createSequentialGroup()
                                 .addComponent(Current_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(Current_Username))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Change_Username_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Current_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addComponent(Change_Password))
                 .addGap(70, 70, 70)
                 .addComponent(Speckle_Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
         User_TabLayout.setVerticalGroup(
             User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(User_TabLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addGap(50, 50, 50)
                 .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Speckle_Logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(User_TabLayout.createSequentialGroup()
                         .addComponent(Change_Username)
                         .addGap(24, 24, 24)
                         .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Current_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Current_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Current_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(New_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(New_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(New_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(New_Username_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(24, 24, 24)
                         .addComponent(Change_Username_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
+                        .addGap(41, 41, 41)
                         .addComponent(Change_Password)
                         .addGap(24, 24, 24)
                         .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Current_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Current_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Current_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(New_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(New_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(New_Password)
+                            .addComponent(New_Password_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Confirm_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Confirm_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Confirm_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(24, 24, 24)
                         .addComponent(Change_Password_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         Settings_Container.addTab("User Details", User_Tab);
@@ -203,33 +199,57 @@ public class Settings extends javax.swing.JPanel {
         Update_Business_Details.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         Update_Business_Details.setText("Update Business Details");
 
-        Business_Name_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Business_Name_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Business_Name_Label.setText("Business Name");
-        Business_Name_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Current_Value_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Current_Value_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Current_Value_Label.setText("Current");
+        Current_Value_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Business_Name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        New_Value_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        New_Value_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        New_Value_Label.setText("New");
+        New_Value_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        Business_Name_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Business_Name_Label.setText("Business Name");
+
+        Current_Business_Name.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Current_Business_Name.setText(Internal.SQLite.configValue("Business Name"));
+        Current_Business_Name.setEnabled(false);
+
+        New_Business_Name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         Contact_Number_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Contact_Number_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Contact_Number_Label.setText("Contact Number");
-        Contact_Number_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Contact_Number.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Current_Contact_Number.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Current_Contact_Number.setText(Internal.SQLite.configValue("Contact Number"));
+        Current_Contact_Number.setEnabled(false);
+
+        New_Contact_Number.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         Email_Address_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Email_Address_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Email_Address_Label.setText("Email Address");
-        Email_Address_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Email_Address.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Current_Email_Address.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Current_Email_Address.setText(Internal.SQLite.configValue("Email Address"));
+        Current_Email_Address.setEnabled(false);
+
+        New_Email_Address.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         Business_Location_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Business_Location_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Business_Location_Label.setText("Business Location");
-        Business_Location_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Business_Location_Label.setText("<html><p>Business Location (Address) :</p></html>");
 
-        Business_Location.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Current_Business_Location_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Current_Business_Location_Label.setText("Current");
+
+        Current_Business_Location.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Current_Business_Location.setText(Internal.SQLite.configValue("Business Location"));
+        Current_Business_Location.setEnabled(false);
+
+        New_Business_Location_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        New_Business_Location_Label.setText("New");
+
+        New_Business_Location.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         Save_Changes_Button.setText("Save Changes");
         Save_Changes_Button.addActionListener(new java.awt.event.ActionListener() {
@@ -243,58 +263,82 @@ public class Settings extends javax.swing.JPanel {
         Details_TabLayout.setHorizontalGroup(
             Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Details_TabLayout.createSequentialGroup()
-                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(40, 40, 40)
+                .addComponent(Update_Business_Details)
+                .addGap(531, 611, Short.MAX_VALUE))
+            .addGroup(Details_TabLayout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Business_Location_Label)
                     .addGroup(Details_TabLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(Update_Business_Details))
-                    .addGroup(Details_TabLayout.createSequentialGroup()
-                        .addGap(70, 70, 70)
+                        .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Email_Address_Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Contact_Number_Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                                .addComponent(Business_Name_Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Current_Business_Location_Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                            .addComponent(New_Business_Location_Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(Details_TabLayout.createSequentialGroup()
-                                .addComponent(Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(Business_Location))
+                                .addComponent(Current_Value_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(New_Value_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Current_Business_Location)
                             .addGroup(Details_TabLayout.createSequentialGroup()
-                                .addComponent(Email_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(Email_Address))
-                            .addGroup(Details_TabLayout.createSequentialGroup()
-                                .addComponent(Contact_Number_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(Contact_Number))
-                            .addGroup(Details_TabLayout.createSequentialGroup()
-                                .addComponent(Business_Name_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(Business_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(Details_TabLayout.createSequentialGroup()
-                        .addGap(334, 334, 334)
-                        .addComponent(Save_Changes_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(133, Short.MAX_VALUE))
+                                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(Current_Email_Address, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Current_Contact_Number, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Current_Business_Name, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(New_Business_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(New_Contact_Number)
+                                    .addComponent(New_Email_Address)))
+                            .addComponent(New_Business_Location))))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Details_TabLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Save_Changes_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Details_TabLayout.setVerticalGroup(
             Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Details_TabLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addGap(50, 50, 50)
                 .addComponent(Update_Business_Details)
-                .addGap(24, 24, 24)
+                .addGap(26, 26, 26)
                 .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Business_Name_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Business_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(New_Value_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Current_Value_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Contact_Number_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Contact_Number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Business_Name_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Current_Business_Name)
+                    .addComponent(New_Business_Name))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Email_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Email_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Contact_Number_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Current_Contact_Number)
+                    .addComponent(New_Contact_Number))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Email_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Current_Email_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(New_Email_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Business_Location, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
+                    .addComponent(Current_Business_Location, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Current_Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(New_Business_Location, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(New_Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
                 .addComponent(Save_Changes_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
 
         Settings_Container.addTab("Business Details", Details_Tab);
@@ -317,7 +361,7 @@ public class Settings extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Username cannot be Empty. Please Try Again!",
                 "Username Field Empty", JOptionPane.ERROR_MESSAGE);
         else {
-            Internal.SQLite.userConfig(usrname, Internal.SQLite.passwd());
+            Internal.SQLite.userConfig(usrname, Internal.SQLite.configValue("Password"));
             JOptionPane.showMessageDialog(null, "Your Username changed Sucessfully!",
                 "Sucess", JOptionPane.ERROR_MESSAGE);
             Speckle.Main.Content.removeAll();
@@ -335,7 +379,7 @@ public class Settings extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Both Current and New Passwords are needed"
                 + " for changing Password. Please Try Again!", "Password Fields Empty",
                 JOptionPane.ERROR_MESSAGE);
-        else if (!curpasswd.equals(Internal.SQLite.passwd())) {
+        else if (!curpasswd.equals(Internal.SQLite.configValue("Password"))) {
             JOptionPane.showMessageDialog(null, "The Current Password is Incorrect. Please"
                 + " Try Again!", "Incorrect Password", JOptionPane.ERROR_MESSAGE);
         }
@@ -343,32 +387,47 @@ public class Settings extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "The New Password in Password Fields do not Match."
                 + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
         else {
-            Internal.SQLite.userConfig(Internal.SQLite.usrname(), passwd);
+            Internal.SQLite.userConfig(Internal.SQLite.configValue("Username"), passwd);
             JOptionPane.showMessageDialog(null, "Your Password changed Sucessfully!",
                 "Sucess", JOptionPane.ERROR_MESSAGE);
+            Speckle.Main.Content.removeAll();
+            Settings scene = new Settings();
+            scene.setBounds(0, 0, 955, 574);
+            Speckle.Main.Content.add(scene).setVisible(true);
         }
     }//GEN-LAST:event_Change_Password_ButtonActionPerformed
 
     private void Save_Changes_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Save_Changes_ButtonActionPerformed
-        String cname = Business_Name.getText();
-        String cnum = Contact_Number.getText();
-        String cmail = Email_Address.getText();
-        String caddress = Business_Location.getText();
-        if (cname.equals("") || cnum.equals("") || cmail.equals("") || caddress.equals(""))
-            JOptionPane.showMessageDialog(null, "All Fields are Required to be Filled. Please"
-                + " Try Again!", "Empty Feilds", JOptionPane.ERROR_MESSAGE);
+        String cname = New_Business_Name.getText();
+        String cnum = New_Contact_Number.getText();
+        String cmail = New_Email_Address.getText();
+        String caddress = New_Business_Location.getText();
+        if (cname.equals("") && cnum.equals("") && cmail.equals("") && caddress.equals(""))
+            JOptionPane.showMessageDialog(null, "You haven't made any Changes. Please"
+                + " Try Again!", "No Changes Found", JOptionPane.ERROR_MESSAGE);
         else {
+            if (cname.equals(""))
+                cname = Current_Business_Name.getText();
+            if (cnum.equals(""))
+                cnum = Current_Contact_Number.getText();
+            if (cmail.equals(""))
+                cmail = Current_Email_Address.getText();
+            if (caddress.equals(""))
+                caddress = Current_Business_Location.getText();
             Internal.SQLite.compConfig(cname, cnum, cmail, caddress);
             JOptionPane.showMessageDialog(null, "Your Changes have been saved Sucessfully!",
                 "Sucess", JOptionPane.ERROR_MESSAGE);
+            Speckle.Main.Content.removeAll();
+            Settings scene = new Settings();
+            scene.setBounds(0, 0, 955, 574);
+            Speckle.Main.Content.add(scene).setVisible(true);
+            scene.Settings_Container.setSelectedIndex(1);
         }
     }//GEN-LAST:event_Save_Changes_ButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Business_Location;
     private javax.swing.JLabel Business_Location_Label;
-    private javax.swing.JTextField Business_Name;
     private javax.swing.JLabel Business_Name_Label;
     private javax.swing.JLabel Change_Password;
     private javax.swing.JButton Change_Password_Button;
@@ -376,19 +435,29 @@ public class Settings extends javax.swing.JPanel {
     private javax.swing.JButton Change_Username_Button;
     private javax.swing.JPasswordField Confirm_Password;
     private javax.swing.JLabel Confirm_Password_Label;
-    private javax.swing.JTextField Contact_Number;
     private javax.swing.JLabel Contact_Number_Label;
+    private javax.swing.JTextField Current_Business_Location;
+    private javax.swing.JLabel Current_Business_Location_Label;
+    private javax.swing.JTextField Current_Business_Name;
+    private javax.swing.JTextField Current_Contact_Number;
+    private javax.swing.JTextField Current_Email_Address;
     private javax.swing.JPasswordField Current_Password;
     private javax.swing.JLabel Current_Password_Label;
     private javax.swing.JTextField Current_Username;
     private javax.swing.JLabel Current_Username_Label;
+    private javax.swing.JLabel Current_Value_Label;
     private javax.swing.JPanel Details_Tab;
-    private javax.swing.JTextField Email_Address;
     private javax.swing.JLabel Email_Address_Label;
+    private javax.swing.JTextField New_Business_Location;
+    private javax.swing.JLabel New_Business_Location_Label;
+    private javax.swing.JTextField New_Business_Name;
+    private javax.swing.JTextField New_Contact_Number;
+    private javax.swing.JTextField New_Email_Address;
     private javax.swing.JPasswordField New_Password;
     private javax.swing.JLabel New_Password_Label;
     private javax.swing.JTextField New_Username;
     private javax.swing.JLabel New_Username_Label;
+    private javax.swing.JLabel New_Value_Label;
     private javax.swing.JButton Save_Changes_Button;
     private javax.swing.JTabbedPane Settings_Container;
     private javax.swing.JLabel Speckle_Logo;

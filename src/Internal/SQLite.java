@@ -93,34 +93,20 @@ public class SQLite {
         return usrname.equals(username) && passwd.equals(password);
     }
     
-    public static String usrname() {
+    public static String configValue(String param) {
         if (configDB == null)
             dbConnect();
-        String username = null;
-        String user = "SELECT Value FROM Configuration WHERE Parameter = 'Username';";
+        String value = null;
+        String configuration = "SELECT Value FROM Configuration WHERE Parameter = ?;";
         try {
-            Statement configDBquery = configDB.createStatement();
-            ResultSet userResult = configDBquery.executeQuery(user);
-            username = userResult.getString("Value");
+            PreparedStatement configDBquery = configDB.prepareStatement(configuration);
+            configDBquery.setString(1, param);
+            ResultSet configResult = configDBquery.executeQuery();
+            value = configResult.getString("Value");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
-        return username;
-    }
-    
-    public static String passwd() {
-        if (configDB == null)
-            dbConnect();
-        String password = null;
-        String pass = "SELECT Value FROM Configuration WHERE Parameter = 'Password';";
-        try {
-            Statement configDBquery = configDB.createStatement();
-            ResultSet passResult = configDBquery.executeQuery(pass);
-            password = passResult.getString("Value");
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
-        }
-        return password;
+        return value;
     }
     
     public static void userConfig(String usrname, String passwd) {
