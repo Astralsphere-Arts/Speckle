@@ -18,7 +18,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTabbedPane1" max="32767" attributes="0"/>
+              <Component id="Home_Container" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
@@ -33,7 +33,7 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="Heading" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jTabbedPane1" max="32767" attributes="0"/>
+              <Component id="Home_Container" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -53,15 +53,15 @@
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Heading"/>
       </AccessibilityProperties>
     </Component>
-    <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+    <Container class="javax.swing.JTabbedPane" name="Home_Container">
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="jPanel1">
+        <Container class="javax.swing.JPanel" name="Dashboard">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Home">
-                <Property name="tabTitle" type="java.lang.String" value="Home"/>
+              <JTabbedPaneConstraints tabName="Dashboard">
+                <Property name="tabTitle" type="java.lang.String" value="Dashboard"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -79,11 +79,11 @@
             </DimensionLayout>
           </Layout>
         </Container>
-        <Container class="javax.swing.JPanel" name="jPanel2">
+        <Container class="javax.swing.JPanel" name="Quick_Start">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Help">
-                <Property name="tabTitle" type="java.lang.String" value="Help"/>
+              <JTabbedPaneConstraints tabName="Quick Start">
+                <Property name="tabTitle" type="java.lang.String" value="Quick Start"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>

@@ -363,7 +363,7 @@ public class Settings extends javax.swing.JPanel {
         else {
             Internal.SQLite.userConfig(usrname, Internal.SQLite.configValue("Password"));
             JOptionPane.showMessageDialog(null, "Your Username changed Sucessfully!",
-                "Sucess", JOptionPane.ERROR_MESSAGE);
+                "Sucess", JOptionPane.INFORMATION_MESSAGE);
             Speckle.Main.Content.removeAll();
             Settings scene = new Settings();
             scene.setBounds(0, 0, 955, 574);
@@ -389,7 +389,7 @@ public class Settings extends javax.swing.JPanel {
         else {
             Internal.SQLite.userConfig(Internal.SQLite.configValue("Username"), passwd);
             JOptionPane.showMessageDialog(null, "Your Password changed Sucessfully!",
-                "Sucess", JOptionPane.ERROR_MESSAGE);
+                "Sucess", JOptionPane.INFORMATION_MESSAGE);
             Speckle.Main.Content.removeAll();
             Settings scene = new Settings();
             scene.setBounds(0, 0, 955, 574);
@@ -416,7 +416,7 @@ public class Settings extends javax.swing.JPanel {
                 caddress = Current_Business_Location.getText();
             Internal.SQLite.compConfig(cname, cnum, cmail, caddress);
             JOptionPane.showMessageDialog(null, "Your Changes have been saved Sucessfully!",
-                "Sucess", JOptionPane.ERROR_MESSAGE);
+                "Sucess", JOptionPane.INFORMATION_MESSAGE);
             Speckle.Main.Content.removeAll();
             Settings scene = new Settings();
             scene.setBounds(0, 0, 955, 574);
