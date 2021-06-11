@@ -32,8 +32,8 @@ public class Invoicing extends javax.swing.JPanel {
         Invoice_Main = new javax.swing.JPanel();
         Main_Heading = new javax.swing.JLabel();
         New_Invoice = new javax.swing.JButton();
-        Main_Table_Container = new javax.swing.JScrollPane();
-        Invoice = new javax.swing.JTable();
+        Invoice_Table_Container = new javax.swing.JScrollPane();
+        Invoice_Table = new javax.swing.JTable();
         View = new javax.swing.JButton();
         Remove = new javax.swing.JButton();
         Export = new javax.swing.JButton();
@@ -45,7 +45,7 @@ public class Invoicing extends javax.swing.JPanel {
         Contact_Number = new javax.swing.JTextField();
         Customer_Address_Label = new javax.swing.JLabel();
         Customer_Address = new javax.swing.JTextField();
-        New_Table_Container = new javax.swing.JScrollPane();
+        New_Invoice_Table_Container = new javax.swing.JScrollPane();
         New_Invoice_Table = new javax.swing.JTable();
         Cancel = new javax.swing.JButton();
         Create_Invoice = new javax.swing.JButton();
@@ -66,16 +66,16 @@ public class Invoicing extends javax.swing.JPanel {
             }
         });
 
-        Invoice.setModel(Internal.SQLite.invoData());
-        Invoice.setShowGrid(true);
-        Invoice.getTableHeader().setReorderingAllowed(false);
-        Main_Table_Container.setViewportView(Invoice);
-        final TableColumnModel columnModel = Invoice.getColumnModel();
-        for (int column = 0; column < Invoice.getColumnCount(); column++) {
+        Invoice_Table.setModel(Internal.SQLite.invoData());
+        Invoice_Table.setShowGrid(true);
+        Invoice_Table.getTableHeader().setReorderingAllowed(false);
+        Invoice_Table_Container.setViewportView(Invoice_Table);
+        final TableColumnModel columnModel = Invoice_Table.getColumnModel();
+        for (int column = 0; column < Invoice_Table.getColumnCount(); column++) {
             int width = 15;
-            for (int row = 0; row < Invoice.getRowCount(); row++) {
-                TableCellRenderer renderer = Invoice.getCellRenderer(row, column);
-                Component comp = Invoice.prepareRenderer(renderer, row, column);
+            for (int row = 0; row < Invoice_Table.getRowCount(); row++) {
+                TableCellRenderer renderer = Invoice_Table.getCellRenderer(row, column);
+                Component comp = Invoice_Table.prepareRenderer(renderer, row, column);
                 width = Math.max(comp.getPreferredSize().width + 1 , width);
             }
             if (width > 300) width=300;
@@ -114,7 +114,7 @@ public class Invoicing extends javax.swing.JPanel {
                         .addComponent(Main_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(New_Invoice, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Main_Table_Container, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Invoice_Table_Container, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
         Invoice_MainLayout.setVerticalGroup(
@@ -125,7 +125,7 @@ public class Invoicing extends javax.swing.JPanel {
                     .addComponent(New_Invoice, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Main_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(Main_Table_Container, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Invoice_Table_Container, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(Invoice_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Remove, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -162,10 +162,10 @@ public class Invoicing extends javax.swing.JPanel {
 
         Customer_Address.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
 
-        New_Invoice_Table.setModel(Internal.SQLite.newInvo());
+        New_Invoice_Table.setModel(Internal.SQLite.newInvoData());
         New_Invoice_Table.setShowGrid(true);
         New_Invoice_Table.getTableHeader().setReorderingAllowed(false);
-        New_Table_Container.setViewportView(New_Invoice_Table);
+        New_Invoice_Table_Container.setViewportView(New_Invoice_Table);
         final TableColumnModel NewColumnModel = New_Invoice_Table.getColumnModel();
         for (int column = 0; column < New_Invoice_Table.getColumnCount(); column++) {
             int width = 10;
@@ -188,6 +188,11 @@ public class Invoicing extends javax.swing.JPanel {
 
         Create_Invoice.setText("Create Invoice");
         Create_Invoice.setToolTipText("Create a New Invoice using given Data");
+        Create_Invoice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Create_InvoiceActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Invoice_NewLayout = new javax.swing.GroupLayout(Invoice_New);
         Invoice_New.setLayout(Invoice_NewLayout);
@@ -200,7 +205,7 @@ public class Invoicing extends javax.swing.JPanel {
                         .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Create_Invoice, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(New_Table_Container, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(New_Invoice_Table_Container, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Invoice_NewLayout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addGroup(Invoice_NewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,7 +244,7 @@ public class Invoicing extends javax.swing.JPanel {
                     .addComponent(Customer_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Customer_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(New_Table_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                .addComponent(New_Invoice_Table_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(Invoice_NewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -270,14 +275,44 @@ public class Invoicing extends javax.swing.JPanel {
     }//GEN-LAST:event_CancelActionPerformed
 
     private void RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveActionPerformed
-        DefaultTableModel Invoice_Model = (DefaultTableModel) this.Invoice.getModel();
-        int[] rows = Invoice.getSelectedRows();
+        DefaultTableModel Invoice_Model = (DefaultTableModel) this.Invoice_Table.getModel();
+        int[] rows = Invoice_Table.getSelectedRows();
         for (int i=0; i<rows.length; i++) {
-            String id = Invoice.getValueAt(rows[i]-i, 0).toString();
+            String id = Invoice_Table.getValueAt(rows[i]-i, 0).toString();
             Internal.SQLite.remRowInvo(id);
             Invoice_Model.removeRow(rows[i]-i);
         }
     }//GEN-LAST:event_RemoveActionPerformed
+
+    private void Create_InvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Create_InvoiceActionPerformed
+        String invID = "INV-" + Internal.Random.ID(4) + "-" + Internal.Random.ID(4);
+        String custName = Customer_Name.getText();
+        String custContact = Contact_Number.getText();
+        String custAddress = Customer_Address.getText();
+        java.util.Date dNow = new java.util.Date();
+        java.text.SimpleDateFormat dFormat = new java.text.SimpleDateFormat("dd MMMM yyyy");
+        String saleDate = dFormat.format(dNow);
+        String saleAmount = "0";
+        Internal.SQLite.newInvoice(invID);
+        for (int row = 0; row < New_Invoice_Table.getRowCount(); row++) {
+            Boolean isChecked = Boolean.valueOf(New_Invoice_Table.getValueAt(row, 0).toString());
+            if (isChecked) {
+                String prodName = (String) New_Invoice_Table.getValueAt(row, 1);
+                String prodPrice = (String) New_Invoice_Table.getValueAt(row, 2);
+                String prodQuan = (String) New_Invoice_Table.getValueAt(row, 4);
+                String prodNetAmount = Float.toString(Float.parseFloat(prodPrice) *
+                    Float.parseFloat(prodQuan));
+                saleAmount = Float.toString(Float.parseFloat(saleAmount) +
+                    Float.parseFloat(prodNetAmount));
+                Internal.SQLite.newInvoice(invID, prodName, prodPrice, prodQuan, prodNetAmount);
+            }
+        }
+        Internal.SQLite.newInvoice(invID, custName, custContact, custAddress, saleDate, saleAmount);
+        Speckle.Main.Content.removeAll();
+        Speckle.Invoicing scene = new Invoicing();
+        scene.setBounds(0, 0, 955, 574);
+        Speckle.Main.Content.add(scene).setVisible(true);
+    }//GEN-LAST:event_Create_InvoiceActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -290,16 +325,16 @@ public class Invoicing extends javax.swing.JPanel {
     private javax.swing.JTextField Customer_Name;
     private javax.swing.JLabel Customer_Name_Label;
     private javax.swing.JButton Export;
-    private javax.swing.JTable Invoice;
     private javax.swing.JPanel Invoice_Container;
     private javax.swing.JPanel Invoice_Main;
     private javax.swing.JPanel Invoice_New;
+    private javax.swing.JTable Invoice_Table;
+    private javax.swing.JScrollPane Invoice_Table_Container;
     private javax.swing.JLabel Main_Heading;
-    private javax.swing.JScrollPane Main_Table_Container;
     private javax.swing.JLabel New_Heading;
     private javax.swing.JButton New_Invoice;
     private javax.swing.JTable New_Invoice_Table;
-    private javax.swing.JScrollPane New_Table_Container;
+    private javax.swing.JScrollPane New_Invoice_Table_Container;
     private javax.swing.JButton Remove;
     private javax.swing.JButton View;
     // End of variables declaration//GEN-END:variables

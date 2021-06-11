@@ -26,7 +26,7 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="Update" min="-2" pref="120" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="Table_Container" min="-2" pref="860" max="-2" attributes="0"/>
+                  <Component id="Inventory_Table_Container" min="-2" pref="860" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                       <Component id="Heading" min="-2" pref="224" max="-2" attributes="0"/>
@@ -42,7 +42,7 @@
               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               <Component id="Heading" min="-2" pref="45" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-              <Component id="Table_Container" min="-2" pref="347" max="-2" attributes="0"/>
+              <Component id="Inventory_Table_Container" min="-2" pref="347" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="Remove" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
@@ -65,14 +65,14 @@
         <Property name="horizontalTextPosition" type="int" value="2"/>
       </Properties>
     </Component>
-    <Container class="javax.swing.JScrollPane" name="Table_Container">
+    <Container class="javax.swing.JScrollPane" name="Inventory_Table_Container">
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
       </AuxValues>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="Inventory">
+        <Component class="javax.swing.JTable" name="Inventory_Table">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="Internal.SQLite.invenData()" type="code"/>
@@ -83,8 +83,8 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="Inventory.getModel().addTableModelListener(new javax.swing.event.TableModelListener() {&#xa;    public void tableChanged(javax.swing.event.TableModelEvent evt) {&#xa;        InventoryTableChanged(evt);&#xa;    }&#xa;});"/>
-            <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="final TableColumnModel columnModel = Inventory.getColumnModel();&#xa;for (int column = 0; column &lt; Inventory.getColumnCount(); column++) {&#xa;    int width = 15;&#xa;    for (int row = 0; row &lt; Inventory.getRowCount(); row++) {&#xa;        TableCellRenderer renderer = Inventory.getCellRenderer(row, column);&#xa;        Component comp = Inventory.prepareRenderer(renderer, row, column);&#xa;        width = Math.max(comp.getPreferredSize().width + 1 , width);&#xa;    }&#xa;    if (width &gt; 300) width=300;&#xa;    columnModel.getColumn(column).setPreferredWidth(width);&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="Inventory_Table.getModel().addTableModelListener(new javax.swing.event.TableModelListener() {&#xa;    public void tableChanged(javax.swing.event.TableModelEvent evt) {&#xa;        InventoryTableChanged(evt);&#xa;    }&#xa;});"/>
+            <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="final TableColumnModel columnModel = Inventory_Table.getColumnModel();&#xa;for (int column = 0; column &lt; Inventory_Table.getColumnCount(); column++) {&#xa;    int width = 15;&#xa;    for (int row = 0; row &lt; Inventory_Table.getRowCount(); row++) {&#xa;        TableCellRenderer renderer = Inventory_Table.getCellRenderer(row, column);&#xa;        Component comp = Inventory_Table.prepareRenderer(renderer, row, column);&#xa;        width = Math.max(comp.getPreferredSize().width + 1 , width);&#xa;    }&#xa;    if (width &gt; 300) width=300;&#xa;    columnModel.getColumn(column).setPreferredWidth(width);&#xa;}"/>
           </AuxValues>
         </Component>
       </SubComponents>

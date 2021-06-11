@@ -56,7 +56,7 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="New_Invoice" min="-2" pref="180" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="Main_Table_Container" min="-2" pref="860" max="-2" attributes="0"/>
+                          <Component id="Invoice_Table_Container" min="-2" pref="860" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="44" max="32767" attributes="0"/>
                   </Group>
@@ -71,7 +71,7 @@
                           <Component id="Main_Heading" min="-2" pref="45" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="Main_Table_Container" min="-2" pref="347" max="-2" attributes="0"/>
+                      <Component id="Invoice_Table_Container" min="-2" pref="347" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="Remove" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
@@ -108,14 +108,14 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="New_InvoiceActionPerformed"/>
               </Events>
             </Component>
-            <Container class="javax.swing.JScrollPane" name="Main_Table_Container">
+            <Container class="javax.swing.JScrollPane" name="Invoice_Table_Container">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="Invoice">
+                <Component class="javax.swing.JTable" name="Invoice_Table">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                       <Connection code="Internal.SQLite.invoData()" type="code"/>
@@ -126,7 +126,7 @@
                     </Property>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="final TableColumnModel columnModel = Invoice.getColumnModel();&#xa;for (int column = 0; column &lt; Invoice.getColumnCount(); column++) {&#xa;    int width = 15;&#xa;    for (int row = 0; row &lt; Invoice.getRowCount(); row++) {&#xa;        TableCellRenderer renderer = Invoice.getCellRenderer(row, column);&#xa;        Component comp = Invoice.prepareRenderer(renderer, row, column);&#xa;        width = Math.max(comp.getPreferredSize().width + 1 , width);&#xa;    }&#xa;    if (width &gt; 300) width=300;&#xa;    columnModel.getColumn(column).setPreferredWidth(width);&#xa;}"/>
+                    <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="final TableColumnModel columnModel = Invoice_Table.getColumnModel();&#xa;for (int column = 0; column &lt; Invoice_Table.getColumnCount(); column++) {&#xa;    int width = 15;&#xa;    for (int row = 0; row &lt; Invoice_Table.getRowCount(); row++) {&#xa;        TableCellRenderer renderer = Invoice_Table.getCellRenderer(row, column);&#xa;        Component comp = Invoice_Table.prepareRenderer(renderer, row, column);&#xa;        width = Math.max(comp.getPreferredSize().width + 1 , width);&#xa;    }&#xa;    if (width &gt; 300) width=300;&#xa;    columnModel.getColumn(column).setPreferredWidth(width);&#xa;}"/>
                   </AuxValues>
                 </Component>
               </SubComponents>
@@ -172,7 +172,7 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="Create_Invoice" min="-2" pref="120" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="New_Table_Container" alignment="0" min="-2" pref="860" max="-2" attributes="0"/>
+                          <Component id="New_Invoice_Table_Container" alignment="0" min="-2" pref="860" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -223,7 +223,7 @@
                           <Component id="Customer_Address" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="New_Table_Container" pref="280" max="32767" attributes="0"/>
+                      <Component id="New_Invoice_Table_Container" pref="280" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="Cancel" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
@@ -296,7 +296,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Container class="javax.swing.JScrollPane" name="New_Table_Container">
+            <Container class="javax.swing.JScrollPane" name="New_Invoice_Table_Container">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
@@ -306,7 +306,7 @@
                 <Component class="javax.swing.JTable" name="New_Invoice_Table">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="Internal.SQLite.newInvo()" type="code"/>
+                      <Connection code="Internal.SQLite.newInvoData()" type="code"/>
                     </Property>
                     <Property name="showGrid" type="boolean" value="true"/>
                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
@@ -333,6 +333,9 @@
                 <Property name="text" type="java.lang.String" value="Create Invoice"/>
                 <Property name="toolTipText" type="java.lang.String" value="Create a New Invoice using given Data"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Create_InvoiceActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

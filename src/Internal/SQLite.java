@@ -26,6 +26,7 @@ public class SQLite {
     static Path currentDirectory = Paths.get(System.getProperty("user.dir"));
     static Connection mainDB = null;
     static Connection configDB = null;
+    static Connection invoiceDB = null;
     
     public static void initDB() {
         if (!Files.isWritable(currentDirectory)) {
@@ -43,6 +44,7 @@ public class SQLite {
         try {
             mainDB = DriverManager.getConnection("jdbc:sqlite:" + dbFolder + "/main.sqlite");
             configDB = DriverManager.getConnection("jdbc:sqlite:" + dbFolder + "/config.sqlite");
+            invoiceDB = DriverManager.getConnection("jdbc:sqlite:" + dbFolder + "/invoice.sqlite");
         } catch (SQLException ex) { 
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -52,8 +54,9 @@ public class SQLite {
         if (mainDB == null || configDB == null)
             dbConnect();
         String invoice = "CREATE TABLE IF NOT EXISTS Invoice (\"Invoice ID\" TEXT NOT"
-            + " NULL UNIQUE, \"Customer Name\" TEXT, \"Contact Number\" TEXT, \"Date of"
-            + " Sale\" TEXT, \"Sale Amount\" TEXT, PRIMARY KEY(\"Invoice ID\"));";
+            + " NULL UNIQUE, \"Customer Name\" TEXT, \"Contact Number\" TEXT, \"Address\""
+            + " TEXT, \"Date of Sale\" TEXT, \"Sale Amount\" TEXT, PRIMARY KEY(\"Invoice"
+            + " ID\"));";
         String inventory = "CREATE TABLE IF NOT EXISTS Inventory (\"Product ID\" TEXT"
             + " NOT NULL UNIQUE, \"Product Name\" TEXT, \"Price\" TEXT, \"Available"
             + " Quantity\" TEXT, PRIMARY KEY(\"Product ID\"));";
@@ -183,7 +186,7 @@ public class SQLite {
         }
     }
     
-    public static TableModel newInvo() {
+    public static TableModel newInvoData() {
         if (mainDB == null)
             dbConnect();
         ResultSet invResult;
@@ -259,6 +262,58 @@ public class SQLite {
         }
     }
     
+    public static void newInvoice(String id, String name, String contact, String address,
+        String date, String amount) {
+        if (mainDB == null)
+            dbConnect();
+        String invoice = "REPLACE INTO Invoice (\"Invoice ID\", \"Customer Name\","
+            + " \"Contact Number\", \"Address\", \"Date of Sale\", \"Sale Amount\")"
+            + " VALUES(?, ?, ?, ?, ?, ?);";
+        try {
+            PreparedStatement mainDBquery = mainDB.prepareStatement(invoice);
+            mainDBquery.setString(1, id);
+            mainDBquery.setString(2, name);
+            mainDBquery.setString(3, contact);
+            mainDBquery.setString(4, address);
+            mainDBquery.setString(5, date);
+            mainDBquery.setString(6, amount);
+            mainDBquery.executeUpdate();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public static void newInvoice(String id) {
+        if (invoiceDB == null)
+            dbConnect();
+        String invoice = "CREATE TABLE IF NOT EXISTS \"" + id + "\" (\"Product Name\""
+            + " TEXT NOT NULL UNIQUE, \"Price\" TEXT, \"Purchased Quantity\" TEXT,"
+            + " \"Net Amount\" TEXT, PRIMARY KEY(\"Product Name\"));";
+        try {
+            Statement invoiceDBquery = invoiceDB.createStatement();
+            invoiceDBquery.execute(invoice);
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public static void newInvoice(String id, String name, String price, String quan, String amount) {
+        if (invoiceDB == null)
+            dbConnect();
+        String invoice = "REPLACE INTO \"" + id + "\" (\"Product Name\", \"Price\","
+            + " \"Purchased Quantity\", \"Net Amount\") VALUES(?, ?, ?, ?);";
+        try {
+            PreparedStatement invoiceDBquery = invoiceDB.prepareStatement(invoice);
+            invoiceDBquery.setString(1, name);
+            invoiceDBquery.setString(2, price);
+            invoiceDBquery.setString(3, quan);
+            invoiceDBquery.setString(4, amount);
+            invoiceDBquery.executeUpdate();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
     public static void updateInven(String id, String name, String price, String quan) {
         if (mainDB == null)
             dbConnect();
@@ -282,7 +337,7 @@ public class SQLite {
         String invoice = "DELETE FROM Invoice WHERE \"Invoice ID\" = ?;";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(invoice);
-            mainDBquery.setString(1,id);
+            mainDBquery.setString(1, id);
             mainDBquery.executeUpdate();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
@@ -295,7 +350,7 @@ public class SQLite {
         String inventory = "DELETE FROM Inventory WHERE \"Product ID\" = ?;";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(inventory);
-            mainDBquery.setString(1,id);
+            mainDBquery.setString(1, id);
             mainDBquery.executeUpdate();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);

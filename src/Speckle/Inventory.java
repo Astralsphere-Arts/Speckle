@@ -17,7 +17,7 @@ public class Inventory extends javax.swing.JPanel {
      */
     public Inventory() {
         initComponents();
-        this.Inventory_Model = (DefaultTableModel) this.Inventory.getModel();
+        this.Inventory_Model = (DefaultTableModel) this.Inventory_Table.getModel();
     }
 
     /**
@@ -30,8 +30,8 @@ public class Inventory extends javax.swing.JPanel {
     private void initComponents() {
 
         Heading = new javax.swing.JLabel();
-        Table_Container = new javax.swing.JScrollPane();
-        Inventory = new javax.swing.JTable();
+        Inventory_Table_Container = new javax.swing.JScrollPane();
+        Inventory_Table = new javax.swing.JTable();
         Add = new javax.swing.JButton();
         Remove = new javax.swing.JButton();
         Update = new javax.swing.JButton();
@@ -41,21 +41,21 @@ public class Inventory extends javax.swing.JPanel {
         Heading.setText("Inventory");
         Heading.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
-        Inventory.setModel(Internal.SQLite.invenData());
-        Inventory.setShowGrid(true);
-        Inventory.getTableHeader().setReorderingAllowed(false);
-        Inventory.getModel().addTableModelListener(new javax.swing.event.TableModelListener() {
+        Inventory_Table.setModel(Internal.SQLite.invenData());
+        Inventory_Table.setShowGrid(true);
+        Inventory_Table.getTableHeader().setReorderingAllowed(false);
+        Inventory_Table.getModel().addTableModelListener(new javax.swing.event.TableModelListener() {
             public void tableChanged(javax.swing.event.TableModelEvent evt) {
                 InventoryTableChanged(evt);
             }
         });
-        Table_Container.setViewportView(Inventory);
-        final TableColumnModel columnModel = Inventory.getColumnModel();
-        for (int column = 0; column < Inventory.getColumnCount(); column++) {
+        Inventory_Table_Container.setViewportView(Inventory_Table);
+        final TableColumnModel columnModel = Inventory_Table.getColumnModel();
+        for (int column = 0; column < Inventory_Table.getColumnCount(); column++) {
             int width = 15;
-            for (int row = 0; row < Inventory.getRowCount(); row++) {
-                TableCellRenderer renderer = Inventory.getCellRenderer(row, column);
-                Component comp = Inventory.prepareRenderer(renderer, row, column);
+            for (int row = 0; row < Inventory_Table.getRowCount(); row++) {
+                TableCellRenderer renderer = Inventory_Table.getCellRenderer(row, column);
+                Component comp = Inventory_Table.prepareRenderer(renderer, row, column);
                 width = Math.max(comp.getPreferredSize().width + 1 , width);
             }
             if (width > 300) width=300;
@@ -99,7 +99,7 @@ public class Inventory extends javax.swing.JPanel {
                         .addComponent(Remove, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Update, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Table_Container, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Inventory_Table_Container, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addComponent(Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -111,7 +111,7 @@ public class Inventory extends javax.swing.JPanel {
                 .addGap(40, 40, 40)
                 .addComponent(Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Table_Container, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Inventory_Table_Container, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Remove, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -122,11 +122,11 @@ public class Inventory extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void InventoryTableChanged(javax.swing.event.TableModelEvent evt) {
-        for (int row = 0; row < Inventory.getRowCount(); row++) {
-            String id = (String) Inventory.getValueAt(row, 0);
-            String name = (String) Inventory.getValueAt(row, 1);
-            String price = (String) Inventory.getValueAt(row, 2);
-            String quan = (String) Inventory.getValueAt(row, 3);
+        for (int row = 0; row < Inventory_Table.getRowCount(); row++) {
+            String id = (String) Inventory_Table.getValueAt(row, 0);
+            String name = (String) Inventory_Table.getValueAt(row, 1);
+            String price = (String) Inventory_Table.getValueAt(row, 2);
+            String quan = (String) Inventory_Table.getValueAt(row, 3);
             Internal.SQLite.updateInven(id, name, price, quan);
         }
     }
@@ -137,22 +137,22 @@ public class Inventory extends javax.swing.JPanel {
     }//GEN-LAST:event_AddActionPerformed
 
     private void RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveActionPerformed
-        int[] rows = Inventory.getSelectedRows();
+        int[] rows = Inventory_Table.getSelectedRows();
         for (int i=0; i<rows.length; i++) {
-            String id = Inventory.getValueAt(rows[i]-i, 0).toString();
+            String id = Inventory_Table.getValueAt(rows[i]-i, 0).toString();
             Internal.SQLite.remRowInven(id);
             Inventory_Model.removeRow(rows[i]-i);
         }
     }//GEN-LAST:event_RemoveActionPerformed
 
     private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
-        int row = Inventory.getSelectedRow();
-        String id = Inventory.getValueAt(row, 0).toString();
+        int row = Inventory_Table.getSelectedRow();
+        String id = Inventory_Table.getValueAt(row, 0).toString();
         String quantity;
-        if (Inventory.getValueAt(row, 3) == null)
+        if (Inventory_Table.getValueAt(row, 3) == null)
             quantity = "0";
         else
-            quantity = Inventory.getValueAt(row, 3).toString();
+            quantity = Inventory_Table.getValueAt(row, 3).toString();
         String update = JOptionPane.showInputDialog(null, "Enter the Amount of Stock"
             + " You want to Increase", "Update Stock", JOptionPane.PLAIN_MESSAGE);
         String quan = Integer.toString(Integer.parseInt(quantity) + Integer.parseInt(update));
@@ -167,9 +167,9 @@ public class Inventory extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Add;
     private javax.swing.JLabel Heading;
-    private javax.swing.JTable Inventory;
+    private javax.swing.JTable Inventory_Table;
+    private javax.swing.JScrollPane Inventory_Table_Container;
     private javax.swing.JButton Remove;
-    private javax.swing.JScrollPane Table_Container;
     private javax.swing.JButton Update;
     // End of variables declaration//GEN-END:variables
     private final DefaultTableModel Inventory_Model;
