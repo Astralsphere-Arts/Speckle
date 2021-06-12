@@ -147,20 +147,27 @@ public class Inventory extends javax.swing.JPanel {
 
     private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
         int row = Inventory_Table.getSelectedRow();
-        String id = Inventory_Table.getValueAt(row, 0).toString();
-        String quantity;
-        if (Inventory_Table.getValueAt(row, 3) == null)
-            quantity = "0";
-        else
-            quantity = Inventory_Table.getValueAt(row, 3).toString();
-        String update = JOptionPane.showInputDialog(null, "Enter the Amount of Stock"
-            + " You want to Increase", "Update Stock", JOptionPane.PLAIN_MESSAGE);
-        String quan = Integer.toString(Integer.parseInt(quantity) + Integer.parseInt(update));
-        Internal.SQLite.updateStock(id, quan);
-        Speckle.Main.Content.removeAll();
-        Inventory scene = new Inventory();
-        scene.setBounds(0, 0, 955, 574);
-        Speckle.Main.Content.add(scene).setVisible(true);
+        if (row == -1)
+            JOptionPane.showMessageDialog(null, "Please Select a Product to Update it's"
+                + " Stock.", "No Product Selected", JOptionPane.ERROR_MESSAGE);
+        else {
+            String id = Inventory_Table.getValueAt(row, 0).toString();
+            String quantity;
+            if (Inventory_Table.getValueAt(row, 3) == null)
+                quantity = "0";
+            else
+                quantity = Inventory_Table.getValueAt(row, 3).toString();
+            String update = JOptionPane.showInputDialog(null, "Enter the Amount of Stock"
+                + " You want to Increase", "Update Stock", JOptionPane.PLAIN_MESSAGE);
+            if (update.equals(""))
+                update = "0";
+            String quan = Integer.toString(Integer.parseInt(quantity) + Integer.parseInt(update));
+            Internal.SQLite.updateStock(id, quan);
+            Speckle.Main.Content.removeAll();
+            Inventory scene = new Inventory();
+            scene.setBounds(0, 0, 955, 574);
+            Speckle.Main.Content.add(scene).setVisible(true);
+        }
     }//GEN-LAST:event_UpdateActionPerformed
 
 

@@ -379,10 +379,9 @@ public class Settings extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Both Current and New Passwords are needed"
                 + " for changing Password. Please Try Again!", "Password Fields Empty",
                 JOptionPane.ERROR_MESSAGE);
-        else if (!curpasswd.equals(Internal.SQLite.configValue("Password"))) {
+        else if (!curpasswd.equals(Internal.SQLite.configValue("Password")))
             JOptionPane.showMessageDialog(null, "The Current Password is Incorrect. Please"
                 + " Try Again!", "Incorrect Password", JOptionPane.ERROR_MESSAGE);
-        }
         else if (!passwd.equals(confpasswd))
             JOptionPane.showMessageDialog(null, "The New Password in Password Fields do not Match."
                 + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
