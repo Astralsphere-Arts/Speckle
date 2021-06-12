@@ -14,6 +14,11 @@ import java.sql.ResultSetMetaData;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
+import javax.swing.UIManager;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
 
 /**
  *
@@ -372,5 +377,12 @@ public class SQLite {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
+    }
+    
+    public static void graph() {
+         if (mainDB == null)
+            dbConnect();
+        String query="select Available Quantity from Inventory ";
+        
     }
 }
