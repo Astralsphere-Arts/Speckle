@@ -193,19 +193,19 @@ public class SQLite {
         DefaultTableModel invTableModel = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return columnIndex == 0 || columnIndex == 4;
+                return columnIndex == 0 || columnIndex == 5;
             }
             Class[] types = new Class [] {
                 java.lang.Boolean.class, java.lang.Object.class, java.lang.Object.class,
-                java.lang.Object.class, java.lang.Object.class
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             @Override
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         };
-        String inventory = "SELECT \"Product Name\", \"Price\", \"Available Quantity\""
-            + " FROM Inventory;";
+        String inventory = "SELECT \"Product ID\", \"Product Name\", \"Price\","
+            + " \"Available Quantity\" FROM Inventory;";
         try {
             Statement mainDBquery = mainDB.createStatement();
             invResult = mainDBquery.executeQuery(inventory);
@@ -217,11 +217,10 @@ public class SQLite {
             invTableModel.addColumn("Purchased Quantity");
             Object[] row = new Object[numberOfColumns + 2];
             while (invResult.next()) {
-                for (int i = 1; i < numberOfColumns + 1; i++) {
-                    row[0] = false;
+                row[0] = false;
+                for (int i = 1; i < numberOfColumns + 1; i++)
                     row[i] = invResult.getObject(i);
-                    row[4] = "";
-                }
+                row[5] = "";
                 invTableModel.addRow(row);
             }
             return invTableModel;
@@ -331,14 +330,17 @@ public class SQLite {
         }
     }
     
-    public static void remRowInvo(String id) {
-        if (mainDB == null)
+    public static void remInvoice(String id) {
+        if (mainDB == null || invoiceDB == null)
             dbConnect();
         String invoice = "DELETE FROM Invoice WHERE \"Invoice ID\" = ?;";
+        String invTable = "DROP TABLE \"" + id + "\";";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(invoice);
+            Statement invoiceDBquery = invoiceDB.createStatement();
             mainDBquery.setString(1, id);
             mainDBquery.executeUpdate();
+            invoiceDBquery.execute(invTable);
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }

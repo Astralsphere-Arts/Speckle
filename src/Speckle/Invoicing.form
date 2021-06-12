@@ -314,7 +314,7 @@
                     </Property>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="final TableColumnModel NewColumnModel = New_Invoice_Table.getColumnModel();&#xa;for (int column = 0; column &lt; New_Invoice_Table.getColumnCount(); column++) {&#xa;    int width = 10;&#xa;    for (int row = 0; row &lt; New_Invoice_Table.getRowCount(); row++) {&#xa;        TableCellRenderer renderer = New_Invoice_Table.getCellRenderer(row, column);&#xa;        Component comp = New_Invoice_Table.prepareRenderer(renderer, row, column);&#xa;        width = Math.max(comp.getPreferredSize().width + 1 , width);&#xa;    }&#xa;    if (width &gt; 200) width=200;&#xa;    NewColumnModel.getColumn(column).setPreferredWidth(width);&#xa;}"/>
+                    <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="final TableColumnModel NewColumnModel = New_Invoice_Table.getColumnModel();&#xa;for (int column = 0; column &lt; New_Invoice_Table.getColumnCount(); column++) {&#xa;    int width = 15;&#xa;    for (int row = 0; row &lt; New_Invoice_Table.getRowCount(); row++) {&#xa;        TableCellRenderer renderer = New_Invoice_Table.getCellRenderer(row, column);&#xa;        Component comp = New_Invoice_Table.prepareRenderer(renderer, row, column);&#xa;        width = Math.max(comp.getPreferredSize().width + 1 , width);&#xa;    }&#xa;    if (width &gt; 300) width=300;&#xa;    NewColumnModel.getColumn(column).setPreferredWidth(width);&#xa;}"/>
                   </AuxValues>
                 </Component>
               </SubComponents>

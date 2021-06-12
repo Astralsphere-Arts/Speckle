@@ -168,13 +168,13 @@ public class Invoicing extends javax.swing.JPanel {
         New_Invoice_Table_Container.setViewportView(New_Invoice_Table);
         final TableColumnModel NewColumnModel = New_Invoice_Table.getColumnModel();
         for (int column = 0; column < New_Invoice_Table.getColumnCount(); column++) {
-            int width = 10;
+            int width = 15;
             for (int row = 0; row < New_Invoice_Table.getRowCount(); row++) {
                 TableCellRenderer renderer = New_Invoice_Table.getCellRenderer(row, column);
                 Component comp = New_Invoice_Table.prepareRenderer(renderer, row, column);
                 width = Math.max(comp.getPreferredSize().width + 1 , width);
             }
-            if (width > 200) width=200;
+            if (width > 300) width=300;
             NewColumnModel.getColumn(column).setPreferredWidth(width);
         }
 
@@ -278,8 +278,8 @@ public class Invoicing extends javax.swing.JPanel {
         DefaultTableModel Invoice_Model = (DefaultTableModel) this.Invoice_Table.getModel();
         int[] rows = Invoice_Table.getSelectedRows();
         for (int i=0; i<rows.length; i++) {
-            String id = Invoice_Table.getValueAt(rows[i]-i, 0).toString();
-            Internal.SQLite.remRowInvo(id);
+            String invID = Invoice_Table.getValueAt(rows[i]-i, 0).toString();
+            Internal.SQLite.remInvoice(invID);
             Invoice_Model.removeRow(rows[i]-i);
         }
     }//GEN-LAST:event_RemoveActionPerformed
@@ -297,14 +297,19 @@ public class Invoicing extends javax.swing.JPanel {
         for (int row = 0; row < New_Invoice_Table.getRowCount(); row++) {
             Boolean isChecked = Boolean.valueOf(New_Invoice_Table.getValueAt(row, 0).toString());
             if (isChecked) {
-                String prodName = (String) New_Invoice_Table.getValueAt(row, 1);
-                String prodPrice = (String) New_Invoice_Table.getValueAt(row, 2);
-                String prodQuan = (String) New_Invoice_Table.getValueAt(row, 4);
-                String prodNetAmount = Float.toString(Float.parseFloat(prodPrice) *
-                    Float.parseFloat(prodQuan));
+                String prodID = (String) New_Invoice_Table.getValueAt(row, 1);
+                String prodName = (String) New_Invoice_Table.getValueAt(row, 2);
+                String Price = (String) New_Invoice_Table.getValueAt(row, 3);
+                String availQuan = (String) New_Invoice_Table.getValueAt(row, 4);
+                String purchQuan = (String) New_Invoice_Table.getValueAt(row, 5);
+                String remaingQuan = Integer.toString(Integer.parseInt(availQuan) -
+                    Integer.parseInt(purchQuan));
+                String netAmount = Float.toString(Float.parseFloat(Price) *
+                    Float.parseFloat(purchQuan));
                 saleAmount = Float.toString(Float.parseFloat(saleAmount) +
-                    Float.parseFloat(prodNetAmount));
-                Internal.SQLite.newInvoice(invID, prodName, prodPrice, prodQuan, prodNetAmount);
+                    Float.parseFloat(netAmount));
+                Internal.SQLite.updateStock(prodID, remaingQuan);
+                Internal.SQLite.newInvoice(invID, prodName, Price, purchQuan, netAmount);
             }
         }
         Internal.SQLite.newInvoice(invID, custName, custContact, custAddress, saleDate, saleAmount);
