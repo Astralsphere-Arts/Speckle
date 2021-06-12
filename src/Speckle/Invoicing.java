@@ -1,6 +1,7 @@
 package Speckle;
 
 import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
@@ -285,38 +286,69 @@ public class Invoicing extends javax.swing.JPanel {
     }//GEN-LAST:event_RemoveActionPerformed
 
     private void Create_InvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Create_InvoiceActionPerformed
+        int prodSelected = 0;
+        boolean emptyQuan = false;
+        boolean excessQuan = false;
         String invID = "INV-" + Internal.Random.ID(4) + "-" + Internal.Random.ID(4);
         String custName = Customer_Name.getText();
         String custContact = Contact_Number.getText();
         String custAddress = Customer_Address.getText();
-        java.util.Date dNow = new java.util.Date();
-        java.text.SimpleDateFormat dFormat = new java.text.SimpleDateFormat("dd MMMM yyyy");
-        String saleDate = dFormat.format(dNow);
+        String saleDate = new java.text.SimpleDateFormat("dd MMMM yyyy").format(new java.util.Date());
         String saleAmount = "0";
-        Internal.SQLite.newInvoice(invID);
         for (int row = 0; row < New_Invoice_Table.getRowCount(); row++) {
             Boolean isChecked = Boolean.valueOf(New_Invoice_Table.getValueAt(row, 0).toString());
             if (isChecked) {
-                String prodID = (String) New_Invoice_Table.getValueAt(row, 1);
-                String prodName = (String) New_Invoice_Table.getValueAt(row, 2);
-                String Price = (String) New_Invoice_Table.getValueAt(row, 3);
+                prodSelected++;
                 String availQuan = (String) New_Invoice_Table.getValueAt(row, 4);
                 String purchQuan = (String) New_Invoice_Table.getValueAt(row, 5);
-                String remaingQuan = Integer.toString(Integer.parseInt(availQuan) -
-                    Integer.parseInt(purchQuan));
-                String netAmount = Float.toString(Float.parseFloat(Price) *
-                    Float.parseFloat(purchQuan));
-                saleAmount = Float.toString(Float.parseFloat(saleAmount) +
-                    Float.parseFloat(netAmount));
-                Internal.SQLite.updateStock(prodID, remaingQuan);
-                Internal.SQLite.newInvoice(invID, prodName, Price, purchQuan, netAmount);
+                if (purchQuan.equals("")) {
+                    emptyQuan = true;
+                    purchQuan = "0";
+                }
+                int remaingQuan = Integer.parseInt(availQuan) - Integer.parseInt(purchQuan);
+                if (remaingQuan < 0)
+                    excessQuan = true;
             }
         }
-        Internal.SQLite.newInvoice(invID, custName, custContact, custAddress, saleDate, saleAmount);
-        Speckle.Main.Content.removeAll();
-        Speckle.Invoicing scene = new Invoicing();
-        scene.setBounds(0, 0, 955, 574);
-        Speckle.Main.Content.add(scene).setVisible(true);
+        if (custName.equals("") || custContact.equals("") || custAddress.equals(""))
+            JOptionPane.showMessageDialog(null, "Customer Details can't be Empty. Please"
+                + " Try Again!", "Customer Details Empty", JOptionPane.ERROR_MESSAGE);
+        else if (prodSelected == 0)
+            JOptionPane.showMessageDialog(null, "At least one Product needs to be Selected. Please"
+                + " Try Again!", "No Products Selected", JOptionPane.ERROR_MESSAGE);
+        else if (emptyQuan)
+            JOptionPane.showMessageDialog(null, "Purchased Quantity for one or more Products is Empty."
+                + " Please Try Again!", "Purchased Quantity Empty", JOptionPane.ERROR_MESSAGE);
+        else if (excessQuan)
+            JOptionPane.showMessageDialog(null, "Purchased Quantity exceeds the Available Quantity"
+                + " for one or more Products. Please Try Again!", "Purchased Quantity Exceeded",
+                JOptionPane.ERROR_MESSAGE);
+        else {
+            Internal.SQLite.newInvoice(invID);
+            for (int row = 0; row < New_Invoice_Table.getRowCount(); row++) {
+                Boolean isChecked = Boolean.valueOf(New_Invoice_Table.getValueAt(row, 0).toString());
+                if (isChecked) {
+                    String prodID = (String) New_Invoice_Table.getValueAt(row, 1);
+                    String prodName = (String) New_Invoice_Table.getValueAt(row, 2);
+                    String Price = (String) New_Invoice_Table.getValueAt(row, 3);
+                    String availQuan = (String) New_Invoice_Table.getValueAt(row, 4);
+                    String purchQuan = (String) New_Invoice_Table.getValueAt(row, 5);
+                    String remaingQuan = Integer.toString(Integer.parseInt(availQuan) -
+                        Integer.parseInt(purchQuan));
+                    String netAmount = Float.toString(Float.parseFloat(Price) *
+                        Float.parseFloat(purchQuan));
+                    saleAmount = Float.toString(Float.parseFloat(saleAmount) +
+                        Float.parseFloat(netAmount));
+                    Internal.SQLite.updateStock(prodID, remaingQuan);
+                    Internal.SQLite.newInvoice(invID, prodName, Price, purchQuan, netAmount);
+                }
+            }
+            Internal.SQLite.newInvoice(invID, custName, custContact, custAddress, saleDate, saleAmount);
+            Speckle.Main.Content.removeAll();
+            Speckle.Invoicing scene = new Invoicing();
+            scene.setBounds(0, 0, 955, 574);
+            Speckle.Main.Content.add(scene).setVisible(true);
+        }
     }//GEN-LAST:event_Create_InvoiceActionPerformed
 
 
