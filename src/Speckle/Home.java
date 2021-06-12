@@ -29,33 +29,16 @@ public class Home extends javax.swing.JPanel {
     private void initComponents() {
 
         Heading = new javax.swing.JLabel();
-<<<<<<< Updated upstream
         Home_Container = new javax.swing.JTabbedPane();
         Dashboard = new javax.swing.JPanel();
-        Quick_Start = new javax.swing.JPanel();
-=======
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
         show = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
->>>>>>> Stashed changes
+        Quick_Start = new javax.swing.JPanel();
 
         Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
         Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Heading.setText("Home");
         Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-<<<<<<< Updated upstream
-        javax.swing.GroupLayout DashboardLayout = new javax.swing.GroupLayout(Dashboard);
-        Dashboard.setLayout(DashboardLayout);
-        DashboardLayout.setHorizontalGroup(
-            DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 923, Short.MAX_VALUE)
-        );
-        DashboardLayout.setVerticalGroup(
-            DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 476, Short.MAX_VALUE)
-=======
         show.setText("Show Graph");
         show.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,22 +46,21 @@ public class Home extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout DashboardLayout = new javax.swing.GroupLayout(Dashboard);
+        Dashboard.setLayout(DashboardLayout);
+        DashboardLayout.setHorizontalGroup(
+            DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DashboardLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(show)
                 .addContainerGap(822, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        DashboardLayout.setVerticalGroup(
+            DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DashboardLayout.createSequentialGroup()
                 .addContainerGap(442, Short.MAX_VALUE)
                 .addComponent(show)
                 .addContainerGap())
->>>>>>> Stashed changes
         );
 
         Home_Container.addTab("Dashboard", Dashboard);
@@ -134,14 +116,8 @@ public class Home extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Dashboard;
     private javax.swing.JLabel Heading;
-<<<<<<< Updated upstream
     private javax.swing.JTabbedPane Home_Container;
     private javax.swing.JPanel Quick_Start;
-=======
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton show;
->>>>>>> Stashed changes
     // End of variables declaration//GEN-END:variables
 }
