@@ -271,10 +271,6 @@ public class Invoicing extends javax.swing.JPanel {
         Invoice_Deck.show(Invoice_Container, "invNew");
     }//GEN-LAST:event_New_InvoiceActionPerformed
 
-    private void CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelActionPerformed
-        Invoice_Deck.show(Invoice_Container, "invMain");
-    }//GEN-LAST:event_CancelActionPerformed
-
     private void RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveActionPerformed
         DefaultTableModel Invoice_Model = (DefaultTableModel) this.Invoice_Table.getModel();
         int[] rows = Invoice_Table.getSelectedRows();
@@ -284,6 +280,10 @@ public class Invoicing extends javax.swing.JPanel {
             Invoice_Model.removeRow(rows[i]-i);
         }
     }//GEN-LAST:event_RemoveActionPerformed
+
+    private void CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelActionPerformed
+        Invoice_Deck.show(Invoice_Container, "invMain");
+    }//GEN-LAST:event_CancelActionPerformed
 
     private void Create_InvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Create_InvoiceActionPerformed
         int prodSelected = 0;
