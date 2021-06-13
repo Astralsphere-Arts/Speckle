@@ -120,4 +120,3 @@ public class Home extends javax.swing.JPanel {
     private javax.swing.JPanel Quick_Start;
     private javax.swing.JButton show;
     // End of variables declaration//GEN-END:variables
-}
