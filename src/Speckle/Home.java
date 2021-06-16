@@ -1,10 +1,4 @@
 package Speckle;
-import javax.swing.UIManager;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartFrame;
-import org.jfree.chart.JFreeChart;
-import javax.swing.JOptionPane;
-import org.jfree.chart.plot.PlotOrientation;
 
 /**
  *
@@ -31,7 +25,6 @@ public class Home extends javax.swing.JPanel {
         Heading = new javax.swing.JLabel();
         Home_Container = new javax.swing.JTabbedPane();
         Dashboard = new javax.swing.JPanel();
-        show = new javax.swing.JButton();
         Quick_Start = new javax.swing.JPanel();
 
         Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
@@ -39,28 +32,15 @@ public class Home extends javax.swing.JPanel {
         Heading.setText("Home");
         Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        show.setText("Show Graph");
-        show.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                showActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout DashboardLayout = new javax.swing.GroupLayout(Dashboard);
         Dashboard.setLayout(DashboardLayout);
         DashboardLayout.setHorizontalGroup(
             DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DashboardLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(show)
-                .addContainerGap(822, Short.MAX_VALUE))
+            .addGap(0, 923, Short.MAX_VALUE)
         );
         DashboardLayout.setVerticalGroup(
             DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DashboardLayout.createSequentialGroup()
-                .addContainerGap(442, Short.MAX_VALUE)
-                .addComponent(show)
-                .addContainerGap())
+            .addGap(0, 476, Short.MAX_VALUE)
         );
 
         Home_Container.addTab("Dashboard", Dashboard);
@@ -103,21 +83,11 @@ public class Home extends javax.swing.JPanel {
         Heading.getAccessibleContext().setAccessibleName("Heading");
     }// </editor-fold>//GEN-END:initComponents
 
-    private void showActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showActionPerformed
-    try{
-            Internal.SQLite.graph();
-        }
-      catch(Exception e){
-            JOptionPane.showMessageDialog(null,e);
-        }
-    }//GEN-LAST:event_showActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Dashboard;
     private javax.swing.JLabel Heading;
     private javax.swing.JTabbedPane Home_Container;
     private javax.swing.JPanel Quick_Start;
-    private javax.swing.JButton show;
     // End of variables declaration//GEN-END:variables
 }
