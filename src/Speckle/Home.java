@@ -10,6 +10,7 @@ public class Home extends javax.swing.JPanel {
      * Creates new form Home
      */
     public Home() {
+        this.data = Internal.SQLite.dashData();
         initComponents();
     }
 
@@ -22,25 +23,147 @@ public class Home extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Heading = new javax.swing.JLabel();
         Home_Container = new javax.swing.JTabbedPane();
         Dashboard = new javax.swing.JPanel();
+        Low_Stock = new javax.swing.JPanel();
+        Low_Stock_Label = new javax.swing.JLabel();
+        Low_Stock_Para = new javax.swing.JLabel();
+        Product_One_Label = new javax.swing.JLabel();
+        Product_One_Quantity = new javax.swing.JLabel();
+        Product_Two_Label = new javax.swing.JLabel();
+        Product_Two_Quantity = new javax.swing.JLabel();
+        Product_Three_Label = new javax.swing.JLabel();
+        Product_Three_Quantity = new javax.swing.JLabel();
+        Product_Four_Label = new javax.swing.JLabel();
+        Product_Four_Quantity = new javax.swing.JLabel();
+        Product_Five_Label = new javax.swing.JLabel();
+        Product_Five_Quantity = new javax.swing.JLabel();
         Quick_Start = new javax.swing.JPanel();
 
-        Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
-        Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Heading.setText("Home");
-        Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Low_Stock.setBackground(new java.awt.Color(251, 251, 251));
+        Low_Stock.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+
+        Low_Stock_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        Low_Stock_Label.setText("Low Stock");
+
+        Low_Stock_Para.setText("<html><p>The following five Products have the least amount of Stock availabe. If you think you might run Out of Stock for a Product then please Restock.</p></html>");
+
+        Product_One_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        Product_One_Label.setText(data[0][0]);
+
+        Product_One_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        Product_One_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Product_One_Quantity.setText(data[0][1]);
+        Product_One_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+
+        Product_Two_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        Product_Two_Label.setText(data[1][0]);
+
+        Product_Two_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        Product_Two_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Product_Two_Quantity.setText(data[1][1]);
+        Product_Two_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+
+        Product_Three_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        Product_Three_Label.setText(data[2][0]);
+
+        Product_Three_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        Product_Three_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Product_Three_Quantity.setText(data[2][1]);
+        Product_Three_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+
+        Product_Four_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        Product_Four_Label.setText(data[3][0]);
+
+        Product_Four_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        Product_Four_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Product_Four_Quantity.setText(data[3][1]);
+        Product_Four_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+
+        Product_Five_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        Product_Five_Label.setText(data[4][0]);
+
+        Product_Five_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        Product_Five_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Product_Five_Quantity.setText(data[4][1]);
+        Product_Five_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+
+        javax.swing.GroupLayout Low_StockLayout = new javax.swing.GroupLayout(Low_Stock);
+        Low_Stock.setLayout(Low_StockLayout);
+        Low_StockLayout.setHorizontalGroup(
+            Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Low_StockLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(Low_StockLayout.createSequentialGroup()
+                        .addComponent(Product_Five_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Product_Five_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(Low_StockLayout.createSequentialGroup()
+                        .addComponent(Product_Four_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Product_Four_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(Low_StockLayout.createSequentialGroup()
+                        .addComponent(Product_Three_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Product_Three_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(Low_StockLayout.createSequentialGroup()
+                        .addComponent(Product_Two_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Product_Two_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Low_Stock_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(Low_StockLayout.createSequentialGroup()
+                        .addComponent(Product_One_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Product_One_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Low_Stock_Para, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+        Low_StockLayout.setVerticalGroup(
+            Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Low_StockLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(Low_Stock_Label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Low_Stock_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Product_One_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Product_One_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Product_Two_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Product_Two_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Product_Three_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Product_Three_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Product_Four_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Product_Four_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Product_Five_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Product_Five_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(83, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout DashboardLayout = new javax.swing.GroupLayout(Dashboard);
         Dashboard.setLayout(DashboardLayout);
         DashboardLayout.setHorizontalGroup(
             DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 923, Short.MAX_VALUE)
+            .addGroup(DashboardLayout.createSequentialGroup()
+                .addContainerGap(510, Short.MAX_VALUE)
+                .addComponent(Low_Stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
         DashboardLayout.setVerticalGroup(
             DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 476, Short.MAX_VALUE)
+            .addGroup(DashboardLayout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(Low_Stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         Home_Container.addTab("Dashboard", Dashboard);
@@ -49,11 +172,11 @@ public class Home extends javax.swing.JPanel {
         Quick_Start.setLayout(Quick_StartLayout);
         Quick_StartLayout.setHorizontalGroup(
             Quick_StartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 923, Short.MAX_VALUE)
+            .addGap(0, 943, Short.MAX_VALUE)
         );
         Quick_StartLayout.setVerticalGroup(
             Quick_StartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 476, Short.MAX_VALUE)
+            .addGap(0, 546, Short.MAX_VALUE)
         );
 
         Home_Container.addTab("Quick Start", Quick_Start);
@@ -62,32 +185,32 @@ public class Home extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Home_Container)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(382, 382, 382)
-                .addComponent(Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(Home_Container)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Heading)
-                .addGap(18, 18, 18)
-                .addComponent(Home_Container)
-                .addContainerGap())
+            .addComponent(Home_Container)
         );
-
-        Heading.getAccessibleContext().setAccessibleName("Heading");
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Dashboard;
-    private javax.swing.JLabel Heading;
     private javax.swing.JTabbedPane Home_Container;
+    private javax.swing.JPanel Low_Stock;
+    private javax.swing.JLabel Low_Stock_Label;
+    private javax.swing.JLabel Low_Stock_Para;
+    private javax.swing.JLabel Product_Five_Label;
+    private javax.swing.JLabel Product_Five_Quantity;
+    private javax.swing.JLabel Product_Four_Label;
+    private javax.swing.JLabel Product_Four_Quantity;
+    private javax.swing.JLabel Product_One_Label;
+    private javax.swing.JLabel Product_One_Quantity;
+    private javax.swing.JLabel Product_Three_Label;
+    private javax.swing.JLabel Product_Three_Quantity;
+    private javax.swing.JLabel Product_Two_Label;
+    private javax.swing.JLabel Product_Two_Quantity;
     private javax.swing.JPanel Quick_Start;
     // End of variables declaration//GEN-END:variables
+    private final String data[][];
 }

@@ -154,6 +154,27 @@ public class SQLite {
         }
     }
     
+    public static String[][] dashData() {
+        if (mainDB == null)
+            dbConnect();
+        String data[][] = new String[5][2];
+        String inventory = "SELECT \"Product Name\", \"Available Quantity\" FROM Inventory"
+            + " ORDER BY \"Available Quantity\" LIMIT 5;";
+        try {
+            Statement mainDBquery = mainDB.createStatement();
+            ResultSet invResult = mainDBquery.executeQuery(inventory);
+            int i = 0;
+            while (invResult.next()) {
+                data[i][0] = invResult.getString("Product Name");
+                data[i][1] = invResult.getString("Available Quantity");
+                i++;
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        return data;
+    }
+    
     public static TableModel invoData() {
         if (mainDB == null)
             dbConnect();
