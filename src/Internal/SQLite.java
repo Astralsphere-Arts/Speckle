@@ -55,11 +55,11 @@ public class SQLite {
             dbConnect();
         String invoice = "CREATE TABLE IF NOT EXISTS Invoice (\"Invoice ID\" TEXT NOT"
             + " NULL UNIQUE, \"Customer Name\" TEXT, \"Contact Number\" TEXT, \"Address\""
-            + " TEXT, \"Date of Sale\" TEXT, \"Sale Amount\" TEXT, PRIMARY KEY(\"Invoice"
+            + " TEXT, \"Date of Sale\" TEXT, \"Sale Amount\" REAL, PRIMARY KEY(\"Invoice"
             + " ID\"));";
         String inventory = "CREATE TABLE IF NOT EXISTS Inventory (\"Product ID\" TEXT"
-            + " NOT NULL UNIQUE, \"Product Name\" TEXT, \"Price\" TEXT, \"Available"
-            + " Quantity\" TEXT, PRIMARY KEY(\"Product ID\"));";
+            + " NOT NULL UNIQUE, \"Product Name\" TEXT, \"Price\" REAL, \"Available"
+            + " Quantity\" INTEGER, PRIMARY KEY(\"Product ID\"));";
         String configuration = "CREATE TABLE IF NOT EXISTS Configuration (Parameter"
             + " TEXT NOT NULL UNIQUE, Value TEXT, PRIMARY KEY(Parameter));";
         String configData = "INSERT INTO Configuration (Parameter) VALUES('Username'),"
@@ -163,6 +163,14 @@ public class SQLite {
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return false;
             }
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class,
+                java.lang.Object.class, java.lang.Double.class
+            };
+            @Override
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
         };
         String invoice = "SELECT \"Invoice ID\", \"Customer Name\", \"Contact Number\","
             + " \"Date of Sale\", \"Sale Amount\" FROM Invoice;";
@@ -197,7 +205,7 @@ public class SQLite {
             }
             Class[] types = new Class [] {
                 java.lang.Boolean.class, java.lang.Object.class, java.lang.Object.class,
-                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Double.class, java.lang.Integer.class, java.lang.Integer.class
             };
             @Override
             public Class getColumnClass(int columnIndex) {
@@ -220,7 +228,7 @@ public class SQLite {
                 row[0] = false;
                 for (int i = 1; i < numberOfColumns + 1; i++)
                     row[i] = invResult.getObject(i);
-                row[5] = "1";
+                row[5] = 1;
                 invTableModel.addRow(row);
             }
             return invTableModel;
@@ -238,6 +246,14 @@ public class SQLite {
             @Override
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return columnIndex != 0;
+            }
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class,
+                java.lang.Double.class, java.lang.Integer.class
+            };
+            @Override
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
             }
         };
         String inventory = "SELECT * FROM Inventory;";
@@ -286,8 +302,8 @@ public class SQLite {
         if (invoiceDB == null)
             dbConnect();
         String invoice = "CREATE TABLE IF NOT EXISTS \"" + id + "\" (\"Product Name\""
-            + " TEXT NOT NULL UNIQUE, \"Price\" TEXT, \"Purchased Quantity\" TEXT,"
-            + " \"Net Amount\" TEXT, PRIMARY KEY(\"Product Name\"));";
+            + " TEXT NOT NULL UNIQUE, \"Price\" REAL, \"Purchased Quantity\" INTEGER,"
+            + " \"Net Amount\" REAL, PRIMARY KEY(\"Product Name\"));";
         try {
             Statement invoiceDBquery = invoiceDB.createStatement();
             invoiceDBquery.execute(invoice);

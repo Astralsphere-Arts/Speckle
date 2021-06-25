@@ -299,8 +299,10 @@ public class Invoicing extends javax.swing.JPanel {
             Boolean isChecked = Boolean.valueOf(New_Invoice_Table.getValueAt(row, 0).toString());
             if (isChecked) {
                 prodSelected++;
-                String availQuan = (String) New_Invoice_Table.getValueAt(row, 4);
-                String purchQuan = (String) New_Invoice_Table.getValueAt(row, 5);
+                String availQuan = Integer.toString((Integer) New_Invoice_Table.getValueAt(row, 4));
+                String purchQuan = "";
+                if (New_Invoice_Table.getValueAt(row, 5) != null)
+                    purchQuan = Integer.toString((Integer) New_Invoice_Table.getValueAt(row, 5));
                 if (purchQuan.equals("")) {
                     emptyQuan = true;
                     purchQuan = "0";
@@ -330,15 +332,14 @@ public class Invoicing extends javax.swing.JPanel {
                 if (isChecked) {
                     String prodID = (String) New_Invoice_Table.getValueAt(row, 1);
                     String prodName = (String) New_Invoice_Table.getValueAt(row, 2);
-                    String Price = (String) New_Invoice_Table.getValueAt(row, 3);
-                    String availQuan = (String) New_Invoice_Table.getValueAt(row, 4);
-                    String purchQuan = (String) New_Invoice_Table.getValueAt(row, 5);
-                    String remaingQuan = Integer.toString(Integer.parseInt(availQuan) -
-                        Integer.parseInt(purchQuan));
-                    String netAmount = Float.toString(Float.parseFloat(Price) *
-                        Float.parseFloat(purchQuan));
-                    saleAmount = Float.toString(Float.parseFloat(saleAmount) +
-                        Float.parseFloat(netAmount));
+                    String Price = Double.toString((Double) New_Invoice_Table.getValueAt(row, 3));
+                    int availQuan = (Integer) New_Invoice_Table.getValueAt(row, 4);
+                    String purchQuan = Integer.toString((Integer) New_Invoice_Table.getValueAt(row, 5));
+                    String remaingQuan = Integer.toString(availQuan - Integer.parseInt(purchQuan));
+                    String netAmount = Double.toString(Double.parseDouble(Price) *
+                        Double.parseDouble(purchQuan));
+                    saleAmount = Double.toString(Double.parseDouble(saleAmount) +
+                        Double.parseDouble(netAmount));
                     Internal.SQLite.updateStock(prodID, remaingQuan);
                     Internal.SQLite.newInvoice(invID, prodName, Price, purchQuan, netAmount);
                 }

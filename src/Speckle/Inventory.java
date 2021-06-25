@@ -125,8 +125,12 @@ public class Inventory extends javax.swing.JPanel {
         for (int row = 0; row < Inventory_Table.getRowCount(); row++) {
             String id = (String) Inventory_Table.getValueAt(row, 0);
             String name = (String) Inventory_Table.getValueAt(row, 1);
-            String price = (String) Inventory_Table.getValueAt(row, 2);
-            String quan = (String) Inventory_Table.getValueAt(row, 3);
+            String price = null;
+            if (Inventory_Table.getValueAt(row, 2) != null)
+                price = Double.toString((Double) Inventory_Table.getValueAt(row, 2));
+            String quan = null;
+            if (Inventory_Table.getValueAt(row, 3) != null)
+                quan = Integer.toString((Integer) Inventory_Table.getValueAt(row, 3));
             Internal.SQLite.updateInven(id, name, price, quan);
         }
     }
@@ -152,16 +156,14 @@ public class Inventory extends javax.swing.JPanel {
                 + " Stock.", "No Product Selected", JOptionPane.ERROR_MESSAGE);
         else {
             String id = Inventory_Table.getValueAt(row, 0).toString();
-            String quantity;
-            if (Inventory_Table.getValueAt(row, 3) == null)
-                quantity = "0";
-            else
-                quantity = Inventory_Table.getValueAt(row, 3).toString();
+            int quantity = 0;
+            if (Inventory_Table.getValueAt(row, 3) != null)
+                quantity = (Integer) Inventory_Table.getValueAt(row, 3);
             String update = JOptionPane.showInputDialog(null, "Enter the Amount of Stock"
                 + " You want to Increase", "Update Stock", JOptionPane.PLAIN_MESSAGE);
             if (update.equals(""))
                 update = "0";
-            String quan = Integer.toString(Integer.parseInt(quantity) + Integer.parseInt(update));
+            String quan = Integer.toString(quantity + Integer.parseInt(update));
             Internal.SQLite.updateStock(id, quan);
             Speckle.Main.Content.removeAll();
             Inventory scene = new Inventory();
