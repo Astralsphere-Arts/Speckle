@@ -17,3 +17,5 @@ A Simple Invoicing and Inventory Management System written in Java and uses SQLi
    &emsp; **Copyright &copy; 2007-2021 xerial** - Apache 2.0 License
 2. **[FlatLaf](https://www.formdev.com/flatlaf/)** : Version 1.2  
    &emsp; **Copyright &copy; 2019-2021 FormDev Software GmbH.** - Apache 2.0 License
+3. **[OpenPDF](https://github.com/LibrePDF/OpenPDF)** : Version 1.3.26  
+   &emsp; **Copyright &copy; 2010-2021 LibrePDF** - Mozilla Public License Version 2.0 + GNU Lesser General Public License 2.1
