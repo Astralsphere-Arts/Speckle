@@ -91,7 +91,7 @@ public class Inventory extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
+                .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -103,7 +103,7 @@ public class Inventory extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addComponent(Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,7 +167,7 @@ public class Inventory extends javax.swing.JPanel {
             Internal.SQLite.updateStock(id, quan);
             Speckle.Main.Content.removeAll();
             Inventory scene = new Inventory();
-            scene.setBounds(0, 0, 955, 574);
+            scene.setBounds(0, 0, 948, 574);
             Speckle.Main.Content.add(scene).setVisible(true);
         }
     }//GEN-LAST:event_UpdateActionPerformed

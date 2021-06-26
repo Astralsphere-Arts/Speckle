@@ -300,12 +300,11 @@ public class Invoicing extends javax.swing.JPanel {
             if (isChecked) {
                 prodSelected++;
                 String availQuan = Integer.toString((Integer) New_Invoice_Table.getValueAt(row, 4));
-                String purchQuan = "";
+                String purchQuan = "0";
                 if (New_Invoice_Table.getValueAt(row, 5) != null)
                     purchQuan = Integer.toString((Integer) New_Invoice_Table.getValueAt(row, 5));
-                if (purchQuan.equals("")) {
+                if (purchQuan.equals("0")) {
                     emptyQuan = true;
-                    purchQuan = "0";
                 }
                 int remaingQuan = Integer.parseInt(availQuan) - Integer.parseInt(purchQuan);
                 if (remaingQuan < 0)
@@ -347,7 +346,7 @@ public class Invoicing extends javax.swing.JPanel {
             Internal.SQLite.newInvoice(invID, custName, custContact, custAddress, saleDate, saleAmount);
             Speckle.Main.Content.removeAll();
             Speckle.Invoicing scene = new Invoicing();
-            scene.setBounds(0, 0, 955, 574);
+            scene.setBounds(0, 0, 948, 574);
             Speckle.Main.Content.add(scene).setVisible(true);
         }
     }//GEN-LAST:event_Create_InvoiceActionPerformed

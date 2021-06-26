@@ -366,7 +366,7 @@ public class Settings extends javax.swing.JPanel {
                 "Sucess", JOptionPane.INFORMATION_MESSAGE);
             Speckle.Main.Content.removeAll();
             Settings scene = new Settings();
-            scene.setBounds(0, 0, 955, 574);
+            scene.setBounds(0, 0, 948, 574);
             Speckle.Main.Content.add(scene).setVisible(true);
         }
     }//GEN-LAST:event_Change_Username_ButtonActionPerformed
@@ -391,7 +391,7 @@ public class Settings extends javax.swing.JPanel {
                 "Sucess", JOptionPane.INFORMATION_MESSAGE);
             Speckle.Main.Content.removeAll();
             Settings scene = new Settings();
-            scene.setBounds(0, 0, 955, 574);
+            scene.setBounds(0, 0, 948, 574);
             Speckle.Main.Content.add(scene).setVisible(true);
         }
     }//GEN-LAST:event_Change_Password_ButtonActionPerformed
@@ -418,7 +418,7 @@ public class Settings extends javax.swing.JPanel {
                 "Sucess", JOptionPane.INFORMATION_MESSAGE);
             Speckle.Main.Content.removeAll();
             Settings scene = new Settings();
-            scene.setBounds(0, 0, 955, 574);
+            scene.setBounds(0, 0, 948, 574);
             Speckle.Main.Content.add(scene).setVisible(true);
             scene.Settings_Container.setSelectedIndex(1);
         }

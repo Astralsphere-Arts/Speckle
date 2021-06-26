@@ -677,14 +677,14 @@ public class Main extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(SideBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(Content))
+                .addComponent(Content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         ApplicationLayout.setVerticalGroup(
             ApplicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ApplicationLayout.createSequentialGroup()
                 .addGroup(ApplicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(SideBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Content))
+                    .addComponent(Content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -756,7 +756,7 @@ public class Main extends javax.swing.JFrame {
         else if (Internal.SQLite.logIn(usrname, passwd)) {
             Content.removeAll();
             Speckle.Home scene = new Home();
-            scene.setBounds(0, 0, 955, 574);
+            scene.setBounds(0, 0, 948, 574);
             Content.add(scene).setVisible(true);
             Container_Deck.show(Container, "app");
         }
@@ -793,7 +793,7 @@ public class Main extends javax.swing.JFrame {
             Internal.SQLite.compConfig(cname, cnum, cmail, caddress);
             Content.removeAll();
             Speckle.Home scene = new Home();
-            scene.setBounds(0, 0, 955, 574);
+            scene.setBounds(0, 0, 948, 574);
             Content.add(scene).setVisible(true);
             Container_Deck.show(Container, "app");
         }
@@ -802,7 +802,7 @@ public class Main extends javax.swing.JFrame {
     private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
         Content.removeAll();
         Speckle.Home scene = new Home();
-        scene.setBounds(0, 0, 955, 574);
+        scene.setBounds(0, 0, 948, 574);
         Content.add(scene).setVisible(true);
     }//GEN-LAST:event_HomeMouseClicked
 
@@ -827,7 +827,7 @@ public class Main extends javax.swing.JFrame {
     private void InvoicingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InvoicingMouseClicked
         Content.removeAll();
         Speckle.Invoicing scene = new Invoicing();
-        scene.setBounds(0, 0, 955, 574);
+        scene.setBounds(0, 0, 948, 574);
         Content.add(scene).setVisible(true);
     }//GEN-LAST:event_InvoicingMouseClicked
 
@@ -852,7 +852,7 @@ public class Main extends javax.swing.JFrame {
     private void InventoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventoryMouseClicked
         Content.removeAll();
         Speckle.Inventory scene = new Inventory();
-        scene.setBounds(0, 0, 955, 574);
+        scene.setBounds(0, 0, 948, 574);
         Content.add(scene).setVisible(true);
     }//GEN-LAST:event_InventoryMouseClicked
 
@@ -877,7 +877,7 @@ public class Main extends javax.swing.JFrame {
     private void SettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsMouseClicked
         Content.removeAll();
         Speckle.Settings scene = new Settings();
-        scene.setBounds(0, 0, 955, 574);
+        scene.setBounds(0, 0, 948, 574);
         Content.add(scene).setVisible(true);
     }//GEN-LAST:event_SettingsMouseClicked
 
@@ -902,7 +902,7 @@ public class Main extends javax.swing.JFrame {
     private void AboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutMouseClicked
         Content.removeAll();
         Speckle.About scene = new About();
-        scene.setBounds(0, 0, 955, 574);
+        scene.setBounds(0, 0, 948, 574);
         Content.add(scene).setVisible(true);
     }//GEN-LAST:event_AboutMouseClicked
 
