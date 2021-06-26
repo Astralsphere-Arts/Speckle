@@ -46,6 +46,8 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="View" min="-2" pref="120" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="Print" min="-2" pref="120" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="Remove" min="-2" pref="120" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="Export" min="-2" pref="120" max="-2" attributes="0"/>
@@ -73,12 +75,13 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="Invoice_Table_Container" min="-2" pref="347" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="Remove" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="Export" alignment="1" pref="36" max="32767" attributes="0"/>
                           <Component id="View" alignment="0" max="32767" attributes="0"/>
-                          <Component id="Export" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="Remove" alignment="1" pref="36" max="32767" attributes="0"/>
+                          <Component id="Print" alignment="1" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="70" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -134,13 +137,19 @@
             <Component class="javax.swing.JButton" name="View">
               <Properties>
                 <Property name="text" type="java.lang.String" value="View Invoice"/>
-                <Property name="toolTipText" type="java.lang.String" value="View Selected Invoice from Invoice History"/>
+                <Property name="toolTipText" type="java.lang.String" value="View Selected Invoice from Invoice List"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="Print">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Print Invoice"/>
+                <Property name="toolTipText" type="java.lang.String" value="Print Selected Invoice from Invoice List"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="Remove">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Remove"/>
-                <Property name="toolTipText" type="java.lang.String" value="Remove Selected Invoices from Invoice History"/>
+                <Property name="toolTipText" type="java.lang.String" value="Remove Selected Invoices from Invoice List"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RemoveActionPerformed"/>
@@ -149,7 +158,7 @@
             <Component class="javax.swing.JButton" name="Export">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Export"/>
-                <Property name="toolTipText" type="java.lang.String" value="Export Invoice History to a CSV File"/>
+                <Property name="toolTipText" type="java.lang.String" value="Export Invoice List to a CSV File"/>
               </Properties>
             </Component>
           </SubComponents>

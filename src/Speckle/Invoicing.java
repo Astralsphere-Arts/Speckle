@@ -36,6 +36,7 @@ public class Invoicing extends javax.swing.JPanel {
         Invoice_Table_Container = new javax.swing.JScrollPane();
         Invoice_Table = new javax.swing.JTable();
         View = new javax.swing.JButton();
+        Print = new javax.swing.JButton();
         Remove = new javax.swing.JButton();
         Export = new javax.swing.JButton();
         Invoice_New = new javax.swing.JPanel();
@@ -84,10 +85,13 @@ public class Invoicing extends javax.swing.JPanel {
         }
 
         View.setText("View Invoice");
-        View.setToolTipText("View Selected Invoice from Invoice History");
+        View.setToolTipText("View Selected Invoice from Invoice List");
+
+        Print.setText("Print Invoice");
+        Print.setToolTipText("Print Selected Invoice from Invoice List");
 
         Remove.setText("Remove");
-        Remove.setToolTipText("Remove Selected Invoices from Invoice History");
+        Remove.setToolTipText("Remove Selected Invoices from Invoice List");
         Remove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RemoveActionPerformed(evt);
@@ -95,7 +99,7 @@ public class Invoicing extends javax.swing.JPanel {
         });
 
         Export.setText("Export");
-        Export.setToolTipText("Export Invoice History to a CSV File");
+        Export.setToolTipText("Export Invoice List to a CSV File");
 
         javax.swing.GroupLayout Invoice_MainLayout = new javax.swing.GroupLayout(Invoice_Main);
         Invoice_Main.setLayout(Invoice_MainLayout);
@@ -106,6 +110,8 @@ public class Invoicing extends javax.swing.JPanel {
                 .addGroup(Invoice_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(Invoice_MainLayout.createSequentialGroup()
                         .addComponent(View, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Print, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(Remove, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -128,11 +134,12 @@ public class Invoicing extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(Invoice_Table_Container, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(Invoice_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Remove, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(Invoice_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Export, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                     .addComponent(View, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Export, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(70, Short.MAX_VALUE))
+                    .addComponent(Remove, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(Print, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(70, 70, 70))
         );
 
         Invoice_Container.add(Invoice_Main, "invMain");
@@ -372,6 +379,7 @@ public class Invoicing extends javax.swing.JPanel {
     private javax.swing.JButton New_Invoice;
     private javax.swing.JTable New_Invoice_Table;
     private javax.swing.JScrollPane New_Invoice_Table_Container;
+    private javax.swing.JButton Print;
     private javax.swing.JButton Remove;
     private javax.swing.JButton View;
     // End of variables declaration//GEN-END:variables
