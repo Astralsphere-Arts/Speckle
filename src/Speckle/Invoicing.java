@@ -296,7 +296,7 @@ public class Invoicing extends javax.swing.JPanel {
         int prodSelected = 0;
         boolean emptyQuan = false;
         boolean excessQuan = false;
-        String invID = "INV-" + Internal.Random.ID(4) + "-" + Internal.Random.ID(4);
+        String invID = "INV-" + Internal.Function.randomID(4) + "-" + Internal.Function.randomID(4);
         String custName = Customer_Name.getText();
         String custContact = Contact_Number.getText();
         String custAddress = Customer_Address.getText();

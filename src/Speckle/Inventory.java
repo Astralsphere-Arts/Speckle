@@ -136,8 +136,8 @@ public class Inventory extends javax.swing.JPanel {
     }
     
     private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
-        Inventory_Model.addRow(new Object[] {"SPK-" + Internal.Random.ID(4)
-            + "-" + Internal.Random.ID(4), null, null, null});
+        Inventory_Model.addRow(new Object[] {"SPK-" + Internal.Function.randomID(4)
+            + "-" + Internal.Function.randomID(4), null, null, null});
     }//GEN-LAST:event_AddActionPerformed
 
     private void RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveActionPerformed
