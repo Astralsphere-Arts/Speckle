@@ -27,9 +27,9 @@ public class SQLite {
     
     public static void initDB() {
         if (!Files.isWritable(currentDirectory)) {
-            File appData = new File(System.getenv("localappdata") + "\\Speckle");
+            File appData = new File(System.getenv("localappdata") + File.separator + "Speckle");
             appData.mkdir();
-            dbFolder = new File(System.getenv("localappdata") + "\\Speckle\\data");
+            dbFolder = new File(appData + File.separator + "data");
         }
         firstUse = dbFolder.mkdir();
         dbConnect();
@@ -39,9 +39,12 @@ public class SQLite {
     
     static void dbConnect() {
         try {
-            mainDB = DriverManager.getConnection("jdbc:sqlite:" + dbFolder + "/main.sqlite");
-            configDB = DriverManager.getConnection("jdbc:sqlite:" + dbFolder + "/config.sqlite");
-            invoiceDB = DriverManager.getConnection("jdbc:sqlite:" + dbFolder + "/invoice.sqlite");
+            mainDB = DriverManager.getConnection("jdbc:sqlite:" + dbFolder + File.separator
+                + "main.sqlite");
+            configDB = DriverManager.getConnection("jdbc:sqlite:" + dbFolder + File.separator
+                + "config.sqlite");
+            invoiceDB = DriverManager.getConnection("jdbc:sqlite:" + dbFolder + File.separator
+                + "invoice.sqlite");
         } catch (SQLException ex) { 
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -186,16 +189,15 @@ public class SQLite {
         }
         return invResult;
     }
-    
-    public static ResultSet newInvoData() {
-        if (mainDB == null)
+        
+    public static ResultSet newInvoData(String id) {
+        if (invoiceDB == null)
             dbConnect();
         ResultSet invResult = null;
-        String inventory = "SELECT \"Product ID\", \"Product Name\", \"Price\","
-            + " \"Available Quantity\" FROM Inventory;";
+        String inventory = "SELECT * FROM \"" + id + "\";";
         try {
-            Statement mainDBquery = mainDB.createStatement();
-            invResult = mainDBquery.executeQuery(inventory);
+            Statement invoiceDBquery = invoiceDB.createStatement();
+            invResult = invoiceDBquery.executeQuery(inventory);
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }

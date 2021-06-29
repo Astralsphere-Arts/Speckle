@@ -139,12 +139,18 @@
                 <Property name="text" type="java.lang.String" value="View Invoice"/>
                 <Property name="toolTipText" type="java.lang.String" value="View Selected Invoice from Invoice List"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ViewActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="Print">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Print Invoice"/>
                 <Property name="toolTipText" type="java.lang.String" value="Print Selected Invoice from Invoice List"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PrintActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="Remove">
               <Properties>

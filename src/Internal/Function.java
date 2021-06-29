@@ -1,10 +1,18 @@
 package Internal;
 
+import com.lowagie.text.Document;
+import com.lowagie.text.DocumentException;
+import com.lowagie.text.Paragraph;
+import com.lowagie.text.pdf.PdfWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.security.SecureRandom;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileSystemView;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
@@ -16,6 +24,8 @@ import javax.swing.table.TableModel;
 public class Function {
     static String Seed = "0123456789";
     static SecureRandom random = new SecureRandom();
+    static File invFolder = new File(FileSystemView.getFileSystemView()
+        .getDefaultDirectory().getPath() + File.separator + "Speckle");
     
     public static String randomID(int length) {
         StringBuilder builder = new StringBuilder(length);
@@ -59,7 +69,7 @@ public class Function {
     }
     
     public static TableModel newInvoTableModel() {
-        ResultSet invResult = Internal.SQLite.newInvoData();
+        ResultSet invResult = Internal.SQLite.invenData();
         DefaultTableModel invTableModel = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -128,5 +138,19 @@ public class Function {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
             return null;
         }
+    }
+    
+    public static void invoicePDF(String id) {
+        invFolder.mkdir();
+        Document document = new Document();
+        try {
+            PdfWriter.getInstance(document, new FileOutputStream(invFolder + File.separator
+                + id + ".pdf"));
+            document.open();
+            document.add(new Paragraph(id));
+        } catch (DocumentException | IOException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        document.close();
     }
 }

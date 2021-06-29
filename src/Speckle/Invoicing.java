@@ -86,9 +86,19 @@ public class Invoicing extends javax.swing.JPanel {
 
         View.setText("View Invoice");
         View.setToolTipText("View Selected Invoice from Invoice List");
+        View.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ViewActionPerformed(evt);
+            }
+        });
 
         Print.setText("Print Invoice");
         Print.setToolTipText("Print Selected Invoice from Invoice List");
+        Print.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PrintActionPerformed(evt);
+            }
+        });
 
         Remove.setText("Remove");
         Remove.setToolTipText("Remove Selected Invoices from Invoice List");
@@ -277,6 +287,28 @@ public class Invoicing extends javax.swing.JPanel {
     private void New_InvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_New_InvoiceActionPerformed
         Invoice_Deck.show(Invoice_Container, "invNew");
     }//GEN-LAST:event_New_InvoiceActionPerformed
+
+    private void ViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewActionPerformed
+        int row = Invoice_Table.getSelectedRow();
+        if (row == -1)
+            JOptionPane.showMessageDialog(null, "Please Select an Invoice from the Inovice"
+                + " List.", "No Invoice Selected", JOptionPane.ERROR_MESSAGE);
+        else {
+            String id = Invoice_Table.getValueAt(row, 0).toString();
+            Internal.Function.invoicePDF(id);
+        }
+    }//GEN-LAST:event_ViewActionPerformed
+
+    private void PrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrintActionPerformed
+        int row = Invoice_Table.getSelectedRow();
+        if (row == -1)
+            JOptionPane.showMessageDialog(null, "Please Select an Invoice from the Inovice"
+                + " List.", "No Invoice Selected", JOptionPane.ERROR_MESSAGE);
+        else {
+            String id = Invoice_Table.getValueAt(row, 0).toString();
+            Internal.Function.invoicePDF(id);
+        }
+    }//GEN-LAST:event_PrintActionPerformed
 
     private void RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveActionPerformed
         DefaultTableModel Invoice_Model = (DefaultTableModel) this.Invoice_Table.getModel();
