@@ -121,7 +121,7 @@
                 <Component class="javax.swing.JTable" name="Invoice_Table">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="Internal.SQLite.invoData()" type="code"/>
+                      <Connection code="Internal.Function.invoTableModel()" type="code"/>
                     </Property>
                     <Property name="showGrid" type="boolean" value="true"/>
                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
@@ -315,7 +315,7 @@
                 <Component class="javax.swing.JTable" name="New_Invoice_Table">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="Internal.SQLite.newInvoData()" type="code"/>
+                      <Connection code="Internal.Function.newInvoTableModel()" type="code"/>
                     </Property>
                     <Property name="showGrid" type="boolean" value="true"/>
                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">

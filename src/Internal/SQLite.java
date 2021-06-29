@@ -10,10 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 
 /**
  *
@@ -175,127 +172,48 @@ public class SQLite {
         return data;
     }
     
-    public static TableModel invoData() {
+    public static ResultSet invoData() {
         if (mainDB == null)
             dbConnect();
-        ResultSet invResult;
-        DefaultTableModel invTableModel = new DefaultTableModel() {
-            @Override
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return false;
-            }
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class,
-                java.lang.Object.class, java.lang.Double.class
-            };
-            @Override
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        };
+        ResultSet invResult = null;
         String invoice = "SELECT \"Invoice ID\", \"Customer Name\", \"Contact Number\","
             + " \"Date of Sale\", \"Sale Amount\" FROM Invoice;";
         try {
             Statement mainDBquery = mainDB.createStatement();
             invResult = mainDBquery.executeQuery(invoice);
-            ResultSetMetaData invMeta = invResult.getMetaData();
-            int numberOfColumns = invMeta.getColumnCount();
-            for (int columnIndex = 0; columnIndex < numberOfColumns; columnIndex++)
-                invTableModel.addColumn(invMeta.getColumnLabel(columnIndex + 1));
-            Object[] row = new Object[numberOfColumns];
-            while (invResult.next()) {
-                for (int i = 0; i < numberOfColumns; i++)
-                    row[i] = invResult.getObject(i+1);
-                invTableModel.addRow(row);
-            }
-            return invTableModel;
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
-            return null;
         }
+        return invResult;
     }
     
-    public static TableModel newInvoData() {
+    public static ResultSet newInvoData() {
         if (mainDB == null)
             dbConnect();
-        ResultSet invResult;
-        DefaultTableModel invTableModel = new DefaultTableModel() {
-            @Override
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return columnIndex == 0 || columnIndex == 5;
-            }
-            Class[] types = new Class [] {
-                java.lang.Boolean.class, java.lang.Object.class, java.lang.Object.class,
-                java.lang.Double.class, java.lang.Integer.class, java.lang.Integer.class
-            };
-            @Override
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        };
+        ResultSet invResult = null;
         String inventory = "SELECT \"Product ID\", \"Product Name\", \"Price\","
             + " \"Available Quantity\" FROM Inventory;";
         try {
             Statement mainDBquery = mainDB.createStatement();
             invResult = mainDBquery.executeQuery(inventory);
-            ResultSetMetaData invMeta = invResult.getMetaData();
-            int numberOfColumns = invMeta.getColumnCount();
-            invTableModel.addColumn("Products Purchased");
-            for (int columnIndex = 0; columnIndex < numberOfColumns; columnIndex++)
-                invTableModel.addColumn(invMeta.getColumnLabel(columnIndex + 1));
-            invTableModel.addColumn("Purchased Quantity");
-            Object[] row = new Object[numberOfColumns + 2];
-            while (invResult.next()) {
-                row[0] = false;
-                for (int i = 1; i < numberOfColumns + 1; i++)
-                    row[i] = invResult.getObject(i);
-                row[5] = 1;
-                invTableModel.addRow(row);
-            }
-            return invTableModel;
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
-            return null;
         }
+        return invResult;
     }
     
-    public static TableModel invenData() {
+    public static ResultSet invenData() {
         if (mainDB == null)
             dbConnect();
-        ResultSet invResult;
-        DefaultTableModel invTableModel = new DefaultTableModel() {
-            @Override
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return columnIndex != 0;
-            }
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class,
-                java.lang.Double.class, java.lang.Integer.class
-            };
-            @Override
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        };
+        ResultSet invResult = null;
         String inventory = "SELECT * FROM Inventory;";
         try {
             Statement mainDBquery = mainDB.createStatement();
             invResult = mainDBquery.executeQuery(inventory);
-            ResultSetMetaData invMeta = invResult.getMetaData();
-            int numberOfColumns = invMeta.getColumnCount();
-            for (int columnIndex = 0; columnIndex < numberOfColumns; columnIndex++)
-                invTableModel.addColumn(invMeta.getColumnLabel(columnIndex + 1));
-            Object[] row = new Object[numberOfColumns];
-            while (invResult.next()) {
-                for (int i = 0; i < numberOfColumns; i++)
-                    row[i] = invResult.getObject(i+1);
-                invTableModel.addRow(row);
-            }
-            return invTableModel;
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
-            return null;
         }
+        return invResult;
     }
     
     public static void newInvoice(String id, String name, String contact, String address,

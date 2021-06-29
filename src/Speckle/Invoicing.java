@@ -68,7 +68,7 @@ public class Invoicing extends javax.swing.JPanel {
             }
         });
 
-        Invoice_Table.setModel(Internal.SQLite.invoData());
+        Invoice_Table.setModel(Internal.Function.invoTableModel());
         Invoice_Table.setShowGrid(true);
         Invoice_Table.getTableHeader().setReorderingAllowed(false);
         Invoice_Table_Container.setViewportView(Invoice_Table);
@@ -170,7 +170,7 @@ public class Invoicing extends javax.swing.JPanel {
 
         Customer_Address.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
 
-        New_Invoice_Table.setModel(Internal.SQLite.newInvoData());
+        New_Invoice_Table.setModel(Internal.Function.newInvoTableModel());
         New_Invoice_Table.setShowGrid(true);
         New_Invoice_Table.getTableHeader().setReorderingAllowed(false);
         New_Invoice_Table_Container.setViewportView(New_Invoice_Table);

@@ -41,7 +41,7 @@ public class Inventory extends javax.swing.JPanel {
         Heading.setText("Inventory");
         Heading.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
-        Inventory_Table.setModel(Internal.SQLite.invenData());
+        Inventory_Table.setModel(Internal.Function.invenTableModel());
         Inventory_Table.setShowGrid(true);
         Inventory_Table.getTableHeader().setReorderingAllowed(false);
         Inventory_Table.getModel().addTableModelListener(new javax.swing.event.TableModelListener() {
