@@ -26,6 +26,7 @@ public class Function {
     static SecureRandom random = new SecureRandom();
     static File invFolder = new File(FileSystemView.getFileSystemView()
         .getDefaultDirectory().getPath() + File.separator + "Speckle");
+    public static File invPath = null;
     
     public static String randomID(int length) {
         StringBuilder builder = new StringBuilder(length);
@@ -142,10 +143,10 @@ public class Function {
     
     public static void invoicePDF(String id) {
         invFolder.mkdir();
+        invPath = new File(invFolder + File.separator + id + ".pdf");
         Document document = new Document();
         try {
-            PdfWriter.getInstance(document, new FileOutputStream(invFolder + File.separator
-                + id + ".pdf"));
+            PdfWriter.getInstance(document, new FileOutputStream(invPath));
             document.open();
             document.add(new Paragraph(id));
         } catch (DocumentException | IOException ex) {

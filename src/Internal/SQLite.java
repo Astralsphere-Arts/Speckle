@@ -189,7 +189,7 @@ public class SQLite {
         }
         return invResult;
     }
-        
+    
     public static ResultSet newInvoData(String id) {
         if (invoiceDB == null)
             dbConnect();

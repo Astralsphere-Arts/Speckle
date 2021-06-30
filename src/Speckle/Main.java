@@ -1,6 +1,5 @@
 package Speckle;
 
-import com.formdev.flatlaf.FlatIntelliJLaf;
 import javax.swing.JOptionPane;
 
 /**
@@ -955,7 +954,7 @@ public class Main extends javax.swing.JFrame {
         /* Set the FlatIntelliJLaf look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If FlatIntelliJLaf is not available, stay with the default look and feel. */
-        FlatIntelliJLaf.setup();
+        com.formdev.flatlaf.FlatIntelliJLaf.setup();
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("FlatIntelliJLaf".equals(info.getName())) {
