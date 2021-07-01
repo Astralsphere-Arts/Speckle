@@ -190,7 +190,22 @@ public class SQLite {
         return invResult;
     }
     
-    public static ResultSet newInvoData(String id) {
+    public static ResultSet invoData(String id) {
+        if (mainDB == null)
+            dbConnect();
+        ResultSet invResult = null;
+        String invoice = "SELECT * FROM Invoice WHERE \"Invoice ID\" = ?;";
+        try {
+            PreparedStatement mainDBquery = mainDB.prepareStatement(invoice);
+            mainDBquery.setString(1, id);
+            invResult = mainDBquery.executeQuery();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        return invResult;
+    }
+    
+    public static ResultSet invoTableData(String id) {
         if (invoiceDB == null)
             dbConnect();
         ResultSet invResult = null;
