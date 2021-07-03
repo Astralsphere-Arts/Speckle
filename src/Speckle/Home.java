@@ -1,5 +1,10 @@
 package Speckle;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
 /**
  *
  * @author Astralsphere Arts
@@ -26,7 +31,6 @@ public class Home extends javax.swing.JPanel {
         Banner = new javax.swing.JPanel();
         Speckle_Label = new javax.swing.JLabel();
         Speckle_Version_Label = new javax.swing.JLabel();
-        Left_Panel = new javax.swing.JPanel();
         Right_Panel = new javax.swing.JPanel();
         Low_Stock_Label = new javax.swing.JLabel();
         Low_Stock_Para = new javax.swing.JLabel();
@@ -40,6 +44,8 @@ public class Home extends javax.swing.JPanel {
         Product_Four_Quantity = new javax.swing.JLabel();
         Product_Five_Label = new javax.swing.JLabel();
         Product_Five_Quantity = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Help_Text = new javax.swing.JTextArea();
 
         Banner.setBackground(new java.awt.Color(253, 253, 253));
         Banner.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(180, 180, 180), 1, true));
@@ -57,36 +63,20 @@ public class Home extends javax.swing.JPanel {
         BannerLayout.setHorizontalGroup(
             BannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BannerLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(317, Short.MAX_VALUE)
                 .addComponent(Speckle_Label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Speckle_Version_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(591, Short.MAX_VALUE))
+                .addGap(288, 288, 288))
         );
         BannerLayout.setVerticalGroup(
             BannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BannerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(BannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(BannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Speckle_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
-                    .addGroup(BannerLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Speckle_Version_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(Speckle_Version_Label))
                 .addContainerGap())
-        );
-
-        Left_Panel.setBackground(new java.awt.Color(248, 248, 248));
-        Left_Panel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(180, 180, 180), 1, true));
-
-        javax.swing.GroupLayout Left_PanelLayout = new javax.swing.GroupLayout(Left_Panel);
-        Left_Panel.setLayout(Left_PanelLayout);
-        Left_PanelLayout.setHorizontalGroup(
-            Left_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        Left_PanelLayout.setVerticalGroup(
-            Left_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         Right_Panel.setBackground(new java.awt.Color(248, 248, 248));
@@ -198,20 +188,38 @@ public class Home extends javax.swing.JPanel {
                 .addContainerGap(53, Short.MAX_VALUE))
         );
 
+        Help_Text.setEditable(false);
+        Help_Text.setColumns(20);
+        Help_Text.setRows(5);
+        Help_Caret = (javax.swing.text.DefaultCaret)Help_Text.getCaret();
+        Help_Caret.setUpdatePolicy(javax.swing.text.DefaultCaret.NEVER_UPDATE);
+        try {
+            Help_Reader = new java.io.BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/Resources/help.txt")));
+            Help_Line = Help_Reader.readLine();
+            while (Help_Line != null) {
+                Help_Text.append(Help_Line + "\n");
+                Help_Line = Help_Reader.readLine();
+            }
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        jScrollPane1.setViewportView(Help_Text);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addContainerGap(44, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Banner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(Left_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Right_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(44, Short.MAX_VALUE)
-                        .addComponent(Banner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Right_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(44, 44, 44))
         );
         layout.setVerticalGroup(
@@ -222,7 +230,7 @@ public class Home extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Right_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Left_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -230,7 +238,7 @@ public class Home extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Banner;
-    private javax.swing.JPanel Left_Panel;
+    private javax.swing.JTextArea Help_Text;
     private javax.swing.JLabel Low_Stock_Label;
     private javax.swing.JLabel Low_Stock_Para;
     private javax.swing.JLabel Product_Five_Label;
@@ -246,6 +254,10 @@ public class Home extends javax.swing.JPanel {
     private javax.swing.JPanel Right_Panel;
     private javax.swing.JLabel Speckle_Label;
     private javax.swing.JLabel Speckle_Version_Label;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
     private final String data[][];
+    private javax.swing.text.DefaultCaret Help_Caret;
+    private java.io.BufferedReader Help_Reader;        
+    private String Help_Line;
 }
