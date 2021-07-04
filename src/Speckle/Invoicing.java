@@ -2,8 +2,11 @@ package Speckle;
 
 import java.awt.Component;
 import java.awt.Desktop;
+import java.io.File;
 import java.io.IOException;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
@@ -103,6 +106,11 @@ public class Invoicing extends javax.swing.JPanel {
 
         Export.setText("Export");
         Export.setToolTipText("Export Invoice List to a CSV File");
+        Export.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExportActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Invoice_MainLayout = new javax.swing.GroupLayout(Invoice_Main);
         Invoice_Main.setLayout(Invoice_MainLayout);
@@ -379,6 +387,20 @@ public class Invoicing extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event_Create_InvoiceActionPerformed
+
+    private void ExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Export to CSV");
+        fileChooser.setDialogType(JFileChooser.SAVE_DIALOG);
+        fileChooser.setSelectedFile(new File("Invoice-" + new java.text.SimpleDateFormat("dd-MM-yyyy")
+            .format(new java.util.Date()) + ".csv"));
+        fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
+        if (fileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+            Internal.Function.invoiceCSV(fileChooser.getSelectedFile());
+            JOptionPane.showMessageDialog(null, "Invoice Data Exported Sucessfully!",
+                "Sucess", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_ExportActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

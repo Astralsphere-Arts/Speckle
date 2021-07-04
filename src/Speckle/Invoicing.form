@@ -154,6 +154,9 @@
                 <Property name="text" type="java.lang.String" value="Export"/>
                 <Property name="toolTipText" type="java.lang.String" value="Export Invoice List to a CSV File"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExportActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

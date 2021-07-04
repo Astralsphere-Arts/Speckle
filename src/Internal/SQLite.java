@@ -189,8 +189,7 @@ public class SQLite {
         if (mainDB == null)
             dbConnect();
         ResultSet invResult = null;
-        String invoice = "SELECT \"Invoice ID\", \"Customer Name\", \"Contact Number\","
-            + " \"Date of Sale\", \"Sale Amount\" FROM Invoice;";
+        String invoice = "SELECT * FROM Invoice;";
         try {
             Statement mainDBquery = mainDB.createStatement();
             invResult = mainDBquery.executeQuery(invoice);
