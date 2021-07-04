@@ -731,6 +731,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_HeaderMouseDragged
 
     private void CloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloseMouseClicked
+        Internal.SQLite.closeDB();
         System.exit(0);
     }//GEN-LAST:event_CloseMouseClicked
 

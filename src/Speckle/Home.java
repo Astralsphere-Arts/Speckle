@@ -29,7 +29,10 @@ public class Home extends javax.swing.JPanel {
         Banner = new javax.swing.JPanel();
         Speckle_Label = new javax.swing.JLabel();
         Speckle_Version_Label = new javax.swing.JLabel();
-        Right_Panel = new javax.swing.JPanel();
+        Help = new javax.swing.JPanel();
+        Help_Container = new javax.swing.JScrollPane();
+        Help_Text = new javax.swing.JTextArea();
+        Low_Stock = new javax.swing.JPanel();
         Low_Stock_Label = new javax.swing.JLabel();
         Low_Stock_Para = new javax.swing.JLabel();
         Product_One_Label = new javax.swing.JLabel();
@@ -42,8 +45,6 @@ public class Home extends javax.swing.JPanel {
         Product_Four_Quantity = new javax.swing.JLabel();
         Product_Five_Label = new javax.swing.JLabel();
         Product_Five_Quantity = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Help_Text = new javax.swing.JTextArea();
 
         Banner.setBackground(new java.awt.Color(253, 253, 253));
         Banner.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(180, 180, 180), 1, true));
@@ -77,8 +78,43 @@ public class Home extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        Right_Panel.setBackground(new java.awt.Color(248, 248, 248));
-        Right_Panel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(180, 180, 180), 1, true));
+        Help.setBackground(new java.awt.Color(248, 248, 248));
+        Help.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(180, 180, 180), 1, true));
+
+        Help_Container.setBorder(null);
+
+        Help_Text.setEditable(false);
+        Help_Text.setBackground(new java.awt.Color(248, 248, 248));
+        Help_Text.setColumns(20);
+        Help_Text.setRows(5);
+        Help_Text.setBorder(null);
+        Help_Caret = (javax.swing.text.DefaultCaret)Help_Text.getCaret();
+        Help_Caret.setUpdatePolicy(javax.swing.text.DefaultCaret.NEVER_UPDATE);
+        try {
+            Help_Reader = new java.io.BufferedReader(new java.io.InputStreamReader(getClass().getResourceAsStream("/Resources/help.txt")));
+            Help_Line = Help_Reader.readLine();
+            while (Help_Line != null) {
+                Help_Text.append(Help_Line + "\n");
+                Help_Line = Help_Reader.readLine();
+            }
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        Help_Container.setViewportView(Help_Text);
+
+        javax.swing.GroupLayout HelpLayout = new javax.swing.GroupLayout(Help);
+        Help.setLayout(HelpLayout);
+        HelpLayout.setHorizontalGroup(
+            HelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Help_Container)
+        );
+        HelpLayout.setVerticalGroup(
+            HelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Help_Container)
+        );
+
+        Low_Stock.setBackground(new java.awt.Color(248, 248, 248));
+        Low_Stock.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(180, 180, 180), 1, true));
 
         Low_Stock_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         Low_Stock_Label.setText("Low Stock");
@@ -125,97 +161,80 @@ public class Home extends javax.swing.JPanel {
         Product_Five_Quantity.setText(data[4][1]);
         Product_Five_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
-        javax.swing.GroupLayout Right_PanelLayout = new javax.swing.GroupLayout(Right_Panel);
-        Right_Panel.setLayout(Right_PanelLayout);
-        Right_PanelLayout.setHorizontalGroup(
-            Right_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Right_PanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout Low_StockLayout = new javax.swing.GroupLayout(Low_Stock);
+        Low_Stock.setLayout(Low_StockLayout);
+        Low_StockLayout.setHorizontalGroup(
+            Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Low_StockLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(Right_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(Right_PanelLayout.createSequentialGroup()
+                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(Low_StockLayout.createSequentialGroup()
                         .addComponent(Product_Five_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Product_Five_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(Right_PanelLayout.createSequentialGroup()
+                    .addGroup(Low_StockLayout.createSequentialGroup()
                         .addComponent(Product_Four_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Product_Four_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(Right_PanelLayout.createSequentialGroup()
+                    .addGroup(Low_StockLayout.createSequentialGroup()
                         .addComponent(Product_Three_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Product_Three_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(Right_PanelLayout.createSequentialGroup()
+                    .addGroup(Low_StockLayout.createSequentialGroup()
                         .addComponent(Product_Two_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Product_Two_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(Low_Stock_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(Right_PanelLayout.createSequentialGroup()
+                    .addGroup(Low_StockLayout.createSequentialGroup()
                         .addComponent(Product_One_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Product_One_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(Low_Stock_Para, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
-        Right_PanelLayout.setVerticalGroup(
-            Right_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Right_PanelLayout.createSequentialGroup()
+        Low_StockLayout.setVerticalGroup(
+            Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Low_StockLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(Low_Stock_Label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Low_Stock_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(Right_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Product_One_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Product_One_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Right_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Product_Two_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Product_Two_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Right_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Product_Three_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Product_Three_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Right_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Product_Four_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Product_Four_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Right_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Product_Five_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Product_Five_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
-
-        Help_Text.setEditable(false);
-        Help_Text.setColumns(20);
-        Help_Text.setRows(5);
-        Help_Caret = (javax.swing.text.DefaultCaret)Help_Text.getCaret();
-        Help_Caret.setUpdatePolicy(javax.swing.text.DefaultCaret.NEVER_UPDATE);
-        try {
-            Help_Reader = new java.io.BufferedReader(new java.io.InputStreamReader(getClass().getResourceAsStream("/Resources/help.txt")));
-            Help_Line = Help_Reader.readLine();
-            while (Help_Line != null) {
-                Help_Text.append(Help_Line + "\n");
-                Help_Line = Help_Reader.readLine();
-            }
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
-        }
-        jScrollPane1.setViewportView(Help_Text);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(44, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(44, 44, 44)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Banner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Help, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Right_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(44, 44, 44))
+                        .addComponent(Low_Stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,8 +243,8 @@ public class Home extends javax.swing.JPanel {
                 .addComponent(Banner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Right_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1))
+                    .addComponent(Low_Stock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Help, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -233,7 +252,10 @@ public class Home extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Banner;
+    private javax.swing.JPanel Help;
+    private javax.swing.JScrollPane Help_Container;
     private javax.swing.JTextArea Help_Text;
+    private javax.swing.JPanel Low_Stock;
     private javax.swing.JLabel Low_Stock_Label;
     private javax.swing.JLabel Low_Stock_Para;
     private javax.swing.JLabel Product_Five_Label;
@@ -246,10 +268,8 @@ public class Home extends javax.swing.JPanel {
     private javax.swing.JLabel Product_Three_Quantity;
     private javax.swing.JLabel Product_Two_Label;
     private javax.swing.JLabel Product_Two_Quantity;
-    private javax.swing.JPanel Right_Panel;
     private javax.swing.JLabel Speckle_Label;
     private javax.swing.JLabel Speckle_Version_Label;
-    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
     private final String data[][];
     private javax.swing.text.DefaultCaret Help_Caret;

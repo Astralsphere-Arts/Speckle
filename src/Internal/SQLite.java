@@ -37,6 +37,16 @@ public class SQLite {
             dbTables();
     }
     
+    public static void closeDB() {
+        try {
+            mainDB.close();
+            configDB.close();
+            invoiceDB.close();
+        } catch (SQLException ex) { 
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
     static void dbConnect() {
         try {
             mainDB = DriverManager.getConnection("jdbc:sqlite:" + dbFolder + File.separator
@@ -45,7 +55,7 @@ public class SQLite {
                 + "config.sqlite");
             invoiceDB = DriverManager.getConnection("jdbc:sqlite:" + dbFolder + File.separator
                 + "invoice.sqlite");
-        } catch (SQLException ex) { 
+        } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -115,7 +125,7 @@ public class SQLite {
     public static void userConfig(String usrname, String passwd) {
         if (configDB == null)
             dbConnect();
-        String username = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Username';"; 
+        String username = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Username';";
         String password = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Password';";
         try {
             PreparedStatement configDBquery = configDB.prepareStatement(username);
@@ -128,7 +138,7 @@ public class SQLite {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-     
+    
     public static void compConfig(String cname, String cnumber, String cmail, String caddress) {
         if (configDB == null)
             dbConnect();
