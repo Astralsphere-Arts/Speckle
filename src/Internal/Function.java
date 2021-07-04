@@ -13,6 +13,7 @@ import com.lowagie.text.pdf.PdfWriter;
 import com.lowagie.text.pdf.draw.LineSeparator;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.security.SecureRandom;
 import java.sql.ResultSet;
@@ -61,13 +62,18 @@ public class Function {
         };
         try {
             ResultSetMetaData invMeta = invResult.getMetaData();
-            int numberOfColumns = invMeta.getColumnCount();
-            for (int columnIndex = 0; columnIndex < numberOfColumns; columnIndex++)
-                invTableModel.addColumn(invMeta.getColumnLabel(columnIndex + 1));
-            Object[] row = new Object[numberOfColumns];
+            invTableModel.addColumn(invMeta.getColumnLabel(1));
+            invTableModel.addColumn(invMeta.getColumnLabel(2));
+            invTableModel.addColumn(invMeta.getColumnLabel(3));
+            invTableModel.addColumn(invMeta.getColumnLabel(5));
+            invTableModel.addColumn(invMeta.getColumnLabel(6));
+            Object[] row = new Object[5];
             while (invResult.next()) {
-                for (int i = 0; i < numberOfColumns; i++)
-                    row[i] = invResult.getObject(i+1);
+                row[0] = invResult.getObject(1);
+                row[1] = invResult.getObject(2);
+                row[2] = invResult.getObject(3);
+                row[3] = invResult.getObject(5);
+                row[4] = invResult.getObject(6);
                 invTableModel.addRow(row);
             }
             return invTableModel;
@@ -274,6 +280,50 @@ public class Function {
             document.add(table);
             document.close();
         } catch (DocumentException | IOException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public static void invoiceCSV(File CSV) {
+        ResultSet invoData = Internal.SQLite.invoData();
+        try (FileWriter invCSV = new FileWriter(CSV)) {
+            ResultSetMetaData invMeta = invoData.getMetaData();
+            invCSV.write("\"" + invMeta.getColumnLabel(1) + "\",");
+            invCSV.write("\"" + invMeta.getColumnLabel(2) + "\",");
+            invCSV.write("\"" + invMeta.getColumnLabel(3) + "\",");
+            invCSV.write("\"" + invMeta.getColumnLabel(4) + "\",");
+            invCSV.write("\"" + invMeta.getColumnLabel(5) + "\",");
+            invCSV.write("\"" + invMeta.getColumnLabel(6) + "\"\r\n");
+            while (invoData.next()) {
+                invCSV.write("\"" + invoData.getString("Invoice ID") + "\",");
+                invCSV.write("\"" + invoData.getString("Customer Name") + "\",");
+                invCSV.write("\"" + invoData.getString("Contact Number") + "\",");
+                invCSV.write("\"" + invoData.getString("Address") + "\",");
+                invCSV.write("\"" + invoData.getString("Date of Sale") + "\",");
+                invCSV.write("\"" + invoData.getString("Sale Amount") + "\"\r\n");
+            }
+            invCSV.close();
+        } catch (IOException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public static void invenCSV(File CSV) {
+        ResultSet invenData = Internal.SQLite.invenData();
+        try (FileWriter invCSV = new FileWriter(CSV)) {
+            ResultSetMetaData invMeta = invenData.getMetaData();
+            invCSV.write("\"" + invMeta.getColumnLabel(1) + "\",");
+            invCSV.write("\"" + invMeta.getColumnLabel(2) + "\",");
+            invCSV.write("\"" + invMeta.getColumnLabel(3) + "\",");
+            invCSV.write("\"" + invMeta.getColumnLabel(4) + "\"\r\n");
+            while (invenData.next()) {
+                invCSV.write("\"" + invenData.getString("Product ID") + "\",");
+                invCSV.write("\"" + invenData.getString("Product Name") + "\",");
+                invCSV.write("\"" + invenData.getString("Price") + "\",");
+                invCSV.write("\"" + invenData.getString("Available Quantity") + "\"\r\n");
+            }
+            invCSV.close();
+        } catch (IOException | SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
     }

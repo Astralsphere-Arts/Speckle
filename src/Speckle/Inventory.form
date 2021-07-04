@@ -18,18 +18,22 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="Add" min="-2" pref="120" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="Remove" min="-2" pref="120" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="Update" min="-2" pref="120" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="344" max="-2" attributes="0"/>
+                      <Component id="Export" min="-2" pref="120" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="Inventory_Table_Container" min="-2" pref="860" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                      <Component id="Heading" min="-2" pref="224" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="Inventory_Table_Container" min="-2" pref="860" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                          <Component id="Heading" min="-2" pref="224" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace pref="44" max="32767" attributes="0"/>
@@ -48,6 +52,7 @@
                   <Component id="Remove" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   <Component id="Add" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   <Component id="Update" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="Export" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="70" max="32767" attributes="0"/>
           </Group>
@@ -114,6 +119,15 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="Export">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Export"/>
+        <Property name="toolTipText" type="java.lang.String" value="Export Inventory to a CSV File"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExportActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
