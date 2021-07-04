@@ -1,5 +1,5 @@
 
-Hey User this is a help section for you which will guide you how to use speckle:
+Hey User this is a help section that will guide you how to use Speckle:
   
 • Firstly you can see the Home tab which has two section one is help and 
   second one is info about low stocks in the Inventory.

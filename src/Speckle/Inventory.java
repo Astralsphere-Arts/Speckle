@@ -123,7 +123,7 @@ public class Inventory extends javax.swing.JPanel {
 
     private void InventoryTableChanged(javax.swing.event.TableModelEvent evt) {
         for (int row = 0; row < Inventory_Table.getRowCount(); row++) {
-            String id = (String) Inventory_Table.getValueAt(row, 0);
+            String PID = (String) Inventory_Table.getValueAt(row, 0);
             String name = (String) Inventory_Table.getValueAt(row, 1);
             String price = null;
             if (Inventory_Table.getValueAt(row, 2) != null)
@@ -131,7 +131,7 @@ public class Inventory extends javax.swing.JPanel {
             String quan = null;
             if (Inventory_Table.getValueAt(row, 3) != null)
                 quan = Integer.toString((Integer) Inventory_Table.getValueAt(row, 3));
-            Internal.SQLite.updateInven(id, name, price, quan);
+            Internal.SQLite.updateInven(PID, name, price, quan);
         }
     }
     
@@ -143,8 +143,8 @@ public class Inventory extends javax.swing.JPanel {
     private void RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveActionPerformed
         int[] rows = Inventory_Table.getSelectedRows();
         for (int i=0; i<rows.length; i++) {
-            String id = Inventory_Table.getValueAt(rows[i]-i, 0).toString();
-            Internal.SQLite.remRowInven(id);
+            String PID = Inventory_Table.getValueAt(rows[i]-i, 0).toString();
+            Internal.SQLite.remRowInven(PID);
             Inventory_Model.removeRow(rows[i]-i);
         }
     }//GEN-LAST:event_RemoveActionPerformed
@@ -155,7 +155,7 @@ public class Inventory extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please Select a Product to Update it's"
                 + " Stock.", "No Product Selected", JOptionPane.ERROR_MESSAGE);
         else {
-            String id = Inventory_Table.getValueAt(row, 0).toString();
+            String PID = Inventory_Table.getValueAt(row, 0).toString();
             int quantity = 0;
             if (Inventory_Table.getValueAt(row, 3) != null)
                 quantity = (Integer) Inventory_Table.getValueAt(row, 3);
@@ -164,7 +164,7 @@ public class Inventory extends javax.swing.JPanel {
             if (update.equals(""))
                 update = "0";
             String quan = Integer.toString(quantity + Integer.parseInt(update));
-            Internal.SQLite.updateStock(id, quan);
+            Internal.SQLite.updateStock(PID, quan);
             Speckle.Main.Content.removeAll();
             Inventory scene = new Inventory();
             scene.setBounds(0, 0, 948, 574);

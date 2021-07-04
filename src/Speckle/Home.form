@@ -337,7 +337,7 @@
             <Property name="rows" type="int" value="5"/>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="Help_Caret = (javax.swing.text.DefaultCaret)Help_Text.getCaret();&#xa;Help_Caret.setUpdatePolicy(javax.swing.text.DefaultCaret.NEVER_UPDATE);&#xa;try {&#xa;    Help_Reader = new java.io.BufferedReader(new InputStreamReader(getClass().getResourceAsStream(&quot;/Resources/help.txt&quot;)));&#xa;    Help_Line = Help_Reader.readLine();&#xa;    while (Help_Line != null) {&#xa;        Help_Text.append(Help_Line + &quot;\n&quot;);&#xa;        Help_Line = Help_Reader.readLine();&#xa;    }&#xa;&#xa;} catch (FileNotFoundException ex) {&#xa;    Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);&#xa;} catch (IOException ex) {&#xa;    Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);&#xa;}&#xa;"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="Help_Caret = (javax.swing.text.DefaultCaret)Help_Text.getCaret();&#xa;Help_Caret.setUpdatePolicy(javax.swing.text.DefaultCaret.NEVER_UPDATE);&#xa;try {&#xa;    Help_Reader = new java.io.BufferedReader(new java.io.InputStreamReader(getClass().getResourceAsStream(&quot;/Resources/help.txt&quot;)));&#xa;    Help_Line = Help_Reader.readLine();&#xa;    while (Help_Line != null) {&#xa;        Help_Text.append(Help_Line + &quot;\n&quot;);&#xa;        Help_Line = Help_Reader.readLine();&#xa;    }&#xa;} catch (IOException ex) {&#xa;    JOptionPane.showMessageDialog(null, ex, &quot;Error&quot;, JOptionPane.ERROR_MESSAGE);&#xa;}&#xa;"/>
           </AuxValues>
         </Component>
       </SubComponents>

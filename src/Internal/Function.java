@@ -34,7 +34,7 @@ public class Function {
     static SecureRandom random = new SecureRandom();
     static File invFolder = new File(FileSystemView.getFileSystemView()
         .getDefaultDirectory().getPath() + File.separator + "Speckle");
-    private static java.awt.Color TableHeader = new java.awt.Color(240, 240, 240);
+    static java.awt.Color TableHeader = new java.awt.Color(240, 240, 240);
     
     public static String randomID(int length) {
         StringBuilder builder = new StringBuilder(length);
@@ -149,11 +149,11 @@ public class Function {
         }
     }
     
-    public static void invoicePDF(String id) {
+    public static void invoicePDF(String invID) {
         invFolder.mkdir();
-        invPath = new File(invFolder + File.separator + id + ".pdf");
-        ResultSet invoData = Internal.SQLite.invoData(id);
-        ResultSet invoTableData = Internal.SQLite.invoTableData(id);
+        invPath = new File(invFolder + File.separator + invID + ".pdf");
+        ResultSet invoData = Internal.SQLite.invoData(invID);
+        ResultSet invoTableData = Internal.SQLite.invoTableData(invID);
         try (Document document = new Document()) {
             PdfWriter.getInstance(document, new FileOutputStream(invPath));
             document.open();

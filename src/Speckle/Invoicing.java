@@ -284,8 +284,8 @@ public class Invoicing extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please Select an Invoice from the Inovice"
                 + " List.", "No Invoice Selected", JOptionPane.ERROR_MESSAGE);
         else {
-            String id = Invoice_Table.getValueAt(row, 0).toString();
-            Internal.Function.invoicePDF(id);
+            String invID = Invoice_Table.getValueAt(row, 0).toString();
+            Internal.Function.invoicePDF(invID);
             try {
                 Desktop.getDesktop().open(Internal.Function.invPath);
             } catch (IOException ex) {

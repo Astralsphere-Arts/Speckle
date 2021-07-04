@@ -113,7 +113,7 @@ public class SQLite {
     }
     
     public static void userConfig(String usrname, String passwd) {
-        if(configDB == null)
+        if (configDB == null)
             dbConnect();
         String username = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Username';"; 
         String password = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Password';";
@@ -130,7 +130,7 @@ public class SQLite {
     }
      
     public static void compConfig(String cname, String cnumber, String cmail, String caddress) {
-        if(configDB==null)
+        if (configDB == null)
             dbConnect();
         String name = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Business Name';";
         String number = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Contact Number';";
@@ -190,14 +190,14 @@ public class SQLite {
         return invResult;
     }
     
-    public static ResultSet invoData(String id) {
+    public static ResultSet invoData(String invID) {
         if (mainDB == null)
             dbConnect();
         ResultSet invResult = null;
         String invoice = "SELECT * FROM Invoice WHERE \"Invoice ID\" = ?;";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(invoice);
-            mainDBquery.setString(1, id);
+            mainDBquery.setString(1, invID);
             invResult = mainDBquery.executeQuery();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
@@ -205,11 +205,11 @@ public class SQLite {
         return invResult;
     }
     
-    public static ResultSet invoTableData(String id) {
+    public static ResultSet invoTableData(String invID) {
         if (invoiceDB == null)
             dbConnect();
         ResultSet invResult = null;
-        String inventory = "SELECT * FROM \"" + id + "\";";
+        String inventory = "SELECT * FROM \"" + invID + "\";";
         try {
             Statement invoiceDBquery = invoiceDB.createStatement();
             invResult = invoiceDBquery.executeQuery(inventory);
@@ -233,7 +233,7 @@ public class SQLite {
         return invResult;
     }
     
-    public static void newInvoice(String id, String name, String contact, String address,
+    public static void newInvoice(String invID, String name, String contact, String address,
         String date, String amount) {
         if (mainDB == null)
             dbConnect();
@@ -242,7 +242,7 @@ public class SQLite {
             + " VALUES(?, ?, ?, ?, ?, ?);";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(invoice);
-            mainDBquery.setString(1, id);
+            mainDBquery.setString(1, invID);
             mainDBquery.setString(2, name);
             mainDBquery.setString(3, contact);
             mainDBquery.setString(4, address);
@@ -254,10 +254,10 @@ public class SQLite {
         }
     }
     
-    public static void newInvoice(String id) {
+    public static void newInvoice(String invID) {
         if (invoiceDB == null)
             dbConnect();
-        String invoice = "CREATE TABLE IF NOT EXISTS \"" + id + "\" (\"Product Name\""
+        String invoice = "CREATE TABLE IF NOT EXISTS \"" + invID + "\" (\"Product Name\""
             + " TEXT NOT NULL UNIQUE, \"Price\" REAL, \"Purchased Quantity\" INTEGER,"
             + " \"Net Amount\" REAL, PRIMARY KEY(\"Product Name\"));";
         try {
@@ -268,10 +268,10 @@ public class SQLite {
         }
     }
     
-    public static void newInvoice(String id, String name, String price, String quan, String amount) {
+    public static void newInvoice(String invID, String name, String price, String quan, String amount) {
         if (invoiceDB == null)
             dbConnect();
-        String invoice = "REPLACE INTO \"" + id + "\" (\"Product Name\", \"Price\","
+        String invoice = "REPLACE INTO \"" + invID + "\" (\"Product Name\", \"Price\","
             + " \"Purchased Quantity\", \"Net Amount\") VALUES(?, ?, ?, ?);";
         try {
             PreparedStatement invoiceDBquery = invoiceDB.prepareStatement(invoice);
@@ -285,14 +285,14 @@ public class SQLite {
         }
     }
     
-    public static void updateInven(String id, String name, String price, String quan) {
+    public static void updateInven(String PID, String name, String price, String quan) {
         if (mainDB == null)
             dbConnect();
         String inventory = "REPLACE INTO Inventory (\"Product ID\", \"Product Name\","
             + " \"Price\", \"Available Quantity\") VALUES(?, ?, ?, ?);";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(inventory);
-            mainDBquery.setString(1, id);
+            mainDBquery.setString(1, PID);
             mainDBquery.setString(2, name);
             mainDBquery.setString(3, price);
             mainDBquery.setString(4, quan);
@@ -302,15 +302,15 @@ public class SQLite {
         }
     }
     
-    public static void remInvoice(String id) {
+    public static void remInvoice(String invID) {
         if (mainDB == null || invoiceDB == null)
             dbConnect();
         String invoice = "DELETE FROM Invoice WHERE \"Invoice ID\" = ?;";
-        String invTable = "DROP TABLE \"" + id + "\";";
+        String invTable = "DROP TABLE \"" + invID + "\";";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(invoice);
             Statement invoiceDBquery = invoiceDB.createStatement();
-            mainDBquery.setString(1, id);
+            mainDBquery.setString(1, invID);
             mainDBquery.executeUpdate();
             invoiceDBquery.execute(invTable);
         } catch (SQLException ex) {
@@ -318,20 +318,20 @@ public class SQLite {
         }
     }
     
-    public static void remRowInven(String id) {
+    public static void remRowInven(String PID) {
         if (mainDB == null)
             dbConnect();
         String inventory = "DELETE FROM Inventory WHERE \"Product ID\" = ?;";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(inventory);
-            mainDBquery.setString(1, id);
+            mainDBquery.setString(1, PID);
             mainDBquery.executeUpdate();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
     
-    public static void updateStock(String id, String quan) {
+    public static void updateStock(String PID, String quan) {
         if (mainDB == null)
             dbConnect();
         String inventory = "UPDATE Inventory SET \"Available Quantity\" = ? WHERE"
@@ -339,7 +339,7 @@ public class SQLite {
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(inventory);
             mainDBquery.setString(1, quan);
-            mainDBquery.setString(2, id);
+            mainDBquery.setString(2, PID);
             mainDBquery.executeUpdate();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);

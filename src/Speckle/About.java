@@ -1,10 +1,7 @@
 package Speckle;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -71,16 +68,14 @@ public class About extends javax.swing.JPanel {
         Authors_Caret = (javax.swing.text.DefaultCaret)License_Text.getCaret();
         Authors_Caret.setUpdatePolicy(javax.swing.text.DefaultCaret.NEVER_UPDATE);
         try {
-            Authors_Reader = new java.io.BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/Resources/authors.txt")));
+            Authors_Reader = new java.io.BufferedReader(new java.io.InputStreamReader(getClass().getResourceAsStream("/Resources/authors.txt")));
             Authors_Line = Authors_Reader.readLine();
             while (Authors_Line != null) {
                 Authors_Text.append(Authors_Line + "\n");
                 Authors_Line = Authors_Reader.readLine();
             }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(About.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(About.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
         Authors_Container.setViewportView(Authors_Text);
 
@@ -108,16 +103,14 @@ public class About extends javax.swing.JPanel {
         License_Caret = (javax.swing.text.DefaultCaret)License_Text.getCaret();
         License_Caret.setUpdatePolicy(javax.swing.text.DefaultCaret.NEVER_UPDATE);
         try {
-            License_Reader = new java.io.BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/Resources/license.txt")));
+            License_Reader = new java.io.BufferedReader(new java.io.InputStreamReader(getClass().getResourceAsStream("/Resources/license.txt")));
             License_Line = License_Reader.readLine();
             while (License_Line != null) {
                 License_Text.append(License_Line + "\n");
                 License_Line = License_Reader.readLine();
             }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(About.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(About.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
         License_Container.setViewportView(License_Text);
 
@@ -145,16 +138,14 @@ public class About extends javax.swing.JPanel {
         Credits_Caret = (javax.swing.text.DefaultCaret)License_Text.getCaret();
         Credits_Caret.setUpdatePolicy(javax.swing.text.DefaultCaret.NEVER_UPDATE);
         try {
-            Credits_Reader = new java.io.BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/Resources/credits.txt")));
+            Credits_Reader = new java.io.BufferedReader(new java.io.InputStreamReader(getClass().getResourceAsStream("/Resources/credits.txt")));
             Credits_Line = Credits_Reader.readLine();
             while (Credits_Line != null) {
                 Credits_Text.append(Credits_Line + "\n");
                 Credits_Line = Credits_Reader.readLine();
             }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(About.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(About.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
         Credits_Container.setViewportView(Credits_Text);
 

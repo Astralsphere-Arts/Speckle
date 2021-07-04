@@ -1,10 +1,8 @@
 package Speckle;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Astralsphere Arts
@@ -194,17 +192,14 @@ public class Home extends javax.swing.JPanel {
         Help_Caret = (javax.swing.text.DefaultCaret)Help_Text.getCaret();
         Help_Caret.setUpdatePolicy(javax.swing.text.DefaultCaret.NEVER_UPDATE);
         try {
-            Help_Reader = new java.io.BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/Resources/help.txt")));
+            Help_Reader = new java.io.BufferedReader(new java.io.InputStreamReader(getClass().getResourceAsStream("/Resources/help.txt")));
             Help_Line = Help_Reader.readLine();
             while (Help_Line != null) {
                 Help_Text.append(Help_Line + "\n");
                 Help_Line = Help_Reader.readLine();
             }
-
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
         jScrollPane1.setViewportView(Help_Text);
 
