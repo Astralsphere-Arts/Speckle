@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import java.util.Base64;
 import javax.swing.JOptionPane;
 
 /**
@@ -87,11 +88,13 @@ public class SQLite {
         }
     }
     
-    public static boolean logIn(String usrname, String passwd) {
+    public static boolean logIn(String usname, String pswd) {
         if (configDB == null)
             dbConnect();
-        String username = null;
-        String password = null;
+        String DecodedUsname = getDecodeString(usname);
+        String DecodedPswd = getDecodeString(pswd);
+        String username= null;
+        String password= null;
         String user = "SELECT Value FROM Configuration WHERE Parameter = 'Username';";
         String pass = "SELECT Value FROM Configuration WHERE Parameter = 'Password';";
         try {
@@ -103,8 +106,13 @@ public class SQLite {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
-        return usrname.equals(username) && passwd.equals(password);
+        return DecodedUsname.equals(username) && DecodedPswd.equals(password);
     }
+    
+     private static String getDecodeString(String encryptedString) {
+        return new String(Base64.getDecoder().decode(encryptedString));
+    }
+     
     
     public static String configValue(String param) {
         if (configDB == null)
