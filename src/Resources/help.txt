@@ -1,22 +1,22 @@
 
 Hey User this is the help section that will guide you how to use Speckle:
   
-• Firstly you can see the Home tab which has two section one is help and 
+1. Firstly you can see the Home tab which has two section one is help and 
   second one is info about low stocks in the Inventory.
 
-• Next option is Invoicing through which you can make invoices of the sold 
+2. Next option is Invoicing through which you can make invoices of the sold 
   products.
 
-• Now in Inventory you can view or add products in the table and can update 
+3. Now in Inventory you can view or add products in the table and can update 
   the stock.
 
-• Settings has two sections:- User Details & Business Details
+4. Settings has two sections:- User Details & Business Details
   
   User Details:-In this section you can change your Login credentials.
   
   Business Details:- In this section you can change all the info related to
   contact details such as business name,contact number,company Address etc.
 
-• Info tab has three sections Authors,License,Credits it has all the info of 
+5. Info tab has three sections Authors,License,Credits it has all the info of 
   SDAs of Speckle, legal license & credits to the external libraries we used.
   
