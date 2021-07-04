@@ -61,7 +61,6 @@ public class Settings extends javax.swing.JPanel {
         New_Business_Location = new javax.swing.JTextField();
         Save_Changes_Button = new javax.swing.JButton();
 
-        Settings_Container.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Settings_Container.setTabPlacement(javax.swing.JTabbedPane.LEFT);
         Settings_Container.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -156,7 +155,7 @@ public class Settings extends javax.swing.JPanel {
                     .addComponent(Change_Password))
                 .addGap(70, 70, 70)
                 .addComponent(Speckle_Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
         User_TabLayout.setVerticalGroup(
             User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,7 +191,7 @@ public class Settings extends javax.swing.JPanel {
                             .addComponent(Confirm_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(24, 24, 24)
                         .addComponent(Change_Password_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         Settings_Container.addTab("User Details", User_Tab);
@@ -266,7 +265,7 @@ public class Settings extends javax.swing.JPanel {
             .addGroup(Details_TabLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(Update_Business_Details)
-                .addGap(531, 609, Short.MAX_VALUE))
+                .addGap(531, 611, Short.MAX_VALUE))
             .addGroup(Details_TabLayout.createSequentialGroup()
                 .addGap(80, 80, 80)
                 .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -339,7 +338,7 @@ public class Settings extends javax.swing.JPanel {
                     .addComponent(New_Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24)
                 .addComponent(Save_Changes_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(150, Short.MAX_VALUE))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
 
         Settings_Container.addTab("Business Details", Details_Tab);
