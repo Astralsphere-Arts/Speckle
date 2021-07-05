@@ -756,11 +756,12 @@ public class Main extends javax.swing.JFrame {
     private void SignIn_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignIn_ButtonActionPerformed
         String usrname = Username.getText();
         String passwd = new String(Password.getPassword());
+        String usname = getEncodedString(usrname);
         String pswd = getEncodedString(passwd);
         if (usrname.equals("") && passwd.equals(""))
             JOptionPane.showMessageDialog(null, "Please enter Username and Password they cannot be"
                 + " Blank. Please Try Again!", "Credentials are Blank", JOptionPane.ERROR_MESSAGE);
-        else if (Internal.SQLite.logIn(usrname, pswd)) {
+        else if (Internal.SQLite.logIn(usname, pswd)) {
             Content.removeAll();
             Speckle.Home scene = new Home();
             scene.setBounds(0, 0, 948, 574);
@@ -784,8 +785,9 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "The Passwords in Password Fields do not Match."
                 + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
         else {
+            String usname = getEncodedString(usrname);
             String pswd = getEncodedString(passwd);
-            Internal.SQLite.userConfig(usrname, pswd);
+            Internal.SQLite.userConfig(usname, pswd);
             StartUp_Deck.show(StartUp_Container,"signUp2");
         }
     }//GEN-LAST:event_Next_ButtonActionPerformed
