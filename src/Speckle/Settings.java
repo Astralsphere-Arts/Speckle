@@ -376,21 +376,21 @@ public class Settings extends javax.swing.JPanel {
         String curpasswd = new String(Current_Password.getPassword());
         String passwd = new String(New_Password.getPassword());
         String confpasswd = new String(Confirm_Password.getPassword());
-        String pswd = getEncodedString(curpasswd);
-        String pass = getEncodedString(passwd);
-        String confpass = getEncodedString(confpasswd);
-        if (pswd.equals("") || pass.equals(""))
+        String curpswd = getEncodedString(curpasswd);
+        String pswd = getEncodedString(passwd);
+        String confpswd = getEncodedString(confpasswd);
+        if (curpswd.equals("") || pswd.equals(""))
             JOptionPane.showMessageDialog(null, "Both Current and New Passwords are needed"
                 + " for changing Password. Please Try Again!", "Password Fields Empty",
                 JOptionPane.ERROR_MESSAGE);
-        else if (!pswd.equals(Internal.SQLite.configValue("Password")))
+        else if (!curpswd.equals(Internal.SQLite.configValue("Password")))
             JOptionPane.showMessageDialog(null, "The Current Password is Incorrect. Please"
                 + " Try Again!", "Incorrect Password", JOptionPane.ERROR_MESSAGE);
-        else if (!pass.equals(confpass))
+        else if (!pswd.equals(confpswd))
             JOptionPane.showMessageDialog(null, "The Password in Confirm Password Fields do not Match."
                 + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
         else {
-            Internal.SQLite.userConfig(Internal.SQLite.configValue("Username"), pass);
+            Internal.SQLite.userConfig(Internal.SQLite.configValue("Username"), pswd);
             JOptionPane.showMessageDialog(null, "Your Password changed Sucessfully!",
                 "Sucess", JOptionPane.INFORMATION_MESSAGE);
             Speckle.Main.Content.removeAll();

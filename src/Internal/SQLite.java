@@ -124,14 +124,14 @@ public class SQLite {
         return value;
     }
     
-    public static void userConfig(String usrname, String pswd) {
+    public static void userConfig(String usname, String pswd) {
         if (configDB == null)
             dbConnect();
         String username = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Username';";
         String password = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Password';";
         try {
             PreparedStatement configDBquery = configDB.prepareStatement(username);
-            configDBquery.setString(1, usrname);
+            configDBquery.setString(1, usname);
             configDBquery.executeUpdate();
             configDBquery = configDB.prepareStatement(password);
             configDBquery.setString(1, pswd);
