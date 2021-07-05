@@ -1,6 +1,7 @@
 package Speckle;
 
 import javax.swing.JOptionPane;
+import java.util.Base64;
 
 /**
  *
@@ -375,18 +376,21 @@ public class Settings extends javax.swing.JPanel {
         String curpasswd = new String(Current_Password.getPassword());
         String passwd = new String(New_Password.getPassword());
         String confpasswd = new String(Confirm_Password.getPassword());
-        if (curpasswd.equals("") || passwd.equals(""))
+        String pswd = getEncodedString(curpasswd);
+        String pass = getEncodedString(passwd);
+        String confpass = getEncodedString(confpasswd);
+        if (pswd.equals("") || pass.equals(""))
             JOptionPane.showMessageDialog(null, "Both Current and New Passwords are needed"
                 + " for changing Password. Please Try Again!", "Password Fields Empty",
                 JOptionPane.ERROR_MESSAGE);
-        else if (!curpasswd.equals(Internal.SQLite.configValue("Password")))
+        else if (!pswd.equals(Internal.SQLite.configValue("Password")))
             JOptionPane.showMessageDialog(null, "The Current Password is Incorrect. Please"
                 + " Try Again!", "Incorrect Password", JOptionPane.ERROR_MESSAGE);
-        else if (!passwd.equals(confpasswd))
-            JOptionPane.showMessageDialog(null, "The New Password in Password Fields do not Match."
+        else if (!pass.equals(confpass))
+            JOptionPane.showMessageDialog(null, "The Password in Confirm Password Fields do not Match."
                 + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
         else {
-            Internal.SQLite.userConfig(Internal.SQLite.configValue("Username"), passwd);
+            Internal.SQLite.userConfig(Internal.SQLite.configValue("Username"), pass);
             JOptionPane.showMessageDialog(null, "Your Password changed Sucessfully!",
                 "Sucess", JOptionPane.INFORMATION_MESSAGE);
             Speckle.Main.Content.removeAll();
@@ -395,7 +399,11 @@ public class Settings extends javax.swing.JPanel {
             Speckle.Main.Content.add(scene).setVisible(true);
         }
     }//GEN-LAST:event_Change_Password_ButtonActionPerformed
-
+    
+  private static String getEncodedString(String decryptedString) {
+       return Base64.getEncoder().encodeToString(decryptedString.getBytes());
+    }
+    
     private void Save_Changes_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Save_Changes_ButtonActionPerformed
         String cname = New_Business_Name.getText();
         String cnum = New_Contact_Number.getText();
