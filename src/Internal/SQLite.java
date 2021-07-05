@@ -91,10 +91,9 @@ public class SQLite {
     public static boolean logIn(String usname, String pswd) {
         if (configDB == null)
             dbConnect();
-        String DecodedUsname = getDecodeString(usname);
-        String DecodedPswd = getDecodeString(pswd);
         String username= null;
         String password= null;
+        
         String user = "SELECT Value FROM Configuration WHERE Parameter = 'Username';";
         String pass = "SELECT Value FROM Configuration WHERE Parameter = 'Password';";
         try {
@@ -106,14 +105,9 @@ public class SQLite {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
-        return DecodedUsname.equals(username) && DecodedPswd.equals(password);
+        return usname.equals(username) && pswd.equals(password);
     }
-    
-     private static String getDecodeString(String encryptedString) {
-        return new String(Base64.getDecoder().decode(encryptedString));
-    }
-     
-    
+      
     public static String configValue(String param) {
         if (configDB == null)
             dbConnect();
@@ -130,17 +124,17 @@ public class SQLite {
         return value;
     }
     
-    public static void userConfig(String usrname, String passwd) {
+    public static void userConfig(String usname, String pswd) {
         if (configDB == null)
             dbConnect();
         String username = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Username';";
         String password = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Password';";
         try {
             PreparedStatement configDBquery = configDB.prepareStatement(username);
-            configDBquery.setString(1, usrname);
+            configDBquery.setString(1, usname);
             configDBquery.executeUpdate();
             configDBquery = configDB.prepareStatement(password);
-            configDBquery.setString(1, passwd);
+            configDBquery.setString(1, pswd);
             configDBquery.executeUpdate();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
