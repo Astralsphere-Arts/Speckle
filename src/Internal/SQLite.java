@@ -10,7 +10,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
-import java.util.Base64;
 import javax.swing.JOptionPane;
 
 /**
@@ -88,12 +87,11 @@ public class SQLite {
         }
     }
     
-    public static boolean logIn(String usrname, String pswd) {
+    public static boolean logIn(String usrname, String passwd) {
         if (configDB == null)
             dbConnect();
-        String username= null;
-        String password= null;
-        
+        String username = null;
+        String password = null;
         String user = "SELECT Value FROM Configuration WHERE Parameter = 'Username';";
         String pass = "SELECT Value FROM Configuration WHERE Parameter = 'Password';";
         try {
@@ -105,9 +103,9 @@ public class SQLite {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
-        return usrname.equals(username) && pswd.equals(password);
+        return usrname.equals(username) && passwd.equals(password);
     }
-      
+    
     public static String configValue(String param) {
         if (configDB == null)
             dbConnect();
@@ -124,17 +122,17 @@ public class SQLite {
         return value;
     }
     
-    public static void userConfig(String usname, String pswd) {
+    public static void userConfig(String usrname, String passwd) {
         if (configDB == null)
             dbConnect();
         String username = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Username';";
         String password = "UPDATE Configuration SET Value = ? WHERE Parameter = 'Password';";
         try {
             PreparedStatement configDBquery = configDB.prepareStatement(username);
-            configDBquery.setString(1, usname);
+            configDBquery.setString(1, usrname);
             configDBquery.executeUpdate();
             configDBquery = configDB.prepareStatement(password);
-            configDBquery.setString(1, pswd);
+            configDBquery.setString(1, passwd);
             configDBquery.executeUpdate();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);

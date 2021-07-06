@@ -191,11 +191,6 @@ public class Main extends javax.swing.JFrame {
         Username_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Username.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsernameActionPerformed(evt);
-            }
-        });
 
         Password_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         Password_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -752,15 +747,14 @@ public class Main extends javax.swing.JFrame {
     private void CloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloseMouseExited
         Close.setBackground(White);
     }//GEN-LAST:event_CloseMouseExited
-      
+
     private void SignIn_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignIn_ButtonActionPerformed
         String usrname = Username.getText();
         String passwd = new String(Password.getPassword());
-        String pswd = getEncodedString(passwd);
         if (usrname.equals("") && passwd.equals(""))
             JOptionPane.showMessageDialog(null, "Please enter Username and Password they cannot be"
                 + " Blank. Please Try Again!", "Credentials are Blank", JOptionPane.ERROR_MESSAGE);
-        else if (Internal.SQLite.logIn(usrname, pswd)) {
+        else if (Internal.SQLite.logIn(usrname, getEncodedString(passwd))) {
             Content.removeAll();
             Speckle.Home scene = new Home();
             scene.setBounds(0, 0, 948, 574);
@@ -771,12 +765,11 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "The Username or Password entered are Incorrect."
                 + " Please Try Again!", "Incorrect Credentials", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_SignIn_ButtonActionPerformed
-    
+
     private void Next_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Next_ButtonActionPerformed
         String usrname = SignUp_Username.getText();
         String passwd = new String(Create_Password.getPassword());
         String confpasswd = new String(Confirm_Password.getPassword());
-        
         if (usrname.equals("") || passwd.equals(""))
             JOptionPane.showMessageDialog(null, "Username or Password cannot be Empty. Please"
                 + " Try Again!", "Username/Password Empty", JOptionPane.ERROR_MESSAGE);
@@ -784,16 +777,15 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "The Passwords in Password Fields do not Match."
                 + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
         else {
-            String pswd = getEncodedString(passwd);
-            Internal.SQLite.userConfig(usrname, pswd);
+            Internal.SQLite.userConfig(usrname, getEncodedString(passwd));
             StartUp_Deck.show(StartUp_Container,"signUp2");
         }
     }//GEN-LAST:event_Next_ButtonActionPerformed
 
-     private static String getEncodedString(String decryptedString) {
-       return Base64.getEncoder().encodeToString(decryptedString.getBytes());
+    private static String getEncodedString(String decryptedString) {
+        return Base64.getEncoder().encodeToString(decryptedString.getBytes());
     }
-     
+
     private void SignUp_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUp_ButtonActionPerformed
         String cname = Business_Name.getText();
         String cnum = Contact_Number.getText();
@@ -960,10 +952,6 @@ public class Main extends javax.swing.JFrame {
     private void SignOutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignOutMouseExited
         SignOut.setBackground(White);
     }//GEN-LAST:event_SignOutMouseExited
-
-    private void UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UsernameActionPerformed
 
     /**
      * @param args the command line arguments
