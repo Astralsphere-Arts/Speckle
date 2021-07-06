@@ -1,7 +1,6 @@
 package Speckle;
 
 import javax.swing.JOptionPane;
-import java.util.Base64;
 
 /**
  *
@@ -754,20 +753,19 @@ public class Main extends javax.swing.JFrame {
         if (usrname.equals("") && passwd.equals(""))
             JOptionPane.showMessageDialog(null, "Please enter Username and Password they cannot be"
                 + " Blank. Please Try Again!", "Credentials are Blank", JOptionPane.ERROR_MESSAGE);
-        else if (Internal.SQLite.logIn(usrname, getEncodedString(passwd))) {
+        else if (Internal.SQLite.logIn(usrname, passwd)) {
             Content.removeAll();
             Speckle.Home scene = new Home();
             scene.setBounds(0, 0, 948, 574);
             Content.add(scene).setVisible(true);
             Container_Deck.show(Container, "app");
-        }
-        else
+        } else
             JOptionPane.showMessageDialog(null, "The Username or Password entered are Incorrect."
                 + " Please Try Again!", "Incorrect Credentials", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_SignIn_ButtonActionPerformed
 
     private void Next_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Next_ButtonActionPerformed
-        String usrname = SignUp_Username.getText();
+        String usrname = Internal.Security.getEncodedString(SignUp_Username.getText());
         String passwd = new String(Create_Password.getPassword());
         String confpasswd = new String(Confirm_Password.getPassword());
         if (usrname.equals("") || passwd.equals(""))
@@ -777,15 +775,11 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "The Passwords in Password Fields do not Match."
                 + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
         else {
-            Internal.SQLite.userConfig(usrname, getEncodedString(passwd));
-            StartUp_Deck.show(StartUp_Container,"signUp2");
+            Internal.SQLite.userConfig(usrname, Internal.Security.generateHash(passwd));
+            StartUp_Deck.show(StartUp_Container, "signUp2");
         }
     }//GEN-LAST:event_Next_ButtonActionPerformed
-
-    private static String getEncodedString(String decryptedString) {
-        return Base64.getEncoder().encodeToString(decryptedString.getBytes());
-    }
-
+     
     private void SignUp_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUp_ButtonActionPerformed
         String cname = Business_Name.getText();
         String cnum = Contact_Number.getText();

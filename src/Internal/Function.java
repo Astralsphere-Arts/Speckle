@@ -163,15 +163,15 @@ public class Function {
         try (Document document = new Document()) {
             PdfWriter.getInstance(document, new FileOutputStream(invPath));
             document.open();
-            Paragraph para = new Paragraph(Internal.SQLite.configValue("Business Name"),
+            Paragraph para = new Paragraph(Internal.SQLite.getConfigValue("Business Name"),
                 FontFactory.getFont(FontFactory.TIMES_BOLD, 20));
             para.setAlignment(Element.ALIGN_CENTER);
             document.add(para);
-            para = new Paragraph(Internal.SQLite.configValue("Business Location"));
+            para = new Paragraph(Internal.SQLite.getConfigValue("Business Location"));
             para.setAlignment(Element.ALIGN_CENTER);
             document.add(para);
-            para = new Paragraph("Contact Number : " + Internal.SQLite.configValue("Contact Number")
-                + "    Email : " + Internal.SQLite.configValue("Email Address"));
+            para = new Paragraph("Contact Number : " + Internal.SQLite.getConfigValue("Contact Number")
+                + "    Email : " + Internal.SQLite.getConfigValue("Email Address"));
             para.setAlignment(Element.ALIGN_CENTER);
             para.setSpacingAfter(30f);
             document.add(para);

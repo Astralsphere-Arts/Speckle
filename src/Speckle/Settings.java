@@ -1,7 +1,6 @@
 package Speckle;
 
 import javax.swing.JOptionPane;
-import java.util.Base64;
 
 /**
  *
@@ -76,7 +75,7 @@ public class Settings extends javax.swing.JPanel {
         Current_Username_Label.setText("Current Username");
 
         Current_Username.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Current_Username.setText(Internal.SQLite.configValue("Username"));
+        Current_Username.setText(Internal.Security.getDecodedString(Internal.SQLite.getConfigValue("Username")));
         Current_Username.setEnabled(false);
 
         New_Username_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
@@ -214,7 +213,7 @@ public class Settings extends javax.swing.JPanel {
         Business_Name_Label.setText("Business Name");
 
         Current_Business_Name.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Current_Business_Name.setText(Internal.SQLite.configValue("Business Name"));
+        Current_Business_Name.setText(Internal.SQLite.getConfigValue("Business Name"));
         Current_Business_Name.setEnabled(false);
 
         New_Business_Name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -223,7 +222,7 @@ public class Settings extends javax.swing.JPanel {
         Contact_Number_Label.setText("Contact Number");
 
         Current_Contact_Number.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Current_Contact_Number.setText(Internal.SQLite.configValue("Contact Number"));
+        Current_Contact_Number.setText(Internal.SQLite.getConfigValue("Contact Number"));
         Current_Contact_Number.setEnabled(false);
 
         New_Contact_Number.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -232,7 +231,7 @@ public class Settings extends javax.swing.JPanel {
         Email_Address_Label.setText("Email Address");
 
         Current_Email_Address.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Current_Email_Address.setText(Internal.SQLite.configValue("Email Address"));
+        Current_Email_Address.setText(Internal.SQLite.getConfigValue("Email Address"));
         Current_Email_Address.setEnabled(false);
 
         New_Email_Address.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -244,7 +243,7 @@ public class Settings extends javax.swing.JPanel {
         Current_Business_Location_Label.setText("Current");
 
         Current_Business_Location.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Current_Business_Location.setText(Internal.SQLite.configValue("Business Location"));
+        Current_Business_Location.setText(Internal.SQLite.getConfigValue("Business Location"));
         Current_Business_Location.setEnabled(false);
 
         New_Business_Location_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
@@ -357,12 +356,12 @@ public class Settings extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Change_Username_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Change_Username_ButtonActionPerformed
-        String usrname = New_Username.getText();
+        String usrname = Internal.Security.getEncodedString(New_Username.getText());
         if (usrname.equals(""))
             JOptionPane.showMessageDialog(null, "Username cannot be Empty. Please Try Again!",
                 "Username Field Empty", JOptionPane.ERROR_MESSAGE);
         else {
-            Internal.SQLite.userConfig(usrname, Internal.SQLite.configValue("Password"));
+            Internal.SQLite.setConfigValue("Username", usrname);
             JOptionPane.showMessageDialog(null, "Your Username changed Sucessfully!",
                 "Sucess", JOptionPane.INFORMATION_MESSAGE);
             Speckle.Main.Content.removeAll();
@@ -373,21 +372,21 @@ public class Settings extends javax.swing.JPanel {
     }//GEN-LAST:event_Change_Username_ButtonActionPerformed
 
     private void Change_Password_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Change_Password_ButtonActionPerformed
-        String curpasswd = getEncodedString(new String(Current_Password.getPassword()));
-        String passwd = getEncodedString(new String(New_Password.getPassword()));
-        String confpasswd = getEncodedString(new String(Confirm_Password.getPassword()));
+        String curpasswd = new String(Current_Password.getPassword());
+        String passwd = new String(New_Password.getPassword());
+        String confpasswd = new String(Confirm_Password.getPassword());
         if (curpasswd.equals("") || passwd.equals(""))
             JOptionPane.showMessageDialog(null, "Both Current and New Passwords are needed"
                 + " for changing Password. Please Try Again!", "Password Fields Empty",
                 JOptionPane.ERROR_MESSAGE);
-        else if (!curpasswd.equals(Internal.SQLite.configValue("Password")))
+        else if (!Internal.Security.validateHash(curpasswd, Internal.SQLite.getConfigValue("Password")))
             JOptionPane.showMessageDialog(null, "The Current Password is Incorrect. Please"
                 + " Try Again!", "Incorrect Password", JOptionPane.ERROR_MESSAGE);
         else if (!passwd.equals(confpasswd))
-            JOptionPane.showMessageDialog(null, "The Password in Confirm Password Fields do not Match."
+            JOptionPane.showMessageDialog(null, "The Password in Confirm Password Field does not Match."
                 + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
         else {
-            Internal.SQLite.userConfig(Internal.SQLite.configValue("Username"), passwd);
+            Internal.SQLite.setConfigValue("Password", Internal.Security.generateHash(passwd));
             JOptionPane.showMessageDialog(null, "Your Password changed Sucessfully!",
                 "Sucess", JOptionPane.INFORMATION_MESSAGE);
             Speckle.Main.Content.removeAll();
@@ -396,10 +395,6 @@ public class Settings extends javax.swing.JPanel {
             Speckle.Main.Content.add(scene).setVisible(true);
         }
     }//GEN-LAST:event_Change_Password_ButtonActionPerformed
-
-    private static String getEncodedString(String decryptedString) {
-        return Base64.getEncoder().encodeToString(decryptedString.getBytes());
-    }
 
     private void Save_Changes_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Save_Changes_ButtonActionPerformed
         String cname = New_Business_Name.getText();

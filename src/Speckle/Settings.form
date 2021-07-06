@@ -178,7 +178,7 @@
                   <Font name="Segoe UI Semibold" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="Internal.SQLite.configValue(&quot;Username&quot;)" type="code"/>
+                  <Connection code="Internal.Security.getDecodedString(Internal.SQLite.getConfigValue(&quot;Username&quot;))" type="code"/>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -424,7 +424,7 @@
                   <Font name="Segoe UI Semibold" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="Internal.SQLite.configValue(&quot;Business Name&quot;)" type="code"/>
+                  <Connection code="Internal.SQLite.getConfigValue(&quot;Business Name&quot;)" type="code"/>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -450,7 +450,7 @@
                   <Font name="Segoe UI Semibold" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="Internal.SQLite.configValue(&quot;Contact Number&quot;)" type="code"/>
+                  <Connection code="Internal.SQLite.getConfigValue(&quot;Contact Number&quot;)" type="code"/>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -476,7 +476,7 @@
                   <Font name="Segoe UI Semibold" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="Internal.SQLite.configValue(&quot;Email Address&quot;)" type="code"/>
+                  <Connection code="Internal.SQLite.getConfigValue(&quot;Email Address&quot;)" type="code"/>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -510,7 +510,7 @@
                   <Font name="Segoe UI Semibold" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="Internal.SQLite.configValue(&quot;Business Location&quot;)" type="code"/>
+                  <Connection code="Internal.SQLite.getConfigValue(&quot;Business Location&quot;)" type="code"/>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>

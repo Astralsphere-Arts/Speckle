@@ -103,10 +103,11 @@ public class SQLite {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
-        return usrname.equals(username) && passwd.equals(password);
+        return Internal.Security.getEncodedString(usrname).equals(username) &&
+            Internal.Security.validateHash(passwd, password);
     }
     
-    public static String configValue(String param) {
+    public static String getConfigValue(String param) {
         if (configDB == null)
             dbConnect();
         String value = null;
@@ -120,6 +121,20 @@ public class SQLite {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
         return value;
+    }
+    
+    public static void setConfigValue(String param, String value) {
+        if (configDB == null)
+            dbConnect();
+        String configuration = "UPDATE Configuration SET Value = ? WHERE Parameter = ?;";
+        try {
+            PreparedStatement configDBquery = configDB.prepareStatement(configuration);
+            configDBquery.setString(1, value);
+            configDBquery.setString(2, param);
+            configDBquery.executeUpdate();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
     
     public static void userConfig(String usrname, String passwd) {
