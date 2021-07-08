@@ -774,12 +774,47 @@ public class Main extends javax.swing.JFrame {
         else if (!passwd.equals(confpasswd))
             JOptionPane.showMessageDialog(null, "The Passwords in Password Fields do not Match."
                 + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
-        else {
+        else if(passwd.length() < 7){
+            JOptionPane.showMessageDialog(null, "Your Password must Contain"
+                     +" at least 7 Characters"," Please Try Again!", JOptionPane.ERROR_MESSAGE);
+        }
+        else if(!checkPass(passwd)){          
+                 JOptionPane.showMessageDialog(null, "Your Password Must Contain at least One Numeric "
+                 + "One Uppercase and One Lowercase Character", " Please Try Again!", JOptionPane.ERROR_MESSAGE);
+        }
+
+        else{
             Internal.SQLite.userConfig(usrname, Internal.Security.generateHash(passwd));
             StartUp_Deck.show(StartUp_Container, "signUp2");
         }
     }//GEN-LAST:event_Next_ButtonActionPerformed
-     
+    public static boolean checkPass(String password){
+        int i;
+        char c; 
+        boolean hasnum = false; boolean hascap = false; boolean haslow = false;
+        for(i=0 ;i < password.length(); i++){
+        c = password.charAt(i);
+        if(Character.isDigit(c))
+        {
+            hasnum = true;
+        }
+            if(Character.isUpperCase(c))
+            {
+                hascap = true;
+            }
+                if(Character.isLowerCase(c))
+                {
+                    haslow = true;
+                }
+       }
+        if(hasnum && hascap && haslow){
+          return true;
+        }
+        else{
+            return false;
+        }
+    } 
+    
     private void SignUp_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUp_ButtonActionPerformed
         String cname = Business_Name.getText();
         String cnum = Contact_Number.getText();
