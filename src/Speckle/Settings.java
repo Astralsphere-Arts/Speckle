@@ -1,5 +1,6 @@
 package Speckle;
 
+import static Speckle.Main.checkPass;
 import javax.swing.JOptionPane;
 
 /**
@@ -385,6 +386,17 @@ public class Settings extends javax.swing.JPanel {
         else if (!passwd.equals(confpasswd))
             JOptionPane.showMessageDialog(null, "The Password in Confirm Password Field does not Match."
                 + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
+        else if (!passwd.equals(confpasswd))
+            JOptionPane.showMessageDialog(null, "The Passwords in Password Fields do not Match."
+                + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
+        else if(passwd.length() < 7){
+            JOptionPane.showMessageDialog(null, "Your Password must Contain"
+                     +" at least 7 Characters"," Please Try Again!", JOptionPane.ERROR_MESSAGE);
+        }
+        else if(!checkPass(passwd)){          
+                 JOptionPane.showMessageDialog(null, "Your Password Must Contain at least One Numeric "
+                 + "One Uppercase and One Lowercase Character", " Please Try Again!", JOptionPane.ERROR_MESSAGE);
+        }
         else {
             Internal.SQLite.setConfigValue("Password", Internal.Security.generateHash(passwd));
             JOptionPane.showMessageDialog(null, "Your Password changed Sucessfully!",
@@ -396,6 +408,33 @@ public class Settings extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_Change_Password_ButtonActionPerformed
 
+    public static boolean checkPass(String password){
+        int i;
+        char c; 
+        boolean hasnum = false; boolean hascap = false; boolean haslow = false;
+        for(i=0 ;i < password.length(); i++){
+        c = password.charAt(i);
+        if(Character.isDigit(c))
+        {
+            hasnum = true;
+        }
+            if(Character.isUpperCase(c))
+            {
+                hascap = true;
+            }
+                if(Character.isLowerCase(c))
+                {
+                    haslow = true;
+                }
+       }
+        if(hasnum && hascap && haslow){
+          return true;
+        }
+        else{
+            return false;
+        }
+    } 
+    
     private void Save_Changes_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Save_Changes_ButtonActionPerformed
         String cname = New_Business_Name.getText();
         String cnum = New_Contact_Number.getText();

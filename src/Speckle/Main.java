@@ -775,11 +775,11 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "The Passwords in Password Fields do not Match."
                 + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
         else if(passwd.length() < 7){
-            JOptionPane.showMessageDialog(null, "Your Password must Contain"
-                     +" at least 7 Characters"," Please Try Again!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Your Password Must Contain"
+                     +" at Least 7 Characters"," Please Try Again!", JOptionPane.ERROR_MESSAGE);
         }
         else if(!checkPass(passwd)){          
-                 JOptionPane.showMessageDialog(null, "Your Password Must Contain at least One Numeric "
+                 JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric "
                  + "One Uppercase and One Lowercase Character", " Please Try Again!", JOptionPane.ERROR_MESSAGE);
         }
 
@@ -788,6 +788,7 @@ public class Main extends javax.swing.JFrame {
             StartUp_Deck.show(StartUp_Container, "signUp2");
         }
     }//GEN-LAST:event_Next_ButtonActionPerformed
+    
     public static boolean checkPass(String password){
         int i;
         char c; 
@@ -822,7 +823,7 @@ public class Main extends javax.swing.JFrame {
         String caddress = Business_Location.getText();
         if (cname.equals("") || cnum.equals("") || cmail.equals("") || caddress.equals(""))
             JOptionPane.showMessageDialog(null, "All Fields are Required to be Filled. Please"
-                + " Try Again!", "Empty Feilds", JOptionPane.ERROR_MESSAGE);
+                + " Try Again!", "Empty Feilds", JOptionPane.ERROR_MESSAGE);   
         else {
             Internal.SQLite.compConfig(cname, cnum, cmail, caddress);
             Content.removeAll();
