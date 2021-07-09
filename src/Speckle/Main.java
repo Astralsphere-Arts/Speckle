@@ -824,6 +824,14 @@ public class Main extends javax.swing.JFrame {
         if (cname.equals("") || cnum.equals("") || cmail.equals("") || caddress.equals(""))
             JOptionPane.showMessageDialog(null, "All Fields are Required to be Filled. Please"
                 + " Try Again!", "Empty Feilds", JOptionPane.ERROR_MESSAGE);   
+         else if(cnum.length() < 10){
+            JOptionPane.showMessageDialog(null, "You Must Have to Enter at Least 10 Digit"
+                    + " Number", "Please Try Again!", JOptionPane.ERROR_MESSAGE);
+        }
+        else if(cnum.length() > 10){
+            JOptionPane.showMessageDialog(null, "You Can Only Enter 10 Digit"
+                    + " Number", "Please Try Again!", JOptionPane.ERROR_MESSAGE);
+        }    
         else {
             Internal.SQLite.compConfig(cname, cnum, cmail, caddress);
             Content.removeAll();
