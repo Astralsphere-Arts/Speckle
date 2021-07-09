@@ -452,7 +452,16 @@ public class Settings extends javax.swing.JPanel {
                 cmail = Current_Email_Address.getText();
             if (caddress.equals(""))
                 caddress = Current_Business_Location.getText();
-            Internal.SQLite.compConfig(cname, cnum, cmail, caddress);
+        if(cnum.length() < 10){
+            JOptionPane.showMessageDialog(null, "You Must Have to Enter at Least 10 Digit"
+                    + " Number", "Please Try Again!", JOptionPane.ERROR_MESSAGE);
+        }
+        else if(cnum.length() > 10){
+            JOptionPane.showMessageDialog(null, "You Can Only Enter 10 Digit"
+                    + " Number", "Please Try Again!", JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+         Internal.SQLite.compConfig(cname, cnum, cmail, caddress);
             JOptionPane.showMessageDialog(null, "Your Changes have been saved Sucessfully!",
                 "Sucess", JOptionPane.INFORMATION_MESSAGE);
             Speckle.Main.Content.removeAll();
@@ -460,6 +469,7 @@ public class Settings extends javax.swing.JPanel {
             scene.setBounds(0, 0, 948, 574);
             Speckle.Main.Content.add(scene).setVisible(true);
             scene.Settings_Container.setSelectedIndex(1);
+        }
         }
     }//GEN-LAST:event_Save_Changes_ButtonActionPerformed
 
