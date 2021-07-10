@@ -1,5 +1,6 @@
 package Speckle;
 
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -387,6 +388,16 @@ public class Main extends javax.swing.JFrame {
         Contact_Number_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Contact_Number.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Contact_Number.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Contact_NumberActionPerformed(evt);
+            }
+        });
+        Contact_Number.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Contact_NumberKeyPressed(evt);
+            }
+        });
 
         Email_Address_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         Email_Address_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -990,6 +1001,34 @@ public class Main extends javax.swing.JFrame {
     private void SignOutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignOutMouseExited
         SignOut.setBackground(White);
     }//GEN-LAST:event_SignOutMouseExited
+
+    private void Contact_NumberKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Contact_NumberKeyPressed
+    
+       String phonenumber = Contact_Number.getText();
+       int length = phonenumber.length();
+       
+       char c = evt.getKeyChar();
+       
+       if(evt.getKeyChar()>='0' && evt.getKeyChar()<='9'){
+           
+           if(length < 10){
+               Contact_Number.setEditable(true);
+           }
+           else
+               Contact_Number.setEditable(false);
+       }
+       else{
+           if(evt.getExtendedKeyCode()==KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode()==KeyEvent.VK_DELETE){
+               Contact_Number.setEditable(true);
+           }
+           else
+               Contact_Number.setEditable(false);
+       }
+    }//GEN-LAST:event_Contact_NumberKeyPressed
+
+    private void Contact_NumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Contact_NumberActionPerformed
+      
+    }//GEN-LAST:event_Contact_NumberActionPerformed
 
     /**
      * @param args the command line arguments
