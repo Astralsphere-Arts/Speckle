@@ -1,6 +1,7 @@
 package Speckle;
 
 import static Speckle.Main.checkPass;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -227,6 +228,16 @@ public class Settings extends javax.swing.JPanel {
         Current_Contact_Number.setEnabled(false);
 
         New_Contact_Number.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        New_Contact_Number.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                New_Contact_NumberActionPerformed(evt);
+            }
+        });
+        New_Contact_Number.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                New_Contact_NumberKeyPressed(evt);
+            }
+        });
 
         Email_Address_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         Email_Address_Label.setText("Email Address");
@@ -452,15 +463,8 @@ public class Settings extends javax.swing.JPanel {
                 cmail = Current_Email_Address.getText();
             if (caddress.equals(""))
                 caddress = Current_Business_Location.getText();
-        if(cnum.length() < 10){
-            JOptionPane.showMessageDialog(null, "You Must Have to Enter at Least 10 Digit"
-                    + " Number", "Please Try Again!", JOptionPane.ERROR_MESSAGE);
-        }
-        else if(cnum.length() > 10){
-            JOptionPane.showMessageDialog(null, "You Can Only Enter 10 Digit"
-                    + " Number", "Please Try Again!", JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+        
+        
          Internal.SQLite.compConfig(cname, cnum, cmail, caddress);
             JOptionPane.showMessageDialog(null, "Your Changes have been saved Sucessfully!",
                 "Sucess", JOptionPane.INFORMATION_MESSAGE);
@@ -470,8 +474,34 @@ public class Settings extends javax.swing.JPanel {
             Speckle.Main.Content.add(scene).setVisible(true);
             scene.Settings_Container.setSelectedIndex(1);
         }
-        }
     }//GEN-LAST:event_Save_Changes_ButtonActionPerformed
+
+    private void New_Contact_NumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_New_Contact_NumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_New_Contact_NumberActionPerformed
+
+    private void New_Contact_NumberKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_New_Contact_NumberKeyPressed
+        
+        String phonenumber = New_Contact_Number.getText();
+        int length = phonenumber.length();
+        char c = evt.getKeyChar();
+          if(evt.getKeyChar()>='0' && evt.getKeyChar()<='9'){
+            
+        if(length < 10){
+            New_Contact_Number.setEditable(true);
+        }
+        else {
+            New_Contact_Number.setEditable(false);
+        }
+       }
+        else{
+            if(evt.getExtendedKeyCode()==KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode()==KeyEvent.VK_DELETE){
+                New_Contact_Number.setEditable(true);
+            }
+            else
+                New_Contact_Number.setEditable(false);
+        }
+    }//GEN-LAST:event_New_Contact_NumberKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
