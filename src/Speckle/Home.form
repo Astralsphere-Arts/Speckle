@@ -267,7 +267,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="Low_Stock_Para">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p&gt;The following five Products have the least amount of Stock availabe. If you think you might run Out of Stock for a Product then please Restock.&lt;/p&gt;&lt;/html&gt;"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p&gt;The following five Products have the least amount of stock available. If you think you might run out of stock for a Product then please Restock.&lt;/p&gt;&lt;/html&gt;"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="Product_One_Label">

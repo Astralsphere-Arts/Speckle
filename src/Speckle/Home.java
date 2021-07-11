@@ -119,7 +119,7 @@ public class Home extends javax.swing.JPanel {
         Low_Stock_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         Low_Stock_Label.setText("Low Stock");
 
-        Low_Stock_Para.setText("<html><p>The following five Products have the least amount of Stock availabe. If you think you might run Out of Stock for a Product then please Restock.</p></html>");
+        Low_Stock_Para.setText("<html><p>The following five Products have the least amount of stock available. If you think you might run out of stock for a Product then please Restock.</p></html>");
 
         Product_One_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         Product_One_Label.setText(data[0][0]);
