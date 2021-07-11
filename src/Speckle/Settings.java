@@ -401,17 +401,17 @@ public class Settings extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "The Passwords in Password Fields do not Match."
                 + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
         else if(passwd.length() < 7){
-            JOptionPane.showMessageDialog(null, "Your Password must Contain"
-                     +" at least 7 Characters"," Please Try Again!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Your Password Must Contain"
+                     +" at Least 7 Characters"," Please Try Again!", JOptionPane.ERROR_MESSAGE);
         }
         else if(!checkPass(passwd)){          
-                 JOptionPane.showMessageDialog(null, "Your Password Must Contain at least One Numeric "
+                 JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric "
                  + "One Uppercase and One Lowercase Character", " Please Try Again!", JOptionPane.ERROR_MESSAGE);
         }
         else {
             Internal.SQLite.setConfigValue("Password", Internal.Security.generateHash(passwd));
             JOptionPane.showMessageDialog(null, "Your Password changed Sucessfully!",
-                "Sucess", JOptionPane.INFORMATION_MESSAGE);
+                "Success", JOptionPane.INFORMATION_MESSAGE);
             Speckle.Main.Content.removeAll();
             Settings scene = new Settings();
             scene.setBounds(0, 0, 948, 574);
@@ -463,17 +463,22 @@ public class Settings extends javax.swing.JPanel {
                 cmail = Current_Email_Address.getText();
             if (caddress.equals(""))
                 caddress = Current_Business_Location.getText();
-        
-        
+            
+            if(cnum.length() < 10){
+            JOptionPane.showMessageDialog(null, "You Have to Enter 10 Digit Phone"
+            + "Number", "Please Try Again!", JOptionPane.ERROR_MESSAGE);
+            }
+         else{
          Internal.SQLite.compConfig(cname, cnum, cmail, caddress);
-            JOptionPane.showMessageDialog(null, "Your Changes have been saved Sucessfully!",
-                "Sucess", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Your Changes Have Been Saved Sucessfully!",
+                "Success", JOptionPane.INFORMATION_MESSAGE);
             Speckle.Main.Content.removeAll();
             Settings scene = new Settings();
             scene.setBounds(0, 0, 948, 574);
             Speckle.Main.Content.add(scene).setVisible(true);
             scene.Settings_Container.setSelectedIndex(1);
         }
+      }
     }//GEN-LAST:event_Save_Changes_ButtonActionPerformed
 
     private void New_Contact_NumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_New_Contact_NumberActionPerformed

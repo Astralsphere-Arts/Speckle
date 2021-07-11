@@ -842,7 +842,11 @@ public class Main extends javax.swing.JFrame {
         else if(cnum.length() > 10){
             JOptionPane.showMessageDialog(null, "You Can Only Enter 10 Digit"
                     + " Number", "Please Try Again!", JOptionPane.ERROR_MESSAGE);
-        }    
+        }  
+        else if(cnum.length() > 10){
+            JOptionPane.showMessageDialog(null, "You Have to Enter 10 Digit Phone"
+            + "Number", "Please Try Again!", JOptionPane.ERROR_MESSAGE);
+        }
         else {
             Internal.SQLite.compConfig(cname, cnum, cmail, caddress);
             Content.removeAll();
