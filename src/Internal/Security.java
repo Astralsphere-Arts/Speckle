@@ -79,4 +79,37 @@ public class Security {
             bytes[i] = (byte)Integer.parseInt(hex.substring(2 * i, 2 * i + 2), 16);
         return bytes;
     }
+
+    public static boolean checkPass(String password){
+        int i;
+        char c; 
+        boolean hasnum = false; boolean hascap = false; boolean haslow = false;
+        for(i=0 ;i < password.length(); i++){
+        c = password.charAt(i);
+        if(Character.isDigit(c))
+        {
+            hasnum = true;
+        }
+            if(Character.isUpperCase(c))
+            {
+                hascap = true;
+            }
+                if(Character.isLowerCase(c))
+                {
+                    haslow = true;
+                }
+       }
+        if(hasnum && hascap && haslow){
+          return true;
+        }
+        else{
+            return false;
+        }
+    } 
+
+    public static void RecoveryKey(){
+        String RecoveryKey = Function.randomID(10);
+        Internal.SQLite.setConfigValue("Recovery Key", generateHash(RecoveryKey));
+    }
+    
 }

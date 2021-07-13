@@ -1,6 +1,5 @@
 package Speckle;
 
-import static Speckle.Main.checkPass;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
@@ -162,12 +161,13 @@ public class Settings extends javax.swing.JPanel {
         User_TabLayout.setVerticalGroup(
             User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(User_TabLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addContainerGap()
+                .addComponent(Change_Username)
+                .addGap(14, 14, 14)
                 .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Speckle_Logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(User_TabLayout.createSequentialGroup()
-                        .addComponent(Change_Username)
-                        .addGap(24, 24, 24)
+                        .addGap(49, 49, 49)
                         .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Current_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Current_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -404,7 +404,7 @@ public class Settings extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Your Password Must Contain"
                      +" at Least 7 Characters"," Please Try Again!", JOptionPane.ERROR_MESSAGE);
         }
-        else if(!checkPass(passwd)){          
+        else if(!Internal.Security.checkPass(passwd)){          
                  JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric "
                  + "One Uppercase and One Lowercase Character", " Please Try Again!", JOptionPane.ERROR_MESSAGE);
         }
@@ -418,33 +418,6 @@ public class Settings extends javax.swing.JPanel {
             Speckle.Main.Content.add(scene).setVisible(true);
         }
     }//GEN-LAST:event_Change_Password_ButtonActionPerformed
-
-    public static boolean checkPass(String password){
-        int i;
-        char c; 
-        boolean hasnum = false; boolean hascap = false; boolean haslow = false;
-        for(i=0 ;i < password.length(); i++){
-        c = password.charAt(i);
-        if(Character.isDigit(c))
-        {
-            hasnum = true;
-        }
-            if(Character.isUpperCase(c))
-            {
-                hascap = true;
-            }
-                if(Character.isLowerCase(c))
-                {
-                    haslow = true;
-                }
-       }
-        if(hasnum && hascap && haslow){
-          return true;
-        }
-        else{
-            return false;
-        }
-    } 
     
     private void Save_Changes_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Save_Changes_ButtonActionPerformed
         String cname = New_Business_Name.getText();
