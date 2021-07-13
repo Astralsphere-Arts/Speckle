@@ -73,7 +73,7 @@ public class SQLite {
         String configuration = "CREATE TABLE IF NOT EXISTS Configuration (Parameter"
             + " TEXT NOT NULL UNIQUE, Value TEXT, PRIMARY KEY(Parameter));";
         String configData = "INSERT INTO Configuration (Parameter) VALUES('Username'),"
-            + " ('Password'), ('Business Name'), ('Contact Number'), ('Email Address'),"
+            + " ('Password'), ('Recovery Key'), ('Business Name'), ('Contact Number'), ('Email Address'),"
             + " ('Business Location');";
         try {
             Statement mainDBquery = mainDB.createStatement();
