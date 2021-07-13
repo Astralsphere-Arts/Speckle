@@ -1,5 +1,6 @@
 package Speckle;
 
+import java.awt.Cursor;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
@@ -20,8 +21,9 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         Container_Deck = (java.awt.CardLayout)Container.getLayout();
         StartUp_Deck = (java.awt.CardLayout)StartUp_Container.getLayout();
-        if (Internal.SQLite.firstUse)
+        if (Internal.SQLite.firstUse){
             StartUp_Deck.show(StartUp_Container, "signUp1");
+        }
         else
             StartUp_Deck.show(StartUp_Container, "signIn");
     }
@@ -53,6 +55,7 @@ public class Main extends javax.swing.JFrame {
         Password_Label = new javax.swing.JLabel();
         Password = new javax.swing.JPasswordField();
         SignIn_Button = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         SignUp_User = new javax.swing.JPanel();
         SignUp_User_Heading = new javax.swing.JLabel();
         SignUp_User_SubHeading = new javax.swing.JLabel();
@@ -206,6 +209,18 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Forgot Password?");
+        jLabel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jLabel1MouseMoved(evt);
+            }
+        });
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel1MousePressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout SignInLayout = new javax.swing.GroupLayout(SignIn);
         SignIn.setLayout(SignInLayout);
         SignInLayout.setHorizontalGroup(
@@ -228,6 +243,10 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(SignIn_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(31, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SignInLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(194, 194, 194))
         );
         SignInLayout.setVerticalGroup(
             SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,7 +267,9 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(SignIn_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addContainerGap(102, Short.MAX_VALUE))
         );
 
         StartUp_Container.add(SignIn, "signIn");
@@ -789,7 +810,7 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Your Password Must Contain"
                      +" at Least 7 Characters"," Please Try Again!", JOptionPane.ERROR_MESSAGE);
         }
-        else if(!checkPass(passwd)){          
+        else if(!Internal.Security.checkPass(passwd)){          
                  JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric "
                  + "One Uppercase and One Lowercase Character", " Please Try Again!", JOptionPane.ERROR_MESSAGE);
         }
@@ -800,32 +821,7 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Next_ButtonActionPerformed
     
-    public static boolean checkPass(String password){
-        int i;
-        char c; 
-        boolean hasnum = false; boolean hascap = false; boolean haslow = false;
-        for(i=0 ;i < password.length(); i++){
-        c = password.charAt(i);
-        if(Character.isDigit(c))
-        {
-            hasnum = true;
-        }
-            if(Character.isUpperCase(c))
-            {
-                hascap = true;
-            }
-                if(Character.isLowerCase(c))
-                {
-                    haslow = true;
-                }
-       }
-        if(hasnum && hascap && haslow){
-          return true;
-        }
-        else{
-            return false;
-        }
-    } 
+    
     
     private void SignUp_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUp_ButtonActionPerformed
         String cname = Business_Name.getText();
@@ -849,6 +845,7 @@ public class Main extends javax.swing.JFrame {
         }
         else {
             Internal.SQLite.compConfig(cname, cnum, cmail, caddress);
+            Internal.Security.RecoveryKey();
             Content.removeAll();
             Speckle.Home scene = new Home();
             scene.setBounds(0, 0, 948, 574);
@@ -1034,6 +1031,16 @@ public class Main extends javax.swing.JFrame {
       
     }//GEN-LAST:event_Contact_NumberActionPerformed
 
+    private void jLabel1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseMoved
+       jLabel1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_jLabel1MouseMoved
+
+    private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
+       ForgotPassword sc = new ForgotPassword();
+        this.setVisible(false);
+        sc.setVisible(true);
+    }//GEN-LAST:event_jLabel1MousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -1115,6 +1122,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField Username;
     private javax.swing.JLabel Username_Label;
     private javax.swing.JLabel Window_Title;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
     private final java.awt.CardLayout Container_Deck;
     private final java.awt.CardLayout StartUp_Deck;
