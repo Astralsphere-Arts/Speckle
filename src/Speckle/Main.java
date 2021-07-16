@@ -79,6 +79,34 @@ public class Main extends javax.swing.JFrame {
         Business_Location_Label = new javax.swing.JLabel();
         Business_Location = new javax.swing.JTextField();
         SignUp_Button = new javax.swing.JButton();
+        Details = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        Forgot_Password = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        Newpass = new javax.swing.JPasswordField();
+        jLabel19 = new javax.swing.JLabel();
+        Confpass = new javax.swing.JPasswordField();
+        jButton2 = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
+        Recovery = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
         Application = new javax.swing.JPanel();
         SideBar = new javax.swing.JPanel();
         Home = new javax.swing.JLabel();
@@ -201,6 +229,7 @@ public class Main extends javax.swing.JFrame {
 
         Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
+        SignIn_Button.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         SignIn_Button.setText("Sign In");
         SignIn_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -314,6 +343,7 @@ public class Main extends javax.swing.JFrame {
 
         Confirm_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
+        Next_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         Next_Button.setText("Next");
         Next_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -428,6 +458,7 @@ public class Main extends javax.swing.JFrame {
 
         Business_Location.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
+        SignUp_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         SignUp_Button.setText("Sign Up");
         SignUp_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -499,6 +530,220 @@ public class Main extends javax.swing.JFrame {
         );
 
         StartUp_Container.add(SignUp_Details, "signUp2");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabel2.setText("Please Verify Your Details");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel3.setText("User Name");
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel5.setText("Business Name");
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel7.setText("Contact Number");
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel9.setText("Email Address");
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabel11.setText("Recovery Code");
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jLabel13.setText("Following Is Your Recovery Code For Password Recovery ");
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jLabel14.setText("Keep This Code Safely Do not Share This Code With Anyone ");
+
+        jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jButton1.setText("FINISH");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel15.setText("Business Location");
+
+        javax.swing.GroupLayout DetailsLayout = new javax.swing.GroupLayout(Details);
+        Details.setLayout(DetailsLayout);
+        DetailsLayout.setHorizontalGroup(
+            DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DetailsLayout.createSequentialGroup()
+                .addGroup(DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(DetailsLayout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addGroup(DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(DetailsLayout.createSequentialGroup()
+                                .addGap(85, 85, 85)
+                                .addComponent(jLabel2)
+                                .addGap(0, 67, Short.MAX_VALUE))
+                            .addGroup(DetailsLayout.createSequentialGroup()
+                                .addGroup(DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel3))
+                                .addGap(26, 26, 26)
+                                .addGroup(DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(DetailsLayout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addGap(18, 18, 18)
+                                .addGroup(DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(DetailsLayout.createSequentialGroup()
+                                        .addComponent(jLabel11)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                    .addGroup(DetailsLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel13))))
+                .addGap(81, 81, 81))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DetailsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(209, 209, 209))
+        );
+        DetailsLayout.setVerticalGroup(
+            DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DetailsLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(DetailsLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(44, 44, 44)
+                        .addGroup(DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
+                        .addGap(27, 27, 27)
+                        .addGroup(DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addGroup(DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel9))
+                .addGap(27, 27, 27)
+                .addGroup(DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addComponent(jLabel11)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel14)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(65, Short.MAX_VALUE))
+        );
+
+        StartUp_Container.add(Details, "Details");
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabel17.setText("Forgot  Password");
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel18.setText("New Password");
+
+        Newpass.setPreferredSize(new java.awt.Dimension(7, 26));
+
+        jLabel19.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel19.setText("Confirm Password");
+
+        Confpass.setPreferredSize(new java.awt.Dimension(7, 26));
+
+        jButton2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jButton2.setText("Confirm");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel20.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel20.setText("Enter Recovery code");
+
+        Recovery.setPreferredSize(new java.awt.Dimension(7, 26));
+
+        jLabel21.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
+        jLabel21.setText("If You Forgot Your Password Then Enter The Recovery Code Which Has Been ");
+
+        jLabel22.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
+        jLabel22.setText("Given On The First Use And Then You Can Set Your New Paswword Easily");
+
+        javax.swing.GroupLayout Forgot_PasswordLayout = new javax.swing.GroupLayout(Forgot_Password);
+        Forgot_Password.setLayout(Forgot_PasswordLayout);
+        Forgot_PasswordLayout.setHorizontalGroup(
+            Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Forgot_PasswordLayout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Forgot_PasswordLayout.createSequentialGroup()
+                        .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel19))
+                        .addGap(42, 42, 42)
+                        .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Recovery, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
+                            .addComponent(Newpass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Confpass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(Forgot_PasswordLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel22))
+                    .addComponent(jLabel21))
+                .addContainerGap(34, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Forgot_PasswordLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel17)
+                .addGap(173, 173, 173))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Forgot_PasswordLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(170, 170, 170))
+        );
+        Forgot_PasswordLayout.setVerticalGroup(
+            Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Forgot_PasswordLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabel17)
+                .addGap(38, 38, 38)
+                .addComponent(jLabel21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel22)
+                .addGap(91, 91, 91)
+                .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(Recovery, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(Newpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Confpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel19))
+                .addGap(48, 48, 48)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(116, Short.MAX_VALUE))
+        );
+
+        StartUp_Container.add(Forgot_Password, "ForgotPassword");
+        Forgot_Password.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout StartUpLayout = new javax.swing.GroupLayout(StartUp);
         StartUp.setLayout(StartUpLayout);
@@ -791,8 +1036,8 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_SignIn_ButtonActionPerformed
 
     private void Next_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Next_ButtonActionPerformed
-        String usrname = Internal.Security.getEncodedString(SignUp_Username.getText());
-        String passwd = new String(Create_Password.getPassword());
+         usrname = Internal.Security.getEncodedString(SignUp_Username.getText());
+         passwd = new String(Create_Password.getPassword());
         String confpasswd = new String(Confirm_Password.getPassword());
         if (usrname.equals("") || passwd.equals(""))
             JOptionPane.showMessageDialog(null, "Username or Password cannot be Empty. Please"
@@ -816,10 +1061,10 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_Next_ButtonActionPerformed
 
     private void SignUp_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUp_ButtonActionPerformed
-        String cname = Business_Name.getText();
-        String cnum = Contact_Number.getText();
-        String cmail = Email_Address.getText();
-        String caddress = Business_Location.getText();
+         cname = Business_Name.getText();
+         cnum = Contact_Number.getText();
+         cmail = Email_Address.getText();
+         caddress = Business_Location.getText();
         if (cname.equals("") || cnum.equals("") || cmail.equals("") || caddress.equals(""))
             JOptionPane.showMessageDialog(null, "All Fields are Required to be Filled. Please"
                 + " Try Again!", "Empty Feilds", JOptionPane.ERROR_MESSAGE);   
@@ -839,11 +1084,18 @@ public class Main extends javax.swing.JFrame {
             Internal.SQLite.compConfig(cname, cnum, cmail, caddress);
             Internal.Security.RecoveryKey();
             Content.removeAll();
-            Speckle.Home scene = new Home();
-            scene.setBounds(0, 0, 948, 574);
-            Content.add(scene).setVisible(true);
-            Container_Deck.show(Container, "app");
+            StartUp_Deck.show(StartUp_Container, "Details");
+            
         }
+       String RecoveryCode = Internal.Function.randomAlphaNumeric(10);
+       String username =Internal.Security.getDecodedString(usrname);
+            jLabel4.setText(username);
+            jLabel6.setText(cname);
+            jLabel8.setText(cnum);
+            jLabel10.setText(cmail);
+            jLabel12.setText(caddress);
+            jLabel16.setText(RecoveryCode); 
+            Internal.SQLite.setConfigValue("Recovery Key",Internal.Security.generateHash(RecoveryCode));
     }//GEN-LAST:event_SignUp_ButtonActionPerformed
 
     private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
@@ -1024,10 +1276,50 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseMoved
 
     private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
+<<<<<<< Updated upstream
         ForgotPassword sc = new ForgotPassword();
         this.setVisible(false);
         sc.setVisible(true);
+=======
+       StartUp_Deck.show(StartUp_Container,"ForgotPassword");
+>>>>>>> Stashed changes
     }//GEN-LAST:event_jLabel1MousePressed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+            Content.removeAll();
+            Speckle.Home scene = new Home();
+            scene.setBounds(0, 0, 948, 574);
+            Content.add(scene).setVisible(true);
+        Container_Deck.show(Container, "app");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String Recoverykey = Recovery.getText();
+        String Newpswd = new String(Newpass.getPassword());
+        String Confpswd = new String(Confpass.getPassword());
+        if(!Internal.Security.validateHash(Recoverykey, Internal.SQLite.getConfigValue("Recovery Key"))) {
+            JOptionPane.showMessageDialog(null, "The Recovery Key You Have Entered is Incorrect"
+                + " Please Try Again!", "Incorrect Recovery Key", JOptionPane.ERROR_MESSAGE);
+        }
+        else if(!Internal.Security.checkPass(Newpswd)){
+            JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric "
+                + "One Uppercase and One Lowercase Character", " Please Try Again!", JOptionPane.ERROR_MESSAGE);
+        }
+        else if(!Newpswd.equals(Confpswd)){
+            JOptionPane.showMessageDialog(null, "New Password and Confirm Password Doesn't Match "
+                + " Please Try Again", "Passwords Doesn't Match", JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            Internal.SQLite.setConfigValue("Password",Internal.Security.generateHash(Newpswd));
+            JOptionPane.showMessageDialog(null, "Password Has Been Changed Successfully!",
+                "Sucess", JOptionPane.INFORMATION_MESSAGE);
+            Content.removeAll();
+            Speckle.Home scene = new Home();
+            scene.setBounds(0, 0, 948, 574);
+            Content.add(scene).setVisible(true);
+            Container_Deck.show(Container,"app");
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1070,22 +1362,27 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Close;
     private javax.swing.JPasswordField Confirm_Password;
     private javax.swing.JLabel Confirm_Password_Label;
+    private javax.swing.JPasswordField Confpass;
     private javax.swing.JTextField Contact_Number;
     private javax.swing.JLabel Contact_Number_Label;
     private javax.swing.JPanel Container;
     public static javax.swing.JDesktopPane Content;
     private javax.swing.JPasswordField Create_Password;
     private javax.swing.JLabel Create_Password_Label;
+    private javax.swing.JPanel Details;
     private javax.swing.JTextField Email_Address;
     private javax.swing.JLabel Email_Address_Label;
+    private javax.swing.JPanel Forgot_Password;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel Header_Logo;
     private javax.swing.JLabel Home;
     private javax.swing.JLabel Inventory;
     private javax.swing.JLabel Invoicing;
+    private javax.swing.JPasswordField Newpass;
     private javax.swing.JButton Next_Button;
     private javax.swing.JPasswordField Password;
     private javax.swing.JLabel Password_Label;
+    private javax.swing.JTextField Recovery;
     private javax.swing.JLabel Settings;
     private javax.swing.JPanel SideBar;
     private javax.swing.JPanel SignIn;
@@ -1111,7 +1408,30 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField Username;
     private javax.swing.JLabel Username_Label;
     private javax.swing.JLabel Window_Title;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
     private final java.awt.CardLayout Container_Deck;
     private final java.awt.CardLayout StartUp_Deck;
@@ -1120,4 +1440,11 @@ public class Main extends javax.swing.JFrame {
     private final java.awt.Color White;
     private java.awt.Color Stored;
     private int x, y;
+    String usrname;
+    String passwd;
+    String cname;
+    String cnum;
+    String cmail;
+    String caddress;
+    
 }
