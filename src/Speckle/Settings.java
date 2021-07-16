@@ -121,79 +121,76 @@ public class Settings extends javax.swing.JPanel {
         User_TabLayout.setHorizontalGroup(
             User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(User_TabLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
                 .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Change_Username)
                     .addGroup(User_TabLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, User_TabLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Change_Username)
+                                    .addComponent(Current_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(New_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(29, 29, 29))
                             .addGroup(User_TabLayout.createSequentialGroup()
-                                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(Current_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(New_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Current_Password, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                                    .addComponent(New_Password)))
-                            .addGroup(User_TabLayout.createSequentialGroup()
-                                .addComponent(New_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(New_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(User_TabLayout.createSequentialGroup()
-                                .addComponent(Confirm_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Confirm_Password)
-                                    .addGroup(User_TabLayout.createSequentialGroup()
-                                        .addComponent(Change_Password_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))))
-                            .addGroup(User_TabLayout.createSequentialGroup()
-                                .addComponent(Current_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Change_Username_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Current_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addComponent(Change_Password))
-                .addGap(70, 70, 70)
+                                .addGap(40, 40, 40)
+                                .addComponent(Change_Password)
+                                .addGap(18, 18, 18)))
+                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Current_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(New_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Change_Username_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, User_TabLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(New_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Current_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Confirm_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Current_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(New_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Confirm_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Change_Password_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
                 .addComponent(Speckle_Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addGap(47, 47, 47))
         );
         User_TabLayout.setVerticalGroup(
             User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(User_TabLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(50, 50, 50)
+                .addComponent(Speckle_Logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(65, 65, 65))
+            .addGroup(User_TabLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
                 .addComponent(Change_Username)
-                .addGap(14, 14, 14)
-                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Speckle_Logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(User_TabLayout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Current_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Current_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(New_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(New_Username_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(24, 24, 24)
-                        .addComponent(Change_Username_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
-                        .addComponent(Change_Password)
-                        .addGap(24, 24, 24)
-                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Current_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Current_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(New_Password)
-                            .addComponent(New_Password_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Confirm_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Confirm_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(24, 24, 24)
-                        .addComponent(Change_Password_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Current_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Current_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(New_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(New_Username_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(Change_Username_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(Change_Password)
+                .addGap(30, 30, 30)
+                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Current_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Current_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(New_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(New_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Confirm_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Confirm_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(Change_Password_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(90, 90, 90))
         );
 
         Settings_Container.addTab("User Details", User_Tab);
@@ -277,7 +274,7 @@ public class Settings extends javax.swing.JPanel {
             .addGroup(Details_TabLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(Update_Business_Details)
-                .addGap(531, 611, Short.MAX_VALUE))
+                .addGap(531, 660, Short.MAX_VALUE))
             .addGroup(Details_TabLayout.createSequentialGroup()
                 .addGap(80, 80, 80)
                 .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -350,7 +347,7 @@ public class Settings extends javax.swing.JPanel {
                     .addComponent(New_Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24)
                 .addComponent(Save_Changes_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(152, Short.MAX_VALUE))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
 
         Settings_Container.addTab("Business Details", Details_Tab);
@@ -366,58 +363,6 @@ public class Settings extends javax.swing.JPanel {
             .addComponent(Settings_Container, javax.swing.GroupLayout.Alignment.TRAILING)
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void Change_Username_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Change_Username_ButtonActionPerformed
-        String usrname = Internal.Security.getEncodedString(New_Username.getText());
-        if (usrname.equals(""))
-            JOptionPane.showMessageDialog(null, "Username cannot be Empty. Please Try Again!",
-                "Username Field Empty", JOptionPane.ERROR_MESSAGE);
-        else {
-            Internal.SQLite.setConfigValue("Username", usrname);
-            JOptionPane.showMessageDialog(null, "Your Username changed Sucessfully!",
-                "Sucess", JOptionPane.INFORMATION_MESSAGE);
-            Speckle.Main.Content.removeAll();
-            Settings scene = new Settings();
-            scene.setBounds(0, 0, 948, 574);
-            Speckle.Main.Content.add(scene).setVisible(true);
-        }
-    }//GEN-LAST:event_Change_Username_ButtonActionPerformed
-
-    private void Change_Password_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Change_Password_ButtonActionPerformed
-        String curpasswd = new String(Current_Password.getPassword());
-        String passwd = new String(New_Password.getPassword());
-        String confpasswd = new String(Confirm_Password.getPassword());
-        if (curpasswd.equals("") || passwd.equals(""))
-            JOptionPane.showMessageDialog(null, "Both Current and New Passwords are needed"
-                + " for changing Password. Please Try Again!", "Password Fields Empty",
-                JOptionPane.ERROR_MESSAGE);
-        else if (!Internal.Security.validateHash(curpasswd, Internal.SQLite.getConfigValue("Password")))
-            JOptionPane.showMessageDialog(null, "The Current Password is Incorrect. Please"
-                + " Try Again!", "Incorrect Password", JOptionPane.ERROR_MESSAGE);
-        else if (!passwd.equals(confpasswd))
-            JOptionPane.showMessageDialog(null, "The Password in Confirm Password Field does not Match."
-                + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
-        else if (!passwd.equals(confpasswd))
-            JOptionPane.showMessageDialog(null, "The Passwords in Password Fields do not Match."
-                + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
-        else if(passwd.length() < 7){
-            JOptionPane.showMessageDialog(null, "Your Password Must Contain"
-                     +" at Least 7 Characters"," Please Try Again!", JOptionPane.ERROR_MESSAGE);
-        }
-        else if(!Internal.Security.checkPass(passwd)){          
-                 JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric "
-                 + "One Uppercase and One Lowercase Character", " Please Try Again!", JOptionPane.ERROR_MESSAGE);
-        }
-        else {
-            Internal.SQLite.setConfigValue("Password", Internal.Security.generateHash(passwd));
-            JOptionPane.showMessageDialog(null, "Your Password changed Sucessfully!",
-                "Success", JOptionPane.INFORMATION_MESSAGE);
-            Speckle.Main.Content.removeAll();
-            Settings scene = new Settings();
-            scene.setBounds(0, 0, 948, 574);
-            Speckle.Main.Content.add(scene).setVisible(true);
-        }
-    }//GEN-LAST:event_Change_Password_ButtonActionPerformed
     
     private void Save_Changes_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Save_Changes_ButtonActionPerformed
         String cname = New_Business_Name.getText();
@@ -480,6 +425,58 @@ public class Settings extends javax.swing.JPanel {
                 New_Contact_Number.setEditable(false);
         }
     }//GEN-LAST:event_New_Contact_NumberKeyPressed
+
+    private void Change_Password_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Change_Password_ButtonActionPerformed
+        String curpasswd = new String(Current_Password.getPassword());
+        String passwd = new String(New_Password.getPassword());
+        String confpasswd = new String(Confirm_Password.getPassword());
+        if (curpasswd.equals("") || passwd.equals(""))
+        JOptionPane.showMessageDialog(null, "Both Current and New Passwords are needed"
+            + " for changing Password. Please Try Again!", "Password Fields Empty",
+            JOptionPane.ERROR_MESSAGE);
+        else if (!Internal.Security.validateHash(curpasswd, Internal.SQLite.getConfigValue("Password")))
+        JOptionPane.showMessageDialog(null, "The Current Password is Incorrect. Please"
+            + " Try Again!", "Incorrect Password", JOptionPane.ERROR_MESSAGE);
+        else if (!passwd.equals(confpasswd))
+        JOptionPane.showMessageDialog(null, "The Password in Confirm Password Field does not Match."
+            + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
+        else if (!passwd.equals(confpasswd))
+        JOptionPane.showMessageDialog(null, "The Passwords in Password Fields do not Match."
+            + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
+        else if(passwd.length() < 7){
+            JOptionPane.showMessageDialog(null, "Your Password Must Contain"
+                +" at Least 7 Characters"," Please Try Again!", JOptionPane.ERROR_MESSAGE);
+        }
+        else if(!Internal.Security.checkPass(passwd)){
+            JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric "
+                + "One Uppercase and One Lowercase Character", " Please Try Again!", JOptionPane.ERROR_MESSAGE);
+        }
+        else {
+            Internal.SQLite.setConfigValue("Password", Internal.Security.generateHash(passwd));
+            JOptionPane.showMessageDialog(null, "Your Password changed Sucessfully!",
+                "Success", JOptionPane.INFORMATION_MESSAGE);
+            Speckle.Main.Content.removeAll();
+            Settings scene = new Settings();
+            scene.setBounds(0, 0, 948, 574);
+            Speckle.Main.Content.add(scene).setVisible(true);
+        }
+    }//GEN-LAST:event_Change_Password_ButtonActionPerformed
+
+    private void Change_Username_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Change_Username_ButtonActionPerformed
+        String usrname = Internal.Security.getEncodedString(New_Username.getText());
+        if (usrname.equals(""))
+        JOptionPane.showMessageDialog(null, "Username cannot be Empty. Please Try Again!",
+            "Username Field Empty", JOptionPane.ERROR_MESSAGE);
+        else {
+            Internal.SQLite.setConfigValue("Username", usrname);
+            JOptionPane.showMessageDialog(null, "Your Username changed Sucessfully!",
+                "Sucess", JOptionPane.INFORMATION_MESSAGE);
+            Speckle.Main.Content.removeAll();
+            Settings scene = new Settings();
+            scene.setBounds(0, 0, 948, 574);
+            Speckle.Main.Content.add(scene).setVisible(true);
+        }
+    }//GEN-LAST:event_Change_Username_ButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
