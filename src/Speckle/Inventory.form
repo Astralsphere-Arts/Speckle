@@ -25,7 +25,9 @@
                       <Component id="Remove" min="-2" pref="120" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="Update" min="-2" pref="120" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="344" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="206" max="-2" attributes="0"/>
+                      <Component id="Import" min="-2" pref="120" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="Export" min="-2" pref="120" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -53,6 +55,7 @@
                   <Component id="Add" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   <Component id="Update" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   <Component id="Export" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="Import" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="70" max="32767" attributes="0"/>
           </Group>
@@ -121,10 +124,19 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateActionPerformed"/>
       </Events>
     </Component>
+    <Component class="javax.swing.JButton" name="Import">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Import"/>
+        <Property name="toolTipText" type="java.lang.String" value="Import Inventory Data from a CSV File"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ImportActionPerformed"/>
+      </Events>
+    </Component>
     <Component class="javax.swing.JButton" name="Export">
       <Properties>
         <Property name="text" type="java.lang.String" value="Export"/>
-        <Property name="toolTipText" type="java.lang.String" value="Export Inventory to a CSV File"/>
+        <Property name="toolTipText" type="java.lang.String" value="Export Inventory Data to a CSV File"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExportActionPerformed"/>

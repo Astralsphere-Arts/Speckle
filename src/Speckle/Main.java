@@ -21,9 +21,8 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         Container_Deck = (java.awt.CardLayout)Container.getLayout();
         StartUp_Deck = (java.awt.CardLayout)StartUp_Container.getLayout();
-        if (Internal.SQLite.firstUse){
+        if (Internal.SQLite.firstUse)
             StartUp_Deck.show(StartUp_Container, "signUp1");
-        }
         else
             StartUp_Deck.show(StartUp_Container, "signIn");
     }
@@ -409,11 +408,6 @@ public class Main extends javax.swing.JFrame {
         Contact_Number_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Contact_Number.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Contact_Number.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Contact_NumberActionPerformed(evt);
-            }
-        });
         Contact_Number.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Contact_NumberKeyPressed(evt);
@@ -820,9 +814,7 @@ public class Main extends javax.swing.JFrame {
             StartUp_Deck.show(StartUp_Container, "signUp2");
         }
     }//GEN-LAST:event_Next_ButtonActionPerformed
-    
-    
-    
+
     private void SignUp_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUp_ButtonActionPerformed
         String cname = Business_Name.getText();
         String cnum = Contact_Number.getText();
@@ -1027,16 +1019,12 @@ public class Main extends javax.swing.JFrame {
        }
     }//GEN-LAST:event_Contact_NumberKeyPressed
 
-    private void Contact_NumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Contact_NumberActionPerformed
-      
-    }//GEN-LAST:event_Contact_NumberActionPerformed
-
     private void jLabel1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseMoved
-       jLabel1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        jLabel1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_jLabel1MouseMoved
 
     private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
-       ForgotPassword sc = new ForgotPassword();
+        ForgotPassword sc = new ForgotPassword();
         this.setVisible(false);
         sc.setVisible(true);
     }//GEN-LAST:event_jLabel1MousePressed
@@ -1069,6 +1057,7 @@ public class Main extends javax.swing.JFrame {
             new Main().setVisible(true);
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel About;

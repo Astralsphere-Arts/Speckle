@@ -284,7 +284,7 @@ public class Function {
         }
     }
     
-    public static void invoiceCSV(File CSV) {
+    public static void invoiceCSVex(File CSV) {
         ResultSet invoData = Internal.SQLite.invoData();
         try (FileWriter invCSV = new FileWriter(CSV)) {
             ResultSetMetaData invMeta = invoData.getMetaData();
@@ -308,7 +308,7 @@ public class Function {
         }
     }
     
-    public static void invenCSV(File CSV) {
+    public static void invenCSVex(File CSV) {
         ResultSet invenData = Internal.SQLite.invenData();
         try (FileWriter invCSV = new FileWriter(CSV)) {
             ResultSetMetaData invMeta = invenData.getMetaData();
@@ -324,6 +324,24 @@ public class Function {
             }
             invCSV.close();
         } catch (IOException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public static void invenCSVim(File CSV) {
+        try {
+            String CSV_Line;
+            java.io.BufferedReader CSV_Reader = new java.io.BufferedReader(new java.io.FileReader(CSV));
+            while ((CSV_Line = CSV_Reader.readLine()) != null) {
+                String[] CSV_Parts = CSV_Line.replace("\"", "").split(",");
+                String PID = CSV_Parts[0];
+                String name = CSV_Parts[1];
+                String price = CSV_Parts[2];
+                String quan = CSV_Parts[3];
+                if (!PID.equals("Product ID"))
+                    Internal.SQLite.updateInven(PID, name, price, quan);
+            }
+        } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
     }

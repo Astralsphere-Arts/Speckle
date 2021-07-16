@@ -38,6 +38,7 @@ public class Inventory extends javax.swing.JPanel {
         Add = new javax.swing.JButton();
         Remove = new javax.swing.JButton();
         Update = new javax.swing.JButton();
+        Import = new javax.swing.JButton();
         Export = new javax.swing.JButton();
 
         Heading.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -90,8 +91,16 @@ public class Inventory extends javax.swing.JPanel {
             }
         });
 
+        Import.setText("Import");
+        Import.setToolTipText("Import Inventory Data from a CSV File");
+        Import.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ImportActionPerformed(evt);
+            }
+        });
+
         Export.setText("Export");
-        Export.setToolTipText("Export Inventory to a CSV File");
+        Export.setToolTipText("Export Inventory Data to a CSV File");
         Export.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExportActionPerformed(evt);
@@ -111,7 +120,9 @@ public class Inventory extends javax.swing.JPanel {
                         .addComponent(Remove, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(Update, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(344, 344, 344)
+                        .addGap(206, 206, 206)
+                        .addComponent(Import, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(Export, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(Inventory_Table_Container, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -132,7 +143,8 @@ public class Inventory extends javax.swing.JPanel {
                     .addComponent(Remove, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Update, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Export, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Export, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Import, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(70, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -188,6 +200,21 @@ public class Inventory extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_UpdateActionPerformed
 
+    private void ImportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImportActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Import from CSV");
+        fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
+        if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+            Internal.Function.invenCSVim(fileChooser.getSelectedFile());
+            JOptionPane.showMessageDialog(null, "Inventory Data Imported Sucessfully!",
+                "Sucess", JOptionPane.INFORMATION_MESSAGE);
+            Speckle.Main.Content.removeAll();
+            Inventory scene = new Inventory();
+            scene.setBounds(0, 0, 948, 574);
+            Speckle.Main.Content.add(scene).setVisible(true);
+        }
+    }//GEN-LAST:event_ImportActionPerformed
+
     private void ExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportActionPerformed
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Export to CSV");
@@ -196,7 +223,7 @@ public class Inventory extends javax.swing.JPanel {
             .format(new java.util.Date()) + ".csv"));
         fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
         if (fileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-            Internal.Function.invenCSV(fileChooser.getSelectedFile());
+            Internal.Function.invenCSVex(fileChooser.getSelectedFile());
             JOptionPane.showMessageDialog(null, "Inventory Data Exported Sucessfully!",
                 "Sucess", JOptionPane.INFORMATION_MESSAGE);
         }
@@ -207,6 +234,7 @@ public class Inventory extends javax.swing.JPanel {
     private javax.swing.JButton Add;
     private javax.swing.JButton Export;
     private javax.swing.JLabel Heading;
+    private javax.swing.JButton Import;
     private javax.swing.JTable Inventory_Table;
     private javax.swing.JScrollPane Inventory_Table_Container;
     private javax.swing.JButton Remove;

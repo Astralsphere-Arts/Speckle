@@ -312,6 +312,20 @@ public class Invoicing extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_RemoveActionPerformed
 
+    private void ExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Export to CSV");
+        fileChooser.setDialogType(JFileChooser.SAVE_DIALOG);
+        fileChooser.setSelectedFile(new File("Invoice-" + new java.text.SimpleDateFormat("dd-MM-yyyy")
+            .format(new java.util.Date()) + ".csv"));
+        fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
+        if (fileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+            Internal.Function.invoiceCSVex(fileChooser.getSelectedFile());
+            JOptionPane.showMessageDialog(null, "Invoice Data Exported Sucessfully!",
+                "Sucess", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_ExportActionPerformed
+
     private void CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelActionPerformed
         Invoice_Deck.show(Invoice_Container, "invMain");
     }//GEN-LAST:event_CancelActionPerformed
@@ -387,20 +401,6 @@ public class Invoicing extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event_Create_InvoiceActionPerformed
-
-    private void ExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportActionPerformed
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Export to CSV");
-        fileChooser.setDialogType(JFileChooser.SAVE_DIALOG);
-        fileChooser.setSelectedFile(new File("Invoice-" + new java.text.SimpleDateFormat("dd-MM-yyyy")
-            .format(new java.util.Date()) + ".csv"));
-        fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
-        if (fileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-            Internal.Function.invoiceCSV(fileChooser.getSelectedFile());
-            JOptionPane.showMessageDialog(null, "Invoice Data Exported Sucessfully!",
-                "Sucess", JOptionPane.INFORMATION_MESSAGE);
-        }
-    }//GEN-LAST:event_ExportActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
