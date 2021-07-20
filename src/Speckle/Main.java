@@ -314,12 +314,12 @@ public class Main extends javax.swing.JFrame {
         SignUp_User_SubHeading.setText("A Simple Invoicing and Inventory Management System");
         SignUp_User_SubHeading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SignUp_User_Para_A.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SignUp_User_Para_A.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         SignUp_User_Para_A.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SignUp_User_Para_A.setText("<html><p style=\"text-align: center;\">Since this is your first time using Speckle, we need some details<br>to set things up for you.</p></html>");
         SignUp_User_Para_A.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SignUp_User_Para_B.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SignUp_User_Para_B.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         SignUp_User_Para_B.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SignUp_User_Para_B.setText("<html><p style=\"text-align: center;\">First, create a Username and Password for yourself that you'll be<br>using every time you use Speckle.</p></html>");
         SignUp_User_Para_B.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -408,7 +408,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(Confirm_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addComponent(Next_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         StartUp_Container.add(SignUp_User, "signUp1");
@@ -418,7 +418,7 @@ public class Main extends javax.swing.JFrame {
         SignUp_Details_Heading.setText("Just a little more and you'll be all ready to go.");
         SignUp_Details_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SignUp_Details_Para.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SignUp_Details_Para.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         SignUp_Details_Para.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SignUp_Details_Para.setText("<html><p style=\"text-align: center;\">Now, please provide some details about your Business.<br> This information will be used for the Invoices you generate using<br>Speckle.</p></html>");
         SignUp_Details_Para.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -516,8 +516,8 @@ public class Main extends javax.swing.JFrame {
             .addGroup(SignUp_DetailsLayout.createSequentialGroup()
                 .addGap(80, 80, 80)
                 .addComponent(SignUp_Details_Heading)
-                .addGap(50, 50, 50)
-                .addComponent(SignUp_Details_Para, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(SignUp_Details_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Business_Name_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -538,7 +538,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SignUp_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
 
         StartUp_Container.add(SignUp_Details, "signUp2");
@@ -561,10 +561,10 @@ public class Main extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jLabel11.setText("Recovery Code");
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
         jLabel13.setText("Following Is Your Recovery Code For Password Recovery ");
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
         jLabel14.setText("Keep This Code Safely Do not Share This Code With Anyone ");
 
         jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
@@ -617,12 +617,14 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(jLabel14)
                             .addComponent(jLabel13))))
                 .addGap(81, 81, 81))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DetailsLayout.createSequentialGroup()
+            .addGroup(DetailsLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(209, 209, 209))
+                .addGroup(DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(DetailsLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         DetailsLayout.setVerticalGroup(
             DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -657,9 +659,9 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel14)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(65, Short.MAX_VALUE))
         );
 
@@ -1312,13 +1314,17 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "The Recovery Key You Have Entered is Incorrect"
                 + " Please Try Again!", "Incorrect Recovery Key", JOptionPane.ERROR_MESSAGE);
         }
+         else if(!Newpswd.equals(Confpswd)){
+            JOptionPane.showMessageDialog(null, "New Password and Confirm Password Doesn't Match "
+                + " Please Try Again", "Passwords Doesn't Match", JOptionPane.ERROR_MESSAGE);
+        }
         else if(!Internal.Security.checkPass(Newpswd)){
             JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric "
                 + "One Uppercase and One Lowercase Character", " Please Try Again!", JOptionPane.ERROR_MESSAGE);
         }
-        else if(!Newpswd.equals(Confpswd)){
-            JOptionPane.showMessageDialog(null, "New Password and Confirm Password Doesn't Match "
-                + " Please Try Again", "Passwords Doesn't Match", JOptionPane.ERROR_MESSAGE);
+        else if(Internal.Security.validateHash(Newpswd, Internal.SQLite.getConfigValue("Password"))){
+            JOptionPane.showMessageDialog(null, "Try again with a password you haven’t "
+                    +"used before", "Please Try Again!", JOptionPane.ERROR_MESSAGE);
         }
         else{
             Internal.SQLite.setConfigValue("Password",Internal.Security.generateHash(Newpswd));
@@ -1339,6 +1345,8 @@ public class Main extends javax.swing.JFrame {
             Recovery.setText("");
             Newpass.setText("");
             Confpass.setText("");
+            Username.setText("");
+            Password.setText("");
         StartUp_Deck.show(StartUp_Container,"signIn");
     }//GEN-LAST:event_jButton3ActionPerformed
 
