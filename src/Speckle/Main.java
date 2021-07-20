@@ -79,6 +79,7 @@ public class Main extends javax.swing.JFrame {
         Business_Location_Label = new javax.swing.JLabel();
         Business_Location = new javax.swing.JTextField();
         SignUp_Button = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         Details = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -107,6 +108,7 @@ public class Main extends javax.swing.JFrame {
         Recovery = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         Application = new javax.swing.JPanel();
         SideBar = new javax.swing.JPanel();
         Home = new javax.swing.JLabel();
@@ -274,7 +276,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SignInLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(194, 194, 194))
+                .addGap(207, 207, 207))
         );
         SignInLayout.setVerticalGroup(
             SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -297,7 +299,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(SignIn_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
 
         StartUp_Container.add(SignIn, "signIn");
@@ -358,31 +360,27 @@ public class Main extends javax.swing.JFrame {
             .addGroup(SignUp_UserLayout.createSequentialGroup()
                 .addGap(0, 31, Short.MAX_VALUE)
                 .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SignUp_UserLayout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(SignUp_UserLayout.createSequentialGroup()
+                                .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Create_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Confirm_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Confirm_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Create_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Next_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(SignUp_UserLayout.createSequentialGroup()
+                                .addComponent(SignUp_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(SignUp_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(SignUp_User_Para_A, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(SignUp_User_Para_B)
                         .addComponent(SignUp_User_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(SignUp_User_SubHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, SignUp_UserLayout.createSequentialGroup()
-                            .addGap(160, 160, 160)
-                            .addComponent(Next_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, SignUp_UserLayout.createSequentialGroup()
-                            .addGap(38, 38, 38)
-                            .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(SignUp_UserLayout.createSequentialGroup()
-                                    .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(Create_Password_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                                        .addComponent(Confirm_Password_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(Confirm_Password)
-                                        .addComponent(Create_Password)))
-                                .addGroup(SignUp_UserLayout.createSequentialGroup()
-                                    .addComponent(SignUp_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(SignUp_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE))))
+                        .addComponent(SignUp_User_SubHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(31, 31, 31))
         );
         SignUp_UserLayout.setVerticalGroup(
@@ -408,9 +406,9 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Confirm_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Confirm_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
+                .addGap(32, 32, 32)
                 .addComponent(Next_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
 
         StartUp_Container.add(SignUp_User, "signUp1");
@@ -466,6 +464,14 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jButton4.setText("Back");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout SignUp_DetailsLayout = new javax.swing.GroupLayout(SignUp_Details);
         SignUp_Details.setLayout(SignUp_DetailsLayout);
         SignUp_DetailsLayout.setHorizontalGroup(
@@ -481,10 +487,6 @@ public class Main extends javax.swing.JFrame {
                         .addGap(70, 70, 70)
                         .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(SignUp_DetailsLayout.createSequentialGroup()
-                                .addComponent(Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Business_Location))
-                            .addGroup(SignUp_DetailsLayout.createSequentialGroup()
                                 .addComponent(Email_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Email_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -495,10 +497,18 @@ public class Main extends javax.swing.JFrame {
                             .addGroup(SignUp_DetailsLayout.createSequentialGroup()
                                 .addComponent(Contact_Number_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Contact_Number, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(SignUp_DetailsLayout.createSequentialGroup()
-                        .addGap(191, 191, 191)
-                        .addComponent(SignUp_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(Contact_Number, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(SignUp_DetailsLayout.createSequentialGroup()
+                                .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(SignUp_DetailsLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Business_Location))
+                                    .addGroup(SignUp_DetailsLayout.createSequentialGroup()
+                                        .addGap(48, 48, 48)
+                                        .addComponent(SignUp_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
         SignUp_DetailsLayout.setVerticalGroup(
@@ -525,7 +535,9 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(Business_Location_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                     .addComponent(Business_Location))
                 .addGap(36, 36, 36)
-                .addComponent(SignUp_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SignUp_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(97, Short.MAX_VALUE))
         );
 
@@ -685,6 +697,14 @@ public class Main extends javax.swing.JFrame {
         jLabel22.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
         jLabel22.setText("Given On The First Use And Then You Can Set Your New Paswword Easily");
 
+        jButton3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jButton3.setText("Cancel");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout Forgot_PasswordLayout = new javax.swing.GroupLayout(Forgot_Password);
         Forgot_Password.setLayout(Forgot_PasswordLayout);
         Forgot_PasswordLayout.setHorizontalGroup(
@@ -693,28 +713,32 @@ public class Main extends javax.swing.JFrame {
                 .addGap(80, 80, 80)
                 .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Forgot_PasswordLayout.createSequentialGroup()
-                        .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel18)
-                            .addComponent(jLabel20)
-                            .addComponent(jLabel19))
-                        .addGap(42, 42, 42)
-                        .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Recovery, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
-                            .addComponent(Newpass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Confpass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(Forgot_PasswordLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jLabel22))
-                    .addComponent(jLabel21))
+                    .addComponent(jLabel21)
+                    .addGroup(Forgot_PasswordLayout.createSequentialGroup()
+                        .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel18)
+                                .addComponent(jLabel20)
+                                .addComponent(jLabel19)))
+                        .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Forgot_PasswordLayout.createSequentialGroup()
+                                .addGap(42, 42, 42)
+                                .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Recovery, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
+                                    .addComponent(Newpass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Confpass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(Forgot_PasswordLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(100, 100, 100)))))
                 .addContainerGap(34, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Forgot_PasswordLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel17)
                 .addGap(173, 173, 173))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Forgot_PasswordLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(170, 170, 170))
         );
         Forgot_PasswordLayout.setVerticalGroup(
             Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -738,7 +762,9 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(Confpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19))
                 .addGap(48, 48, 48)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(116, Short.MAX_VALUE))
         );
 
@@ -1082,7 +1108,6 @@ public class Main extends javax.swing.JFrame {
         }
         else {
             Internal.SQLite.compConfig(cname, cnum, cmail, caddress);
-            Internal.Security.RecoveryKey();
             Content.removeAll();
             StartUp_Deck.show(StartUp_Container, "Details");
             
@@ -1271,20 +1296,6 @@ public class Main extends javax.swing.JFrame {
        }
     }//GEN-LAST:event_Contact_NumberKeyPressed
 
-    private void jLabel1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseMoved
-        jLabel1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_jLabel1MouseMoved
-
-    private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
-<<<<<<< Updated upstream
-        ForgotPassword sc = new ForgotPassword();
-        this.setVisible(false);
-        sc.setVisible(true);
-=======
-       StartUp_Deck.show(StartUp_Container,"ForgotPassword");
->>>>>>> Stashed changes
-    }//GEN-LAST:event_jLabel1MousePressed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
             Content.removeAll();
             Speckle.Home scene = new Home();
@@ -1313,13 +1324,29 @@ public class Main extends javax.swing.JFrame {
             Internal.SQLite.setConfigValue("Password",Internal.Security.generateHash(Newpswd));
             JOptionPane.showMessageDialog(null, "Password Has Been Changed Successfully!",
                 "Sucess", JOptionPane.INFORMATION_MESSAGE);
+        }
             Content.removeAll();
             Speckle.Home scene = new Home();
             scene.setBounds(0, 0, 948, 574);
             Content.add(scene).setVisible(true);
-            Container_Deck.show(Container,"app");
-        }
+            StartUp_Deck.show(StartUp_Container,"signIn");
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
+        StartUp_Deck.show(StartUp_Container, "ForgotPassword");
+    }//GEN-LAST:event_jLabel1MousePressed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        StartUp_Deck.show(StartUp_Container,"signIn");
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        StartUp_Deck.show(StartUp_Container,"signUp1");
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jLabel1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseMoved
+        jLabel1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_jLabel1MouseMoved
 
     /**
      * @param args the command line arguments
@@ -1410,6 +1437,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Window_Title;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
