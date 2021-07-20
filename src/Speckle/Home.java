@@ -55,7 +55,7 @@ public class Home extends javax.swing.JPanel {
         Speckle_Label.setText("Speckle");
 
         Speckle_Version_Label.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-        Speckle_Version_Label.setText("0.7-beta");
+        Speckle_Version_Label.setText("1.0");
 
         javax.swing.GroupLayout BannerLayout = new javax.swing.GroupLayout(Banner);
         Banner.setLayout(BannerLayout);
