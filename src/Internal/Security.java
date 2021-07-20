@@ -106,10 +106,5 @@ public class Security {
             return false;
         }
     } 
-
-    public static void RecoveryKey(){
-        String RecoveryKey = Function.randomID(10);
-        Internal.SQLite.setConfigValue("Recovery Key", generateHash(RecoveryKey));
-    }
     
 }
