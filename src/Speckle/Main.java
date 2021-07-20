@@ -1324,12 +1324,11 @@ public class Main extends javax.swing.JFrame {
             Internal.SQLite.setConfigValue("Password",Internal.Security.generateHash(Newpswd));
             JOptionPane.showMessageDialog(null, "Password Has Been Changed Successfully!",
                 "Sucess", JOptionPane.INFORMATION_MESSAGE);
-        }
-            Content.removeAll();
-            Speckle.Home scene = new Home();
-            scene.setBounds(0, 0, 948, 574);
-            Content.add(scene).setVisible(true);
             StartUp_Deck.show(StartUp_Container,"signIn");
+            Recovery.setText("");
+            Newpass.setText("");
+            Confpass.setText("");
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
@@ -1337,6 +1336,9 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MousePressed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+            Recovery.setText("");
+            Newpass.setText("");
+            Confpass.setText("");
         StartUp_Deck.show(StartUp_Container,"signIn");
     }//GEN-LAST:event_jButton3ActionPerformed
 
