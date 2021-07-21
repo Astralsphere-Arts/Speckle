@@ -195,8 +195,8 @@ public class RecoveryKey extends javax.swing.JFrame {
         String pass = new String(jPasswordField1.getPassword());
         
         if(!Internal.Security.validateHash(pass, Internal.SQLite.getConfigValue("Password"))){
-            JOptionPane.showMessageDialog(null, "The Password You Have Entered is Incorrect "
-                + " Incorrect Password "," Please Try Again!",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "The Password You Have Entered is Incorrect. "
+                + " Incorrect Password! "," Please Try Again!",JOptionPane.ERROR_MESSAGE);
         }
         else{
             Recoverykey = Internal.Function.randomAlphaNumeric(10);

@@ -1050,8 +1050,8 @@ public class Main extends javax.swing.JFrame {
         String usrname = Username.getText();
         String passwd = new String(Password.getPassword());
         if (usrname.equals("") && passwd.equals(""))
-            JOptionPane.showMessageDialog(null, "Please enter Username and Password they cannot be"
-                + " Blank. Please Try Again!", "Credentials are Blank", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please enter Username and Password they cannot be Blank."
+                + " Please Try Again!", "Credentials are Blank", JOptionPane.ERROR_MESSAGE);
         else if (Internal.SQLite.logIn(usrname, passwd)) {
             Content.removeAll();
             Speckle.Home scene = new Home();
@@ -1068,18 +1068,18 @@ public class Main extends javax.swing.JFrame {
          passwd = new String(Create_Password.getPassword());
         String confpasswd = new String(Confirm_Password.getPassword());
         if (usrname.equals("") || passwd.equals(""))
-            JOptionPane.showMessageDialog(null, "Username or Password cannot be Empty. Please"
-                + " Try Again!", "Username/Password Empty", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Username or Password cannot be Empty."
+                + " Please Try Again!", "Username/Password Empty", JOptionPane.ERROR_MESSAGE);
         else if (!passwd.equals(confpasswd))
             JOptionPane.showMessageDialog(null, "The Passwords in Password Fields do not Match."
                 + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
         else if(passwd.length() < 7){
             JOptionPane.showMessageDialog(null, "Your Password Must Contain"
-                     +" at Least 7 Characters"," Please Try Again!", JOptionPane.ERROR_MESSAGE);
+                     +" at Least 7 Characters."," Please Try Again!", JOptionPane.ERROR_MESSAGE);
         }
         else if(!Internal.Security.checkPass(passwd)){          
                  JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric "
-                 + "One Uppercase and One Lowercase Character", " Please Try Again!", JOptionPane.ERROR_MESSAGE);
+                 + "One Uppercase and One Lowercase Character.", " Please Try Again!", JOptionPane.ERROR_MESSAGE);
         }
 
         else{
@@ -1094,19 +1094,19 @@ public class Main extends javax.swing.JFrame {
          cmail = Email_Address.getText();
          caddress = Business_Location.getText();
         if (cname.equals("") || cnum.equals("") || cmail.equals("") || caddress.equals(""))
-            JOptionPane.showMessageDialog(null, "All Fields are Required to be Filled. Please"
-                + " Try Again!", "Empty Feilds", JOptionPane.ERROR_MESSAGE);   
+            JOptionPane.showMessageDialog(null, "All Fields are Required to be Filled."
+                + " Please Try Again!", "Empty Feilds", JOptionPane.ERROR_MESSAGE);   
          else if(cnum.length() < 10){
             JOptionPane.showMessageDialog(null, "You Must Have to Enter at Least 10 Digit"
-                    + " Number", "Please Try Again!", JOptionPane.ERROR_MESSAGE);
+                    + " Number.", "Please Try Again!", JOptionPane.ERROR_MESSAGE);
         }
         else if(cnum.length() > 10){
             JOptionPane.showMessageDialog(null, "You Can Only Enter 10 Digit"
-                    + " Number", "Please Try Again!", JOptionPane.ERROR_MESSAGE);
+                    + " Number.", "Please Try Again!", JOptionPane.ERROR_MESSAGE);
         }  
         else if(cnum.length() > 10){
             JOptionPane.showMessageDialog(null, "You Have to Enter 10 Digit Phone"
-            + "Number", "Please Try Again!", JOptionPane.ERROR_MESSAGE);
+            + "Number.", "Please Try Again!", JOptionPane.ERROR_MESSAGE);
         }
         else {
             Internal.SQLite.compConfig(cname, cnum, cmail, caddress);
@@ -1311,20 +1311,20 @@ public class Main extends javax.swing.JFrame {
         String Newpswd = new String(Newpass.getPassword());
         String Confpswd = new String(Confpass.getPassword());
         if(!Internal.Security.validateHash(Recoverykey, Internal.SQLite.getConfigValue("Recovery Key"))) {
-            JOptionPane.showMessageDialog(null, "The Recovery Key You Have Entered is Incorrect"
+            JOptionPane.showMessageDialog(null, "The Recovery Key You Have Entered is Incorrect."
                 + " Please Try Again!", "Incorrect Recovery Key", JOptionPane.ERROR_MESSAGE);
         }
          else if(!Newpswd.equals(Confpswd)){
-            JOptionPane.showMessageDialog(null, "New Password and Confirm Password Doesn't Match "
-                + " Please Try Again", "Passwords Doesn't Match", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "New Password and Confirm Password Doesn't Match. "
+                + " Please Try Again!", "Passwords Doesn't Match", JOptionPane.ERROR_MESSAGE);
         }
         else if(!Internal.Security.checkPass(Newpswd)){
-            JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric "
+            JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric. "
                 + "One Uppercase and One Lowercase Character", " Please Try Again!", JOptionPane.ERROR_MESSAGE);
         }
         else if(Internal.Security.validateHash(Newpswd, Internal.SQLite.getConfigValue("Password"))){
-            JOptionPane.showMessageDialog(null, "Try again with a password you haven’t "
-                    +"used before", "Please Try Again!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Try again with a password you haven’t. "
+                    +"used before!", "Please Try Again!", JOptionPane.ERROR_MESSAGE);
         }
         else{
             Internal.SQLite.setConfigValue("Password",Internal.Security.generateHash(Newpswd));
@@ -1334,6 +1334,8 @@ public class Main extends javax.swing.JFrame {
             Recovery.setText("");
             Newpass.setText("");
             Confpass.setText("");
+            Username.setText("");
+            Password.setText("");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 

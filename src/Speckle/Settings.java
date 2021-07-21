@@ -477,8 +477,8 @@ public class Settings extends javax.swing.JPanel {
             + " for changing Password. Please Try Again!", "Password Fields Empty",
             JOptionPane.ERROR_MESSAGE);
         else if (!Internal.Security.validateHash(curpasswd, Internal.SQLite.getConfigValue("Password")))
-        JOptionPane.showMessageDialog(null, "The Current Password is Incorrect. Please"
-            + " Try Again!", "Incorrect Password", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "The Current Password is Incorrect."
+            + " Please Try Again!", "Incorrect Password", JOptionPane.ERROR_MESSAGE);
         else if (!passwd.equals(confpasswd))
         JOptionPane.showMessageDialog(null, "The Password in Confirm Password Field does not Match."
             + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
@@ -487,11 +487,11 @@ public class Settings extends javax.swing.JPanel {
             + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
         else if(passwd.length() < 7){
             JOptionPane.showMessageDialog(null, "Your Password Must Contain"
-                +" at Least 7 Characters"," Please Try Again!", JOptionPane.ERROR_MESSAGE);
+                +" at Least 7 Characters."," Please Try Again!", JOptionPane.ERROR_MESSAGE);
         }
         else if(!Internal.Security.checkPass(passwd)){
             JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric "
-                + "One Uppercase and One Lowercase Character", " Please Try Again!", JOptionPane.ERROR_MESSAGE);
+                + "One Uppercase and One Lowercase Character.", " Please Try Again!", JOptionPane.ERROR_MESSAGE);
         }
         else {
             Internal.SQLite.setConfigValue("Password", Internal.Security.generateHash(passwd));
