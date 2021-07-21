@@ -2,6 +2,7 @@ package Speckle;
 
 import java.awt.Component;
 import java.awt.Desktop;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import javax.swing.JFileChooser;
@@ -170,6 +171,11 @@ public class Invoicing extends javax.swing.JPanel {
         Contact_Number_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Contact_Number.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        Contact_Number.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Contact_NumberKeyPressed(evt);
+            }
+        });
 
         Customer_Address_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         Customer_Address_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -401,6 +407,29 @@ public class Invoicing extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event_Create_InvoiceActionPerformed
+
+    private void Contact_NumberKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Contact_NumberKeyPressed
+       String Number = Contact_Number.getText();
+       int length = Number.length();
+       char c = evt.getKeyChar();
+
+       if(evt.getKeyChar()>='0' && evt.getKeyChar()<='9'){
+            if(length < 10){
+                Contact_Number.setEditable(true);
+            }
+       else{
+                Contact_Number.setEditable(false); 
+           }
+       }
+       else{
+           if(evt.getExtendedKeyCode()== KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode()== KeyEvent.VK_DELETE){
+               Contact_Number.setEditable(true);
+           }
+           else{
+               Contact_Number.setEditable(false);
+           }
+       }
+    }//GEN-LAST:event_Contact_NumberKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
