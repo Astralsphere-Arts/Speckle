@@ -14,6 +14,7 @@ public class Main extends javax.swing.JFrame {
      * Creates new form Main
      */
     public Main() {
+        Version = "0.9-beta";
         Internal.SQLite.initDB();
         this.Active = new java.awt.Color(0, 136, 255);
         this.Hover = new java.awt.Color(0, 165, 255);
@@ -1480,6 +1481,7 @@ public class Main extends javax.swing.JFrame {
     private final java.awt.Color Hover;
     private final java.awt.Color White;
     private java.awt.Color Stored;
+    public static String Version;
     private int x, y;
     String usrname;
     String passwd;
