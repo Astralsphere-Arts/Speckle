@@ -72,9 +72,9 @@ public class SQLite {
             + " Quantity\" INTEGER, PRIMARY KEY(\"Product ID\"));";
         String configuration = "CREATE TABLE IF NOT EXISTS Configuration (Parameter"
             + " TEXT NOT NULL UNIQUE, Value TEXT, PRIMARY KEY(Parameter));";
-        String configData = "INSERT INTO Configuration (Parameter) VALUES('Username'),"
-            + " ('Password'), ('Recovery Key'), ('Business Name'), ('Contact Number'), ('Email Address'),"
-            + " ('Business Location');";
+        String configData = "INSERT INTO Configuration (Parameter) VALUES ('Username'),"
+            + " ('Password'), ('Recovery Key'), ('Business Name'), ('Contact Number'),"
+            + " ('Email Address'), ('Business Location');";
         try {
             Statement mainDBquery = mainDB.createStatement();
             Statement configDBquery = configDB.createStatement();

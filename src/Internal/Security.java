@@ -16,6 +16,21 @@ import javax.swing.JOptionPane;
  */
 
 public class Security {
+    public static boolean checkPass(String password) {
+        int i; char c;
+        boolean hasNum = false, hasCap = false, hasLow = false;
+        for (i = 0; i < password.length(); i++) {
+            c = password.charAt(i);
+            if (Character.isDigit(c))
+                hasNum = true;
+            if (Character.isUpperCase(c))
+                hasCap = true;
+            if (Character.isLowerCase(c))
+                hasLow = true;
+        }
+        return hasNum && hasCap && hasLow;
+    }
+    
     public static String getEncodedString(String inputString) {
        return Base64.getEncoder().encodeToString(inputString.getBytes());
     }
@@ -79,32 +94,4 @@ public class Security {
             bytes[i] = (byte)Integer.parseInt(hex.substring(2 * i, 2 * i + 2), 16);
         return bytes;
     }
-
-    public static boolean checkPass(String password){
-        int i;
-        char c; 
-        boolean hasnum = false; boolean hascap = false; boolean haslow = false;
-        for(i=0 ;i < password.length(); i++){
-        c = password.charAt(i);
-        if(Character.isDigit(c))
-        {
-            hasnum = true;
-        }
-            if(Character.isUpperCase(c))
-            {
-                hascap = true;
-            }
-                if(Character.isLowerCase(c))
-                {
-                    haslow = true;
-                }
-       }
-        if(hasnum && hascap && haslow){
-          return true;
-        }
-        else{
-            return false;
-        }
-    } 
-    
 }
