@@ -206,8 +206,8 @@ public class Inventory extends javax.swing.JPanel {
         fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
         if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
             Internal.Function.invenCSVim(fileChooser.getSelectedFile());
-            JOptionPane.showMessageDialog(null, "Inventory Data Imported Sucessfully!",
-                "Sucess", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Inventory Data Imported Successfully!",
+                "Success", JOptionPane.INFORMATION_MESSAGE);
             Speckle.Main.Content.removeAll();
             Inventory scene = new Inventory();
             scene.setBounds(0, 0, 948, 574);
@@ -224,8 +224,8 @@ public class Inventory extends javax.swing.JPanel {
         fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
         if (fileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
             Internal.Function.invenCSVex(fileChooser.getSelectedFile());
-            JOptionPane.showMessageDialog(null, "Inventory Data Exported Sucessfully!",
-                "Sucess", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Inventory Data Exported Successfully!",
+                "Success", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_ExportActionPerformed
 
