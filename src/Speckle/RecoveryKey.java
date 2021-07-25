@@ -1,7 +1,5 @@
 package Speckle;
 
-import static Speckle.Main.Content;
-import java.awt.Cursor;
 import javax.swing.JOptionPane;
 
 /**
@@ -26,101 +24,102 @@ public class RecoveryKey extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        Left_Border = new javax.swing.JPanel();
+        Top_Border = new javax.swing.JPanel();
+        Right_Border = new javax.swing.JPanel();
+        Bottom_Border = new javax.swing.JPanel();
+        Reset_Recovery_Label = new javax.swing.JLabel();
+        Password_Label = new javax.swing.JLabel();
+        Password = new javax.swing.JPasswordField();
+        Cancel_Label = new javax.swing.JLabel();
+        Reset_Button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(392, 152));
 
-        jPanel1.setBackground(new java.awt.Color(60, 60, 60));
-        jPanel1.setPreferredSize(new java.awt.Dimension(2, 151));
+        Left_Border.setBackground(new java.awt.Color(60, 60, 60));
+        Left_Border.setPreferredSize(new java.awt.Dimension(2, 151));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout Left_BorderLayout = new javax.swing.GroupLayout(Left_Border);
+        Left_Border.setLayout(Left_BorderLayout);
+        Left_BorderLayout.setHorizontalGroup(
+            Left_BorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 2, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Left_BorderLayout.setVerticalGroup(
+            Left_BorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 151, Short.MAX_VALUE)
         );
 
-        jPanel2.setBackground(new java.awt.Color(60, 60, 60));
-        jPanel2.setPreferredSize(new java.awt.Dimension(400, 2));
+        Top_Border.setBackground(new java.awt.Color(60, 60, 60));
+        Top_Border.setPreferredSize(new java.awt.Dimension(400, 2));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout Top_BorderLayout = new javax.swing.GroupLayout(Top_Border);
+        Top_Border.setLayout(Top_BorderLayout);
+        Top_BorderLayout.setHorizontalGroup(
+            Top_BorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 350, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Top_BorderLayout.setVerticalGroup(
+            Top_BorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        jPanel3.setBackground(new java.awt.Color(60, 60, 60));
+        Right_Border.setBackground(new java.awt.Color(60, 60, 60));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout Right_BorderLayout = new javax.swing.GroupLayout(Right_Border);
+        Right_Border.setLayout(Right_BorderLayout);
+        Right_BorderLayout.setHorizontalGroup(
+            Right_BorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 2, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Right_BorderLayout.setVerticalGroup(
+            Right_BorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 151, Short.MAX_VALUE)
         );
 
-        jPanel4.setBackground(new java.awt.Color(60, 60, 60));
-        jPanel4.setPreferredSize(new java.awt.Dimension(400, 2));
+        Bottom_Border.setBackground(new java.awt.Color(60, 60, 60));
+        Bottom_Border.setPreferredSize(new java.awt.Dimension(400, 2));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout Bottom_BorderLayout = new javax.swing.GroupLayout(Bottom_Border);
+        Bottom_Border.setLayout(Bottom_BorderLayout);
+        Bottom_BorderLayout.setHorizontalGroup(
+            Bottom_BorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 350, Short.MAX_VALUE)
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Bottom_BorderLayout.setVerticalGroup(
+            Bottom_BorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 16)); // NOI18N
-        jLabel3.setText("Reset Recovery Code");
+        Reset_Recovery_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 16)); // NOI18N
+        Reset_Recovery_Label.setText("Reset Recovery Key");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText("PASSWORD");
+        Password_Label.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Password_Label.setText("PASSWORD");
 
-        jPasswordField1.setPreferredSize(new java.awt.Dimension(10, 20));
+        Password.setPreferredSize(new java.awt.Dimension(10, 20));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jButton1.setText("Reset");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel2.setText("Cancel");
-        jLabel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        Cancel_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        Cancel_Label.setText("Cancel");
+        Cancel_Label.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jLabel2MouseMoved(evt);
+                Cancel_LabelMouseMoved(evt);
             }
         });
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        Cancel_Label.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jLabel2MousePressed(evt);
+                Cancel_LabelMousePressed(evt);
+            }
+        });
+
+        Reset_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        Reset_Button.setText("Reset");
+        Reset_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Reset_ButtonActionPerformed(evt);
             }
         });
 
@@ -134,85 +133,73 @@ public class RecoveryKey extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(170, 170, 170)
-                                .addComponent(jLabel2))
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Cancel_Label))
+                            .addComponent(Left_Border, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Reset_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40))
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Bottom_Border, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Top_Border, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel1)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Reset_Recovery_Label)
+                            .addComponent(Password_Label)
+                            .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addComponent(Right_Border, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(150, 150, 150)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(Bottom_Border, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(111, 111, 111)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jButton1)))
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Cancel_Label)
+                    .addComponent(Reset_Button)))
+            .addComponent(Left_Border, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Right_Border, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(jLabel3))
+                        .addComponent(Reset_Recovery_Label))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(50, 50, 50)
-                        .addComponent(jLabel1))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Password_Label))
+                    .addComponent(Top_Border, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(5, 5, 5)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         setSize(new java.awt.Dimension(352, 152));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel2MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseMoved
-        jLabel2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_jLabel2MouseMoved
+    private void Cancel_LabelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cancel_LabelMouseMoved
+        Cancel_Label.setCursor(java.awt.Cursor.getPredefinedCursor(java.awt.Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_Cancel_LabelMouseMoved
 
-    private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
-        Content.removeAll();
+    private void Cancel_LabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cancel_LabelMousePressed
         this.setVisible(false);
-        Speckle.Settings sc = new Settings();
-        sc.setBounds(0,0,948,574);
-        Content.add(sc).setVisible(true);
-    }//GEN-LAST:event_jLabel2MousePressed
+    }//GEN-LAST:event_Cancel_LabelMousePressed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
-        String pass = new String(jPasswordField1.getPassword());
-        
-        if(!Internal.Security.validateHash(pass, Internal.SQLite.getConfigValue("Password"))){
-            JOptionPane.showMessageDialog(null, "The Password You Have Entered is Incorrect. "
-                + " Incorrect Password! "," Please Try Again!",JOptionPane.ERROR_MESSAGE);
+    private void Reset_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Reset_ButtonActionPerformed
+        String passwd = new String(Password.getPassword());
+        String key = Internal.Function.randomAlphaNumeric(16);
+        if (!Internal.Security.validateHash(passwd, Internal.SQLite.getConfigValue("Password")))
+            JOptionPane.showMessageDialog(null, "The Password You Have Entered is Incorrect."
+                + " Please Try Again!", "Incorrect Password", JOptionPane.ERROR_MESSAGE);
+        else {
+            Internal.SQLite.setConfigValue("Recovery Key", Internal.Security.generateHash(key));
+            this.setVisible(false);
+            JOptionPane.showMessageDialog(null, "Recovery Key Has Been Reset Successfully!",
+                "Success", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Your New Recovery Key is " + key,
+                "Recovery Key", JOptionPane.INFORMATION_MESSAGE);
         }
-        else{
-            Recoverykey = Internal.Function.randomAlphaNumeric(10);
-            Internal.SQLite.setConfigValue("Recovery Key", Internal.Security.generateHash(Recoverykey));
-             JOptionPane.showMessageDialog(null,"Recovery Key Has Been Reset "
-                 + "Success!", "Reset Recovery Key", JOptionPane.INFORMATION_MESSAGE);
-             this.setVisible(false);
-             JOptionPane.showMessageDialog(null, "Your New Recovery Key is "
-             + Recoverykey, "Recovery Key", JOptionPane.INFORMATION_MESSAGE);
-             Content.removeAll();
-             Speckle.Settings sc = new Settings();
-             sc.setBounds(0,0,948,574);
-             Content.add(sc).setVisible(true);
-        }  
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_Reset_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,45 +207,38 @@ public class RecoveryKey extends javax.swing.JFrame {
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+        /* If FlatIntelliJLaf is not available, stay with the default look and feel. */
+        com.formdev.flatlaf.FlatIntelliJLaf.setup();
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("FlatIntelliJLaf".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RecoveryKey.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RecoveryKey.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RecoveryKey.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RecoveryKey.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        javax.swing.UIManager.put("ScrollBar.thumbArc", 999);
+        javax.swing.UIManager.put("ScrollBar.thumbInsets", new java.awt.Insets(2, 2, 2, 2));
+        javax.swing.UIManager.put("TabbedPane.showTabSeparators", true);
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new RecoveryKey().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new RecoveryKey().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JPanel Bottom_Border;
+    private javax.swing.JLabel Cancel_Label;
+    private javax.swing.JPanel Left_Border;
+    private javax.swing.JPasswordField Password;
+    private javax.swing.JLabel Password_Label;
+    private javax.swing.JButton Reset_Button;
+    private javax.swing.JLabel Reset_Recovery_Label;
+    private javax.swing.JPanel Right_Border;
+    private javax.swing.JPanel Top_Border;
     // End of variables declaration//GEN-END:variables
-    String Recoverykey;
 }
