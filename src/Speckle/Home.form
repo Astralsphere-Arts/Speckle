@@ -127,46 +127,54 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="Help_Container" alignment="0" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="Help_Para" max="32767" attributes="0"/>
+                      <Component id="Help_Label" max="32767" attributes="0"/>
+                      <Component id="Help_Content" alignment="0" pref="385" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="Help_Container" alignment="0" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="Help_Label" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="Help_Para" min="-2" pref="17" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="Help_Content" min="-2" pref="254" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JScrollPane" name="Help_Container">
+        <Component class="javax.swing.JLabel" name="Help_Label">
           <Properties>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="null"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI Semibold" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Quick Start Guide"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Help_Para">
+          <Properties>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;&lt;html&gt;Welcome &lt;b&gt;&quot; + Internal.Security.getDecodedString(Internal.SQLite.getConfigValue(&quot;Username&quot;)) + &quot;&lt;/b&gt;! This is a Quick Overview Speckle :&lt;/html&gt;&quot;" type="code"/>
             </Property>
           </Properties>
-          <AuxValues>
-            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-          </AuxValues>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-          <SubComponents>
-            <Component class="javax.swing.JTextArea" name="Help_Text">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="f8" green="f8" red="f8" type="rgb"/>
-                </Property>
-                <Property name="columns" type="int" value="20"/>
-                <Property name="rows" type="int" value="5"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="null"/>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="Help_Caret = (javax.swing.text.DefaultCaret)Help_Text.getCaret();&#xa;Help_Caret.setUpdatePolicy(javax.swing.text.DefaultCaret.NEVER_UPDATE);&#xa;try {&#xa;    Help_Reader = new java.io.BufferedReader(new java.io.InputStreamReader(getClass().getResourceAsStream(&quot;/Resources/help.txt&quot;)));&#xa;    Help_Line = Help_Reader.readLine();&#xa;    while (Help_Line != null) {&#xa;        Help_Text.append(Help_Line + &quot;\n&quot;);&#xa;        Help_Line = Help_Reader.readLine();&#xa;    }&#xa;} catch (IOException ex) {&#xa;    JOptionPane.showMessageDialog(null, ex, &quot;Error&quot;, JOptionPane.ERROR_MESSAGE);&#xa;}&#xa;"/>
-              </AuxValues>
-            </Component>
-          </SubComponents>
-        </Container>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Help_Content">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;ol style=&quot;margin: 0 0 0 20;&quot;&gt;&#xa;&lt;li style=&quot;padding: 4;&quot;&gt;The First Tab is &lt;b&gt;Home&lt;/b&gt; which has two Sections one is Quick Start Guide(This One) and second one is has Information&#xa;about Products with Low amount Stocks in the Inventory.&lt;/li&gt;&#xa;&lt;li style=&quot;padding: 4;&quot;&gt;The Second Tab is &lt;b&gt;Invoicing&lt;/b&gt; through which you can create new Invoices or can view previously created Invoices.&lt;/li&gt;&#xa;&lt;li style=&quot;padding: 4;&quot;&gt;The Third Tab is &lt;b&gt;Inventory&lt;/b&gt; where you can add or remove Products from Speckle&apos;s Inventory.&lt;/li&gt;&#xa;&lt;li style=&quot;padding: 4;&quot;&gt;The Forth Tab is &lt;b&gt;Settings&lt;/b&gt; where you can change your Login Credentials and the information related to your&#xa;Business that gets printed on your Invoices.&lt;/li&gt;&#xa;&lt;li style=&quot;padding: 4;&quot;&gt;The Last Tab is &lt;b&gt;About&lt;/b&gt; which has three Sections Authors, License, Credits they contain a List of Developers who&#xa;Contributed to Speckle, the EULA and Credits to the External Libraries we used.&lt;/li&gt;&#xa;&lt;/ol&gt;&lt;/html&gt;"/>
+            <Property name="verticalAlignment" type="int" value="1"/>
+            <Property name="verticalTextPosition" type="int" value="1"/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="Low_Stock">
@@ -269,7 +277,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="Low_Stock_Para">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p&gt;The following five Products have the least amount of stock available. If you think you might run out of stock for a Product then please Restock.&lt;/p&gt;&lt;/html&gt;"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p&gt;The following five Products have the least amount of Stock available. If you think you might run out of stock for a Product then please Restock.&lt;/p&gt;&lt;/html&gt;"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="Product_One_Label">

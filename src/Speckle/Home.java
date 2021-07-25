@@ -1,8 +1,5 @@
 package Speckle;
 
-import java.io.IOException;
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author Astralsphere Arts
@@ -30,8 +27,9 @@ public class Home extends javax.swing.JPanel {
         Speckle_Label = new javax.swing.JLabel();
         Speckle_Version_Label = new javax.swing.JLabel();
         Help = new javax.swing.JPanel();
-        Help_Container = new javax.swing.JScrollPane();
-        Help_Text = new javax.swing.JTextArea();
+        Help_Label = new javax.swing.JLabel();
+        Help_Para = new javax.swing.JLabel();
+        Help_Content = new javax.swing.JLabel();
         Low_Stock = new javax.swing.JPanel();
         Low_Stock_Label = new javax.swing.JLabel();
         Low_Stock_Para = new javax.swing.JLabel();
@@ -81,36 +79,37 @@ public class Home extends javax.swing.JPanel {
         Help.setBackground(new java.awt.Color(248, 248, 248));
         Help.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(180, 180, 180), 1, true));
 
-        Help_Container.setBorder(null);
+        Help_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        Help_Label.setText("Quick Start Guide");
 
-        Help_Text.setEditable(false);
-        Help_Text.setBackground(new java.awt.Color(248, 248, 248));
-        Help_Text.setColumns(20);
-        Help_Text.setRows(5);
-        Help_Text.setBorder(null);
-        Help_Caret = (javax.swing.text.DefaultCaret)Help_Text.getCaret();
-        Help_Caret.setUpdatePolicy(javax.swing.text.DefaultCaret.NEVER_UPDATE);
-        try {
-            Help_Reader = new java.io.BufferedReader(new java.io.InputStreamReader(getClass().getResourceAsStream("/Resources/help.txt")));
-            Help_Line = Help_Reader.readLine();
-            while (Help_Line != null) {
-                Help_Text.append(Help_Line + "\n");
-                Help_Line = Help_Reader.readLine();
-            }
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
-        }
-        Help_Container.setViewportView(Help_Text);
+        Help_Para.setText("<html>Welcome <b>" + Internal.Security.getDecodedString(Internal.SQLite.getConfigValue("Username")) + "</b>! This is a Quick Overview Speckle :</html>");
+
+        Help_Content.setText("<html><ol style=\"margin: 0 0 0 20;\">\n<li style=\"padding: 4;\">The First Tab is <b>Home</b> which has two Sections one is Quick Start Guide(This One) and second one is has Information\nabout Products with Low amount Stocks in the Inventory.</li>\n<li style=\"padding: 4;\">The Second Tab is <b>Invoicing</b> through which you can create new Invoices or can view previously created Invoices.</li>\n<li style=\"padding: 4;\">The Third Tab is <b>Inventory</b> where you can add or remove Products from Speckle's Inventory.</li>\n<li style=\"padding: 4;\">The Forth Tab is <b>Settings</b> where you can change your Login Credentials and the information related to your\nBusiness that gets printed on your Invoices.</li>\n<li style=\"padding: 4;\">The Last Tab is <b>About</b> which has three Sections Authors, License, Credits they contain a List of Developers who\nContributed to Speckle, the EULA and Credits to the External Libraries we used.</li>\n</ol></html>");
+        Help_Content.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Help_Content.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout HelpLayout = new javax.swing.GroupLayout(Help);
         Help.setLayout(HelpLayout);
         HelpLayout.setHorizontalGroup(
             HelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Help_Container)
+            .addGroup(HelpLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(HelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Help_Para, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Help_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Help_Content, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         HelpLayout.setVerticalGroup(
             HelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Help_Container)
+            .addGroup(HelpLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(Help_Label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Help_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Help_Content, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Low_Stock.setBackground(new java.awt.Color(248, 248, 248));
@@ -119,7 +118,7 @@ public class Home extends javax.swing.JPanel {
         Low_Stock_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         Low_Stock_Label.setText("Low Stock");
 
-        Low_Stock_Para.setText("<html><p>The following five Products have the least amount of stock available. If you think you might run out of stock for a Product then please Restock.</p></html>");
+        Low_Stock_Para.setText("<html><p>The following five Products have the least amount of Stock available. If you think you might run out of stock for a Product then please Restock.</p></html>");
 
         Product_One_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         Product_One_Label.setText(data[0][0]);
@@ -253,8 +252,9 @@ public class Home extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Banner;
     private javax.swing.JPanel Help;
-    private javax.swing.JScrollPane Help_Container;
-    private javax.swing.JTextArea Help_Text;
+    private javax.swing.JLabel Help_Content;
+    private javax.swing.JLabel Help_Label;
+    private javax.swing.JLabel Help_Para;
     private javax.swing.JPanel Low_Stock;
     private javax.swing.JLabel Low_Stock_Label;
     private javax.swing.JLabel Low_Stock_Para;
@@ -272,7 +272,4 @@ public class Home extends javax.swing.JPanel {
     private javax.swing.JLabel Speckle_Version_Label;
     // End of variables declaration//GEN-END:variables
     private final String data[][];
-    private javax.swing.text.DefaultCaret Help_Caret;
-    private java.io.BufferedReader Help_Reader;        
-    private String Help_Line;
 }
