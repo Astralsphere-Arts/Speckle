@@ -2,7 +2,6 @@ package Speckle;
 
 import java.awt.Component;
 import java.awt.Desktop;
-import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import javax.swing.JFileChooser;
@@ -327,10 +326,27 @@ public class Invoicing extends javax.swing.JPanel {
         fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
         if (fileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
             Internal.Function.invoiceCSVex(fileChooser.getSelectedFile());
-            JOptionPane.showMessageDialog(null, "Invoice Data Exported Sucessfully!",
-                "Sucess", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Invoice Data Exported Successfully!",
+                "Success", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_ExportActionPerformed
+
+    private void Contact_NumberKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Contact_NumberKeyPressed
+        String Number = Contact_Number.getText();
+        int length = Number.length();
+        if (evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9') {
+            if (length < 10)
+                Contact_Number.setEditable(true);
+            else
+                Contact_Number.setEditable(false);
+        } else {
+            switch (evt.getExtendedKeyCode()) {
+                case java.awt.event.KeyEvent.VK_BACK_SPACE -> Contact_Number.setEditable(true);
+                case java.awt.event.KeyEvent.VK_DELETE -> Contact_Number.setEditable(true);
+                default -> Contact_Number.setEditable(false);
+            }
+        }
+    }//GEN-LAST:event_Contact_NumberKeyPressed
 
     private void CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelActionPerformed
         Invoice_Deck.show(Invoice_Container, "invMain");
@@ -407,29 +423,6 @@ public class Invoicing extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event_Create_InvoiceActionPerformed
-
-    private void Contact_NumberKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Contact_NumberKeyPressed
-       String Number = Contact_Number.getText();
-       int length = Number.length();
-       char c = evt.getKeyChar();
-
-       if(evt.getKeyChar()>='0' && evt.getKeyChar()<='9'){
-            if(length < 10){
-                Contact_Number.setEditable(true);
-            }
-       else{
-                Contact_Number.setEditable(false); 
-           }
-       }
-       else{
-           if(evt.getExtendedKeyCode()== KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode()== KeyEvent.VK_DELETE){
-               Contact_Number.setEditable(true);
-           }
-           else{
-               Contact_Number.setEditable(false);
-           }
-       }
-    }//GEN-LAST:event_Contact_NumberKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
