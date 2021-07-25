@@ -378,8 +378,8 @@ public class Settings extends javax.swing.JPanel {
     private void Change_Username_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Change_Username_ButtonActionPerformed
         String usrname = Internal.Security.getEncodedString(New_Username.getText());
         if (usrname.equals(""))
-        JOptionPane.showMessageDialog(null, "Username cannot be Empty. Please Try Again!",
-            "Username Field Empty", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Username cannot be Empty. Please Try Again!",
+                "Username Field Empty", JOptionPane.ERROR_MESSAGE);
         else {
             Internal.SQLite.setConfigValue("Username", usrname);
             JOptionPane.showMessageDialog(null, "Your Username changed Successfully!",
@@ -519,5 +519,4 @@ public class Settings extends javax.swing.JPanel {
     private javax.swing.JLabel Update_Business_Details;
     private javax.swing.JPanel User_Tab;
     // End of variables declaration//GEN-END:variables
-    //String Recoverykey;
 }
