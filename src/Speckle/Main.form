@@ -226,8 +226,8 @@
                                               <Component id="Username" max="32767" attributes="0"/>
                                               <Component id="Password" min="-2" pref="200" max="-2" attributes="0"/>
                                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="Forgot_Password_Label" alignment="0" pref="120" max="32767" attributes="0"/>
-                                                  <Component id="SignIn_Button" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="SignIn_Button" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
+                                                  <Component id="Forgot_Password_Label" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -769,23 +769,25 @@
                                       <Component id="Recovery_Key_Display_Label" alignment="0" max="32767" attributes="0"/>
                                       <Component id="Recovery_Key_Para" alignment="1" pref="0" max="32767" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="Verify_Username_Label" max="32767" attributes="0"/>
-                                              <Component id="Verify_Business_Name_Label" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="Verify_Email_Address_Label" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="Verify_Contact_Number_Label" alignment="0" pref="130" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="Verify_Username_Label" max="32767" attributes="0"/>
+                                                      <Component id="Verify_Business_Name_Label" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="Verify_Email_Address_Label" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="Verify_Contact_Number_Label" alignment="0" pref="130" max="32767" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="Verify_Business_Location" alignment="1" min="-2" pref="246" max="-2" attributes="0"/>
+                                                      <Component id="Verify_Email_Address" alignment="1" min="-2" pref="246" max="-2" attributes="0"/>
+                                                      <Component id="Verfiy_Contact_Number" alignment="0" min="-2" pref="246" max="-2" attributes="0"/>
+                                                      <Component id="Verify_Username" alignment="0" min="-2" pref="246" max="-2" attributes="0"/>
+                                                      <Component id="Verify_Business_Name" alignment="0" min="-2" pref="246" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Component id="Verify_Business_Location_Label" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="Verify_Business_Location" alignment="1" min="-2" pref="246" max="-2" attributes="0"/>
-                                              <Component id="Verify_Email_Address" alignment="1" min="-2" pref="246" max="-2" attributes="0"/>
-                                              <Component id="Verfiy_Contact_Number" alignment="0" min="-2" pref="246" max="-2" attributes="0"/>
-                                              <Component id="Verify_Username" alignment="0" min="-2" pref="246" max="-2" attributes="0"/>
-                                              <Component id="Verify_Business_Name" alignment="0" min="-2" pref="246" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="Verify_Business_Location_Label" min="-2" pref="130" max="-2" attributes="0"/>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
