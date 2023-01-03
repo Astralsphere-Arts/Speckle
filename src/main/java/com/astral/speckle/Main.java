@@ -1,4 +1,4 @@
-package Speckle;
+package com.astral.speckle;
 
 import javax.swing.JOptionPane;
 
@@ -13,14 +13,14 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         Version = "0.9-beta";
-        Internal.SQLite.initDB();
+        com.astral.internal.SQLite.initDB();
         this.Active = new java.awt.Color(0, 136, 255);
         this.Hover = new java.awt.Color(0, 165, 255);
         this.White = new java.awt.Color(255, 255, 255);
         initComponents();
         Container_Deck = (java.awt.CardLayout)Container.getLayout();
         StartUp_Deck = (java.awt.CardLayout)StartUp_Container.getLayout();
-        if (Internal.SQLite.firstUse)
+        if (com.astral.internal.SQLite.firstUse)
             StartUp_Deck.show(StartUp_Container, "signUpUser");
         else
             StartUp_Deck.show(StartUp_Container, "signIn");
@@ -118,7 +118,7 @@ public class Main extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Speckle");
-        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/Resources/speckle-frame-logo.png")).getImage());
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/speckle-frame-logo.png")).getImage());
         setUndecorated(true);
         setResizable(false);
 
@@ -139,7 +139,7 @@ public class Main extends javax.swing.JFrame {
 
         Header_Logo.setBackground(new java.awt.Color(60, 60, 60));
         Header_Logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Header_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/speckle-header-logo.png"))); // NOI18N
+        Header_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/speckle-header-logo.png"))); // NOI18N
         Header_Logo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Header_Logo.setOpaque(true);
 
@@ -151,7 +151,7 @@ public class Main extends javax.swing.JFrame {
 
         Close.setBackground(new java.awt.Color(255, 255, 255));
         Close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/close.png"))); // NOI18N
+        Close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/close.png"))); // NOI18N
         Close.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Close.setOpaque(true);
         Close.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -194,7 +194,7 @@ public class Main extends javax.swing.JFrame {
         Container.setLayout(new java.awt.CardLayout());
 
         StartUp_Banner.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        StartUp_Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/banner.png"))); // NOI18N
+        StartUp_Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/banner.png"))); // NOI18N
         StartUp_Banner.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         StartUp_Container.setLayout(new java.awt.CardLayout());
@@ -780,7 +780,7 @@ public class Main extends javax.swing.JFrame {
 
         Home.setBackground(new java.awt.Color(0, 136, 255));
         Home.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/home.png"))); // NOI18N
+        Home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/home.png"))); // NOI18N
         Home.setToolTipText("Home");
         Home.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Home.setOpaque(true);
@@ -801,7 +801,7 @@ public class Main extends javax.swing.JFrame {
 
         Invoicing.setBackground(new java.awt.Color(255, 255, 255));
         Invoicing.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Invoicing.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/invoice.png"))); // NOI18N
+        Invoicing.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/invoice.png"))); // NOI18N
         Invoicing.setToolTipText("Invoicing");
         Invoicing.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Invoicing.setOpaque(true);
@@ -822,7 +822,7 @@ public class Main extends javax.swing.JFrame {
 
         Inventory.setBackground(new java.awt.Color(255, 255, 255));
         Inventory.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Inventory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/inventory.png"))); // NOI18N
+        Inventory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/inventory.png"))); // NOI18N
         Inventory.setToolTipText("Inventory");
         Inventory.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Inventory.setOpaque(true);
@@ -843,7 +843,7 @@ public class Main extends javax.swing.JFrame {
 
         Settings.setBackground(new java.awt.Color(255, 255, 255));
         Settings.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Settings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/settings.png"))); // NOI18N
+        Settings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/settings.png"))); // NOI18N
         Settings.setToolTipText("Settings");
         Settings.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Settings.setOpaque(true);
@@ -864,7 +864,7 @@ public class Main extends javax.swing.JFrame {
 
         About.setBackground(new java.awt.Color(255, 255, 255));
         About.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        About.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/about.png"))); // NOI18N
+        About.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/about.png"))); // NOI18N
         About.setToolTipText("About");
         About.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         About.setOpaque(true);
@@ -885,7 +885,7 @@ public class Main extends javax.swing.JFrame {
 
         SignOut.setBackground(new java.awt.Color(255, 255, 255));
         SignOut.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SignOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/sign-out.png"))); // NOI18N
+        SignOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/sign-out.png"))); // NOI18N
         SignOut.setToolTipText("Sign Out");
         SignOut.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         SignOut.setOpaque(true);
@@ -1016,7 +1016,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_HeaderMouseDragged
 
     private void CloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloseMouseClicked
-        Internal.SQLite.closeDB();
+        com.astral.internal.SQLite.closeDB();
         System.exit(0);
     }//GEN-LAST:event_CloseMouseClicked
 
@@ -1038,9 +1038,9 @@ public class Main extends javax.swing.JFrame {
         if (usrname.equals("") && passwd.equals(""))
             JOptionPane.showMessageDialog(null, "Please enter Username and Password they cannot be Blank."
                 + " Please Try Again!", "Credentials are Blank", JOptionPane.ERROR_MESSAGE);
-        else if (Internal.SQLite.logIn(usrname, passwd)) {
+        else if (com.astral.internal.SQLite.logIn(usrname, passwd)) {
             Content.removeAll();
-            Speckle.Home scene = new Home();
+            com.astral.speckle.Home scene = new Home();
             scene.setBounds(0, 0, 948, 574);
             Content.add(scene).setVisible(true);
             Container_Deck.show(Container, "app");
@@ -1058,17 +1058,17 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_Forgot_Password_LabelMousePressed
 
     private void Next_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Next_ButtonActionPerformed
-        usrname = Internal.Security.getEncodedString(SignUp_Username.getText());
+        usrname = com.astral.internal.Security.getEncodedString(SignUp_Username.getText());
         passwd = new String(Create_Password.getPassword());
         String confpasswd = new String(Confirm_Password.getPassword());
-        key = Internal.Function.randomAlphaNumeric(16);
+        key = com.astral.internal.Function.randomAlphaNumeric(16);
         if (usrname.equals("") || passwd.equals(""))
             JOptionPane.showMessageDialog(null, "Username or Password cannot be Empty."
                 + " Please Try Again!", "Username/Password Empty", JOptionPane.ERROR_MESSAGE);
         else if (passwd.length() < 8)
             JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least 8 Characters."
                 + " Please Try Again!", "Password Too Short", JOptionPane.ERROR_MESSAGE);
-        else if (!Internal.Security.checkPass(passwd))
+        else if (!com.astral.internal.Security.checkPass(passwd))
             JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric,"
                 + " One Uppercase and One Lowercase Character. Please Try Again!", "Insecure"
                 + " Password", JOptionPane.ERROR_MESSAGE);
@@ -1076,8 +1076,8 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "The Passwords in Password Fields do not Match."
                 + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
         else {
-            Internal.SQLite.userConfig(usrname, Internal.Security.generateHash(passwd));
-            Internal.SQLite.setConfigValue("Recovery Key", Internal.Security.generateHash(key));
+            com.astral.internal.SQLite.userConfig(usrname, com.astral.internal.Security.generateHash(passwd));
+            com.astral.internal.SQLite.setConfigValue("Recovery Key", com.astral.internal.Security.generateHash(key));
             StartUp_Deck.show(StartUp_Container, "signUpDetails");
         }
     }//GEN-LAST:event_Next_ButtonActionPerformed
@@ -1115,8 +1115,8 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Contact Number Must be 10 Digit Long. Please"
                 + " Try Again!", "Contact Number Too Short", JOptionPane.ERROR_MESSAGE);
         else {
-            Internal.SQLite.compConfig(cname, cnum, cmail, caddress);
-            Verify_Username.setText(Internal.Security.getDecodedString(usrname));
+            com.astral.internal.SQLite.compConfig(cname, cnum, cmail, caddress);
+            Verify_Username.setText(com.astral.internal.Security.getDecodedString(usrname));
             Verify_Business_Name.setText(cname);
             Verfiy_Contact_Number.setText(cnum);
             Verify_Email_Address.setText(cmail);
@@ -1128,7 +1128,7 @@ public class Main extends javax.swing.JFrame {
 
     private void Finish_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Finish_ButtonActionPerformed
         Content.removeAll();
-        Speckle.Home scene = new Home();
+        com.astral.speckle.Home scene = new Home();
         scene.setBounds(0, 0, 948, 574);
         Content.add(scene).setVisible(true);
         Container_Deck.show(Container, "app");
@@ -1147,29 +1147,29 @@ public class Main extends javax.swing.JFrame {
         String RecoveryKey = Recovery_Key.getText();
         String Newpswd = new String(New_Password.getPassword());
         String Confpswd = new String(Confirm_Passwd.getPassword());
-        key = Internal.Function.randomAlphaNumeric(16);
+        key = com.astral.internal.Function.randomAlphaNumeric(16);
         if (RecoveryKey.equals("") || Newpswd.equals(""))
             JOptionPane.showMessageDialog(null, "Recovery Key or Password cannot be Empty. Please"
                 + " Try Again!", "Recovery Key/Password Empty", JOptionPane.ERROR_MESSAGE);
-        else if (!Internal.Security.validateHash(RecoveryKey, Internal.SQLite.getConfigValue("Recovery Key")))
+        else if (!com.astral.internal.Security.validateHash(RecoveryKey, com.astral.internal.SQLite.getConfigValue("Recovery Key")))
             JOptionPane.showMessageDialog(null, "The Recovery Key You Have Entered is Incorrect."
                 + " Please Try Again!", "Incorrect Recovery Key", JOptionPane.ERROR_MESSAGE);
         else if (Newpswd.length() < 8)
             JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least 8 Characters."
                 + " Please Try Again!", "Password Too Short", JOptionPane.ERROR_MESSAGE);
-        else if (!Internal.Security.checkPass(Newpswd))
+        else if (!com.astral.internal.Security.checkPass(Newpswd))
             JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric,"
                 + " One Uppercase and One Lowercase Character. Please Try Again!", "Insecure"
                 + " Password", JOptionPane.ERROR_MESSAGE);
         else if (!Newpswd.equals(Confpswd))
             JOptionPane.showMessageDialog(null, "New Password and Confirm Password Doesn't Match."
                 + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
-        else if (Internal.Security.validateHash(Newpswd, Internal.SQLite.getConfigValue("Password")))
+        else if (com.astral.internal.Security.validateHash(Newpswd, com.astral.internal.SQLite.getConfigValue("Password")))
             JOptionPane.showMessageDialog(null, "The Password Enterd has been used Already. Try Again with" 
                 + " a Password You haven’t used Before!", "Old Password Used", JOptionPane.ERROR_MESSAGE);
         else {
-            Internal.SQLite.setConfigValue("Password", Internal.Security.generateHash(Newpswd));
-            Internal.SQLite.setConfigValue("Recovery Key", Internal.Security.generateHash(key));
+            com.astral.internal.SQLite.setConfigValue("Password", com.astral.internal.Security.generateHash(Newpswd));
+            com.astral.internal.SQLite.setConfigValue("Recovery Key", com.astral.internal.Security.generateHash(key));
             JOptionPane.showMessageDialog(null, "Password Has Been Changed Successfully!",
                 "Success", JOptionPane.INFORMATION_MESSAGE);
             JOptionPane.showMessageDialog(null, "Your New Recovery Key is " + key,
@@ -1185,7 +1185,7 @@ public class Main extends javax.swing.JFrame {
 
     private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
         Content.removeAll();
-        Speckle.Home scene = new Home();
+        com.astral.speckle.Home scene = new Home();
         scene.setBounds(0, 0, 948, 574);
         Content.add(scene).setVisible(true);
     }//GEN-LAST:event_HomeMouseClicked
@@ -1210,7 +1210,7 @@ public class Main extends javax.swing.JFrame {
 
     private void InvoicingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InvoicingMouseClicked
         Content.removeAll();
-        Speckle.Invoicing scene = new Invoicing();
+        com.astral.speckle.Invoicing scene = new Invoicing();
         scene.setBounds(0, 0, 948, 574);
         Content.add(scene).setVisible(true);
     }//GEN-LAST:event_InvoicingMouseClicked
@@ -1235,7 +1235,7 @@ public class Main extends javax.swing.JFrame {
 
     private void InventoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventoryMouseClicked
         Content.removeAll();
-        Speckle.Inventory scene = new Inventory();
+        com.astral.speckle.Inventory scene = new Inventory();
         scene.setBounds(0, 0, 948, 574);
         Content.add(scene).setVisible(true);
     }//GEN-LAST:event_InventoryMouseClicked
@@ -1260,7 +1260,7 @@ public class Main extends javax.swing.JFrame {
 
     private void SettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsMouseClicked
         Content.removeAll();
-        Speckle.Settings scene = new Settings();
+        com.astral.speckle.Settings scene = new Settings();
         scene.setBounds(0, 0, 948, 574);
         Content.add(scene).setVisible(true);
     }//GEN-LAST:event_SettingsMouseClicked
@@ -1285,7 +1285,7 @@ public class Main extends javax.swing.JFrame {
 
     private void AboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutMouseClicked
         Content.removeAll();
-        Speckle.About scene = new About();
+        com.astral.speckle.About scene = new About();
         scene.setBounds(0, 0, 948, 574);
         Content.add(scene).setVisible(true);
     }//GEN-LAST:event_AboutMouseClicked

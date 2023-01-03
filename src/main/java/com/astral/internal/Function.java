@@ -1,4 +1,4 @@
-package Internal;
+package com.astral.internal;
 
 import com.lowagie.text.Chunk;
 import com.lowagie.text.Document;
@@ -55,7 +55,7 @@ public class Function {
     }
     
     public static TableModel invoTableModel() {
-        ResultSet invResult = Internal.SQLite.invoData();
+        ResultSet invResult = com.astral.internal.SQLite.invoData();
         DefaultTableModel invTableModel = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -94,7 +94,7 @@ public class Function {
     }
     
     public static TableModel newInvoTableModel() {
-        ResultSet invResult = Internal.SQLite.invenData();
+        ResultSet invResult = com.astral.internal.SQLite.invenData();
         DefaultTableModel invTableModel = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -132,7 +132,7 @@ public class Function {
     }
     
     public static TableModel invenTableModel() {
-        ResultSet invResult = Internal.SQLite.invenData();
+        ResultSet invResult = com.astral.internal.SQLite.invenData();
         DefaultTableModel invTableModel = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -168,20 +168,20 @@ public class Function {
     public static void invoicePDF(String invID) {
         invFolder.mkdir();
         invPath = new File(invFolder + File.separator + invID + ".pdf");
-        ResultSet invoData = Internal.SQLite.invoData(invID);
-        ResultSet invoTableData = Internal.SQLite.invoTableData(invID);
+        ResultSet invoData = com.astral.internal.SQLite.invoData(invID);
+        ResultSet invoTableData = com.astral.internal.SQLite.invoTableData(invID);
         try (Document document = new Document()) {
             PdfWriter.getInstance(document, new FileOutputStream(invPath));
             document.open();
-            Paragraph para = new Paragraph(Internal.SQLite.getConfigValue("Business Name"),
+            Paragraph para = new Paragraph(com.astral.internal.SQLite.getConfigValue("Business Name"),
                 FontFactory.getFont(FontFactory.TIMES_BOLD, 20));
             para.setAlignment(Element.ALIGN_CENTER);
             document.add(para);
-            para = new Paragraph(Internal.SQLite.getConfigValue("Business Location"));
+            para = new Paragraph(com.astral.internal.SQLite.getConfigValue("Business Location"));
             para.setAlignment(Element.ALIGN_CENTER);
             document.add(para);
-            para = new Paragraph("Contact Number : " + Internal.SQLite.getConfigValue("Contact Number")
-                + "    Email : " + Internal.SQLite.getConfigValue("Email Address"));
+            para = new Paragraph("Contact Number : " + com.astral.internal.SQLite.getConfigValue("Contact Number")
+                + "    Email : " + com.astral.internal.SQLite.getConfigValue("Email Address"));
             para.setAlignment(Element.ALIGN_CENTER);
             para.setSpacingAfter(30f);
             document.add(para);
@@ -295,7 +295,7 @@ public class Function {
     }
     
     public static void invoiceCSVex(File CSV) {
-        ResultSet invoData = Internal.SQLite.invoData();
+        ResultSet invoData = com.astral.internal.SQLite.invoData();
         try (FileWriter invCSV = new FileWriter(CSV)) {
             ResultSetMetaData invMeta = invoData.getMetaData();
             invCSV.write("\"" + invMeta.getColumnLabel(1) + "\",");
@@ -319,7 +319,7 @@ public class Function {
     }
     
     public static void invenCSVex(File CSV) {
-        ResultSet invenData = Internal.SQLite.invenData();
+        ResultSet invenData = com.astral.internal.SQLite.invenData();
         try (FileWriter invCSV = new FileWriter(CSV)) {
             ResultSetMetaData invMeta = invenData.getMetaData();
             invCSV.write("\"" + invMeta.getColumnLabel(1) + "\",");
@@ -349,7 +349,7 @@ public class Function {
                 String price = CSV_Parts[2];
                 String quan = CSV_Parts[3];
                 if (!PID.equals("Product ID"))
-                    Internal.SQLite.updateInven(PID, name, price, quan);
+                    com.astral.internal.SQLite.updateInven(PID, name, price, quan);
             }
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);

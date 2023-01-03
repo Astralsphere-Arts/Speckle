@@ -1,4 +1,4 @@
-package Internal;
+package com.astral.internal;
 
 import java.math.BigInteger;
 import java.security.NoSuchAlgorithmException;

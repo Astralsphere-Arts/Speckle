@@ -1,4 +1,4 @@
-package Internal;
+package com.astral.internal;
 
 import java.io.File;
 import java.nio.file.Files;
@@ -103,8 +103,8 @@ public class SQLite {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
-        return Internal.Security.getEncodedString(usrname).equals(username) &&
-            Internal.Security.validateHash(passwd, password);
+        return com.astral.internal.Security.getEncodedString(usrname).equals(username) &&
+            com.astral.internal.Security.validateHash(passwd, password);
     }
     
     public static String getConfigValue(String param) {
