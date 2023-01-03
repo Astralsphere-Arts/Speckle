@@ -1,5 +1,6 @@
 Some Speckle features rely on external libraries here is a list of them:
 
-1. SQLite JDBC - Copyright (c) 2007-2021 xerial - Apache License 2.0
-2. FlatLaf - Copyright (c) 2019-2021 FormDev Software GmbH. - Apache License 2.0
-3. OpenPDF - Copyright (c) 2010-2021 LibrePDF - MPL 2.0 + GNU LGPL 2.1
+1. SQLite JDBC Crypt - https://github.com/Willena/sqlite-jdbc-crypt
+2. FlatLaf - https://www.formdev.com/flatlaf
+3. OpenPDF - https://github.com/LibrePDF/OpenPDF
+4. ICU4J (International Components for Unicode) - https://icu.unicode.org
