@@ -4,17 +4,13 @@ A Simple Invoicing and Inventory Management System written in Java and uses SQLi
 
 ## Built Using
 
-1. **IDE** : [Apache NetBeans](https://netbeans.apache.org/) : Version 12.3
-2. **Build Tool** : [Apache Ant](https://ant.apache.org/) : Version 1.10.8
-3. **JDK** : [AdoptOpenJDK](https://adoptopenjdk.net/) : Version 16.0.1+9 Openj9-0.26.0
+1. **IDE** : [Apache NetBeans](https://netbeans.apache.org/) : Version 16
+2. **Build Tool** : [Apache Maven](https://maven.apache.org/) : Version 3.8.6
+3. **JDK** : [Azul Zulu](https://www.azul.com/downloads/) : Version 17.0.5+8 LTS
 
-## Libraries Used
+## Dependencies
 
-*All Libraries are Included with the Source in __lib__ folder.*
-
-1. **[SQLite](https://www.sqlite.org/) [(SQLite JDBC)](https://github.com/xerial/sqlite-jdbc)** : Version 3.34.0  
-   &emsp; **Copyright &copy; 2007-2022 xerial** - Apache License, Version 2.0
-2. **[FlatLaf](https://www.formdev.com/flatlaf/)** : Version 1.2  
-   &emsp; **Copyright &copy; 2019-2022 FormDev Software GmbH.** - Apache License, Version 2.0
-3. **[OpenPDF](https://github.com/LibrePDF/OpenPDF)** : Version 1.3.26  
-   &emsp; **Copyright &copy; 2010-2022 LibrePDF** - Mozilla Public License, Version 2.0 + GNU LGPL, Version 2.1
+1. **[SQLite](https://www.sqlite.org/) [(SQLite JDBC Crypt)](https://github.com/Willena/sqlite-jdbc-crypt)** : Version 3.40.1.0
+2. **[FlatLaf](https://www.formdev.com/flatlaf/)** : Version 3.0
+3. **[OpenPDF](https://github.com/LibrePDF/OpenPDF)** : Version 1.3.30
+4. **[ICU4J](https://icu.unicode.org/)** : Version 72.1
