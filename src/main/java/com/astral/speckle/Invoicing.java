@@ -1,4 +1,4 @@
-package Speckle;
+package com.astral.speckle;
 
 import java.awt.Component;
 import java.awt.Desktop;
@@ -72,7 +72,7 @@ public class Invoicing extends javax.swing.JPanel {
             }
         });
 
-        Invoice_Table.setModel(Internal.Function.invoTableModel());
+        Invoice_Table.setModel(com.astral.internal.Function.invoTableModel());
         Invoice_Table.setShowGrid(true);
         Invoice_Table.getTableHeader().setReorderingAllowed(false);
         Invoice_Table_Container.setViewportView(Invoice_Table);
@@ -183,7 +183,7 @@ public class Invoicing extends javax.swing.JPanel {
 
         Customer_Address.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
 
-        New_Invoice_Table.setModel(Internal.Function.newInvoTableModel());
+        New_Invoice_Table.setModel(com.astral.internal.Function.newInvoTableModel());
         New_Invoice_Table.setShowGrid(true);
         New_Invoice_Table.getTableHeader().setReorderingAllowed(false);
         New_Invoice_Table_Container.setViewportView(New_Invoice_Table);
@@ -298,9 +298,9 @@ public class Invoicing extends javax.swing.JPanel {
                 + " List.", "No Invoice Selected", JOptionPane.ERROR_MESSAGE);
         else {
             String invID = Invoice_Table.getValueAt(row, 0).toString();
-            Internal.Function.invoicePDF(invID);
+            com.astral.internal.Function.invoicePDF(invID);
             try {
-                Desktop.getDesktop().open(Internal.Function.invPath);
+                Desktop.getDesktop().open(com.astral.internal.Function.invPath);
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -312,7 +312,7 @@ public class Invoicing extends javax.swing.JPanel {
         int[] rows = Invoice_Table.getSelectedRows();
         for (int i=0; i<rows.length; i++) {
             String invID = Invoice_Table.getValueAt(rows[i]-i, 0).toString();
-            Internal.SQLite.remInvoice(invID);
+            com.astral.internal.SQLite.remInvoice(invID);
             Invoice_Model.removeRow(rows[i]-i);
         }
     }//GEN-LAST:event_RemoveActionPerformed
@@ -325,7 +325,7 @@ public class Invoicing extends javax.swing.JPanel {
             .format(new java.util.Date()) + ".csv"));
         fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
         if (fileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-            Internal.Function.invoiceCSVex(fileChooser.getSelectedFile());
+            com.astral.internal.Function.invoiceCSVex(fileChooser.getSelectedFile());
             JOptionPane.showMessageDialog(null, "Invoice Data Exported Successfully!",
                 "Success", JOptionPane.INFORMATION_MESSAGE);
         }
@@ -356,7 +356,7 @@ public class Invoicing extends javax.swing.JPanel {
         int prodSelected = 0;
         boolean emptyQuan = false;
         boolean excessQuan = false;
-        String invID = "INV-" + Internal.Function.randomID(4) + "-" + Internal.Function.randomID(4);
+        String invID = "INV-" + com.astral.internal.Function.randomID(4) + "-" + com.astral.internal.Function.randomID(4);
         String custName = Customer_Name.getText();
         String custContact = Contact_Number.getText();
         String custAddress = Customer_Address.getText();
@@ -392,7 +392,7 @@ public class Invoicing extends javax.swing.JPanel {
                 + " for one or more Products. Please Try Again!", "Purchased Quantity Exceeded",
                 JOptionPane.ERROR_MESSAGE);
         else {
-            Internal.SQLite.newInvoice(invID);
+            com.astral.internal.SQLite.newInvoice(invID);
             for (int row = 0; row < New_Invoice_Table.getRowCount(); row++) {
                 Boolean isChecked = Boolean.valueOf(New_Invoice_Table.getValueAt(row, 0).toString());
                 if (isChecked) {
@@ -406,18 +406,18 @@ public class Invoicing extends javax.swing.JPanel {
                         Double.parseDouble(purchQuan));
                     saleAmount = Double.toString(Double.parseDouble(saleAmount) +
                         Double.parseDouble(netAmount));
-                    Internal.SQLite.updateStock(prodID, remaingQuan);
-                    Internal.SQLite.newInvoice(invID, prodName, Price, purchQuan, netAmount);
+                    com.astral.internal.SQLite.updateStock(prodID, remaingQuan);
+                    com.astral.internal.SQLite.newInvoice(invID, prodName, Price, purchQuan, netAmount);
                 }
             }
-            Internal.SQLite.newInvoice(invID, custName, custContact, custAddress, saleDate, saleAmount);
-            Speckle.Main.Content.removeAll();
-            Speckle.Invoicing scene = new Invoicing();
+            com.astral.internal.SQLite.newInvoice(invID, custName, custContact, custAddress, saleDate, saleAmount);
+            com.astral.speckle.Main.Content.removeAll();
+            com.astral.speckle.Invoicing scene = new Invoicing();
             scene.setBounds(0, 0, 948, 574);
-            Speckle.Main.Content.add(scene).setVisible(true);
-            Internal.Function.invoicePDF(invID);
+            com.astral.speckle.Main.Content.add(scene).setVisible(true);
+            com.astral.internal.Function.invoicePDF(invID);
             try {
-                Desktop.getDesktop().open(Internal.Function.invPath);
+                Desktop.getDesktop().open(com.astral.internal.Function.invPath);
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
             }

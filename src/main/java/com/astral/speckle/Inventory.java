@@ -1,4 +1,4 @@
-package Speckle;
+package com.astral.speckle;
 
 import java.awt.Component;
 import java.io.File;
@@ -46,7 +46,7 @@ public class Inventory extends javax.swing.JPanel {
         Heading.setText("Inventory");
         Heading.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
-        Inventory_Table.setModel(Internal.Function.invenTableModel());
+        Inventory_Table.setModel(com.astral.internal.Function.invenTableModel());
         Inventory_Table.setShowGrid(true);
         Inventory_Table.getTableHeader().setReorderingAllowed(false);
         Inventory_Table.getModel().addTableModelListener(new javax.swing.event.TableModelListener() {
@@ -159,20 +159,20 @@ public class Inventory extends javax.swing.JPanel {
             String quan = null;
             if (Inventory_Table.getValueAt(row, 3) != null)
                 quan = Integer.toString((Integer) Inventory_Table.getValueAt(row, 3));
-            Internal.SQLite.updateInven(PID, name, price, quan);
+            com.astral.internal.SQLite.updateInven(PID, name, price, quan);
         }
     }
     
     private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
-        Inventory_Model.addRow(new Object[] {"SPK-" + Internal.Function.randomID(4)
-            + "-" + Internal.Function.randomID(4), null, null, null});
+        Inventory_Model.addRow(new Object[] {"SPK-" + com.astral.internal.Function.randomID(4)
+            + "-" + com.astral.internal.Function.randomID(4), null, null, null});
     }//GEN-LAST:event_AddActionPerformed
 
     private void RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveActionPerformed
         int[] rows = Inventory_Table.getSelectedRows();
         for (int i=0; i<rows.length; i++) {
             String PID = Inventory_Table.getValueAt(rows[i]-i, 0).toString();
-            Internal.SQLite.remRowInven(PID);
+            com.astral.internal.SQLite.remRowInven(PID);
             Inventory_Model.removeRow(rows[i]-i);
         }
     }//GEN-LAST:event_RemoveActionPerformed
@@ -192,11 +192,11 @@ public class Inventory extends javax.swing.JPanel {
             if (update.equals(""))
                 update = "0";
             String quan = Integer.toString(quantity + Integer.parseInt(update));
-            Internal.SQLite.updateStock(PID, quan);
-            Speckle.Main.Content.removeAll();
+            com.astral.internal.SQLite.updateStock(PID, quan);
+            com.astral.speckle.Main.Content.removeAll();
             Inventory scene = new Inventory();
             scene.setBounds(0, 0, 948, 574);
-            Speckle.Main.Content.add(scene).setVisible(true);
+            com.astral.speckle.Main.Content.add(scene).setVisible(true);
         }
     }//GEN-LAST:event_UpdateActionPerformed
 
@@ -205,13 +205,13 @@ public class Inventory extends javax.swing.JPanel {
         fileChooser.setDialogTitle("Import from CSV");
         fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
         if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-            Internal.Function.invenCSVim(fileChooser.getSelectedFile());
+            com.astral.internal.Function.invenCSVim(fileChooser.getSelectedFile());
             JOptionPane.showMessageDialog(null, "Inventory Data Imported Successfully!",
                 "Success", JOptionPane.INFORMATION_MESSAGE);
-            Speckle.Main.Content.removeAll();
+            com.astral.speckle.Main.Content.removeAll();
             Inventory scene = new Inventory();
             scene.setBounds(0, 0, 948, 574);
-            Speckle.Main.Content.add(scene).setVisible(true);
+            com.astral.speckle.Main.Content.add(scene).setVisible(true);
         }
     }//GEN-LAST:event_ImportActionPerformed
 
@@ -223,7 +223,7 @@ public class Inventory extends javax.swing.JPanel {
             .format(new java.util.Date()) + ".csv"));
         fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
         if (fileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-            Internal.Function.invenCSVex(fileChooser.getSelectedFile());
+            com.astral.internal.Function.invenCSVex(fileChooser.getSelectedFile());
             JOptionPane.showMessageDialog(null, "Inventory Data Exported Successfully!",
                 "Success", JOptionPane.INFORMATION_MESSAGE);
         }

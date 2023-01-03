@@ -93,7 +93,7 @@
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Resources/speckle-home-logo.png"/>
+              <Image iconType="3" name="/com/astral/resources/speckle-home-logo.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Speckle"/>
           </Properties>
@@ -104,7 +104,7 @@
               <Font name="Segoe UI" size="11" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="Speckle.Main.Version" type="code"/>
+              <Connection code="com.astral.speckle.Main.Version" type="code"/>
             </Property>
           </Properties>
         </Component>
@@ -164,7 +164,7 @@
         <Component class="javax.swing.JLabel" name="Help_Para">
           <Properties>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="&quot;&lt;html&gt;Welcome &lt;b&gt;&quot; + Internal.Security.getDecodedString(Internal.SQLite.getConfigValue(&quot;Username&quot;)) + &quot;&lt;/b&gt;! This is a Quick Overview Speckle :&lt;/html&gt;&quot;" type="code"/>
+              <Connection code="&quot;&lt;html&gt;Welcome &lt;b&gt;&quot; + com.astral.internal.Security.getDecodedString(com.astral.internal.SQLite.getConfigValue(&quot;Username&quot;)) + &quot;&lt;/b&gt;! This is a Quick Overview Speckle :&lt;/html&gt;&quot;" type="code"/>
             </Property>
           </Properties>
         </Component>

@@ -1,4 +1,4 @@
-package Speckle;
+package com.astral.speckle;
 
 import javax.swing.JOptionPane;
 
@@ -187,12 +187,12 @@ public class RecoveryKey extends javax.swing.JFrame {
 
     private void Reset_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Reset_ButtonActionPerformed
         String passwd = new String(Password.getPassword());
-        String key = Internal.Function.randomAlphaNumeric(16);
-        if (!Internal.Security.validateHash(passwd, Internal.SQLite.getConfigValue("Password")))
+        String key = com.astral.internal.Function.randomAlphaNumeric(16);
+        if (!com.astral.internal.Security.validateHash(passwd, com.astral.internal.SQLite.getConfigValue("Password")))
             JOptionPane.showMessageDialog(null, "The Password You Have Entered is Incorrect."
                 + " Please Try Again!", "Incorrect Password", JOptionPane.ERROR_MESSAGE);
         else {
-            Internal.SQLite.setConfigValue("Recovery Key", Internal.Security.generateHash(key));
+            com.astral.internal.SQLite.setConfigValue("Recovery Key", com.astral.internal.Security.generateHash(key));
             this.setVisible(false);
             JOptionPane.showMessageDialog(null, "Recovery Key Has Been Reset Successfully!",
                 "Success", JOptionPane.INFORMATION_MESSAGE);

@@ -1,4 +1,4 @@
-package Speckle;
+package com.astral.speckle;
 
 import javax.swing.JOptionPane;
 
@@ -66,7 +66,7 @@ public class Settings extends javax.swing.JPanel {
         Settings_Container.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         Speckle_Logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Speckle_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/speckle-logo.png"))); // NOI18N
+        Speckle_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/speckle-logo.png"))); // NOI18N
         Speckle_Logo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Change_Username.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
@@ -76,7 +76,7 @@ public class Settings extends javax.swing.JPanel {
         Current_Username_Label.setText("Current Username");
 
         Current_Username.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Current_Username.setText(Internal.Security.getDecodedString(Internal.SQLite.getConfigValue("Username")));
+        Current_Username.setText(com.astral.internal.Security.getDecodedString(com.astral.internal.SQLite.getConfigValue("Username")));
         Current_Username.setEnabled(false);
 
         New_Username_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
@@ -228,7 +228,7 @@ public class Settings extends javax.swing.JPanel {
         Business_Name_Label.setText("Business Name");
 
         Current_Business_Name.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Current_Business_Name.setText(Internal.SQLite.getConfigValue("Business Name"));
+        Current_Business_Name.setText(com.astral.internal.SQLite.getConfigValue("Business Name"));
         Current_Business_Name.setEnabled(false);
 
         New_Business_Name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -237,7 +237,7 @@ public class Settings extends javax.swing.JPanel {
         Contact_Number_Label.setText("Contact Number");
 
         Current_Contact_Number.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Current_Contact_Number.setText(Internal.SQLite.getConfigValue("Contact Number"));
+        Current_Contact_Number.setText(com.astral.internal.SQLite.getConfigValue("Contact Number"));
         Current_Contact_Number.setEnabled(false);
 
         New_Contact_Number.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -251,7 +251,7 @@ public class Settings extends javax.swing.JPanel {
         Email_Address_Label.setText("Email Address");
 
         Current_Email_Address.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Current_Email_Address.setText(Internal.SQLite.getConfigValue("Email Address"));
+        Current_Email_Address.setText(com.astral.internal.SQLite.getConfigValue("Email Address"));
         Current_Email_Address.setEnabled(false);
 
         New_Email_Address.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -263,7 +263,7 @@ public class Settings extends javax.swing.JPanel {
         Current_Business_Location_Label.setText("Current");
 
         Current_Business_Location.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Current_Business_Location.setText(Internal.SQLite.getConfigValue("Business Location"));
+        Current_Business_Location.setText(com.astral.internal.SQLite.getConfigValue("Business Location"));
         Current_Business_Location.setEnabled(false);
 
         New_Business_Location_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
@@ -376,18 +376,18 @@ public class Settings extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Change_Username_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Change_Username_ButtonActionPerformed
-        String usrname = Internal.Security.getEncodedString(New_Username.getText());
+        String usrname = com.astral.internal.Security.getEncodedString(New_Username.getText());
         if (usrname.equals(""))
             JOptionPane.showMessageDialog(null, "Username cannot be Empty. Please Try Again!",
                 "Username Field Empty", JOptionPane.ERROR_MESSAGE);
         else {
-            Internal.SQLite.setConfigValue("Username", usrname);
+            com.astral.internal.SQLite.setConfigValue("Username", usrname);
             JOptionPane.showMessageDialog(null, "Your Username changed Successfully!",
                 "Success", JOptionPane.INFORMATION_MESSAGE);
-            Speckle.Main.Content.removeAll();
+            com.astral.speckle.Main.Content.removeAll();
             Settings scene = new Settings();
             scene.setBounds(0, 0, 948, 574);
-            Speckle.Main.Content.add(scene).setVisible(true);
+            com.astral.speckle.Main.Content.add(scene).setVisible(true);
         }
     }//GEN-LAST:event_Change_Username_ButtonActionPerformed
 
@@ -399,30 +399,30 @@ public class Settings extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Both Current and New Passwords are needed"
                 + " for changing Password. Please Try Again!", "Password Fields Empty",
                 JOptionPane.ERROR_MESSAGE);
-        else if (!Internal.Security.validateHash(curpasswd, Internal.SQLite.getConfigValue("Password")))
+        else if (!com.astral.internal.Security.validateHash(curpasswd, com.astral.internal.SQLite.getConfigValue("Password")))
             JOptionPane.showMessageDialog(null, "The Current Password is Incorrect. Please Try"
                 + " Again!", "Incorrect Password", JOptionPane.ERROR_MESSAGE);
         else if (passwd.length() < 8)
             JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least 8 Characters."
                 + " Please Try Again!", "Password Too Short", JOptionPane.ERROR_MESSAGE);
-        else if (!Internal.Security.checkPass(passwd))
+        else if (!com.astral.internal.Security.checkPass(passwd))
             JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric,"
                 + " One Uppercase and One Lowercase Character. Please Try Again!", "Insecure"
                 + " Password", JOptionPane.ERROR_MESSAGE);
         else if (!passwd.equals(confpasswd))
             JOptionPane.showMessageDialog(null, "The Password in Confirm Password Field does not"
                 + " Match. Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
-        else if (Internal.Security.validateHash(passwd, Internal.SQLite.getConfigValue("Password")))
+        else if (com.astral.internal.Security.validateHash(passwd, com.astral.internal.SQLite.getConfigValue("Password")))
             JOptionPane.showMessageDialog(null, "The Password Enterd has been used Already. Try Again with" 
                 + " a Password You haven’t used Before!", "Old Password Used", JOptionPane.ERROR_MESSAGE);
         else {
-            Internal.SQLite.setConfigValue("Password", Internal.Security.generateHash(passwd));
+            com.astral.internal.SQLite.setConfigValue("Password", com.astral.internal.Security.generateHash(passwd));
             JOptionPane.showMessageDialog(null, "Your Password changed Successfully!",
                 "Success", JOptionPane.INFORMATION_MESSAGE);
-            Speckle.Main.Content.removeAll();
+            com.astral.speckle.Main.Content.removeAll();
             Settings scene = new Settings();
             scene.setBounds(0, 0, 948, 574);
-            Speckle.Main.Content.add(scene).setVisible(true);
+            com.astral.speckle.Main.Content.add(scene).setVisible(true);
         }
     }//GEN-LAST:event_Change_Password_ButtonActionPerformed
 
@@ -468,13 +468,13 @@ public class Settings extends javax.swing.JPanel {
                 cmail = Current_Email_Address.getText();
             if (caddress.equals(""))
                 caddress = Current_Business_Location.getText();
-            Internal.SQLite.compConfig(cname, cnum, cmail, caddress);
+            com.astral.internal.SQLite.compConfig(cname, cnum, cmail, caddress);
             JOptionPane.showMessageDialog(null, "Your Changes Have Been Saved Successfully!",
                 "Success", JOptionPane.INFORMATION_MESSAGE);
-            Speckle.Main.Content.removeAll();
+            com.astral.speckle.Main.Content.removeAll();
             Settings scene = new Settings();
             scene.setBounds(0, 0, 948, 574);
-            Speckle.Main.Content.add(scene).setVisible(true);
+            com.astral.speckle.Main.Content.add(scene).setVisible(true);
             scene.Settings_Container.setSelectedIndex(1);
         }
     }//GEN-LAST:event_Save_Changes_ButtonActionPerformed

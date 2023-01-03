@@ -1,4 +1,4 @@
-package Speckle;
+package com.astral.speckle;
 
 /**
  *
@@ -10,7 +10,7 @@ public class Home extends javax.swing.JPanel {
      * Creates new form Home
      */
     public Home() {
-        this.data = Internal.SQLite.dashData();
+        this.data = com.astral.internal.SQLite.dashData();
         initComponents();
     }
 
@@ -49,11 +49,11 @@ public class Home extends javax.swing.JPanel {
 
         Speckle_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
         Speckle_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Speckle_Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/speckle-home-logo.png"))); // NOI18N
+        Speckle_Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/speckle-home-logo.png"))); // NOI18N
         Speckle_Label.setText("Speckle");
 
         Speckle_Version_Label.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-        Speckle_Version_Label.setText(Speckle.Main.Version);
+        Speckle_Version_Label.setText(com.astral.speckle.Main.Version);
 
         javax.swing.GroupLayout BannerLayout = new javax.swing.GroupLayout(Banner);
         Banner.setLayout(BannerLayout);
@@ -82,7 +82,7 @@ public class Home extends javax.swing.JPanel {
         Help_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         Help_Label.setText("Quick Start Guide");
 
-        Help_Para.setText("<html>Welcome <b>" + Internal.Security.getDecodedString(Internal.SQLite.getConfigValue("Username")) + "</b>! This is a Quick Overview Speckle :</html>");
+        Help_Para.setText("<html>Welcome <b>" + com.astral.internal.Security.getDecodedString(com.astral.internal.SQLite.getConfigValue("Username")) + "</b>! This is a Quick Overview Speckle :</html>");
 
         Help_Content.setText("<html><ol style=\"margin: 0 0 0 20;\">\n<li style=\"padding: 4;\">The First Tab is <b>Home</b> which has two Sections one is Quick Start Guide(This One) and second one is has Information\nabout Products with Low amount Stocks in the Inventory.</li>\n<li style=\"padding: 4;\">The Second Tab is <b>Invoicing</b> through which you can create new Invoices or can view previously created Invoices.</li>\n<li style=\"padding: 4;\">The Third Tab is <b>Inventory</b> where you can add or remove Products from Speckle's Inventory.</li>\n<li style=\"padding: 4;\">The Forth Tab is <b>Settings</b> where you can change your Login Credentials and the information related to your\nBusiness that gets printed on your Invoices.</li>\n<li style=\"padding: 4;\">The Last Tab is <b>About</b> which has three Sections Authors, License, Credits they contain a List of Developers who\nContributed to Speckle, the EULA and Credits to the External Libraries we used.</li>\n</ol></html>");
         Help_Content.setVerticalAlignment(javax.swing.SwingConstants.TOP);
