@@ -356,7 +356,8 @@ public class Invoicing extends javax.swing.JPanel {
         int prodSelected = 0;
         boolean emptyQuan = false;
         boolean excessQuan = false;
-        String invID = "INV-" + com.astral.internal.Function.randomID(4) + "-" + com.astral.internal.Function.randomID(4);
+        String invID = "INV-" + new java.text.SimpleDateFormat("yyMMdd-HHmmss").format(new java.util.Date())
+            + "-" + com.astral.internal.Function.randomID(4);
         String custName = Customer_Name.getText();
         String custContact = Contact_Number.getText();
         String custAddress = Customer_Address.getText();

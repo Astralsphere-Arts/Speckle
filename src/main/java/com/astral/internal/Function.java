@@ -167,7 +167,10 @@ public class Function {
     
     public static void invoicePDF(String invID) {
         invFolder.mkdir();
-        invPath = new File(invFolder + File.separator + invID + ".pdf");
+        File invSubFolder = new File(invFolder + File.separator + new java.text.SimpleDateFormat("yyyy - MMMM")
+            .format(new java.util.Date()));
+        invSubFolder.mkdir();
+        invPath = new File(invSubFolder + File.separator + invID + ".pdf");
         ResultSet invoData = com.astral.internal.SQLite.invoData(invID);
         ResultSet invoTableData = com.astral.internal.SQLite.invoTableData(invID);
         try (Document document = new Document()) {

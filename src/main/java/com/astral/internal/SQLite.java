@@ -26,11 +26,8 @@ public class SQLite {
     static Connection invoiceDB = null;
     
     public static void initDB() {
-        if (!Files.isWritable(currentDirectory)) {
-            File appData = new File(System.getenv("localappdata") + File.separator + "Speckle");
-            appData.mkdir();
-            dbFolder = new File(appData + File.separator + "data");
-        }
+        if (!Files.isWritable(currentDirectory))
+            dbFolder = new File(System.getenv("appdata") + File.separator + "Speckle");
         firstUse = dbFolder.mkdir();
         dbConnect();
         if (firstUse)
