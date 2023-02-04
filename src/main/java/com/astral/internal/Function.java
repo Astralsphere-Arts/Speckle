@@ -4,9 +4,11 @@ import com.lowagie.text.Chunk;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
 import com.lowagie.text.Element;
+import com.lowagie.text.Font;
 import com.lowagie.text.FontFactory;
 import com.lowagie.text.Paragraph;
 import com.lowagie.text.Rectangle;
+import com.lowagie.text.pdf.BaseFont;
 import com.lowagie.text.pdf.PdfPCell;
 import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.pdf.PdfWriter;
@@ -15,10 +17,12 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.security.SecureRandom;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.Locale;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileSystemView;
 import javax.swing.table.DefaultTableModel;
@@ -36,7 +40,7 @@ public class Function {
     static SecureRandom random = new SecureRandom();
     static File invFolder = new File(FileSystemView.getFileSystemView()
         .getDefaultDirectory().getPath() + File.separator + "Speckle");
-    static java.awt.Color TableHeader = new java.awt.Color(240, 240, 240);
+    static java.awt.Color TableHeader = new java.awt.Color(224, 224, 224);
     
     public static String randomID(int length) {
         StringBuilder builder = new StringBuilder(length);
@@ -175,6 +179,8 @@ public class Function {
         ResultSet invoTableData = com.astral.internal.SQLite.invoTableData(invID);
         try (Document document = new Document()) {
             PdfWriter.getInstance(document, new FileOutputStream(invPath));
+            Font IBMPlex = new Font(BaseFont.createFont("/com/astral/resources/IBMPlex.ttf", BaseFont.IDENTITY_H,
+                    BaseFont.EMBEDDED), 10);
             document.open();
             Paragraph para = new Paragraph(com.astral.internal.SQLite.getConfigValue("Business Name"),
                 FontFactory.getFont(FontFactory.TIMES_BOLD, 20));
@@ -231,64 +237,91 @@ public class Function {
             chunk = new Chunk(invoData.getString("Address"), FontFactory.getFont(FontFactory.HELVETICA));
             para.add(chunk);
             document.add(para);
-            float[] widths = {10f, 44f, 15f, 14f, 17f};
+            float[] widths = {10f, 44f, 13f, 16f, 17f};
             table = new PdfPTable(widths);
-            cell = new PdfPCell(new Paragraph("S.No.", FontFactory.getFont(FontFactory.HELVETICA_BOLD)));
-            cell.setBackgroundColor(TableHeader);
-            cell.setPadding(10f);
-            cell.setPaddingLeft(11f);
-            table.addCell(cell);
-            cell = new PdfPCell(new Paragraph("Product Name", FontFactory.getFont(FontFactory.HELVETICA_BOLD)));
+            cell = new PdfPCell(new Paragraph("S.No.", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10)));
+            cell.setHorizontalAlignment(Element.ALIGN_CENTER);
             cell.setBackgroundColor(TableHeader);
             cell.setPadding(10f);
             table.addCell(cell);
-            cell = new PdfPCell(new Paragraph("Unit Price", FontFactory.getFont(FontFactory.HELVETICA_BOLD)));
-            cell.setBackgroundColor(TableHeader);
-            cell.setPadding(10f);
-            cell.setPaddingLeft(11f);
-            table.addCell(cell);
-            cell = new PdfPCell(new Paragraph("Quantity", FontFactory.getFont(FontFactory.HELVETICA_BOLD)));
-            cell.setBackgroundColor(TableHeader);
-            cell.setPadding(10f);
-            cell.setPaddingLeft(12f);
-            table.addCell(cell);
-            cell = new PdfPCell(new Paragraph("Net Amount", FontFactory.getFont(FontFactory.HELVETICA_BOLD)));
+            cell = new PdfPCell(new Paragraph("Product Name", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10)));
             cell.setBackgroundColor(TableHeader);
             cell.setPadding(10f);
             table.addCell(cell);
-            int i = 1;
+            cell = new PdfPCell(new Paragraph("Quantity", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10)));
+            cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cell.setBackgroundColor(TableHeader);
+            cell.setPadding(10f);
+            table.addCell(cell);
+            cell = new PdfPCell(new Paragraph("Price", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10)));
+            cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cell.setBackgroundColor(TableHeader);
+            cell.setPadding(10f);
+            table.addCell(cell);
+            cell = new PdfPCell(new Paragraph("Net Amount", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10)));
+            cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cell.setBackgroundColor(TableHeader);
+            cell.setPadding(10f);
+            table.addCell(cell);
             while (invoTableData.next()) {
-                cell = new PdfPCell(new Paragraph(Integer.toString(i)));
+                cell = new PdfPCell(new Paragraph(String.format("%02d", invoTableData.getRow()), IBMPlex));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cell.setPadding(10f);
+                table.addCell(cell);
+                cell = new PdfPCell(new Paragraph(invoTableData.getString("Product Name"), IBMPlex));
+                cell.setPadding(10f);
+                table.addCell(cell);
+                cell = new PdfPCell(new Paragraph(String.format("%02d", Integer.valueOf(invoTableData.getString("Purchased Quantity"))), IBMPlex));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cell.setPadding(10f);
+                table.addCell(cell);
+                cell = new PdfPCell(new Paragraph(com.ibm.icu.text.NumberFormat.getCurrencyInstance(new Locale("en", "in"))
+                    .format(new BigDecimal(invoTableData.getString("Price"))), IBMPlex));
                 cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
                 cell.setPadding(10f);
                 table.addCell(cell);
-                cell = new PdfPCell(new Paragraph(invoTableData.getString("Product Name")));
-                cell.setPadding(10f);
-                table.addCell(cell);
-                cell = new PdfPCell(new Paragraph(invoTableData.getString("Price")));
+                cell = new PdfPCell(new Paragraph(com.ibm.icu.text.NumberFormat.getCurrencyInstance(new Locale("en", "in"))
+                    .format(new BigDecimal(invoTableData.getString("Net Amount"))), IBMPlex));
                 cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
                 cell.setPadding(10f);
                 table.addCell(cell);
-                cell = new PdfPCell(new Paragraph(invoTableData.getString("Purchased Quantity")));
-                cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
-                cell.setPadding(10f);
-                table.addCell(cell);
-                cell = new PdfPCell(new Paragraph(invoTableData.getString("Net Amount")));
-                cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
-                cell.setPadding(10f);
-                table.addCell(cell);
-                i++;
             }
-            cell = new PdfPCell(new Paragraph("Total Amount", FontFactory.getFont(FontFactory.HELVETICA_BOLD)));
+            cell = new PdfPCell(new Paragraph("Total Amount", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10)));
             cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
             cell.setPadding(10f);
             cell.setColspan(4);
             table.addCell(cell);
-            cell = new PdfPCell(new Paragraph(invoData.getString("Sale Amount")));
+            cell = new PdfPCell(new Paragraph(com.ibm.icu.text.NumberFormat.getCurrencyInstance(new Locale("en", "in"))
+                    .format(new BigDecimal(invoData.getString("Sale Amount"))), IBMPlex));
             cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
             cell.setPadding(10f);
             table.addCell(cell);
+            para = new Paragraph();
+            chunk = new Chunk("Total Amount in Words : ", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10));
+            para.add(chunk);
+            chunk = new Chunk("Rupees " + com.ibm.icu.lang.UCharacter.toTitleCase(new com.ibm.icu.text.RuleBasedNumberFormat
+                (new Locale("en", "in"), com.ibm.icu.text.RuleBasedNumberFormat.SPELLOUT).format(Double.parseDouble(invoData.getString("Sale Amount")), "%spellout-numbering"),
+                com.ibm.icu.text.BreakIterator.getWordInstance()) + " Only", IBMPlex);
+            para.add(chunk);
+            cell = new PdfPCell(para);
+            cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
+            cell.setPadding(10f);
+            cell.setColspan(5);
+            table.addCell(cell);
             table.setSpacingBefore(40f);
+            table.setWidthPercentage(100);
+            document.add(table);
+            table = new PdfPTable(2);
+            cell = new PdfPCell(new Paragraph("THANK YOU FOR YOUR BUSINESS!", new Font(BaseFont.createFont("/com/astral/resources/IBMPlex.ttf",
+                BaseFont.IDENTITY_H, BaseFont.EMBEDDED), 12, Font.BOLD)));
+            cell.setBorder(Rectangle.NO_BORDER);
+            table.addCell(cell);
+            cell = new PdfPCell(new Paragraph("AUTHORIZED SIGNATURE", new Font(BaseFont.createFont("/com/astral/resources/IBMPlex.ttf",
+                BaseFont.IDENTITY_H, BaseFont.EMBEDDED), 12)));
+            cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
+            cell.setBorder(Rectangle.NO_BORDER);
+            table.addCell(cell);
+            table.setSpacingBefore(80f);
             table.setWidthPercentage(100);
             document.add(table);
             document.close();
