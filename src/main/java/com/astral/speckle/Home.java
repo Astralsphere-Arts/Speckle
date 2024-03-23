@@ -25,7 +25,6 @@ public class Home extends javax.swing.JPanel {
 
         Banner = new javax.swing.JPanel();
         Speckle_Label = new javax.swing.JLabel();
-        Speckle_Version_Label = new javax.swing.JLabel();
         Help = new javax.swing.JPanel();
         Help_Label = new javax.swing.JLabel();
         Help_Para = new javax.swing.JLabel();
@@ -48,31 +47,24 @@ public class Home extends javax.swing.JPanel {
         Banner.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(180, 180, 180), 1, true));
 
         Speckle_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
-        Speckle_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Speckle_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Speckle_Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/speckle-home-logo.png"))); // NOI18N
-        Speckle_Label.setText("Speckle");
-
-        Speckle_Version_Label.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-        Speckle_Version_Label.setText(com.astral.speckle.Main.Version);
+        Speckle_Label.setText("Speckle: Simple Invoicing & Inventory Management");
 
         javax.swing.GroupLayout BannerLayout = new javax.swing.GroupLayout(Banner);
         Banner.setLayout(BannerLayout);
         BannerLayout.setHorizontalGroup(
             BannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BannerLayout.createSequentialGroup()
-                .addContainerGap(317, Short.MAX_VALUE)
-                .addComponent(Speckle_Label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Speckle_Version_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(288, 288, 288))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BannerLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Speckle_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 846, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         BannerLayout.setVerticalGroup(
             BannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BannerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(BannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Speckle_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
-                    .addComponent(Speckle_Version_Label))
+                .addComponent(Speckle_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -269,7 +261,6 @@ public class Home extends javax.swing.JPanel {
     private javax.swing.JLabel Product_Two_Label;
     private javax.swing.JLabel Product_Two_Quantity;
     private javax.swing.JLabel Speckle_Label;
-    private javax.swing.JLabel Speckle_Version_Label;
     // End of variables declaration//GEN-END:variables
     private final String data[][];
 }
