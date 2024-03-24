@@ -364,8 +364,7 @@ public class Invoicing extends javax.swing.JPanel {
         String saleDate = new java.text.SimpleDateFormat("dd MMMM yyyy").format(new java.util.Date());
         String saleAmount = "0";
         for (int row = 0; row < New_Invoice_Table.getRowCount(); row++) {
-            Boolean isChecked = Boolean.valueOf(New_Invoice_Table.getValueAt(row, 0).toString());
-            if (isChecked) {
+            if (Boolean.parseBoolean(New_Invoice_Table.getValueAt(row, 0).toString())) {
                 prodSelected++;
                 String availQuan = Integer.toString((Integer) New_Invoice_Table.getValueAt(row, 4));
                 String purchQuan = "0";
@@ -395,8 +394,7 @@ public class Invoicing extends javax.swing.JPanel {
         else {
             com.astral.internal.SQLite.newInvoice(invID);
             for (int row = 0; row < New_Invoice_Table.getRowCount(); row++) {
-                Boolean isChecked = Boolean.valueOf(New_Invoice_Table.getValueAt(row, 0).toString());
-                if (isChecked) {
+                if (Boolean.parseBoolean(New_Invoice_Table.getValueAt(row, 0).toString())) {
                     String prodID = (String) New_Invoice_Table.getValueAt(row, 1);
                     String prodName = (String) New_Invoice_Table.getValueAt(row, 2);
                     String Price = Double.toString((Double) New_Invoice_Table.getValueAt(row, 3));
