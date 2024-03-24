@@ -5,8 +5,9 @@ A Simple Invoicing and Inventory Management System written in Java and uses SQLi
 ## Built Using
 
 1. **IDE** : [Apache NetBeans](https://netbeans.apache.org/) : Version 21
-2. **Build Tool** : [Apache Maven](https://maven.apache.org/) : Version 3.9.6
-3. **JDK** : [Azul Zulu](https://www.azul.com/downloads/) : Version 17.0.10+7 LTS
+2. **JDK** : [Azul Zulu](https://www.azul.com/downloads/) : Version 17.0.10+7 LTS
+3. **Build Tool** : [Apache Maven](https://maven.apache.org/) : Version 3.9.6
+4. **Packaging Tool** : [WiX Toolset](https://wixtoolset.org/) : Version 3.14.1
 
 ## Dependencies
 

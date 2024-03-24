@@ -11,6 +11,7 @@ buildNumber.properties
 
 # Project Specific Files #
 data/
+release/
 
 # Class Files #
 *.class
