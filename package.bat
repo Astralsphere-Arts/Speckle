@@ -9,6 +9,7 @@ set input_dir=target
 set working_dir=target
 set resources_dir=resources
 set output_dir=release
+set seven_zip="C:\Program Files\7-Zip\7z.exe"
 
 set nospace=%name: =-%
 
@@ -47,9 +48,9 @@ jpackage^
 ren "%output_dir%\%name%-%version%.exe" "%nospace%-%version%-win-x64.exe"
 copy "%working_dir%\temp\images\win-exe.image\%name%-%version%.msi" "%output_dir%\%nospace%-%version%-win-x64.msi"
 del "%working_dir%\temp\images\win-msi.image\%name%\app\.jpackage.xml"
-powershell "Compress-Archive '%working_dir%\temp\images\win-msi.image\%name%\*' '%output_dir%\%nospace%-%version%-win-x64.zip'"
+%seven_zip% a "%output_dir%\%nospace%-%version%-win-x64.zip" ".\%working_dir%\temp\images\win-msi.image\%name%\*"
 del "%working_dir%\temp\images\win-msi.image\%name%\app\%name%.cfg"
-powershell "Compress-Archive '%working_dir%\temp\images\win-msi.image\%name%\app\*' '%output_dir%\%nospace%-%version%.zip'"
+%seven_zip% a "%output_dir%\%nospace%-%version%.zip" ".\%working_dir%\temp\images\win-msi.image\%name%\app\*"
 
 rd "%working_dir%\app" /s /q
 rd "%working_dir%\temp" /s /q
