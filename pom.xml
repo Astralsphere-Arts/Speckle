@@ -13,6 +13,7 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <exec.mainClass>com.astral.speckle.Main</exec.mainClass>
+        <flatlafVersion>3.5</flatlafVersion>
     </properties>
     <build>
         <finalName>${project.name}</finalName>
@@ -80,7 +81,7 @@
         <dependency>
             <groupId>io.github.willena</groupId>
             <artifactId>sqlite-jdbc</artifactId>
-            <version>3.45.1.0</version>
+            <version>3.46.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -90,7 +91,50 @@
         <dependency>
             <groupId>com.formdev</groupId>
             <artifactId>flatlaf</artifactId>
-            <version>3.4</version>
+            <version>${flatlafVersion}</version>
+            <classifier>no-natives</classifier>
+        </dependency>
+        <dependency>
+            <groupId>com.formdev</groupId>
+            <artifactId>flatlaf</artifactId>
+            <version>${flatlafVersion}</version>
+            <classifier>linux-x86_64</classifier>
+            <type>so</type>
+        </dependency>
+        <dependency>
+            <groupId>com.formdev</groupId>
+            <artifactId>flatlaf</artifactId>
+            <version>${flatlafVersion}</version>
+            <classifier>macos-arm64</classifier>
+            <type>dylib</type>
+        </dependency>
+        <dependency>
+            <groupId>com.formdev</groupId>
+            <artifactId>flatlaf</artifactId>
+            <version>${flatlafVersion}</version>
+            <classifier>macos-x86_64</classifier>
+            <type>dylib</type>
+        </dependency>
+        <dependency>
+            <groupId>com.formdev</groupId>
+            <artifactId>flatlaf</artifactId>
+            <version>${flatlafVersion}</version>
+            <classifier>windows-arm64</classifier>
+            <type>dll</type>
+        </dependency>
+        <dependency>
+            <groupId>com.formdev</groupId>
+            <artifactId>flatlaf</artifactId>
+            <version>${flatlafVersion}</version>
+            <classifier>windows-x86</classifier>
+            <type>dll</type>
+        </dependency>
+        <dependency>
+            <groupId>com.formdev</groupId>
+            <artifactId>flatlaf</artifactId>
+            <version>${flatlafVersion}</version>
+            <classifier>windows-x86_64</classifier>
+            <type>dll</type>
         </dependency>
         <dependency>
             <groupId>com.github.librepdf</groupId>
@@ -100,7 +144,7 @@
         <dependency>
             <groupId>com.ibm.icu</groupId>
             <artifactId>icu4j</artifactId>
-            <version>74.2</version>
+            <version>75.1</version>
         </dependency>
     </dependencies>
 </project>
