@@ -262,11 +262,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="Customer_Name">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="12" style="0"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="Contact_Number_Label">
               <Properties>
@@ -279,11 +274,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="Contact_Number">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="12" style="0"/>
-                </Property>
-              </Properties>
               <Events>
                 <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Contact_NumberKeyPressed"/>
               </Events>
@@ -299,11 +289,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="Customer_Address">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="12" style="0"/>
-                </Property>
-              </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="New_Invoice_Table_Container">
               <AuxValues>

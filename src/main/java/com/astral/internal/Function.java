@@ -116,7 +116,7 @@ public class Function {
         try {
             ResultSetMetaData invMeta = invResult.getMetaData();
             int numberOfColumns = invMeta.getColumnCount();
-            invTableModel.addColumn("Products Purchased");
+            invTableModel.addColumn("Purchased");
             for (int columnIndex = 0; columnIndex < numberOfColumns; columnIndex++)
                 invTableModel.addColumn(invMeta.getColumnLabel(columnIndex + 1));
             invTableModel.addColumn("Purchased Quantity");

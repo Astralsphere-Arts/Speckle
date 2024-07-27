@@ -413,6 +413,7 @@ public class Invoicing extends javax.swing.JPanel {
             com.astral.speckle.Main.Content.removeAll();
             com.astral.speckle.Invoicing scene = new Invoicing();
             scene.setBounds(0, 0, 948, 574);
+            scene.New_Invoice_Table_Hide_Columns();
             com.astral.speckle.Main.Content.add(scene).setVisible(true);
             com.astral.internal.Function.invoicePDF(invID);
             try {
@@ -423,6 +424,11 @@ public class Invoicing extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_Create_InvoiceActionPerformed
 
+    public void New_Invoice_Table_Hide_Columns() {
+        New_Invoice_Table.getColumnModel().getColumn(1).setMinWidth(0);
+        New_Invoice_Table.getColumnModel().getColumn(1).setMaxWidth(0);
+        New_Invoice_Table.getColumnModel().getColumn(1).setWidth(0);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cancel;

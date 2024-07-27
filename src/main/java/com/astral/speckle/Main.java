@@ -1212,6 +1212,7 @@ public class Main extends javax.swing.JFrame {
         Content.removeAll();
         com.astral.speckle.Invoicing scene = new Invoicing();
         scene.setBounds(0, 0, 948, 574);
+        scene.New_Invoice_Table_Hide_Columns();
         Content.add(scene).setVisible(true);
     }//GEN-LAST:event_InvoicingMouseClicked
 
