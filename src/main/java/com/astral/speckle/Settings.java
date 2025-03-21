@@ -66,7 +66,7 @@ public class Settings extends javax.swing.JPanel {
         Settings_Container.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         Speckle_Logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Speckle_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/speckle-logo.png"))); // NOI18N
+        Speckle_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/speckle-logo.png"))); // NOI18N
         Speckle_Logo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Change_Username.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N

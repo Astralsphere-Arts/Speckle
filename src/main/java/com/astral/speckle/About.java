@@ -41,7 +41,7 @@ public class About extends javax.swing.JPanel {
         Credits_Text = new javax.swing.JTextArea();
 
         Speckle_Logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Speckle_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/speckle-logo.png"))); // NOI18N
+        Speckle_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/speckle-logo.png"))); // NOI18N
         Speckle_Logo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
@@ -69,7 +69,7 @@ public class About extends javax.swing.JPanel {
         Authors_Caret = (javax.swing.text.DefaultCaret)License_Text.getCaret();
         Authors_Caret.setUpdatePolicy(javax.swing.text.DefaultCaret.NEVER_UPDATE);
         try {
-            Authors_Reader = new java.io.BufferedReader(new java.io.InputStreamReader(getClass().getResourceAsStream("/com/astral/resources/authors.txt")));
+            Authors_Reader = new java.io.BufferedReader(new java.io.InputStreamReader(getClass().getResourceAsStream("/texts/authors.txt")));
             Authors_Line = Authors_Reader.readLine();
             while (Authors_Line != null) {
                 Authors_Text.append(Authors_Line + "\n");
@@ -105,7 +105,7 @@ public class About extends javax.swing.JPanel {
         License_Caret = (javax.swing.text.DefaultCaret)License_Text.getCaret();
         License_Caret.setUpdatePolicy(javax.swing.text.DefaultCaret.NEVER_UPDATE);
         try {
-            License_Reader = new java.io.BufferedReader(new java.io.InputStreamReader(getClass().getResourceAsStream("/com/astral/resources/license.txt")));
+            License_Reader = new java.io.BufferedReader(new java.io.InputStreamReader(getClass().getResourceAsStream("/texts/license.txt")));
             License_Line = License_Reader.readLine();
             while (License_Line != null) {
                 License_Text.append(License_Line + "\n");
@@ -141,7 +141,7 @@ public class About extends javax.swing.JPanel {
         Credits_Caret = (javax.swing.text.DefaultCaret)License_Text.getCaret();
         Credits_Caret.setUpdatePolicy(javax.swing.text.DefaultCaret.NEVER_UPDATE);
         try {
-            Credits_Reader = new java.io.BufferedReader(new java.io.InputStreamReader(getClass().getResourceAsStream("/com/astral/resources/credits.txt")));
+            Credits_Reader = new java.io.BufferedReader(new java.io.InputStreamReader(getClass().getResourceAsStream("/texts/credits.txt")));
             Credits_Line = Credits_Reader.readLine();
             while (Credits_Line != null) {
                 Credits_Text.append(Credits_Line + "\n");

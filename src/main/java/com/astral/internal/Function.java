@@ -179,7 +179,7 @@ public class Function {
         ResultSet invoTableData = com.astral.internal.SQLite.invoTableData(invID);
         try (Document document = new Document()) {
             PdfWriter.getInstance(document, new FileOutputStream(invPath));
-            Font IBMPlex = new Font(BaseFont.createFont("/com/astral/resources/IBMPlex.ttf", BaseFont.IDENTITY_H,
+            Font IBMPlex = new Font(BaseFont.createFont("/fonts/IBMPlex.ttf", BaseFont.IDENTITY_H,
                     BaseFont.EMBEDDED), 10);
             document.open();
             Paragraph para = new Paragraph(com.astral.internal.SQLite.getConfigValue("Business Name"),
@@ -312,11 +312,11 @@ public class Function {
             table.setWidthPercentage(100);
             document.add(table);
             table = new PdfPTable(2);
-            cell = new PdfPCell(new Paragraph("THANK YOU FOR YOUR BUSINESS!", new Font(BaseFont.createFont("/com/astral/resources/IBMPlex.ttf",
+            cell = new PdfPCell(new Paragraph("THANK YOU FOR YOUR BUSINESS!", new Font(BaseFont.createFont("/fonts/IBMPlex.ttf",
                 BaseFont.IDENTITY_H, BaseFont.EMBEDDED), 12, Font.BOLD)));
             cell.setBorder(Rectangle.NO_BORDER);
             table.addCell(cell);
-            cell = new PdfPCell(new Paragraph("AUTHORIZED SIGNATURE", new Font(BaseFont.createFont("/com/astral/resources/IBMPlex.ttf",
+            cell = new PdfPCell(new Paragraph("AUTHORIZED SIGNATURE", new Font(BaseFont.createFont("/fonts/IBMPlex.ttf",
                 BaseFont.IDENTITY_H, BaseFont.EMBEDDED), 12)));
             cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
             cell.setBorder(Rectangle.NO_BORDER);

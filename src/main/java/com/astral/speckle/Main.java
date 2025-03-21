@@ -118,7 +118,7 @@ public class Main extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Speckle");
-        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/speckle-frame-logo.png")).getImage());
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/speckle-frame-logo.png")).getImage());
         setUndecorated(true);
         setResizable(false);
 
@@ -139,7 +139,7 @@ public class Main extends javax.swing.JFrame {
 
         Header_Logo.setBackground(new java.awt.Color(60, 60, 60));
         Header_Logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Header_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/speckle-header-logo.png"))); // NOI18N
+        Header_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/speckle-header-logo.png"))); // NOI18N
         Header_Logo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Header_Logo.setOpaque(true);
 
@@ -151,7 +151,7 @@ public class Main extends javax.swing.JFrame {
 
         Close.setBackground(new java.awt.Color(255, 255, 255));
         Close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/close.png"))); // NOI18N
+        Close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
         Close.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Close.setOpaque(true);
         Close.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -194,7 +194,7 @@ public class Main extends javax.swing.JFrame {
         Container.setLayout(new java.awt.CardLayout());
 
         StartUp_Banner.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        StartUp_Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/banner.png"))); // NOI18N
+        StartUp_Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.png"))); // NOI18N
         StartUp_Banner.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         StartUp_Container.setLayout(new java.awt.CardLayout());
@@ -780,7 +780,7 @@ public class Main extends javax.swing.JFrame {
 
         Home.setBackground(new java.awt.Color(0, 136, 255));
         Home.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/home.png"))); // NOI18N
+        Home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/home.png"))); // NOI18N
         Home.setToolTipText("Home");
         Home.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Home.setOpaque(true);
@@ -801,7 +801,7 @@ public class Main extends javax.swing.JFrame {
 
         Invoicing.setBackground(new java.awt.Color(255, 255, 255));
         Invoicing.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Invoicing.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/invoice.png"))); // NOI18N
+        Invoicing.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/invoice.png"))); // NOI18N
         Invoicing.setToolTipText("Invoicing");
         Invoicing.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Invoicing.setOpaque(true);
@@ -822,7 +822,7 @@ public class Main extends javax.swing.JFrame {
 
         Inventory.setBackground(new java.awt.Color(255, 255, 255));
         Inventory.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Inventory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/inventory.png"))); // NOI18N
+        Inventory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/inventory.png"))); // NOI18N
         Inventory.setToolTipText("Inventory");
         Inventory.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Inventory.setOpaque(true);
@@ -843,7 +843,7 @@ public class Main extends javax.swing.JFrame {
 
         Settings.setBackground(new java.awt.Color(255, 255, 255));
         Settings.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Settings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/settings.png"))); // NOI18N
+        Settings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/settings.png"))); // NOI18N
         Settings.setToolTipText("Settings");
         Settings.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Settings.setOpaque(true);
@@ -864,7 +864,7 @@ public class Main extends javax.swing.JFrame {
 
         About.setBackground(new java.awt.Color(255, 255, 255));
         About.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        About.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/about.png"))); // NOI18N
+        About.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/about.png"))); // NOI18N
         About.setToolTipText("About");
         About.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         About.setOpaque(true);
@@ -885,7 +885,7 @@ public class Main extends javax.swing.JFrame {
 
         SignOut.setBackground(new java.awt.Color(255, 255, 255));
         SignOut.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SignOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/sign-out.png"))); // NOI18N
+        SignOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sign-out.png"))); // NOI18N
         SignOut.setToolTipText("Sign Out");
         SignOut.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         SignOut.setOpaque(true);

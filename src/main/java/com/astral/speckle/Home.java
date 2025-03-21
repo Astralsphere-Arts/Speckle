@@ -48,7 +48,7 @@ public class Home extends javax.swing.JPanel {
 
         Speckle_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
         Speckle_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Speckle_Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/astral/resources/speckle-home-logo.png"))); // NOI18N
+        Speckle_Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/speckle-home-logo.png"))); // NOI18N
         Speckle_Label.setText("Speckle: Simple Invoicing & Inventory Management");
 
         javax.swing.GroupLayout BannerLayout = new javax.swing.GroupLayout(Banner);
