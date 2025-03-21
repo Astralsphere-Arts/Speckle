@@ -12,6 +12,7 @@ LICENSE           text eol=lf
 *.txt             text eol=lf
 *.svg             text eol=lf
 *.rtf             binary
+*.ttf             binary
 *.png             binary
 *.jpg             binary
 *.bmp             binary
