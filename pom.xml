@@ -13,7 +13,7 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <exec.mainClass>com.astral.speckle.Main</exec.mainClass>
-        <flatlafVersion>3.5</flatlafVersion>
+        <flatlafVersion>3.5.4</flatlafVersion>
     </properties>
     <build>
         <finalName>${project.name}</finalName>
@@ -21,7 +21,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.2</version>
+                <version>3.4.2</version>
                 <configuration>
                     <archive>
                         <manifest>
@@ -35,7 +35,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.3.0</version>
                 <executions>
                     <execution>
                         <phase>install</phase>
@@ -54,7 +53,7 @@
         <dependency>
             <groupId>io.github.willena</groupId>
             <artifactId>sqlite-jdbc</artifactId>
-            <version>3.46.0.0</version>
+            <version>3.47.2.0</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -117,7 +116,7 @@
         <dependency>
             <groupId>com.ibm.icu</groupId>
             <artifactId>icu4j</artifactId>
-            <version>75.1</version>
+            <version>77.1</version>
         </dependency>
     </dependencies>
 </project>
