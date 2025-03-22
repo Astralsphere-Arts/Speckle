@@ -1,4 +1,4 @@
-# Maven Specific Files #
+# Maven Specific Files
 target/
 pom.xml.tag
 pom.xml.releaseBackup
@@ -9,12 +9,18 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 
-# Project Specific Files #
+# Project Specific Files
 data/
 release/
 
-# Class Files #
+# Class Files
 *.class
 
-# Log Files #
+# Log Files
 *.log
+
+# macOS Metadata Files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
