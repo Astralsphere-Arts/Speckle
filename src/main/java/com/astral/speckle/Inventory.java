@@ -156,10 +156,13 @@ public class Inventory extends javax.swing.JPanel {
             String price = null;
             if (Inventory_Table.getValueAt(row, 2) != null)
                 price = Double.toString((Double) Inventory_Table.getValueAt(row, 2));
-            String quan = null;
+            String gst = null;
             if (Inventory_Table.getValueAt(row, 3) != null)
-                quan = Integer.toString((Integer) Inventory_Table.getValueAt(row, 3));
-            com.astral.internal.SQLite.updateInven(PID, name, price, quan);
+                gst = Integer.toString((Integer) Inventory_Table.getValueAt(row, 3));
+            String quan = null;
+            if (Inventory_Table.getValueAt(row, 4) != null)
+                quan = Integer.toString((Integer) Inventory_Table.getValueAt(row, 4));
+            com.astral.internal.SQLite.updateInven(PID, name, price, gst, quan);
         }
     }
     
@@ -185,8 +188,8 @@ public class Inventory extends javax.swing.JPanel {
         else {
             String PID = Inventory_Table.getValueAt(row, 0).toString();
             int quantity = 0;
-            if (Inventory_Table.getValueAt(row, 3) != null)
-                quantity = (Integer) Inventory_Table.getValueAt(row, 3);
+            if (Inventory_Table.getValueAt(row, 4) != null)
+                quantity = (Integer) Inventory_Table.getValueAt(row, 4);
             String update = JOptionPane.showInputDialog(null, "Enter the Amount of Stock"
                 + " You want to Increase", "Update Stock", JOptionPane.PLAIN_MESSAGE);
             if (update.equals(""))

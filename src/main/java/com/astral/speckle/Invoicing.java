@@ -363,13 +363,14 @@ public class Invoicing extends javax.swing.JPanel {
         String custAddress = Customer_Address.getText();
         String saleDate = new java.text.SimpleDateFormat("dd MMMM yyyy").format(new java.util.Date());
         String saleAmount = "0";
+        String gst = "0";
         for (int row = 0; row < New_Invoice_Table.getRowCount(); row++) {
             if (Boolean.parseBoolean(New_Invoice_Table.getValueAt(row, 0).toString())) {
                 prodSelected++;
-                String availQuan = Integer.toString((Integer) New_Invoice_Table.getValueAt(row, 4));
+                String availQuan = Integer.toString((Integer) New_Invoice_Table.getValueAt(row, 5));
                 String purchQuan = "0";
-                if (New_Invoice_Table.getValueAt(row, 5) != null)
-                    purchQuan = Integer.toString((Integer) New_Invoice_Table.getValueAt(row, 5));
+                if (New_Invoice_Table.getValueAt(row, 6) != null)
+                    purchQuan = Integer.toString((Integer) New_Invoice_Table.getValueAt(row, 6));
                 if (purchQuan.equals("0")) {
                     emptyQuan = true;
                 }
@@ -398,18 +399,19 @@ public class Invoicing extends javax.swing.JPanel {
                     String prodID = (String) New_Invoice_Table.getValueAt(row, 1);
                     String prodName = (String) New_Invoice_Table.getValueAt(row, 2);
                     String Price = Double.toString((Double) New_Invoice_Table.getValueAt(row, 3));
-                    int availQuan = (Integer) New_Invoice_Table.getValueAt(row, 4);
-                    String purchQuan = Integer.toString((Integer) New_Invoice_Table.getValueAt(row, 5));
+                    String prodgst = (String) New_Invoice_Table.getValueAt(row, 4);
+                    int availQuan = (Integer) New_Invoice_Table.getValueAt(row, 5);
+                    String purchQuan = Integer.toString((Integer) New_Invoice_Table.getValueAt(row, 6));
                     String remaingQuan = Integer.toString(availQuan - Integer.parseInt(purchQuan));
                     String netAmount = Double.toString(Double.parseDouble(Price) *
                         Double.parseDouble(purchQuan));
                     saleAmount = Double.toString(Double.parseDouble(saleAmount) +
                         Double.parseDouble(netAmount));
                     com.astral.internal.SQLite.updateStock(prodID, remaingQuan);
-                    com.astral.internal.SQLite.newInvoice(invID, prodName, Price, purchQuan, netAmount);
+                    com.astral.internal.SQLite.newInvoice(invID, prodName, Price, purchQuan, prodgst, netAmount);
                 }
             }
-            com.astral.internal.SQLite.newInvoice(invID, custName, custContact, custAddress, saleDate, saleAmount);
+            com.astral.internal.SQLite.newInvoice(invID, custName, custContact, custAddress, saleDate, gst, saleAmount);
             com.astral.speckle.Main.Content.removeAll();
             com.astral.speckle.Invoicing scene = new Invoicing();
             scene.setBounds(0, 0, 948, 574);

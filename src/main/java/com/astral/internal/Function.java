@@ -80,14 +80,14 @@ public class Function {
             invTableModel.addColumn(invMeta.getColumnLabel(2));
             invTableModel.addColumn(invMeta.getColumnLabel(3));
             invTableModel.addColumn(invMeta.getColumnLabel(5));
-            invTableModel.addColumn(invMeta.getColumnLabel(6));
+            invTableModel.addColumn(invMeta.getColumnLabel(7));
             Object[] row = new Object[5];
             while (invResult.next()) {
                 row[0] = invResult.getObject(1);
                 row[1] = invResult.getObject(2);
                 row[2] = invResult.getObject(3);
                 row[3] = invResult.getObject(5);
-                row[4] = invResult.getObject(6);
+                row[4] = invResult.getObject(7);
                 invTableModel.addRow(row);
             }
             return invTableModel;
@@ -102,11 +102,12 @@ public class Function {
         DefaultTableModel invTableModel = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return columnIndex == 0 || columnIndex == 5;
+                return columnIndex == 0 || columnIndex == 6;
             }
             Class[] types = new Class [] {
                 java.lang.Boolean.class, java.lang.Object.class, java.lang.Object.class,
-                java.lang.Double.class, java.lang.Integer.class, java.lang.Integer.class
+                java.lang.Double.class, java.lang.Integer.class,java.lang.Integer.class, 
+                java.lang.Integer.class
             };
             @Override
             public Class getColumnClass(int columnIndex) {
@@ -125,7 +126,7 @@ public class Function {
                 row[0] = false;
                 for (int i = 1; i < numberOfColumns + 1; i++)
                     row[i] = invResult.getObject(i);
-                row[5] = 1;
+                row[6] = 1;
                 invTableModel.addRow(row);
             }
             return invTableModel;
@@ -144,7 +145,8 @@ public class Function {
             }
             Class[] types = new Class [] {
                 java.lang.Object.class, java.lang.Object.class,
-                java.lang.Double.class, java.lang.Integer.class
+                java.lang.Double.class, java.lang.Integer.class,
+                java.lang.Integer.class
             };
             @Override
             public Class getColumnClass(int columnIndex) {
@@ -383,9 +385,10 @@ public class Function {
                 String PID = CSV_Parts[0];
                 String name = CSV_Parts[1];
                 String price = CSV_Parts[2];
-                String quan = CSV_Parts[3];
+                String gst = CSV_Parts[3];
+                String quan = CSV_Parts[4];
                 if (!PID.equals("Product ID"))
-                    com.astral.internal.SQLite.updateInven(PID, name, price, quan);
+                    com.astral.internal.SQLite.updateInven(PID, name, price, gst, quan);
             }
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);

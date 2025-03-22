@@ -65,10 +65,10 @@ public class SQLite {
             dbConnect();
         String invoice = "CREATE TABLE IF NOT EXISTS Invoice (\"Invoice ID\" TEXT NOT"
             + " NULL UNIQUE, \"Customer Name\" TEXT, \"Contact Number\" TEXT, \"Address\""
-            + " TEXT, \"Date of Sale\" TEXT, \"Sale Amount\" REAL, PRIMARY KEY(\"Invoice"
+            + " TEXT, \"Date of Sale\" TEXT, \"GST\" REAL, \"Sale Amount\" REAL, PRIMARY KEY(\"Invoice"
             + " ID\"));";
         String inventory = "CREATE TABLE IF NOT EXISTS Inventory (\"Product ID\" TEXT"
-            + " NOT NULL UNIQUE, \"Product Name\" TEXT, \"Price\" REAL, \"Available"
+            + " NOT NULL UNIQUE, \"Product Name\" TEXT, \"Price\" REAL, \"GST\" INTEGER, \"Available"
             + " Quantity\" INTEGER, PRIMARY KEY(\"Product ID\"));";
         String configuration = "CREATE TABLE IF NOT EXISTS Configuration (Parameter"
             + " TEXT NOT NULL UNIQUE, Value TEXT, PRIMARY KEY(Parameter));";
@@ -258,12 +258,12 @@ public class SQLite {
     }
     
     public static void newInvoice(String invID, String name, String contact, String address,
-        String date, String amount) {
+        String date,String gst, String amount) {
         if (mainDB == null)
             dbConnect();
         String invoice = "REPLACE INTO Invoice (\"Invoice ID\", \"Customer Name\","
-            + " \"Contact Number\", \"Address\", \"Date of Sale\", \"Sale Amount\")"
-            + " VALUES(?, ?, ?, ?, ?, ?);";
+            + " \"Contact Number\", \"Address\", \"Date of Sale\", \"GST\", \"Sale Amount\")"
+            + " VALUES(?, ?, ?, ?, ?, ?, ?);";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(invoice);
             mainDBquery.setString(1, invID);
@@ -271,7 +271,8 @@ public class SQLite {
             mainDBquery.setString(3, contact);
             mainDBquery.setString(4, address);
             mainDBquery.setString(5, date);
-            mainDBquery.setString(6, amount);
+            mainDBquery.setString(6, gst);
+            mainDBquery.setString(7, amount);
             mainDBquery.executeUpdate();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
@@ -282,7 +283,7 @@ public class SQLite {
         if (invoiceDB == null)
             dbConnect();
         String invoice = "CREATE TABLE IF NOT EXISTS \"" + invID + "\" (\"Product Name\""
-            + " TEXT NOT NULL UNIQUE, \"Price\" REAL, \"Purchased Quantity\" INTEGER,"
+            + " TEXT NOT NULL UNIQUE, \"Price\" REAL, \"Purchased Quantity\" INTEGER, \"GST\"INTEGER,"
             + " \"Net Amount\" REAL, PRIMARY KEY(\"Product Name\"));";
         try {
             Statement invoiceDBquery = invoiceDB.createStatement();
@@ -292,34 +293,36 @@ public class SQLite {
         }
     }
     
-    public static void newInvoice(String invID, String name, String price, String quan, String amount) {
+    public static void newInvoice(String invID, String name, String price, String quan,String gst, String amount) {
         if (invoiceDB == null)
             dbConnect();
         String invoice = "REPLACE INTO \"" + invID + "\" (\"Product Name\", \"Price\","
-            + " \"Purchased Quantity\", \"Net Amount\") VALUES(?, ?, ?, ?);";
+            + " \"Purchased Quantity\", \"GST\", \"Net Amount\") VALUES(?, ?, ?, ?, ?);";
         try {
             PreparedStatement invoiceDBquery = invoiceDB.prepareStatement(invoice);
             invoiceDBquery.setString(1, name);
             invoiceDBquery.setString(2, price);
             invoiceDBquery.setString(3, quan);
-            invoiceDBquery.setString(4, amount);
+            invoiceDBquery.setString(4, gst);
+            invoiceDBquery.setString(5, amount);
             invoiceDBquery.executeUpdate();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
     
-    public static void updateInven(String PID, String name, String price, String quan) {
+    public static void updateInven(String PID, String name, String price, String gst, String quan) {
         if (mainDB == null)
             dbConnect();
         String inventory = "REPLACE INTO Inventory (\"Product ID\", \"Product Name\","
-            + " \"Price\", \"Available Quantity\") VALUES(?, ?, ?, ?);";
+            + " \"Price\", \"GST\", \"Available Quantity\") VALUES(?, ?, ?, ?, ?);";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(inventory);
             mainDBquery.setString(1, PID);
             mainDBquery.setString(2, name);
             mainDBquery.setString(3, price);
-            mainDBquery.setString(4, quan);
+            mainDBquery.setString(4, gst);
+            mainDBquery.setString(5, quan);
             mainDBquery.executeUpdate();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
