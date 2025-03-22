@@ -65,11 +65,11 @@ public class SQLite {
             dbConnect();
         String invoice = "CREATE TABLE IF NOT EXISTS Invoice (\"Invoice ID\" TEXT NOT"
             + " NULL UNIQUE, \"Customer Name\" TEXT, \"Contact Number\" TEXT, \"Address\""
-            + " TEXT, \"Date of Sale\" TEXT, \"GST\" REAL, \"Sale Amount\" REAL, PRIMARY KEY(\"Invoice"
-            + " ID\"));";
+            + " TEXT, \"Date of Sale\" TEXT, \"GST\" REAL, \"Sale Amount\" REAL, PRIMARY"
+            + " KEY(\"Invoice ID\"));";
         String inventory = "CREATE TABLE IF NOT EXISTS Inventory (\"Product ID\" TEXT"
-            + " NOT NULL UNIQUE, \"Product Name\" TEXT, \"Price\" REAL, \"GST\" INTEGER, \"Available"
-            + " Quantity\" INTEGER, PRIMARY KEY(\"Product ID\"));";
+            + " NOT NULL UNIQUE, \"Product Name\" TEXT, \"Price\" REAL, \"GST Rate\""
+            + " INTEGER, \"Available Quantity\" INTEGER, PRIMARY KEY(\"Product ID\"));";
         String configuration = "CREATE TABLE IF NOT EXISTS Configuration (Parameter"
             + " TEXT NOT NULL UNIQUE, Value TEXT, PRIMARY KEY(Parameter));";
         String configData = "INSERT INTO Configuration (Parameter) VALUES ('Username'),"
@@ -258,12 +258,12 @@ public class SQLite {
     }
     
     public static void newInvoice(String invID, String name, String contact, String address,
-        String date,String gst, String amount) {
+        String date, String gst, String amount) {
         if (mainDB == null)
             dbConnect();
         String invoice = "REPLACE INTO Invoice (\"Invoice ID\", \"Customer Name\","
-            + " \"Contact Number\", \"Address\", \"Date of Sale\", \"GST\", \"Sale Amount\")"
-            + " VALUES(?, ?, ?, ?, ?, ?, ?);";
+            + " \"Contact Number\", \"Address\", \"Date of Sale\", \"GST\", \"Sale"
+            + " Amount\") VALUES(?, ?, ?, ?, ?, ?, ?);";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(invoice);
             mainDBquery.setString(1, invID);
@@ -279,12 +279,13 @@ public class SQLite {
         }
     }
     
-    public static void newInvoice(String invID) {
+    public static void newInvoiceTable(String invID) {
         if (invoiceDB == null)
             dbConnect();
         String invoice = "CREATE TABLE IF NOT EXISTS \"" + invID + "\" (\"Product Name\""
-            + " TEXT NOT NULL UNIQUE, \"Price\" REAL, \"Purchased Quantity\" INTEGER, \"GST\"INTEGER,"
-            + " \"Net Amount\" REAL, PRIMARY KEY(\"Product Name\"));";
+            + " TEXT NOT NULL UNIQUE, \"Price\" REAL, \"Purchased Quantity\" INTEGER,"
+            + " \"GST Rate\" INTEGER, \"GST Amount\" REAL, \"Net Amount\" REAL, PRIMARY"
+            + " KEY(\"Product Name\"));";
         try {
             Statement invoiceDBquery = invoiceDB.createStatement();
             invoiceDBquery.execute(invoice);
@@ -293,18 +294,21 @@ public class SQLite {
         }
     }
     
-    public static void newInvoice(String invID, String name, String price, String quan,String gst, String amount) {
+    public static void newInvoiceTable(String invID, String name, String price, String quan,
+        String gstRate, String gstAmount, String amount) {
         if (invoiceDB == null)
             dbConnect();
         String invoice = "REPLACE INTO \"" + invID + "\" (\"Product Name\", \"Price\","
-            + " \"Purchased Quantity\", \"GST\", \"Net Amount\") VALUES(?, ?, ?, ?, ?);";
+            + " \"Purchased Quantity\", \"GST Rate\", \"GST Amount\", \"Net Amount\")"
+            + " VALUES(?, ?, ?, ?, ?, ?);";
         try {
             PreparedStatement invoiceDBquery = invoiceDB.prepareStatement(invoice);
             invoiceDBquery.setString(1, name);
             invoiceDBquery.setString(2, price);
             invoiceDBquery.setString(3, quan);
-            invoiceDBquery.setString(4, gst);
-            invoiceDBquery.setString(5, amount);
+            invoiceDBquery.setString(4, gstRate);
+            invoiceDBquery.setString(5, gstAmount);
+            invoiceDBquery.setString(6, amount);
             invoiceDBquery.executeUpdate();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
@@ -315,7 +319,7 @@ public class SQLite {
         if (mainDB == null)
             dbConnect();
         String inventory = "REPLACE INTO Inventory (\"Product ID\", \"Product Name\","
-            + " \"Price\", \"GST\", \"Available Quantity\") VALUES(?, ?, ?, ?, ?);";
+            + " \"Price\", \"GST Rate\", \"Available Quantity\") VALUES(?, ?, ?, ?, ?);";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(inventory);
             mainDBquery.setString(1, PID);

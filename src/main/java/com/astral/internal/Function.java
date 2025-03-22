@@ -106,7 +106,7 @@ public class Function {
             }
             Class[] types = new Class [] {
                 java.lang.Boolean.class, java.lang.Object.class, java.lang.Object.class,
-                java.lang.Double.class, java.lang.Integer.class,java.lang.Integer.class, 
+                java.lang.Double.class, java.lang.Integer.class, java.lang.Integer.class, 
                 java.lang.Integer.class
             };
             @Override
@@ -239,7 +239,7 @@ public class Function {
             chunk = new Chunk(invoData.getString("Address"), FontFactory.getFont(FontFactory.HELVETICA));
             para.add(chunk);
             document.add(para);
-            float[] widths = {10f, 44f, 13f, 16f, 17f};
+            float[] widths = {10f, 36f, 13f, 16f, 8f, 17f};
             table = new PdfPTable(widths);
             cell = new PdfPCell(new Paragraph("S.No.", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10)));
             cell.setHorizontalAlignment(Element.ALIGN_CENTER);
@@ -256,6 +256,11 @@ public class Function {
             cell.setPadding(10f);
             table.addCell(cell);
             cell = new PdfPCell(new Paragraph("Price", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10)));
+            cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cell.setBackgroundColor(TableHeader);
+            cell.setPadding(10f);
+            table.addCell(cell);
+            cell = new PdfPCell(new Paragraph("GST", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10)));
             cell.setHorizontalAlignment(Element.ALIGN_CENTER);
             cell.setBackgroundColor(TableHeader);
             cell.setPadding(10f);
@@ -282,6 +287,10 @@ public class Function {
                 cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
                 cell.setPadding(10f);
                 table.addCell(cell);
+                cell = new PdfPCell(new Paragraph(String.format("%02d", Integer.valueOf(invoTableData.getString("GST Rate"))) + "%", IBMPlex));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cell.setPadding(10f);
+                table.addCell(cell);
                 cell = new PdfPCell(new Paragraph(com.ibm.icu.text.NumberFormat.getCurrencyInstance(Locale.of("en", "in"))
                     .format(new BigDecimal(invoTableData.getString("Net Amount"))), IBMPlex));
                 cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
@@ -291,7 +300,7 @@ public class Function {
             cell = new PdfPCell(new Paragraph("Total Amount", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10)));
             cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
             cell.setPadding(10f);
-            cell.setColspan(4);
+            cell.setColspan(5);
             table.addCell(cell);
             cell = new PdfPCell(new Paragraph(com.ibm.icu.text.NumberFormat.getCurrencyInstance(Locale.of("en", "in"))
                     .format(new BigDecimal(invoData.getString("Sale Amount"))), IBMPlex));
@@ -308,7 +317,7 @@ public class Function {
             cell = new PdfPCell(para);
             cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
             cell.setPadding(10f);
-            cell.setColspan(5);
+            cell.setColspan(6);
             table.addCell(cell);
             table.setSpacingBefore(40f);
             table.setWidthPercentage(100);
@@ -341,13 +350,15 @@ public class Function {
             invCSV.write("\"" + invMeta.getColumnLabel(3) + "\",");
             invCSV.write("\"" + invMeta.getColumnLabel(4) + "\",");
             invCSV.write("\"" + invMeta.getColumnLabel(5) + "\",");
-            invCSV.write("\"" + invMeta.getColumnLabel(6) + "\"\r\n");
+            invCSV.write("\"" + invMeta.getColumnLabel(6) + "\",");
+            invCSV.write("\"" + invMeta.getColumnLabel(7) + "\"\r\n");
             while (invoData.next()) {
                 invCSV.write("\"" + invoData.getString("Invoice ID") + "\",");
                 invCSV.write("\"" + invoData.getString("Customer Name") + "\",");
                 invCSV.write("\"" + invoData.getString("Contact Number") + "\",");
                 invCSV.write("\"" + invoData.getString("Address") + "\",");
                 invCSV.write("\"" + invoData.getString("Date of Sale") + "\",");
+                invCSV.write("\"" + invoData.getString("GST") + "\",");
                 invCSV.write("\"" + invoData.getString("Sale Amount") + "\"\r\n");
             }
             invCSV.close();
@@ -363,11 +374,13 @@ public class Function {
             invCSV.write("\"" + invMeta.getColumnLabel(1) + "\",");
             invCSV.write("\"" + invMeta.getColumnLabel(2) + "\",");
             invCSV.write("\"" + invMeta.getColumnLabel(3) + "\",");
-            invCSV.write("\"" + invMeta.getColumnLabel(4) + "\"\r\n");
+            invCSV.write("\"" + invMeta.getColumnLabel(4) + "\",");
+            invCSV.write("\"" + invMeta.getColumnLabel(5) + "\"\r\n");
             while (invenData.next()) {
                 invCSV.write("\"" + invenData.getString("Product ID") + "\",");
                 invCSV.write("\"" + invenData.getString("Product Name") + "\",");
                 invCSV.write("\"" + invenData.getString("Price") + "\",");
+                invCSV.write("\"" + invenData.getString("GST Rate") + "\",");
                 invCSV.write("\"" + invenData.getString("Available Quantity") + "\"\r\n");
             }
             invCSV.close();

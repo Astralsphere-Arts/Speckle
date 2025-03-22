@@ -362,8 +362,8 @@ public class Invoicing extends javax.swing.JPanel {
         String custContact = Contact_Number.getText();
         String custAddress = Customer_Address.getText();
         String saleDate = new java.text.SimpleDateFormat("dd MMMM yyyy").format(new java.util.Date());
+        String saleGST = "0";
         String saleAmount = "0";
-        String gst = "0";
         for (int row = 0; row < New_Invoice_Table.getRowCount(); row++) {
             if (Boolean.parseBoolean(New_Invoice_Table.getValueAt(row, 0).toString())) {
                 prodSelected++;
@@ -393,25 +393,26 @@ public class Invoicing extends javax.swing.JPanel {
                 + " for one or more Products. Please Try Again!", "Purchased Quantity Exceeded",
                 JOptionPane.ERROR_MESSAGE);
         else {
-            com.astral.internal.SQLite.newInvoice(invID);
+            com.astral.internal.SQLite.newInvoiceTable(invID);
             for (int row = 0; row < New_Invoice_Table.getRowCount(); row++) {
                 if (Boolean.parseBoolean(New_Invoice_Table.getValueAt(row, 0).toString())) {
                     String prodID = (String) New_Invoice_Table.getValueAt(row, 1);
                     String prodName = (String) New_Invoice_Table.getValueAt(row, 2);
                     String Price = Double.toString((Double) New_Invoice_Table.getValueAt(row, 3));
-                    String prodgst = (String) New_Invoice_Table.getValueAt(row, 4);
+                    String gstRate = Integer.toString((Integer) New_Invoice_Table.getValueAt(row, 4));
                     int availQuan = (Integer) New_Invoice_Table.getValueAt(row, 5);
                     String purchQuan = Integer.toString((Integer) New_Invoice_Table.getValueAt(row, 6));
                     String remaingQuan = Integer.toString(availQuan - Integer.parseInt(purchQuan));
-                    String netAmount = Double.toString(Double.parseDouble(Price) *
-                        Double.parseDouble(purchQuan));
-                    saleAmount = Double.toString(Double.parseDouble(saleAmount) +
-                        Double.parseDouble(netAmount));
+                    double Amount = Double.parseDouble(Price) * Double.parseDouble(purchQuan);
+                    String gstAmount = Double.toString((Amount * Double.parseDouble(gstRate)) / 100);
+                    saleGST = Double.toString(Double.parseDouble(saleGST) + Double.parseDouble(gstAmount));
+                    String netAmount = Double.toString(Amount + Double.parseDouble(gstAmount));
+                    saleAmount = Double.toString(Double.parseDouble(saleAmount) + Double.parseDouble(netAmount));
                     com.astral.internal.SQLite.updateStock(prodID, remaingQuan);
-                    com.astral.internal.SQLite.newInvoice(invID, prodName, Price, purchQuan, prodgst, netAmount);
+                    com.astral.internal.SQLite.newInvoiceTable(invID, prodName, Price, purchQuan, gstRate, gstAmount, netAmount);
                 }
             }
-            com.astral.internal.SQLite.newInvoice(invID, custName, custContact, custAddress, saleDate, gst, saleAmount);
+            com.astral.internal.SQLite.newInvoice(invID, custName, custContact, custAddress, saleDate, saleGST, saleAmount);
             com.astral.speckle.Main.Content.removeAll();
             com.astral.speckle.Invoicing scene = new Invoicing();
             scene.setBounds(0, 0, 948, 574);
@@ -430,6 +431,9 @@ public class Invoicing extends javax.swing.JPanel {
         New_Invoice_Table.getColumnModel().getColumn(1).setMinWidth(0);
         New_Invoice_Table.getColumnModel().getColumn(1).setMaxWidth(0);
         New_Invoice_Table.getColumnModel().getColumn(1).setWidth(0);
+        New_Invoice_Table.getColumnModel().getColumn(4).setMinWidth(0);
+        New_Invoice_Table.getColumnModel().getColumn(4).setMaxWidth(0);
+        New_Invoice_Table.getColumnModel().getColumn(4).setWidth(0);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
