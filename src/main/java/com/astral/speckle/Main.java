@@ -61,6 +61,7 @@ public class Main extends javax.swing.JFrame {
         SignUp_User_SubHeading = new javax.swing.JLabel();
         SignUp_User_Para_A = new javax.swing.JLabel();
         SignUp_User_Para_B = new javax.swing.JLabel();
+        SignUp_User_SubPanel = new javax.swing.JPanel();
         SignUp_Username_Label = new javax.swing.JLabel();
         SignUp_Username = new javax.swing.JTextField();
         Create_Password_Label = new javax.swing.JLabel();
@@ -108,6 +109,79 @@ public class Main extends javax.swing.JFrame {
         Confirm_Passwd = new javax.swing.JPasswordField();
         Cancel_Button = new javax.swing.JButton();
         Reset_Button = new javax.swing.JButton();
+        Home_Page = new javax.swing.JPanel();
+        Banner = new javax.swing.JPanel();
+        Speckle_Label = new javax.swing.JLabel();
+        Help = new javax.swing.JPanel();
+        Help_Label = new javax.swing.JLabel();
+        Help_Para = new javax.swing.JLabel();
+        Help_Content = new javax.swing.JLabel();
+        Low_Stock = new javax.swing.JPanel();
+        Low_Stock_Label = new javax.swing.JLabel();
+        Low_Stock_Para = new javax.swing.JLabel();
+        Product_One_Label = new javax.swing.JLabel();
+        Product_One_Quantity = new javax.swing.JLabel();
+        Product_Two_Label = new javax.swing.JLabel();
+        Product_Two_Quantity = new javax.swing.JLabel();
+        Product_Three_Label = new javax.swing.JLabel();
+        Product_Three_Quantity = new javax.swing.JLabel();
+        Product_Four_Label = new javax.swing.JLabel();
+        Product_Four_Quantity = new javax.swing.JLabel();
+        Product_Five_Label = new javax.swing.JLabel();
+        Product_Five_Quantity = new javax.swing.JLabel();
+        Settings_Page = new javax.swing.JPanel();
+        Settings_Container = new javax.swing.JTabbedPane();
+        User_Tab = new javax.swing.JPanel();
+        Speckle_Logo1 = new javax.swing.JLabel();
+        Change_Username = new javax.swing.JLabel();
+        Current_Username_Label = new javax.swing.JLabel();
+        Current_Username = new javax.swing.JTextField();
+        New_Username_Label = new javax.swing.JLabel();
+        New_Username = new javax.swing.JTextField();
+        Change_Username_Button = new javax.swing.JButton();
+        Change_Password = new javax.swing.JLabel();
+        Current_Password_Label = new javax.swing.JLabel();
+        Current_Password = new javax.swing.JPasswordField();
+        New_Password_Label1 = new javax.swing.JLabel();
+        New_Password1 = new javax.swing.JPasswordField();
+        Confirm_Password_Label1 = new javax.swing.JLabel();
+        Confirm_Password1 = new javax.swing.JPasswordField();
+        Change_Password_Button = new javax.swing.JButton();
+        Reset_Button1 = new javax.swing.JButton();
+        Details_Tab = new javax.swing.JPanel();
+        Update_Business_Details = new javax.swing.JLabel();
+        Current_Value_Label = new javax.swing.JLabel();
+        New_Value_Label = new javax.swing.JLabel();
+        Business_Name_Label1 = new javax.swing.JLabel();
+        Current_Business_Name = new javax.swing.JTextField();
+        New_Business_Name = new javax.swing.JTextField();
+        Contact_Number_Label1 = new javax.swing.JLabel();
+        Current_Contact_Number = new javax.swing.JTextField();
+        New_Contact_Number = new javax.swing.JTextField();
+        Email_Address_Label1 = new javax.swing.JLabel();
+        Current_Email_Address = new javax.swing.JTextField();
+        New_Email_Address = new javax.swing.JTextField();
+        Business_Location_Label1 = new javax.swing.JLabel();
+        Current_Business_Location_Label = new javax.swing.JLabel();
+        Current_Business_Location = new javax.swing.JTextField();
+        New_Business_Location_Label = new javax.swing.JLabel();
+        New_Business_Location = new javax.swing.JTextField();
+        Save_Changes_Button = new javax.swing.JButton();
+        About_Page = new javax.swing.JPanel();
+        Speckle_Logo = new javax.swing.JLabel();
+        About_Heading = new javax.swing.JLabel();
+        Version_Label = new javax.swing.JLabel();
+        About_Para = new javax.swing.JLabel();
+        About_Container = new javax.swing.JTabbedPane();
+        Authors_Tab = new javax.swing.JPanel();
+        Authors_Container = new javax.swing.JScrollPane();
+        Authors_Text = new javax.swing.JTextArea();
+        License_Tab = new javax.swing.JPanel();
+        License_Container = new javax.swing.JScrollPane();
+        License_Text = new javax.swing.JTextArea();
+        Credits_Tab = new javax.swing.JPanel();
+        Credits_Container = new javax.swing.JScrollPane();
+        Credits_Text = new javax.swing.JTextArea();
         Content = new javax.swing.JDesktopPane();
         MenuBar = new javax.swing.JMenuBar();
         File_Menu = new javax.swing.JMenu();
@@ -179,7 +253,6 @@ public class Main extends javax.swing.JFrame {
         SideBar.add(Filler_05);
 
         About_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bubbles_3d.png"))); // NOI18N
-        About_Button.setEnabled(false);
         About_Button.setFocusable(false);
         About_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         About_Button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -321,16 +394,17 @@ public class Main extends javax.swing.JFrame {
 
         SignUp_User_Para_A.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         SignUp_User_Para_A.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SignUp_User_Para_A.setText("<html><p style=\"text-align: center;\">Since this is your first time using Speckle, we need some details<br>to set things up for you.</p></html>");
+        SignUp_User_Para_A.setText("Since this is your first time using Speckle, we need some details to set things up for you.");
         SignUp_User_Para_A.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         SignUp_User_Para_B.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         SignUp_User_Para_B.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SignUp_User_Para_B.setText("<html><p style=\"text-align: center;\">First, create a Username and Password for yourself that you'll be<br>using every time you use Speckle.</p></html>");
+        SignUp_User_Para_B.setText("First, create a Username and Password for yourself that you'll be using every time you use Speckle.");
         SignUp_User_Para_B.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        SignUp_User_SubPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
         SignUp_Username_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        SignUp_Username_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         SignUp_Username_Label.setText("Your Username");
         SignUp_Username_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -358,62 +432,79 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        javax.swing.GroupLayout SignUp_User_SubPanelLayout = new javax.swing.GroupLayout(SignUp_User_SubPanel);
+        SignUp_User_SubPanel.setLayout(SignUp_User_SubPanelLayout);
+        SignUp_User_SubPanelLayout.setHorizontalGroup(
+            SignUp_User_SubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SignUp_User_SubPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(SignUp_User_SubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SignUp_User_SubPanelLayout.createSequentialGroup()
+                        .addGroup(SignUp_User_SubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Create_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Confirm_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(SignUp_User_SubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Create_Password)
+                            .addComponent(Confirm_Password)))
+                    .addGroup(SignUp_User_SubPanelLayout.createSequentialGroup()
+                        .addComponent(SignUp_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(SignUp_Username)))
+                .addContainerGap())
+            .addGroup(SignUp_User_SubPanelLayout.createSequentialGroup()
+                .addGap(288, 288, 288)
+                .addComponent(Next_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        SignUp_User_SubPanelLayout.setVerticalGroup(
+            SignUp_User_SubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SignUp_User_SubPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(SignUp_User_SubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SignUp_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SignUp_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(SignUp_User_SubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Create_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Create_Password))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(SignUp_User_SubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Confirm_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Confirm_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Next_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout SignUp_UserLayout = new javax.swing.GroupLayout(SignUp_User);
         SignUp_User.setLayout(SignUp_UserLayout);
         SignUp_UserLayout.setHorizontalGroup(
             SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SignUp_UserLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(SignUp_UserLayout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(SignUp_UserLayout.createSequentialGroup()
-                                .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Create_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Confirm_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Confirm_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Create_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Next_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(SignUp_UserLayout.createSequentialGroup()
-                                .addComponent(SignUp_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(SignUp_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(SignUp_User_Para_A, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(SignUp_User_Para_B)
-                        .addComponent(SignUp_User_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(SignUp_User_SubHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(31, 31, 31))
+                .addContainerGap(125, Short.MAX_VALUE)
+                .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(SignUp_User_Para_A, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SignUp_User_SubHeading, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SignUp_User_Heading, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SignUp_User_Para_B, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+                    .addComponent(SignUp_User_SubPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
         SignUp_UserLayout.setVerticalGroup(
             SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SignUp_UserLayout.createSequentialGroup()
-                .addGap(60, 60, 60)
+                .addContainerGap(80, Short.MAX_VALUE)
                 .addComponent(SignUp_User_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(SignUp_User_SubHeading)
-                .addGap(50, 50, 50)
-                .addComponent(SignUp_User_Para_A, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(SignUp_User_Para_B, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SignUp_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SignUp_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Create_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Create_Password))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Confirm_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Confirm_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
-                .addComponent(Next_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addComponent(SignUp_User_Para_A)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(SignUp_User_Para_B)
+                .addGap(30, 30, 30)
+                .addComponent(SignUp_User_SubPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(141, Short.MAX_VALUE))
         );
 
         Container.add(SignUp_User, "signUpUser");
@@ -765,6 +856,629 @@ public class Main extends javax.swing.JFrame {
         Container.add(Forgot_Password, "forgotPassword");
         Forgot_Password.getAccessibleContext().setAccessibleName("");
 
+        Banner.setBackground(new java.awt.Color(253, 253, 253));
+        Banner.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(180, 180, 180), 1, true));
+
+        Speckle_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
+        Speckle_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Speckle_Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/speckle-home-logo.png"))); // NOI18N
+        Speckle_Label.setText("Speckle: Simple Invoicing & Inventory Management");
+
+        javax.swing.GroupLayout BannerLayout = new javax.swing.GroupLayout(Banner);
+        Banner.setLayout(BannerLayout);
+        BannerLayout.setHorizontalGroup(
+            BannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BannerLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Speckle_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 846, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        BannerLayout.setVerticalGroup(
+            BannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BannerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Speckle_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        Help.setBackground(new java.awt.Color(248, 248, 248));
+        Help.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(180, 180, 180), 1, true));
+
+        Help_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        Help_Label.setText("Quick Start Guide");
+
+        Help_Content.setText("<html><ol style=\"margin: 0 0 0 20;\">\n<li style=\"padding: 4;\">The First Tab is <b>Home</b> which has two Sections one is Quick Start Guide(This One) and second one is has Information\nabout Products with Low amount Stocks in the Inventory.</li>\n<li style=\"padding: 4;\">The Second Tab is <b>Invoicing</b> through which you can create new Invoices or can view previously created Invoices.</li>\n<li style=\"padding: 4;\">The Third Tab is <b>Inventory</b> where you can add or remove Products from Speckle's Inventory.</li>\n<li style=\"padding: 4;\">The Forth Tab is <b>Settings</b> where you can change your Login Credentials and the information related to your\nBusiness that gets printed on your Invoices.</li>\n<li style=\"padding: 4;\">The Last Tab is <b>About</b> which has three Sections Authors, License, Credits they contain a List of Developers who\nContributed to Speckle, the EULA and Credits to the External Libraries we used.</li>\n</ol></html>");
+        Help_Content.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Help_Content.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+
+        javax.swing.GroupLayout HelpLayout = new javax.swing.GroupLayout(Help);
+        Help.setLayout(HelpLayout);
+        HelpLayout.setHorizontalGroup(
+            HelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HelpLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(HelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Help_Para, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Help_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Help_Content, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        HelpLayout.setVerticalGroup(
+            HelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HelpLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(Help_Label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Help_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Help_Content, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        Low_Stock.setBackground(new java.awt.Color(248, 248, 248));
+        Low_Stock.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(180, 180, 180), 1, true));
+
+        Low_Stock_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        Low_Stock_Label.setText("Low Stock");
+
+        Low_Stock_Para.setText("<html><p>The following five Products have the least amount of Stock available. If you think you might run out of stock for a Product then please Restock.</p></html>");
+
+        Product_One_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+
+        Product_One_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        Product_One_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Product_One_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+
+        Product_Two_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+
+        Product_Two_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        Product_Two_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Product_Two_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+
+        Product_Three_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+
+        Product_Three_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        Product_Three_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Product_Three_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+
+        Product_Four_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+
+        Product_Four_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        Product_Four_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Product_Four_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+
+        Product_Five_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+
+        Product_Five_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        Product_Five_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Product_Five_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+
+        javax.swing.GroupLayout Low_StockLayout = new javax.swing.GroupLayout(Low_Stock);
+        Low_Stock.setLayout(Low_StockLayout);
+        Low_StockLayout.setHorizontalGroup(
+            Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Low_StockLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(Low_StockLayout.createSequentialGroup()
+                        .addComponent(Product_Five_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Product_Five_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(Low_StockLayout.createSequentialGroup()
+                        .addComponent(Product_Four_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Product_Four_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(Low_StockLayout.createSequentialGroup()
+                        .addComponent(Product_Three_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Product_Three_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(Low_StockLayout.createSequentialGroup()
+                        .addComponent(Product_Two_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Product_Two_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Low_Stock_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(Low_StockLayout.createSequentialGroup()
+                        .addComponent(Product_One_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Product_One_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Low_Stock_Para, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+        Low_StockLayout.setVerticalGroup(
+            Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Low_StockLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(Low_Stock_Label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Low_Stock_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Product_One_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Product_One_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Product_Two_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Product_Two_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Product_Three_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Product_Three_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Product_Four_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Product_Four_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Product_Five_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Product_Five_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(53, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout Home_PageLayout = new javax.swing.GroupLayout(Home_Page);
+        Home_Page.setLayout(Home_PageLayout);
+        Home_PageLayout.setHorizontalGroup(
+            Home_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Home_PageLayout.createSequentialGroup()
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addGroup(Home_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Banner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Home_PageLayout.createSequentialGroup()
+                        .addComponent(Help, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Low_Stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+        Home_PageLayout.setVerticalGroup(
+            Home_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Home_PageLayout.createSequentialGroup()
+                .addContainerGap(40, Short.MAX_VALUE)
+                .addComponent(Banner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Home_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Low_Stock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Help, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
+        );
+
+        Container.add(Home_Page, "home");
+
+        Settings_Container.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        Speckle_Logo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Speckle_Logo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/speckle-logo.png"))); // NOI18N
+        Speckle_Logo1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        Change_Username.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        Change_Username.setText("Change Username");
+
+        Current_Username_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Current_Username_Label.setText("Current Username");
+
+        Current_Username.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Current_Username.setEnabled(false);
+
+        New_Username_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        New_Username_Label.setText("New Username");
+
+        New_Username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        Change_Username_Button.setText("Change Username");
+        Change_Username_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Change_Username_ButtonActionPerformed(evt);
+            }
+        });
+
+        Change_Password.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        Change_Password.setText("Change Password");
+
+        Current_Password_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Current_Password_Label.setText("Current Password");
+
+        Current_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        New_Password_Label1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        New_Password_Label1.setText("New Password");
+
+        New_Password1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        Confirm_Password_Label1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Confirm_Password_Label1.setText("Confirm Password");
+
+        Confirm_Password1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        Change_Password_Button.setText("Change Password");
+        Change_Password_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Change_Password_ButtonActionPerformed(evt);
+            }
+        });
+
+        Reset_Button1.setText("Reset Recovery Key");
+        Reset_Button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Reset_Button1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout User_TabLayout = new javax.swing.GroupLayout(User_Tab);
+        User_Tab.setLayout(User_TabLayout);
+        User_TabLayout.setHorizontalGroup(
+            User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(User_TabLayout.createSequentialGroup()
+                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(User_TabLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(Change_Password))
+                    .addGroup(User_TabLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(User_TabLayout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(New_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Current_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(New_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Current_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Change_Username_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(Change_Username)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, User_TabLayout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(User_TabLayout.createSequentialGroup()
+                                .addComponent(New_Password_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(New_Password1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(User_TabLayout.createSequentialGroup()
+                                .addComponent(Confirm_Password_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Confirm_Password1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(Reset_Button1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                                        .addComponent(Change_Password_Button, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                    .addGroup(User_TabLayout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(Current_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Current_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                .addComponent(Speckle_Logo1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(99, Short.MAX_VALUE))
+        );
+        User_TabLayout.setVerticalGroup(
+            User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(User_TabLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Speckle_Logo1, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(User_TabLayout.createSequentialGroup()
+                        .addComponent(Change_Username)
+                        .addGap(26, 26, 26)
+                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Current_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Current_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(New_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(New_Username_Label))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Change_Username_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(Change_Password)
+                        .addGap(26, 26, 26)
+                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Current_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Current_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(New_Password1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(New_Password_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Confirm_Password1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Confirm_Password_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Change_Password_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Reset_Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(51, Short.MAX_VALUE))
+        );
+
+        Settings_Container.addTab("User Details", User_Tab);
+
+        Update_Business_Details.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        Update_Business_Details.setText("Update Business Details");
+
+        Current_Value_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Current_Value_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Current_Value_Label.setText("Current");
+        Current_Value_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        New_Value_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        New_Value_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        New_Value_Label.setText("New");
+        New_Value_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        Business_Name_Label1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Business_Name_Label1.setText("Business Name");
+
+        Current_Business_Name.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Current_Business_Name.setEnabled(false);
+
+        New_Business_Name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        Contact_Number_Label1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Contact_Number_Label1.setText("Contact Number");
+
+        Current_Contact_Number.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Current_Contact_Number.setEnabled(false);
+
+        New_Contact_Number.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        New_Contact_Number.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                New_Contact_NumberKeyPressed(evt);
+            }
+        });
+
+        Email_Address_Label1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Email_Address_Label1.setText("Email Address");
+
+        Current_Email_Address.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Current_Email_Address.setEnabled(false);
+
+        New_Email_Address.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        Business_Location_Label1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Business_Location_Label1.setText("<html><p>Business Location (Address) :</p></html>");
+
+        Current_Business_Location_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Current_Business_Location_Label.setText("Current");
+
+        Current_Business_Location.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Current_Business_Location.setEnabled(false);
+
+        New_Business_Location_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        New_Business_Location_Label.setText("New");
+
+        New_Business_Location.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        Save_Changes_Button.setText("Save Changes");
+        Save_Changes_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Save_Changes_ButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Details_TabLayout = new javax.swing.GroupLayout(Details_Tab);
+        Details_Tab.setLayout(Details_TabLayout);
+        Details_TabLayout.setHorizontalGroup(
+            Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Details_TabLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(Update_Business_Details)
+                .addGap(531, 704, Short.MAX_VALUE))
+            .addGroup(Details_TabLayout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Business_Location_Label1)
+                    .addGroup(Details_TabLayout.createSequentialGroup()
+                        .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Email_Address_Label1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Contact_Number_Label1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                                .addComponent(Business_Name_Label1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Current_Business_Location_Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                            .addComponent(New_Business_Location_Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(Details_TabLayout.createSequentialGroup()
+                                .addComponent(Current_Value_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(New_Value_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Current_Business_Location, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(Details_TabLayout.createSequentialGroup()
+                                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(Current_Contact_Number, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Current_Business_Name, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Current_Email_Address, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(New_Business_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(New_Contact_Number, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(New_Email_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(New_Business_Location, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Details_TabLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Save_Changes_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        Details_TabLayout.setVerticalGroup(
+            Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Details_TabLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(Update_Business_Details)
+                .addGap(26, 26, 26)
+                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(New_Value_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Current_Value_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Business_Name_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Current_Business_Name)
+                    .addComponent(New_Business_Name))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Contact_Number_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Current_Contact_Number)
+                    .addComponent(New_Contact_Number))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Email_Address_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Current_Email_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(New_Email_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(Business_Location_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Current_Business_Location, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Current_Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(New_Business_Location, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(New_Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addComponent(Save_Changes_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(121, Short.MAX_VALUE))
+        );
+
+        Settings_Container.addTab("Business Details", Details_Tab);
+
+        javax.swing.GroupLayout Settings_PageLayout = new javax.swing.GroupLayout(Settings_Page);
+        Settings_Page.setLayout(Settings_PageLayout);
+        Settings_PageLayout.setHorizontalGroup(
+            Settings_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Settings_PageLayout.createSequentialGroup()
+                .addComponent(Settings_Container)
+                .addContainerGap())
+        );
+        Settings_PageLayout.setVerticalGroup(
+            Settings_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Settings_Container)
+        );
+
+        Container.add(Settings_Page, "settings");
+
+        Speckle_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/app-logo.png"))); // NOI18N
+
+        About_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
+        About_Heading.setText("About Speckle");
+        About_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        Version_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        Version_Label.setText("Version " + Version);
+        Version_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        About_Para.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        About_Para.setText("Speckle is Software Used For Invoicing(Billing) and Inventory Management");
+
+        Authors_Tab.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(180, 180, 180)));
+
+        Authors_Container.setBorder(null);
+
+        Authors_Text.setEditable(false);
+        Authors_Text.setBackground(new java.awt.Color(255, 255, 255));
+        Authors_Text.setColumns(20);
+        Authors_Text.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        Authors_Text.setRows(5);
+        Authors_Text.setText("\n  Astralsphere Arts team would like to acknowledge the following contributors:\n\n  Akshat Singh Pawar (akshat1222)\n  Hemant Kumar Morya (XaHertz)\n");
+        Authors_Container.setViewportView(Authors_Text);
+
+        javax.swing.GroupLayout Authors_TabLayout = new javax.swing.GroupLayout(Authors_Tab);
+        Authors_Tab.setLayout(Authors_TabLayout);
+        Authors_TabLayout.setHorizontalGroup(
+            Authors_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Authors_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 852, Short.MAX_VALUE)
+        );
+        Authors_TabLayout.setVerticalGroup(
+            Authors_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Authors_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+        );
+
+        About_Container.addTab("Authors", Authors_Tab);
+
+        License_Tab.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(180, 180, 180)));
+
+        License_Container.setBorder(null);
+
+        License_Text.setEditable(false);
+        License_Text.setBackground(new java.awt.Color(255, 255, 255));
+        License_Text.setColumns(20);
+        License_Text.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        License_Text.setRows(5);
+        License_Text.setText("\n                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright (c) 2021-2025 Astralsphere Arts\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       https://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n");
+        License_Text.setCaretPosition(0);
+        License_Container.setViewportView(License_Text);
+
+        javax.swing.GroupLayout License_TabLayout = new javax.swing.GroupLayout(License_Tab);
+        License_Tab.setLayout(License_TabLayout);
+        License_TabLayout.setHorizontalGroup(
+            License_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(License_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 852, Short.MAX_VALUE)
+        );
+        License_TabLayout.setVerticalGroup(
+            License_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(License_Container, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+        );
+
+        About_Container.addTab("License", License_Tab);
+
+        Credits_Tab.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(180, 180, 180)));
+
+        Credits_Container.setBorder(null);
+
+        Credits_Text.setEditable(false);
+        Credits_Text.setBackground(new java.awt.Color(255, 255, 255));
+        Credits_Text.setColumns(20);
+        Credits_Text.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        Credits_Text.setRows(5);
+        Credits_Text.setText("\n  Some features of Astral Invoice rely on external libraries here is a list of them:\n\n  1. SQLite JDBC Crypt - https://github.com/Willena/sqlite-jdbc-crypt\n  2. FlatLaf - https://www.formdev.com/flatlaf\n  3. OpenPDF - https://github.com/LibrePDF/OpenPDF\n  4. ICU4J (International Components for Unicode) - https://icu.unicode.org\n");
+        Credits_Container.setViewportView(Credits_Text);
+
+        javax.swing.GroupLayout Credits_TabLayout = new javax.swing.GroupLayout(Credits_Tab);
+        Credits_Tab.setLayout(Credits_TabLayout);
+        Credits_TabLayout.setHorizontalGroup(
+            Credits_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Credits_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 852, Short.MAX_VALUE)
+        );
+        Credits_TabLayout.setVerticalGroup(
+            Credits_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Credits_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+        );
+
+        About_Container.addTab("Credits", Credits_Tab);
+
+        About_Container.setSelectedComponent(License_Tab);
+
+        javax.swing.GroupLayout About_PageLayout = new javax.swing.GroupLayout(About_Page);
+        About_Page.setLayout(About_PageLayout);
+        About_PageLayout.setHorizontalGroup(
+            About_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(About_PageLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(About_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(About_PageLayout.createSequentialGroup()
+                        .addComponent(Speckle_Logo)
+                        .addGap(18, 18, 18)
+                        .addGroup(About_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(About_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Version_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(About_Para, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(About_Container))
+                .addGap(56, 56, 56))
+        );
+        About_PageLayout.setVerticalGroup(
+            About_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(About_PageLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(About_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(About_PageLayout.createSequentialGroup()
+                        .addComponent(About_Heading)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Version_Label)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(About_Para, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Speckle_Logo))
+                .addGap(27, 27, 27)
+                .addComponent(About_Container)
+                .addGap(50, 50, 50))
+        );
+
+        Container.add(About_Page, "about");
+
         javax.swing.GroupLayout ContentLayout = new javax.swing.GroupLayout(Content);
         Content.setLayout(ContentLayout);
         ContentLayout.setHorizontalGroup(
@@ -1002,9 +1716,100 @@ public class Main extends javax.swing.JFrame {
         SignOut_ActionPerformed();
     }//GEN-LAST:event_SignOut_ButtonActionPerformed
 
+    private void Change_Username_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Change_Username_ButtonActionPerformed
+        String username = com.astral.internal.Security.getEncodedString(New_Username.getText());
+        if (username.equals(""))
+            JOptionPane.showMessageDialog(null, "Username cannot be Empty. Please Try Again!", "Username Field Empty", JOptionPane.ERROR_MESSAGE);
+        else {
+            com.astral.internal.SQLite.setConfigValue("Username", username);
+            JOptionPane.showMessageDialog(null, "Your Username has been changed Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            Current_Username.setText(com.astral.internal.Security.getDecodedString(com.astral.internal.SQLite.getConfigValue("Username")));
+            New_Username.setText("");
+        }
+    }//GEN-LAST:event_Change_Username_ButtonActionPerformed
+
+    private void Change_Password_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Change_Password_ButtonActionPerformed
+        String curpasswd = new String(Current_Password.getPassword());
+        String newpasswd = new String(New_Password1.getPassword());
+        String confpasswd = new String(Confirm_Password1.getPassword());
+        if (curpasswd.equals("") || newpasswd.equals(""))
+            JOptionPane.showMessageDialog(null, "Both Current and New Passwords are needed for changing Password. Please Try Again!", "Password Fields Empty", JOptionPane.ERROR_MESSAGE);
+        else if (!com.astral.internal.Security.validateHash(curpasswd, com.astral.internal.SQLite.getConfigValue("Password")))
+            JOptionPane.showMessageDialog(null, "The Current Password is Incorrect. Please Try Again!", "Incorrect Password", JOptionPane.ERROR_MESSAGE);
+        else if (newpasswd.length() < 8)
+            JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least 8 Characters. Please Try Again!", "Password Too Short", JOptionPane.ERROR_MESSAGE);
+        else if (!com.astral.internal.Security.checkPass(newpasswd))
+            JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric, One Uppercase and One Lowercase Character. Please Try Again!", "Insecure Password", JOptionPane.ERROR_MESSAGE);
+        else if (!newpasswd.equals(confpasswd))
+            JOptionPane.showMessageDialog(null, "The Password in Confirm Password Field does not Match. Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
+        else if (com.astral.internal.Security.validateHash(newpasswd, com.astral.internal.SQLite.getConfigValue("Password")))
+            JOptionPane.showMessageDialog(null, "The Password Enterd has been used Already. Try Again with a Password You haven’t used Before!", "Old Password Used", JOptionPane.ERROR_MESSAGE);
+        else {
+            com.astral.internal.SQLite.setConfigValue("Password", com.astral.internal.Security.generateHash(newpasswd));
+            JOptionPane.showMessageDialog(null, "Your Password has been changed Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            Current_Password.setText("");
+            New_Password1.setText("");
+            Confirm_Password1.setText("");
+        }
+    }//GEN-LAST:event_Change_Password_ButtonActionPerformed
+
+    private void Reset_Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Reset_Button1ActionPerformed
+        RecoveryKey sc = new RecoveryKey();
+        sc.setVisible(true);
+    }//GEN-LAST:event_Reset_Button1ActionPerformed
+
+    private void New_Contact_NumberKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_New_Contact_NumberKeyPressed
+        String Number = New_Contact_Number.getText();
+        int length = Number.length();
+        if (evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9') {
+            if (length < 10)
+                New_Contact_Number.setEditable(true);
+            else
+                New_Contact_Number.setEditable(false);
+        } else {
+            switch (evt.getExtendedKeyCode()) {
+                case java.awt.event.KeyEvent.VK_BACK_SPACE -> New_Contact_Number.setEditable(true);
+                case java.awt.event.KeyEvent.VK_DELETE -> New_Contact_Number.setEditable(true);
+                default -> New_Contact_Number.setEditable(false);
+            }
+        }
+    }//GEN-LAST:event_New_Contact_NumberKeyPressed
+
+    private void Save_Changes_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Save_Changes_ButtonActionPerformed
+        String cname = New_Business_Name.getText();
+        String cnum = New_Contact_Number.getText();
+        String cmail = New_Email_Address.getText();
+        String caddress = New_Business_Location.getText();
+        if (cname.equals("") && cnum.equals("") && cmail.equals("") && caddress.equals(""))
+            JOptionPane.showMessageDialog(null, "You haven't made any Changes. Please Try Again!", "No Changes Found", JOptionPane.ERROR_MESSAGE);
+        else {
+            if (cname.equals(""))
+                cname = Current_Business_Name.getText();
+            if (cmail.equals(""))
+                cmail = Current_Email_Address.getText();
+            if (caddress.equals(""))
+                caddress = Current_Business_Location.getText();
+            if (cnum.equals("")) {
+                cnum = Current_Contact_Number.getText();
+                com.astral.internal.SQLite.compConfig(cname, cnum, cmail, caddress);
+                JOptionPane.showMessageDialog(null, "Your Changes Have Been Saved Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            }
+            else if (cnum.length() != 10)
+                JOptionPane.showMessageDialog(null, "Contact Number Must be 10 Digit Long. Please Try Again!", "Contact Number Too Short", JOptionPane.ERROR_MESSAGE);
+            else {
+                com.astral.internal.SQLite.compConfig(cname, cnum, cmail, caddress);
+                JOptionPane.showMessageDialog(null, "Your Changes Have Been Saved Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            }
+            Settings_ActionPerformed();
+            New_Business_Name.setText("");
+            New_Contact_Number.setText("");
+            New_Email_Address.setText("");
+            New_Business_Location.setText("");
+        }
+    }//GEN-LAST:event_Save_Changes_ButtonActionPerformed
+
     private void SignIn_ActionPerformed() {
         Home_ActionPerformed();
-        Container_Deck.show(Container, "app");
         Home_Button.setEnabled(true);
         Invoicing_Button.setEnabled(true);
         Inventory_Button.setEnabled(true);
@@ -1027,10 +1832,21 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void Home_ActionPerformed() {
-        Content.removeAll();
-        com.astral.speckle.Home scene = new Home();
-        scene.setBounds(0, 0, 948, 574);
-        Content.add(scene).setVisible(true);
+        Help_Para.setText("<html>Welcome <b>"
+            + com.astral.internal.Security.getDecodedString(com.astral.internal.SQLite.getConfigValue("Username"))
+            + "</b>! This is a Quick Overview of Speckle :</html>");
+        String data[][] = com.astral.internal.SQLite.dashData();
+        Product_One_Label.setText(data[0][0]);
+        Product_One_Quantity.setText(data[0][1]);
+        Product_Two_Label.setText(data[1][0]);
+        Product_Two_Quantity.setText(data[1][1]);
+        Product_Three_Label.setText(data[2][0]);
+        Product_Three_Quantity.setText(data[2][1]);
+        Product_Four_Label.setText(data[3][0]);
+        Product_Four_Quantity.setText(data[3][1]);
+        Product_Five_Label.setText(data[4][0]);
+        Product_Five_Quantity.setText(data[4][1]);
+        Container_Deck.show(Container, "home");
     }
 
     private void Invoicing_ActionPerformed() {
@@ -1049,17 +1865,16 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void Settings_ActionPerformed() {
-        Content.removeAll();
-        com.astral.speckle.Settings scene = new Settings();
-        scene.setBounds(0, 0, 948, 574);
-        Content.add(scene).setVisible(true);
+        Current_Username.setText(com.astral.internal.Security.getDecodedString(com.astral.internal.SQLite.getConfigValue("Username")));
+        Current_Business_Name.setText(com.astral.internal.SQLite.getConfigValue("Business Name"));
+        Current_Contact_Number.setText(com.astral.internal.SQLite.getConfigValue("Contact Number"));
+        Current_Email_Address.setText(com.astral.internal.SQLite.getConfigValue("Email Address"));
+        Current_Business_Location.setText(com.astral.internal.SQLite.getConfigValue("Business Location"));
+        Container_Deck.show(Container, "settings");
     }
 
     private void About_ActionPerformed() {
-        Content.removeAll();
-        com.astral.speckle.About scene = new About();
-        scene.setBounds(0, 0, 948, 574);
-        Content.add(scene).setVisible(true);
+        Container_Deck.show(Container, "about");
     }
 
     /**
@@ -1095,26 +1910,58 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton About_Button;
+    private javax.swing.JTabbedPane About_Container;
+    private javax.swing.JLabel About_Heading;
     private javax.swing.JMenuItem About_MenuItem;
+    private javax.swing.JPanel About_Page;
+    private javax.swing.JLabel About_Para;
+    private javax.swing.JScrollPane Authors_Container;
+    private javax.swing.JPanel Authors_Tab;
+    private javax.swing.JTextArea Authors_Text;
     private javax.swing.JButton Back_Button;
+    private javax.swing.JPanel Banner;
     private javax.swing.JTextField Business_Location;
     private javax.swing.JLabel Business_Location_Label;
+    private javax.swing.JLabel Business_Location_Label1;
     private javax.swing.JTextField Business_Name;
     private javax.swing.JLabel Business_Name_Label;
+    private javax.swing.JLabel Business_Name_Label1;
     private javax.swing.JButton Cancel_Button;
+    private javax.swing.JLabel Change_Password;
+    private javax.swing.JButton Change_Password_Button;
+    private javax.swing.JLabel Change_Username;
+    private javax.swing.JButton Change_Username_Button;
     private javax.swing.JPasswordField Confirm_Passwd;
     private javax.swing.JLabel Confirm_Passwd_Label;
     private javax.swing.JPasswordField Confirm_Password;
+    private javax.swing.JPasswordField Confirm_Password1;
     private javax.swing.JLabel Confirm_Password_Label;
+    private javax.swing.JLabel Confirm_Password_Label1;
     private javax.swing.JTextField Contact_Number;
     private javax.swing.JLabel Contact_Number_Label;
+    private javax.swing.JLabel Contact_Number_Label1;
     private javax.swing.JPanel Container;
     public static javax.swing.JDesktopPane Content;
     private javax.swing.JPasswordField Create_Password;
     private javax.swing.JLabel Create_Password_Label;
+    private javax.swing.JScrollPane Credits_Container;
+    private javax.swing.JPanel Credits_Tab;
+    private javax.swing.JTextArea Credits_Text;
+    private javax.swing.JTextField Current_Business_Location;
+    private javax.swing.JLabel Current_Business_Location_Label;
+    private javax.swing.JTextField Current_Business_Name;
+    private javax.swing.JTextField Current_Contact_Number;
+    private javax.swing.JTextField Current_Email_Address;
+    private javax.swing.JPasswordField Current_Password;
+    private javax.swing.JLabel Current_Password_Label;
+    private javax.swing.JTextField Current_Username;
+    private javax.swing.JLabel Current_Username_Label;
+    private javax.swing.JLabel Current_Value_Label;
+    private javax.swing.JPanel Details_Tab;
     private javax.swing.JMenu Edit_Menu;
     private javax.swing.JTextField Email_Address;
     private javax.swing.JLabel Email_Address_Label;
+    private javax.swing.JLabel Email_Address_Label1;
     private javax.swing.JMenuItem Exit_MenuItem;
     private javax.swing.JMenu File_Menu;
     private javax.swing.Box.Filler Filler_01;
@@ -1129,23 +1976,58 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Forgot_Password_Heading;
     private javax.swing.JLabel Forgot_Password_Label;
     private javax.swing.JLabel Forgot_Password_Para;
+    private javax.swing.JPanel Help;
+    private javax.swing.JLabel Help_Content;
+    private javax.swing.JLabel Help_Label;
     private javax.swing.JMenu Help_Menu;
+    private javax.swing.JLabel Help_Para;
     private javax.swing.JButton Home_Button;
+    private javax.swing.JPanel Home_Page;
     private javax.swing.JButton Inventory_Button;
     private javax.swing.JButton Invoicing_Button;
+    private javax.swing.JScrollPane License_Container;
+    private javax.swing.JPanel License_Tab;
+    private javax.swing.JTextArea License_Text;
+    private javax.swing.JPanel Low_Stock;
+    private javax.swing.JLabel Low_Stock_Label;
+    private javax.swing.JLabel Low_Stock_Para;
     private javax.swing.JMenuBar MenuBar;
+    private javax.swing.JTextField New_Business_Location;
+    private javax.swing.JLabel New_Business_Location_Label;
+    private javax.swing.JTextField New_Business_Name;
+    private javax.swing.JTextField New_Contact_Number;
+    private javax.swing.JTextField New_Email_Address;
     private javax.swing.JPasswordField New_Password;
+    private javax.swing.JPasswordField New_Password1;
     private javax.swing.JLabel New_Password_Label;
+    private javax.swing.JLabel New_Password_Label1;
+    private javax.swing.JTextField New_Username;
+    private javax.swing.JLabel New_Username_Label;
+    private javax.swing.JLabel New_Value_Label;
     private javax.swing.JButton Next_Button;
     private javax.swing.JPasswordField Password;
     private javax.swing.JLabel Password_Label;
+    private javax.swing.JLabel Product_Five_Label;
+    private javax.swing.JLabel Product_Five_Quantity;
+    private javax.swing.JLabel Product_Four_Label;
+    private javax.swing.JLabel Product_Four_Quantity;
+    private javax.swing.JLabel Product_One_Label;
+    private javax.swing.JLabel Product_One_Quantity;
+    private javax.swing.JLabel Product_Three_Label;
+    private javax.swing.JLabel Product_Three_Quantity;
+    private javax.swing.JLabel Product_Two_Label;
+    private javax.swing.JLabel Product_Two_Quantity;
     private javax.swing.JTextField Recovery_Key;
     private javax.swing.JLabel Recovery_Key_Display_Label;
     private javax.swing.JLabel Recovery_Key_Heading;
     private javax.swing.JLabel Recovery_Key_Label;
     private javax.swing.JLabel Recovery_Key_Para;
     private javax.swing.JButton Reset_Button;
+    private javax.swing.JButton Reset_Button1;
+    private javax.swing.JButton Save_Changes_Button;
     private javax.swing.JButton Settings_Button;
+    private javax.swing.JTabbedPane Settings_Container;
+    private javax.swing.JPanel Settings_Page;
     private javax.swing.JToolBar SideBar;
     private javax.swing.JPanel SignIn;
     private javax.swing.JButton SignIn_Button;
@@ -1162,8 +2044,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel SignUp_User_Para_A;
     private javax.swing.JLabel SignUp_User_Para_B;
     private javax.swing.JLabel SignUp_User_SubHeading;
+    private javax.swing.JPanel SignUp_User_SubPanel;
     private javax.swing.JTextField SignUp_Username;
     private javax.swing.JLabel SignUp_Username_Label;
+    private javax.swing.JLabel Speckle_Label;
+    private javax.swing.JLabel Speckle_Logo;
+    private javax.swing.JLabel Speckle_Logo1;
+    private javax.swing.JLabel Update_Business_Details;
+    private javax.swing.JPanel User_Tab;
     private javax.swing.JTextField Username;
     private javax.swing.JLabel Username_Label;
     private javax.swing.JLabel Verfiy_Contact_Number;
@@ -1178,8 +2066,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Verify_Email_Address_Label;
     private javax.swing.JLabel Verify_Username;
     private javax.swing.JLabel Verify_Username_Label;
+    private javax.swing.JLabel Version_Label;
     // End of variables declaration//GEN-END:variables
     private final java.awt.CardLayout Container_Deck;
+    private final String Version;
     private String usrname, passwd, key;
-    public static String Version;
 }
