@@ -14,16 +14,12 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         Version = "1.5.0";
         com.astral.internal.SQLite.initDB();
-        this.Active = new java.awt.Color(0, 136, 255);
-        this.Hover = new java.awt.Color(0, 165, 255);
-        this.White = new java.awt.Color(255, 255, 255);
         initComponents();
         Container_Deck = (java.awt.CardLayout)Container.getLayout();
-        StartUp_Deck = (java.awt.CardLayout)StartUp_Container.getLayout();
         if (com.astral.internal.SQLite.firstUse)
-            StartUp_Deck.show(StartUp_Container, "signUpUser");
+            Container_Deck.show(Container, "signUpUser");
         else
-            StartUp_Deck.show(StartUp_Container, "signIn");
+            Container_Deck.show(Container, "signIn");
     }
 
     /**
@@ -35,15 +31,21 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Background = new javax.swing.JPanel();
-        Header = new javax.swing.JPanel();
-        Header_Logo = new javax.swing.JLabel();
-        Window_Title = new javax.swing.JLabel();
-        Close = new javax.swing.JLabel();
+        SideBar = new javax.swing.JToolBar();
+        Filler_01 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10));
+        Home_Button = new javax.swing.JButton();
+        Filler_02 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10));
+        Invoicing_Button = new javax.swing.JButton();
+        Filler_03 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10));
+        Inventory_Button = new javax.swing.JButton();
+        Filler_04 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10));
+        Settings_Button = new javax.swing.JButton();
+        Filler_05 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10));
+        About_Button = new javax.swing.JButton();
+        Filler_06 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 32767));
+        SignOut_Button = new javax.swing.JButton();
+        Filler_07 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10));
         Container = new javax.swing.JPanel();
-        StartUp = new javax.swing.JPanel();
-        StartUp_Banner = new javax.swing.JLabel();
-        StartUp_Container = new javax.swing.JPanel();
         SignIn = new javax.swing.JPanel();
         SignIn_Heading = new javax.swing.JLabel();
         SignIn_Para = new javax.swing.JLabel();
@@ -106,98 +108,103 @@ public class Main extends javax.swing.JFrame {
         Confirm_Passwd = new javax.swing.JPasswordField();
         Cancel_Button = new javax.swing.JButton();
         Reset_Button = new javax.swing.JButton();
-        Application = new javax.swing.JPanel();
-        SideBar = new javax.swing.JPanel();
-        Home = new javax.swing.JLabel();
-        Invoicing = new javax.swing.JLabel();
-        Inventory = new javax.swing.JLabel();
-        Settings = new javax.swing.JLabel();
-        About = new javax.swing.JLabel();
-        SignOut = new javax.swing.JLabel();
         Content = new javax.swing.JDesktopPane();
+        MenuBar = new javax.swing.JMenuBar();
+        File_Menu = new javax.swing.JMenu();
+        Exit_MenuItem = new javax.swing.JMenuItem();
+        Edit_Menu = new javax.swing.JMenu();
+        Help_Menu = new javax.swing.JMenu();
+        About_MenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Speckle");
         setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/speckle-frame-logo.png")).getImage());
-        setUndecorated(true);
-        setResizable(false);
+        setMinimumSize(new java.awt.Dimension(1100, 650));
 
-        Background.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        SideBar.setBackground(new java.awt.Color(255, 255, 255));
+        SideBar.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        SideBar.setRollover(true);
+        SideBar.add(Filler_01);
 
-        Header.setBackground(new java.awt.Color(60, 60, 60));
-        Header.setForeground(new java.awt.Color(142, 142, 142));
-        Header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                HeaderMouseDragged(evt);
+        Home_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/house_3d.png"))); // NOI18N
+        Home_Button.setEnabled(false);
+        Home_Button.setFocusable(false);
+        Home_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Home_Button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Home_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Home_ButtonActionPerformed(evt);
             }
         });
-        Header.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                HeaderMousePressed(evt);
+        SideBar.add(Home_Button);
+        SideBar.add(Filler_02);
+
+        Invoicing_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/scroll_3d.png"))); // NOI18N
+        Invoicing_Button.setEnabled(false);
+        Invoicing_Button.setFocusable(false);
+        Invoicing_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Invoicing_Button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Invoicing_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Invoicing_ButtonActionPerformed(evt);
             }
         });
+        SideBar.add(Invoicing_Button);
+        SideBar.add(Filler_03);
 
-        Header_Logo.setBackground(new java.awt.Color(60, 60, 60));
-        Header_Logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Header_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/speckle-header-logo.png"))); // NOI18N
-        Header_Logo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Header_Logo.setOpaque(true);
-
-        Window_Title.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        Window_Title.setForeground(new java.awt.Color(142, 142, 142));
-        Window_Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Window_Title.setText("S P E C K L E");
-        Window_Title.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        Close.setBackground(new java.awt.Color(255, 255, 255));
-        Close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
-        Close.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Close.setOpaque(true);
-        Close.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CloseMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CloseMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                CloseMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                CloseMousePressed(evt);
+        Inventory_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/package_3d.png"))); // NOI18N
+        Inventory_Button.setEnabled(false);
+        Inventory_Button.setFocusable(false);
+        Inventory_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Inventory_Button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Inventory_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Inventory_ButtonActionPerformed(evt);
             }
         });
+        SideBar.add(Inventory_Button);
+        SideBar.add(Filler_04);
 
-        javax.swing.GroupLayout HeaderLayout = new javax.swing.GroupLayout(Header);
-        Header.setLayout(HeaderLayout);
-        HeaderLayout.setHorizontalGroup(
-            HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HeaderLayout.createSequentialGroup()
-                .addComponent(Header_Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(442, 442, 442)
-                .addComponent(Window_Title)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Close, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        HeaderLayout.setVerticalGroup(
-            HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Window_Title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(HeaderLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Close, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(HeaderLayout.createSequentialGroup()
-                .addComponent(Header_Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        Settings_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gear_3d.png"))); // NOI18N
+        Settings_Button.setEnabled(false);
+        Settings_Button.setFocusable(false);
+        Settings_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Settings_Button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Settings_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Settings_ButtonActionPerformed(evt);
+            }
+        });
+        SideBar.add(Settings_Button);
+        SideBar.add(Filler_05);
+
+        About_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bubbles_3d.png"))); // NOI18N
+        About_Button.setEnabled(false);
+        About_Button.setFocusable(false);
+        About_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        About_Button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        About_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                About_ButtonActionPerformed(evt);
+            }
+        });
+        SideBar.add(About_Button);
+        SideBar.add(Filler_06);
+
+        SignOut_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/high_voltage_3d.png"))); // NOI18N
+        SignOut_Button.setEnabled(false);
+        SignOut_Button.setFocusable(false);
+        SignOut_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SignOut_Button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        SignOut_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SignOut_ButtonActionPerformed(evt);
+            }
+        });
+        SideBar.add(SignOut_Button);
+        SideBar.add(Filler_07);
 
         Container.setLayout(new java.awt.CardLayout());
-
-        StartUp_Banner.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        StartUp_Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.png"))); // NOI18N
-        StartUp_Banner.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        StartUp_Container.setLayout(new java.awt.CardLayout());
 
         SignIn_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
         SignIn_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -257,7 +264,7 @@ public class Main extends javax.swing.JFrame {
         SignInLayout.setHorizontalGroup(
             SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SignInLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addContainerGap(240, Short.MAX_VALUE)
                 .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(SignIn_SubHeading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -272,15 +279,14 @@ public class Main extends javax.swing.JFrame {
                         .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Username)
                             .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(SignIn_Button, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Forgot_Password_Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(33, Short.MAX_VALUE))
+                            .addComponent(SignIn_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Forgot_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(270, Short.MAX_VALUE))
         );
         SignInLayout.setVerticalGroup(
             SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SignInLayout.createSequentialGroup()
-                .addGap(100, 100, 100)
+                .addContainerGap(115, Short.MAX_VALUE)
                 .addComponent(SignIn_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(SignIn_Para)
@@ -298,10 +304,10 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(SignIn_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Forgot_Password_Label)
-                .addContainerGap(128, Short.MAX_VALUE))
+                .addContainerGap(115, Short.MAX_VALUE))
         );
 
-        StartUp_Container.add(SignIn, "signIn");
+        Container.add(SignIn, "signIn");
 
         SignUp_User_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
         SignUp_User_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -357,7 +363,7 @@ public class Main extends javax.swing.JFrame {
         SignUp_UserLayout.setHorizontalGroup(
             SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SignUp_UserLayout.createSequentialGroup()
-                .addGap(0, 31, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(SignUp_UserLayout.createSequentialGroup()
                         .addGap(38, 38, 38)
@@ -407,10 +413,10 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(Confirm_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addComponent(Next_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
-        StartUp_Container.add(SignUp_User, "signUpUser");
+        Container.add(SignUp_User, "signUpUser");
 
         SignUp_Details_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         SignUp_Details_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -506,7 +512,7 @@ public class Main extends javax.swing.JFrame {
                                 .addComponent(Back_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(SignUp_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         SignUp_DetailsLayout.setVerticalGroup(
             SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -538,7 +544,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(109, Short.MAX_VALUE))
         );
 
-        StartUp_Container.add(SignUp_Details, "signUpDetails");
+        Container.add(SignUp_Details, "signUpDetails");
 
         Verify_Details_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         Verify_Details_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -598,7 +604,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(60, 60, 60)
                 .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Recovery_Key_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Verify_Details_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
+                    .addComponent(Verify_Details_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
                     .addComponent(Recovery_Key_Display_Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Recovery_Key_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Verify_DetailsLayout.createSequentialGroup()
@@ -657,10 +663,10 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(Recovery_Key_Display_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24)
                 .addComponent(Finish_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
-        StartUp_Container.add(Verify_Details, "verifyDetails");
+        Container.add(Verify_Details, "verifyDetails");
 
         Forgot_Password_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         Forgot_Password_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -728,7 +734,7 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(Cancel_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(Reset_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(502, Short.MAX_VALUE))
         );
         Forgot_PasswordLayout.setVerticalGroup(
             Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -753,284 +759,73 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Reset_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Cancel_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addContainerGap(145, Short.MAX_VALUE))
         );
 
-        StartUp_Container.add(Forgot_Password, "forgotPassword");
+        Container.add(Forgot_Password, "forgotPassword");
         Forgot_Password.getAccessibleContext().setAccessibleName("");
-
-        javax.swing.GroupLayout StartUpLayout = new javax.swing.GroupLayout(StartUp);
-        StartUp.setLayout(StartUpLayout);
-        StartUpLayout.setHorizontalGroup(
-            StartUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(StartUpLayout.createSequentialGroup()
-                .addComponent(StartUp_Banner, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(StartUp_Container, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        StartUpLayout.setVerticalGroup(
-            StartUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(StartUp_Banner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(StartUp_Container, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-        );
-
-        Container.add(StartUp, "start");
-
-        SideBar.setBackground(new java.awt.Color(51, 51, 51));
-
-        Home.setBackground(new java.awt.Color(0, 136, 255));
-        Home.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/home.png"))); // NOI18N
-        Home.setToolTipText("Home");
-        Home.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Home.setOpaque(true);
-        Home.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                HomeMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                HomeMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                HomeMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                HomeMousePressed(evt);
-            }
-        });
-
-        Invoicing.setBackground(new java.awt.Color(255, 255, 255));
-        Invoicing.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Invoicing.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/invoice.png"))); // NOI18N
-        Invoicing.setToolTipText("Invoicing");
-        Invoicing.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Invoicing.setOpaque(true);
-        Invoicing.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                InvoicingMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                InvoicingMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                InvoicingMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                InvoicingMousePressed(evt);
-            }
-        });
-
-        Inventory.setBackground(new java.awt.Color(255, 255, 255));
-        Inventory.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Inventory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/inventory.png"))); // NOI18N
-        Inventory.setToolTipText("Inventory");
-        Inventory.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Inventory.setOpaque(true);
-        Inventory.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                InventoryMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                InventoryMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                InventoryMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                InventoryMousePressed(evt);
-            }
-        });
-
-        Settings.setBackground(new java.awt.Color(255, 255, 255));
-        Settings.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Settings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/settings.png"))); // NOI18N
-        Settings.setToolTipText("Settings");
-        Settings.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Settings.setOpaque(true);
-        Settings.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SettingsMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                SettingsMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                SettingsMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                SettingsMousePressed(evt);
-            }
-        });
-
-        About.setBackground(new java.awt.Color(255, 255, 255));
-        About.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        About.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/about.png"))); // NOI18N
-        About.setToolTipText("About");
-        About.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        About.setOpaque(true);
-        About.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                AboutMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                AboutMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                AboutMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                AboutMousePressed(evt);
-            }
-        });
-
-        SignOut.setBackground(new java.awt.Color(255, 255, 255));
-        SignOut.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SignOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sign-out.png"))); // NOI18N
-        SignOut.setToolTipText("Sign Out");
-        SignOut.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        SignOut.setOpaque(true);
-        SignOut.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SignOutMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                SignOutMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                SignOutMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                SignOutMousePressed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout SideBarLayout = new javax.swing.GroupLayout(SideBar);
-        SideBar.setLayout(SideBarLayout);
-        SideBarLayout.setHorizontalGroup(
-            SideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SideBarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(SideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SideBarLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Inventory))
-                    .addGroup(SideBarLayout.createSequentialGroup()
-                        .addGroup(SideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Invoicing)
-                            .addComponent(Settings)
-                            .addComponent(About)
-                            .addComponent(Home)
-                            .addComponent(SignOut))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        SideBarLayout.setVerticalGroup(
-            SideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SideBarLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(Home)
-                .addGap(18, 18, 18)
-                .addComponent(Invoicing)
-                .addGap(18, 18, 18)
-                .addComponent(Inventory)
-                .addGap(18, 18, 18)
-                .addComponent(Settings)
-                .addGap(18, 18, 18)
-                .addComponent(About)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(SignOut)
-                .addGap(18, 18, 18))
-        );
 
         javax.swing.GroupLayout ContentLayout = new javax.swing.GroupLayout(Content);
         Content.setLayout(ContentLayout);
         ContentLayout.setHorizontalGroup(
             ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 948, Short.MAX_VALUE)
+            .addGap(0, 950, Short.MAX_VALUE)
         );
         ContentLayout.setVerticalGroup(
             ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 574, Short.MAX_VALUE)
+            .addGap(0, 577, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout ApplicationLayout = new javax.swing.GroupLayout(Application);
-        Application.setLayout(ApplicationLayout);
-        ApplicationLayout.setHorizontalGroup(
-            ApplicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ApplicationLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(SideBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(Content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        ApplicationLayout.setVerticalGroup(
-            ApplicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ApplicationLayout.createSequentialGroup()
-                .addGroup(ApplicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(SideBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        Container.add(Content, "app");
 
-        Container.add(Application, "app");
+        File_Menu.setText("File");
 
-        javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
-        Background.setLayout(BackgroundLayout);
-        BackgroundLayout.setHorizontalGroup(
-            BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(Container, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        BackgroundLayout.setVerticalGroup(
-            BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BackgroundLayout.createSequentialGroup()
-                .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(Container, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        Exit_MenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        Exit_MenuItem.setText("Exit");
+        Exit_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Exit_MenuItemActionPerformed(evt);
+            }
+        });
+        File_Menu.add(Exit_MenuItem);
+
+        MenuBar.add(File_Menu);
+
+        Edit_Menu.setText("Edit");
+        MenuBar.add(Edit_Menu);
+
+        Help_Menu.setText("Help");
+
+        About_MenuItem.setText("About");
+        About_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                About_MenuItemActionPerformed(evt);
+            }
+        });
+        Help_Menu.add(About_MenuItem);
+
+        MenuBar.add(Help_Menu);
+
+        setJMenuBar(MenuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(SideBar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Container, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(SideBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Container, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void HeaderMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderMousePressed
-        x = evt.getX();
-        y = evt.getY();
-    }//GEN-LAST:event_HeaderMousePressed
-
-    private void HeaderMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderMouseDragged
-        int xx = evt.getXOnScreen();
-        int yy = evt.getYOnScreen();
-        this.setLocation(xx - x, yy - y);
-    }//GEN-LAST:event_HeaderMouseDragged
-
-    private void CloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloseMouseClicked
-        com.astral.internal.SQLite.closeDB();
-        System.exit(0);
-    }//GEN-LAST:event_CloseMouseClicked
-
-    private void CloseMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloseMousePressed
-        Close.setBackground(new java.awt.Color(225, 48, 48));
-    }//GEN-LAST:event_CloseMousePressed
-
-    private void CloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloseMouseEntered
-        Close.setBackground(new java.awt.Color(225, 72, 72));
-    }//GEN-LAST:event_CloseMouseEntered
-
-    private void CloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloseMouseExited
-        Close.setBackground(White);
-    }//GEN-LAST:event_CloseMouseExited
 
     private void SignIn_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignIn_ButtonActionPerformed
         usrname = Username.getText();
@@ -1039,11 +834,7 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please enter Username and Password they cannot be Blank."
                 + " Please Try Again!", "Credentials are Blank", JOptionPane.ERROR_MESSAGE);
         else if (com.astral.internal.SQLite.logIn(usrname, passwd)) {
-            Content.removeAll();
-            com.astral.speckle.Home scene = new Home();
-            scene.setBounds(0, 0, 948, 574);
-            Content.add(scene).setVisible(true);
-            Container_Deck.show(Container, "app");
+            SignIn_ActionPerformed();
         } else
             JOptionPane.showMessageDialog(null, "The Username or Password entered are Incorrect."
                 + " Please Try Again!", "Incorrect Credentials", JOptionPane.ERROR_MESSAGE);
@@ -1054,7 +845,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_Forgot_Password_LabelMouseMoved
 
     private void Forgot_Password_LabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Forgot_Password_LabelMousePressed
-        StartUp_Deck.show(StartUp_Container, "forgotPassword");
+        Container_Deck.show(Container, "forgotPassword");
     }//GEN-LAST:event_Forgot_Password_LabelMousePressed
 
     private void Next_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Next_ButtonActionPerformed
@@ -1078,7 +869,7 @@ public class Main extends javax.swing.JFrame {
         else {
             com.astral.internal.SQLite.userConfig(usrname, com.astral.internal.Security.generateHash(passwd));
             com.astral.internal.SQLite.setConfigValue("Recovery Key", com.astral.internal.Security.generateHash(key));
-            StartUp_Deck.show(StartUp_Container, "signUpDetails");
+            Container_Deck.show(Container, "signUpDetails");
         }
     }//GEN-LAST:event_Next_ButtonActionPerformed
 
@@ -1100,7 +891,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_Contact_NumberKeyPressed
 
     private void Back_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_ButtonActionPerformed
-        StartUp_Deck.show(StartUp_Container, "signUpUser");
+        Container_Deck.show(Container, "signUpUser");
     }//GEN-LAST:event_Back_ButtonActionPerformed
 
     private void SignUp_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUp_ButtonActionPerformed
@@ -1122,22 +913,18 @@ public class Main extends javax.swing.JFrame {
             Verify_Email_Address.setText(cmail);
             Verify_Business_Location.setText(caddress);
             Recovery_Key_Display_Label.setText(key);
-            StartUp_Deck.show(StartUp_Container, "verifyDetails");
+            Container_Deck.show(Container, "verifyDetails");
         }
     }//GEN-LAST:event_SignUp_ButtonActionPerformed
 
     private void Finish_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Finish_ButtonActionPerformed
-        Content.removeAll();
-        com.astral.speckle.Home scene = new Home();
-        scene.setBounds(0, 0, 948, 574);
-        Content.add(scene).setVisible(true);
-        Container_Deck.show(Container, "app");
+        SignIn_ActionPerformed();
     }//GEN-LAST:event_Finish_ButtonActionPerformed
 
     private void Cancel_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cancel_ButtonActionPerformed
         Username.setText("");
         Password.setText("");
-        StartUp_Deck.show(StartUp_Container, "signIn");
+        Container_Deck.show(Container, "signIn");
         Recovery_Key.setText("");
         New_Password.setText("");
         Confirm_Passwd.setText("");
@@ -1176,174 +963,116 @@ public class Main extends javax.swing.JFrame {
                 "Recovery Key", JOptionPane.INFORMATION_MESSAGE);
             Username.setText("");
             Password.setText("");
-            StartUp_Deck.show(StartUp_Container, "signIn");
+            Container_Deck.show(Container, "signIn");
             Recovery_Key.setText("");
             New_Password.setText("");
             Confirm_Passwd.setText("");
         }
     }//GEN-LAST:event_Reset_ButtonActionPerformed
 
-    private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
+    private void About_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_About_MenuItemActionPerformed
+        About_ActionPerformed();
+    }//GEN-LAST:event_About_MenuItemActionPerformed
+
+    private void Exit_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Exit_MenuItemActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_Exit_MenuItemActionPerformed
+
+    private void Home_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Home_ButtonActionPerformed
+        Home_ActionPerformed();
+    }//GEN-LAST:event_Home_ButtonActionPerformed
+
+    private void Invoicing_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Invoicing_ButtonActionPerformed
+        Invoicing_ActionPerformed();
+    }//GEN-LAST:event_Invoicing_ButtonActionPerformed
+
+    private void Inventory_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Inventory_ButtonActionPerformed
+        Inventory_ActionPerformed();
+    }//GEN-LAST:event_Inventory_ButtonActionPerformed
+
+    private void Settings_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Settings_ButtonActionPerformed
+        Settings_ActionPerformed();
+    }//GEN-LAST:event_Settings_ButtonActionPerformed
+
+    private void About_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_About_ButtonActionPerformed
+        About_ActionPerformed();
+    }//GEN-LAST:event_About_ButtonActionPerformed
+
+    private void SignOut_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignOut_ButtonActionPerformed
+        SignOut_ActionPerformed();
+    }//GEN-LAST:event_SignOut_ButtonActionPerformed
+
+    private void SignIn_ActionPerformed() {
+        Home_ActionPerformed();
+        Container_Deck.show(Container, "app");
+        Home_Button.setEnabled(true);
+        Invoicing_Button.setEnabled(true);
+        Inventory_Button.setEnabled(true);
+        Settings_Button.setEnabled(true);
+        About_Button.setEnabled(true);
+        SignOut_Button.setEnabled(true);
+    }
+
+    private void SignOut_ActionPerformed() {
+        Username.setText("");
+        Password.setText("");
+        Container_Deck.show(Container, "signIn");
+        Content.removeAll();
+        Home_Button.setEnabled(false);
+        Invoicing_Button.setEnabled(false);
+        Inventory_Button.setEnabled(false);
+        Settings_Button.setEnabled(false);
+        About_Button.setEnabled(false);
+        SignOut_Button.setEnabled(false);
+    }
+
+    private void Home_ActionPerformed() {
         Content.removeAll();
         com.astral.speckle.Home scene = new Home();
         scene.setBounds(0, 0, 948, 574);
         Content.add(scene).setVisible(true);
-    }//GEN-LAST:event_HomeMouseClicked
+    }
 
-    private void HomeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMousePressed
-        Home.setBackground(Active);
-        Invoicing.setBackground(White);
-        Inventory.setBackground(White);
-        Settings.setBackground(White);
-        About.setBackground(White);
-        Stored = Home.getBackground();
-    }//GEN-LAST:event_HomeMousePressed
-
-    private void HomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseEntered
-        Stored = Home.getBackground();
-        Home.setBackground(Hover);
-    }//GEN-LAST:event_HomeMouseEntered
-
-    private void HomeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseExited
-        Home.setBackground(Stored);
-    }//GEN-LAST:event_HomeMouseExited
-
-    private void InvoicingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InvoicingMouseClicked
+    private void Invoicing_ActionPerformed() {
         Content.removeAll();
         com.astral.speckle.Invoicing scene = new Invoicing();
         scene.setBounds(0, 0, 948, 574);
         scene.New_Invoice_Table_Hide_Columns();
         Content.add(scene).setVisible(true);
-    }//GEN-LAST:event_InvoicingMouseClicked
+    }
 
-    private void InvoicingMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InvoicingMousePressed
-        Home.setBackground(White);
-        Invoicing.setBackground(Active);
-        Inventory.setBackground(White);
-        Settings.setBackground(White);
-        About.setBackground(White);
-        Stored = Invoicing.getBackground();
-    }//GEN-LAST:event_InvoicingMousePressed
-
-    private void InvoicingMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InvoicingMouseEntered
-        Stored = Invoicing.getBackground();
-        Invoicing.setBackground(Hover);
-    }//GEN-LAST:event_InvoicingMouseEntered
-
-    private void InvoicingMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InvoicingMouseExited
-        Invoicing.setBackground(Stored);
-    }//GEN-LAST:event_InvoicingMouseExited
-
-    private void InventoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventoryMouseClicked
+    private void Inventory_ActionPerformed() {
         Content.removeAll();
         com.astral.speckle.Inventory scene = new Inventory();
         scene.setBounds(0, 0, 948, 574);
         Content.add(scene).setVisible(true);
-    }//GEN-LAST:event_InventoryMouseClicked
+    }
 
-    private void InventoryMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventoryMousePressed
-        Home.setBackground(White);
-        Invoicing.setBackground(White);
-        Inventory.setBackground(Active);
-        Settings.setBackground(White);
-        About.setBackground(White);
-        Stored = Inventory.getBackground();
-    }//GEN-LAST:event_InventoryMousePressed
-
-    private void InventoryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventoryMouseEntered
-        Stored = Inventory.getBackground();
-        Inventory.setBackground(Hover);
-    }//GEN-LAST:event_InventoryMouseEntered
-
-    private void InventoryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventoryMouseExited
-        Inventory.setBackground(Stored);
-    }//GEN-LAST:event_InventoryMouseExited
-
-    private void SettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsMouseClicked
+    private void Settings_ActionPerformed() {
         Content.removeAll();
         com.astral.speckle.Settings scene = new Settings();
         scene.setBounds(0, 0, 948, 574);
         Content.add(scene).setVisible(true);
-    }//GEN-LAST:event_SettingsMouseClicked
+    }
 
-    private void SettingsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsMousePressed
-        Home.setBackground(White);
-        Invoicing.setBackground(White);
-        Inventory.setBackground(White);
-        Settings.setBackground(Active);
-        About.setBackground(White);
-        Stored = Settings.getBackground();
-    }//GEN-LAST:event_SettingsMousePressed
-
-    private void SettingsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsMouseEntered
-        Stored = Settings.getBackground();
-        Settings.setBackground(Hover);
-    }//GEN-LAST:event_SettingsMouseEntered
-
-    private void SettingsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsMouseExited
-        Settings.setBackground(Stored);
-    }//GEN-LAST:event_SettingsMouseExited
-
-    private void AboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutMouseClicked
+    private void About_ActionPerformed() {
         Content.removeAll();
         com.astral.speckle.About scene = new About();
         scene.setBounds(0, 0, 948, 574);
         Content.add(scene).setVisible(true);
-    }//GEN-LAST:event_AboutMouseClicked
-
-    private void AboutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutMousePressed
-        Home.setBackground(White);
-        Invoicing.setBackground(White);
-        Inventory.setBackground(White);
-        Settings.setBackground(White);
-        About.setBackground(Active);
-        Stored = About.getBackground();
-    }//GEN-LAST:event_AboutMousePressed
-
-    private void AboutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutMouseEntered
-        Stored = About.getBackground();
-        About.setBackground(Hover);
-    }//GEN-LAST:event_AboutMouseEntered
-
-    private void AboutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutMouseExited
-        About.setBackground(Stored);
-    }//GEN-LAST:event_AboutMouseExited
-
-    private void SignOutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignOutMouseClicked
-        Username.setText("");
-        Password.setText("");
-        StartUp_Deck.show(StartUp_Container, "signIn");
-        Container_Deck.show(Container, "start");
-        Home.setBackground(Active);
-        Invoicing.setBackground(White);
-        Inventory.setBackground(White);
-        Settings.setBackground(White);
-        About.setBackground(White);
-    }//GEN-LAST:event_SignOutMouseClicked
-
-    private void SignOutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignOutMousePressed
-        SignOut.setBackground(new java.awt.Color(225, 48, 48));
-    }//GEN-LAST:event_SignOutMousePressed
-
-    private void SignOutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignOutMouseEntered
-        SignOut.setBackground(new java.awt.Color(225, 56, 56));
-    }//GEN-LAST:event_SignOutMouseEntered
-
-    private void SignOutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignOutMouseExited
-        SignOut.setBackground(White);
-    }//GEN-LAST:event_SignOutMouseExited
+    }
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the FlatIntelliJLaf look and feel */
+        /* Set the FlatLightLaf look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If FlatIntelliJLaf is not available, stay with the default look and feel. */
-        com.formdev.flatlaf.FlatIntelliJLaf.setup();
+        /* If FlatLightLaf is not available, stay with the default look and feel. */
+        com.formdev.flatlaf.FlatLightLaf.setup();
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("FlatIntelliJLaf".equals(info.getName())) {
+                if ("FlatLightLaf".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -1354,6 +1083,7 @@ public class Main extends javax.swing.JFrame {
         javax.swing.UIManager.put("ScrollBar.thumbArc", 999);
         javax.swing.UIManager.put("ScrollBar.thumbInsets", new java.awt.Insets(2, 2, 2, 2));
         javax.swing.UIManager.put("TabbedPane.showTabSeparators", true);
+        javax.swing.UIManager.put("TitlePane.unifiedBackground", false);
         //</editor-fold>
 
         /* Create and display the form */
@@ -1364,16 +1094,14 @@ public class Main extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel About;
-    private javax.swing.JPanel Application;
+    private javax.swing.JButton About_Button;
+    private javax.swing.JMenuItem About_MenuItem;
     private javax.swing.JButton Back_Button;
-    private javax.swing.JPanel Background;
     private javax.swing.JTextField Business_Location;
     private javax.swing.JLabel Business_Location_Label;
     private javax.swing.JTextField Business_Name;
     private javax.swing.JLabel Business_Name_Label;
     private javax.swing.JButton Cancel_Button;
-    private javax.swing.JLabel Close;
     private javax.swing.JPasswordField Confirm_Passwd;
     private javax.swing.JLabel Confirm_Passwd_Label;
     private javax.swing.JPasswordField Confirm_Password;
@@ -1384,18 +1112,28 @@ public class Main extends javax.swing.JFrame {
     public static javax.swing.JDesktopPane Content;
     private javax.swing.JPasswordField Create_Password;
     private javax.swing.JLabel Create_Password_Label;
+    private javax.swing.JMenu Edit_Menu;
     private javax.swing.JTextField Email_Address;
     private javax.swing.JLabel Email_Address_Label;
+    private javax.swing.JMenuItem Exit_MenuItem;
+    private javax.swing.JMenu File_Menu;
+    private javax.swing.Box.Filler Filler_01;
+    private javax.swing.Box.Filler Filler_02;
+    private javax.swing.Box.Filler Filler_03;
+    private javax.swing.Box.Filler Filler_04;
+    private javax.swing.Box.Filler Filler_05;
+    private javax.swing.Box.Filler Filler_06;
+    private javax.swing.Box.Filler Filler_07;
     private javax.swing.JButton Finish_Button;
     private javax.swing.JPanel Forgot_Password;
     private javax.swing.JLabel Forgot_Password_Heading;
     private javax.swing.JLabel Forgot_Password_Label;
     private javax.swing.JLabel Forgot_Password_Para;
-    private javax.swing.JPanel Header;
-    private javax.swing.JLabel Header_Logo;
-    private javax.swing.JLabel Home;
-    private javax.swing.JLabel Inventory;
-    private javax.swing.JLabel Invoicing;
+    private javax.swing.JMenu Help_Menu;
+    private javax.swing.JButton Home_Button;
+    private javax.swing.JButton Inventory_Button;
+    private javax.swing.JButton Invoicing_Button;
+    private javax.swing.JMenuBar MenuBar;
     private javax.swing.JPasswordField New_Password;
     private javax.swing.JLabel New_Password_Label;
     private javax.swing.JButton Next_Button;
@@ -1407,14 +1145,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Recovery_Key_Label;
     private javax.swing.JLabel Recovery_Key_Para;
     private javax.swing.JButton Reset_Button;
-    private javax.swing.JLabel Settings;
-    private javax.swing.JPanel SideBar;
+    private javax.swing.JButton Settings_Button;
+    private javax.swing.JToolBar SideBar;
     private javax.swing.JPanel SignIn;
     private javax.swing.JButton SignIn_Button;
     private javax.swing.JLabel SignIn_Heading;
     private javax.swing.JLabel SignIn_Para;
     private javax.swing.JLabel SignIn_SubHeading;
-    private javax.swing.JLabel SignOut;
+    private javax.swing.JButton SignOut_Button;
     private javax.swing.JButton SignUp_Button;
     private javax.swing.JPanel SignUp_Details;
     private javax.swing.JLabel SignUp_Details_Heading;
@@ -1426,9 +1164,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel SignUp_User_SubHeading;
     private javax.swing.JTextField SignUp_Username;
     private javax.swing.JLabel SignUp_Username_Label;
-    private javax.swing.JPanel StartUp;
-    private javax.swing.JLabel StartUp_Banner;
-    private javax.swing.JPanel StartUp_Container;
     private javax.swing.JTextField Username;
     private javax.swing.JLabel Username_Label;
     private javax.swing.JLabel Verfiy_Contact_Number;
@@ -1443,15 +1178,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Verify_Email_Address_Label;
     private javax.swing.JLabel Verify_Username;
     private javax.swing.JLabel Verify_Username_Label;
-    private javax.swing.JLabel Window_Title;
     // End of variables declaration//GEN-END:variables
     private final java.awt.CardLayout Container_Deck;
-    private final java.awt.CardLayout StartUp_Deck;
     private String usrname, passwd, key;
-    private final java.awt.Color Active;
-    private final java.awt.Color Hover;
-    private final java.awt.Color White;
-    private java.awt.Color Stored;
     public static String Version;
-    private int x, y;
 }
