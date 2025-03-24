@@ -896,32 +896,30 @@
                           <Component id="Recovery_Key_Display_Label" alignment="0" max="32767" attributes="0"/>
                           <Component id="Recovery_Key_Para" alignment="1" pref="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="Verify_Username_Label" max="32767" attributes="0"/>
-                                          <Component id="Verify_Business_Name_Label" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="Verify_Email_Address_Label" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="Verify_Contact_Number_Label" alignment="0" pref="130" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="Verify_Business_Location" alignment="1" min="-2" pref="246" max="-2" attributes="0"/>
-                                          <Component id="Verify_Email_Address" alignment="1" min="-2" pref="246" max="-2" attributes="0"/>
-                                          <Component id="Verfiy_Contact_Number" alignment="0" min="-2" pref="246" max="-2" attributes="0"/>
-                                          <Component id="Verify_Username" alignment="0" min="-2" pref="246" max="-2" attributes="0"/>
-                                          <Component id="Verify_Business_Name" alignment="0" min="-2" pref="246" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="Verify_Business_Location_Label" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="Verify_Business_Location_Label" min="-2" pref="130" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="Verify_Username_Label" max="32767" attributes="0"/>
+                                  <Component id="Verify_Business_Name_Label" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Verify_Email_Address_Label" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Verify_Contact_Number_Label" alignment="0" pref="130" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="Verify_Username" max="32767" attributes="0"/>
+                                  <Component id="Verify_Business_Name" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Verfiy_Contact_Number" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Verify_Email_Address" max="32767" attributes="0"/>
+                                  <Component id="Verify_Business_Location" alignment="0" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="191" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="Finish_Button" min="-2" pref="120" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -963,9 +961,9 @@
                       <Component id="Recovery_Key_Para" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Recovery_Key_Display_Label" min="-2" pref="31" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="Finish_Button" min="-2" pref="36" max="-2" attributes="0"/>
-                      <EmptySpace pref="74" max="32767" attributes="0"/>
+                      <EmptySpace pref="80" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1071,7 +1069,8 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Semibold" size="11" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p style=&quot;text-align: center;&quot;&gt;Following Is Your Recovery Key Code For Password Recovery. Please Keep This Code Safe and Do not Share This Code With Anyone.&lt;/p&gt;&lt;/html&gt;"/>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Following Is Your Recovery Key Code For Password Recovery. Please Keep This Code Safe and Do not Share This Code With Anyone."/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="Recovery_Key_Display_Label">
@@ -1599,6 +1598,243 @@
                 </Component>
               </SubComponents>
             </Container>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="Invoice_Main">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="invMain"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="Main_Heading" alignment="0" min="-2" pref="184" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="View" min="-2" pref="120" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="Remove1" min="-2" pref="120" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="Export1" min="-2" pref="120" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="Invoice_Table_Container" alignment="0" pref="846" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="Main_Heading" min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="Invoice_Table_Container" pref="347" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="View" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="Remove1" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="Export1" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="Main_Heading">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="24" style="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="2"/>
+                <Property name="text" type="java.lang.String" value="Invoice"/>
+                <Property name="horizontalTextPosition" type="int" value="2"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="Invoice_Table_Container">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="Invoice_Table">
+                  <Properties>
+                    <Property name="showGrid" type="boolean" value="true"/>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JButton" name="View">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="View Invoice"/>
+                <Property name="toolTipText" type="java.lang.String" value="View Selected Invoice from Invoice List"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ViewActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="Remove1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Remove"/>
+                <Property name="toolTipText" type="java.lang.String" value="Remove Selected Invoices from Invoice List"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Remove1ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="Export1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Export"/>
+                <Property name="toolTipText" type="java.lang.String" value="Export Invoice List to a CSV File"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Export1ActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="Inventory_Page">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="inventory"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="Heading" min="-2" pref="224" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="Add" min="-2" pref="120" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="Remove" min="-2" pref="120" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="Update" min="-2" pref="120" max="-2" attributes="0"/>
+                                      <EmptySpace pref="192" max="32767" attributes="0"/>
+                                      <Component id="Import" min="-2" pref="120" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="Export" min="-2" pref="120" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="Inventory_Table_Container" alignment="1" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="Heading" min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="Inventory_Table_Container" pref="347" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="Remove" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="Add" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="Update" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="Export" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="Import" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="Heading">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="24" style="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="2"/>
+                <Property name="text" type="java.lang.String" value="Inventory"/>
+                <Property name="horizontalTextPosition" type="int" value="2"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="Inventory_Table_Container">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="Inventory_Table">
+                  <Properties>
+                    <Property name="showGrid" type="boolean" value="true"/>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JButton" name="Add">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Add"/>
+                <Property name="toolTipText" type="java.lang.String" value="Add a New Product to Inventory"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="Remove">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Remove"/>
+                <Property name="toolTipText" type="java.lang.String" value="Remove Selected Products from Inventory"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RemoveActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="Update">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Update Stock"/>
+                <Property name="toolTipText" type="java.lang.String" value="Increase Available Quantity for Selected Product"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="Import">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Import"/>
+                <Property name="toolTipText" type="java.lang.String" value="Import Inventory Data from a CSV File"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ImportActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="Export">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Export"/>
+                <Property name="toolTipText" type="java.lang.String" value="Export Inventory Data to a CSV File"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExportActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="Settings_Page">

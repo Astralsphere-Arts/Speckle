@@ -1,6 +1,15 @@
 package com.astral.speckle;
 
+import java.awt.Component;
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumnModel;
 
 /**
  *
@@ -129,6 +138,22 @@ public class Main extends javax.swing.JFrame {
         Product_Four_Quantity = new javax.swing.JLabel();
         Product_Five_Label = new javax.swing.JLabel();
         Product_Five_Quantity = new javax.swing.JLabel();
+        Invoice_Main = new javax.swing.JPanel();
+        Main_Heading = new javax.swing.JLabel();
+        Invoice_Table_Container = new javax.swing.JScrollPane();
+        Invoice_Table = new javax.swing.JTable();
+        View = new javax.swing.JButton();
+        Remove1 = new javax.swing.JButton();
+        Export1 = new javax.swing.JButton();
+        Inventory_Page = new javax.swing.JPanel();
+        Heading = new javax.swing.JLabel();
+        Inventory_Table_Container = new javax.swing.JScrollPane();
+        Inventory_Table = new javax.swing.JTable();
+        Add = new javax.swing.JButton();
+        Remove = new javax.swing.JButton();
+        Update = new javax.swing.JButton();
+        Import = new javax.swing.JButton();
+        Export = new javax.swing.JButton();
         Settings_Page = new javax.swing.JPanel();
         Settings_Container = new javax.swing.JTabbedPane();
         User_Tab = new javax.swing.JPanel();
@@ -673,7 +698,8 @@ public class Main extends javax.swing.JFrame {
         Recovery_Key_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Recovery_Key_Para.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
-        Recovery_Key_Para.setText("<html><p style=\"text-align: center;\">Following Is Your Recovery Key Code For Password Recovery. Please Keep This Code Safe and Do not Share This Code With Anyone.</p></html>");
+        Recovery_Key_Para.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Recovery_Key_Para.setText("Following Is Your Recovery Key Code For Password Recovery. Please Keep This Code Safe and Do not Share This Code With Anyone.");
 
         Recovery_Key_Display_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Recovery_Key_Display_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -699,25 +725,24 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(Recovery_Key_Display_Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Recovery_Key_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Verify_DetailsLayout.createSequentialGroup()
-                        .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Verify_DetailsLayout.createSequentialGroup()
-                                .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Verify_Username_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Verify_Business_Name_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Verify_Email_Address_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Verify_Contact_Number_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Verify_Business_Location, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Verify_Email_Address, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Verfiy_Contact_Number, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Verify_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Verify_Business_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(Verify_Business_Location_Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(Verify_Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(Verify_DetailsLayout.createSequentialGroup()
+                        .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Verify_Username_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Verify_Business_Name_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Verify_Email_Address_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Verify_Contact_Number_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Verify_Username, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Verify_Business_Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Verfiy_Contact_Number, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Verify_Email_Address, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Verify_Business_Location, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(60, 60, 60))
             .addGroup(Verify_DetailsLayout.createSequentialGroup()
-                .addGap(191, 191, 191)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Finish_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -752,9 +777,9 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(Recovery_Key_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Recovery_Key_Display_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
+                .addGap(18, 18, 18)
                 .addComponent(Finish_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         Container.add(Verify_Details, "verifyDetails");
@@ -1041,6 +1066,167 @@ public class Main extends javax.swing.JFrame {
         );
 
         Container.add(Home_Page, "home");
+
+        Main_Heading.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        Main_Heading.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Main_Heading.setText("Invoice");
+        Main_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+
+        Invoice_Table.setShowGrid(true);
+        Invoice_Table.getTableHeader().setReorderingAllowed(false);
+        Invoice_Table_Container.setViewportView(Invoice_Table);
+
+        View.setText("View Invoice");
+        View.setToolTipText("View Selected Invoice from Invoice List");
+        View.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ViewActionPerformed(evt);
+            }
+        });
+
+        Remove1.setText("Remove");
+        Remove1.setToolTipText("Remove Selected Invoices from Invoice List");
+        Remove1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Remove1ActionPerformed(evt);
+            }
+        });
+
+        Export1.setText("Export");
+        Export1.setToolTipText("Export Invoice List to a CSV File");
+        Export1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Export1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Invoice_MainLayout = new javax.swing.GroupLayout(Invoice_Main);
+        Invoice_Main.setLayout(Invoice_MainLayout);
+        Invoice_MainLayout.setHorizontalGroup(
+            Invoice_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Invoice_MainLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(Invoice_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Main_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(Invoice_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Invoice_MainLayout.createSequentialGroup()
+                            .addComponent(View, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(Remove1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Export1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Invoice_Table_Container, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 846, Short.MAX_VALUE)))
+                .addGap(60, 60, 60))
+        );
+        Invoice_MainLayout.setVerticalGroup(
+            Invoice_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Invoice_MainLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(Main_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Invoice_Table_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(Invoice_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(View, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Remove1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Export1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(73, 73, 73))
+        );
+
+        Container.add(Invoice_Main, "invMain");
+
+        Heading.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        Heading.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Heading.setText("Inventory");
+        Heading.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+
+        Inventory_Table.setShowGrid(true);
+        Inventory_Table.getTableHeader().setReorderingAllowed(false);
+        Inventory_Table_Container.setViewportView(Inventory_Table);
+
+        Add.setText("Add");
+        Add.setToolTipText("Add a New Product to Inventory");
+        Add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddActionPerformed(evt);
+            }
+        });
+
+        Remove.setText("Remove");
+        Remove.setToolTipText("Remove Selected Products from Inventory");
+        Remove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RemoveActionPerformed(evt);
+            }
+        });
+
+        Update.setText("Update Stock");
+        Update.setToolTipText("Increase Available Quantity for Selected Product");
+        Update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateActionPerformed(evt);
+            }
+        });
+
+        Import.setText("Import");
+        Import.setToolTipText("Import Inventory Data from a CSV File");
+        Import.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ImportActionPerformed(evt);
+            }
+        });
+
+        Export.setText("Export");
+        Export.setToolTipText("Export Inventory Data to a CSV File");
+        Export.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExportActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Inventory_PageLayout = new javax.swing.GroupLayout(Inventory_Page);
+        Inventory_Page.setLayout(Inventory_PageLayout);
+        Inventory_PageLayout.setHorizontalGroup(
+            Inventory_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Inventory_PageLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(Inventory_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Inventory_PageLayout.createSequentialGroup()
+                        .addComponent(Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(Inventory_PageLayout.createSequentialGroup()
+                        .addGroup(Inventory_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(Inventory_PageLayout.createSequentialGroup()
+                                .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Remove, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Update, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
+                                .addComponent(Import, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Export, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Inventory_Table_Container))
+                        .addGap(60, 60, 60))))
+        );
+        Inventory_PageLayout.setVerticalGroup(
+            Inventory_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Inventory_PageLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Inventory_Table_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(Inventory_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Remove, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Update, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Export, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Import, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(73, 73, 73))
+        );
+
+        Container.add(Inventory_Page, "inventory");
 
         Settings_Container.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -1808,6 +1994,97 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Save_Changes_ButtonActionPerformed
 
+    private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
+        Inventory_Model.addRow(new Object[] {"SPK-" + com.astral.internal.Function.randomID(4) + "-" + com.astral.internal.Function.randomID(4), null, null, null, null});
+    }//GEN-LAST:event_AddActionPerformed
+
+    private void RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveActionPerformed
+        int[] rows = Inventory_Table.getSelectedRows();
+        for (int i=0; i<rows.length; i++) {
+            String PID = Inventory_Table.getValueAt(rows[i]-i, 0).toString();
+            com.astral.internal.SQLite.remRowInven(PID);
+            Inventory_Model.removeRow(rows[i]-i);
+        }
+    }//GEN-LAST:event_RemoveActionPerformed
+
+    private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
+        int row = Inventory_Table.getSelectedRow();
+        if (row == -1)
+            JOptionPane.showMessageDialog(null, "Please Select a Product to Update it's Stock.", "No Product Selected", JOptionPane.ERROR_MESSAGE);
+        else {
+            String PID = Inventory_Table.getValueAt(row, 0).toString();
+            int quantity = 0;
+            if (Inventory_Table.getValueAt(row, 4) != null)
+                quantity = (Integer) Inventory_Table.getValueAt(row, 4);
+            String update = JOptionPane.showInputDialog(null, "Enter the Amount of Stock You want to Increase", "Update Stock", JOptionPane.PLAIN_MESSAGE);
+            if (update.equals(""))
+                update = "0";
+            String quan = Integer.toString(quantity + Integer.parseInt(update));
+            com.astral.internal.SQLite.updateStock(PID, quan);
+            Inventory_ActionPerformed();
+        }
+    }//GEN-LAST:event_UpdateActionPerformed
+
+    private void ImportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImportActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Import from CSV");
+        fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
+        if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+            com.astral.internal.Function.invenCSVim(fileChooser.getSelectedFile());
+            JOptionPane.showMessageDialog(null, "Inventory Data Imported Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            Inventory_ActionPerformed();
+        }
+    }//GEN-LAST:event_ImportActionPerformed
+
+    private void ExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Export to CSV");
+        fileChooser.setDialogType(JFileChooser.SAVE_DIALOG);
+        fileChooser.setSelectedFile(new File("Inventory-" + new java.text.SimpleDateFormat("dd-MM-yyyy").format(new java.util.Date()) + ".csv"));
+        fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
+        if (fileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+            com.astral.internal.Function.invenCSVex(fileChooser.getSelectedFile());
+            JOptionPane.showMessageDialog(null, "Inventory Data Exported Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_ExportActionPerformed
+
+    private void ViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewActionPerformed
+        int row = Invoice_Table.getSelectedRow();
+        if (row == -1)
+            JOptionPane.showMessageDialog(null, "Please Select an Invoice from the Inovice List.", "No Invoice Selected", JOptionPane.ERROR_MESSAGE);
+        else {
+            String invID = Invoice_Table.getValueAt(row, 0).toString();
+            com.astral.internal.Function.invoicePDF(invID);
+            try {
+                Desktop.getDesktop().open(com.astral.internal.Function.invPath);
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_ViewActionPerformed
+
+    private void Remove1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Remove1ActionPerformed
+        DefaultTableModel Invoice_Model = (DefaultTableModel) Invoice_Table.getModel();
+        int[] rows = Invoice_Table.getSelectedRows();
+        for (int i=0; i<rows.length; i++) {
+            String invID = Invoice_Table.getValueAt(rows[i]-i, 0).toString();
+            com.astral.internal.SQLite.remInvoice(invID);
+            Invoice_Model.removeRow(rows[i]-i);
+        }
+    }//GEN-LAST:event_Remove1ActionPerformed
+
+    private void Export1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Export1ActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Export to CSV");
+        fileChooser.setDialogType(JFileChooser.SAVE_DIALOG);
+        fileChooser.setSelectedFile(new File("Invoice-" + new java.text.SimpleDateFormat("dd-MM-yyyy").format(new java.util.Date()) + ".csv"));
+        fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
+        if (fileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+            com.astral.internal.Function.invoiceCSVex(fileChooser.getSelectedFile());
+            JOptionPane.showMessageDialog(null, "Invoice Data Exported Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_Export1ActionPerformed
+
     private void SignIn_ActionPerformed() {
         Home_ActionPerformed();
         Home_Button.setEnabled(true);
@@ -1850,18 +2127,36 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void Invoicing_ActionPerformed() {
-        Content.removeAll();
-        com.astral.speckle.Invoicing scene = new Invoicing();
-        scene.setBounds(0, 0, 948, 574);
-        scene.New_Invoice_Table_Hide_Columns();
-        Content.add(scene).setVisible(true);
+        Invoice_Table.setModel(com.astral.internal.Function.invoTableModel());
+        final TableColumnModel columnModel = Invoice_Table.getColumnModel();
+        for (int column = 0; column < Invoice_Table.getColumnCount(); column++) {
+            int width = 15;
+            for (int row = 0; row < Invoice_Table.getRowCount(); row++) {
+                TableCellRenderer renderer = Invoice_Table.getCellRenderer(row, column);
+                Component comp = Invoice_Table.prepareRenderer(renderer, row, column);
+                width = Math.max(comp.getPreferredSize().width + 1 , width);
+            }
+            if (width > 300) width=300;
+            columnModel.getColumn(column).setPreferredWidth(width);
+        }
+        Container_Deck.show(Container, "invMain");
     }
 
     private void Inventory_ActionPerformed() {
-        Content.removeAll();
-        com.astral.speckle.Inventory scene = new Inventory();
-        scene.setBounds(0, 0, 948, 574);
-        Content.add(scene).setVisible(true);
+        Inventory_Table.setModel(com.astral.internal.Function.invenTableModel());
+        final TableColumnModel columnModel = Inventory_Table.getColumnModel();
+        for (int column = 0; column < Inventory_Table.getColumnCount(); column++) {
+            int width = 15;
+            for (int row = 0; row < Inventory_Table.getRowCount(); row++) {
+                TableCellRenderer renderer = Inventory_Table.getCellRenderer(row, column);
+                Component comp = Inventory_Table.prepareRenderer(renderer, row, column);
+                width = Math.max(comp.getPreferredSize().width + 1 , width);
+            }
+            if (width > 300) width=300;
+            columnModel.getColumn(column).setPreferredWidth(width);
+        }
+        Inventory_Model = (DefaultTableModel) Inventory_Table.getModel();
+        Container_Deck.show(Container, "inventory");
     }
 
     private void Settings_ActionPerformed() {
@@ -1915,6 +2210,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem About_MenuItem;
     private javax.swing.JPanel About_Page;
     private javax.swing.JLabel About_Para;
+    private javax.swing.JButton Add;
     private javax.swing.JScrollPane Authors_Container;
     private javax.swing.JPanel Authors_Tab;
     private javax.swing.JTextArea Authors_Text;
@@ -1963,6 +2259,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Email_Address_Label;
     private javax.swing.JLabel Email_Address_Label1;
     private javax.swing.JMenuItem Exit_MenuItem;
+    private javax.swing.JButton Export;
+    private javax.swing.JButton Export1;
     private javax.swing.JMenu File_Menu;
     private javax.swing.Box.Filler Filler_01;
     private javax.swing.Box.Filler Filler_02;
@@ -1976,6 +2274,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Forgot_Password_Heading;
     private javax.swing.JLabel Forgot_Password_Label;
     private javax.swing.JLabel Forgot_Password_Para;
+    private javax.swing.JLabel Heading;
     private javax.swing.JPanel Help;
     private javax.swing.JLabel Help_Content;
     private javax.swing.JLabel Help_Label;
@@ -1983,7 +2282,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Help_Para;
     private javax.swing.JButton Home_Button;
     private javax.swing.JPanel Home_Page;
+    private javax.swing.JButton Import;
     private javax.swing.JButton Inventory_Button;
+    private javax.swing.JPanel Inventory_Page;
+    private javax.swing.JTable Inventory_Table;
+    private javax.swing.JScrollPane Inventory_Table_Container;
+    private javax.swing.JPanel Invoice_Main;
+    private javax.swing.JTable Invoice_Table;
+    private javax.swing.JScrollPane Invoice_Table_Container;
     private javax.swing.JButton Invoicing_Button;
     private javax.swing.JScrollPane License_Container;
     private javax.swing.JPanel License_Tab;
@@ -1991,6 +2297,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel Low_Stock;
     private javax.swing.JLabel Low_Stock_Label;
     private javax.swing.JLabel Low_Stock_Para;
+    private javax.swing.JLabel Main_Heading;
     private javax.swing.JMenuBar MenuBar;
     private javax.swing.JTextField New_Business_Location;
     private javax.swing.JLabel New_Business_Location_Label;
@@ -2022,6 +2329,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Recovery_Key_Heading;
     private javax.swing.JLabel Recovery_Key_Label;
     private javax.swing.JLabel Recovery_Key_Para;
+    private javax.swing.JButton Remove;
+    private javax.swing.JButton Remove1;
     private javax.swing.JButton Reset_Button;
     private javax.swing.JButton Reset_Button1;
     private javax.swing.JButton Save_Changes_Button;
@@ -2050,6 +2359,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Speckle_Label;
     private javax.swing.JLabel Speckle_Logo;
     private javax.swing.JLabel Speckle_Logo1;
+    private javax.swing.JButton Update;
     private javax.swing.JLabel Update_Business_Details;
     private javax.swing.JPanel User_Tab;
     private javax.swing.JTextField Username;
@@ -2067,8 +2377,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Verify_Username;
     private javax.swing.JLabel Verify_Username_Label;
     private javax.swing.JLabel Version_Label;
+    private javax.swing.JButton View;
     // End of variables declaration//GEN-END:variables
     private final java.awt.CardLayout Container_Deck;
-    private final String Version;
+    private DefaultTableModel Inventory_Model;
     private String usrname, passwd, key;
+    private final String Version;
 }
