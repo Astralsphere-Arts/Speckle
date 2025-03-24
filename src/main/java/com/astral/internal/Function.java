@@ -141,7 +141,7 @@ public class Function {
         DefaultTableModel invTableModel = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return columnIndex != 0;
+                return false;
             }
             Class[] types = new Class [] {
                 java.lang.Object.class, java.lang.Object.class,

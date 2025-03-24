@@ -96,7 +96,7 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="SideBar" alignment="0" max="32767" attributes="0"/>
-          <Component id="Container" alignment="0" max="32767" attributes="0"/>
+          <Component id="Container" alignment="0" pref="577" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -1633,7 +1633,7 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="Remove1" min="-2" pref="120" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="Export1" min="-2" pref="120" max="-2" attributes="0"/>
+                              <Component id="Export_Invoice" min="-2" pref="120" max="-2" attributes="0"/>
                           </Group>
                           <Component id="Invoice_Table_Container" alignment="0" pref="846" max="32767" attributes="0"/>
                       </Group>
@@ -1655,7 +1655,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="View" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           <Component id="Remove1" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                          <Component id="Export1" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="Export_Invoice" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                   </Group>
@@ -1722,13 +1722,13 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Remove1ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="Export1">
+            <Component class="javax.swing.JButton" name="Export_Invoice">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Export"/>
                 <Property name="toolTipText" type="java.lang.String" value="Export Invoice List to a CSV File"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Export1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Export_InvoiceActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -1812,9 +1812,9 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="Customer_Name" pref="402" max="32767" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="Contact_Number_Label2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Customer_Contact_Label" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="Contact_Number1" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="Customer_Contact" min="-2" pref="200" max="-2" attributes="0"/>
                               </Group>
                               <Component id="Customer_Address" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -1826,11 +1826,13 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="Customer_Name" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="Contact_Number_Label2" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="Contact_Number1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="Customer_Name_Label" alignment="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="Customer_Name" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Customer_Contact_Label" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="Customer_Contact" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -1855,12 +1857,20 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="Customer_Name">
                 </Component>
-                <Component class="javax.swing.JTextField" name="Contact_Number1">
-                  <Events>
-                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Contact_Number1KeyPressed"/>
-                  </Events>
+                <Component class="javax.swing.JLabel" name="Customer_Contact_Label">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Semibold" size="12" style="0"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="Contact Number"/>
+                    <Property name="horizontalTextPosition" type="int" value="0"/>
+                  </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="Customer_Address">
+                <Component class="javax.swing.JTextField" name="Customer_Contact">
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Customer_ContactKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="Customer_Address_Label">
                   <Properties>
@@ -1872,15 +1882,7 @@
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="Contact_Number_Label2">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="12" style="0"/>
-                    </Property>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Contact Number"/>
-                    <Property name="horizontalTextPosition" type="int" value="0"/>
-                  </Properties>
+                <Component class="javax.swing.JTextField" name="Customer_Address">
                 </Component>
               </SubComponents>
             </Container>
@@ -1943,13 +1945,15 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="Add" min="-2" pref="120" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="Edit" min="-2" pref="120" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="Remove" min="-2" pref="120" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="Update" min="-2" pref="120" max="-2" attributes="0"/>
-                                      <EmptySpace pref="192" max="32767" attributes="0"/>
+                                      <EmptySpace pref="54" max="32767" attributes="0"/>
                                       <Component id="Import" min="-2" pref="120" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="Export" min="-2" pref="120" max="-2" attributes="0"/>
+                                      <Component id="Export_Inventory" min="-2" pref="120" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="Inventory_Table_Container" alignment="1" max="32767" attributes="0"/>
                               </Group>
@@ -1971,8 +1975,9 @@
                           <Component id="Remove" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           <Component id="Add" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           <Component id="Update" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                          <Component id="Export" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="Export_Inventory" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           <Component id="Import" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="Edit" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                   </Group>
@@ -2016,6 +2021,15 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddActionPerformed"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JButton" name="Edit">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Edit"/>
+                <Property name="toolTipText" type="java.lang.String" value="Add a New Product to Inventory"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EditActionPerformed"/>
+              </Events>
+            </Component>
             <Component class="javax.swing.JButton" name="Remove">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Remove"/>
@@ -2043,13 +2057,192 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ImportActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="Export">
+            <Component class="javax.swing.JButton" name="Export_Inventory">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Export"/>
                 <Property name="toolTipText" type="java.lang.String" value="Export Inventory Data to a CSV File"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExportActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Export_InventoryActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="Inventory_New">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="invenNew"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="Cancel_Adding" min="-2" pref="120" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="Finish_Adding" min="-2" pref="120" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="New_Product_Panel" max="32767" attributes="0"/>
+                          <Component id="New_Product_Heading" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="New_Product_Heading" min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="New_Product_Panel" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="Cancel_Adding" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="Finish_Adding" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="New_Product_Heading">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="24" style="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="2"/>
+                <Property name="text" type="java.lang.String" value="Add New Product"/>
+                <Property name="horizontalTextPosition" type="int" value="2"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JPanel" name="New_Product_Panel">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                    <EtchetBorder/>
+                  </Border>
+                </Property>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="Available_Quantity_Label" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
+                              <Component id="GST_Rate_Label" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
+                              <Component id="Price_Label" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
+                              <Component id="Product_Name_Label" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="GST_Rate" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Price_Field" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Product_Name" max="32767" attributes="0"/>
+                              <Component id="Available_Quantity" pref="644" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="Product_Name" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="Product_Name_Label" min="-2" pref="30" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="Price_Label" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="Price_Field" min="-2" pref="30" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="GST_Rate_Label" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="GST_Rate" min="-2" pref="30" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="Available_Quantity_Label" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="Available_Quantity" min="-2" pref="30" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="149" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="Product_Name_Label">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="4"/>
+                    <Property name="text" type="java.lang.String" value="Product Name"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="Product_Name">
+                </Component>
+                <Component class="javax.swing.JLabel" name="Price_Label">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="4"/>
+                    <Property name="text" type="java.lang.String" value="Price"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="Price_Field">
+                </Component>
+                <Component class="javax.swing.JLabel" name="GST_Rate_Label">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="4"/>
+                    <Property name="text" type="java.lang.String" value="GST Rate"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="GST_Rate">
+                </Component>
+                <Component class="javax.swing.JLabel" name="Available_Quantity_Label">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="4"/>
+                    <Property name="text" type="java.lang.String" value="Available Quantity"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="Available_Quantity">
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JButton" name="Cancel_Adding">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cancel"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Cancel_AddingActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="Finish_Adding">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Finish"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Finish_AddingActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -2072,7 +2265,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Settings_Container" alignment="0" max="32767" attributes="0"/>
+                  <Component id="Settings_Container" alignment="0" pref="577" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -2642,7 +2835,7 @@
                           <Component id="Speckle_Logo" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="About_Container" max="32767" attributes="0"/>
+                      <Component id="About_Container" pref="370" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
               </Group>

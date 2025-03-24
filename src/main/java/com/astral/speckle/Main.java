@@ -146,16 +146,16 @@ public class Main extends javax.swing.JFrame {
         Invoice_Table = new javax.swing.JTable();
         View = new javax.swing.JButton();
         Remove1 = new javax.swing.JButton();
-        Export1 = new javax.swing.JButton();
+        Export_Invoice = new javax.swing.JButton();
         Invoice_New = new javax.swing.JPanel();
         New_Heading = new javax.swing.JLabel();
         Customer_Details_Panel = new javax.swing.JPanel();
         Customer_Name_Label = new javax.swing.JLabel();
         Customer_Name = new javax.swing.JTextField();
-        Contact_Number1 = new javax.swing.JTextField();
-        Customer_Address = new javax.swing.JTextField();
+        Customer_Contact_Label = new javax.swing.JLabel();
+        Customer_Contact = new javax.swing.JTextField();
         Customer_Address_Label = new javax.swing.JLabel();
-        Contact_Number_Label2 = new javax.swing.JLabel();
+        Customer_Address = new javax.swing.JTextField();
         New_Invoice_Table_Container = new javax.swing.JScrollPane();
         New_Invoice_Table = new javax.swing.JTable();
         Cancel = new javax.swing.JButton();
@@ -165,10 +165,24 @@ public class Main extends javax.swing.JFrame {
         Inventory_Table_Container = new javax.swing.JScrollPane();
         Inventory_Table = new javax.swing.JTable();
         Add = new javax.swing.JButton();
+        Edit = new javax.swing.JButton();
         Remove = new javax.swing.JButton();
         Update = new javax.swing.JButton();
         Import = new javax.swing.JButton();
-        Export = new javax.swing.JButton();
+        Export_Inventory = new javax.swing.JButton();
+        Inventory_New = new javax.swing.JPanel();
+        New_Product_Heading = new javax.swing.JLabel();
+        New_Product_Panel = new javax.swing.JPanel();
+        Product_Name_Label = new javax.swing.JLabel();
+        Product_Name = new javax.swing.JTextField();
+        Price_Label = new javax.swing.JLabel();
+        Price_Field = new javax.swing.JTextField();
+        GST_Rate_Label = new javax.swing.JLabel();
+        GST_Rate = new javax.swing.JTextField();
+        Available_Quantity_Label = new javax.swing.JLabel();
+        Available_Quantity = new javax.swing.JTextField();
+        Cancel_Adding = new javax.swing.JButton();
+        Finish_Adding = new javax.swing.JButton();
         Settings_Page = new javax.swing.JPanel();
         Settings_Container = new javax.swing.JTabbedPane();
         User_Tab = new javax.swing.JPanel();
@@ -1116,11 +1130,11 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        Export1.setText("Export");
-        Export1.setToolTipText("Export Invoice List to a CSV File");
-        Export1.addActionListener(new java.awt.event.ActionListener() {
+        Export_Invoice.setText("Export");
+        Export_Invoice.setToolTipText("Export Invoice List to a CSV File");
+        Export_Invoice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Export1ActionPerformed(evt);
+                Export_InvoiceActionPerformed(evt);
             }
         });
 
@@ -1140,7 +1154,7 @@ public class Main extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(Remove1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Export1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Export_Invoice, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(Invoice_Table_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 846, Short.MAX_VALUE))
                 .addGap(60, 60, 60))
         );
@@ -1157,7 +1171,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(Invoice_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(View, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Remove1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Export1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Export_Invoice, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(73, 73, 73))
         );
 
@@ -1175,9 +1189,14 @@ public class Main extends javax.swing.JFrame {
         Customer_Name_Label.setText("Customer's Name");
         Customer_Name_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Contact_Number1.addKeyListener(new java.awt.event.KeyAdapter() {
+        Customer_Contact_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        Customer_Contact_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Customer_Contact_Label.setText("Contact Number");
+        Customer_Contact_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        Customer_Contact.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                Contact_Number1KeyPressed(evt);
+                Customer_ContactKeyPressed(evt);
             }
         });
 
@@ -1185,11 +1204,6 @@ public class Main extends javax.swing.JFrame {
         Customer_Address_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Customer_Address_Label.setText("Customer's Address");
         Customer_Address_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        Contact_Number_Label2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        Contact_Number_Label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Contact_Number_Label2.setText("Contact Number");
-        Contact_Number_Label2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout Customer_Details_PanelLayout = new javax.swing.GroupLayout(Customer_Details_Panel);
         Customer_Details_Panel.setLayout(Customer_Details_PanelLayout);
@@ -1205,9 +1219,9 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(Customer_Details_PanelLayout.createSequentialGroup()
                         .addComponent(Customer_Name, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(Contact_Number_Label2)
+                        .addComponent(Customer_Contact_Label)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Contact_Number1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Customer_Contact, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(Customer_Address))
                 .addContainerGap())
         );
@@ -1215,11 +1229,12 @@ public class Main extends javax.swing.JFrame {
             Customer_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Customer_Details_PanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Customer_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Customer_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Contact_Number_Label2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Contact_Number1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Customer_Name_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(Customer_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Customer_Name_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(Customer_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Customer_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Customer_Contact_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Customer_Contact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Customer_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Customer_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1298,6 +1313,14 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        Edit.setText("Edit");
+        Edit.setToolTipText("Add a New Product to Inventory");
+        Edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditActionPerformed(evt);
+            }
+        });
+
         Remove.setText("Remove");
         Remove.setToolTipText("Remove Selected Products from Inventory");
         Remove.addActionListener(new java.awt.event.ActionListener() {
@@ -1322,11 +1345,11 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        Export.setText("Export");
-        Export.setToolTipText("Export Inventory Data to a CSV File");
-        Export.addActionListener(new java.awt.event.ActionListener() {
+        Export_Inventory.setText("Export");
+        Export_Inventory.setToolTipText("Export Inventory Data to a CSV File");
+        Export_Inventory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ExportActionPerformed(evt);
+                Export_InventoryActionPerformed(evt);
             }
         });
 
@@ -1345,13 +1368,15 @@ public class Main extends javax.swing.JFrame {
                             .addGroup(Inventory_PageLayout.createSequentialGroup()
                                 .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
+                                .addComponent(Edit, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addComponent(Remove, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(Update, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                                 .addComponent(Import, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(Export, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Export_Inventory, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Inventory_Table_Container))
                         .addGap(60, 60, 60))))
         );
@@ -1367,12 +1392,124 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(Remove, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Update, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Export, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Import, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Export_Inventory, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Import, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Edit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(73, 73, 73))
         );
 
         Container.add(Inventory_Page, "inventory");
+
+        New_Product_Heading.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        New_Product_Heading.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        New_Product_Heading.setText("Add New Product");
+        New_Product_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+
+        New_Product_Panel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        Product_Name_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Product_Name_Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Product_Name_Label.setText("Product Name");
+
+        Price_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Price_Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Price_Label.setText("Price");
+
+        GST_Rate_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        GST_Rate_Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        GST_Rate_Label.setText("GST Rate");
+
+        Available_Quantity_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Available_Quantity_Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Available_Quantity_Label.setText("Available Quantity");
+
+        javax.swing.GroupLayout New_Product_PanelLayout = new javax.swing.GroupLayout(New_Product_Panel);
+        New_Product_Panel.setLayout(New_Product_PanelLayout);
+        New_Product_PanelLayout.setHorizontalGroup(
+            New_Product_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(New_Product_PanelLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(New_Product_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Available_Quantity_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GST_Rate_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Price_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Product_Name_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(New_Product_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(GST_Rate, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Price_Field, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Product_Name)
+                    .addComponent(Available_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
+        );
+        New_Product_PanelLayout.setVerticalGroup(
+            New_Product_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(New_Product_PanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(New_Product_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Product_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Product_Name_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(New_Product_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Price_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Price_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(New_Product_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(GST_Rate_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GST_Rate, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(New_Product_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Available_Quantity_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Available_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(149, Short.MAX_VALUE))
+        );
+
+        Cancel_Adding.setText("Cancel");
+        Cancel_Adding.setToolTipText("");
+        Cancel_Adding.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cancel_AddingActionPerformed(evt);
+            }
+        });
+
+        Finish_Adding.setText("Finish");
+        Finish_Adding.setToolTipText("");
+        Finish_Adding.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Finish_AddingActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Inventory_NewLayout = new javax.swing.GroupLayout(Inventory_New);
+        Inventory_New.setLayout(Inventory_NewLayout);
+        Inventory_NewLayout.setHorizontalGroup(
+            Inventory_NewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Inventory_NewLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(Inventory_NewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(Inventory_NewLayout.createSequentialGroup()
+                        .addComponent(Cancel_Adding, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Finish_Adding, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(New_Product_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(New_Product_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(60, 60, 60))
+        );
+        Inventory_NewLayout.setVerticalGroup(
+            Inventory_NewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Inventory_NewLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(New_Product_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(New_Product_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(Inventory_NewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Cancel_Adding, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Finish_Adding, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(73, 73, 73))
+        );
+
+        Container.add(Inventory_New, "invenNew");
 
         Settings_Container.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -1679,7 +1816,7 @@ public class Main extends javax.swing.JFrame {
         );
         Settings_PageLayout.setVerticalGroup(
             Settings_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Settings_Container)
+            .addComponent(Settings_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
         );
 
         Container.add(Settings_Page, "settings");
@@ -1805,7 +1942,7 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(About_Para, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(Speckle_Logo))
                 .addGap(27, 27, 27)
-                .addComponent(About_Container)
+                .addComponent(About_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
                 .addGap(50, 50, 50))
         );
 
@@ -1863,7 +2000,7 @@ public class Main extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(SideBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(Container, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Container, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
         );
 
         pack();
@@ -2136,14 +2273,20 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_Save_Changes_ButtonActionPerformed
 
     private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
-        Inventory_Model.addRow(new Object[] {"SPK-" + com.astral.internal.Function.randomID(4) + "-" + com.astral.internal.Function.randomID(4), null, null, null, null});
+        PID = null;
+        New_Product_Heading.setText("Add New Product");
+        Product_Name.setText("");
+        Price_Field.setText("");
+        GST_Rate.setText("");
+        Available_Quantity.setText("");
+        Container_Deck.show(Container, "invenNew");
     }//GEN-LAST:event_AddActionPerformed
 
     private void RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveActionPerformed
         int[] rows = Inventory_Table.getSelectedRows();
         for (int i=0; i<rows.length; i++) {
-            String PID = Inventory_Table.getValueAt(rows[i]-i, 0).toString();
-            com.astral.internal.SQLite.remRowInven(PID);
+            String ProdID = Inventory_Table.getValueAt(rows[i]-i, 0).toString();
+            com.astral.internal.SQLite.remRowInven(ProdID);
             Inventory_Model.removeRow(rows[i]-i);
         }
     }//GEN-LAST:event_RemoveActionPerformed
@@ -2153,12 +2296,12 @@ public class Main extends javax.swing.JFrame {
         if (row == -1)
             JOptionPane.showMessageDialog(null, "Please Select a Product to Update it's Stock.", "No Product Selected", JOptionPane.ERROR_MESSAGE);
         else {
-            String PID = Inventory_Table.getValueAt(row, 0).toString();
+            PID = Inventory_Table.getValueAt(row, 0).toString();
             int quantity = 0;
             if (Inventory_Table.getValueAt(row, 4) != null)
                 quantity = (Integer) Inventory_Table.getValueAt(row, 4);
             String update = JOptionPane.showInputDialog(null, "Enter the Amount of Stock You want to Increase", "Update Stock", JOptionPane.PLAIN_MESSAGE);
-            if (update.equals(""))
+            if (update == null || update.equals(""))
                 update = "0";
             String quan = Integer.toString(quantity + Integer.parseInt(update));
             com.astral.internal.SQLite.updateStock(PID, quan);
@@ -2177,17 +2320,9 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ImportActionPerformed
 
-    private void ExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportActionPerformed
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Export to CSV");
-        fileChooser.setDialogType(JFileChooser.SAVE_DIALOG);
-        fileChooser.setSelectedFile(new File("Inventory-" + new java.text.SimpleDateFormat("dd-MM-yyyy").format(new java.util.Date()) + ".csv"));
-        fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
-        if (fileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-            com.astral.internal.Function.invenCSVex(fileChooser.getSelectedFile());
-            JOptionPane.showMessageDialog(null, "Inventory Data Exported Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-        }
-    }//GEN-LAST:event_ExportActionPerformed
+    private void Export_InventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Export_InventoryActionPerformed
+        Export_ActionPerformed("Inventory");
+    }//GEN-LAST:event_Export_InventoryActionPerformed
 
     private void ViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewActionPerformed
         int row = Invoice_Table.getSelectedRow();
@@ -2214,17 +2349,9 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Remove1ActionPerformed
 
-    private void Export1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Export1ActionPerformed
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Export to CSV");
-        fileChooser.setDialogType(JFileChooser.SAVE_DIALOG);
-        fileChooser.setSelectedFile(new File("Invoice-" + new java.text.SimpleDateFormat("dd-MM-yyyy").format(new java.util.Date()) + ".csv"));
-        fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
-        if (fileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-            com.astral.internal.Function.invoiceCSVex(fileChooser.getSelectedFile());
-            JOptionPane.showMessageDialog(null, "Invoice Data Exported Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-        }
-    }//GEN-LAST:event_Export1ActionPerformed
+    private void Export_InvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Export_InvoiceActionPerformed
+        Export_ActionPerformed("Invoice");
+    }//GEN-LAST:event_Export_InvoiceActionPerformed
 
     private void New_InvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_New_InvoiceActionPerformed
         New_Invoice_Table.setModel(com.astral.internal.Function.newInvoTableModel());
@@ -2246,27 +2373,27 @@ public class Main extends javax.swing.JFrame {
         New_Invoice_Table.getColumnModel().getColumn(4).setMaxWidth(0);
         New_Invoice_Table.getColumnModel().getColumn(4).setWidth(0);
         Customer_Name.setText("");
-        Contact_Number1.setText("");
+        Customer_Contact.setText("");
         Customer_Address.setText("");
         Container_Deck.show(Container, "invNew");
     }//GEN-LAST:event_New_InvoiceActionPerformed
 
-    private void Contact_Number1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Contact_Number1KeyPressed
-        String Number = Contact_Number1.getText();
+    private void Customer_ContactKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Customer_ContactKeyPressed
+        String Number = Customer_Contact.getText();
         int length = Number.length();
         if (evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9') {
             if (length < 10)
-                Contact_Number1.setEditable(true);
+                Customer_Contact.setEditable(true);
             else
-                Contact_Number1.setEditable(false);
+                Customer_Contact.setEditable(false);
         } else {
             switch (evt.getExtendedKeyCode()) {
-                case java.awt.event.KeyEvent.VK_BACK_SPACE -> Contact_Number1.setEditable(true);
-                case java.awt.event.KeyEvent.VK_DELETE -> Contact_Number1.setEditable(true);
-                default -> Contact_Number1.setEditable(false);
+                case java.awt.event.KeyEvent.VK_BACK_SPACE -> Customer_Contact.setEditable(true);
+                case java.awt.event.KeyEvent.VK_DELETE -> Customer_Contact.setEditable(true);
+                default -> Customer_Contact.setEditable(false);
             }
         }
-    }//GEN-LAST:event_Contact_Number1KeyPressed
+    }//GEN-LAST:event_Customer_ContactKeyPressed
 
     private void CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelActionPerformed
         Container_Deck.show(Container, "invMain");
@@ -2278,7 +2405,7 @@ public class Main extends javax.swing.JFrame {
         boolean excessQuan = false;
         String invID = "INV-" + new java.text.SimpleDateFormat("yyMMdd-HHmmss").format(new java.util.Date()) + "-" + com.astral.internal.Function.randomID(4);
         String custName = Customer_Name.getText();
-        String custContact = Contact_Number1.getText();
+        String custContact = Customer_Contact.getText();
         String custAddress = Customer_Address.getText();
         String saleDate = new java.text.SimpleDateFormat("dd MMMM yyyy").format(new java.util.Date());
         String saleGST = "0";
@@ -2340,6 +2467,40 @@ public class Main extends javax.swing.JFrame {
     private void SignOut_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignOut_MenuItemActionPerformed
         SignOut_ActionPerformed();
     }//GEN-LAST:event_SignOut_MenuItemActionPerformed
+
+    private void Finish_AddingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Finish_AddingActionPerformed
+        if (PID == null)
+            PID = "SPK-" + com.astral.internal.Function.randomID(4) + "-" + com.astral.internal.Function.randomID(4);
+        String name = Product_Name.getText();
+        String price = Price_Field.getText();
+        String gst = GST_Rate.getText();
+        String quan = Available_Quantity.getText();
+        if (name.equals("") || price.equals("") || gst.equals("") || quan.equals (""))
+            JOptionPane.showMessageDialog(null, "Product Details can't be Empty. Please Try Again!", "Product Details Empty", JOptionPane.ERROR_MESSAGE);
+        else {
+            com.astral.internal.SQLite.updateInven(PID, name, price, gst, quan);
+            Inventory_ActionPerformed();
+        }
+    }//GEN-LAST:event_Finish_AddingActionPerformed
+
+    private void Cancel_AddingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cancel_AddingActionPerformed
+        Container_Deck.show(Container, "inventory");
+    }//GEN-LAST:event_Cancel_AddingActionPerformed
+
+    private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
+        int row = Inventory_Table.getSelectedRow();
+        if (row == -1)
+            JOptionPane.showMessageDialog(null, "Please Select a Product to Edit it's Details.", "No Product Selected", JOptionPane.ERROR_MESSAGE);
+        else {
+            PID = Inventory_Table.getValueAt(row, 0).toString();
+            New_Product_Heading.setText("Edit Product Details");
+            Product_Name.setText(Inventory_Table.getValueAt(row, 1).toString());
+            Price_Field.setText(Inventory_Table.getValueAt(row, 2).toString());
+            GST_Rate.setText(Inventory_Table.getValueAt(row, 3).toString());
+            Available_Quantity.setText(Inventory_Table.getValueAt(row, 4).toString());
+            Container_Deck.show(Container, "invenNew");
+        }
+    }//GEN-LAST:event_EditActionPerformed
 
     private void SignIn_ActionPerformed() {
         LoggedIn = true;
@@ -2429,6 +2590,21 @@ public class Main extends javax.swing.JFrame {
         Container_Deck.show(Container, "about");
     }
 
+    private void Export_ActionPerformed(String TableName) {
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Export to CSV");
+        fileChooser.setDialogType(JFileChooser.SAVE_DIALOG);
+        fileChooser.setSelectedFile(new File("Speckle-" + TableName + "-" + new java.text.SimpleDateFormat("dd-MM-yyyy").format(new java.util.Date()) + ".csv"));
+        fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
+        if (fileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+            if (TableName.equals("Inventory"))
+                com.astral.internal.Function.invenCSVex(fileChooser.getSelectedFile());
+            else
+                com.astral.internal.Function.invoiceCSVex(fileChooser.getSelectedFile());
+            JOptionPane.showMessageDialog(null, TableName + " Data Exported Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -2471,6 +2647,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane Authors_Container;
     private javax.swing.JPanel Authors_Tab;
     private javax.swing.JTextArea Authors_Text;
+    private javax.swing.JTextField Available_Quantity;
+    private javax.swing.JLabel Available_Quantity_Label;
     private javax.swing.JButton Back_Button;
     private javax.swing.JPanel Banner;
     private javax.swing.JTextField Business_Location;
@@ -2480,6 +2658,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Business_Name_Label;
     private javax.swing.JLabel Business_Name_Label1;
     private javax.swing.JButton Cancel;
+    private javax.swing.JButton Cancel_Adding;
     private javax.swing.JButton Cancel_Button;
     private javax.swing.JLabel Change_Password;
     private javax.swing.JButton Change_Password_Button;
@@ -2492,10 +2671,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Confirm_Password_Label;
     private javax.swing.JLabel Confirm_Password_Label1;
     private javax.swing.JTextField Contact_Number;
-    private javax.swing.JTextField Contact_Number1;
     private javax.swing.JLabel Contact_Number_Label;
     private javax.swing.JLabel Contact_Number_Label1;
-    private javax.swing.JLabel Contact_Number_Label2;
     private javax.swing.JPanel Container;
     private javax.swing.JButton Create_Invoice;
     private javax.swing.JPasswordField Create_Password;
@@ -2515,17 +2692,20 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Current_Value_Label;
     private javax.swing.JTextField Customer_Address;
     private javax.swing.JLabel Customer_Address_Label;
+    private javax.swing.JTextField Customer_Contact;
+    private javax.swing.JLabel Customer_Contact_Label;
     private javax.swing.JPanel Customer_Details_Panel;
     private javax.swing.JTextField Customer_Name;
     private javax.swing.JLabel Customer_Name_Label;
     private javax.swing.JPanel Details_Tab;
+    private javax.swing.JButton Edit;
     private javax.swing.JMenu Edit_Menu;
     private javax.swing.JTextField Email_Address;
     private javax.swing.JLabel Email_Address_Label;
     private javax.swing.JLabel Email_Address_Label1;
     private javax.swing.JMenuItem Exit_MenuItem;
-    private javax.swing.JButton Export;
-    private javax.swing.JButton Export1;
+    private javax.swing.JButton Export_Inventory;
+    private javax.swing.JButton Export_Invoice;
     private javax.swing.JMenu File_Menu;
     private javax.swing.Box.Filler Filler_01;
     private javax.swing.Box.Filler Filler_02;
@@ -2534,11 +2714,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.Box.Filler Filler_05;
     private javax.swing.Box.Filler Filler_06;
     private javax.swing.Box.Filler Filler_07;
+    private javax.swing.JButton Finish_Adding;
     private javax.swing.JButton Finish_Button;
     private javax.swing.JPanel Forgot_Password;
     private javax.swing.JLabel Forgot_Password_Heading;
     private javax.swing.JLabel Forgot_Password_Label;
     private javax.swing.JLabel Forgot_Password_Para;
+    private javax.swing.JTextField GST_Rate;
+    private javax.swing.JLabel GST_Rate_Label;
     private javax.swing.JLabel Heading;
     private javax.swing.JPanel Help;
     private javax.swing.JLabel Help_Content;
@@ -2549,6 +2732,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel Home_Page;
     private javax.swing.JButton Import;
     private javax.swing.JButton Inventory_Button;
+    private javax.swing.JPanel Inventory_New;
     private javax.swing.JPanel Inventory_Page;
     private javax.swing.JTable Inventory_Table;
     private javax.swing.JScrollPane Inventory_Table_Container;
@@ -2578,16 +2762,22 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPasswordField New_Password1;
     private javax.swing.JLabel New_Password_Label;
     private javax.swing.JLabel New_Password_Label1;
+    private javax.swing.JLabel New_Product_Heading;
+    private javax.swing.JPanel New_Product_Panel;
     private javax.swing.JTextField New_Username;
     private javax.swing.JLabel New_Username_Label;
     private javax.swing.JLabel New_Value_Label;
     private javax.swing.JButton Next_Button;
     private javax.swing.JPasswordField Password;
     private javax.swing.JLabel Password_Label;
+    private javax.swing.JTextField Price_Field;
+    private javax.swing.JLabel Price_Label;
     private javax.swing.JLabel Product_Five_Label;
     private javax.swing.JLabel Product_Five_Quantity;
     private javax.swing.JLabel Product_Four_Label;
     private javax.swing.JLabel Product_Four_Quantity;
+    private javax.swing.JTextField Product_Name;
+    private javax.swing.JLabel Product_Name_Label;
     private javax.swing.JLabel Product_One_Label;
     private javax.swing.JLabel Product_One_Quantity;
     private javax.swing.JLabel Product_Three_Label;
@@ -2656,4 +2846,5 @@ public class Main extends javax.swing.JFrame {
     private String usrname, passwd, key;
     private final String Version;
     private boolean LoggedIn;
+    private String PID;
 }
