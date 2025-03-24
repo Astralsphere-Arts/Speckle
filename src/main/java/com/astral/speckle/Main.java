@@ -82,6 +82,7 @@ public class Main extends javax.swing.JFrame {
         SignUp_Details = new javax.swing.JPanel();
         SignUp_Details_Heading = new javax.swing.JLabel();
         SignUp_Details_Para = new javax.swing.JLabel();
+        SignUp_Details_Panel = new javax.swing.JPanel();
         Business_Name_Label = new javax.swing.JLabel();
         Business_Name = new javax.swing.JTextField();
         Contact_Number_Label = new javax.swing.JLabel();
@@ -111,6 +112,7 @@ public class Main extends javax.swing.JFrame {
         Forgot_Password = new javax.swing.JPanel();
         Forgot_Password_Heading = new javax.swing.JLabel();
         Forgot_Password_Para = new javax.swing.JLabel();
+        Forgot_Password_Panel = new javax.swing.JPanel();
         Recovery_Key_Label = new javax.swing.JLabel();
         Recovery_Key = new javax.swing.JTextField();
         New_Password_Label = new javax.swing.JLabel();
@@ -186,14 +188,13 @@ public class Main extends javax.swing.JFrame {
         Settings_Page = new javax.swing.JPanel();
         Settings_Container = new javax.swing.JTabbedPane();
         User_Tab = new javax.swing.JPanel();
-        Speckle_Logo1 = new javax.swing.JLabel();
-        Change_Username = new javax.swing.JLabel();
+        Username_Panel = new javax.swing.JPanel();
         Current_Username_Label = new javax.swing.JLabel();
         Current_Username = new javax.swing.JTextField();
         New_Username_Label = new javax.swing.JLabel();
         New_Username = new javax.swing.JTextField();
         Change_Username_Button = new javax.swing.JButton();
-        Change_Password = new javax.swing.JLabel();
+        Password_Panel = new javax.swing.JPanel();
         Current_Password_Label = new javax.swing.JLabel();
         Current_Password = new javax.swing.JPasswordField();
         New_Password_Label1 = new javax.swing.JLabel();
@@ -201,25 +202,31 @@ public class Main extends javax.swing.JFrame {
         Confirm_Password_Label1 = new javax.swing.JLabel();
         Confirm_Password1 = new javax.swing.JPasswordField();
         Change_Password_Button = new javax.swing.JButton();
-        Reset_Button1 = new javax.swing.JButton();
+        Recovery_Key_Panel = new javax.swing.JPanel();
+        Current_Password_Label1 = new javax.swing.JLabel();
+        Current_Password1 = new javax.swing.JPasswordField();
+        Reset_Key_Button = new javax.swing.JButton();
         Details_Tab = new javax.swing.JPanel();
-        Update_Business_Details = new javax.swing.JLabel();
-        Current_Value_Label = new javax.swing.JLabel();
-        New_Value_Label = new javax.swing.JLabel();
-        Business_Name_Label1 = new javax.swing.JLabel();
+        Business_Name_Panel = new javax.swing.JPanel();
+        Current_Business_Label = new javax.swing.JLabel();
         Current_Business_Name = new javax.swing.JTextField();
+        New_Business_Label = new javax.swing.JLabel();
         New_Business_Name = new javax.swing.JTextField();
-        Contact_Number_Label1 = new javax.swing.JLabel();
+        Contact_Number_Panel = new javax.swing.JPanel();
+        Current_Contact_Label = new javax.swing.JLabel();
         Current_Contact_Number = new javax.swing.JTextField();
+        New_Contact_Label = new javax.swing.JLabel();
         New_Contact_Number = new javax.swing.JTextField();
-        Email_Address_Label1 = new javax.swing.JLabel();
+        Email_Address_Panel = new javax.swing.JPanel();
+        Current_Email_Label = new javax.swing.JLabel();
         Current_Email_Address = new javax.swing.JTextField();
+        New_Email_Label = new javax.swing.JLabel();
         New_Email_Address = new javax.swing.JTextField();
-        Business_Location_Label1 = new javax.swing.JLabel();
-        Current_Business_Location_Label = new javax.swing.JLabel();
-        Current_Business_Location = new javax.swing.JTextField();
-        New_Business_Location_Label = new javax.swing.JLabel();
-        New_Business_Location = new javax.swing.JTextField();
+        Business_Address_Panel = new javax.swing.JPanel();
+        Current_Address_Label = new javax.swing.JLabel();
+        Current_Address = new javax.swing.JTextField();
+        New_Address_Label = new javax.swing.JLabel();
+        New_Address = new javax.swing.JTextField();
         Save_Changes_Button = new javax.swing.JButton();
         About_Page = new javax.swing.JPanel();
         Speckle_Logo = new javax.swing.JLabel();
@@ -242,6 +249,9 @@ public class Main extends javax.swing.JFrame {
         Separator_01 = new javax.swing.JPopupMenu.Separator();
         Exit_MenuItem = new javax.swing.JMenuItem();
         Edit_Menu = new javax.swing.JMenu();
+        Tools_Menu = new javax.swing.JMenu();
+        Export_Invoice_MenuItem = new javax.swing.JMenuItem();
+        Export_Inventory_MenuItem = new javax.swing.JMenuItem();
         Help_Menu = new javax.swing.JMenu();
         About_MenuItem = new javax.swing.JMenuItem();
 
@@ -413,11 +423,11 @@ public class Main extends javax.swing.JFrame {
         SignInLayout.setVerticalGroup(
             SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SignInLayout.createSequentialGroup()
-                .addContainerGap(115, Short.MAX_VALUE)
+                .addContainerGap(101, Short.MAX_VALUE)
                 .addComponent(SignIn_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(SignIn_Para)
-                .addGap(55, 55, 55)
+                .addGap(40, 40, 40)
                 .addComponent(SignIn_SubHeading)
                 .addGap(18, 18, 18)
                 .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -431,7 +441,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(SignIn_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Forgot_Password_Label)
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addContainerGap(144, Short.MAX_VALUE))
         );
 
         Container.add(SignIn, "signIn");
@@ -478,14 +488,6 @@ public class Main extends javax.swing.JFrame {
 
         Confirm_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        Next_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        Next_Button.setText("Next");
-        Next_Button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Next_ButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout SignUp_User_SubPanelLayout = new javax.swing.GroupLayout(SignUp_User_SubPanel);
         SignUp_User_SubPanel.setLayout(SignUp_User_SubPanelLayout);
         SignUp_User_SubPanelLayout.setHorizontalGroup(
@@ -499,17 +501,13 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(Confirm_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(SignUp_User_SubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Create_Password)
+                            .addComponent(Create_Password, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
                             .addComponent(Confirm_Password)))
                     .addGroup(SignUp_User_SubPanelLayout.createSequentialGroup()
                         .addComponent(SignUp_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(SignUp_Username)))
                 .addContainerGap())
-            .addGroup(SignUp_User_SubPanelLayout.createSequentialGroup()
-                .addGap(288, 288, 288)
-                .addComponent(Next_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         SignUp_User_SubPanelLayout.setVerticalGroup(
             SignUp_User_SubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -526,29 +524,37 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(SignUp_User_SubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Confirm_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Confirm_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Next_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        Next_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        Next_Button.setText("Next");
+        Next_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Next_ButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout SignUp_UserLayout = new javax.swing.GroupLayout(SignUp_User);
         SignUp_User.setLayout(SignUp_UserLayout);
         SignUp_UserLayout.setHorizontalGroup(
             SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SignUp_UserLayout.createSequentialGroup()
-                .addContainerGap(125, Short.MAX_VALUE)
-                .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(SignUp_User_Para_A, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SignUp_User_SubHeading, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SignUp_User_Heading, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SignUp_User_Para_B, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
-                    .addComponent(SignUp_User_SubPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(SignUp_User_Para_A, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(SignUp_User_SubHeading, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(SignUp_User_Heading, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(SignUp_User_Para_B, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+                        .addComponent(SignUp_User_SubPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Next_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         SignUp_UserLayout.setVerticalGroup(
             SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SignUp_UserLayout.createSequentialGroup()
-                .addContainerGap(80, Short.MAX_VALUE)
+                .addContainerGap(81, Short.MAX_VALUE)
                 .addComponent(SignUp_User_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(SignUp_User_SubHeading)
@@ -558,20 +564,24 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(SignUp_User_Para_B)
                 .addGap(30, 30, 30)
                 .addComponent(SignUp_User_SubPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(Next_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(134, Short.MAX_VALUE))
         );
 
         Container.add(SignUp_User, "signUpUser");
 
-        SignUp_Details_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        SignUp_Details_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         SignUp_Details_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SignUp_Details_Heading.setText("Just a little more and you'll be all ready to go.");
         SignUp_Details_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         SignUp_Details_Para.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         SignUp_Details_Para.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SignUp_Details_Para.setText("<html><p style=\"text-align: center;\">Now, please provide some details about your Business.<br> This information will be used for the Invoices you generate using<br>Speckle.</p></html>");
+        SignUp_Details_Para.setText("Now, please provide some details about your Business. This information will be used for the Invoices you generate using Speckle.");
         SignUp_Details_Para.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        SignUp_Details_Panel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         Business_Name_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         Business_Name_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -601,10 +611,51 @@ public class Main extends javax.swing.JFrame {
 
         Business_Location_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         Business_Location_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Business_Location_Label.setText("<html><p>Business Location<br>(Address)</p></html>");
+        Business_Location_Label.setText("Business Location (Address)");
         Business_Location_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Business_Location.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        javax.swing.GroupLayout SignUp_Details_PanelLayout = new javax.swing.GroupLayout(SignUp_Details_Panel);
+        SignUp_Details_Panel.setLayout(SignUp_Details_PanelLayout);
+        SignUp_Details_PanelLayout.setHorizontalGroup(
+            SignUp_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SignUp_Details_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(SignUp_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(Business_Location_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Email_Address_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Contact_Number_Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Business_Name_Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(SignUp_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Contact_Number)
+                    .addComponent(Business_Name, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Email_Address)
+                    .addComponent(Business_Location))
+                .addContainerGap())
+        );
+        SignUp_Details_PanelLayout.setVerticalGroup(
+            SignUp_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SignUp_Details_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(SignUp_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Business_Name_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Business_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(SignUp_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Contact_Number_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Contact_Number, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(SignUp_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Email_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Email_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(SignUp_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Business_Location_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Business_Location, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
 
         Back_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         Back_Button.setText("Back");
@@ -627,71 +678,36 @@ public class Main extends javax.swing.JFrame {
         SignUp_DetailsLayout.setHorizontalGroup(
             SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SignUp_DetailsLayout.createSequentialGroup()
-                .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap(91, Short.MAX_VALUE)
+                .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(SignUp_DetailsLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(SignUp_Details_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
-                            .addComponent(SignUp_Details_Para)))
-                    .addGroup(SignUp_DetailsLayout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(SignUp_DetailsLayout.createSequentialGroup()
-                                .addComponent(Email_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Email_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(SignUp_DetailsLayout.createSequentialGroup()
-                                .addComponent(Business_Name_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Business_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(SignUp_DetailsLayout.createSequentialGroup()
-                                .addComponent(Contact_Number_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Contact_Number, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(SignUp_DetailsLayout.createSequentialGroup()
-                                .addComponent(Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Business_Location))
-                            .addGroup(SignUp_DetailsLayout.createSequentialGroup()
-                                .addGap(50, 50, 50)
-                                .addComponent(Back_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(SignUp_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(Back_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(SignUp_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(SignUp_Details_Para, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SignUp_Details_Heading, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SignUp_Details_Panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
         SignUp_DetailsLayout.setVerticalGroup(
             SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SignUp_DetailsLayout.createSequentialGroup()
-                .addGap(80, 80, 80)
+                .addContainerGap(98, Short.MAX_VALUE)
                 .addComponent(SignUp_Details_Heading)
                 .addGap(18, 18, 18)
-                .addComponent(SignUp_Details_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SignUp_Details_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
+                .addComponent(SignUp_Details_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Business_Name_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Business_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Contact_Number_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Contact_Number))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Email_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Email_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Business_Location_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-                    .addComponent(Business_Location))
-                .addGap(36, 36, 36)
-                .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SignUp_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Back_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(109, Short.MAX_VALUE))
+                    .addComponent(Back_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SignUp_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(148, Short.MAX_VALUE))
         );
 
         Container.add(SignUp_Details, "signUpDetails");
 
-        Verify_Details_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        Verify_Details_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         Verify_Details_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Verify_Details_Heading.setText("Please Verify Your Details");
         Verify_Details_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -726,7 +742,6 @@ public class Main extends javax.swing.JFrame {
         Recovery_Key_Heading.setText("Recovery Key");
         Recovery_Key_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Recovery_Key_Para.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
         Recovery_Key_Para.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Recovery_Key_Para.setText("Following Is Your Recovery Key Code For Password Recovery. Please Keep This Code Safe and Do not Share This Code With Anyone.");
 
@@ -808,18 +823,20 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(Recovery_Key_Display_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Finish_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         Container.add(Verify_Details, "verifyDetails");
 
-        Forgot_Password_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        Forgot_Password_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         Forgot_Password_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Forgot_Password_Heading.setText("Forgot Password");
         Forgot_Password_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Forgot_Password_Para.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         Forgot_Password_Para.setText("<html><p style=\"text-align: center;\">If You've Forgotten Your Password. Then Enter the Recovery Code that had been Given to You on the First Use and then You can create a New Password.</p></html>");
+
+        Forgot_Password_Panel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         Recovery_Key_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         Recovery_Key_Label.setText("Recovery Key");
@@ -835,6 +852,41 @@ public class Main extends javax.swing.JFrame {
         Confirm_Passwd_Label.setText("Confirm Password");
 
         Confirm_Passwd.setPreferredSize(new java.awt.Dimension(7, 26));
+
+        javax.swing.GroupLayout Forgot_Password_PanelLayout = new javax.swing.GroupLayout(Forgot_Password_Panel);
+        Forgot_Password_Panel.setLayout(Forgot_Password_PanelLayout);
+        Forgot_Password_PanelLayout.setHorizontalGroup(
+            Forgot_Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Forgot_Password_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Forgot_Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(New_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Recovery_Key_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Confirm_Passwd_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Forgot_Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(New_Password, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Recovery_Key, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE)
+                    .addComponent(Confirm_Passwd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        Forgot_Password_PanelLayout.setVerticalGroup(
+            Forgot_Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Forgot_Password_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Forgot_Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Recovery_Key_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Recovery_Key, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Forgot_Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(New_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(New_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Forgot_Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Confirm_Passwd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Confirm_Passwd_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
 
         Cancel_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         Cancel_Button.setText("Cancel");
@@ -857,54 +909,31 @@ public class Main extends javax.swing.JFrame {
         Forgot_PasswordLayout.setHorizontalGroup(
             Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Forgot_PasswordLayout.createSequentialGroup()
-                .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap(162, Short.MAX_VALUE)
+                .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(Forgot_PasswordLayout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Forgot_Password_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(Forgot_Password_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)))
-                    .addGroup(Forgot_PasswordLayout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Recovery_Key_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(New_Password_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Confirm_Passwd_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Recovery_Key, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(New_Password, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Confirm_Passwd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(Forgot_PasswordLayout.createSequentialGroup()
-                        .addGap(118, 118, 118)
                         .addComponent(Cancel_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Reset_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(502, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 360, Short.MAX_VALUE)
+                        .addComponent(Reset_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Forgot_Password_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Forgot_Password_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(Forgot_Password_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
         );
         Forgot_PasswordLayout.setVerticalGroup(
             Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Forgot_PasswordLayout.createSequentialGroup()
-                .addGap(100, 100, 100)
+                .addContainerGap(101, Short.MAX_VALUE)
                 .addComponent(Forgot_Password_Heading)
                 .addGap(18, 18, 18)
-                .addComponent(Forgot_Password_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Forgot_Password_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
+                .addComponent(Forgot_Password_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Recovery_Key_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Recovery_Key, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(New_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(New_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Confirm_Passwd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Confirm_Passwd_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
-                .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Reset_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Cancel_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(145, Short.MAX_VALUE))
+                    .addComponent(Cancel_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Reset_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(166, Short.MAX_VALUE))
         );
 
         Container.add(Forgot_Password, "forgotPassword");
@@ -1085,13 +1114,13 @@ public class Main extends javax.swing.JFrame {
         Home_PageLayout.setVerticalGroup(
             Home_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Home_PageLayout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
+                .addContainerGap(41, Short.MAX_VALUE)
                 .addComponent(Banner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(Home_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Low_Stock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Help, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         Container.add(Home_Page, "home");
@@ -1513,20 +1542,17 @@ public class Main extends javax.swing.JFrame {
 
         Settings_Container.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        Speckle_Logo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Speckle_Logo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/speckle-logo.png"))); // NOI18N
-        Speckle_Logo1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Username_Panel.setBorder(javax.swing.BorderFactory.createTitledBorder("Change Username"));
 
-        Change_Username.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        Change_Username.setText("Change Username");
-
-        Current_Username_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Current_Username_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Current_Username_Label.setText("Current Username");
 
+        Current_Username.setEditable(false);
+        Current_Username.setBackground(new java.awt.Color(255, 255, 255));
         Current_Username.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         Current_Username.setEnabled(false);
 
-        New_Username_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        New_Username_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         New_Username_Label.setText("New Username");
 
         New_Username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -1538,20 +1564,53 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        Change_Password.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        Change_Password.setText("Change Password");
+        javax.swing.GroupLayout Username_PanelLayout = new javax.swing.GroupLayout(Username_Panel);
+        Username_Panel.setLayout(Username_PanelLayout);
+        Username_PanelLayout.setHorizontalGroup(
+            Username_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Username_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Username_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(New_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Current_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Username_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Current_Username)
+                    .addGroup(Username_PanelLayout.createSequentialGroup()
+                        .addComponent(Change_Username_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 618, Short.MAX_VALUE))
+                    .addComponent(New_Username))
+                .addContainerGap())
+        );
+        Username_PanelLayout.setVerticalGroup(
+            Username_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Username_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Username_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Current_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Current_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Username_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(New_Username_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(New_Username))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Change_Username_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
-        Current_Password_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Password_Panel.setBorder(javax.swing.BorderFactory.createTitledBorder("Change Password"));
+
+        Current_Password_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Current_Password_Label.setText("Current Password");
 
         Current_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        New_Password_Label1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        New_Password_Label1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         New_Password_Label1.setText("New Password");
 
         New_Password1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        Confirm_Password_Label1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Confirm_Password_Label1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Confirm_Password_Label1.setText("Confirm Password");
 
         Confirm_Password1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -1563,127 +1622,176 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        Reset_Button1.setText("Reset Recovery Key");
-        Reset_Button1.addActionListener(new java.awt.event.ActionListener() {
+        javax.swing.GroupLayout Password_PanelLayout = new javax.swing.GroupLayout(Password_Panel);
+        Password_Panel.setLayout(Password_PanelLayout);
+        Password_PanelLayout.setHorizontalGroup(
+            Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Password_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Password_PanelLayout.createSequentialGroup()
+                        .addComponent(New_Password_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(New_Password1))
+                    .addGroup(Password_PanelLayout.createSequentialGroup()
+                        .addComponent(Confirm_Password_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Password_PanelLayout.createSequentialGroup()
+                                .addComponent(Change_Password_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(Confirm_Password1)))
+                    .addGroup(Password_PanelLayout.createSequentialGroup()
+                        .addComponent(Current_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Current_Password)))
+                .addContainerGap())
+        );
+        Password_PanelLayout.setVerticalGroup(
+            Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Password_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Current_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Current_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(New_Password1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(New_Password_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Confirm_Password1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Confirm_Password_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Change_Password_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        Recovery_Key_Panel.setBorder(javax.swing.BorderFactory.createTitledBorder("Reset Recovery Key"));
+
+        Current_Password_Label1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Current_Password_Label1.setText("Current Password");
+
+        Current_Password1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        Reset_Key_Button.setText("Reset");
+        Reset_Key_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Reset_Button1ActionPerformed(evt);
+                Reset_Key_ButtonActionPerformed(evt);
             }
         });
+
+        javax.swing.GroupLayout Recovery_Key_PanelLayout = new javax.swing.GroupLayout(Recovery_Key_Panel);
+        Recovery_Key_Panel.setLayout(Recovery_Key_PanelLayout);
+        Recovery_Key_PanelLayout.setHorizontalGroup(
+            Recovery_Key_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Recovery_Key_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Current_Password_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Recovery_Key_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Recovery_Key_PanelLayout.createSequentialGroup()
+                        .addComponent(Reset_Key_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(Current_Password1))
+                .addContainerGap())
+        );
+        Recovery_Key_PanelLayout.setVerticalGroup(
+            Recovery_Key_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Recovery_Key_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Recovery_Key_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Current_Password_Label1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Current_Password1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Reset_Key_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout User_TabLayout = new javax.swing.GroupLayout(User_Tab);
         User_Tab.setLayout(User_TabLayout);
         User_TabLayout.setHorizontalGroup(
             User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(User_TabLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(User_TabLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(Change_Password))
-                    .addGroup(User_TabLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(User_TabLayout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(New_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Current_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(New_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Current_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Change_Username_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(Change_Username)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, User_TabLayout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(User_TabLayout.createSequentialGroup()
-                                .addComponent(New_Password_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(New_Password1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(User_TabLayout.createSequentialGroup()
-                                .addComponent(Confirm_Password_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Confirm_Password1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(Reset_Button1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                                        .addComponent(Change_Password_Button, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
-                    .addGroup(User_TabLayout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(Current_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Current_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
-                .addComponent(Speckle_Logo1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(99, Short.MAX_VALUE))
+                    .addComponent(Username_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Password_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Recovery_Key_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         User_TabLayout.setVerticalGroup(
             User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(User_TabLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Speckle_Logo1, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(User_TabLayout.createSequentialGroup()
-                        .addComponent(Change_Username)
-                        .addGap(26, 26, 26)
-                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Current_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Current_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(New_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(New_Username_Label))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Change_Username_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(Change_Password)
-                        .addGap(26, 26, 26)
-                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Current_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Current_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(New_Password1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(New_Password_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Confirm_Password1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Confirm_Password_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Change_Password_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Reset_Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addGap(16, 16, 16)
+                .addComponent(Username_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Password_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Recovery_Key_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         Settings_Container.addTab("User Details", User_Tab);
 
-        Update_Business_Details.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        Update_Business_Details.setText("Update Business Details");
+        Business_Name_Panel.setBorder(javax.swing.BorderFactory.createTitledBorder("Business Name"));
 
-        Current_Value_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Current_Value_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Current_Value_Label.setText("Current");
-        Current_Value_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Current_Business_Label.setFont(Current_Business_Label.getFont().deriveFont(Current_Business_Label.getFont().getSize()+2f));
+        Current_Business_Label.setText("Current");
+        Current_Business_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        New_Value_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        New_Value_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        New_Value_Label.setText("New");
-        New_Value_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        Business_Name_Label1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Business_Name_Label1.setText("Business Name");
-
+        Current_Business_Name.setEditable(false);
+        Current_Business_Name.setBackground(new java.awt.Color(255, 255, 255));
         Current_Business_Name.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         Current_Business_Name.setEnabled(false);
 
+        New_Business_Label.setFont(New_Business_Label.getFont().deriveFont(New_Business_Label.getFont().getSize()+2f));
+        New_Business_Label.setText("New");
+        New_Business_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
         New_Business_Name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        Contact_Number_Label1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Contact_Number_Label1.setText("Contact Number");
+        javax.swing.GroupLayout Business_Name_PanelLayout = new javax.swing.GroupLayout(Business_Name_Panel);
+        Business_Name_Panel.setLayout(Business_Name_PanelLayout);
+        Business_Name_PanelLayout.setHorizontalGroup(
+            Business_Name_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Business_Name_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Business_Name_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Current_Business_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                    .addComponent(New_Business_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Business_Name_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Current_Business_Name)
+                    .addComponent(New_Business_Name))
+                .addContainerGap())
+        );
+        Business_Name_PanelLayout.setVerticalGroup(
+            Business_Name_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Business_Name_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Business_Name_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Current_Business_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Current_Business_Name))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Business_Name_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(New_Business_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(New_Business_Name))
+                .addContainerGap())
+        );
 
+        Contact_Number_Panel.setBorder(javax.swing.BorderFactory.createTitledBorder("Contact Number"));
+
+        Current_Contact_Label.setFont(Current_Contact_Label.getFont().deriveFont(Current_Contact_Label.getFont().getSize()+2f));
+        Current_Contact_Label.setText("Current");
+
+        Current_Contact_Number.setEditable(false);
+        Current_Contact_Number.setBackground(new java.awt.Color(255, 255, 255));
         Current_Contact_Number.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         Current_Contact_Number.setEnabled(false);
+
+        New_Contact_Label.setFont(New_Contact_Label.getFont().deriveFont(New_Contact_Label.getFont().getSize()+2f));
+        New_Contact_Label.setText("New");
 
         New_Contact_Number.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         New_Contact_Number.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1692,27 +1800,122 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        Email_Address_Label1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Email_Address_Label1.setText("Email Address");
+        javax.swing.GroupLayout Contact_Number_PanelLayout = new javax.swing.GroupLayout(Contact_Number_Panel);
+        Contact_Number_Panel.setLayout(Contact_Number_PanelLayout);
+        Contact_Number_PanelLayout.setHorizontalGroup(
+            Contact_Number_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Contact_Number_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Contact_Number_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Current_Contact_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                    .addComponent(New_Contact_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Contact_Number_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Current_Contact_Number)
+                    .addComponent(New_Contact_Number))
+                .addContainerGap())
+        );
+        Contact_Number_PanelLayout.setVerticalGroup(
+            Contact_Number_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Contact_Number_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Contact_Number_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Current_Contact_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Current_Contact_Number))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Contact_Number_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(New_Contact_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(New_Contact_Number))
+                .addContainerGap())
+        );
 
+        Email_Address_Panel.setBorder(javax.swing.BorderFactory.createTitledBorder("Email Address"));
+
+        Current_Email_Label.setFont(Current_Email_Label.getFont().deriveFont(Current_Email_Label.getFont().getSize()+2f));
+        Current_Email_Label.setText("Current");
+
+        Current_Email_Address.setEditable(false);
+        Current_Email_Address.setBackground(new java.awt.Color(255, 255, 255));
         Current_Email_Address.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         Current_Email_Address.setEnabled(false);
 
+        New_Email_Label.setFont(New_Email_Label.getFont().deriveFont(New_Email_Label.getFont().getSize()+2f));
+        New_Email_Label.setText("New");
+
         New_Email_Address.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        Business_Location_Label1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Business_Location_Label1.setText("<html><p>Business Location (Address) :</p></html>");
+        javax.swing.GroupLayout Email_Address_PanelLayout = new javax.swing.GroupLayout(Email_Address_Panel);
+        Email_Address_Panel.setLayout(Email_Address_PanelLayout);
+        Email_Address_PanelLayout.setHorizontalGroup(
+            Email_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Email_Address_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Email_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(New_Email_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Current_Email_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Email_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Current_Email_Address)
+                    .addComponent(New_Email_Address))
+                .addContainerGap())
+        );
+        Email_Address_PanelLayout.setVerticalGroup(
+            Email_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Email_Address_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Email_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Current_Email_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Current_Email_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Email_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(New_Email_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(New_Email_Address))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
-        Current_Business_Location_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Current_Business_Location_Label.setText("Current");
+        Business_Address_Panel.setBorder(javax.swing.BorderFactory.createTitledBorder("Business Location (Address)"));
 
-        Current_Business_Location.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Current_Business_Location.setEnabled(false);
+        Current_Address_Label.setFont(Current_Address_Label.getFont().deriveFont(Current_Address_Label.getFont().getSize()+2f));
+        Current_Address_Label.setText("Current");
 
-        New_Business_Location_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        New_Business_Location_Label.setText("New");
+        Current_Address.setEditable(false);
+        Current_Address.setBackground(new java.awt.Color(255, 255, 255));
+        Current_Address.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        Current_Address.setEnabled(false);
 
-        New_Business_Location.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        New_Address_Label.setFont(New_Address_Label.getFont().deriveFont(New_Address_Label.getFont().getSize()+2f));
+        New_Address_Label.setText("New");
+
+        New_Address.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        javax.swing.GroupLayout Business_Address_PanelLayout = new javax.swing.GroupLayout(Business_Address_Panel);
+        Business_Address_Panel.setLayout(Business_Address_PanelLayout);
+        Business_Address_PanelLayout.setHorizontalGroup(
+            Business_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Business_Address_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Business_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Current_Address_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                    .addComponent(New_Address_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Business_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Current_Address)
+                    .addComponent(New_Address))
+                .addContainerGap())
+        );
+        Business_Address_PanelLayout.setVerticalGroup(
+            Business_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Business_Address_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Business_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Current_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Current_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Business_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(New_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(New_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
 
         Save_Changes_Button.setText("Save Changes");
         Save_Changes_Button.addActionListener(new java.awt.event.ActionListener() {
@@ -1726,82 +1929,32 @@ public class Main extends javax.swing.JFrame {
         Details_TabLayout.setHorizontalGroup(
             Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Details_TabLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(Update_Business_Details)
-                .addGap(531, 704, Short.MAX_VALUE))
-            .addGroup(Details_TabLayout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Business_Location_Label1)
+                .addContainerGap()
+                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Business_Address_Panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Business_Name_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Contact_Number_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Email_Address_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(Details_TabLayout.createSequentialGroup()
-                        .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Email_Address_Label1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Contact_Number_Label1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                                .addComponent(Business_Name_Label1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(Current_Business_Location_Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                            .addComponent(New_Business_Location_Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(Details_TabLayout.createSequentialGroup()
-                                .addComponent(Current_Value_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(New_Value_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Current_Business_Location, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(Details_TabLayout.createSequentialGroup()
-                                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(Current_Contact_Number, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Current_Business_Name, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Current_Email_Address, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(New_Business_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(New_Contact_Number, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(New_Email_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(New_Business_Location, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Details_TabLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Save_Changes_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(93, 93, 93)
+                        .addComponent(Save_Changes_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 719, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         Details_TabLayout.setVerticalGroup(
             Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Details_TabLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(Update_Business_Details)
-                .addGap(26, 26, 26)
-                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(New_Value_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Current_Value_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Business_Name_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Current_Business_Name)
-                    .addComponent(New_Business_Name))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Contact_Number_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Current_Contact_Number)
-                    .addComponent(New_Contact_Number))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Email_Address_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Current_Email_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(New_Email_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
+                .addComponent(Business_Name_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(Business_Location_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Contact_Number_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Current_Business_Location, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Current_Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(New_Business_Location, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(New_Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
+                .addComponent(Email_Address_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(Business_Address_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(Save_Changes_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(121, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         Settings_Container.addTab("Business Details", Details_Tab);
@@ -1816,7 +1969,7 @@ public class Main extends javax.swing.JFrame {
         );
         Settings_PageLayout.setVerticalGroup(
             Settings_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Settings_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
+            .addComponent(Settings_Container)
         );
 
         Container.add(Settings_Page, "settings");
@@ -1942,7 +2095,7 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(About_Para, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(Speckle_Logo))
                 .addGap(27, 27, 27)
-                .addComponent(About_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
+                .addComponent(About_Container)
                 .addGap(50, 50, 50))
         );
 
@@ -1974,6 +2127,28 @@ public class Main extends javax.swing.JFrame {
         Edit_Menu.setText("Edit");
         MenuBar.add(Edit_Menu);
 
+        Tools_Menu.setText("Tools");
+
+        Export_Invoice_MenuItem.setText("Export Invoice History");
+        Export_Invoice_MenuItem.setEnabled(false);
+        Export_Invoice_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Export_Invoice_MenuItemActionPerformed(evt);
+            }
+        });
+        Tools_Menu.add(Export_Invoice_MenuItem);
+
+        Export_Inventory_MenuItem.setText("Export Inventory Data");
+        Export_Inventory_MenuItem.setEnabled(false);
+        Export_Inventory_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Export_Inventory_MenuItemActionPerformed(evt);
+            }
+        });
+        Tools_Menu.add(Export_Inventory_MenuItem);
+
+        MenuBar.add(Tools_Menu);
+
         Help_Menu.setText("Help");
 
         About_MenuItem.setText("About");
@@ -2000,7 +2175,7 @@ public class Main extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(SideBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(Container, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
+            .addComponent(Container, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -2217,10 +2392,18 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Change_Password_ButtonActionPerformed
 
-    private void Reset_Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Reset_Button1ActionPerformed
-        RecoveryKey sc = new RecoveryKey();
-        sc.setVisible(true);
-    }//GEN-LAST:event_Reset_Button1ActionPerformed
+    private void Reset_Key_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Reset_Key_ButtonActionPerformed
+        String curpasswd = new String(Current_Password1.getPassword());
+        String recoveryKey = com.astral.internal.Function.randomAlphaNumeric(16);
+        if (!com.astral.internal.Security.validateHash(curpasswd, com.astral.internal.SQLite.getConfigValue("Password")))
+            JOptionPane.showMessageDialog(null, "The Password You Have Entered is Incorrect. Please Try Again!", "Incorrect Password", JOptionPane.ERROR_MESSAGE);
+        else {
+            com.astral.internal.SQLite.setConfigValue("Recovery Key", com.astral.internal.Security.generateHash(recoveryKey));
+            JOptionPane.showMessageDialog(null, "Your Recovery Key Has Been Successfully Reset!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Your New Recovery Key is " + recoveryKey, "Recovery Key", JOptionPane.INFORMATION_MESSAGE);
+            Current_Password1.setText("");
+        }
+    }//GEN-LAST:event_Reset_Key_ButtonActionPerformed
 
     private void New_Contact_NumberKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_New_Contact_NumberKeyPressed
         String Number = New_Contact_Number.getText();
@@ -2243,7 +2426,7 @@ public class Main extends javax.swing.JFrame {
         String cname = New_Business_Name.getText();
         String cnum = New_Contact_Number.getText();
         String cmail = New_Email_Address.getText();
-        String caddress = New_Business_Location.getText();
+        String caddress = New_Address.getText();
         if (cname.equals("") && cnum.equals("") && cmail.equals("") && caddress.equals(""))
             JOptionPane.showMessageDialog(null, "You haven't made any Changes. Please Try Again!", "No Changes Found", JOptionPane.ERROR_MESSAGE);
         else {
@@ -2252,7 +2435,7 @@ public class Main extends javax.swing.JFrame {
             if (cmail.equals(""))
                 cmail = Current_Email_Address.getText();
             if (caddress.equals(""))
-                caddress = Current_Business_Location.getText();
+                caddress = Current_Address.getText();
             if (cnum.equals("")) {
                 cnum = Current_Contact_Number.getText();
                 com.astral.internal.SQLite.compConfig(cname, cnum, cmail, caddress);
@@ -2268,7 +2451,7 @@ public class Main extends javax.swing.JFrame {
             New_Business_Name.setText("");
             New_Contact_Number.setText("");
             New_Email_Address.setText("");
-            New_Business_Location.setText("");
+            New_Address.setText("");
         }
     }//GEN-LAST:event_Save_Changes_ButtonActionPerformed
 
@@ -2502,10 +2685,20 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_EditActionPerformed
 
+    private void Export_Invoice_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Export_Invoice_MenuItemActionPerformed
+        Export_ActionPerformed("Invoice");
+    }//GEN-LAST:event_Export_Invoice_MenuItemActionPerformed
+
+    private void Export_Inventory_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Export_Inventory_MenuItemActionPerformed
+        Export_ActionPerformed("Inventory");
+    }//GEN-LAST:event_Export_Inventory_MenuItemActionPerformed
+
     private void SignIn_ActionPerformed() {
         LoggedIn = true;
         Home_ActionPerformed();
         SignOut_MenuItem.setEnabled(true);
+        Export_Invoice_MenuItem.setEnabled(true);
+        Export_Inventory_MenuItem.setEnabled(true);
         Invoicing_Button.setEnabled(true);
         Inventory_Button.setEnabled(true);
         Settings_Button.setEnabled(true);
@@ -2518,6 +2711,8 @@ public class Main extends javax.swing.JFrame {
         Password.setText("");
         Container_Deck.show(Container, "signIn");
         SignOut_MenuItem.setEnabled(false);
+        Export_Invoice_MenuItem.setEnabled(false);
+        Export_Inventory_MenuItem.setEnabled(false);
         Invoicing_Button.setEnabled(false);
         Inventory_Button.setEnabled(false);
         Settings_Button.setEnabled(false);
@@ -2582,7 +2777,7 @@ public class Main extends javax.swing.JFrame {
         Current_Business_Name.setText(com.astral.internal.SQLite.getConfigValue("Business Name"));
         Current_Contact_Number.setText(com.astral.internal.SQLite.getConfigValue("Contact Number"));
         Current_Email_Address.setText(com.astral.internal.SQLite.getConfigValue("Email Address"));
-        Current_Business_Location.setText(com.astral.internal.SQLite.getConfigValue("Business Location"));
+        Current_Address.setText(com.astral.internal.SQLite.getConfigValue("Business Location"));
         Container_Deck.show(Container, "settings");
     }
 
@@ -2651,18 +2846,16 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Available_Quantity_Label;
     private javax.swing.JButton Back_Button;
     private javax.swing.JPanel Banner;
+    private javax.swing.JPanel Business_Address_Panel;
     private javax.swing.JTextField Business_Location;
     private javax.swing.JLabel Business_Location_Label;
-    private javax.swing.JLabel Business_Location_Label1;
     private javax.swing.JTextField Business_Name;
     private javax.swing.JLabel Business_Name_Label;
-    private javax.swing.JLabel Business_Name_Label1;
+    private javax.swing.JPanel Business_Name_Panel;
     private javax.swing.JButton Cancel;
     private javax.swing.JButton Cancel_Adding;
     private javax.swing.JButton Cancel_Button;
-    private javax.swing.JLabel Change_Password;
     private javax.swing.JButton Change_Password_Button;
-    private javax.swing.JLabel Change_Username;
     private javax.swing.JButton Change_Username_Button;
     private javax.swing.JPasswordField Confirm_Passwd;
     private javax.swing.JLabel Confirm_Passwd_Label;
@@ -2672,7 +2865,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Confirm_Password_Label1;
     private javax.swing.JTextField Contact_Number;
     private javax.swing.JLabel Contact_Number_Label;
-    private javax.swing.JLabel Contact_Number_Label1;
+    private javax.swing.JPanel Contact_Number_Panel;
     private javax.swing.JPanel Container;
     private javax.swing.JButton Create_Invoice;
     private javax.swing.JPasswordField Create_Password;
@@ -2680,16 +2873,20 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane Credits_Container;
     private javax.swing.JPanel Credits_Tab;
     private javax.swing.JTextArea Credits_Text;
-    private javax.swing.JTextField Current_Business_Location;
-    private javax.swing.JLabel Current_Business_Location_Label;
+    private javax.swing.JTextField Current_Address;
+    private javax.swing.JLabel Current_Address_Label;
+    private javax.swing.JLabel Current_Business_Label;
     private javax.swing.JTextField Current_Business_Name;
+    private javax.swing.JLabel Current_Contact_Label;
     private javax.swing.JTextField Current_Contact_Number;
     private javax.swing.JTextField Current_Email_Address;
+    private javax.swing.JLabel Current_Email_Label;
     private javax.swing.JPasswordField Current_Password;
+    private javax.swing.JPasswordField Current_Password1;
     private javax.swing.JLabel Current_Password_Label;
+    private javax.swing.JLabel Current_Password_Label1;
     private javax.swing.JTextField Current_Username;
     private javax.swing.JLabel Current_Username_Label;
-    private javax.swing.JLabel Current_Value_Label;
     private javax.swing.JTextField Customer_Address;
     private javax.swing.JLabel Customer_Address_Label;
     private javax.swing.JTextField Customer_Contact;
@@ -2702,10 +2899,12 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenu Edit_Menu;
     private javax.swing.JTextField Email_Address;
     private javax.swing.JLabel Email_Address_Label;
-    private javax.swing.JLabel Email_Address_Label1;
+    private javax.swing.JPanel Email_Address_Panel;
     private javax.swing.JMenuItem Exit_MenuItem;
     private javax.swing.JButton Export_Inventory;
+    private javax.swing.JMenuItem Export_Inventory_MenuItem;
     private javax.swing.JButton Export_Invoice;
+    private javax.swing.JMenuItem Export_Invoice_MenuItem;
     private javax.swing.JMenu File_Menu;
     private javax.swing.Box.Filler Filler_01;
     private javax.swing.Box.Filler Filler_02;
@@ -2719,6 +2918,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel Forgot_Password;
     private javax.swing.JLabel Forgot_Password_Heading;
     private javax.swing.JLabel Forgot_Password_Label;
+    private javax.swing.JPanel Forgot_Password_Panel;
     private javax.swing.JLabel Forgot_Password_Para;
     private javax.swing.JTextField GST_Rate;
     private javax.swing.JLabel GST_Rate_Label;
@@ -2749,11 +2949,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Low_Stock_Para;
     private javax.swing.JLabel Main_Heading;
     private javax.swing.JMenuBar MenuBar;
-    private javax.swing.JTextField New_Business_Location;
-    private javax.swing.JLabel New_Business_Location_Label;
+    private javax.swing.JTextField New_Address;
+    private javax.swing.JLabel New_Address_Label;
+    private javax.swing.JLabel New_Business_Label;
     private javax.swing.JTextField New_Business_Name;
+    private javax.swing.JLabel New_Contact_Label;
     private javax.swing.JTextField New_Contact_Number;
     private javax.swing.JTextField New_Email_Address;
+    private javax.swing.JLabel New_Email_Label;
     private javax.swing.JLabel New_Heading;
     private javax.swing.JButton New_Invoice;
     private javax.swing.JTable New_Invoice_Table;
@@ -2766,10 +2969,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel New_Product_Panel;
     private javax.swing.JTextField New_Username;
     private javax.swing.JLabel New_Username_Label;
-    private javax.swing.JLabel New_Value_Label;
     private javax.swing.JButton Next_Button;
     private javax.swing.JPasswordField Password;
     private javax.swing.JLabel Password_Label;
+    private javax.swing.JPanel Password_Panel;
     private javax.swing.JTextField Price_Field;
     private javax.swing.JLabel Price_Label;
     private javax.swing.JLabel Product_Five_Label;
@@ -2788,11 +2991,12 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Recovery_Key_Display_Label;
     private javax.swing.JLabel Recovery_Key_Heading;
     private javax.swing.JLabel Recovery_Key_Label;
+    private javax.swing.JPanel Recovery_Key_Panel;
     private javax.swing.JLabel Recovery_Key_Para;
     private javax.swing.JButton Remove;
     private javax.swing.JButton Remove1;
     private javax.swing.JButton Reset_Button;
-    private javax.swing.JButton Reset_Button1;
+    private javax.swing.JButton Reset_Key_Button;
     private javax.swing.JButton Save_Changes_Button;
     private javax.swing.JPopupMenu.Separator Separator_01;
     private javax.swing.JButton Settings_Button;
@@ -2809,6 +3013,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton SignUp_Button;
     private javax.swing.JPanel SignUp_Details;
     private javax.swing.JLabel SignUp_Details_Heading;
+    private javax.swing.JPanel SignUp_Details_Panel;
     private javax.swing.JLabel SignUp_Details_Para;
     private javax.swing.JPanel SignUp_User;
     private javax.swing.JLabel SignUp_User_Heading;
@@ -2820,12 +3025,12 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel SignUp_Username_Label;
     private javax.swing.JLabel Speckle_Label;
     private javax.swing.JLabel Speckle_Logo;
-    private javax.swing.JLabel Speckle_Logo1;
+    private javax.swing.JMenu Tools_Menu;
     private javax.swing.JButton Update;
-    private javax.swing.JLabel Update_Business_Details;
     private javax.swing.JPanel User_Tab;
     private javax.swing.JTextField Username;
     private javax.swing.JLabel Username_Label;
+    private javax.swing.JPanel Username_Panel;
     private javax.swing.JLabel Verfiy_Contact_Number;
     private javax.swing.JLabel Verify_Business_Location;
     private javax.swing.JLabel Verify_Business_Location_Label;
