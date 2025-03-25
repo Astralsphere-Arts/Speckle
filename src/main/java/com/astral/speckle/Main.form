@@ -502,18 +502,16 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="SignUp_User_Para_A" alignment="1" max="32767" attributes="0"/>
-                              <Component id="SignUp_User_SubHeading" alignment="0" max="32767" attributes="0"/>
-                              <Component id="SignUp_User_Heading" alignment="0" max="32767" attributes="0"/>
-                              <Component id="SignUp_User_Para_B" pref="700" max="32767" attributes="0"/>
-                              <Component id="SignUp_User_SubPanel" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="Next_Button" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
+                      <EmptySpace pref="125" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="SignUp_User_Para_A" alignment="1" max="32767" attributes="0"/>
+                          <Component id="SignUp_User_SubHeading" alignment="0" max="32767" attributes="0"/>
+                          <Component id="SignUp_User_Heading" alignment="0" max="32767" attributes="0"/>
+                          <Component id="SignUp_User_Para_B" pref="700" max="32767" attributes="0"/>
+                          <Component id="SignUp_User_SubPanel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="Next_Button" min="-2" pref="120" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="125" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2001,20 +1999,20 @@
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="Add" min="-2" pref="120" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="Edit" min="-2" pref="120" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="Remove" min="-2" pref="120" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="Add" min="-2" pref="50" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="Edit" min="-2" pref="50" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="Remove" min="-2" pref="50" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Component id="Update" min="-2" pref="120" max="-2" attributes="0"/>
-                                      <EmptySpace pref="54" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="Import" min="-2" pref="120" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="Export_Inventory" min="-2" pref="120" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="Inventory_Table_Container" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="Inventory_Table_Container" pref="846" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                           </Group>
@@ -2028,15 +2026,15 @@
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="Heading" min="-2" pref="45" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Component id="Inventory_Table_Container" pref="347" max="32767" attributes="0"/>
+                      <Component id="Inventory_Table_Container" pref="344" max="32767" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="Remove" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                          <Component id="Add" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                          <Component id="Update" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                          <Component id="Export_Inventory" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                          <Component id="Import" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                          <Component id="Edit" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" max="-2" attributes="0">
+                          <Component id="Remove" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="Add" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Edit" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="Import" alignment="1" min="-2" pref="39" max="-2" attributes="0"/>
+                          <Component id="Export_Inventory" alignment="1" min="-2" pref="39" max="-2" attributes="0"/>
+                          <Component id="Update" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                   </Group>
@@ -2073,7 +2071,9 @@
             </Container>
             <Component class="javax.swing.JButton" name="Add">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Add"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/plus.png"/>
+                </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Add a New Product to Inventory"/>
               </Properties>
               <Events>
@@ -2082,8 +2082,10 @@
             </Component>
             <Component class="javax.swing.JButton" name="Edit">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Edit"/>
-                <Property name="toolTipText" type="java.lang.String" value="Add a New Product to Inventory"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/edit.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Edit Details of the Selected Product"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EditActionPerformed"/>
@@ -2091,7 +2093,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="Remove">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Remove"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/cross.png"/>
+                </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Remove Selected Products from Inventory"/>
               </Properties>
               <Events>
