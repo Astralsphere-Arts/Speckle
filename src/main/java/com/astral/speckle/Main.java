@@ -24,6 +24,11 @@ public class Main extends javax.swing.JFrame {
         LoggedIn = false;
         Version = "1.5.0";
         com.astral.internal.SQLite.initDB();
+        if (java.awt.Desktop.getDesktop().isSupported(java.awt.Desktop.Action.APP_ABOUT)) {
+            java.awt.Desktop.getDesktop().setAboutHandler(e -> {
+                About_ActionPerformed();
+            });
+        }
         initComponents();
         Container_Deck = (java.awt.CardLayout)Container.getLayout();
         if (com.astral.internal.SQLite.firstUse)
@@ -2807,6 +2812,10 @@ public class Main extends javax.swing.JFrame {
         /* Set the FlatLightLaf look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If FlatLightLaf is not available, stay with the default look and feel. */
+        if (com.formdev.flatlaf.util.SystemInfo.isMacOS) {
+            System.setProperty("apple.laf.useScreenMenuBar", "true");
+            System.setProperty("apple.awt.application.name", "Speckle");
+        }
         com.formdev.flatlaf.FlatLightLaf.setup();
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
