@@ -9,6 +9,35 @@
             <Property name="text" type="java.lang.String" value="File"/>
           </Properties>
           <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="New_Invoice_MenuItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="New Invoice"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="New_Invoice_MenuItemActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="Invoicing_MenuItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Invoice History"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Invoicing_MenuItemActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="Inventory_MenuItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Inventory"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Inventory_MenuItemActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JPopupMenu$Separator" name="Separator_01">
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="SignOut_MenuItem">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sign Out"/>
@@ -18,7 +47,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SignOut_MenuItemActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JPopupMenu$Separator" name="Separator_01">
+            <MenuItem class="javax.swing.JPopupMenu$Separator" name="Separator_02">
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="Exit_MenuItem">
               <Properties>
@@ -33,10 +62,59 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="Edit_Menu">
+        <Menu class="javax.swing.JMenu" name="Inventory_Menu">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Edit"/>
+            <Property name="text" type="java.lang.String" value="Inventory"/>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="Add_MenuItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Add"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Add_MenuItemActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="Edit_MenuItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Edit"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Edit_MenuItemActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="Remove_MenuItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Remove"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Remove_MenuItemActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JPopupMenu$Separator" name="Separator_03">
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="Update_MenuItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Update Stock"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Update_MenuItemActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="Import_MenuItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Import Data"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Import_MenuItemActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="Tools_Menu">
           <Properties>
@@ -59,6 +137,17 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Export_Inventory_MenuItemActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JPopupMenu$Separator" name="Separator_04">
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="Settings_MenuItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Settings"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Settings_MenuItemActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -2028,13 +2117,15 @@
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Component id="Inventory_Table_Container" pref="344" max="32767" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="Remove" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="Add" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="Edit" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="Import" alignment="1" min="-2" pref="39" max="-2" attributes="0"/>
                           <Component id="Export_Inventory" alignment="1" min="-2" pref="39" max="-2" attributes="0"/>
-                          <Component id="Update" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="Add" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="Update" min="-2" pref="39" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                   </Group>

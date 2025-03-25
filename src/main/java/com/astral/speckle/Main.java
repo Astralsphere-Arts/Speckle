@@ -30,8 +30,12 @@ public class Main extends javax.swing.JFrame {
         }
         initComponents();
         Container_Deck = (java.awt.CardLayout)Container.getLayout();
-        if (com.astral.internal.SQLite.firstUse)
+        if (com.astral.internal.SQLite.firstUse) {
+            Home_Button.setEnabled(false);
+            About_Button.setEnabled(false);
+            About_MenuItem.setEnabled(false);
             Container_Deck.show(Container, "signUpUser");
+        }
         else
             Container_Deck.show(Container, "signIn");
     }
@@ -249,13 +253,25 @@ public class Main extends javax.swing.JFrame {
         Credits_Text = new javax.swing.JTextArea();
         MenuBar = new javax.swing.JMenuBar();
         File_Menu = new javax.swing.JMenu();
-        SignOut_MenuItem = new javax.swing.JMenuItem();
+        New_Invoice_MenuItem = new javax.swing.JMenuItem();
+        Invoicing_MenuItem = new javax.swing.JMenuItem();
+        Inventory_MenuItem = new javax.swing.JMenuItem();
         Separator_01 = new javax.swing.JPopupMenu.Separator();
+        SignOut_MenuItem = new javax.swing.JMenuItem();
+        Separator_02 = new javax.swing.JPopupMenu.Separator();
         Exit_MenuItem = new javax.swing.JMenuItem();
-        Edit_Menu = new javax.swing.JMenu();
+        Inventory_Menu = new javax.swing.JMenu();
+        Add_MenuItem = new javax.swing.JMenuItem();
+        Edit_MenuItem = new javax.swing.JMenuItem();
+        Remove_MenuItem = new javax.swing.JMenuItem();
+        Separator_03 = new javax.swing.JPopupMenu.Separator();
+        Update_MenuItem = new javax.swing.JMenuItem();
+        Import_MenuItem = new javax.swing.JMenuItem();
         Tools_Menu = new javax.swing.JMenu();
         Export_Invoice_MenuItem = new javax.swing.JMenuItem();
         Export_Inventory_MenuItem = new javax.swing.JMenuItem();
+        Separator_04 = new javax.swing.JPopupMenu.Separator();
+        Settings_MenuItem = new javax.swing.JMenuItem();
         Help_Menu = new javax.swing.JMenu();
         About_MenuItem = new javax.swing.JMenuItem();
 
@@ -1420,13 +1436,14 @@ public class Main extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(Inventory_Table_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addGroup(Inventory_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
+                .addGroup(Inventory_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Remove)
-                    .addComponent(Add)
-                    .addComponent(Edit)
-                    .addComponent(Import, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Export_Inventory, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Update, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Edit, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Import, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Export_Inventory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(Inventory_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Add, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(Update, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(73, 73, 73))
         );
 
@@ -2106,6 +2123,34 @@ public class Main extends javax.swing.JFrame {
 
         File_Menu.setText("File");
 
+        New_Invoice_MenuItem.setText("New Invoice");
+        New_Invoice_MenuItem.setEnabled(false);
+        New_Invoice_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                New_Invoice_MenuItemActionPerformed(evt);
+            }
+        });
+        File_Menu.add(New_Invoice_MenuItem);
+
+        Invoicing_MenuItem.setText("Invoice History");
+        Invoicing_MenuItem.setEnabled(false);
+        Invoicing_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Invoicing_MenuItemActionPerformed(evt);
+            }
+        });
+        File_Menu.add(Invoicing_MenuItem);
+
+        Inventory_MenuItem.setText("Inventory");
+        Inventory_MenuItem.setEnabled(false);
+        Inventory_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Inventory_MenuItemActionPerformed(evt);
+            }
+        });
+        File_Menu.add(Inventory_MenuItem);
+        File_Menu.add(Separator_01);
+
         SignOut_MenuItem.setText("Sign Out");
         SignOut_MenuItem.setEnabled(false);
         SignOut_MenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -2114,7 +2159,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         File_Menu.add(SignOut_MenuItem);
-        File_Menu.add(Separator_01);
+        File_Menu.add(Separator_02);
 
         Exit_MenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         Exit_MenuItem.setText("Exit");
@@ -2127,8 +2172,55 @@ public class Main extends javax.swing.JFrame {
 
         MenuBar.add(File_Menu);
 
-        Edit_Menu.setText("Edit");
-        MenuBar.add(Edit_Menu);
+        Inventory_Menu.setText("Inventory");
+
+        Add_MenuItem.setText("Add");
+        Add_MenuItem.setEnabled(false);
+        Add_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Add_MenuItemActionPerformed(evt);
+            }
+        });
+        Inventory_Menu.add(Add_MenuItem);
+
+        Edit_MenuItem.setText("Edit");
+        Edit_MenuItem.setEnabled(false);
+        Edit_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Edit_MenuItemActionPerformed(evt);
+            }
+        });
+        Inventory_Menu.add(Edit_MenuItem);
+
+        Remove_MenuItem.setText("Remove");
+        Remove_MenuItem.setEnabled(false);
+        Remove_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Remove_MenuItemActionPerformed(evt);
+            }
+        });
+        Inventory_Menu.add(Remove_MenuItem);
+        Inventory_Menu.add(Separator_03);
+
+        Update_MenuItem.setText("Update Stock");
+        Update_MenuItem.setEnabled(false);
+        Update_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Update_MenuItemActionPerformed(evt);
+            }
+        });
+        Inventory_Menu.add(Update_MenuItem);
+
+        Import_MenuItem.setText("Import Data");
+        Import_MenuItem.setEnabled(false);
+        Import_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Import_MenuItemActionPerformed(evt);
+            }
+        });
+        Inventory_Menu.add(Import_MenuItem);
+
+        MenuBar.add(Inventory_Menu);
 
         Tools_Menu.setText("Tools");
 
@@ -2149,6 +2241,16 @@ public class Main extends javax.swing.JFrame {
             }
         });
         Tools_Menu.add(Export_Inventory_MenuItem);
+        Tools_Menu.add(Separator_04);
+
+        Settings_MenuItem.setText("Settings");
+        Settings_MenuItem.setEnabled(false);
+        Settings_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Settings_MenuItemActionPerformed(evt);
+            }
+        });
+        Tools_Menu.add(Settings_MenuItem);
 
         MenuBar.add(Tools_Menu);
 
@@ -2279,6 +2381,9 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_SignUp_ButtonActionPerformed
 
     private void Finish_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Finish_ButtonActionPerformed
+        Home_Button.setEnabled(true);
+        About_Button.setEnabled(true);
+        About_MenuItem.setEnabled(true);
         SignIn_ActionPerformed();
     }//GEN-LAST:event_Finish_ButtonActionPerformed
 
@@ -2459,51 +2564,19 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_Save_Changes_ButtonActionPerformed
 
     private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
-        PID = null;
-        New_Product_Heading.setText("Add New Product");
-        Product_Name.setText("");
-        Price_Field.setText("");
-        GST_Rate.setText("");
-        Available_Quantity.setText("");
-        Container_Deck.show(Container, "invenNew");
+        Inventory_AddActionPerformed();
     }//GEN-LAST:event_AddActionPerformed
 
     private void RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveActionPerformed
-        int[] rows = Inventory_Table.getSelectedRows();
-        for (int i=0; i<rows.length; i++) {
-            String ProdID = Inventory_Table.getValueAt(rows[i]-i, 0).toString();
-            com.astral.internal.SQLite.remRowInven(ProdID);
-            Inventory_Model.removeRow(rows[i]-i);
-        }
+        Inventory_RemoveActionPerformed();
     }//GEN-LAST:event_RemoveActionPerformed
 
     private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
-        int row = Inventory_Table.getSelectedRow();
-        if (row == -1)
-            JOptionPane.showMessageDialog(null, "Please Select a Product to Update it's Stock.", "No Product Selected", JOptionPane.ERROR_MESSAGE);
-        else {
-            PID = Inventory_Table.getValueAt(row, 0).toString();
-            int quantity = 0;
-            if (Inventory_Table.getValueAt(row, 4) != null)
-                quantity = (Integer) Inventory_Table.getValueAt(row, 4);
-            String update = JOptionPane.showInputDialog(null, "Enter the Amount of Stock You want to Increase", "Update Stock", JOptionPane.PLAIN_MESSAGE);
-            if (update == null || update.equals(""))
-                update = "0";
-            String quan = Integer.toString(quantity + Integer.parseInt(update));
-            com.astral.internal.SQLite.updateStock(PID, quan);
-            Inventory_ActionPerformed();
-        }
+        Inventory_UpdateActionPerformed();
     }//GEN-LAST:event_UpdateActionPerformed
 
     private void ImportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImportActionPerformed
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Import from CSV");
-        fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
-        if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-            com.astral.internal.Function.invenCSVim(fileChooser.getSelectedFile());
-            JOptionPane.showMessageDialog(null, "Inventory Data Imported Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-            Inventory_ActionPerformed();
-        }
+        Inventory_ImportActionPerformed();
     }//GEN-LAST:event_ImportActionPerformed
 
     private void Export_InventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Export_InventoryActionPerformed
@@ -2540,28 +2613,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_Export_InvoiceActionPerformed
 
     private void New_InvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_New_InvoiceActionPerformed
-        New_Invoice_Table.setModel(com.astral.internal.Function.newInvoTableModel());
-        final TableColumnModel NewColumnModel = New_Invoice_Table.getColumnModel();
-        for (int column = 0; column < New_Invoice_Table.getColumnCount(); column++) {
-            int width = 15;
-            for (int row = 0; row < New_Invoice_Table.getRowCount(); row++) {
-                TableCellRenderer renderer = New_Invoice_Table.getCellRenderer(row, column);
-                Component comp = New_Invoice_Table.prepareRenderer(renderer, row, column);
-                width = Math.max(comp.getPreferredSize().width + 1 , width);
-            }
-            if (width > 300) width=300;
-            NewColumnModel.getColumn(column).setPreferredWidth(width);
-        }
-        New_Invoice_Table.getColumnModel().getColumn(1).setMinWidth(0);
-        New_Invoice_Table.getColumnModel().getColumn(1).setMaxWidth(0);
-        New_Invoice_Table.getColumnModel().getColumn(1).setWidth(0);
-        New_Invoice_Table.getColumnModel().getColumn(4).setMinWidth(0);
-        New_Invoice_Table.getColumnModel().getColumn(4).setMaxWidth(0);
-        New_Invoice_Table.getColumnModel().getColumn(4).setWidth(0);
-        Customer_Name.setText("");
-        Customer_Contact.setText("");
-        Customer_Address.setText("");
-        Container_Deck.show(Container, "invNew");
+        NewInvoiceActionPerformed();
     }//GEN-LAST:event_New_InvoiceActionPerformed
 
     private void Customer_ContactKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Customer_ContactKeyPressed
@@ -2670,22 +2722,12 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_Finish_AddingActionPerformed
 
     private void Cancel_AddingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cancel_AddingActionPerformed
+        EnableInventory_ActionPerformed();
         Container_Deck.show(Container, "inventory");
     }//GEN-LAST:event_Cancel_AddingActionPerformed
 
     private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
-        int row = Inventory_Table.getSelectedRow();
-        if (row == -1)
-            JOptionPane.showMessageDialog(null, "Please Select a Product to Edit it's Details.", "No Product Selected", JOptionPane.ERROR_MESSAGE);
-        else {
-            PID = Inventory_Table.getValueAt(row, 0).toString();
-            New_Product_Heading.setText("Edit Product Details");
-            Product_Name.setText(Inventory_Table.getValueAt(row, 1).toString());
-            Price_Field.setText(Inventory_Table.getValueAt(row, 2).toString());
-            GST_Rate.setText(Inventory_Table.getValueAt(row, 3).toString());
-            Available_Quantity.setText(Inventory_Table.getValueAt(row, 4).toString());
-            Container_Deck.show(Container, "invenNew");
-        }
+        Inventory_EditActionPerformed();
     }//GEN-LAST:event_EditActionPerformed
 
     private void Export_Invoice_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Export_Invoice_MenuItemActionPerformed
@@ -2696,12 +2738,52 @@ public class Main extends javax.swing.JFrame {
         com.astral.internal.Function.ExportActionPerformed("Inventory");
     }//GEN-LAST:event_Export_Inventory_MenuItemActionPerformed
 
+    private void New_Invoice_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_New_Invoice_MenuItemActionPerformed
+        NewInvoiceActionPerformed();
+    }//GEN-LAST:event_New_Invoice_MenuItemActionPerformed
+
+    private void Invoicing_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Invoicing_MenuItemActionPerformed
+        Invoicing_ActionPerformed();
+    }//GEN-LAST:event_Invoicing_MenuItemActionPerformed
+
+    private void Add_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Add_MenuItemActionPerformed
+        Inventory_AddActionPerformed();
+    }//GEN-LAST:event_Add_MenuItemActionPerformed
+
+    private void Inventory_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Inventory_MenuItemActionPerformed
+        Inventory_ActionPerformed();
+    }//GEN-LAST:event_Inventory_MenuItemActionPerformed
+
+    private void Edit_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Edit_MenuItemActionPerformed
+        Inventory_EditActionPerformed();
+    }//GEN-LAST:event_Edit_MenuItemActionPerformed
+
+    private void Remove_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Remove_MenuItemActionPerformed
+        Inventory_RemoveActionPerformed();
+    }//GEN-LAST:event_Remove_MenuItemActionPerformed
+
+    private void Update_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_MenuItemActionPerformed
+        Inventory_UpdateActionPerformed();
+    }//GEN-LAST:event_Update_MenuItemActionPerformed
+
+    private void Import_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Import_MenuItemActionPerformed
+        Inventory_ImportActionPerformed();
+    }//GEN-LAST:event_Import_MenuItemActionPerformed
+
+    private void Settings_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Settings_MenuItemActionPerformed
+        Settings_ActionPerformed();
+    }//GEN-LAST:event_Settings_MenuItemActionPerformed
+
     private void SignIn_ActionPerformed() {
         LoggedIn = true;
         Home_ActionPerformed();
+        New_Invoice_MenuItem.setEnabled(true);
+        Invoicing_MenuItem.setEnabled(true);
+        Inventory_MenuItem.setEnabled(true);
         SignOut_MenuItem.setEnabled(true);
         Export_Invoice_MenuItem.setEnabled(true);
         Export_Inventory_MenuItem.setEnabled(true);
+        Settings_MenuItem.setEnabled(true);
         Invoicing_Button.setEnabled(true);
         Inventory_Button.setEnabled(true);
         Settings_Button.setEnabled(true);
@@ -2713,13 +2795,34 @@ public class Main extends javax.swing.JFrame {
         Username.setText("");
         Password.setText("");
         Container_Deck.show(Container, "signIn");
+        New_Invoice_MenuItem.setEnabled(false);
+        Invoicing_MenuItem.setEnabled(false);
+        Inventory_MenuItem.setEnabled(false);
         SignOut_MenuItem.setEnabled(false);
+        DisableInventory_ActionPerformed();
         Export_Invoice_MenuItem.setEnabled(false);
         Export_Inventory_MenuItem.setEnabled(false);
+        Settings_MenuItem.setEnabled(false);
         Invoicing_Button.setEnabled(false);
         Inventory_Button.setEnabled(false);
         Settings_Button.setEnabled(false);
         SignOut_Button.setEnabled(false);
+    }
+
+    private void EnableInventory_ActionPerformed() {
+        Add_MenuItem.setEnabled(true);
+        Edit_MenuItem.setEnabled(true);
+        Remove_MenuItem.setEnabled(true);
+        Update_MenuItem.setEnabled(true);
+        Import_MenuItem.setEnabled(true);
+    }
+
+    private void DisableInventory_ActionPerformed() {
+        Add_MenuItem.setEnabled(false);
+        Edit_MenuItem.setEnabled(false);
+        Remove_MenuItem.setEnabled(false);
+        Update_MenuItem.setEnabled(false);
+        Import_MenuItem.setEnabled(false);
     }
 
     private void Home_ActionPerformed() {
@@ -2736,6 +2839,7 @@ public class Main extends javax.swing.JFrame {
             Product_Four_Quantity.setText(data[3][1]);
             Product_Five_Label.setText(data[4][0]);
             Product_Five_Quantity.setText(data[4][1]);
+            DisableInventory_ActionPerformed();
             Container_Deck.show(Container, "home");
         } else {
             Container_Deck.show(Container, "signIn");
@@ -2755,7 +2859,34 @@ public class Main extends javax.swing.JFrame {
             if (width > 300) width=300;
             columnModel.getColumn(column).setPreferredWidth(width);
         }
+        DisableInventory_ActionPerformed();
         Container_Deck.show(Container, "invMain");
+    }
+
+    private void NewInvoiceActionPerformed() {
+        New_Invoice_Table.setModel(com.astral.internal.Function.newInvoTableModel());
+        final TableColumnModel NewColumnModel = New_Invoice_Table.getColumnModel();
+        for (int column = 0; column < New_Invoice_Table.getColumnCount(); column++) {
+            int width = 15;
+            for (int row = 0; row < New_Invoice_Table.getRowCount(); row++) {
+                TableCellRenderer renderer = New_Invoice_Table.getCellRenderer(row, column);
+                Component comp = New_Invoice_Table.prepareRenderer(renderer, row, column);
+                width = Math.max(comp.getPreferredSize().width + 1 , width);
+            }
+            if (width > 300) width=300;
+            NewColumnModel.getColumn(column).setPreferredWidth(width);
+        }
+        New_Invoice_Table.getColumnModel().getColumn(1).setMinWidth(0);
+        New_Invoice_Table.getColumnModel().getColumn(1).setMaxWidth(0);
+        New_Invoice_Table.getColumnModel().getColumn(1).setWidth(0);
+        New_Invoice_Table.getColumnModel().getColumn(4).setMinWidth(0);
+        New_Invoice_Table.getColumnModel().getColumn(4).setMaxWidth(0);
+        New_Invoice_Table.getColumnModel().getColumn(4).setWidth(0);
+        Customer_Name.setText("");
+        Customer_Contact.setText("");
+        Customer_Address.setText("");
+        DisableInventory_ActionPerformed();
+        Container_Deck.show(Container, "invNew");
     }
 
     private void Inventory_ActionPerformed() {
@@ -2772,7 +2903,73 @@ public class Main extends javax.swing.JFrame {
             columnModel.getColumn(column).setPreferredWidth(width);
         }
         Inventory_Model = (DefaultTableModel) Inventory_Table.getModel();
+        EnableInventory_ActionPerformed();
         Container_Deck.show(Container, "inventory");
+    }
+
+    private void Inventory_AddActionPerformed() {
+        PID = null;
+        New_Product_Heading.setText("Add New Product");
+        Product_Name.setText("");
+        Price_Field.setText("");
+        GST_Rate.setText("");
+        Available_Quantity.setText("");
+        DisableInventory_ActionPerformed();
+        Container_Deck.show(Container, "invenNew");
+    }
+
+    private void Inventory_EditActionPerformed() {
+        int row = Inventory_Table.getSelectedRow();
+        if (row == -1)
+            JOptionPane.showMessageDialog(null, "Please Select a Product to Edit it's Details.", "No Product Selected", JOptionPane.ERROR_MESSAGE);
+        else {
+            PID = Inventory_Table.getValueAt(row, 0).toString();
+            New_Product_Heading.setText("Edit Product Details");
+            Product_Name.setText(Inventory_Table.getValueAt(row, 1).toString());
+            Price_Field.setText(Inventory_Table.getValueAt(row, 2).toString());
+            GST_Rate.setText(Inventory_Table.getValueAt(row, 3).toString());
+            Available_Quantity.setText(Inventory_Table.getValueAt(row, 4).toString());
+            DisableInventory_ActionPerformed();
+            Container_Deck.show(Container, "invenNew");
+        }
+    }
+
+    private void Inventory_RemoveActionPerformed() {
+        int[] rows = Inventory_Table.getSelectedRows();
+        for (int i=0; i<rows.length; i++) {
+            String ProdID = Inventory_Table.getValueAt(rows[i]-i, 0).toString();
+            com.astral.internal.SQLite.remRowInven(ProdID);
+            Inventory_Model.removeRow(rows[i]-i);
+        }
+    }
+
+    private void Inventory_UpdateActionPerformed() {
+        int row = Inventory_Table.getSelectedRow();
+        if (row == -1)
+            JOptionPane.showMessageDialog(null, "Please Select a Product to Update it's Stock.", "No Product Selected", JOptionPane.ERROR_MESSAGE);
+        else {
+            PID = Inventory_Table.getValueAt(row, 0).toString();
+            int quantity = 0;
+            if (Inventory_Table.getValueAt(row, 4) != null)
+                quantity = (Integer) Inventory_Table.getValueAt(row, 4);
+            String update = JOptionPane.showInputDialog(null, "Enter the Amount of Stock You want to Increase", "Update Stock", JOptionPane.PLAIN_MESSAGE);
+            if (update == null || update.equals(""))
+                update = "0";
+            String quan = Integer.toString(quantity + Integer.parseInt(update));
+            com.astral.internal.SQLite.updateStock(PID, quan);
+            Inventory_ActionPerformed();
+        }
+    }
+
+    private void Inventory_ImportActionPerformed() {
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Import from CSV");
+        fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
+        if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+            com.astral.internal.Function.invenCSVim(fileChooser.getSelectedFile());
+            JOptionPane.showMessageDialog(null, "Inventory Data Imported Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            Inventory_ActionPerformed();
+        }
     }
 
     private void Settings_ActionPerformed() {
@@ -2781,10 +2978,12 @@ public class Main extends javax.swing.JFrame {
         Current_Contact_Number.setText(com.astral.internal.SQLite.getConfigValue("Contact Number"));
         Current_Email_Address.setText(com.astral.internal.SQLite.getConfigValue("Email Address"));
         Current_Address.setText(com.astral.internal.SQLite.getConfigValue("Business Location"));
+        DisableInventory_ActionPerformed();
         Container_Deck.show(Container, "settings");
     }
 
     private void About_ActionPerformed() {
+        DisableInventory_ActionPerformed();
         Container_Deck.show(Container, "about");
     }
 
@@ -2831,6 +3030,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel About_Page;
     private javax.swing.JLabel About_Para;
     private javax.swing.JButton Add;
+    private javax.swing.JMenuItem Add_MenuItem;
     private javax.swing.JScrollPane Authors_Container;
     private javax.swing.JPanel Authors_Tab;
     private javax.swing.JTextArea Authors_Text;
@@ -2888,7 +3088,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Customer_Name_Label;
     private javax.swing.JPanel Details_Tab;
     private javax.swing.JButton Edit;
-    private javax.swing.JMenu Edit_Menu;
+    private javax.swing.JMenuItem Edit_MenuItem;
     private javax.swing.JTextField Email_Address;
     private javax.swing.JLabel Email_Address_Label;
     private javax.swing.JPanel Email_Address_Panel;
@@ -2923,7 +3123,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton Home_Button;
     private javax.swing.JPanel Home_Page;
     private javax.swing.JButton Import;
+    private javax.swing.JMenuItem Import_MenuItem;
     private javax.swing.JButton Inventory_Button;
+    private javax.swing.JMenu Inventory_Menu;
+    private javax.swing.JMenuItem Inventory_MenuItem;
     private javax.swing.JPanel Inventory_New;
     private javax.swing.JPanel Inventory_Page;
     private javax.swing.JTable Inventory_Table;
@@ -2933,6 +3136,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable Invoice_Table;
     private javax.swing.JScrollPane Invoice_Table_Container;
     private javax.swing.JButton Invoicing_Button;
+    private javax.swing.JMenuItem Invoicing_MenuItem;
     private javax.swing.JScrollPane License_Container;
     private javax.swing.JPanel License_Tab;
     private javax.swing.JTextArea License_Text;
@@ -2951,6 +3155,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel New_Email_Label;
     private javax.swing.JLabel New_Heading;
     private javax.swing.JButton New_Invoice;
+    private javax.swing.JMenuItem New_Invoice_MenuItem;
     private javax.swing.JTable New_Invoice_Table;
     private javax.swing.JScrollPane New_Invoice_Table_Container;
     private javax.swing.JPasswordField New_Password;
@@ -2987,12 +3192,17 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Recovery_Key_Para;
     private javax.swing.JButton Remove;
     private javax.swing.JButton Remove1;
+    private javax.swing.JMenuItem Remove_MenuItem;
     private javax.swing.JButton Reset_Button;
     private javax.swing.JButton Reset_Key_Button;
     private javax.swing.JButton Save_Changes_Button;
     private javax.swing.JPopupMenu.Separator Separator_01;
+    private javax.swing.JPopupMenu.Separator Separator_02;
+    private javax.swing.JPopupMenu.Separator Separator_03;
+    private javax.swing.JPopupMenu.Separator Separator_04;
     private javax.swing.JButton Settings_Button;
     private javax.swing.JTabbedPane Settings_Container;
+    private javax.swing.JMenuItem Settings_MenuItem;
     private javax.swing.JPanel Settings_Page;
     private javax.swing.JToolBar SideBar;
     private javax.swing.JPanel SignIn;
@@ -3019,6 +3229,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel Speckle_Logo;
     private javax.swing.JMenu Tools_Menu;
     private javax.swing.JButton Update;
+    private javax.swing.JMenuItem Update_MenuItem;
     private javax.swing.JPanel User_Tab;
     private javax.swing.JTextField Username;
     private javax.swing.JLabel Username_Label;
