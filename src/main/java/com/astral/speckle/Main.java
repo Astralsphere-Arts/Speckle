@@ -2,7 +2,6 @@ package com.astral.speckle;
 
 import java.awt.Component;
 import java.awt.Desktop;
-import java.io.File;
 import java.io.IOException;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -2508,7 +2507,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_ImportActionPerformed
 
     private void Export_InventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Export_InventoryActionPerformed
-        Export_ActionPerformed("Inventory");
+        com.astral.internal.Function.ExportActionPerformed("Inventory");
     }//GEN-LAST:event_Export_InventoryActionPerformed
 
     private void ViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewActionPerformed
@@ -2537,7 +2536,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_Remove1ActionPerformed
 
     private void Export_InvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Export_InvoiceActionPerformed
-        Export_ActionPerformed("Invoice");
+        com.astral.internal.Function.ExportActionPerformed("Invoice");
     }//GEN-LAST:event_Export_InvoiceActionPerformed
 
     private void New_InvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_New_InvoiceActionPerformed
@@ -2690,11 +2689,11 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_EditActionPerformed
 
     private void Export_Invoice_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Export_Invoice_MenuItemActionPerformed
-        Export_ActionPerformed("Invoice");
+        com.astral.internal.Function.ExportActionPerformed("Invoice");
     }//GEN-LAST:event_Export_Invoice_MenuItemActionPerformed
 
     private void Export_Inventory_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Export_Inventory_MenuItemActionPerformed
-        Export_ActionPerformed("Inventory");
+        com.astral.internal.Function.ExportActionPerformed("Inventory");
     }//GEN-LAST:event_Export_Inventory_MenuItemActionPerformed
 
     private void SignIn_ActionPerformed() {
@@ -2787,21 +2786,6 @@ public class Main extends javax.swing.JFrame {
 
     private void About_ActionPerformed() {
         Container_Deck.show(Container, "about");
-    }
-
-    private void Export_ActionPerformed(String TableName) {
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Export to CSV");
-        fileChooser.setDialogType(JFileChooser.SAVE_DIALOG);
-        fileChooser.setSelectedFile(new File("Speckle-" + TableName + "-" + new java.text.SimpleDateFormat("dd-MM-yyyy").format(new java.util.Date()) + ".csv"));
-        fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
-        if (fileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-            if (TableName.equals("Inventory"))
-                com.astral.internal.Function.invenCSVex(fileChooser.getSelectedFile());
-            else
-                com.astral.internal.Function.invoiceCSVex(fileChooser.getSelectedFile());
-            JOptionPane.showMessageDialog(null, TableName + " Data Exported Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-        }
     }
 
     /**

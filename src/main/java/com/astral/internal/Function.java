@@ -23,7 +23,9 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.Locale;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.filechooser.FileSystemView;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -173,8 +175,7 @@ public class Function {
     
     public static void invoicePDF(String invID) {
         invFolder.mkdir();
-        File invSubFolder = new File(invFolder + File.separator + new java.text.SimpleDateFormat("yyyy - MMMM")
-            .format(new java.util.Date()));
+        File invSubFolder = new File(invFolder + File.separator + new java.text.SimpleDateFormat("yyyy - MMMM").format(new java.util.Date()));
         invSubFolder.mkdir();
         invPath = new File(invSubFolder + File.separator + invID + ".pdf");
         ResultSet invoData = com.astral.internal.SQLite.invoData(invID);
@@ -341,51 +342,39 @@ public class Function {
         }
     }
     
-    public static void invoiceCSVex(File CSV) {
-        ResultSet invoData = com.astral.internal.SQLite.invoData();
-        try (FileWriter invCSV = new FileWriter(CSV)) {
-            ResultSetMetaData invMeta = invoData.getMetaData();
-            invCSV.write("\"" + invMeta.getColumnLabel(1) + "\",");
-            invCSV.write("\"" + invMeta.getColumnLabel(2) + "\",");
-            invCSV.write("\"" + invMeta.getColumnLabel(3) + "\",");
-            invCSV.write("\"" + invMeta.getColumnLabel(4) + "\",");
-            invCSV.write("\"" + invMeta.getColumnLabel(5) + "\",");
-            invCSV.write("\"" + invMeta.getColumnLabel(6) + "\",");
-            invCSV.write("\"" + invMeta.getColumnLabel(7) + "\"\r\n");
-            while (invoData.next()) {
-                invCSV.write("\"" + invoData.getString("Invoice ID") + "\",");
-                invCSV.write("\"" + invoData.getString("Customer Name") + "\",");
-                invCSV.write("\"" + invoData.getString("Contact Number") + "\",");
-                invCSV.write("\"" + invoData.getString("Address") + "\",");
-                invCSV.write("\"" + invoData.getString("Date of Sale") + "\",");
-                invCSV.write("\"" + invoData.getString("GST") + "\",");
-                invCSV.write("\"" + invoData.getString("Sale Amount") + "\"\r\n");
+    public static void ExportActionPerformed(String TableName) {
+        ResultSet resultSet;
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Export to CSV");
+        fileChooser.setDialogType(JFileChooser.SAVE_DIALOG);
+        fileChooser.setSelectedFile(new File("Speckle-" + TableName + "-" + new java.text.SimpleDateFormat("dd-MM-yyyy").format(new java.util.Date()) + ".csv"));
+        fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
+        if (fileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+            if (TableName.equals("Inventory"))
+                resultSet = com.astral.internal.SQLite.invenData();
+            else
+                resultSet = com.astral.internal.SQLite.invoData();
+            try (FileWriter writer = new FileWriter(fileChooser.getSelectedFile())) {
+                ResultSetMetaData metaData = resultSet.getMetaData();
+                int columnCount = metaData.getColumnCount();
+                for (int i = 1; i <= columnCount; i++) {
+                    writer.append("\"" + metaData.getColumnName(i));
+                    if (i < columnCount)
+                        writer.append("\",");
+                }
+                writer.append("\"\r\n");
+                while (resultSet.next()) {
+                    for (int i = 1; i <= columnCount; i++) {
+                        writer.append("\"" + resultSet.getString(i));
+                        if (i < columnCount)
+                            writer.append("\",");
+                    }
+                    writer.append("\"\r\n");
+                }
+            } catch (IOException | SQLException ex) {
+                JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
             }
-            invCSV.close();
-        } catch (IOException | SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }
-    
-    public static void invenCSVex(File CSV) {
-        ResultSet invenData = com.astral.internal.SQLite.invenData();
-        try (FileWriter invCSV = new FileWriter(CSV)) {
-            ResultSetMetaData invMeta = invenData.getMetaData();
-            invCSV.write("\"" + invMeta.getColumnLabel(1) + "\",");
-            invCSV.write("\"" + invMeta.getColumnLabel(2) + "\",");
-            invCSV.write("\"" + invMeta.getColumnLabel(3) + "\",");
-            invCSV.write("\"" + invMeta.getColumnLabel(4) + "\",");
-            invCSV.write("\"" + invMeta.getColumnLabel(5) + "\"\r\n");
-            while (invenData.next()) {
-                invCSV.write("\"" + invenData.getString("Product ID") + "\",");
-                invCSV.write("\"" + invenData.getString("Product Name") + "\",");
-                invCSV.write("\"" + invenData.getString("Price") + "\",");
-                invCSV.write("\"" + invenData.getString("GST Rate") + "\",");
-                invCSV.write("\"" + invenData.getString("Available Quantity") + "\"\r\n");
-            }
-            invCSV.close();
-        } catch (IOException | SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, TableName + " Data Exported Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
         }
     }
     
