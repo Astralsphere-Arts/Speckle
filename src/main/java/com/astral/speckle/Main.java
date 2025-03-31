@@ -31,9 +31,9 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         Container_Deck = (java.awt.CardLayout)Container.getLayout();
         if (com.astral.internal.SQLite.firstUse) {
-            Home_Button.setEnabled(false);
-            About_Button.setEnabled(false);
-            About_MenuItem.setEnabled(false);
+            SB_Home_Button.setEnabled(false);
+            SB_About_Button.setEnabled(false);
+            MB_About.setEnabled(false);
             Container_Deck.show(Container, "signUpUser");
         }
         else
@@ -50,230 +50,230 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         SideBar = new javax.swing.JToolBar();
-        Filler_01 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10));
-        Home_Button = new javax.swing.JButton();
-        Filler_02 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10));
-        Invoicing_Button = new javax.swing.JButton();
-        Filler_03 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10));
-        Inventory_Button = new javax.swing.JButton();
-        Filler_04 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10));
-        Settings_Button = new javax.swing.JButton();
-        Filler_05 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10));
-        About_Button = new javax.swing.JButton();
-        Filler_06 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 32767));
-        SignOut_Button = new javax.swing.JButton();
-        Filler_07 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10));
+        SB_Filler_01 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10));
+        SB_Home_Button = new javax.swing.JButton();
+        SB_Filler_02 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10));
+        SB_Invoicing_Button = new javax.swing.JButton();
+        SB_Filler_03 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10));
+        SB_Inventory_Button = new javax.swing.JButton();
+        SB_Filler_04 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10));
+        SB_Settings_Button = new javax.swing.JButton();
+        SB_Filler_05 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10));
+        SB_About_Button = new javax.swing.JButton();
+        SB_Filler_06 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 32767));
+        SB_SignOut_Button = new javax.swing.JButton();
+        SB_Filler_07 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10));
         Container = new javax.swing.JPanel();
         SignIn = new javax.swing.JPanel();
-        SignIn_Heading = new javax.swing.JLabel();
-        SignIn_Para = new javax.swing.JLabel();
-        SignIn_SubHeading = new javax.swing.JLabel();
-        Username_Label = new javax.swing.JLabel();
-        Username = new javax.swing.JTextField();
-        Password_Label = new javax.swing.JLabel();
-        Password = new javax.swing.JPasswordField();
-        SignIn_Button = new javax.swing.JButton();
-        Forgot_Password_Label = new javax.swing.JLabel();
-        SignUp_User = new javax.swing.JPanel();
-        SignUp_User_Heading = new javax.swing.JLabel();
-        SignUp_User_SubHeading = new javax.swing.JLabel();
-        SignUp_User_Para_A = new javax.swing.JLabel();
-        SignUp_User_Para_B = new javax.swing.JLabel();
-        SignUp_User_SubPanel = new javax.swing.JPanel();
-        SignUp_Username_Label = new javax.swing.JLabel();
-        SignUp_Username = new javax.swing.JTextField();
-        Create_Password_Label = new javax.swing.JLabel();
-        Create_Password = new javax.swing.JPasswordField();
-        Confirm_Password_Label = new javax.swing.JLabel();
-        Confirm_Password = new javax.swing.JPasswordField();
-        Next_Button = new javax.swing.JButton();
+        SI_Heading = new javax.swing.JLabel();
+        SI_Paragraph = new javax.swing.JLabel();
+        SI_Sub_Heading = new javax.swing.JLabel();
+        SI_Username_Label = new javax.swing.JLabel();
+        SI_Username = new javax.swing.JTextField();
+        SI_Password_Label = new javax.swing.JLabel();
+        SI_Password = new javax.swing.JPasswordField();
+        SI_Button = new javax.swing.JButton();
+        SI_Forgot_Password = new javax.swing.JLabel();
+        SignUp_Main = new javax.swing.JPanel();
+        SM_Heading = new javax.swing.JLabel();
+        SM_Sub_Heading = new javax.swing.JLabel();
+        SM_Paragraph_01 = new javax.swing.JLabel();
+        SM_Paragraph_02 = new javax.swing.JLabel();
+        SM_User_Details = new javax.swing.JPanel();
+        SM_Username_Label = new javax.swing.JLabel();
+        SM_Username = new javax.swing.JTextField();
+        SM_Create_Password_Label = new javax.swing.JLabel();
+        SM_Create_Password = new javax.swing.JPasswordField();
+        SM_Confirm_Password_Label = new javax.swing.JLabel();
+        SM_Confirm_Password = new javax.swing.JPasswordField();
+        SM_Next_Button = new javax.swing.JButton();
         SignUp_Details = new javax.swing.JPanel();
-        SignUp_Details_Heading = new javax.swing.JLabel();
-        SignUp_Details_Para = new javax.swing.JLabel();
-        SignUp_Details_Panel = new javax.swing.JPanel();
-        Business_Name_Label = new javax.swing.JLabel();
-        Business_Name = new javax.swing.JTextField();
-        Contact_Number_Label = new javax.swing.JLabel();
-        Contact_Number = new javax.swing.JTextField();
-        Email_Address_Label = new javax.swing.JLabel();
-        Email_Address = new javax.swing.JTextField();
-        Business_Location_Label = new javax.swing.JLabel();
-        Business_Location = new javax.swing.JTextField();
-        Back_Button = new javax.swing.JButton();
-        SignUp_Button = new javax.swing.JButton();
+        SD_Heading = new javax.swing.JLabel();
+        SD_Paragraph = new javax.swing.JLabel();
+        SD_Business_Details = new javax.swing.JPanel();
+        SD_Business_Name_Label = new javax.swing.JLabel();
+        SD_Business_Name = new javax.swing.JTextField();
+        SD_Contact_Number_Label = new javax.swing.JLabel();
+        SD_Contact_Number = new javax.swing.JTextField();
+        SD_Email_Address_Label = new javax.swing.JLabel();
+        SD_Email_Address = new javax.swing.JTextField();
+        SD_Business_Location_Label = new javax.swing.JLabel();
+        SD_Business_Location = new javax.swing.JTextField();
+        SD_Back_Button = new javax.swing.JButton();
+        SD_SignUp_Button = new javax.swing.JButton();
         Verify_Details = new javax.swing.JPanel();
-        Verify_Details_Heading = new javax.swing.JLabel();
-        Verify_Username_Label = new javax.swing.JLabel();
-        Verify_Username = new javax.swing.JLabel();
-        Verify_Business_Name_Label = new javax.swing.JLabel();
-        Verify_Business_Name = new javax.swing.JLabel();
-        Verify_Contact_Number_Label = new javax.swing.JLabel();
-        Verfiy_Contact_Number = new javax.swing.JLabel();
-        Verify_Email_Address_Label = new javax.swing.JLabel();
-        Verify_Email_Address = new javax.swing.JLabel();
-        Verify_Business_Location_Label = new javax.swing.JLabel();
-        Verify_Business_Location = new javax.swing.JLabel();
-        Recovery_Key_Heading = new javax.swing.JLabel();
-        Recovery_Key_Para = new javax.swing.JLabel();
-        Recovery_Key_Display_Label = new javax.swing.JLabel();
-        Finish_Button = new javax.swing.JButton();
+        VD_Heading = new javax.swing.JLabel();
+        VD_Username_Label = new javax.swing.JLabel();
+        VD_Username = new javax.swing.JLabel();
+        VD_Business_Name_Label = new javax.swing.JLabel();
+        VD_Business_Name = new javax.swing.JLabel();
+        VD_Contact_Number_Label = new javax.swing.JLabel();
+        VD_Contact_Number = new javax.swing.JLabel();
+        VD_Email_Address_Label = new javax.swing.JLabel();
+        VD_Email_Address = new javax.swing.JLabel();
+        VD_Business_Location_Label = new javax.swing.JLabel();
+        VD_Business_Location = new javax.swing.JLabel();
+        VD_Recovery_Key_Heading = new javax.swing.JLabel();
+        VD_Recovery_Key_Paragraph = new javax.swing.JLabel();
+        VD_Recovery_Key = new javax.swing.JLabel();
+        VD_Finish_Button = new javax.swing.JButton();
         Forgot_Password = new javax.swing.JPanel();
-        Forgot_Password_Heading = new javax.swing.JLabel();
-        Forgot_Password_Para = new javax.swing.JLabel();
-        Forgot_Password_Panel = new javax.swing.JPanel();
-        Recovery_Key_Label = new javax.swing.JLabel();
-        Recovery_Key = new javax.swing.JTextField();
-        New_Password_Label = new javax.swing.JLabel();
-        New_Password = new javax.swing.JPasswordField();
-        Confirm_Passwd_Label = new javax.swing.JLabel();
-        Confirm_Passwd = new javax.swing.JPasswordField();
-        Cancel_Button = new javax.swing.JButton();
-        Reset_Button = new javax.swing.JButton();
-        Home_Page = new javax.swing.JPanel();
-        Banner = new javax.swing.JPanel();
-        Speckle_Label = new javax.swing.JLabel();
-        Help = new javax.swing.JPanel();
-        Help_Label = new javax.swing.JLabel();
-        Help_Para = new javax.swing.JLabel();
-        Help_Content = new javax.swing.JLabel();
-        Low_Stock = new javax.swing.JPanel();
-        Low_Stock_Label = new javax.swing.JLabel();
-        Low_Stock_Para = new javax.swing.JLabel();
-        Product_One_Label = new javax.swing.JLabel();
-        Product_One_Quantity = new javax.swing.JLabel();
-        Product_Two_Label = new javax.swing.JLabel();
-        Product_Two_Quantity = new javax.swing.JLabel();
-        Product_Three_Label = new javax.swing.JLabel();
-        Product_Three_Quantity = new javax.swing.JLabel();
-        Product_Four_Label = new javax.swing.JLabel();
-        Product_Four_Quantity = new javax.swing.JLabel();
-        Product_Five_Label = new javax.swing.JLabel();
-        Product_Five_Quantity = new javax.swing.JLabel();
-        Invoice_Main = new javax.swing.JPanel();
-        Main_Heading = new javax.swing.JLabel();
-        New_Invoice = new javax.swing.JButton();
-        Invoice_Table_Container = new javax.swing.JScrollPane();
-        Invoice_Table = new javax.swing.JTable();
-        View = new javax.swing.JButton();
-        Remove1 = new javax.swing.JButton();
-        Export_Invoice = new javax.swing.JButton();
-        Invoice_New = new javax.swing.JPanel();
-        New_Heading = new javax.swing.JLabel();
-        Customer_Details_Panel = new javax.swing.JPanel();
-        Customer_Name_Label = new javax.swing.JLabel();
-        Customer_Name = new javax.swing.JTextField();
-        Customer_Contact_Label = new javax.swing.JLabel();
-        Customer_Contact = new javax.swing.JTextField();
-        Customer_Address_Label = new javax.swing.JLabel();
-        Customer_Address = new javax.swing.JTextField();
-        New_Invoice_Table_Container = new javax.swing.JScrollPane();
-        New_Invoice_Table = new javax.swing.JTable();
-        Cancel = new javax.swing.JButton();
-        Create_Invoice = new javax.swing.JButton();
-        Inventory_Page = new javax.swing.JPanel();
-        Heading = new javax.swing.JLabel();
-        Inventory_Table_Container = new javax.swing.JScrollPane();
-        Inventory_Table = new javax.swing.JTable();
-        Add = new javax.swing.JButton();
-        Edit = new javax.swing.JButton();
-        Remove = new javax.swing.JButton();
-        Update = new javax.swing.JButton();
-        Import = new javax.swing.JButton();
-        Export_Inventory = new javax.swing.JButton();
-        Inventory_New = new javax.swing.JPanel();
-        New_Product_Heading = new javax.swing.JLabel();
-        New_Product_Panel = new javax.swing.JPanel();
-        Product_Name_Label = new javax.swing.JLabel();
-        Product_Name = new javax.swing.JTextField();
-        Price_Label = new javax.swing.JLabel();
-        Price_Field = new javax.swing.JTextField();
-        GST_Rate_Label = new javax.swing.JLabel();
-        GST_Rate = new javax.swing.JTextField();
-        Available_Quantity_Label = new javax.swing.JLabel();
-        Available_Quantity = new javax.swing.JTextField();
-        Cancel_Adding = new javax.swing.JButton();
-        Finish_Adding = new javax.swing.JButton();
-        Settings_Page = new javax.swing.JPanel();
-        Settings_Container = new javax.swing.JTabbedPane();
-        User_Tab = new javax.swing.JPanel();
-        Username_Panel = new javax.swing.JPanel();
-        Current_Username_Label = new javax.swing.JLabel();
-        Current_Username = new javax.swing.JTextField();
-        New_Username_Label = new javax.swing.JLabel();
-        New_Username = new javax.swing.JTextField();
-        Change_Username_Button = new javax.swing.JButton();
-        Password_Panel = new javax.swing.JPanel();
-        Current_Password_Label = new javax.swing.JLabel();
-        Current_Password = new javax.swing.JPasswordField();
-        New_Password_Label1 = new javax.swing.JLabel();
-        New_Password1 = new javax.swing.JPasswordField();
-        Confirm_Password_Label1 = new javax.swing.JLabel();
-        Confirm_Password1 = new javax.swing.JPasswordField();
-        Change_Password_Button = new javax.swing.JButton();
-        Recovery_Key_Panel = new javax.swing.JPanel();
-        Current_Password_Label1 = new javax.swing.JLabel();
-        Current_Password1 = new javax.swing.JPasswordField();
-        Reset_Key_Button = new javax.swing.JButton();
-        Details_Tab = new javax.swing.JPanel();
-        Business_Name_Panel = new javax.swing.JPanel();
-        Current_Business_Label = new javax.swing.JLabel();
-        Current_Business_Name = new javax.swing.JTextField();
-        New_Business_Label = new javax.swing.JLabel();
-        New_Business_Name = new javax.swing.JTextField();
-        Contact_Number_Panel = new javax.swing.JPanel();
-        Current_Contact_Label = new javax.swing.JLabel();
-        Current_Contact_Number = new javax.swing.JTextField();
-        New_Contact_Label = new javax.swing.JLabel();
-        New_Contact_Number = new javax.swing.JTextField();
-        Email_Address_Panel = new javax.swing.JPanel();
-        Current_Email_Label = new javax.swing.JLabel();
-        Current_Email_Address = new javax.swing.JTextField();
-        New_Email_Label = new javax.swing.JLabel();
-        New_Email_Address = new javax.swing.JTextField();
-        Business_Address_Panel = new javax.swing.JPanel();
-        Current_Address_Label = new javax.swing.JLabel();
-        Current_Address = new javax.swing.JTextField();
-        New_Address_Label = new javax.swing.JLabel();
-        New_Address = new javax.swing.JTextField();
-        Save_Changes_Button = new javax.swing.JButton();
-        About_Page = new javax.swing.JPanel();
-        Speckle_Logo = new javax.swing.JLabel();
-        About_Heading = new javax.swing.JLabel();
-        Version_Label = new javax.swing.JLabel();
-        About_Para = new javax.swing.JLabel();
-        About_Container = new javax.swing.JTabbedPane();
-        Authors_Tab = new javax.swing.JPanel();
-        Authors_Container = new javax.swing.JScrollPane();
-        Authors_Text = new javax.swing.JTextArea();
-        License_Tab = new javax.swing.JPanel();
-        License_Container = new javax.swing.JScrollPane();
-        License_Text = new javax.swing.JTextArea();
-        Credits_Tab = new javax.swing.JPanel();
-        Credits_Container = new javax.swing.JScrollPane();
-        Credits_Text = new javax.swing.JTextArea();
+        FP_Heading = new javax.swing.JLabel();
+        FP_Paragraph = new javax.swing.JLabel();
+        FP_New_Details = new javax.swing.JPanel();
+        FP_Recovery_Key_Label = new javax.swing.JLabel();
+        FP_Recovery_Key = new javax.swing.JTextField();
+        FP_New_Password_Label = new javax.swing.JLabel();
+        FP_New_Password = new javax.swing.JPasswordField();
+        FP_Confirm_Password_Label = new javax.swing.JLabel();
+        FP_Confirm_Password = new javax.swing.JPasswordField();
+        FP_Cancel_Button = new javax.swing.JButton();
+        FP_Reset_Button = new javax.swing.JButton();
+        Home = new javax.swing.JPanel();
+        HOME_Banner = new javax.swing.JPanel();
+        HOME_Main_Heading = new javax.swing.JLabel();
+        HOME_Help = new javax.swing.JPanel();
+        HOME_Help_Heading = new javax.swing.JLabel();
+        HOME_Help_Paragraph = new javax.swing.JLabel();
+        HOME_Help_Content = new javax.swing.JLabel();
+        HOME_Low_Stock = new javax.swing.JPanel();
+        HOME_Low_Stock_Heading = new javax.swing.JLabel();
+        HOME_Low_Stock_Paragraph = new javax.swing.JLabel();
+        HOME_Product_One_Label = new javax.swing.JLabel();
+        HOME_Product_One_Quantity = new javax.swing.JLabel();
+        HOME_Product_Two_Label = new javax.swing.JLabel();
+        HOME_Product_Two_Quantity = new javax.swing.JLabel();
+        HOME_Product_Three_Label = new javax.swing.JLabel();
+        HOME_Product_Three_Quantity = new javax.swing.JLabel();
+        HOME_Product_Four_Label = new javax.swing.JLabel();
+        HOME_Product_Four_Quantity = new javax.swing.JLabel();
+        HOME_Product_Five_Label = new javax.swing.JLabel();
+        HOME_Product_Five_Quantity = new javax.swing.JLabel();
+        Invoice = new javax.swing.JPanel();
+        INVO_Heading = new javax.swing.JLabel();
+        INVO_New_Invoice_Button = new javax.swing.JButton();
+        INVO_Table_Container = new javax.swing.JScrollPane();
+        INVO_Table = new javax.swing.JTable();
+        INVO_View_Button = new javax.swing.JButton();
+        INVO_Remove_Button = new javax.swing.JButton();
+        INVO_Export_Button = new javax.swing.JButton();
+        New_Invoice = new javax.swing.JPanel();
+        NI_Heading = new javax.swing.JLabel();
+        NI_Customer_Details = new javax.swing.JPanel();
+        NI_Customer_Name_Label = new javax.swing.JLabel();
+        NI_Customer_Name = new javax.swing.JTextField();
+        NI_Customer_Contact_Label = new javax.swing.JLabel();
+        NI_Customer_Contact = new javax.swing.JTextField();
+        NI_Customer_Address_Label = new javax.swing.JLabel();
+        NI_Customer_Address = new javax.swing.JTextField();
+        NI_Table_Container = new javax.swing.JScrollPane();
+        NI_Table = new javax.swing.JTable();
+        NI_Cancel_Button = new javax.swing.JButton();
+        NI_Create_Button = new javax.swing.JButton();
+        Inventory = new javax.swing.JPanel();
+        INV_Heading = new javax.swing.JLabel();
+        INV_Table_Container = new javax.swing.JScrollPane();
+        INV_Table = new javax.swing.JTable();
+        INV_Add_Button = new javax.swing.JButton();
+        INV_Edit_Button = new javax.swing.JButton();
+        INV_Remove_Button = new javax.swing.JButton();
+        INV_Update_Button = new javax.swing.JButton();
+        INV_Import_Button = new javax.swing.JButton();
+        INV_Export_Button = new javax.swing.JButton();
+        New_Product = new javax.swing.JPanel();
+        NP_Heading = new javax.swing.JLabel();
+        NP_Product_Details = new javax.swing.JPanel();
+        NP_Product_Name_Label = new javax.swing.JLabel();
+        NP_Product_Name = new javax.swing.JTextField();
+        NP_Price_Label = new javax.swing.JLabel();
+        NP_Price = new javax.swing.JTextField();
+        NP_GST_Rate_Label = new javax.swing.JLabel();
+        NP_GST_Rate = new javax.swing.JTextField();
+        NP_Available_Quantity_Label = new javax.swing.JLabel();
+        NP_Available_Quantity = new javax.swing.JTextField();
+        NP_Cancel_Button = new javax.swing.JButton();
+        NP_Finish_Button = new javax.swing.JButton();
+        Settings = new javax.swing.JPanel();
+        SE_TabbedPane = new javax.swing.JTabbedPane();
+        SE_User_Tab = new javax.swing.JPanel();
+        SE_Username = new javax.swing.JPanel();
+        SE_Current_Username_Label = new javax.swing.JLabel();
+        SE_Current_Username = new javax.swing.JTextField();
+        SE_New_Username_Label = new javax.swing.JLabel();
+        SE_New_Username = new javax.swing.JTextField();
+        SE_Change_Username_Button = new javax.swing.JButton();
+        SE_Password = new javax.swing.JPanel();
+        SE_Current_Password_Label = new javax.swing.JLabel();
+        SE_Current_Password = new javax.swing.JPasswordField();
+        SE_New_Password_Label = new javax.swing.JLabel();
+        SE_New_Password = new javax.swing.JPasswordField();
+        SE_Confirm_Password_Label = new javax.swing.JLabel();
+        SE_Confirm_Password = new javax.swing.JPasswordField();
+        SE_Change_Password_Button = new javax.swing.JButton();
+        SE_Recovery_Key = new javax.swing.JPanel();
+        SE_Recovery_Password_Label = new javax.swing.JLabel();
+        SE_Recovery_Password = new javax.swing.JPasswordField();
+        SE_Reset_Key_Button = new javax.swing.JButton();
+        SE_Business_Tab = new javax.swing.JPanel();
+        SE_Business_Name = new javax.swing.JPanel();
+        SE_Current_Business_Label = new javax.swing.JLabel();
+        SE_Current_Business_Name = new javax.swing.JTextField();
+        SE_New_Business_Label = new javax.swing.JLabel();
+        SE_New_Business_Name = new javax.swing.JTextField();
+        SE_Contact_Number = new javax.swing.JPanel();
+        SE_Current_Contact_Label = new javax.swing.JLabel();
+        SE_Current_Contact_Number = new javax.swing.JTextField();
+        SE_New_Contact_Label = new javax.swing.JLabel();
+        SE_New_Contact_Number = new javax.swing.JTextField();
+        SE_Email_Address = new javax.swing.JPanel();
+        SE_Current_Email_Label = new javax.swing.JLabel();
+        SE_Current_Email_Address = new javax.swing.JTextField();
+        SE_New_Email_Label = new javax.swing.JLabel();
+        SE_New_Email_Address = new javax.swing.JTextField();
+        SE_Business_Location = new javax.swing.JPanel();
+        SE_Current_Address_Label = new javax.swing.JLabel();
+        SE_Current_Address = new javax.swing.JTextField();
+        SE_New_Address_Label = new javax.swing.JLabel();
+        SE_New_Address = new javax.swing.JTextField();
+        SE_Save_Changes_Button = new javax.swing.JButton();
+        About = new javax.swing.JPanel();
+        AB_Logo = new javax.swing.JLabel();
+        AB_Heading = new javax.swing.JLabel();
+        AB_Version_Label = new javax.swing.JLabel();
+        AB_Paragraph = new javax.swing.JLabel();
+        AB_TabbedPane = new javax.swing.JTabbedPane();
+        AB_Authors_Tab = new javax.swing.JPanel();
+        AB_Authors_Container = new javax.swing.JScrollPane();
+        AB_Authors_Text = new javax.swing.JTextArea();
+        AB_License_Tab = new javax.swing.JPanel();
+        AB_License_Container = new javax.swing.JScrollPane();
+        AB_License_Text = new javax.swing.JTextArea();
+        AB_Credits_Tab = new javax.swing.JPanel();
+        AB_Credits_Container = new javax.swing.JScrollPane();
+        AB_Credits_Text = new javax.swing.JTextArea();
         MenuBar = new javax.swing.JMenuBar();
-        File_Menu = new javax.swing.JMenu();
-        New_Invoice_MenuItem = new javax.swing.JMenuItem();
-        Invoicing_MenuItem = new javax.swing.JMenuItem();
-        Inventory_MenuItem = new javax.swing.JMenuItem();
-        Separator_01 = new javax.swing.JPopupMenu.Separator();
-        SignOut_MenuItem = new javax.swing.JMenuItem();
-        Separator_02 = new javax.swing.JPopupMenu.Separator();
-        Exit_MenuItem = new javax.swing.JMenuItem();
-        Inventory_Menu = new javax.swing.JMenu();
-        Add_MenuItem = new javax.swing.JMenuItem();
-        Edit_MenuItem = new javax.swing.JMenuItem();
-        Remove_MenuItem = new javax.swing.JMenuItem();
-        Separator_03 = new javax.swing.JPopupMenu.Separator();
-        Update_MenuItem = new javax.swing.JMenuItem();
-        Import_MenuItem = new javax.swing.JMenuItem();
-        Tools_Menu = new javax.swing.JMenu();
-        Export_Invoice_MenuItem = new javax.swing.JMenuItem();
-        Export_Inventory_MenuItem = new javax.swing.JMenuItem();
-        Separator_04 = new javax.swing.JPopupMenu.Separator();
-        Settings_MenuItem = new javax.swing.JMenuItem();
-        Help_Menu = new javax.swing.JMenu();
-        About_MenuItem = new javax.swing.JMenuItem();
+        MB_File_Menu = new javax.swing.JMenu();
+        MB_New_Invoice = new javax.swing.JMenuItem();
+        MB_Invoice_History = new javax.swing.JMenuItem();
+        MB_Inventory = new javax.swing.JMenuItem();
+        MB_Separator_01 = new javax.swing.JPopupMenu.Separator();
+        MB_Sign_Out = new javax.swing.JMenuItem();
+        MB_Separator_02 = new javax.swing.JPopupMenu.Separator();
+        MB_Exit = new javax.swing.JMenuItem();
+        MB_Inventory_Menu = new javax.swing.JMenu();
+        MB_INV_Add = new javax.swing.JMenuItem();
+        MB_INV_Edit = new javax.swing.JMenuItem();
+        MB_INV_Remove = new javax.swing.JMenuItem();
+        MB_Separator_03 = new javax.swing.JPopupMenu.Separator();
+        MB_INV_Update = new javax.swing.JMenuItem();
+        MB_INV_Import = new javax.swing.JMenuItem();
+        MB_Tools_Menu = new javax.swing.JMenu();
+        MB_Export_Invoice = new javax.swing.JMenuItem();
+        MB_Export_Inventory = new javax.swing.JMenuItem();
+        MB_Separator_04 = new javax.swing.JPopupMenu.Separator();
+        MB_Settings = new javax.swing.JMenuItem();
+        MB_Help_Menu = new javax.swing.JMenu();
+        MB_About = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Speckle");
@@ -283,136 +283,136 @@ public class Main extends javax.swing.JFrame {
         SideBar.setBackground(new java.awt.Color(255, 255, 255));
         SideBar.setOrientation(javax.swing.SwingConstants.VERTICAL);
         SideBar.setRollover(true);
-        SideBar.add(Filler_01);
+        SideBar.add(SB_Filler_01);
 
-        Home_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/house_3d.png"))); // NOI18N
-        Home_Button.setFocusable(false);
-        Home_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Home_Button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        Home_Button.addActionListener(new java.awt.event.ActionListener() {
+        SB_Home_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/house_3d.png"))); // NOI18N
+        SB_Home_Button.setFocusable(false);
+        SB_Home_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SB_Home_Button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        SB_Home_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Home_ButtonActionPerformed(evt);
+                SB_Home_ButtonActionPerformed(evt);
             }
         });
-        SideBar.add(Home_Button);
-        SideBar.add(Filler_02);
+        SideBar.add(SB_Home_Button);
+        SideBar.add(SB_Filler_02);
 
-        Invoicing_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/scroll_3d.png"))); // NOI18N
-        Invoicing_Button.setEnabled(false);
-        Invoicing_Button.setFocusable(false);
-        Invoicing_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Invoicing_Button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        Invoicing_Button.addActionListener(new java.awt.event.ActionListener() {
+        SB_Invoicing_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/scroll_3d.png"))); // NOI18N
+        SB_Invoicing_Button.setEnabled(false);
+        SB_Invoicing_Button.setFocusable(false);
+        SB_Invoicing_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SB_Invoicing_Button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        SB_Invoicing_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Invoicing_ButtonActionPerformed(evt);
+                SB_Invoicing_ButtonActionPerformed(evt);
             }
         });
-        SideBar.add(Invoicing_Button);
-        SideBar.add(Filler_03);
+        SideBar.add(SB_Invoicing_Button);
+        SideBar.add(SB_Filler_03);
 
-        Inventory_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/package_3d.png"))); // NOI18N
-        Inventory_Button.setEnabled(false);
-        Inventory_Button.setFocusable(false);
-        Inventory_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Inventory_Button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        Inventory_Button.addActionListener(new java.awt.event.ActionListener() {
+        SB_Inventory_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/package_3d.png"))); // NOI18N
+        SB_Inventory_Button.setEnabled(false);
+        SB_Inventory_Button.setFocusable(false);
+        SB_Inventory_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SB_Inventory_Button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        SB_Inventory_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Inventory_ButtonActionPerformed(evt);
+                SB_Inventory_ButtonActionPerformed(evt);
             }
         });
-        SideBar.add(Inventory_Button);
-        SideBar.add(Filler_04);
+        SideBar.add(SB_Inventory_Button);
+        SideBar.add(SB_Filler_04);
 
-        Settings_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gear_3d.png"))); // NOI18N
-        Settings_Button.setEnabled(false);
-        Settings_Button.setFocusable(false);
-        Settings_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Settings_Button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        Settings_Button.addActionListener(new java.awt.event.ActionListener() {
+        SB_Settings_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gear_3d.png"))); // NOI18N
+        SB_Settings_Button.setEnabled(false);
+        SB_Settings_Button.setFocusable(false);
+        SB_Settings_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SB_Settings_Button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        SB_Settings_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Settings_ButtonActionPerformed(evt);
+                SB_Settings_ButtonActionPerformed(evt);
             }
         });
-        SideBar.add(Settings_Button);
-        SideBar.add(Filler_05);
+        SideBar.add(SB_Settings_Button);
+        SideBar.add(SB_Filler_05);
 
-        About_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bubbles_3d.png"))); // NOI18N
-        About_Button.setFocusable(false);
-        About_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        About_Button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        About_Button.addActionListener(new java.awt.event.ActionListener() {
+        SB_About_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bubbles_3d.png"))); // NOI18N
+        SB_About_Button.setFocusable(false);
+        SB_About_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SB_About_Button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        SB_About_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                About_ButtonActionPerformed(evt);
+                SB_About_ButtonActionPerformed(evt);
             }
         });
-        SideBar.add(About_Button);
-        SideBar.add(Filler_06);
+        SideBar.add(SB_About_Button);
+        SideBar.add(SB_Filler_06);
 
-        SignOut_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/high_voltage_3d.png"))); // NOI18N
-        SignOut_Button.setEnabled(false);
-        SignOut_Button.setFocusable(false);
-        SignOut_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        SignOut_Button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        SignOut_Button.addActionListener(new java.awt.event.ActionListener() {
+        SB_SignOut_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/high_voltage_3d.png"))); // NOI18N
+        SB_SignOut_Button.setEnabled(false);
+        SB_SignOut_Button.setFocusable(false);
+        SB_SignOut_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SB_SignOut_Button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        SB_SignOut_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SignOut_ButtonActionPerformed(evt);
+                SB_SignOut_ButtonActionPerformed(evt);
             }
         });
-        SideBar.add(SignOut_Button);
-        SideBar.add(Filler_07);
+        SideBar.add(SB_SignOut_Button);
+        SideBar.add(SB_Filler_07);
 
         Container.setLayout(new java.awt.CardLayout());
 
-        SignIn_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
-        SignIn_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SignIn_Heading.setText("Welcome To Speckle!");
-        SignIn_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SI_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
+        SI_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SI_Heading.setText("Welcome To Speckle!");
+        SI_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SignIn_Para.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        SignIn_Para.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SignIn_Para.setText("A Simple Invoicing and Inventory Management System");
-        SignIn_Para.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SI_Paragraph.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SI_Paragraph.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SI_Paragraph.setText("A Simple Invoicing and Inventory Management System");
+        SI_Paragraph.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SignIn_SubHeading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        SignIn_SubHeading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SignIn_SubHeading.setText("Please Sign In");
-        SignIn_SubHeading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SI_Sub_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        SI_Sub_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SI_Sub_Heading.setText("Please Sign In");
+        SI_Sub_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Username_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Username_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Username_Label.setText("Username");
-        Username_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SI_Username_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SI_Username_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SI_Username_Label.setText("Username");
+        SI_Username_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SI_Username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        Password_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Password_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Password_Label.setText("Password");
-        Password_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SI_Password_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SI_Password_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SI_Password_Label.setText("Password");
+        SI_Password_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SI_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        SignIn_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        SignIn_Button.setText("Sign In");
-        SignIn_Button.addActionListener(new java.awt.event.ActionListener() {
+        SI_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        SI_Button.setText("Sign In");
+        SI_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SignIn_ButtonActionPerformed(evt);
+                SI_ButtonActionPerformed(evt);
             }
         });
 
-        Forgot_Password_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
-        Forgot_Password_Label.setForeground(new java.awt.Color(0, 102, 255));
-        Forgot_Password_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Forgot_Password_Label.setText("Forgot Password?");
-        Forgot_Password_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Forgot_Password_Label.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        SI_Forgot_Password.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
+        SI_Forgot_Password.setForeground(new java.awt.Color(0, 102, 255));
+        SI_Forgot_Password.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SI_Forgot_Password.setText("Forgot Password?");
+        SI_Forgot_Password.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SI_Forgot_Password.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                Forgot_Password_LabelMouseMoved(evt);
+                SI_Forgot_PasswordMouseMoved(evt);
             }
         });
-        Forgot_Password_Label.addMouseListener(new java.awt.event.MouseAdapter() {
+        SI_Forgot_Password.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                Forgot_Password_LabelMousePressed(evt);
+                SI_Forgot_PasswordMousePressed(evt);
             }
         });
 
@@ -424,271 +424,271 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(240, Short.MAX_VALUE)
                 .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(SignIn_SubHeading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(SignIn_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(SignIn_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(SI_Sub_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(SI_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(SI_Paragraph, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(SignInLayout.createSequentialGroup()
                         .addGap(66, 66, 66)
                         .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(SI_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SI_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Username)
-                            .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SignIn_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Forgot_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(SI_Username)
+                            .addComponent(SI_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SI_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SI_Forgot_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(270, Short.MAX_VALUE))
         );
         SignInLayout.setVerticalGroup(
             SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SignInLayout.createSequentialGroup()
                 .addContainerGap(101, Short.MAX_VALUE)
-                .addComponent(SignIn_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SI_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SignIn_Para)
+                .addComponent(SI_Paragraph)
                 .addGap(40, 40, 40)
-                .addComponent(SignIn_SubHeading)
+                .addComponent(SI_Sub_Heading)
                 .addGap(18, 18, 18)
                 .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(SI_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SI_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(SI_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SI_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(22, 22, 22)
-                .addComponent(SignIn_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SI_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Forgot_Password_Label)
+                .addComponent(SI_Forgot_Password)
                 .addContainerGap(144, Short.MAX_VALUE))
         );
 
         Container.add(SignIn, "signIn");
 
-        SignUp_User_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
-        SignUp_User_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SignUp_User_Heading.setText("Welcome To Speckle!");
-        SignUp_User_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SM_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
+        SM_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SM_Heading.setText("Welcome To Speckle!");
+        SM_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SignUp_User_SubHeading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        SignUp_User_SubHeading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SignUp_User_SubHeading.setText("A Simple Invoicing and Inventory Management System");
-        SignUp_User_SubHeading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SM_Sub_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SM_Sub_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SM_Sub_Heading.setText("A Simple Invoicing and Inventory Management System");
+        SM_Sub_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SignUp_User_Para_A.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        SignUp_User_Para_A.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SignUp_User_Para_A.setText("Since this is your first time using Speckle, we need some details to set things up for you.");
-        SignUp_User_Para_A.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SM_Paragraph_01.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        SM_Paragraph_01.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SM_Paragraph_01.setText("Since this is your first time using Speckle, we need some details to set things up for you.");
+        SM_Paragraph_01.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SignUp_User_Para_B.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        SignUp_User_Para_B.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SignUp_User_Para_B.setText("First, create a Username and Password for yourself that you'll be using every time you use Speckle.");
-        SignUp_User_Para_B.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SM_Paragraph_02.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        SM_Paragraph_02.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SM_Paragraph_02.setText("First, create a Username and Password for yourself that you'll be using every time you use Speckle.");
+        SM_Paragraph_02.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SignUp_User_SubPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        SM_User_Details.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        SignUp_Username_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        SignUp_Username_Label.setText("Your Username");
-        SignUp_Username_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SM_Username_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SM_Username_Label.setText("Your Username");
+        SM_Username_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SignUp_Username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SM_Username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        Create_Password_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Create_Password_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Create_Password_Label.setText("Create Password");
-        Create_Password_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SM_Create_Password_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SM_Create_Password_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        SM_Create_Password_Label.setText("Create Password");
+        SM_Create_Password_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Create_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SM_Create_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        Confirm_Password_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Confirm_Password_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Confirm_Password_Label.setText("Confirm Password");
-        Confirm_Password_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SM_Confirm_Password_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SM_Confirm_Password_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        SM_Confirm_Password_Label.setText("Confirm Password");
+        SM_Confirm_Password_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Confirm_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SM_Confirm_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        javax.swing.GroupLayout SignUp_User_SubPanelLayout = new javax.swing.GroupLayout(SignUp_User_SubPanel);
-        SignUp_User_SubPanel.setLayout(SignUp_User_SubPanelLayout);
-        SignUp_User_SubPanelLayout.setHorizontalGroup(
-            SignUp_User_SubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SignUp_User_SubPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout SM_User_DetailsLayout = new javax.swing.GroupLayout(SM_User_Details);
+        SM_User_Details.setLayout(SM_User_DetailsLayout);
+        SM_User_DetailsLayout.setHorizontalGroup(
+            SM_User_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SM_User_DetailsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(SignUp_User_SubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(SignUp_User_SubPanelLayout.createSequentialGroup()
-                        .addGroup(SignUp_User_SubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Create_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Confirm_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(SM_User_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SM_User_DetailsLayout.createSequentialGroup()
+                        .addGroup(SM_User_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(SM_Create_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SM_Confirm_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(SignUp_User_SubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Create_Password, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
-                            .addComponent(Confirm_Password)))
-                    .addGroup(SignUp_User_SubPanelLayout.createSequentialGroup()
-                        .addComponent(SignUp_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(SM_User_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(SM_Create_Password, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
+                            .addComponent(SM_Confirm_Password)))
+                    .addGroup(SM_User_DetailsLayout.createSequentialGroup()
+                        .addComponent(SM_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(SignUp_Username)))
+                        .addComponent(SM_Username)))
                 .addContainerGap())
         );
-        SignUp_User_SubPanelLayout.setVerticalGroup(
-            SignUp_User_SubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SignUp_User_SubPanelLayout.createSequentialGroup()
+        SM_User_DetailsLayout.setVerticalGroup(
+            SM_User_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SM_User_DetailsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(SignUp_User_SubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SignUp_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SignUp_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(SM_User_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SM_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SM_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(SignUp_User_SubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Create_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Create_Password))
+                .addGroup(SM_User_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SM_Create_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SM_Create_Password))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(SignUp_User_SubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Confirm_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Confirm_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(SM_User_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SM_Confirm_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SM_Confirm_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Next_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        Next_Button.setText("Next");
-        Next_Button.addActionListener(new java.awt.event.ActionListener() {
+        SM_Next_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        SM_Next_Button.setText("Next");
+        SM_Next_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Next_ButtonActionPerformed(evt);
+                SM_Next_ButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout SignUp_UserLayout = new javax.swing.GroupLayout(SignUp_User);
-        SignUp_User.setLayout(SignUp_UserLayout);
-        SignUp_UserLayout.setHorizontalGroup(
-            SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SignUp_UserLayout.createSequentialGroup()
+        javax.swing.GroupLayout SignUp_MainLayout = new javax.swing.GroupLayout(SignUp_Main);
+        SignUp_Main.setLayout(SignUp_MainLayout);
+        SignUp_MainLayout.setHorizontalGroup(
+            SignUp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SignUp_MainLayout.createSequentialGroup()
                 .addContainerGap(125, Short.MAX_VALUE)
-                .addGroup(SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(SignUp_User_Para_A, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SignUp_User_SubHeading, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SignUp_User_Heading, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SignUp_User_Para_B, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
-                    .addComponent(SignUp_User_SubPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Next_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(SignUp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(SM_Paragraph_01, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SM_Sub_Heading, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SM_Heading, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SM_Paragraph_02, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+                    .addComponent(SM_User_Details, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SM_Next_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(125, Short.MAX_VALUE))
         );
-        SignUp_UserLayout.setVerticalGroup(
-            SignUp_UserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SignUp_UserLayout.createSequentialGroup()
+        SignUp_MainLayout.setVerticalGroup(
+            SignUp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SignUp_MainLayout.createSequentialGroup()
                 .addContainerGap(81, Short.MAX_VALUE)
-                .addComponent(SignUp_User_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SM_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SignUp_User_SubHeading)
+                .addComponent(SM_Sub_Heading)
                 .addGap(32, 32, 32)
-                .addComponent(SignUp_User_Para_A)
+                .addComponent(SM_Paragraph_01)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SignUp_User_Para_B)
+                .addComponent(SM_Paragraph_02)
                 .addGap(30, 30, 30)
-                .addComponent(SignUp_User_SubPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SM_User_Details, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Next_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SM_Next_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(134, Short.MAX_VALUE))
         );
 
-        Container.add(SignUp_User, "signUpUser");
+        Container.add(SignUp_Main, "signUpUser");
 
-        SignUp_Details_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
-        SignUp_Details_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SignUp_Details_Heading.setText("Just a little more and you'll be all ready to go.");
-        SignUp_Details_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SD_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        SD_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SD_Heading.setText("Just a little more and you'll be all ready to go.");
+        SD_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SignUp_Details_Para.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        SignUp_Details_Para.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SignUp_Details_Para.setText("Now, please provide some details about your Business. This information will be used for the Invoices you generate using Speckle.");
-        SignUp_Details_Para.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SD_Paragraph.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        SD_Paragraph.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SD_Paragraph.setText("Now, please provide some details about your Business. This information will be used for the Invoices you generate using Speckle.");
+        SD_Paragraph.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SignUp_Details_Panel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        SD_Business_Details.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        Business_Name_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Business_Name_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Business_Name_Label.setText("Business Name");
-        Business_Name_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SD_Business_Name_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SD_Business_Name_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        SD_Business_Name_Label.setText("Business Name");
+        SD_Business_Name_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Business_Name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SD_Business_Name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        Contact_Number_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Contact_Number_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Contact_Number_Label.setText("Contact Number");
-        Contact_Number_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SD_Contact_Number_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SD_Contact_Number_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        SD_Contact_Number_Label.setText("Contact Number");
+        SD_Contact_Number_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Contact_Number.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Contact_Number.addKeyListener(new java.awt.event.KeyAdapter() {
+        SD_Contact_Number.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SD_Contact_Number.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                Contact_NumberKeyPressed(evt);
+                SD_Contact_NumberKeyPressed(evt);
             }
         });
 
-        Email_Address_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Email_Address_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Email_Address_Label.setText("Email Address");
-        Email_Address_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SD_Email_Address_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SD_Email_Address_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        SD_Email_Address_Label.setText("Email Address");
+        SD_Email_Address_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Email_Address.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SD_Email_Address.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        Business_Location_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Business_Location_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Business_Location_Label.setText("Business Location (Address)");
-        Business_Location_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SD_Business_Location_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SD_Business_Location_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        SD_Business_Location_Label.setText("Business Location (Address)");
+        SD_Business_Location_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Business_Location.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SD_Business_Location.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        javax.swing.GroupLayout SignUp_Details_PanelLayout = new javax.swing.GroupLayout(SignUp_Details_Panel);
-        SignUp_Details_Panel.setLayout(SignUp_Details_PanelLayout);
-        SignUp_Details_PanelLayout.setHorizontalGroup(
-            SignUp_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SignUp_Details_PanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout SD_Business_DetailsLayout = new javax.swing.GroupLayout(SD_Business_Details);
+        SD_Business_Details.setLayout(SD_Business_DetailsLayout);
+        SD_Business_DetailsLayout.setHorizontalGroup(
+            SD_Business_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SD_Business_DetailsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(SignUp_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(Business_Location_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Email_Address_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Contact_Number_Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Business_Name_Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(SD_Business_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(SD_Business_Location_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SD_Email_Address_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SD_Contact_Number_Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SD_Business_Name_Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(SignUp_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Contact_Number)
-                    .addComponent(Business_Name, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Email_Address)
-                    .addComponent(Business_Location))
+                .addGroup(SD_Business_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(SD_Contact_Number)
+                    .addComponent(SD_Business_Name, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SD_Email_Address)
+                    .addComponent(SD_Business_Location))
                 .addContainerGap())
         );
-        SignUp_Details_PanelLayout.setVerticalGroup(
-            SignUp_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SignUp_Details_PanelLayout.createSequentialGroup()
+        SD_Business_DetailsLayout.setVerticalGroup(
+            SD_Business_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SD_Business_DetailsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(SignUp_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Business_Name_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Business_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(SD_Business_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SD_Business_Name_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SD_Business_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(SignUp_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Contact_Number_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Contact_Number, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(SD_Business_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SD_Contact_Number_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SD_Contact_Number, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(SignUp_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Email_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Email_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(SD_Business_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SD_Email_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SD_Email_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(SignUp_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Business_Location_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Business_Location, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(SD_Business_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(SD_Business_Location_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SD_Business_Location, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        Back_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        Back_Button.setText("Back");
-        Back_Button.addActionListener(new java.awt.event.ActionListener() {
+        SD_Back_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        SD_Back_Button.setText("Back");
+        SD_Back_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Back_ButtonActionPerformed(evt);
+                SD_Back_ButtonActionPerformed(evt);
             }
         });
 
-        SignUp_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        SignUp_Button.setText("Sign Up");
-        SignUp_Button.addActionListener(new java.awt.event.ActionListener() {
+        SD_SignUp_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        SD_SignUp_Button.setText("Sign Up");
+        SD_SignUp_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SignUp_ButtonActionPerformed(evt);
+                SD_SignUp_ButtonActionPerformed(evt);
             }
         });
 
@@ -700,79 +700,79 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(91, Short.MAX_VALUE)
                 .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(SignUp_DetailsLayout.createSequentialGroup()
-                        .addComponent(Back_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(SD_Back_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(SignUp_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(SignUp_Details_Para, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SignUp_Details_Heading, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SignUp_Details_Panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(SD_SignUp_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(SD_Paragraph, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SD_Heading, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SD_Business_Details, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(105, Short.MAX_VALUE))
         );
         SignUp_DetailsLayout.setVerticalGroup(
             SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SignUp_DetailsLayout.createSequentialGroup()
                 .addContainerGap(98, Short.MAX_VALUE)
-                .addComponent(SignUp_Details_Heading)
+                .addComponent(SD_Heading)
                 .addGap(18, 18, 18)
-                .addComponent(SignUp_Details_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SD_Paragraph, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(SignUp_Details_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SD_Business_Details, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Back_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SignUp_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(SD_Back_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SD_SignUp_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(148, Short.MAX_VALUE))
         );
 
         Container.add(SignUp_Details, "signUpDetails");
 
-        Verify_Details_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
-        Verify_Details_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Verify_Details_Heading.setText("Please Verify Your Details");
-        Verify_Details_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        VD_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        VD_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        VD_Heading.setText("Please Verify Your Details");
+        VD_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Verify_Username_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Verify_Username_Label.setText("User Name");
+        VD_Username_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        VD_Username_Label.setText("User Name");
 
-        Verify_Username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        VD_Username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        Verify_Business_Name_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Verify_Business_Name_Label.setText("Business Name");
+        VD_Business_Name_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        VD_Business_Name_Label.setText("Business Name");
 
-        Verify_Business_Name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        VD_Business_Name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        Verify_Contact_Number_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Verify_Contact_Number_Label.setText("Contact Number");
+        VD_Contact_Number_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        VD_Contact_Number_Label.setText("Contact Number");
 
-        Verfiy_Contact_Number.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        VD_Contact_Number.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        Verify_Email_Address_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Verify_Email_Address_Label.setText("Email Address");
+        VD_Email_Address_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        VD_Email_Address_Label.setText("Email Address");
 
-        Verify_Email_Address.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        VD_Email_Address.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        Verify_Business_Location_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Verify_Business_Location_Label.setText("Business Location");
+        VD_Business_Location_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        VD_Business_Location_Label.setText("Business Location");
 
-        Verify_Business_Location.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        VD_Business_Location.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        Recovery_Key_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        Recovery_Key_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Recovery_Key_Heading.setText("Recovery Key");
-        Recovery_Key_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        VD_Recovery_Key_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        VD_Recovery_Key_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        VD_Recovery_Key_Heading.setText("Recovery Key");
+        VD_Recovery_Key_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Recovery_Key_Para.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Recovery_Key_Para.setText("Following Is Your Recovery Key Code For Password Recovery. Please Keep This Code Safe and Do not Share This Code With Anyone.");
+        VD_Recovery_Key_Paragraph.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        VD_Recovery_Key_Paragraph.setText("Following Is Your Recovery Key Code For Password Recovery. Please Keep This Code Safe and Do not Share This Code With Anyone.");
 
-        Recovery_Key_Display_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Recovery_Key_Display_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Recovery_Key_Display_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        VD_Recovery_Key.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        VD_Recovery_Key.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        VD_Recovery_Key.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Finish_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        Finish_Button.setText("Finish");
-        Finish_Button.addActionListener(new java.awt.event.ActionListener() {
+        VD_Finish_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        VD_Finish_Button.setText("Finish");
+        VD_Finish_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Finish_ButtonActionPerformed(evt);
+                VD_Finish_ButtonActionPerformed(evt);
             }
         });
 
@@ -783,143 +783,143 @@ public class Main extends javax.swing.JFrame {
             .addGroup(Verify_DetailsLayout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Recovery_Key_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Verify_Details_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
-                    .addComponent(Recovery_Key_Display_Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Recovery_Key_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(VD_Recovery_Key_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(VD_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
+                    .addComponent(VD_Recovery_Key, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(VD_Recovery_Key_Paragraph, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Verify_DetailsLayout.createSequentialGroup()
-                        .addComponent(Verify_Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(VD_Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(Verify_DetailsLayout.createSequentialGroup()
                         .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Verify_Username_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Verify_Business_Name_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Verify_Email_Address_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Verify_Contact_Number_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
+                            .addComponent(VD_Username_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(VD_Business_Name_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(VD_Email_Address_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(VD_Contact_Number_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Verify_Username, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Verify_Business_Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Verfiy_Contact_Number, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Verify_Email_Address, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Verify_Business_Location, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(VD_Username, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(VD_Business_Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(VD_Contact_Number, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(VD_Email_Address, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(VD_Business_Location, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(60, 60, 60))
             .addGroup(Verify_DetailsLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Finish_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(VD_Finish_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Verify_DetailsLayout.setVerticalGroup(
             Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Verify_DetailsLayout.createSequentialGroup()
                 .addGap(60, 60, 60)
-                .addComponent(Verify_Details_Heading)
+                .addComponent(VD_Heading)
                 .addGap(30, 30, 30)
                 .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Verify_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Verify_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(VD_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(VD_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Verify_Business_Name_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
-                    .addComponent(Verify_Business_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(VD_Business_Name_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+                    .addComponent(VD_Business_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Verify_Contact_Number_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
-                    .addComponent(Verfiy_Contact_Number, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(VD_Contact_Number_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+                    .addComponent(VD_Contact_Number, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Verify_Email_Address_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
-                    .addComponent(Verify_Email_Address, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(VD_Email_Address_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+                    .addComponent(VD_Email_Address, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Verify_Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Verify_Business_Location, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(VD_Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(VD_Business_Location, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
-                .addComponent(Recovery_Key_Heading)
+                .addComponent(VD_Recovery_Key_Heading)
                 .addGap(18, 18, 18)
-                .addComponent(Recovery_Key_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(VD_Recovery_Key_Paragraph, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Recovery_Key_Display_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(VD_Recovery_Key, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Finish_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(VD_Finish_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(73, Short.MAX_VALUE))
         );
 
         Container.add(Verify_Details, "verifyDetails");
 
-        Forgot_Password_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
-        Forgot_Password_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Forgot_Password_Heading.setText("Forgot Password");
-        Forgot_Password_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        FP_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        FP_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        FP_Heading.setText("Forgot Password");
+        FP_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Forgot_Password_Para.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        Forgot_Password_Para.setText("<html><p style=\"text-align: center;\">If You've Forgotten Your Password. Then Enter the Recovery Code that had been Given to You on the First Use and then You can create a New Password.</p></html>");
+        FP_Paragraph.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        FP_Paragraph.setText("<html><p style=\"text-align: center;\">If You've Forgotten Your Password. Then Enter the Recovery Code that had been Given to You on the First Use and then You can create a New Password.</p></html>");
 
-        Forgot_Password_Panel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        FP_New_Details.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        Recovery_Key_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Recovery_Key_Label.setText("Recovery Key");
+        FP_Recovery_Key_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        FP_Recovery_Key_Label.setText("Recovery Key");
 
-        Recovery_Key.setPreferredSize(new java.awt.Dimension(7, 26));
+        FP_Recovery_Key.setPreferredSize(new java.awt.Dimension(7, 26));
 
-        New_Password_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        New_Password_Label.setText("New Password");
+        FP_New_Password_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        FP_New_Password_Label.setText("New Password");
 
-        New_Password.setPreferredSize(new java.awt.Dimension(7, 26));
+        FP_New_Password.setPreferredSize(new java.awt.Dimension(7, 26));
 
-        Confirm_Passwd_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Confirm_Passwd_Label.setText("Confirm Password");
+        FP_Confirm_Password_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        FP_Confirm_Password_Label.setText("Confirm Password");
 
-        Confirm_Passwd.setPreferredSize(new java.awt.Dimension(7, 26));
+        FP_Confirm_Password.setPreferredSize(new java.awt.Dimension(7, 26));
 
-        javax.swing.GroupLayout Forgot_Password_PanelLayout = new javax.swing.GroupLayout(Forgot_Password_Panel);
-        Forgot_Password_Panel.setLayout(Forgot_Password_PanelLayout);
-        Forgot_Password_PanelLayout.setHorizontalGroup(
-            Forgot_Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Forgot_Password_PanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout FP_New_DetailsLayout = new javax.swing.GroupLayout(FP_New_Details);
+        FP_New_Details.setLayout(FP_New_DetailsLayout);
+        FP_New_DetailsLayout.setHorizontalGroup(
+            FP_New_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FP_New_DetailsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Forgot_Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(New_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Recovery_Key_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Confirm_Passwd_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(FP_New_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(FP_New_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FP_Recovery_Key_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FP_Confirm_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Forgot_Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(New_Password, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Recovery_Key, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE)
-                    .addComponent(Confirm_Passwd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(FP_New_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(FP_New_Password, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(FP_Recovery_Key, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE)
+                    .addComponent(FP_Confirm_Password, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        Forgot_Password_PanelLayout.setVerticalGroup(
-            Forgot_Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Forgot_Password_PanelLayout.createSequentialGroup()
+        FP_New_DetailsLayout.setVerticalGroup(
+            FP_New_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FP_New_DetailsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Forgot_Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Recovery_Key_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Recovery_Key, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(FP_New_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FP_Recovery_Key_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FP_Recovery_Key, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Forgot_Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(New_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(New_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(FP_New_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FP_New_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FP_New_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Forgot_Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Confirm_Passwd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Confirm_Passwd_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(FP_New_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FP_Confirm_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FP_Confirm_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        Cancel_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        Cancel_Button.setText("Cancel");
-        Cancel_Button.addActionListener(new java.awt.event.ActionListener() {
+        FP_Cancel_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        FP_Cancel_Button.setText("Cancel");
+        FP_Cancel_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cancel_ButtonActionPerformed(evt);
+                FP_Cancel_ButtonActionPerformed(evt);
             }
         });
 
-        Reset_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        Reset_Button.setText("Reset");
-        Reset_Button.addActionListener(new java.awt.event.ActionListener() {
+        FP_Reset_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        FP_Reset_Button.setText("Reset");
+        FP_Reset_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Reset_ButtonActionPerformed(evt);
+                FP_Reset_ButtonActionPerformed(evt);
             }
         });
 
@@ -931,1340 +931,1340 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(162, Short.MAX_VALUE)
                 .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(Forgot_PasswordLayout.createSequentialGroup()
-                        .addComponent(Cancel_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FP_Cancel_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 360, Short.MAX_VALUE)
-                        .addComponent(Reset_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Forgot_Password_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Forgot_Password_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(Forgot_Password_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(FP_Reset_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FP_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(FP_Paragraph, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(FP_New_Details, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(188, Short.MAX_VALUE))
         );
         Forgot_PasswordLayout.setVerticalGroup(
             Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Forgot_PasswordLayout.createSequentialGroup()
                 .addContainerGap(101, Short.MAX_VALUE)
-                .addComponent(Forgot_Password_Heading)
+                .addComponent(FP_Heading)
                 .addGap(18, 18, 18)
-                .addComponent(Forgot_Password_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(FP_Paragraph, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(Forgot_Password_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(FP_New_Details, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(Forgot_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Cancel_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Reset_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FP_Cancel_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FP_Reset_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(166, Short.MAX_VALUE))
         );
 
         Container.add(Forgot_Password, "forgotPassword");
         Forgot_Password.getAccessibleContext().setAccessibleName("");
 
-        Banner.setBackground(new java.awt.Color(253, 253, 253));
-        Banner.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(180, 180, 180), 1, true));
+        HOME_Banner.setBackground(new java.awt.Color(253, 253, 253));
+        HOME_Banner.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(180, 180, 180), 1, true));
 
-        Speckle_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
-        Speckle_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Speckle_Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/speckle-home-logo.png"))); // NOI18N
-        Speckle_Label.setText("Speckle: Simple Invoicing & Inventory Management");
+        HOME_Main_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
+        HOME_Main_Heading.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        HOME_Main_Heading.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/speckle-home-logo.png"))); // NOI18N
+        HOME_Main_Heading.setText("Speckle: Simple Invoicing & Inventory Management");
 
-        javax.swing.GroupLayout BannerLayout = new javax.swing.GroupLayout(Banner);
-        Banner.setLayout(BannerLayout);
-        BannerLayout.setHorizontalGroup(
-            BannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BannerLayout.createSequentialGroup()
+        javax.swing.GroupLayout HOME_BannerLayout = new javax.swing.GroupLayout(HOME_Banner);
+        HOME_Banner.setLayout(HOME_BannerLayout);
+        HOME_BannerLayout.setHorizontalGroup(
+            HOME_BannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HOME_BannerLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Speckle_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 846, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(HOME_Main_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 846, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        BannerLayout.setVerticalGroup(
-            BannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BannerLayout.createSequentialGroup()
+        HOME_BannerLayout.setVerticalGroup(
+            HOME_BannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HOME_BannerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Speckle_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                .addComponent(HOME_Main_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        Help.setBackground(new java.awt.Color(248, 248, 248));
-        Help.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(180, 180, 180), 1, true));
+        HOME_Help.setBackground(new java.awt.Color(248, 248, 248));
+        HOME_Help.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(180, 180, 180), 1, true));
 
-        Help_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        Help_Label.setText("Quick Start Guide");
+        HOME_Help_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        HOME_Help_Heading.setText("Quick Start Guide");
 
-        Help_Content.setText("<html><ol style=\"margin: 0 0 0 20;\">\n<li style=\"padding: 4;\">The First Tab is <b>Home</b> which has two Sections one is Quick Start Guide(This One) and second one is has Information\nabout Products with Low amount Stocks in the Inventory.</li>\n<li style=\"padding: 4;\">The Second Tab is <b>Invoicing</b> through which you can create new Invoices or can view previously created Invoices.</li>\n<li style=\"padding: 4;\">The Third Tab is <b>Inventory</b> where you can add or remove Products from Speckle's Inventory.</li>\n<li style=\"padding: 4;\">The Forth Tab is <b>Settings</b> where you can change your Login Credentials and the information related to your\nBusiness that gets printed on your Invoices.</li>\n<li style=\"padding: 4;\">The Last Tab is <b>About</b> which has three Sections Authors, License, Credits they contain a List of Developers who\nContributed to Speckle, the EULA and Credits to the External Libraries we used.</li>\n</ol></html>");
-        Help_Content.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Help_Content.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        HOME_Help_Content.setText("<html><ol style=\"margin: 0 0 0 20;\">\n<li style=\"padding: 4;\">The First Tab is <b>Home</b> which has two Sections one is Quick Start Guide(This One) and second one is has Information\nabout Products with Low amount Stocks in the Inventory.</li>\n<li style=\"padding: 4;\">The Second Tab is <b>Invoicing</b> through which you can create new Invoices or can view previously created Invoices.</li>\n<li style=\"padding: 4;\">The Third Tab is <b>Inventory</b> where you can add or remove Products from Speckle's Inventory.</li>\n<li style=\"padding: 4;\">The Forth Tab is <b>Settings</b> where you can change your Login Credentials and the information related to your\nBusiness that gets printed on your Invoices.</li>\n<li style=\"padding: 4;\">The Last Tab is <b>About</b> which has three Sections Authors, License, Credits they contain a List of Developers who\nContributed to Speckle, the EULA and Credits to the External Libraries we used.</li>\n</ol></html>");
+        HOME_Help_Content.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        HOME_Help_Content.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
-        javax.swing.GroupLayout HelpLayout = new javax.swing.GroupLayout(Help);
-        Help.setLayout(HelpLayout);
-        HelpLayout.setHorizontalGroup(
-            HelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HelpLayout.createSequentialGroup()
+        javax.swing.GroupLayout HOME_HelpLayout = new javax.swing.GroupLayout(HOME_Help);
+        HOME_Help.setLayout(HOME_HelpLayout);
+        HOME_HelpLayout.setHorizontalGroup(
+            HOME_HelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HOME_HelpLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(HelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Help_Para, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Help_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Help_Content, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE))
+                .addGroup(HOME_HelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(HOME_Help_Paragraph, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(HOME_Help_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(HOME_Help_Content, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        HelpLayout.setVerticalGroup(
-            HelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HelpLayout.createSequentialGroup()
+        HOME_HelpLayout.setVerticalGroup(
+            HOME_HelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HOME_HelpLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(Help_Label)
+                .addComponent(HOME_Help_Heading)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Help_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(HOME_Help_Paragraph, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Help_Content, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(HOME_Help_Content, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Low_Stock.setBackground(new java.awt.Color(248, 248, 248));
-        Low_Stock.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(180, 180, 180), 1, true));
+        HOME_Low_Stock.setBackground(new java.awt.Color(248, 248, 248));
+        HOME_Low_Stock.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(180, 180, 180), 1, true));
 
-        Low_Stock_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        Low_Stock_Label.setText("Low Stock");
+        HOME_Low_Stock_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        HOME_Low_Stock_Heading.setText("Low Stock");
 
-        Low_Stock_Para.setText("<html><p>The following five Products have the least amount of Stock available. If you think you might run out of stock for a Product then please Restock.</p></html>");
+        HOME_Low_Stock_Paragraph.setText("<html><p>The following five Products have the least amount of Stock available. If you think you might run out of stock for a Product then please Restock.</p></html>");
 
-        Product_One_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        HOME_Product_One_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
 
-        Product_One_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        Product_One_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Product_One_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        HOME_Product_One_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        HOME_Product_One_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        HOME_Product_One_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
-        Product_Two_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        HOME_Product_Two_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
 
-        Product_Two_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        Product_Two_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Product_Two_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        HOME_Product_Two_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        HOME_Product_Two_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        HOME_Product_Two_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
-        Product_Three_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        HOME_Product_Three_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
 
-        Product_Three_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        Product_Three_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Product_Three_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        HOME_Product_Three_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        HOME_Product_Three_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        HOME_Product_Three_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
-        Product_Four_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        HOME_Product_Four_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
 
-        Product_Four_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        Product_Four_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Product_Four_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        HOME_Product_Four_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        HOME_Product_Four_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        HOME_Product_Four_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
-        Product_Five_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        HOME_Product_Five_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
 
-        Product_Five_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        Product_Five_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Product_Five_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        HOME_Product_Five_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        HOME_Product_Five_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        HOME_Product_Five_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
-        javax.swing.GroupLayout Low_StockLayout = new javax.swing.GroupLayout(Low_Stock);
-        Low_Stock.setLayout(Low_StockLayout);
-        Low_StockLayout.setHorizontalGroup(
-            Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Low_StockLayout.createSequentialGroup()
+        javax.swing.GroupLayout HOME_Low_StockLayout = new javax.swing.GroupLayout(HOME_Low_Stock);
+        HOME_Low_Stock.setLayout(HOME_Low_StockLayout);
+        HOME_Low_StockLayout.setHorizontalGroup(
+            HOME_Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HOME_Low_StockLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(Low_StockLayout.createSequentialGroup()
-                        .addComponent(Product_Five_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(HOME_Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(HOME_Low_StockLayout.createSequentialGroup()
+                        .addComponent(HOME_Product_Five_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Product_Five_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(Low_StockLayout.createSequentialGroup()
-                        .addComponent(Product_Four_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(HOME_Product_Five_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(HOME_Low_StockLayout.createSequentialGroup()
+                        .addComponent(HOME_Product_Four_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Product_Four_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(Low_StockLayout.createSequentialGroup()
-                        .addComponent(Product_Three_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(HOME_Product_Four_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(HOME_Low_StockLayout.createSequentialGroup()
+                        .addComponent(HOME_Product_Three_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Product_Three_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(Low_StockLayout.createSequentialGroup()
-                        .addComponent(Product_Two_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(HOME_Product_Three_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(HOME_Low_StockLayout.createSequentialGroup()
+                        .addComponent(HOME_Product_Two_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Product_Two_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(Low_Stock_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(Low_StockLayout.createSequentialGroup()
-                        .addComponent(Product_One_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(HOME_Product_Two_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(HOME_Low_Stock_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(HOME_Low_StockLayout.createSequentialGroup()
+                        .addComponent(HOME_Product_One_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Product_One_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(Low_Stock_Para, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(HOME_Product_One_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(HOME_Low_Stock_Paragraph, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
-        Low_StockLayout.setVerticalGroup(
-            Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Low_StockLayout.createSequentialGroup()
+        HOME_Low_StockLayout.setVerticalGroup(
+            HOME_Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HOME_Low_StockLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(Low_Stock_Label)
+                .addComponent(HOME_Low_Stock_Heading)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Low_Stock_Para, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(HOME_Low_Stock_Paragraph, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Product_One_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Product_One_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(HOME_Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(HOME_Product_One_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HOME_Product_One_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Product_Two_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Product_Two_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(HOME_Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(HOME_Product_Two_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HOME_Product_Two_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Product_Three_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Product_Three_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(HOME_Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(HOME_Product_Three_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HOME_Product_Three_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Product_Four_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Product_Four_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(HOME_Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(HOME_Product_Four_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HOME_Product_Four_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Product_Five_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Product_Five_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(HOME_Low_StockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(HOME_Product_Five_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HOME_Product_Five_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout Home_PageLayout = new javax.swing.GroupLayout(Home_Page);
-        Home_Page.setLayout(Home_PageLayout);
-        Home_PageLayout.setHorizontalGroup(
-            Home_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Home_PageLayout.createSequentialGroup()
+        javax.swing.GroupLayout HomeLayout = new javax.swing.GroupLayout(Home);
+        Home.setLayout(HomeLayout);
+        HomeLayout.setHorizontalGroup(
+            HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HomeLayout.createSequentialGroup()
                 .addContainerGap(36, Short.MAX_VALUE)
-                .addGroup(Home_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Banner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Home_PageLayout.createSequentialGroup()
-                        .addComponent(Help, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(HOME_Banner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomeLayout.createSequentialGroup()
+                        .addComponent(HOME_Help, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Low_Stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(HOME_Low_Stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(54, Short.MAX_VALUE))
         );
-        Home_PageLayout.setVerticalGroup(
-            Home_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Home_PageLayout.createSequentialGroup()
+        HomeLayout.setVerticalGroup(
+            HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomeLayout.createSequentialGroup()
                 .addContainerGap(41, Short.MAX_VALUE)
-                .addComponent(Banner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(HOME_Banner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Home_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Low_Stock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Help, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(HOME_Low_Stock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(HOME_Help, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(54, Short.MAX_VALUE))
         );
 
-        Container.add(Home_Page, "home");
+        Container.add(Home, "home");
 
-        Main_Heading.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        Main_Heading.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Main_Heading.setText("Invoice");
-        Main_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        INVO_Heading.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        INVO_Heading.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        INVO_Heading.setText("Invoice");
+        INVO_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
-        New_Invoice.setFont(New_Invoice.getFont().deriveFont((float)14));
-        New_Invoice.setText("New Invoice");
-        New_Invoice.setToolTipText("Generate a New Invoice");
-        New_Invoice.addActionListener(new java.awt.event.ActionListener() {
+        INVO_New_Invoice_Button.setFont(INVO_New_Invoice_Button.getFont().deriveFont((float)14));
+        INVO_New_Invoice_Button.setText("New Invoice");
+        INVO_New_Invoice_Button.setToolTipText("Generate a New Invoice");
+        INVO_New_Invoice_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                New_InvoiceActionPerformed(evt);
+                INVO_New_Invoice_ButtonActionPerformed(evt);
             }
         });
 
-        Invoice_Table.setShowGrid(true);
-        Invoice_Table.getTableHeader().setReorderingAllowed(false);
-        Invoice_Table_Container.setViewportView(Invoice_Table);
+        INVO_Table.setShowGrid(true);
+        INVO_Table.getTableHeader().setReorderingAllowed(false);
+        INVO_Table_Container.setViewportView(INVO_Table);
 
-        View.setText("View Invoice");
-        View.setToolTipText("View Selected Invoice from Invoice List");
-        View.addActionListener(new java.awt.event.ActionListener() {
+        INVO_View_Button.setText("View Invoice");
+        INVO_View_Button.setToolTipText("View Selected Invoice from Invoice List");
+        INVO_View_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ViewActionPerformed(evt);
+                INVO_View_ButtonActionPerformed(evt);
             }
         });
 
-        Remove1.setText("Remove");
-        Remove1.setToolTipText("Remove Selected Invoices from Invoice List");
-        Remove1.addActionListener(new java.awt.event.ActionListener() {
+        INVO_Remove_Button.setText("Remove");
+        INVO_Remove_Button.setToolTipText("Remove Selected Invoices from Invoice List");
+        INVO_Remove_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Remove1ActionPerformed(evt);
+                INVO_Remove_ButtonActionPerformed(evt);
             }
         });
 
-        Export_Invoice.setText("Export");
-        Export_Invoice.setToolTipText("Export Invoice List to a CSV File");
-        Export_Invoice.addActionListener(new java.awt.event.ActionListener() {
+        INVO_Export_Button.setText("Export");
+        INVO_Export_Button.setToolTipText("Export Invoice List to a CSV File");
+        INVO_Export_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Export_InvoiceActionPerformed(evt);
+                INVO_Export_ButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Invoice_MainLayout = new javax.swing.GroupLayout(Invoice_Main);
-        Invoice_Main.setLayout(Invoice_MainLayout);
-        Invoice_MainLayout.setHorizontalGroup(
-            Invoice_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Invoice_MainLayout.createSequentialGroup()
+        javax.swing.GroupLayout InvoiceLayout = new javax.swing.GroupLayout(Invoice);
+        Invoice.setLayout(InvoiceLayout);
+        InvoiceLayout.setHorizontalGroup(
+            InvoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InvoiceLayout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addGroup(Invoice_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Invoice_MainLayout.createSequentialGroup()
-                        .addComponent(Main_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(InvoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(InvoiceLayout.createSequentialGroup()
+                        .addComponent(INVO_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(New_Invoice, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Invoice_MainLayout.createSequentialGroup()
-                        .addComponent(View, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(INVO_New_Invoice_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(InvoiceLayout.createSequentialGroup()
+                        .addComponent(INVO_View_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(Remove1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(INVO_Remove_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Export_Invoice, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Invoice_Table_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 846, Short.MAX_VALUE))
+                        .addComponent(INVO_Export_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(INVO_Table_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 846, Short.MAX_VALUE))
                 .addGap(60, 60, 60))
         );
-        Invoice_MainLayout.setVerticalGroup(
-            Invoice_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Invoice_MainLayout.createSequentialGroup()
+        InvoiceLayout.setVerticalGroup(
+            InvoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InvoiceLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addGroup(Invoice_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Main_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(New_Invoice, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(InvoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(INVO_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(INVO_New_Invoice_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(Invoice_Table_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
+                .addComponent(INVO_Table_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addGroup(Invoice_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(View, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Remove1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Export_Invoice, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(InvoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(INVO_View_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(INVO_Remove_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(INVO_Export_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(73, 73, 73))
         );
 
-        Container.add(Invoice_Main, "invMain");
+        Container.add(Invoice, "invMain");
 
-        New_Heading.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        New_Heading.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        New_Heading.setText("New Invoice");
-        New_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        NI_Heading.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        NI_Heading.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        NI_Heading.setText("New Invoice");
+        NI_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
-        Customer_Details_Panel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        NI_Customer_Details.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        Customer_Name_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        Customer_Name_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Customer_Name_Label.setText("Customer's Name");
-        Customer_Name_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        NI_Customer_Name_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        NI_Customer_Name_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        NI_Customer_Name_Label.setText("Customer's Name");
+        NI_Customer_Name_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Customer_Contact_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        Customer_Contact_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Customer_Contact_Label.setText("Contact Number");
-        Customer_Contact_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        NI_Customer_Contact_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        NI_Customer_Contact_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        NI_Customer_Contact_Label.setText("Contact Number");
+        NI_Customer_Contact_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Customer_Contact.addKeyListener(new java.awt.event.KeyAdapter() {
+        NI_Customer_Contact.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                Customer_ContactKeyPressed(evt);
+                NI_Customer_ContactKeyPressed(evt);
             }
         });
 
-        Customer_Address_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        Customer_Address_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Customer_Address_Label.setText("Customer's Address");
-        Customer_Address_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        NI_Customer_Address_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        NI_Customer_Address_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        NI_Customer_Address_Label.setText("Customer's Address");
+        NI_Customer_Address_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        javax.swing.GroupLayout Customer_Details_PanelLayout = new javax.swing.GroupLayout(Customer_Details_Panel);
-        Customer_Details_Panel.setLayout(Customer_Details_PanelLayout);
-        Customer_Details_PanelLayout.setHorizontalGroup(
-            Customer_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Customer_Details_PanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout NI_Customer_DetailsLayout = new javax.swing.GroupLayout(NI_Customer_Details);
+        NI_Customer_Details.setLayout(NI_Customer_DetailsLayout);
+        NI_Customer_DetailsLayout.setHorizontalGroup(
+            NI_Customer_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NI_Customer_DetailsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Customer_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Customer_Name_Label)
-                    .addComponent(Customer_Address_Label))
+                .addGroup(NI_Customer_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NI_Customer_Name_Label)
+                    .addComponent(NI_Customer_Address_Label))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Customer_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Customer_Details_PanelLayout.createSequentialGroup()
-                        .addComponent(Customer_Name, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
+                .addGroup(NI_Customer_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(NI_Customer_DetailsLayout.createSequentialGroup()
+                        .addComponent(NI_Customer_Name, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(Customer_Contact_Label)
+                        .addComponent(NI_Customer_Contact_Label)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Customer_Contact, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Customer_Address))
+                        .addComponent(NI_Customer_Contact, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NI_Customer_Address))
                 .addContainerGap())
         );
-        Customer_Details_PanelLayout.setVerticalGroup(
-            Customer_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Customer_Details_PanelLayout.createSequentialGroup()
+        NI_Customer_DetailsLayout.setVerticalGroup(
+            NI_Customer_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NI_Customer_DetailsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Customer_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Customer_Name_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(Customer_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Customer_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Customer_Contact_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Customer_Contact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(NI_Customer_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NI_Customer_Name_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(NI_Customer_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(NI_Customer_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(NI_Customer_Contact_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(NI_Customer_Contact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Customer_Details_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Customer_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Customer_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(NI_Customer_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(NI_Customer_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NI_Customer_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        New_Invoice_Table.setShowGrid(true);
-        New_Invoice_Table.getTableHeader().setReorderingAllowed(false);
-        New_Invoice_Table_Container.setViewportView(New_Invoice_Table);
+        NI_Table.setShowGrid(true);
+        NI_Table.getTableHeader().setReorderingAllowed(false);
+        NI_Table_Container.setViewportView(NI_Table);
 
-        Cancel.setText("Cancel");
-        Cancel.setToolTipText("Return to Invoice List");
-        Cancel.addActionListener(new java.awt.event.ActionListener() {
+        NI_Cancel_Button.setText("Cancel");
+        NI_Cancel_Button.setToolTipText("Return to Invoice List");
+        NI_Cancel_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CancelActionPerformed(evt);
+                NI_Cancel_ButtonActionPerformed(evt);
             }
         });
 
-        Create_Invoice.setText("Create Invoice");
-        Create_Invoice.setToolTipText("Create a New Invoice using given Data");
-        Create_Invoice.addActionListener(new java.awt.event.ActionListener() {
+        NI_Create_Button.setText("Create Invoice");
+        NI_Create_Button.setToolTipText("Create a New Invoice using given Data");
+        NI_Create_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Create_InvoiceActionPerformed(evt);
+                NI_Create_ButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Invoice_NewLayout = new javax.swing.GroupLayout(Invoice_New);
-        Invoice_New.setLayout(Invoice_NewLayout);
-        Invoice_NewLayout.setHorizontalGroup(
-            Invoice_NewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Invoice_NewLayout.createSequentialGroup()
+        javax.swing.GroupLayout New_InvoiceLayout = new javax.swing.GroupLayout(New_Invoice);
+        New_Invoice.setLayout(New_InvoiceLayout);
+        New_InvoiceLayout.setHorizontalGroup(
+            New_InvoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(New_InvoiceLayout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addGroup(Invoice_NewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Customer_Details_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(New_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(Invoice_NewLayout.createSequentialGroup()
-                        .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(New_InvoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NI_Customer_Details, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(NI_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(New_InvoiceLayout.createSequentialGroup()
+                        .addComponent(NI_Cancel_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Create_Invoice, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(New_Invoice_Table_Container))
+                        .addComponent(NI_Create_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NI_Table_Container))
                 .addGap(60, 60, 60))
         );
-        Invoice_NewLayout.setVerticalGroup(
-            Invoice_NewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Invoice_NewLayout.createSequentialGroup()
+        New_InvoiceLayout.setVerticalGroup(
+            New_InvoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, New_InvoiceLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(New_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(NI_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Customer_Details_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(NI_Customer_Details, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(New_Invoice_Table_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
+                .addComponent(NI_Table_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addGroup(Invoice_NewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Create_Invoice, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(New_InvoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(NI_Cancel_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NI_Create_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(73, 73, 73))
         );
 
-        Container.add(Invoice_New, "invNew");
+        Container.add(New_Invoice, "invNew");
 
-        Heading.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        Heading.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Heading.setText("Inventory");
-        Heading.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        INV_Heading.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        INV_Heading.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        INV_Heading.setText("Inventory");
+        INV_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
-        Inventory_Table.setShowGrid(true);
-        Inventory_Table.getTableHeader().setReorderingAllowed(false);
-        Inventory_Table_Container.setViewportView(Inventory_Table);
+        INV_Table.setShowGrid(true);
+        INV_Table.getTableHeader().setReorderingAllowed(false);
+        INV_Table_Container.setViewportView(INV_Table);
 
-        Add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/plus.png"))); // NOI18N
-        Add.setToolTipText("Add a New Product to Inventory");
-        Add.addActionListener(new java.awt.event.ActionListener() {
+        INV_Add_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/plus.png"))); // NOI18N
+        INV_Add_Button.setToolTipText("Add a New Product to Inventory");
+        INV_Add_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddActionPerformed(evt);
+                INV_Add_ButtonActionPerformed(evt);
             }
         });
 
-        Edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit.png"))); // NOI18N
-        Edit.setToolTipText("Edit Details of the Selected Product");
-        Edit.addActionListener(new java.awt.event.ActionListener() {
+        INV_Edit_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit.png"))); // NOI18N
+        INV_Edit_Button.setToolTipText("Edit Details of the Selected Product");
+        INV_Edit_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditActionPerformed(evt);
+                INV_Edit_ButtonActionPerformed(evt);
             }
         });
 
-        Remove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cross.png"))); // NOI18N
-        Remove.setToolTipText("Remove Selected Products from Inventory");
-        Remove.addActionListener(new java.awt.event.ActionListener() {
+        INV_Remove_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cross.png"))); // NOI18N
+        INV_Remove_Button.setToolTipText("Remove Selected Products from Inventory");
+        INV_Remove_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RemoveActionPerformed(evt);
+                INV_Remove_ButtonActionPerformed(evt);
             }
         });
 
-        Update.setText("Update Stock");
-        Update.setToolTipText("Increase Available Quantity for Selected Product");
-        Update.addActionListener(new java.awt.event.ActionListener() {
+        INV_Update_Button.setText("Update Stock");
+        INV_Update_Button.setToolTipText("Increase Available Quantity for Selected Product");
+        INV_Update_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UpdateActionPerformed(evt);
+                INV_Update_ButtonActionPerformed(evt);
             }
         });
 
-        Import.setText("Import");
-        Import.setToolTipText("Import Inventory Data from a CSV File");
-        Import.addActionListener(new java.awt.event.ActionListener() {
+        INV_Import_Button.setText("Import");
+        INV_Import_Button.setToolTipText("Import Inventory Data from a CSV File");
+        INV_Import_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ImportActionPerformed(evt);
+                INV_Import_ButtonActionPerformed(evt);
             }
         });
 
-        Export_Inventory.setText("Export");
-        Export_Inventory.setToolTipText("Export Inventory Data to a CSV File");
-        Export_Inventory.addActionListener(new java.awt.event.ActionListener() {
+        INV_Export_Button.setText("Export");
+        INV_Export_Button.setToolTipText("Export Inventory Data to a CSV File");
+        INV_Export_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Export_InventoryActionPerformed(evt);
+                INV_Export_ButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Inventory_PageLayout = new javax.swing.GroupLayout(Inventory_Page);
-        Inventory_Page.setLayout(Inventory_PageLayout);
-        Inventory_PageLayout.setHorizontalGroup(
-            Inventory_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Inventory_PageLayout.createSequentialGroup()
+        javax.swing.GroupLayout InventoryLayout = new javax.swing.GroupLayout(Inventory);
+        Inventory.setLayout(InventoryLayout);
+        InventoryLayout.setHorizontalGroup(
+            InventoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InventoryLayout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addGroup(Inventory_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Inventory_PageLayout.createSequentialGroup()
-                        .addComponent(Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(InventoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(InventoryLayout.createSequentialGroup()
+                        .addComponent(INV_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(Inventory_PageLayout.createSequentialGroup()
-                        .addGroup(Inventory_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(Inventory_PageLayout.createSequentialGroup()
-                                .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(InventoryLayout.createSequentialGroup()
+                        .addGroup(InventoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(InventoryLayout.createSequentialGroup()
+                                .addComponent(INV_Add_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Edit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(INV_Edit_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Remove, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(INV_Remove_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Update, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(INV_Update_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(Import, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(INV_Import_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(Export_Inventory, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Inventory_Table_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 846, Short.MAX_VALUE))
+                                .addComponent(INV_Export_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(INV_Table_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 846, Short.MAX_VALUE))
                         .addGap(60, 60, 60))))
         );
-        Inventory_PageLayout.setVerticalGroup(
-            Inventory_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Inventory_PageLayout.createSequentialGroup()
+        InventoryLayout.setVerticalGroup(
+            InventoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InventoryLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(INV_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Inventory_Table_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
+                .addComponent(INV_Table_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addGroup(Inventory_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Remove)
-                    .addComponent(Edit, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Import, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Export_Inventory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(Inventory_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Add, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(Update, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(InventoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(INV_Remove_Button)
+                    .addComponent(INV_Edit_Button, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(INV_Import_Button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(INV_Export_Button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(InventoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(INV_Add_Button, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(INV_Update_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(73, 73, 73))
         );
 
-        Container.add(Inventory_Page, "inventory");
+        Container.add(Inventory, "inventory");
 
-        New_Product_Heading.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        New_Product_Heading.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        New_Product_Heading.setText("Add New Product");
-        New_Product_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        NP_Heading.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        NP_Heading.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        NP_Heading.setText("Add New Product");
+        NP_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
-        New_Product_Panel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        NP_Product_Details.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        Product_Name_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Product_Name_Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Product_Name_Label.setText("Product Name");
+        NP_Product_Name_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        NP_Product_Name_Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        NP_Product_Name_Label.setText("Product Name");
 
-        Price_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Price_Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Price_Label.setText("Price");
+        NP_Price_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        NP_Price_Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        NP_Price_Label.setText("Price");
 
-        GST_Rate_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        GST_Rate_Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        GST_Rate_Label.setText("GST Rate");
+        NP_GST_Rate_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        NP_GST_Rate_Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        NP_GST_Rate_Label.setText("GST Rate");
 
-        Available_Quantity_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Available_Quantity_Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Available_Quantity_Label.setText("Available Quantity");
+        NP_Available_Quantity_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        NP_Available_Quantity_Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        NP_Available_Quantity_Label.setText("Available Quantity");
 
-        javax.swing.GroupLayout New_Product_PanelLayout = new javax.swing.GroupLayout(New_Product_Panel);
-        New_Product_Panel.setLayout(New_Product_PanelLayout);
-        New_Product_PanelLayout.setHorizontalGroup(
-            New_Product_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(New_Product_PanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout NP_Product_DetailsLayout = new javax.swing.GroupLayout(NP_Product_Details);
+        NP_Product_Details.setLayout(NP_Product_DetailsLayout);
+        NP_Product_DetailsLayout.setHorizontalGroup(
+            NP_Product_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NP_Product_DetailsLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(New_Product_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Available_Quantity_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GST_Rate_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Price_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Product_Name_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(NP_Product_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(NP_Available_Quantity_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NP_GST_Rate_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NP_Price_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NP_Product_Name_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(New_Product_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(GST_Rate, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Price_Field, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Product_Name)
-                    .addComponent(Available_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE))
+                .addGroup(NP_Product_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(NP_GST_Rate, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NP_Price, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NP_Product_Name)
+                    .addComponent(NP_Available_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE))
                 .addGap(30, 30, 30))
         );
-        New_Product_PanelLayout.setVerticalGroup(
-            New_Product_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(New_Product_PanelLayout.createSequentialGroup()
+        NP_Product_DetailsLayout.setVerticalGroup(
+            NP_Product_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NP_Product_DetailsLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(New_Product_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Product_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Product_Name_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(NP_Product_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(NP_Product_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NP_Product_Name_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(New_Product_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Price_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Price_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(NP_Product_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NP_Price_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NP_Price, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(New_Product_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(GST_Rate_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GST_Rate, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(NP_Product_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NP_GST_Rate_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NP_GST_Rate, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(New_Product_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Available_Quantity_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Available_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(NP_Product_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NP_Available_Quantity_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NP_Available_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(149, Short.MAX_VALUE))
         );
 
-        Cancel_Adding.setText("Cancel");
-        Cancel_Adding.setToolTipText("");
-        Cancel_Adding.addActionListener(new java.awt.event.ActionListener() {
+        NP_Cancel_Button.setText("Cancel");
+        NP_Cancel_Button.setToolTipText("");
+        NP_Cancel_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cancel_AddingActionPerformed(evt);
+                NP_Cancel_ButtonActionPerformed(evt);
             }
         });
 
-        Finish_Adding.setText("Finish");
-        Finish_Adding.setToolTipText("");
-        Finish_Adding.addActionListener(new java.awt.event.ActionListener() {
+        NP_Finish_Button.setText("Finish");
+        NP_Finish_Button.setToolTipText("");
+        NP_Finish_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Finish_AddingActionPerformed(evt);
+                NP_Finish_ButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Inventory_NewLayout = new javax.swing.GroupLayout(Inventory_New);
-        Inventory_New.setLayout(Inventory_NewLayout);
-        Inventory_NewLayout.setHorizontalGroup(
-            Inventory_NewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Inventory_NewLayout.createSequentialGroup()
+        javax.swing.GroupLayout New_ProductLayout = new javax.swing.GroupLayout(New_Product);
+        New_Product.setLayout(New_ProductLayout);
+        New_ProductLayout.setHorizontalGroup(
+            New_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(New_ProductLayout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addGroup(Inventory_NewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(Inventory_NewLayout.createSequentialGroup()
-                        .addComponent(Cancel_Adding, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(New_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(New_ProductLayout.createSequentialGroup()
+                        .addComponent(NP_Cancel_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Finish_Adding, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(New_Product_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(New_Product_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(NP_Finish_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NP_Product_Details, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(NP_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(60, 60, 60))
         );
-        Inventory_NewLayout.setVerticalGroup(
-            Inventory_NewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Inventory_NewLayout.createSequentialGroup()
+        New_ProductLayout.setVerticalGroup(
+            New_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, New_ProductLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(New_Product_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(NP_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(New_Product_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(NP_Product_Details, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addGroup(Inventory_NewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Cancel_Adding, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Finish_Adding, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(New_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(NP_Cancel_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NP_Finish_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(73, 73, 73))
         );
 
-        Container.add(Inventory_New, "invenNew");
+        Container.add(New_Product, "invenNew");
 
-        Settings_Container.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        SE_TabbedPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        Username_Panel.setBorder(javax.swing.BorderFactory.createTitledBorder("Change Username"));
+        SE_Username.setBorder(javax.swing.BorderFactory.createTitledBorder("Change Username"));
 
-        Current_Username_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Current_Username_Label.setText("Current Username");
+        SE_Current_Username_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_Current_Username_Label.setText("Current Username");
 
-        Current_Username.setEditable(false);
-        Current_Username.setBackground(new java.awt.Color(255, 255, 255));
-        Current_Username.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Current_Username.setEnabled(false);
+        SE_Current_Username.setEditable(false);
+        SE_Current_Username.setBackground(new java.awt.Color(255, 255, 255));
+        SE_Current_Username.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SE_Current_Username.setEnabled(false);
 
-        New_Username_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        New_Username_Label.setText("New Username");
+        SE_New_Username_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_New_Username_Label.setText("New Username");
 
-        New_Username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_New_Username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        Change_Username_Button.setText("Change Username");
-        Change_Username_Button.addActionListener(new java.awt.event.ActionListener() {
+        SE_Change_Username_Button.setText("Change Username");
+        SE_Change_Username_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Change_Username_ButtonActionPerformed(evt);
+                SE_Change_Username_ButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Username_PanelLayout = new javax.swing.GroupLayout(Username_Panel);
-        Username_Panel.setLayout(Username_PanelLayout);
-        Username_PanelLayout.setHorizontalGroup(
-            Username_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Username_PanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout SE_UsernameLayout = new javax.swing.GroupLayout(SE_Username);
+        SE_Username.setLayout(SE_UsernameLayout);
+        SE_UsernameLayout.setHorizontalGroup(
+            SE_UsernameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SE_UsernameLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Username_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(New_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Current_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(SE_UsernameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(SE_New_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SE_Current_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Username_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Current_Username)
-                    .addGroup(Username_PanelLayout.createSequentialGroup()
-                        .addComponent(Change_Username_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(SE_UsernameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SE_Current_Username)
+                    .addGroup(SE_UsernameLayout.createSequentialGroup()
+                        .addComponent(SE_Change_Username_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 618, Short.MAX_VALUE))
-                    .addComponent(New_Username))
+                    .addComponent(SE_New_Username))
                 .addContainerGap())
         );
-        Username_PanelLayout.setVerticalGroup(
-            Username_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Username_PanelLayout.createSequentialGroup()
+        SE_UsernameLayout.setVerticalGroup(
+            SE_UsernameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SE_UsernameLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Username_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Current_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Current_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(SE_UsernameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SE_Current_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SE_Current_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Username_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(New_Username_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(New_Username))
+                .addGroup(SE_UsernameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(SE_New_Username_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SE_New_Username))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Change_Username_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SE_Change_Username_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        Password_Panel.setBorder(javax.swing.BorderFactory.createTitledBorder("Change Password"));
+        SE_Password.setBorder(javax.swing.BorderFactory.createTitledBorder("Change Password"));
 
-        Current_Password_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Current_Password_Label.setText("Current Password");
+        SE_Current_Password_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_Current_Password_Label.setText("Current Password");
 
-        Current_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_Current_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        New_Password_Label1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        New_Password_Label1.setText("New Password");
+        SE_New_Password_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_New_Password_Label.setText("New Password");
 
-        New_Password1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_New_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        Confirm_Password_Label1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Confirm_Password_Label1.setText("Confirm Password");
+        SE_Confirm_Password_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_Confirm_Password_Label.setText("Confirm Password");
 
-        Confirm_Password1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_Confirm_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        Change_Password_Button.setText("Change Password");
-        Change_Password_Button.addActionListener(new java.awt.event.ActionListener() {
+        SE_Change_Password_Button.setText("Change Password");
+        SE_Change_Password_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Change_Password_ButtonActionPerformed(evt);
+                SE_Change_Password_ButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Password_PanelLayout = new javax.swing.GroupLayout(Password_Panel);
-        Password_Panel.setLayout(Password_PanelLayout);
-        Password_PanelLayout.setHorizontalGroup(
-            Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Password_PanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout SE_PasswordLayout = new javax.swing.GroupLayout(SE_Password);
+        SE_Password.setLayout(SE_PasswordLayout);
+        SE_PasswordLayout.setHorizontalGroup(
+            SE_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SE_PasswordLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Password_PanelLayout.createSequentialGroup()
-                        .addComponent(New_Password_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(SE_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SE_PasswordLayout.createSequentialGroup()
+                        .addComponent(SE_New_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(New_Password1))
-                    .addGroup(Password_PanelLayout.createSequentialGroup()
-                        .addComponent(Confirm_Password_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(SE_New_Password))
+                    .addGroup(SE_PasswordLayout.createSequentialGroup()
+                        .addComponent(SE_Confirm_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Password_PanelLayout.createSequentialGroup()
-                                .addComponent(Change_Password_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(SE_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(SE_PasswordLayout.createSequentialGroup()
+                                .addComponent(SE_Change_Password_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(Confirm_Password1)))
-                    .addGroup(Password_PanelLayout.createSequentialGroup()
-                        .addComponent(Current_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SE_Confirm_Password)))
+                    .addGroup(SE_PasswordLayout.createSequentialGroup()
+                        .addComponent(SE_Current_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Current_Password)))
+                        .addComponent(SE_Current_Password)))
                 .addContainerGap())
         );
-        Password_PanelLayout.setVerticalGroup(
-            Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Password_PanelLayout.createSequentialGroup()
+        SE_PasswordLayout.setVerticalGroup(
+            SE_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SE_PasswordLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Current_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Current_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(SE_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SE_Current_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SE_Current_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(New_Password1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(New_Password_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(SE_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SE_New_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SE_New_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Password_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Confirm_Password1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Confirm_Password_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(SE_PasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SE_Confirm_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SE_Confirm_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Change_Password_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SE_Change_Password_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        Recovery_Key_Panel.setBorder(javax.swing.BorderFactory.createTitledBorder("Reset Recovery Key"));
+        SE_Recovery_Key.setBorder(javax.swing.BorderFactory.createTitledBorder("Reset Recovery Key"));
 
-        Current_Password_Label1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Current_Password_Label1.setText("Current Password");
+        SE_Recovery_Password_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_Recovery_Password_Label.setText("Current Password");
 
-        Current_Password1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_Recovery_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        Reset_Key_Button.setText("Reset");
-        Reset_Key_Button.addActionListener(new java.awt.event.ActionListener() {
+        SE_Reset_Key_Button.setText("Reset Key");
+        SE_Reset_Key_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Reset_Key_ButtonActionPerformed(evt);
+                SE_Reset_Key_ButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Recovery_Key_PanelLayout = new javax.swing.GroupLayout(Recovery_Key_Panel);
-        Recovery_Key_Panel.setLayout(Recovery_Key_PanelLayout);
-        Recovery_Key_PanelLayout.setHorizontalGroup(
-            Recovery_Key_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Recovery_Key_PanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout SE_Recovery_KeyLayout = new javax.swing.GroupLayout(SE_Recovery_Key);
+        SE_Recovery_Key.setLayout(SE_Recovery_KeyLayout);
+        SE_Recovery_KeyLayout.setHorizontalGroup(
+            SE_Recovery_KeyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SE_Recovery_KeyLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Current_Password_Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SE_Recovery_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Recovery_Key_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Recovery_Key_PanelLayout.createSequentialGroup()
-                        .addComponent(Reset_Key_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(SE_Recovery_KeyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SE_Recovery_KeyLayout.createSequentialGroup()
+                        .addComponent(SE_Reset_Key_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(Current_Password1))
+                    .addComponent(SE_Recovery_Password))
                 .addContainerGap())
         );
-        Recovery_Key_PanelLayout.setVerticalGroup(
-            Recovery_Key_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Recovery_Key_PanelLayout.createSequentialGroup()
+        SE_Recovery_KeyLayout.setVerticalGroup(
+            SE_Recovery_KeyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SE_Recovery_KeyLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Recovery_Key_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Current_Password_Label1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Current_Password1))
+                .addGroup(SE_Recovery_KeyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(SE_Recovery_Password_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SE_Recovery_Password))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Reset_Key_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SE_Reset_Key_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout User_TabLayout = new javax.swing.GroupLayout(User_Tab);
-        User_Tab.setLayout(User_TabLayout);
-        User_TabLayout.setHorizontalGroup(
-            User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(User_TabLayout.createSequentialGroup()
+        javax.swing.GroupLayout SE_User_TabLayout = new javax.swing.GroupLayout(SE_User_Tab);
+        SE_User_Tab.setLayout(SE_User_TabLayout);
+        SE_User_TabLayout.setHorizontalGroup(
+            SE_User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SE_User_TabLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Username_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Password_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Recovery_Key_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(SE_User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SE_Username, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SE_Password, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SE_Recovery_Key, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        User_TabLayout.setVerticalGroup(
-            User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(User_TabLayout.createSequentialGroup()
+        SE_User_TabLayout.setVerticalGroup(
+            SE_User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SE_User_TabLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(Username_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SE_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Password_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SE_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Recovery_Key_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SE_Recovery_Key, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(61, Short.MAX_VALUE))
         );
 
-        Settings_Container.addTab("User Details", User_Tab);
+        SE_TabbedPane.addTab("User Details", SE_User_Tab);
 
-        Business_Name_Panel.setBorder(javax.swing.BorderFactory.createTitledBorder("Business Name"));
+        SE_Business_Name.setBorder(javax.swing.BorderFactory.createTitledBorder("Business Name"));
 
-        Current_Business_Label.setFont(Current_Business_Label.getFont().deriveFont(Current_Business_Label.getFont().getSize()+2f));
-        Current_Business_Label.setText("Current");
-        Current_Business_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SE_Current_Business_Label.setFont(SE_Current_Business_Label.getFont().deriveFont(SE_Current_Business_Label.getFont().getSize()+2f));
+        SE_Current_Business_Label.setText("Current");
+        SE_Current_Business_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Current_Business_Name.setEditable(false);
-        Current_Business_Name.setBackground(new java.awt.Color(255, 255, 255));
-        Current_Business_Name.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Current_Business_Name.setEnabled(false);
+        SE_Current_Business_Name.setEditable(false);
+        SE_Current_Business_Name.setBackground(new java.awt.Color(255, 255, 255));
+        SE_Current_Business_Name.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SE_Current_Business_Name.setEnabled(false);
 
-        New_Business_Label.setFont(New_Business_Label.getFont().deriveFont(New_Business_Label.getFont().getSize()+2f));
-        New_Business_Label.setText("New");
-        New_Business_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SE_New_Business_Label.setFont(SE_New_Business_Label.getFont().deriveFont(SE_New_Business_Label.getFont().getSize()+2f));
+        SE_New_Business_Label.setText("New");
+        SE_New_Business_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        New_Business_Name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_New_Business_Name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        javax.swing.GroupLayout Business_Name_PanelLayout = new javax.swing.GroupLayout(Business_Name_Panel);
-        Business_Name_Panel.setLayout(Business_Name_PanelLayout);
-        Business_Name_PanelLayout.setHorizontalGroup(
-            Business_Name_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Business_Name_PanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout SE_Business_NameLayout = new javax.swing.GroupLayout(SE_Business_Name);
+        SE_Business_Name.setLayout(SE_Business_NameLayout);
+        SE_Business_NameLayout.setHorizontalGroup(
+            SE_Business_NameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SE_Business_NameLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Business_Name_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Current_Business_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                    .addComponent(New_Business_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(SE_Business_NameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(SE_Current_Business_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                    .addComponent(SE_New_Business_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Business_Name_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Current_Business_Name)
-                    .addComponent(New_Business_Name))
+                .addGroup(SE_Business_NameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SE_Current_Business_Name)
+                    .addComponent(SE_New_Business_Name))
                 .addContainerGap())
         );
-        Business_Name_PanelLayout.setVerticalGroup(
-            Business_Name_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Business_Name_PanelLayout.createSequentialGroup()
+        SE_Business_NameLayout.setVerticalGroup(
+            SE_Business_NameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SE_Business_NameLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Business_Name_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Current_Business_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Current_Business_Name))
+                .addGroup(SE_Business_NameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SE_Current_Business_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SE_Current_Business_Name))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Business_Name_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(New_Business_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(New_Business_Name))
+                .addGroup(SE_Business_NameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SE_New_Business_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SE_New_Business_Name))
                 .addContainerGap())
         );
 
-        Contact_Number_Panel.setBorder(javax.swing.BorderFactory.createTitledBorder("Contact Number"));
+        SE_Contact_Number.setBorder(javax.swing.BorderFactory.createTitledBorder("Contact Number"));
 
-        Current_Contact_Label.setFont(Current_Contact_Label.getFont().deriveFont(Current_Contact_Label.getFont().getSize()+2f));
-        Current_Contact_Label.setText("Current");
+        SE_Current_Contact_Label.setFont(SE_Current_Contact_Label.getFont().deriveFont(SE_Current_Contact_Label.getFont().getSize()+2f));
+        SE_Current_Contact_Label.setText("Current");
 
-        Current_Contact_Number.setEditable(false);
-        Current_Contact_Number.setBackground(new java.awt.Color(255, 255, 255));
-        Current_Contact_Number.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Current_Contact_Number.setEnabled(false);
+        SE_Current_Contact_Number.setEditable(false);
+        SE_Current_Contact_Number.setBackground(new java.awt.Color(255, 255, 255));
+        SE_Current_Contact_Number.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SE_Current_Contact_Number.setEnabled(false);
 
-        New_Contact_Label.setFont(New_Contact_Label.getFont().deriveFont(New_Contact_Label.getFont().getSize()+2f));
-        New_Contact_Label.setText("New");
+        SE_New_Contact_Label.setFont(SE_New_Contact_Label.getFont().deriveFont(SE_New_Contact_Label.getFont().getSize()+2f));
+        SE_New_Contact_Label.setText("New");
 
-        New_Contact_Number.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        New_Contact_Number.addKeyListener(new java.awt.event.KeyAdapter() {
+        SE_New_Contact_Number.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_New_Contact_Number.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                New_Contact_NumberKeyPressed(evt);
+                SE_New_Contact_NumberKeyPressed(evt);
             }
         });
 
-        javax.swing.GroupLayout Contact_Number_PanelLayout = new javax.swing.GroupLayout(Contact_Number_Panel);
-        Contact_Number_Panel.setLayout(Contact_Number_PanelLayout);
-        Contact_Number_PanelLayout.setHorizontalGroup(
-            Contact_Number_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Contact_Number_PanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout SE_Contact_NumberLayout = new javax.swing.GroupLayout(SE_Contact_Number);
+        SE_Contact_Number.setLayout(SE_Contact_NumberLayout);
+        SE_Contact_NumberLayout.setHorizontalGroup(
+            SE_Contact_NumberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SE_Contact_NumberLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Contact_Number_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Current_Contact_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                    .addComponent(New_Contact_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(SE_Contact_NumberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(SE_Current_Contact_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                    .addComponent(SE_New_Contact_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Contact_Number_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Current_Contact_Number)
-                    .addComponent(New_Contact_Number))
+                .addGroup(SE_Contact_NumberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SE_Current_Contact_Number)
+                    .addComponent(SE_New_Contact_Number))
                 .addContainerGap())
         );
-        Contact_Number_PanelLayout.setVerticalGroup(
-            Contact_Number_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Contact_Number_PanelLayout.createSequentialGroup()
+        SE_Contact_NumberLayout.setVerticalGroup(
+            SE_Contact_NumberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SE_Contact_NumberLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Contact_Number_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Current_Contact_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Current_Contact_Number))
+                .addGroup(SE_Contact_NumberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SE_Current_Contact_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SE_Current_Contact_Number))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Contact_Number_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(New_Contact_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(New_Contact_Number))
+                .addGroup(SE_Contact_NumberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SE_New_Contact_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SE_New_Contact_Number))
                 .addContainerGap())
         );
 
-        Email_Address_Panel.setBorder(javax.swing.BorderFactory.createTitledBorder("Email Address"));
+        SE_Email_Address.setBorder(javax.swing.BorderFactory.createTitledBorder("Email Address"));
 
-        Current_Email_Label.setFont(Current_Email_Label.getFont().deriveFont(Current_Email_Label.getFont().getSize()+2f));
-        Current_Email_Label.setText("Current");
+        SE_Current_Email_Label.setFont(SE_Current_Email_Label.getFont().deriveFont(SE_Current_Email_Label.getFont().getSize()+2f));
+        SE_Current_Email_Label.setText("Current");
 
-        Current_Email_Address.setEditable(false);
-        Current_Email_Address.setBackground(new java.awt.Color(255, 255, 255));
-        Current_Email_Address.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Current_Email_Address.setEnabled(false);
+        SE_Current_Email_Address.setEditable(false);
+        SE_Current_Email_Address.setBackground(new java.awt.Color(255, 255, 255));
+        SE_Current_Email_Address.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SE_Current_Email_Address.setEnabled(false);
 
-        New_Email_Label.setFont(New_Email_Label.getFont().deriveFont(New_Email_Label.getFont().getSize()+2f));
-        New_Email_Label.setText("New");
+        SE_New_Email_Label.setFont(SE_New_Email_Label.getFont().deriveFont(SE_New_Email_Label.getFont().getSize()+2f));
+        SE_New_Email_Label.setText("New");
 
-        New_Email_Address.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_New_Email_Address.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        javax.swing.GroupLayout Email_Address_PanelLayout = new javax.swing.GroupLayout(Email_Address_Panel);
-        Email_Address_Panel.setLayout(Email_Address_PanelLayout);
-        Email_Address_PanelLayout.setHorizontalGroup(
-            Email_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Email_Address_PanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout SE_Email_AddressLayout = new javax.swing.GroupLayout(SE_Email_Address);
+        SE_Email_Address.setLayout(SE_Email_AddressLayout);
+        SE_Email_AddressLayout.setHorizontalGroup(
+            SE_Email_AddressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SE_Email_AddressLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Email_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(New_Email_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Current_Email_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE))
+                .addGroup(SE_Email_AddressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(SE_New_Email_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SE_Current_Email_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Email_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Current_Email_Address)
-                    .addComponent(New_Email_Address))
+                .addGroup(SE_Email_AddressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SE_Current_Email_Address)
+                    .addComponent(SE_New_Email_Address))
                 .addContainerGap())
         );
-        Email_Address_PanelLayout.setVerticalGroup(
-            Email_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Email_Address_PanelLayout.createSequentialGroup()
+        SE_Email_AddressLayout.setVerticalGroup(
+            SE_Email_AddressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SE_Email_AddressLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Email_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Current_Email_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Current_Email_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(SE_Email_AddressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SE_Current_Email_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SE_Current_Email_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Email_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(New_Email_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(New_Email_Address))
+                .addGroup(SE_Email_AddressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SE_New_Email_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SE_New_Email_Address))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Business_Address_Panel.setBorder(javax.swing.BorderFactory.createTitledBorder("Business Location (Address)"));
+        SE_Business_Location.setBorder(javax.swing.BorderFactory.createTitledBorder("Business Location (Address)"));
 
-        Current_Address_Label.setFont(Current_Address_Label.getFont().deriveFont(Current_Address_Label.getFont().getSize()+2f));
-        Current_Address_Label.setText("Current");
+        SE_Current_Address_Label.setFont(SE_Current_Address_Label.getFont().deriveFont(SE_Current_Address_Label.getFont().getSize()+2f));
+        SE_Current_Address_Label.setText("Current");
 
-        Current_Address.setEditable(false);
-        Current_Address.setBackground(new java.awt.Color(255, 255, 255));
-        Current_Address.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Current_Address.setEnabled(false);
+        SE_Current_Address.setEditable(false);
+        SE_Current_Address.setBackground(new java.awt.Color(255, 255, 255));
+        SE_Current_Address.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SE_Current_Address.setEnabled(false);
 
-        New_Address_Label.setFont(New_Address_Label.getFont().deriveFont(New_Address_Label.getFont().getSize()+2f));
-        New_Address_Label.setText("New");
+        SE_New_Address_Label.setFont(SE_New_Address_Label.getFont().deriveFont(SE_New_Address_Label.getFont().getSize()+2f));
+        SE_New_Address_Label.setText("New");
 
-        New_Address.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_New_Address.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        javax.swing.GroupLayout Business_Address_PanelLayout = new javax.swing.GroupLayout(Business_Address_Panel);
-        Business_Address_Panel.setLayout(Business_Address_PanelLayout);
-        Business_Address_PanelLayout.setHorizontalGroup(
-            Business_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Business_Address_PanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout SE_Business_LocationLayout = new javax.swing.GroupLayout(SE_Business_Location);
+        SE_Business_Location.setLayout(SE_Business_LocationLayout);
+        SE_Business_LocationLayout.setHorizontalGroup(
+            SE_Business_LocationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SE_Business_LocationLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Business_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Current_Address_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                    .addComponent(New_Address_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(SE_Business_LocationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(SE_Current_Address_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                    .addComponent(SE_New_Address_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Business_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Current_Address)
-                    .addComponent(New_Address))
+                .addGroup(SE_Business_LocationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SE_Current_Address)
+                    .addComponent(SE_New_Address))
                 .addContainerGap())
         );
-        Business_Address_PanelLayout.setVerticalGroup(
-            Business_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Business_Address_PanelLayout.createSequentialGroup()
+        SE_Business_LocationLayout.setVerticalGroup(
+            SE_Business_LocationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SE_Business_LocationLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Business_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Current_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Current_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(SE_Business_LocationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SE_Current_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SE_Current_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Business_Address_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(New_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(New_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(SE_Business_LocationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SE_New_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SE_New_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        Save_Changes_Button.setText("Save Changes");
-        Save_Changes_Button.addActionListener(new java.awt.event.ActionListener() {
+        SE_Save_Changes_Button.setText("Save Changes");
+        SE_Save_Changes_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Save_Changes_ButtonActionPerformed(evt);
+                SE_Save_Changes_ButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Details_TabLayout = new javax.swing.GroupLayout(Details_Tab);
-        Details_Tab.setLayout(Details_TabLayout);
-        Details_TabLayout.setHorizontalGroup(
-            Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Details_TabLayout.createSequentialGroup()
+        javax.swing.GroupLayout SE_Business_TabLayout = new javax.swing.GroupLayout(SE_Business_Tab);
+        SE_Business_Tab.setLayout(SE_Business_TabLayout);
+        SE_Business_TabLayout.setHorizontalGroup(
+            SE_Business_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SE_Business_TabLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Business_Address_Panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Business_Name_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Contact_Number_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Email_Address_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(Details_TabLayout.createSequentialGroup()
+                .addGroup(SE_Business_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SE_Business_Location, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SE_Business_Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SE_Contact_Number, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SE_Email_Address, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(SE_Business_TabLayout.createSequentialGroup()
                         .addGap(93, 93, 93)
-                        .addComponent(Save_Changes_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(SE_Save_Changes_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 719, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-        Details_TabLayout.setVerticalGroup(
-            Details_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Details_TabLayout.createSequentialGroup()
+        SE_Business_TabLayout.setVerticalGroup(
+            SE_Business_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SE_Business_TabLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(Business_Name_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(SE_Business_Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(Contact_Number_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(SE_Contact_Number, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(Email_Address_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(SE_Email_Address, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(Business_Address_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(SE_Business_Location, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(Save_Changes_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SE_Save_Changes_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        Settings_Container.addTab("Business Details", Details_Tab);
+        SE_TabbedPane.addTab("Business Details", SE_Business_Tab);
 
-        javax.swing.GroupLayout Settings_PageLayout = new javax.swing.GroupLayout(Settings_Page);
-        Settings_Page.setLayout(Settings_PageLayout);
-        Settings_PageLayout.setHorizontalGroup(
-            Settings_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Settings_PageLayout.createSequentialGroup()
-                .addComponent(Settings_Container)
+        javax.swing.GroupLayout SettingsLayout = new javax.swing.GroupLayout(Settings);
+        Settings.setLayout(SettingsLayout);
+        SettingsLayout.setHorizontalGroup(
+            SettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SettingsLayout.createSequentialGroup()
+                .addComponent(SE_TabbedPane)
                 .addContainerGap())
         );
-        Settings_PageLayout.setVerticalGroup(
-            Settings_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Settings_Container)
+        SettingsLayout.setVerticalGroup(
+            SettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(SE_TabbedPane)
         );
 
-        Container.add(Settings_Page, "settings");
+        Container.add(Settings, "settings");
 
-        Speckle_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/app-logo.png"))); // NOI18N
+        AB_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/app-logo.png"))); // NOI18N
 
-        About_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
-        About_Heading.setText("About Speckle");
-        About_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        AB_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
+        AB_Heading.setText("About Speckle");
+        AB_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Version_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        Version_Label.setText("Version " + Version);
-        Version_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        AB_Version_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        AB_Version_Label.setText("Version " + Version);
+        AB_Version_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        About_Para.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        About_Para.setText("Speckle is Software Used For Invoicing(Billing) and Inventory Management");
+        AB_Paragraph.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        AB_Paragraph.setText("Speckle is Software Used For Invoicing(Billing) and Inventory Management");
 
-        Authors_Tab.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(180, 180, 180)));
+        AB_Authors_Tab.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(180, 180, 180)));
 
-        Authors_Container.setBorder(null);
+        AB_Authors_Container.setBorder(null);
 
-        Authors_Text.setEditable(false);
-        Authors_Text.setBackground(new java.awt.Color(255, 255, 255));
-        Authors_Text.setColumns(20);
-        Authors_Text.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
-        Authors_Text.setRows(5);
-        Authors_Text.setText("\n  Astralsphere Arts team would like to acknowledge the following contributors:\n\n  Akshat Singh Pawar (akshat1222)\n  Hemant Kumar Morya (XaHertz)\n");
-        Authors_Container.setViewportView(Authors_Text);
+        AB_Authors_Text.setEditable(false);
+        AB_Authors_Text.setBackground(new java.awt.Color(255, 255, 255));
+        AB_Authors_Text.setColumns(20);
+        AB_Authors_Text.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        AB_Authors_Text.setRows(5);
+        AB_Authors_Text.setText("\n  Astralsphere Arts team would like to acknowledge the following contributors:\n\n  Akshat Singh Pawar (akshat1222)\n  Hemant Kumar Morya (XaHertz)\n");
+        AB_Authors_Container.setViewportView(AB_Authors_Text);
 
-        javax.swing.GroupLayout Authors_TabLayout = new javax.swing.GroupLayout(Authors_Tab);
-        Authors_Tab.setLayout(Authors_TabLayout);
-        Authors_TabLayout.setHorizontalGroup(
-            Authors_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Authors_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 852, Short.MAX_VALUE)
+        javax.swing.GroupLayout AB_Authors_TabLayout = new javax.swing.GroupLayout(AB_Authors_Tab);
+        AB_Authors_Tab.setLayout(AB_Authors_TabLayout);
+        AB_Authors_TabLayout.setHorizontalGroup(
+            AB_Authors_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(AB_Authors_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 852, Short.MAX_VALUE)
         );
-        Authors_TabLayout.setVerticalGroup(
-            Authors_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Authors_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
-        );
-
-        About_Container.addTab("Authors", Authors_Tab);
-
-        License_Tab.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(180, 180, 180)));
-
-        License_Container.setBorder(null);
-
-        License_Text.setEditable(false);
-        License_Text.setBackground(new java.awt.Color(255, 255, 255));
-        License_Text.setColumns(20);
-        License_Text.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
-        License_Text.setRows(5);
-        License_Text.setText("\n                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright (c) 2021-2025 Astralsphere Arts\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       https://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n");
-        License_Text.setCaretPosition(0);
-        License_Container.setViewportView(License_Text);
-
-        javax.swing.GroupLayout License_TabLayout = new javax.swing.GroupLayout(License_Tab);
-        License_Tab.setLayout(License_TabLayout);
-        License_TabLayout.setHorizontalGroup(
-            License_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(License_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 852, Short.MAX_VALUE)
-        );
-        License_TabLayout.setVerticalGroup(
-            License_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(License_Container, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+        AB_Authors_TabLayout.setVerticalGroup(
+            AB_Authors_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(AB_Authors_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
         );
 
-        About_Container.addTab("License", License_Tab);
+        AB_TabbedPane.addTab("Authors", AB_Authors_Tab);
 
-        Credits_Tab.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(180, 180, 180)));
+        AB_License_Tab.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(180, 180, 180)));
 
-        Credits_Container.setBorder(null);
+        AB_License_Container.setBorder(null);
 
-        Credits_Text.setEditable(false);
-        Credits_Text.setBackground(new java.awt.Color(255, 255, 255));
-        Credits_Text.setColumns(20);
-        Credits_Text.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
-        Credits_Text.setRows(5);
-        Credits_Text.setText("\n  Some features of Astral Invoice rely on external libraries here is a list of them:\n\n  1. SQLite JDBC Crypt - https://github.com/Willena/sqlite-jdbc-crypt\n  2. FlatLaf - https://www.formdev.com/flatlaf\n  3. OpenPDF - https://github.com/LibrePDF/OpenPDF\n  4. ICU4J (International Components for Unicode) - https://icu.unicode.org\n");
-        Credits_Container.setViewportView(Credits_Text);
+        AB_License_Text.setEditable(false);
+        AB_License_Text.setBackground(new java.awt.Color(255, 255, 255));
+        AB_License_Text.setColumns(20);
+        AB_License_Text.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        AB_License_Text.setRows(5);
+        AB_License_Text.setText("\n                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright (c) 2021-2025 Astralsphere Arts\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       https://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n");
+        AB_License_Text.setCaretPosition(0);
+        AB_License_Container.setViewportView(AB_License_Text);
 
-        javax.swing.GroupLayout Credits_TabLayout = new javax.swing.GroupLayout(Credits_Tab);
-        Credits_Tab.setLayout(Credits_TabLayout);
-        Credits_TabLayout.setHorizontalGroup(
-            Credits_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Credits_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 852, Short.MAX_VALUE)
+        javax.swing.GroupLayout AB_License_TabLayout = new javax.swing.GroupLayout(AB_License_Tab);
+        AB_License_Tab.setLayout(AB_License_TabLayout);
+        AB_License_TabLayout.setHorizontalGroup(
+            AB_License_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(AB_License_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 852, Short.MAX_VALUE)
         );
-        Credits_TabLayout.setVerticalGroup(
-            Credits_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Credits_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+        AB_License_TabLayout.setVerticalGroup(
+            AB_License_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(AB_License_Container, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
         );
 
-        About_Container.addTab("Credits", Credits_Tab);
+        AB_TabbedPane.addTab("License", AB_License_Tab);
 
-        About_Container.setSelectedComponent(License_Tab);
+        AB_Credits_Tab.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(180, 180, 180)));
 
-        javax.swing.GroupLayout About_PageLayout = new javax.swing.GroupLayout(About_Page);
-        About_Page.setLayout(About_PageLayout);
-        About_PageLayout.setHorizontalGroup(
-            About_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(About_PageLayout.createSequentialGroup()
+        AB_Credits_Container.setBorder(null);
+
+        AB_Credits_Text.setEditable(false);
+        AB_Credits_Text.setBackground(new java.awt.Color(255, 255, 255));
+        AB_Credits_Text.setColumns(20);
+        AB_Credits_Text.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        AB_Credits_Text.setRows(5);
+        AB_Credits_Text.setText("\n  Some features of Astral Invoice rely on external libraries here is a list of them:\n\n  1. SQLite JDBC Crypt - https://github.com/Willena/sqlite-jdbc-crypt\n  2. FlatLaf - https://www.formdev.com/flatlaf\n  3. OpenPDF - https://github.com/LibrePDF/OpenPDF\n  4. ICU4J (International Components for Unicode) - https://icu.unicode.org\n");
+        AB_Credits_Container.setViewportView(AB_Credits_Text);
+
+        javax.swing.GroupLayout AB_Credits_TabLayout = new javax.swing.GroupLayout(AB_Credits_Tab);
+        AB_Credits_Tab.setLayout(AB_Credits_TabLayout);
+        AB_Credits_TabLayout.setHorizontalGroup(
+            AB_Credits_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(AB_Credits_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 852, Short.MAX_VALUE)
+        );
+        AB_Credits_TabLayout.setVerticalGroup(
+            AB_Credits_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(AB_Credits_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+        );
+
+        AB_TabbedPane.addTab("Credits", AB_Credits_Tab);
+
+        AB_TabbedPane.setSelectedComponent(AB_License_Tab);
+
+        javax.swing.GroupLayout AboutLayout = new javax.swing.GroupLayout(About);
+        About.setLayout(AboutLayout);
+        AboutLayout.setHorizontalGroup(
+            AboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AboutLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addGroup(About_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(About_PageLayout.createSequentialGroup()
-                        .addComponent(Speckle_Logo)
+                .addGroup(AboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AboutLayout.createSequentialGroup()
+                        .addComponent(AB_Logo)
                         .addGap(18, 18, 18)
-                        .addGroup(About_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(About_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Version_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(About_Para, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(About_Container))
+                        .addGroup(AboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(AB_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(AB_Version_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(AB_Paragraph, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(AB_TabbedPane))
                 .addGap(56, 56, 56))
         );
-        About_PageLayout.setVerticalGroup(
-            About_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(About_PageLayout.createSequentialGroup()
+        AboutLayout.setVerticalGroup(
+            AboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AboutLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(About_PageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(About_PageLayout.createSequentialGroup()
-                        .addComponent(About_Heading)
+                .addGroup(AboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(AboutLayout.createSequentialGroup()
+                        .addComponent(AB_Heading)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Version_Label)
+                        .addComponent(AB_Version_Label)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(About_Para, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(Speckle_Logo))
+                        .addComponent(AB_Paragraph, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(AB_Logo))
                 .addGap(27, 27, 27)
-                .addComponent(About_Container)
+                .addComponent(AB_TabbedPane)
                 .addGap(50, 50, 50))
         );
 
-        Container.add(About_Page, "about");
+        Container.add(About, "about");
 
-        File_Menu.setText("File");
+        MB_File_Menu.setText("File");
 
-        New_Invoice_MenuItem.setText("New Invoice");
-        New_Invoice_MenuItem.setEnabled(false);
-        New_Invoice_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+        MB_New_Invoice.setText("New Invoice");
+        MB_New_Invoice.setEnabled(false);
+        MB_New_Invoice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                New_Invoice_MenuItemActionPerformed(evt);
+                MB_New_InvoiceActionPerformed(evt);
             }
         });
-        File_Menu.add(New_Invoice_MenuItem);
+        MB_File_Menu.add(MB_New_Invoice);
 
-        Invoicing_MenuItem.setText("Invoice History");
-        Invoicing_MenuItem.setEnabled(false);
-        Invoicing_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+        MB_Invoice_History.setText("Invoice History");
+        MB_Invoice_History.setEnabled(false);
+        MB_Invoice_History.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Invoicing_MenuItemActionPerformed(evt);
+                MB_Invoice_HistoryActionPerformed(evt);
             }
         });
-        File_Menu.add(Invoicing_MenuItem);
+        MB_File_Menu.add(MB_Invoice_History);
 
-        Inventory_MenuItem.setText("Inventory");
-        Inventory_MenuItem.setEnabled(false);
-        Inventory_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+        MB_Inventory.setText("Inventory");
+        MB_Inventory.setEnabled(false);
+        MB_Inventory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Inventory_MenuItemActionPerformed(evt);
+                MB_InventoryActionPerformed(evt);
             }
         });
-        File_Menu.add(Inventory_MenuItem);
-        File_Menu.add(Separator_01);
+        MB_File_Menu.add(MB_Inventory);
+        MB_File_Menu.add(MB_Separator_01);
 
-        SignOut_MenuItem.setText("Sign Out");
-        SignOut_MenuItem.setEnabled(false);
-        SignOut_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+        MB_Sign_Out.setText("Sign Out");
+        MB_Sign_Out.setEnabled(false);
+        MB_Sign_Out.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SignOut_MenuItemActionPerformed(evt);
+                MB_Sign_OutActionPerformed(evt);
             }
         });
-        File_Menu.add(SignOut_MenuItem);
-        File_Menu.add(Separator_02);
+        MB_File_Menu.add(MB_Sign_Out);
+        MB_File_Menu.add(MB_Separator_02);
 
-        Exit_MenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        Exit_MenuItem.setText("Exit");
-        Exit_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+        MB_Exit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        MB_Exit.setText("Exit");
+        MB_Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Exit_MenuItemActionPerformed(evt);
+                MB_ExitActionPerformed(evt);
             }
         });
-        File_Menu.add(Exit_MenuItem);
+        MB_File_Menu.add(MB_Exit);
 
-        MenuBar.add(File_Menu);
+        MenuBar.add(MB_File_Menu);
 
-        Inventory_Menu.setText("Inventory");
+        MB_Inventory_Menu.setText("Inventory");
 
-        Add_MenuItem.setText("Add");
-        Add_MenuItem.setEnabled(false);
-        Add_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+        MB_INV_Add.setText("Add");
+        MB_INV_Add.setEnabled(false);
+        MB_INV_Add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Add_MenuItemActionPerformed(evt);
+                MB_INV_AddActionPerformed(evt);
             }
         });
-        Inventory_Menu.add(Add_MenuItem);
+        MB_Inventory_Menu.add(MB_INV_Add);
 
-        Edit_MenuItem.setText("Edit");
-        Edit_MenuItem.setEnabled(false);
-        Edit_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+        MB_INV_Edit.setText("Edit");
+        MB_INV_Edit.setEnabled(false);
+        MB_INV_Edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Edit_MenuItemActionPerformed(evt);
+                MB_INV_EditActionPerformed(evt);
             }
         });
-        Inventory_Menu.add(Edit_MenuItem);
+        MB_Inventory_Menu.add(MB_INV_Edit);
 
-        Remove_MenuItem.setText("Remove");
-        Remove_MenuItem.setEnabled(false);
-        Remove_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+        MB_INV_Remove.setText("Remove");
+        MB_INV_Remove.setEnabled(false);
+        MB_INV_Remove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Remove_MenuItemActionPerformed(evt);
+                MB_INV_RemoveActionPerformed(evt);
             }
         });
-        Inventory_Menu.add(Remove_MenuItem);
-        Inventory_Menu.add(Separator_03);
+        MB_Inventory_Menu.add(MB_INV_Remove);
+        MB_Inventory_Menu.add(MB_Separator_03);
 
-        Update_MenuItem.setText("Update Stock");
-        Update_MenuItem.setEnabled(false);
-        Update_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+        MB_INV_Update.setText("Update Stock");
+        MB_INV_Update.setEnabled(false);
+        MB_INV_Update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Update_MenuItemActionPerformed(evt);
+                MB_INV_UpdateActionPerformed(evt);
             }
         });
-        Inventory_Menu.add(Update_MenuItem);
+        MB_Inventory_Menu.add(MB_INV_Update);
 
-        Import_MenuItem.setText("Import Data");
-        Import_MenuItem.setEnabled(false);
-        Import_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+        MB_INV_Import.setText("Import Data");
+        MB_INV_Import.setEnabled(false);
+        MB_INV_Import.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Import_MenuItemActionPerformed(evt);
+                MB_INV_ImportActionPerformed(evt);
             }
         });
-        Inventory_Menu.add(Import_MenuItem);
+        MB_Inventory_Menu.add(MB_INV_Import);
 
-        MenuBar.add(Inventory_Menu);
+        MenuBar.add(MB_Inventory_Menu);
 
-        Tools_Menu.setText("Tools");
+        MB_Tools_Menu.setText("Tools");
 
-        Export_Invoice_MenuItem.setText("Export Invoice History");
-        Export_Invoice_MenuItem.setEnabled(false);
-        Export_Invoice_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+        MB_Export_Invoice.setText("Export Invoice History");
+        MB_Export_Invoice.setEnabled(false);
+        MB_Export_Invoice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Export_Invoice_MenuItemActionPerformed(evt);
+                MB_Export_InvoiceActionPerformed(evt);
             }
         });
-        Tools_Menu.add(Export_Invoice_MenuItem);
+        MB_Tools_Menu.add(MB_Export_Invoice);
 
-        Export_Inventory_MenuItem.setText("Export Inventory Data");
-        Export_Inventory_MenuItem.setEnabled(false);
-        Export_Inventory_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+        MB_Export_Inventory.setText("Export Inventory Data");
+        MB_Export_Inventory.setEnabled(false);
+        MB_Export_Inventory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Export_Inventory_MenuItemActionPerformed(evt);
+                MB_Export_InventoryActionPerformed(evt);
             }
         });
-        Tools_Menu.add(Export_Inventory_MenuItem);
-        Tools_Menu.add(Separator_04);
+        MB_Tools_Menu.add(MB_Export_Inventory);
+        MB_Tools_Menu.add(MB_Separator_04);
 
-        Settings_MenuItem.setText("Settings");
-        Settings_MenuItem.setEnabled(false);
-        Settings_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+        MB_Settings.setText("Settings");
+        MB_Settings.setEnabled(false);
+        MB_Settings.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Settings_MenuItemActionPerformed(evt);
+                MB_SettingsActionPerformed(evt);
             }
         });
-        Tools_Menu.add(Settings_MenuItem);
+        MB_Tools_Menu.add(MB_Settings);
 
-        MenuBar.add(Tools_Menu);
+        MenuBar.add(MB_Tools_Menu);
 
-        Help_Menu.setText("Help");
+        MB_Help_Menu.setText("Help");
 
-        About_MenuItem.setText("About");
-        About_MenuItem.addActionListener(new java.awt.event.ActionListener() {
+        MB_About.setText("About");
+        MB_About.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                About_MenuItemActionPerformed(evt);
+                MB_AboutActionPerformed(evt);
             }
         });
-        Help_Menu.add(About_MenuItem);
+        MB_Help_Menu.add(MB_About);
 
-        MenuBar.add(Help_Menu);
+        MenuBar.add(MB_Help_Menu);
 
         setJMenuBar(MenuBar);
 
@@ -2287,265 +2287,247 @@ public class Main extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void SignIn_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignIn_ButtonActionPerformed
-        usrname = Username.getText();
-        passwd = new String(Password.getPassword());
-        if (usrname.equals("") && passwd.equals(""))
-            JOptionPane.showMessageDialog(null, "Please enter Username and Password they cannot be Blank."
-                + " Please Try Again!", "Credentials are Blank", JOptionPane.ERROR_MESSAGE);
-        else if (com.astral.internal.SQLite.logIn(usrname, passwd)) {
+    private void SI_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SI_ButtonActionPerformed
+        String username = SI_Username.getText();
+        String password = new String(SI_Password.getPassword());
+        if (username.equals("") && password.equals(""))
+            JOptionPane.showMessageDialog(null, "Please enter Username and Password they cannot be Blank. Please Try Again!", "Credentials are Blank", JOptionPane.ERROR_MESSAGE);
+        else if (com.astral.internal.SQLite.logIn(username, password))
             SignIn_ActionPerformed();
-        } else
-            JOptionPane.showMessageDialog(null, "The Username or Password entered are Incorrect."
-                + " Please Try Again!", "Incorrect Credentials", JOptionPane.ERROR_MESSAGE);
-    }//GEN-LAST:event_SignIn_ButtonActionPerformed
+        else
+            JOptionPane.showMessageDialog(null, "The Username or Password entered are Incorrect. Please Try Again!", "Incorrect Credentials", JOptionPane.ERROR_MESSAGE);
+    }//GEN-LAST:event_SI_ButtonActionPerformed
 
-    private void Forgot_Password_LabelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Forgot_Password_LabelMouseMoved
-        Forgot_Password_Label.setCursor(java.awt.Cursor.getPredefinedCursor(java.awt.Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_Forgot_Password_LabelMouseMoved
+    private void SI_Forgot_PasswordMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SI_Forgot_PasswordMouseMoved
+        SI_Forgot_Password.setCursor(java.awt.Cursor.getPredefinedCursor(java.awt.Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_SI_Forgot_PasswordMouseMoved
 
-    private void Forgot_Password_LabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Forgot_Password_LabelMousePressed
-        Recovery_Key.setText("");
-        New_Password.setText("");
-        Confirm_Passwd.setText("");
+    private void SI_Forgot_PasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SI_Forgot_PasswordMousePressed
+        FP_Recovery_Key.setText("");
+        FP_New_Password.setText("");
+        FP_Confirm_Password.setText("");
         Container_Deck.show(Container, "forgotPassword");
-    }//GEN-LAST:event_Forgot_Password_LabelMousePressed
+    }//GEN-LAST:event_SI_Forgot_PasswordMousePressed
 
-    private void Next_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Next_ButtonActionPerformed
-        usrname = com.astral.internal.Security.getEncodedString(SignUp_Username.getText());
-        passwd = new String(Create_Password.getPassword());
-        String confpasswd = new String(Confirm_Password.getPassword());
-        key = com.astral.internal.Function.randomAlphaNumeric(16);
-        if (usrname.equals("") || passwd.equals(""))
-            JOptionPane.showMessageDialog(null, "Username or Password cannot be Empty."
-                + " Please Try Again!", "Username/Password Empty", JOptionPane.ERROR_MESSAGE);
-        else if (passwd.length() < 8)
-            JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least 8 Characters."
-                + " Please Try Again!", "Password Too Short", JOptionPane.ERROR_MESSAGE);
-        else if (!com.astral.internal.Security.checkPass(passwd))
-            JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric,"
-                + " One Uppercase and One Lowercase Character. Please Try Again!", "Insecure"
-                + " Password", JOptionPane.ERROR_MESSAGE);
-        else if (!passwd.equals(confpasswd))
-            JOptionPane.showMessageDialog(null, "The Passwords in Password Fields do not Match."
-                + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
+    private void SM_Next_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SM_Next_ButtonActionPerformed
+        String username = com.astral.internal.Security.getEncodedString(SM_Username.getText());
+        String password = new String(SM_Create_Password.getPassword());
+        String confirmPassword = new String(SM_Confirm_Password.getPassword());
+        String recoveryKey = com.astral.internal.Function.randomAlphaNumeric(16);
+        if (username.equals("") || password.equals(""))
+            JOptionPane.showMessageDialog(null, "Username or Password cannot be Empty. Please Try Again!", "Username/Password Empty", JOptionPane.ERROR_MESSAGE);
+        else if (password.length() < 8)
+            JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least 8 Characters. Please Try Again!", "Password Too Short", JOptionPane.ERROR_MESSAGE);
+        else if (!com.astral.internal.Security.checkPass(password))
+            JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric, One Uppercase and One Lowercase Character. Please Try Again!", "Insecure Password", JOptionPane.ERROR_MESSAGE);
+        else if (!password.equals(confirmPassword))
+            JOptionPane.showMessageDialog(null, "The Passwords in Password Fields do not Match. Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
         else {
-            com.astral.internal.SQLite.userConfig(usrname, com.astral.internal.Security.generateHash(passwd));
-            com.astral.internal.SQLite.setConfigValue("Recovery Key", com.astral.internal.Security.generateHash(key));
+            com.astral.internal.SQLite.userConfig(username, com.astral.internal.Security.generateHash(password));
+            com.astral.internal.SQLite.setConfigValue("Recovery Key", com.astral.internal.Security.generateHash(recoveryKey));
+            VD_Username.setText(com.astral.internal.Security.getDecodedString(username));
+            VD_Recovery_Key.setText(recoveryKey);
             Container_Deck.show(Container, "signUpDetails");
         }
-    }//GEN-LAST:event_Next_ButtonActionPerformed
+    }//GEN-LAST:event_SM_Next_ButtonActionPerformed
 
-    private void Contact_NumberKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Contact_NumberKeyPressed
-        String Number = Contact_Number.getText();
+    private void SD_Contact_NumberKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SD_Contact_NumberKeyPressed
+        String Number = SD_Contact_Number.getText();
         int length = Number.length();
         if (evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9') {
             if (length < 10)
-                Contact_Number.setEditable(true);
+                SD_Contact_Number.setEditable(true);
             else
-                Contact_Number.setEditable(false);
+                SD_Contact_Number.setEditable(false);
         } else {
             switch (evt.getExtendedKeyCode()) {
-                case java.awt.event.KeyEvent.VK_BACK_SPACE -> Contact_Number.setEditable(true);
-                case java.awt.event.KeyEvent.VK_DELETE -> Contact_Number.setEditable(true);
-                default -> Contact_Number.setEditable(false);
+                case java.awt.event.KeyEvent.VK_BACK_SPACE -> SD_Contact_Number.setEditable(true);
+                case java.awt.event.KeyEvent.VK_DELETE -> SD_Contact_Number.setEditable(true);
+                default -> SD_Contact_Number.setEditable(false);
             }
         }
-    }//GEN-LAST:event_Contact_NumberKeyPressed
+    }//GEN-LAST:event_SD_Contact_NumberKeyPressed
 
-    private void Back_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_ButtonActionPerformed
+    private void SD_Back_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SD_Back_ButtonActionPerformed
         Container_Deck.show(Container, "signUpUser");
-    }//GEN-LAST:event_Back_ButtonActionPerformed
+    }//GEN-LAST:event_SD_Back_ButtonActionPerformed
 
-    private void SignUp_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUp_ButtonActionPerformed
-        String cname = Business_Name.getText();
-        String cnum = Contact_Number.getText();
-        String cmail = Email_Address.getText();
-        String caddress = Business_Location.getText();
+    private void SD_SignUp_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SD_SignUp_ButtonActionPerformed
+        String cname = SD_Business_Name.getText();
+        String cnum = SD_Contact_Number.getText();
+        String cmail = SD_Email_Address.getText();
+        String caddress = SD_Business_Location.getText();
         if (cname.equals("") || cnum.equals("") || cmail.equals("") || caddress.equals(""))
-            JOptionPane.showMessageDialog(null, "All Fields are Required to be Filled."
-                + " Please Try Again!", "Empty Feilds", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "All Fields are Required to be Filled. Please Try Again!", "Empty Feilds", JOptionPane.ERROR_MESSAGE);
         else if (cnum.length() != 10)
-            JOptionPane.showMessageDialog(null, "Contact Number Must be 10 Digit Long. Please"
-                + " Try Again!", "Contact Number Too Short", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Contact Number Must be 10 Digit Long. Please Try Again!", "Contact Number Too Short", JOptionPane.ERROR_MESSAGE);
         else {
             com.astral.internal.SQLite.compConfig(cname, cnum, cmail, caddress);
-            Verify_Username.setText(com.astral.internal.Security.getDecodedString(usrname));
-            Verify_Business_Name.setText(cname);
-            Verfiy_Contact_Number.setText(cnum);
-            Verify_Email_Address.setText(cmail);
-            Verify_Business_Location.setText(caddress);
-            Recovery_Key_Display_Label.setText(key);
+            VD_Business_Name.setText(cname);
+            VD_Contact_Number.setText(cnum);
+            VD_Email_Address.setText(cmail);
+            VD_Business_Location.setText(caddress);
             Container_Deck.show(Container, "verifyDetails");
         }
-    }//GEN-LAST:event_SignUp_ButtonActionPerformed
+    }//GEN-LAST:event_SD_SignUp_ButtonActionPerformed
 
-    private void Finish_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Finish_ButtonActionPerformed
-        Home_Button.setEnabled(true);
-        About_Button.setEnabled(true);
-        About_MenuItem.setEnabled(true);
+    private void VD_Finish_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VD_Finish_ButtonActionPerformed
+        SB_Home_Button.setEnabled(true);
+        SB_About_Button.setEnabled(true);
+        MB_About.setEnabled(true);
         SignIn_ActionPerformed();
-    }//GEN-LAST:event_Finish_ButtonActionPerformed
+    }//GEN-LAST:event_VD_Finish_ButtonActionPerformed
 
-    private void Cancel_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cancel_ButtonActionPerformed
+    private void FP_Cancel_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FP_Cancel_ButtonActionPerformed
         Container_Deck.show(Container, "signIn");
-    }//GEN-LAST:event_Cancel_ButtonActionPerformed
+    }//GEN-LAST:event_FP_Cancel_ButtonActionPerformed
 
-    private void Reset_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Reset_ButtonActionPerformed
-        String RecoveryKey = Recovery_Key.getText();
-        String Newpswd = new String(New_Password.getPassword());
-        String Confpswd = new String(Confirm_Passwd.getPassword());
-        key = com.astral.internal.Function.randomAlphaNumeric(16);
-        if (RecoveryKey.equals("") || Newpswd.equals(""))
-            JOptionPane.showMessageDialog(null, "Recovery Key or Password cannot be Empty. Please"
-                + " Try Again!", "Recovery Key/Password Empty", JOptionPane.ERROR_MESSAGE);
-        else if (!com.astral.internal.Security.validateHash(RecoveryKey, com.astral.internal.SQLite.getConfigValue("Recovery Key")))
-            JOptionPane.showMessageDialog(null, "The Recovery Key You Have Entered is Incorrect."
-                + " Please Try Again!", "Incorrect Recovery Key", JOptionPane.ERROR_MESSAGE);
-        else if (Newpswd.length() < 8)
-            JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least 8 Characters."
-                + " Please Try Again!", "Password Too Short", JOptionPane.ERROR_MESSAGE);
-        else if (!com.astral.internal.Security.checkPass(Newpswd))
-            JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric,"
-                + " One Uppercase and One Lowercase Character. Please Try Again!", "Insecure"
-                + " Password", JOptionPane.ERROR_MESSAGE);
-        else if (!Newpswd.equals(Confpswd))
-            JOptionPane.showMessageDialog(null, "New Password and Confirm Password Doesn't Match."
-                + " Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
-        else if (com.astral.internal.Security.validateHash(Newpswd, com.astral.internal.SQLite.getConfigValue("Password")))
-            JOptionPane.showMessageDialog(null, "The Password Enterd has been used Already. Try Again with" 
-                + " a Password You haven’t used Before!", "Old Password Used", JOptionPane.ERROR_MESSAGE);
+    private void FP_Reset_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FP_Reset_ButtonActionPerformed
+        String currentRecoveryKey = FP_Recovery_Key.getText();
+        String newPassword = new String(FP_New_Password.getPassword());
+        String confirmPassword = new String(FP_Confirm_Password.getPassword());
+        String newRecoveryKey = com.astral.internal.Function.randomAlphaNumeric(16);
+        if (currentRecoveryKey.equals("") || newPassword.equals(""))
+            JOptionPane.showMessageDialog(null, "Recovery Key or Password cannot be Empty. Please Try Again!", "Recovery Key/Password Empty", JOptionPane.ERROR_MESSAGE);
+        else if (!com.astral.internal.Security.validateHash(currentRecoveryKey, com.astral.internal.SQLite.getConfigValue("Recovery Key")))
+            JOptionPane.showMessageDialog(null, "The Recovery Key You Have Entered is Incorrect. Please Try Again!", "Incorrect Recovery Key", JOptionPane.ERROR_MESSAGE);
+        else if (newPassword.length() < 8)
+            JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least 8 Characters. Please Try Again!", "Password Too Short", JOptionPane.ERROR_MESSAGE);
+        else if (!com.astral.internal.Security.checkPass(newPassword))
+            JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric, One Uppercase and One Lowercase Character. Please Try Again!", "Insecure Password", JOptionPane.ERROR_MESSAGE);
+        else if (!newPassword.equals(confirmPassword))
+            JOptionPane.showMessageDialog(null, "New Password and Confirm Password Doesn't Match. Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
+        else if (com.astral.internal.Security.validateHash(newPassword, com.astral.internal.SQLite.getConfigValue("Password")))
+            JOptionPane.showMessageDialog(null, "The Password Enterd has been used Already. Try Again with a Password You haven’t used Before!", "Old Password Used", JOptionPane.ERROR_MESSAGE);
         else {
-            com.astral.internal.SQLite.setConfigValue("Password", com.astral.internal.Security.generateHash(Newpswd));
-            com.astral.internal.SQLite.setConfigValue("Recovery Key", com.astral.internal.Security.generateHash(key));
-            JOptionPane.showMessageDialog(null, "Password Has Been Changed Successfully!",
-                "Success", JOptionPane.INFORMATION_MESSAGE);
-            JOptionPane.showMessageDialog(null, "Your New Recovery Key is " + key,
-                "Recovery Key", JOptionPane.INFORMATION_MESSAGE);
-            Username.setText("");
-            Password.setText("");
+            com.astral.internal.SQLite.setConfigValue("Password", com.astral.internal.Security.generateHash(newPassword));
+            com.astral.internal.SQLite.setConfigValue("Recovery Key", com.astral.internal.Security.generateHash(newRecoveryKey));
+            JOptionPane.showMessageDialog(null, "Password Has Been Changed Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Your New Recovery Key is " + newRecoveryKey, "Recovery Key", JOptionPane.INFORMATION_MESSAGE);
+            SI_Username.setText("");
+            SI_Password.setText("");
             Container_Deck.show(Container, "signIn");
-            Recovery_Key.setText("");
-            New_Password.setText("");
-            Confirm_Passwd.setText("");
+            FP_Recovery_Key.setText("");
+            FP_New_Password.setText("");
+            FP_Confirm_Password.setText("");
         }
-    }//GEN-LAST:event_Reset_ButtonActionPerformed
+    }//GEN-LAST:event_FP_Reset_ButtonActionPerformed
 
-    private void About_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_About_MenuItemActionPerformed
+    private void MB_AboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_AboutActionPerformed
         About_ActionPerformed();
-    }//GEN-LAST:event_About_MenuItemActionPerformed
+    }//GEN-LAST:event_MB_AboutActionPerformed
 
-    private void Exit_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Exit_MenuItemActionPerformed
+    private void MB_ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_ExitActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_Exit_MenuItemActionPerformed
+    }//GEN-LAST:event_MB_ExitActionPerformed
 
-    private void Home_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Home_ButtonActionPerformed
+    private void SB_Home_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SB_Home_ButtonActionPerformed
         Home_ActionPerformed();
-    }//GEN-LAST:event_Home_ButtonActionPerformed
+    }//GEN-LAST:event_SB_Home_ButtonActionPerformed
 
-    private void Invoicing_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Invoicing_ButtonActionPerformed
+    private void SB_Invoicing_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SB_Invoicing_ButtonActionPerformed
         Invoicing_ActionPerformed();
-    }//GEN-LAST:event_Invoicing_ButtonActionPerformed
+    }//GEN-LAST:event_SB_Invoicing_ButtonActionPerformed
 
-    private void Inventory_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Inventory_ButtonActionPerformed
+    private void SB_Inventory_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SB_Inventory_ButtonActionPerformed
         Inventory_ActionPerformed();
-    }//GEN-LAST:event_Inventory_ButtonActionPerformed
+    }//GEN-LAST:event_SB_Inventory_ButtonActionPerformed
 
-    private void Settings_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Settings_ButtonActionPerformed
+    private void SB_Settings_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SB_Settings_ButtonActionPerformed
         Settings_ActionPerformed();
-    }//GEN-LAST:event_Settings_ButtonActionPerformed
+    }//GEN-LAST:event_SB_Settings_ButtonActionPerformed
 
-    private void About_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_About_ButtonActionPerformed
+    private void SB_About_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SB_About_ButtonActionPerformed
         About_ActionPerformed();
-    }//GEN-LAST:event_About_ButtonActionPerformed
+    }//GEN-LAST:event_SB_About_ButtonActionPerformed
 
-    private void SignOut_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignOut_ButtonActionPerformed
+    private void SB_SignOut_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SB_SignOut_ButtonActionPerformed
         SignOut_ActionPerformed();
-    }//GEN-LAST:event_SignOut_ButtonActionPerformed
+    }//GEN-LAST:event_SB_SignOut_ButtonActionPerformed
 
-    private void Change_Username_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Change_Username_ButtonActionPerformed
-        String username = com.astral.internal.Security.getEncodedString(New_Username.getText());
+    private void SE_Change_Username_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SE_Change_Username_ButtonActionPerformed
+        String username = com.astral.internal.Security.getEncodedString(SE_New_Username.getText());
         if (username.equals(""))
             JOptionPane.showMessageDialog(null, "Username cannot be Empty. Please Try Again!", "Username Field Empty", JOptionPane.ERROR_MESSAGE);
         else {
             com.astral.internal.SQLite.setConfigValue("Username", username);
             JOptionPane.showMessageDialog(null, "Your Username has been changed Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-            Current_Username.setText(com.astral.internal.Security.getDecodedString(com.astral.internal.SQLite.getConfigValue("Username")));
-            New_Username.setText("");
+            SE_Current_Username.setText(com.astral.internal.Security.getDecodedString(com.astral.internal.SQLite.getConfigValue("Username")));
+            SE_New_Username.setText("");
         }
-    }//GEN-LAST:event_Change_Username_ButtonActionPerformed
+    }//GEN-LAST:event_SE_Change_Username_ButtonActionPerformed
 
-    private void Change_Password_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Change_Password_ButtonActionPerformed
-        String curpasswd = new String(Current_Password.getPassword());
-        String newpasswd = new String(New_Password1.getPassword());
-        String confpasswd = new String(Confirm_Password1.getPassword());
-        if (curpasswd.equals("") || newpasswd.equals(""))
+    private void SE_Change_Password_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SE_Change_Password_ButtonActionPerformed
+        String currentPassword = new String(SE_Current_Password.getPassword());
+        String newPassword = new String(SE_New_Password.getPassword());
+        String confirmPassword = new String(SE_Confirm_Password.getPassword());
+        if (currentPassword.equals("") || newPassword.equals(""))
             JOptionPane.showMessageDialog(null, "Both Current and New Passwords are needed for changing Password. Please Try Again!", "Password Fields Empty", JOptionPane.ERROR_MESSAGE);
-        else if (!com.astral.internal.Security.validateHash(curpasswd, com.astral.internal.SQLite.getConfigValue("Password")))
+        else if (!com.astral.internal.Security.validateHash(currentPassword, com.astral.internal.SQLite.getConfigValue("Password")))
             JOptionPane.showMessageDialog(null, "The Current Password is Incorrect. Please Try Again!", "Incorrect Password", JOptionPane.ERROR_MESSAGE);
-        else if (newpasswd.length() < 8)
+        else if (newPassword.length() < 8)
             JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least 8 Characters. Please Try Again!", "Password Too Short", JOptionPane.ERROR_MESSAGE);
-        else if (!com.astral.internal.Security.checkPass(newpasswd))
+        else if (!com.astral.internal.Security.checkPass(newPassword))
             JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric, One Uppercase and One Lowercase Character. Please Try Again!", "Insecure Password", JOptionPane.ERROR_MESSAGE);
-        else if (!newpasswd.equals(confpasswd))
+        else if (!newPassword.equals(confirmPassword))
             JOptionPane.showMessageDialog(null, "The Password in Confirm Password Field does not Match. Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
-        else if (com.astral.internal.Security.validateHash(newpasswd, com.astral.internal.SQLite.getConfigValue("Password")))
+        else if (com.astral.internal.Security.validateHash(newPassword, com.astral.internal.SQLite.getConfigValue("Password")))
             JOptionPane.showMessageDialog(null, "The Password Enterd has been used Already. Try Again with a Password You haven’t used Before!", "Old Password Used", JOptionPane.ERROR_MESSAGE);
         else {
-            com.astral.internal.SQLite.setConfigValue("Password", com.astral.internal.Security.generateHash(newpasswd));
+            com.astral.internal.SQLite.setConfigValue("Password", com.astral.internal.Security.generateHash(newPassword));
             JOptionPane.showMessageDialog(null, "Your Password has been changed Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-            Current_Password.setText("");
-            New_Password1.setText("");
-            Confirm_Password1.setText("");
+            SE_Current_Password.setText("");
+            SE_New_Password.setText("");
+            SE_Confirm_Password.setText("");
         }
-    }//GEN-LAST:event_Change_Password_ButtonActionPerformed
+    }//GEN-LAST:event_SE_Change_Password_ButtonActionPerformed
 
-    private void Reset_Key_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Reset_Key_ButtonActionPerformed
-        String curpasswd = new String(Current_Password1.getPassword());
+    private void SE_Reset_Key_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SE_Reset_Key_ButtonActionPerformed
+        String currentPassword = new String(SE_Recovery_Password.getPassword());
         String recoveryKey = com.astral.internal.Function.randomAlphaNumeric(16);
-        if (!com.astral.internal.Security.validateHash(curpasswd, com.astral.internal.SQLite.getConfigValue("Password")))
+        if (!com.astral.internal.Security.validateHash(currentPassword, com.astral.internal.SQLite.getConfigValue("Password")))
             JOptionPane.showMessageDialog(null, "The Password You Have Entered is Incorrect. Please Try Again!", "Incorrect Password", JOptionPane.ERROR_MESSAGE);
         else {
             com.astral.internal.SQLite.setConfigValue("Recovery Key", com.astral.internal.Security.generateHash(recoveryKey));
             JOptionPane.showMessageDialog(null, "Your Recovery Key Has Been Successfully Reset!", "Success", JOptionPane.INFORMATION_MESSAGE);
             JOptionPane.showMessageDialog(null, "Your New Recovery Key is " + recoveryKey, "Recovery Key", JOptionPane.INFORMATION_MESSAGE);
-            Current_Password1.setText("");
+            SE_Recovery_Password.setText("");
         }
-    }//GEN-LAST:event_Reset_Key_ButtonActionPerformed
+    }//GEN-LAST:event_SE_Reset_Key_ButtonActionPerformed
 
-    private void New_Contact_NumberKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_New_Contact_NumberKeyPressed
-        String Number = New_Contact_Number.getText();
+    private void SE_New_Contact_NumberKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SE_New_Contact_NumberKeyPressed
+        String Number = SE_New_Contact_Number.getText();
         int length = Number.length();
         if (evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9') {
             if (length < 10)
-                New_Contact_Number.setEditable(true);
+                SE_New_Contact_Number.setEditable(true);
             else
-                New_Contact_Number.setEditable(false);
+                SE_New_Contact_Number.setEditable(false);
         } else {
             switch (evt.getExtendedKeyCode()) {
-                case java.awt.event.KeyEvent.VK_BACK_SPACE -> New_Contact_Number.setEditable(true);
-                case java.awt.event.KeyEvent.VK_DELETE -> New_Contact_Number.setEditable(true);
-                default -> New_Contact_Number.setEditable(false);
+                case java.awt.event.KeyEvent.VK_BACK_SPACE -> SE_New_Contact_Number.setEditable(true);
+                case java.awt.event.KeyEvent.VK_DELETE -> SE_New_Contact_Number.setEditable(true);
+                default -> SE_New_Contact_Number.setEditable(false);
             }
         }
-    }//GEN-LAST:event_New_Contact_NumberKeyPressed
+    }//GEN-LAST:event_SE_New_Contact_NumberKeyPressed
 
-    private void Save_Changes_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Save_Changes_ButtonActionPerformed
-        String cname = New_Business_Name.getText();
-        String cnum = New_Contact_Number.getText();
-        String cmail = New_Email_Address.getText();
-        String caddress = New_Address.getText();
+    private void SE_Save_Changes_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SE_Save_Changes_ButtonActionPerformed
+        String cname = SE_New_Business_Name.getText();
+        String cnum = SE_New_Contact_Number.getText();
+        String cmail = SE_New_Email_Address.getText();
+        String caddress = SE_New_Address.getText();
         if (cname.equals("") && cnum.equals("") && cmail.equals("") && caddress.equals(""))
             JOptionPane.showMessageDialog(null, "You haven't made any Changes. Please Try Again!", "No Changes Found", JOptionPane.ERROR_MESSAGE);
         else {
             if (cname.equals(""))
-                cname = Current_Business_Name.getText();
+                cname = SE_Current_Business_Name.getText();
             if (cmail.equals(""))
-                cmail = Current_Email_Address.getText();
+                cmail = SE_Current_Email_Address.getText();
             if (caddress.equals(""))
-                caddress = Current_Address.getText();
+                caddress = SE_Current_Address.getText();
             if (cnum.equals("")) {
-                cnum = Current_Contact_Number.getText();
+                cnum = SE_Current_Contact_Number.getText();
                 com.astral.internal.SQLite.compConfig(cname, cnum, cmail, caddress);
                 JOptionPane.showMessageDialog(null, "Your Changes Have Been Saved Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             }
@@ -2556,39 +2538,39 @@ public class Main extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Your Changes Have Been Saved Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             }
             Settings_ActionPerformed();
-            New_Business_Name.setText("");
-            New_Contact_Number.setText("");
-            New_Email_Address.setText("");
-            New_Address.setText("");
+            SE_New_Business_Name.setText("");
+            SE_New_Contact_Number.setText("");
+            SE_New_Email_Address.setText("");
+            SE_New_Address.setText("");
         }
-    }//GEN-LAST:event_Save_Changes_ButtonActionPerformed
+    }//GEN-LAST:event_SE_Save_Changes_ButtonActionPerformed
 
-    private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
+    private void INV_Add_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_Add_ButtonActionPerformed
         Inventory_AddActionPerformed();
-    }//GEN-LAST:event_AddActionPerformed
+    }//GEN-LAST:event_INV_Add_ButtonActionPerformed
 
-    private void RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveActionPerformed
+    private void INV_Remove_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_Remove_ButtonActionPerformed
         Inventory_RemoveActionPerformed();
-    }//GEN-LAST:event_RemoveActionPerformed
+    }//GEN-LAST:event_INV_Remove_ButtonActionPerformed
 
-    private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
+    private void INV_Update_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_Update_ButtonActionPerformed
         Inventory_UpdateActionPerformed();
-    }//GEN-LAST:event_UpdateActionPerformed
+    }//GEN-LAST:event_INV_Update_ButtonActionPerformed
 
-    private void ImportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImportActionPerformed
+    private void INV_Import_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_Import_ButtonActionPerformed
         Inventory_ImportActionPerformed();
-    }//GEN-LAST:event_ImportActionPerformed
+    }//GEN-LAST:event_INV_Import_ButtonActionPerformed
 
-    private void Export_InventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Export_InventoryActionPerformed
+    private void INV_Export_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_Export_ButtonActionPerformed
         com.astral.internal.Function.ExportActionPerformed("Inventory");
-    }//GEN-LAST:event_Export_InventoryActionPerformed
+    }//GEN-LAST:event_INV_Export_ButtonActionPerformed
 
-    private void ViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewActionPerformed
-        int row = Invoice_Table.getSelectedRow();
+    private void INVO_View_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_View_ButtonActionPerformed
+        int row = INVO_Table.getSelectedRow();
         if (row == -1)
             JOptionPane.showMessageDialog(null, "Please Select an Invoice from the Inovice List.", "No Invoice Selected", JOptionPane.ERROR_MESSAGE);
         else {
-            String invID = Invoice_Table.getValueAt(row, 0).toString();
+            String invID = INVO_Table.getValueAt(row, 0).toString();
             com.astral.internal.Function.invoicePDF(invID);
             try {
                 Desktop.getDesktop().open(com.astral.internal.Function.invPath);
@@ -2596,65 +2578,65 @@ public class Main extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
-    }//GEN-LAST:event_ViewActionPerformed
+    }//GEN-LAST:event_INVO_View_ButtonActionPerformed
 
-    private void Remove1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Remove1ActionPerformed
-        DefaultTableModel Invoice_Model = (DefaultTableModel) Invoice_Table.getModel();
-        int[] rows = Invoice_Table.getSelectedRows();
+    private void INVO_Remove_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_Remove_ButtonActionPerformed
+        DefaultTableModel Invoice_Model = (DefaultTableModel) INVO_Table.getModel();
+        int[] rows = INVO_Table.getSelectedRows();
         for (int i=0; i<rows.length; i++) {
-            String invID = Invoice_Table.getValueAt(rows[i]-i, 0).toString();
+            String invID = INVO_Table.getValueAt(rows[i]-i, 0).toString();
             com.astral.internal.SQLite.remInvoice(invID);
             Invoice_Model.removeRow(rows[i]-i);
         }
-    }//GEN-LAST:event_Remove1ActionPerformed
+    }//GEN-LAST:event_INVO_Remove_ButtonActionPerformed
 
-    private void Export_InvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Export_InvoiceActionPerformed
+    private void INVO_Export_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_Export_ButtonActionPerformed
         com.astral.internal.Function.ExportActionPerformed("Invoice");
-    }//GEN-LAST:event_Export_InvoiceActionPerformed
+    }//GEN-LAST:event_INVO_Export_ButtonActionPerformed
 
-    private void New_InvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_New_InvoiceActionPerformed
+    private void INVO_New_Invoice_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_New_Invoice_ButtonActionPerformed
         NewInvoiceActionPerformed();
-    }//GEN-LAST:event_New_InvoiceActionPerformed
+    }//GEN-LAST:event_INVO_New_Invoice_ButtonActionPerformed
 
-    private void Customer_ContactKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Customer_ContactKeyPressed
-        String Number = Customer_Contact.getText();
+    private void NI_Customer_ContactKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NI_Customer_ContactKeyPressed
+        String Number = NI_Customer_Contact.getText();
         int length = Number.length();
         if (evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9') {
             if (length < 10)
-                Customer_Contact.setEditable(true);
+                NI_Customer_Contact.setEditable(true);
             else
-                Customer_Contact.setEditable(false);
+                NI_Customer_Contact.setEditable(false);
         } else {
             switch (evt.getExtendedKeyCode()) {
-                case java.awt.event.KeyEvent.VK_BACK_SPACE -> Customer_Contact.setEditable(true);
-                case java.awt.event.KeyEvent.VK_DELETE -> Customer_Contact.setEditable(true);
-                default -> Customer_Contact.setEditable(false);
+                case java.awt.event.KeyEvent.VK_BACK_SPACE -> NI_Customer_Contact.setEditable(true);
+                case java.awt.event.KeyEvent.VK_DELETE -> NI_Customer_Contact.setEditable(true);
+                default -> NI_Customer_Contact.setEditable(false);
             }
         }
-    }//GEN-LAST:event_Customer_ContactKeyPressed
+    }//GEN-LAST:event_NI_Customer_ContactKeyPressed
 
-    private void CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelActionPerformed
+    private void NI_Cancel_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NI_Cancel_ButtonActionPerformed
         Container_Deck.show(Container, "invMain");
-    }//GEN-LAST:event_CancelActionPerformed
+    }//GEN-LAST:event_NI_Cancel_ButtonActionPerformed
 
-    private void Create_InvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Create_InvoiceActionPerformed
+    private void NI_Create_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NI_Create_ButtonActionPerformed
         int prodSelected = 0;
         boolean emptyQuan = false;
         boolean excessQuan = false;
         String invID = "INV-" + new java.text.SimpleDateFormat("yyMMdd-HHmmss").format(new java.util.Date()) + "-" + com.astral.internal.Function.randomID(4);
-        String custName = Customer_Name.getText();
-        String custContact = Customer_Contact.getText();
-        String custAddress = Customer_Address.getText();
+        String custName = NI_Customer_Name.getText();
+        String custContact = NI_Customer_Contact.getText();
+        String custAddress = NI_Customer_Address.getText();
         String saleDate = new java.text.SimpleDateFormat("dd MMMM yyyy").format(new java.util.Date());
         String saleGST = "0";
         String saleAmount = "0";
-        for (int row = 0; row < New_Invoice_Table.getRowCount(); row++) {
-            if (Boolean.parseBoolean(New_Invoice_Table.getValueAt(row, 0).toString())) {
+        for (int row = 0; row < NI_Table.getRowCount(); row++) {
+            if (Boolean.parseBoolean(NI_Table.getValueAt(row, 0).toString())) {
                 prodSelected++;
-                String availQuan = Integer.toString((Integer) New_Invoice_Table.getValueAt(row, 5));
+                String availQuan = Integer.toString((Integer) NI_Table.getValueAt(row, 5));
                 String purchQuan = "0";
-                if (New_Invoice_Table.getValueAt(row, 6) != null)
-                    purchQuan = Integer.toString((Integer) New_Invoice_Table.getValueAt(row, 6));
+                if (NI_Table.getValueAt(row, 6) != null)
+                    purchQuan = Integer.toString((Integer) NI_Table.getValueAt(row, 6));
                 if (purchQuan.equals("0")) {
                     emptyQuan = true;
                 }
@@ -2673,14 +2655,14 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Purchased Quantity exceeds the Available Quantity for one or more Products. Please Try Again!", "Purchased Quantity Exceeded", JOptionPane.ERROR_MESSAGE);
         else {
             com.astral.internal.SQLite.newInvoiceTable(invID);
-            for (int row = 0; row < New_Invoice_Table.getRowCount(); row++) {
-                if (Boolean.parseBoolean(New_Invoice_Table.getValueAt(row, 0).toString())) {
-                    String prodID = (String) New_Invoice_Table.getValueAt(row, 1);
-                    String prodName = (String) New_Invoice_Table.getValueAt(row, 2);
-                    String Price = Double.toString((Double) New_Invoice_Table.getValueAt(row, 3));
-                    String gstRate = Integer.toString((Integer) New_Invoice_Table.getValueAt(row, 4));
-                    int availQuan = (Integer) New_Invoice_Table.getValueAt(row, 5);
-                    String purchQuan = Integer.toString((Integer) New_Invoice_Table.getValueAt(row, 6));
+            for (int row = 0; row < NI_Table.getRowCount(); row++) {
+                if (Boolean.parseBoolean(NI_Table.getValueAt(row, 0).toString())) {
+                    String prodID = (String) NI_Table.getValueAt(row, 1);
+                    String prodName = (String) NI_Table.getValueAt(row, 2);
+                    String Price = Double.toString((Double) NI_Table.getValueAt(row, 3));
+                    String gstRate = Integer.toString((Integer) NI_Table.getValueAt(row, 4));
+                    int availQuan = (Integer) NI_Table.getValueAt(row, 5);
+                    String purchQuan = Integer.toString((Integer) NI_Table.getValueAt(row, 6));
                     String remaingQuan = Integer.toString(availQuan - Integer.parseInt(purchQuan));
                     double Amount = Double.parseDouble(Price) * Double.parseDouble(purchQuan);
                     String gstAmount = Double.toString((Amount * Double.parseDouble(gstRate)) / 100);
@@ -2700,145 +2682,143 @@ public class Main extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
-    }//GEN-LAST:event_Create_InvoiceActionPerformed
+    }//GEN-LAST:event_NI_Create_ButtonActionPerformed
 
-    private void SignOut_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignOut_MenuItemActionPerformed
+    private void MB_Sign_OutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_Sign_OutActionPerformed
         SignOut_ActionPerformed();
-    }//GEN-LAST:event_SignOut_MenuItemActionPerformed
+    }//GEN-LAST:event_MB_Sign_OutActionPerformed
 
-    private void Finish_AddingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Finish_AddingActionPerformed
-        if (PID == null)
-            PID = "SPK-" + com.astral.internal.Function.randomID(4) + "-" + com.astral.internal.Function.randomID(4);
-        String name = Product_Name.getText();
-        String price = Price_Field.getText();
-        String gst = GST_Rate.getText();
-        String quan = Available_Quantity.getText();
+    private void NP_Finish_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NP_Finish_ButtonActionPerformed
+        String name = NP_Product_Name.getText();
+        String price = NP_Price.getText();
+        String gst = NP_GST_Rate.getText();
+        String quan = NP_Available_Quantity.getText();
         if (name.equals("") || price.equals("") || gst.equals("") || quan.equals (""))
             JOptionPane.showMessageDialog(null, "Product Details can't be Empty. Please Try Again!", "Product Details Empty", JOptionPane.ERROR_MESSAGE);
         else {
             com.astral.internal.SQLite.updateInven(PID, name, price, gst, quan);
             Inventory_ActionPerformed();
         }
-    }//GEN-LAST:event_Finish_AddingActionPerformed
+    }//GEN-LAST:event_NP_Finish_ButtonActionPerformed
 
-    private void Cancel_AddingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cancel_AddingActionPerformed
+    private void NP_Cancel_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NP_Cancel_ButtonActionPerformed
         EnableInventory_ActionPerformed();
         Container_Deck.show(Container, "inventory");
-    }//GEN-LAST:event_Cancel_AddingActionPerformed
+    }//GEN-LAST:event_NP_Cancel_ButtonActionPerformed
 
-    private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
+    private void INV_Edit_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_Edit_ButtonActionPerformed
         Inventory_EditActionPerformed();
-    }//GEN-LAST:event_EditActionPerformed
+    }//GEN-LAST:event_INV_Edit_ButtonActionPerformed
 
-    private void Export_Invoice_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Export_Invoice_MenuItemActionPerformed
+    private void MB_Export_InvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_Export_InvoiceActionPerformed
         com.astral.internal.Function.ExportActionPerformed("Invoice");
-    }//GEN-LAST:event_Export_Invoice_MenuItemActionPerformed
+    }//GEN-LAST:event_MB_Export_InvoiceActionPerformed
 
-    private void Export_Inventory_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Export_Inventory_MenuItemActionPerformed
+    private void MB_Export_InventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_Export_InventoryActionPerformed
         com.astral.internal.Function.ExportActionPerformed("Inventory");
-    }//GEN-LAST:event_Export_Inventory_MenuItemActionPerformed
+    }//GEN-LAST:event_MB_Export_InventoryActionPerformed
 
-    private void New_Invoice_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_New_Invoice_MenuItemActionPerformed
+    private void MB_New_InvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_New_InvoiceActionPerformed
         NewInvoiceActionPerformed();
-    }//GEN-LAST:event_New_Invoice_MenuItemActionPerformed
+    }//GEN-LAST:event_MB_New_InvoiceActionPerformed
 
-    private void Invoicing_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Invoicing_MenuItemActionPerformed
+    private void MB_Invoice_HistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_Invoice_HistoryActionPerformed
         Invoicing_ActionPerformed();
-    }//GEN-LAST:event_Invoicing_MenuItemActionPerformed
+    }//GEN-LAST:event_MB_Invoice_HistoryActionPerformed
 
-    private void Add_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Add_MenuItemActionPerformed
+    private void MB_INV_AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_INV_AddActionPerformed
         Inventory_AddActionPerformed();
-    }//GEN-LAST:event_Add_MenuItemActionPerformed
+    }//GEN-LAST:event_MB_INV_AddActionPerformed
 
-    private void Inventory_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Inventory_MenuItemActionPerformed
+    private void MB_InventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_InventoryActionPerformed
         Inventory_ActionPerformed();
-    }//GEN-LAST:event_Inventory_MenuItemActionPerformed
+    }//GEN-LAST:event_MB_InventoryActionPerformed
 
-    private void Edit_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Edit_MenuItemActionPerformed
+    private void MB_INV_EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_INV_EditActionPerformed
         Inventory_EditActionPerformed();
-    }//GEN-LAST:event_Edit_MenuItemActionPerformed
+    }//GEN-LAST:event_MB_INV_EditActionPerformed
 
-    private void Remove_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Remove_MenuItemActionPerformed
+    private void MB_INV_RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_INV_RemoveActionPerformed
         Inventory_RemoveActionPerformed();
-    }//GEN-LAST:event_Remove_MenuItemActionPerformed
+    }//GEN-LAST:event_MB_INV_RemoveActionPerformed
 
-    private void Update_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_MenuItemActionPerformed
+    private void MB_INV_UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_INV_UpdateActionPerformed
         Inventory_UpdateActionPerformed();
-    }//GEN-LAST:event_Update_MenuItemActionPerformed
+    }//GEN-LAST:event_MB_INV_UpdateActionPerformed
 
-    private void Import_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Import_MenuItemActionPerformed
+    private void MB_INV_ImportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_INV_ImportActionPerformed
         Inventory_ImportActionPerformed();
-    }//GEN-LAST:event_Import_MenuItemActionPerformed
+    }//GEN-LAST:event_MB_INV_ImportActionPerformed
 
-    private void Settings_MenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Settings_MenuItemActionPerformed
+    private void MB_SettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_SettingsActionPerformed
         Settings_ActionPerformed();
-    }//GEN-LAST:event_Settings_MenuItemActionPerformed
+    }//GEN-LAST:event_MB_SettingsActionPerformed
 
     private void SignIn_ActionPerformed() {
         LoggedIn = true;
         Home_ActionPerformed();
-        New_Invoice_MenuItem.setEnabled(true);
-        Invoicing_MenuItem.setEnabled(true);
-        Inventory_MenuItem.setEnabled(true);
-        SignOut_MenuItem.setEnabled(true);
-        Export_Invoice_MenuItem.setEnabled(true);
-        Export_Inventory_MenuItem.setEnabled(true);
-        Settings_MenuItem.setEnabled(true);
-        Invoicing_Button.setEnabled(true);
-        Inventory_Button.setEnabled(true);
-        Settings_Button.setEnabled(true);
-        SignOut_Button.setEnabled(true);
+        MB_New_Invoice.setEnabled(true);
+        MB_Invoice_History.setEnabled(true);
+        MB_Inventory.setEnabled(true);
+        MB_Sign_Out.setEnabled(true);
+        MB_Export_Invoice.setEnabled(true);
+        MB_Export_Inventory.setEnabled(true);
+        MB_Settings.setEnabled(true);
+        SB_Invoicing_Button.setEnabled(true);
+        SB_Inventory_Button.setEnabled(true);
+        SB_Settings_Button.setEnabled(true);
+        SB_SignOut_Button.setEnabled(true);
     }
 
     private void SignOut_ActionPerformed() {
         LoggedIn = false;
-        Username.setText("");
-        Password.setText("");
+        SI_Username.setText("");
+        SI_Password.setText("");
         Container_Deck.show(Container, "signIn");
-        New_Invoice_MenuItem.setEnabled(false);
-        Invoicing_MenuItem.setEnabled(false);
-        Inventory_MenuItem.setEnabled(false);
-        SignOut_MenuItem.setEnabled(false);
+        MB_New_Invoice.setEnabled(false);
+        MB_Invoice_History.setEnabled(false);
+        MB_Inventory.setEnabled(false);
+        MB_Sign_Out.setEnabled(false);
         DisableInventory_ActionPerformed();
-        Export_Invoice_MenuItem.setEnabled(false);
-        Export_Inventory_MenuItem.setEnabled(false);
-        Settings_MenuItem.setEnabled(false);
-        Invoicing_Button.setEnabled(false);
-        Inventory_Button.setEnabled(false);
-        Settings_Button.setEnabled(false);
-        SignOut_Button.setEnabled(false);
+        MB_Export_Invoice.setEnabled(false);
+        MB_Export_Inventory.setEnabled(false);
+        MB_Settings.setEnabled(false);
+        SB_Invoicing_Button.setEnabled(false);
+        SB_Inventory_Button.setEnabled(false);
+        SB_Settings_Button.setEnabled(false);
+        SB_SignOut_Button.setEnabled(false);
     }
 
     private void EnableInventory_ActionPerformed() {
-        Add_MenuItem.setEnabled(true);
-        Edit_MenuItem.setEnabled(true);
-        Remove_MenuItem.setEnabled(true);
-        Update_MenuItem.setEnabled(true);
-        Import_MenuItem.setEnabled(true);
+        MB_INV_Add.setEnabled(true);
+        MB_INV_Edit.setEnabled(true);
+        MB_INV_Remove.setEnabled(true);
+        MB_INV_Update.setEnabled(true);
+        MB_INV_Import.setEnabled(true);
     }
 
     private void DisableInventory_ActionPerformed() {
-        Add_MenuItem.setEnabled(false);
-        Edit_MenuItem.setEnabled(false);
-        Remove_MenuItem.setEnabled(false);
-        Update_MenuItem.setEnabled(false);
-        Import_MenuItem.setEnabled(false);
+        MB_INV_Add.setEnabled(false);
+        MB_INV_Edit.setEnabled(false);
+        MB_INV_Remove.setEnabled(false);
+        MB_INV_Update.setEnabled(false);
+        MB_INV_Import.setEnabled(false);
     }
 
     private void Home_ActionPerformed() {
         if (LoggedIn) {
-            Help_Para.setText("<html>Welcome <b>" + com.astral.internal.Security.getDecodedString(com.astral.internal.SQLite.getConfigValue("Username")) + "</b>! This is a Quick Overview of Speckle :</html>");
+            HOME_Help_Paragraph.setText("<html>Welcome <b>" + com.astral.internal.Security.getDecodedString(com.astral.internal.SQLite.getConfigValue("Username")) + "</b>! This is a Quick Overview of Speckle :</html>");
             String data[][] = com.astral.internal.SQLite.dashData();
-            Product_One_Label.setText(data[0][0]);
-            Product_One_Quantity.setText(data[0][1]);
-            Product_Two_Label.setText(data[1][0]);
-            Product_Two_Quantity.setText(data[1][1]);
-            Product_Three_Label.setText(data[2][0]);
-            Product_Three_Quantity.setText(data[2][1]);
-            Product_Four_Label.setText(data[3][0]);
-            Product_Four_Quantity.setText(data[3][1]);
-            Product_Five_Label.setText(data[4][0]);
-            Product_Five_Quantity.setText(data[4][1]);
+            HOME_Product_One_Label.setText(data[0][0]);
+            HOME_Product_One_Quantity.setText(data[0][1]);
+            HOME_Product_Two_Label.setText(data[1][0]);
+            HOME_Product_Two_Quantity.setText(data[1][1]);
+            HOME_Product_Three_Label.setText(data[2][0]);
+            HOME_Product_Three_Quantity.setText(data[2][1]);
+            HOME_Product_Four_Label.setText(data[3][0]);
+            HOME_Product_Four_Quantity.setText(data[3][1]);
+            HOME_Product_Five_Label.setText(data[4][0]);
+            HOME_Product_Five_Quantity.setText(data[4][1]);
             DisableInventory_ActionPerformed();
             Container_Deck.show(Container, "home");
         } else {
@@ -2847,13 +2827,13 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void Invoicing_ActionPerformed() {
-        Invoice_Table.setModel(com.astral.internal.Function.invoTableModel());
-        final TableColumnModel columnModel = Invoice_Table.getColumnModel();
-        for (int column = 0; column < Invoice_Table.getColumnCount(); column++) {
+        INVO_Table.setModel(com.astral.internal.Function.invoTableModel());
+        final TableColumnModel columnModel = INVO_Table.getColumnModel();
+        for (int column = 0; column < INVO_Table.getColumnCount(); column++) {
             int width = 15;
-            for (int row = 0; row < Invoice_Table.getRowCount(); row++) {
-                TableCellRenderer renderer = Invoice_Table.getCellRenderer(row, column);
-                Component comp = Invoice_Table.prepareRenderer(renderer, row, column);
+            for (int row = 0; row < INVO_Table.getRowCount(); row++) {
+                TableCellRenderer renderer = INVO_Table.getCellRenderer(row, column);
+                Component comp = INVO_Table.prepareRenderer(renderer, row, column);
                 width = Math.max(comp.getPreferredSize().width + 1 , width);
             }
             if (width > 300) width=300;
@@ -2864,94 +2844,94 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void NewInvoiceActionPerformed() {
-        New_Invoice_Table.setModel(com.astral.internal.Function.newInvoTableModel());
-        final TableColumnModel NewColumnModel = New_Invoice_Table.getColumnModel();
-        for (int column = 0; column < New_Invoice_Table.getColumnCount(); column++) {
+        NI_Table.setModel(com.astral.internal.Function.newInvoTableModel());
+        final TableColumnModel NewColumnModel = NI_Table.getColumnModel();
+        for (int column = 0; column < NI_Table.getColumnCount(); column++) {
             int width = 15;
-            for (int row = 0; row < New_Invoice_Table.getRowCount(); row++) {
-                TableCellRenderer renderer = New_Invoice_Table.getCellRenderer(row, column);
-                Component comp = New_Invoice_Table.prepareRenderer(renderer, row, column);
+            for (int row = 0; row < NI_Table.getRowCount(); row++) {
+                TableCellRenderer renderer = NI_Table.getCellRenderer(row, column);
+                Component comp = NI_Table.prepareRenderer(renderer, row, column);
                 width = Math.max(comp.getPreferredSize().width + 1 , width);
             }
             if (width > 300) width=300;
             NewColumnModel.getColumn(column).setPreferredWidth(width);
         }
-        New_Invoice_Table.getColumnModel().getColumn(1).setMinWidth(0);
-        New_Invoice_Table.getColumnModel().getColumn(1).setMaxWidth(0);
-        New_Invoice_Table.getColumnModel().getColumn(1).setWidth(0);
-        New_Invoice_Table.getColumnModel().getColumn(4).setMinWidth(0);
-        New_Invoice_Table.getColumnModel().getColumn(4).setMaxWidth(0);
-        New_Invoice_Table.getColumnModel().getColumn(4).setWidth(0);
-        Customer_Name.setText("");
-        Customer_Contact.setText("");
-        Customer_Address.setText("");
+        NI_Table.getColumnModel().getColumn(1).setMinWidth(0);
+        NI_Table.getColumnModel().getColumn(1).setMaxWidth(0);
+        NI_Table.getColumnModel().getColumn(1).setWidth(0);
+        NI_Table.getColumnModel().getColumn(4).setMinWidth(0);
+        NI_Table.getColumnModel().getColumn(4).setMaxWidth(0);
+        NI_Table.getColumnModel().getColumn(4).setWidth(0);
+        NI_Customer_Name.setText("");
+        NI_Customer_Contact.setText("");
+        NI_Customer_Address.setText("");
         DisableInventory_ActionPerformed();
         Container_Deck.show(Container, "invNew");
     }
 
     private void Inventory_ActionPerformed() {
-        Inventory_Table.setModel(com.astral.internal.Function.invenTableModel());
-        final TableColumnModel columnModel = Inventory_Table.getColumnModel();
-        for (int column = 0; column < Inventory_Table.getColumnCount(); column++) {
+        INV_Table.setModel(com.astral.internal.Function.invenTableModel());
+        final TableColumnModel columnModel = INV_Table.getColumnModel();
+        for (int column = 0; column < INV_Table.getColumnCount(); column++) {
             int width = 15;
-            for (int row = 0; row < Inventory_Table.getRowCount(); row++) {
-                TableCellRenderer renderer = Inventory_Table.getCellRenderer(row, column);
-                Component comp = Inventory_Table.prepareRenderer(renderer, row, column);
+            for (int row = 0; row < INV_Table.getRowCount(); row++) {
+                TableCellRenderer renderer = INV_Table.getCellRenderer(row, column);
+                Component comp = INV_Table.prepareRenderer(renderer, row, column);
                 width = Math.max(comp.getPreferredSize().width + 1 , width);
             }
             if (width > 300) width=300;
             columnModel.getColumn(column).setPreferredWidth(width);
         }
-        Inventory_Model = (DefaultTableModel) Inventory_Table.getModel();
+        Inventory_Model = (DefaultTableModel) INV_Table.getModel();
         EnableInventory_ActionPerformed();
         Container_Deck.show(Container, "inventory");
     }
 
     private void Inventory_AddActionPerformed() {
-        PID = null;
-        New_Product_Heading.setText("Add New Product");
-        Product_Name.setText("");
-        Price_Field.setText("");
-        GST_Rate.setText("");
-        Available_Quantity.setText("");
+        PID = "SPK-" + com.astral.internal.Function.randomID(4) + "-" + com.astral.internal.Function.randomID(4);
+        NP_Heading.setText("Add New Product");
+        NP_Product_Name.setText("");
+        NP_Price.setText("");
+        NP_GST_Rate.setText("");
+        NP_Available_Quantity.setText("");
         DisableInventory_ActionPerformed();
         Container_Deck.show(Container, "invenNew");
     }
 
     private void Inventory_EditActionPerformed() {
-        int row = Inventory_Table.getSelectedRow();
+        int row = INV_Table.getSelectedRow();
         if (row == -1)
             JOptionPane.showMessageDialog(null, "Please Select a Product to Edit it's Details.", "No Product Selected", JOptionPane.ERROR_MESSAGE);
         else {
-            PID = Inventory_Table.getValueAt(row, 0).toString();
-            New_Product_Heading.setText("Edit Product Details");
-            Product_Name.setText(Inventory_Table.getValueAt(row, 1).toString());
-            Price_Field.setText(Inventory_Table.getValueAt(row, 2).toString());
-            GST_Rate.setText(Inventory_Table.getValueAt(row, 3).toString());
-            Available_Quantity.setText(Inventory_Table.getValueAt(row, 4).toString());
+            PID = INV_Table.getValueAt(row, 0).toString();
+            NP_Heading.setText("Edit Product Details");
+            NP_Product_Name.setText(INV_Table.getValueAt(row, 1).toString());
+            NP_Price.setText(INV_Table.getValueAt(row, 2).toString());
+            NP_GST_Rate.setText(INV_Table.getValueAt(row, 3).toString());
+            NP_Available_Quantity.setText(INV_Table.getValueAt(row, 4).toString());
             DisableInventory_ActionPerformed();
             Container_Deck.show(Container, "invenNew");
         }
     }
 
     private void Inventory_RemoveActionPerformed() {
-        int[] rows = Inventory_Table.getSelectedRows();
+        int[] rows = INV_Table.getSelectedRows();
         for (int i=0; i<rows.length; i++) {
-            String ProdID = Inventory_Table.getValueAt(rows[i]-i, 0).toString();
+            String ProdID = INV_Table.getValueAt(rows[i]-i, 0).toString();
             com.astral.internal.SQLite.remRowInven(ProdID);
             Inventory_Model.removeRow(rows[i]-i);
         }
     }
 
     private void Inventory_UpdateActionPerformed() {
-        int row = Inventory_Table.getSelectedRow();
+        int row = INV_Table.getSelectedRow();
         if (row == -1)
             JOptionPane.showMessageDialog(null, "Please Select a Product to Update it's Stock.", "No Product Selected", JOptionPane.ERROR_MESSAGE);
         else {
-            PID = Inventory_Table.getValueAt(row, 0).toString();
+            PID = INV_Table.getValueAt(row, 0).toString();
             int quantity = 0;
-            if (Inventory_Table.getValueAt(row, 4) != null)
-                quantity = (Integer) Inventory_Table.getValueAt(row, 4);
+            if (INV_Table.getValueAt(row, 4) != null)
+                quantity = (Integer) INV_Table.getValueAt(row, 4);
             String update = JOptionPane.showInputDialog(null, "Enter the Amount of Stock You want to Increase", "Update Stock", JOptionPane.PLAIN_MESSAGE);
             if (update == null || update.equals(""))
                 update = "0";
@@ -2973,11 +2953,11 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void Settings_ActionPerformed() {
-        Current_Username.setText(com.astral.internal.Security.getDecodedString(com.astral.internal.SQLite.getConfigValue("Username")));
-        Current_Business_Name.setText(com.astral.internal.SQLite.getConfigValue("Business Name"));
-        Current_Contact_Number.setText(com.astral.internal.SQLite.getConfigValue("Contact Number"));
-        Current_Email_Address.setText(com.astral.internal.SQLite.getConfigValue("Email Address"));
-        Current_Address.setText(com.astral.internal.SQLite.getConfigValue("Business Location"));
+        SE_Current_Username.setText(com.astral.internal.Security.getDecodedString(com.astral.internal.SQLite.getConfigValue("Username")));
+        SE_Current_Business_Name.setText(com.astral.internal.SQLite.getConfigValue("Business Name"));
+        SE_Current_Contact_Number.setText(com.astral.internal.SQLite.getConfigValue("Contact Number"));
+        SE_Current_Email_Address.setText(com.astral.internal.SQLite.getConfigValue("Email Address"));
+        SE_Current_Address.setText(com.astral.internal.SQLite.getConfigValue("Business Location"));
         DisableInventory_ActionPerformed();
         Container_Deck.show(Container, "settings");
     }
@@ -3023,235 +3003,234 @@ public class Main extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton About_Button;
-    private javax.swing.JTabbedPane About_Container;
-    private javax.swing.JLabel About_Heading;
-    private javax.swing.JMenuItem About_MenuItem;
-    private javax.swing.JPanel About_Page;
-    private javax.swing.JLabel About_Para;
-    private javax.swing.JButton Add;
-    private javax.swing.JMenuItem Add_MenuItem;
-    private javax.swing.JScrollPane Authors_Container;
-    private javax.swing.JPanel Authors_Tab;
-    private javax.swing.JTextArea Authors_Text;
-    private javax.swing.JTextField Available_Quantity;
-    private javax.swing.JLabel Available_Quantity_Label;
-    private javax.swing.JButton Back_Button;
-    private javax.swing.JPanel Banner;
-    private javax.swing.JPanel Business_Address_Panel;
-    private javax.swing.JTextField Business_Location;
-    private javax.swing.JLabel Business_Location_Label;
-    private javax.swing.JTextField Business_Name;
-    private javax.swing.JLabel Business_Name_Label;
-    private javax.swing.JPanel Business_Name_Panel;
-    private javax.swing.JButton Cancel;
-    private javax.swing.JButton Cancel_Adding;
-    private javax.swing.JButton Cancel_Button;
-    private javax.swing.JButton Change_Password_Button;
-    private javax.swing.JButton Change_Username_Button;
-    private javax.swing.JPasswordField Confirm_Passwd;
-    private javax.swing.JLabel Confirm_Passwd_Label;
-    private javax.swing.JPasswordField Confirm_Password;
-    private javax.swing.JPasswordField Confirm_Password1;
-    private javax.swing.JLabel Confirm_Password_Label;
-    private javax.swing.JLabel Confirm_Password_Label1;
-    private javax.swing.JTextField Contact_Number;
-    private javax.swing.JLabel Contact_Number_Label;
-    private javax.swing.JPanel Contact_Number_Panel;
+    private javax.swing.JScrollPane AB_Authors_Container;
+    private javax.swing.JPanel AB_Authors_Tab;
+    private javax.swing.JTextArea AB_Authors_Text;
+    private javax.swing.JScrollPane AB_Credits_Container;
+    private javax.swing.JPanel AB_Credits_Tab;
+    private javax.swing.JTextArea AB_Credits_Text;
+    private javax.swing.JLabel AB_Heading;
+    private javax.swing.JScrollPane AB_License_Container;
+    private javax.swing.JPanel AB_License_Tab;
+    private javax.swing.JTextArea AB_License_Text;
+    private javax.swing.JLabel AB_Logo;
+    private javax.swing.JLabel AB_Paragraph;
+    private javax.swing.JTabbedPane AB_TabbedPane;
+    private javax.swing.JLabel AB_Version_Label;
+    private javax.swing.JPanel About;
     private javax.swing.JPanel Container;
-    private javax.swing.JButton Create_Invoice;
-    private javax.swing.JPasswordField Create_Password;
-    private javax.swing.JLabel Create_Password_Label;
-    private javax.swing.JScrollPane Credits_Container;
-    private javax.swing.JPanel Credits_Tab;
-    private javax.swing.JTextArea Credits_Text;
-    private javax.swing.JTextField Current_Address;
-    private javax.swing.JLabel Current_Address_Label;
-    private javax.swing.JLabel Current_Business_Label;
-    private javax.swing.JTextField Current_Business_Name;
-    private javax.swing.JLabel Current_Contact_Label;
-    private javax.swing.JTextField Current_Contact_Number;
-    private javax.swing.JTextField Current_Email_Address;
-    private javax.swing.JLabel Current_Email_Label;
-    private javax.swing.JPasswordField Current_Password;
-    private javax.swing.JPasswordField Current_Password1;
-    private javax.swing.JLabel Current_Password_Label;
-    private javax.swing.JLabel Current_Password_Label1;
-    private javax.swing.JTextField Current_Username;
-    private javax.swing.JLabel Current_Username_Label;
-    private javax.swing.JTextField Customer_Address;
-    private javax.swing.JLabel Customer_Address_Label;
-    private javax.swing.JTextField Customer_Contact;
-    private javax.swing.JLabel Customer_Contact_Label;
-    private javax.swing.JPanel Customer_Details_Panel;
-    private javax.swing.JTextField Customer_Name;
-    private javax.swing.JLabel Customer_Name_Label;
-    private javax.swing.JPanel Details_Tab;
-    private javax.swing.JButton Edit;
-    private javax.swing.JMenuItem Edit_MenuItem;
-    private javax.swing.JTextField Email_Address;
-    private javax.swing.JLabel Email_Address_Label;
-    private javax.swing.JPanel Email_Address_Panel;
-    private javax.swing.JMenuItem Exit_MenuItem;
-    private javax.swing.JButton Export_Inventory;
-    private javax.swing.JMenuItem Export_Inventory_MenuItem;
-    private javax.swing.JButton Export_Invoice;
-    private javax.swing.JMenuItem Export_Invoice_MenuItem;
-    private javax.swing.JMenu File_Menu;
-    private javax.swing.Box.Filler Filler_01;
-    private javax.swing.Box.Filler Filler_02;
-    private javax.swing.Box.Filler Filler_03;
-    private javax.swing.Box.Filler Filler_04;
-    private javax.swing.Box.Filler Filler_05;
-    private javax.swing.Box.Filler Filler_06;
-    private javax.swing.Box.Filler Filler_07;
-    private javax.swing.JButton Finish_Adding;
-    private javax.swing.JButton Finish_Button;
+    private javax.swing.JButton FP_Cancel_Button;
+    private javax.swing.JPasswordField FP_Confirm_Password;
+    private javax.swing.JLabel FP_Confirm_Password_Label;
+    private javax.swing.JLabel FP_Heading;
+    private javax.swing.JPanel FP_New_Details;
+    private javax.swing.JPasswordField FP_New_Password;
+    private javax.swing.JLabel FP_New_Password_Label;
+    private javax.swing.JLabel FP_Paragraph;
+    private javax.swing.JTextField FP_Recovery_Key;
+    private javax.swing.JLabel FP_Recovery_Key_Label;
+    private javax.swing.JButton FP_Reset_Button;
     private javax.swing.JPanel Forgot_Password;
-    private javax.swing.JLabel Forgot_Password_Heading;
-    private javax.swing.JLabel Forgot_Password_Label;
-    private javax.swing.JPanel Forgot_Password_Panel;
-    private javax.swing.JLabel Forgot_Password_Para;
-    private javax.swing.JTextField GST_Rate;
-    private javax.swing.JLabel GST_Rate_Label;
-    private javax.swing.JLabel Heading;
-    private javax.swing.JPanel Help;
-    private javax.swing.JLabel Help_Content;
-    private javax.swing.JLabel Help_Label;
-    private javax.swing.JMenu Help_Menu;
-    private javax.swing.JLabel Help_Para;
-    private javax.swing.JButton Home_Button;
-    private javax.swing.JPanel Home_Page;
-    private javax.swing.JButton Import;
-    private javax.swing.JMenuItem Import_MenuItem;
-    private javax.swing.JButton Inventory_Button;
-    private javax.swing.JMenu Inventory_Menu;
-    private javax.swing.JMenuItem Inventory_MenuItem;
-    private javax.swing.JPanel Inventory_New;
-    private javax.swing.JPanel Inventory_Page;
-    private javax.swing.JTable Inventory_Table;
-    private javax.swing.JScrollPane Inventory_Table_Container;
-    private javax.swing.JPanel Invoice_Main;
-    private javax.swing.JPanel Invoice_New;
-    private javax.swing.JTable Invoice_Table;
-    private javax.swing.JScrollPane Invoice_Table_Container;
-    private javax.swing.JButton Invoicing_Button;
-    private javax.swing.JMenuItem Invoicing_MenuItem;
-    private javax.swing.JScrollPane License_Container;
-    private javax.swing.JPanel License_Tab;
-    private javax.swing.JTextArea License_Text;
-    private javax.swing.JPanel Low_Stock;
-    private javax.swing.JLabel Low_Stock_Label;
-    private javax.swing.JLabel Low_Stock_Para;
-    private javax.swing.JLabel Main_Heading;
+    private javax.swing.JPanel HOME_Banner;
+    private javax.swing.JPanel HOME_Help;
+    private javax.swing.JLabel HOME_Help_Content;
+    private javax.swing.JLabel HOME_Help_Heading;
+    private javax.swing.JLabel HOME_Help_Paragraph;
+    private javax.swing.JPanel HOME_Low_Stock;
+    private javax.swing.JLabel HOME_Low_Stock_Heading;
+    private javax.swing.JLabel HOME_Low_Stock_Paragraph;
+    private javax.swing.JLabel HOME_Main_Heading;
+    private javax.swing.JLabel HOME_Product_Five_Label;
+    private javax.swing.JLabel HOME_Product_Five_Quantity;
+    private javax.swing.JLabel HOME_Product_Four_Label;
+    private javax.swing.JLabel HOME_Product_Four_Quantity;
+    private javax.swing.JLabel HOME_Product_One_Label;
+    private javax.swing.JLabel HOME_Product_One_Quantity;
+    private javax.swing.JLabel HOME_Product_Three_Label;
+    private javax.swing.JLabel HOME_Product_Three_Quantity;
+    private javax.swing.JLabel HOME_Product_Two_Label;
+    private javax.swing.JLabel HOME_Product_Two_Quantity;
+    private javax.swing.JPanel Home;
+    private javax.swing.JButton INVO_Export_Button;
+    private javax.swing.JLabel INVO_Heading;
+    private javax.swing.JButton INVO_New_Invoice_Button;
+    private javax.swing.JButton INVO_Remove_Button;
+    private javax.swing.JTable INVO_Table;
+    private javax.swing.JScrollPane INVO_Table_Container;
+    private javax.swing.JButton INVO_View_Button;
+    private javax.swing.JButton INV_Add_Button;
+    private javax.swing.JButton INV_Edit_Button;
+    private javax.swing.JButton INV_Export_Button;
+    private javax.swing.JLabel INV_Heading;
+    private javax.swing.JButton INV_Import_Button;
+    private javax.swing.JButton INV_Remove_Button;
+    private javax.swing.JTable INV_Table;
+    private javax.swing.JScrollPane INV_Table_Container;
+    private javax.swing.JButton INV_Update_Button;
+    private javax.swing.JPanel Inventory;
+    private javax.swing.JPanel Invoice;
+    private javax.swing.JMenuItem MB_About;
+    private javax.swing.JMenuItem MB_Exit;
+    private javax.swing.JMenuItem MB_Export_Inventory;
+    private javax.swing.JMenuItem MB_Export_Invoice;
+    private javax.swing.JMenu MB_File_Menu;
+    private javax.swing.JMenu MB_Help_Menu;
+    private javax.swing.JMenuItem MB_INV_Add;
+    private javax.swing.JMenuItem MB_INV_Edit;
+    private javax.swing.JMenuItem MB_INV_Import;
+    private javax.swing.JMenuItem MB_INV_Remove;
+    private javax.swing.JMenuItem MB_INV_Update;
+    private javax.swing.JMenuItem MB_Inventory;
+    private javax.swing.JMenu MB_Inventory_Menu;
+    private javax.swing.JMenuItem MB_Invoice_History;
+    private javax.swing.JMenuItem MB_New_Invoice;
+    private javax.swing.JPopupMenu.Separator MB_Separator_01;
+    private javax.swing.JPopupMenu.Separator MB_Separator_02;
+    private javax.swing.JPopupMenu.Separator MB_Separator_03;
+    private javax.swing.JPopupMenu.Separator MB_Separator_04;
+    private javax.swing.JMenuItem MB_Settings;
+    private javax.swing.JMenuItem MB_Sign_Out;
+    private javax.swing.JMenu MB_Tools_Menu;
     private javax.swing.JMenuBar MenuBar;
-    private javax.swing.JTextField New_Address;
-    private javax.swing.JLabel New_Address_Label;
-    private javax.swing.JLabel New_Business_Label;
-    private javax.swing.JTextField New_Business_Name;
-    private javax.swing.JLabel New_Contact_Label;
-    private javax.swing.JTextField New_Contact_Number;
-    private javax.swing.JTextField New_Email_Address;
-    private javax.swing.JLabel New_Email_Label;
-    private javax.swing.JLabel New_Heading;
-    private javax.swing.JButton New_Invoice;
-    private javax.swing.JMenuItem New_Invoice_MenuItem;
-    private javax.swing.JTable New_Invoice_Table;
-    private javax.swing.JScrollPane New_Invoice_Table_Container;
-    private javax.swing.JPasswordField New_Password;
-    private javax.swing.JPasswordField New_Password1;
-    private javax.swing.JLabel New_Password_Label;
-    private javax.swing.JLabel New_Password_Label1;
-    private javax.swing.JLabel New_Product_Heading;
-    private javax.swing.JPanel New_Product_Panel;
-    private javax.swing.JTextField New_Username;
-    private javax.swing.JLabel New_Username_Label;
-    private javax.swing.JButton Next_Button;
-    private javax.swing.JPasswordField Password;
-    private javax.swing.JLabel Password_Label;
-    private javax.swing.JPanel Password_Panel;
-    private javax.swing.JTextField Price_Field;
-    private javax.swing.JLabel Price_Label;
-    private javax.swing.JLabel Product_Five_Label;
-    private javax.swing.JLabel Product_Five_Quantity;
-    private javax.swing.JLabel Product_Four_Label;
-    private javax.swing.JLabel Product_Four_Quantity;
-    private javax.swing.JTextField Product_Name;
-    private javax.swing.JLabel Product_Name_Label;
-    private javax.swing.JLabel Product_One_Label;
-    private javax.swing.JLabel Product_One_Quantity;
-    private javax.swing.JLabel Product_Three_Label;
-    private javax.swing.JLabel Product_Three_Quantity;
-    private javax.swing.JLabel Product_Two_Label;
-    private javax.swing.JLabel Product_Two_Quantity;
-    private javax.swing.JTextField Recovery_Key;
-    private javax.swing.JLabel Recovery_Key_Display_Label;
-    private javax.swing.JLabel Recovery_Key_Heading;
-    private javax.swing.JLabel Recovery_Key_Label;
-    private javax.swing.JPanel Recovery_Key_Panel;
-    private javax.swing.JLabel Recovery_Key_Para;
-    private javax.swing.JButton Remove;
-    private javax.swing.JButton Remove1;
-    private javax.swing.JMenuItem Remove_MenuItem;
-    private javax.swing.JButton Reset_Button;
-    private javax.swing.JButton Reset_Key_Button;
-    private javax.swing.JButton Save_Changes_Button;
-    private javax.swing.JPopupMenu.Separator Separator_01;
-    private javax.swing.JPopupMenu.Separator Separator_02;
-    private javax.swing.JPopupMenu.Separator Separator_03;
-    private javax.swing.JPopupMenu.Separator Separator_04;
-    private javax.swing.JButton Settings_Button;
-    private javax.swing.JTabbedPane Settings_Container;
-    private javax.swing.JMenuItem Settings_MenuItem;
-    private javax.swing.JPanel Settings_Page;
+    private javax.swing.JButton NI_Cancel_Button;
+    private javax.swing.JButton NI_Create_Button;
+    private javax.swing.JTextField NI_Customer_Address;
+    private javax.swing.JLabel NI_Customer_Address_Label;
+    private javax.swing.JTextField NI_Customer_Contact;
+    private javax.swing.JLabel NI_Customer_Contact_Label;
+    private javax.swing.JPanel NI_Customer_Details;
+    private javax.swing.JTextField NI_Customer_Name;
+    private javax.swing.JLabel NI_Customer_Name_Label;
+    private javax.swing.JLabel NI_Heading;
+    private javax.swing.JTable NI_Table;
+    private javax.swing.JScrollPane NI_Table_Container;
+    private javax.swing.JTextField NP_Available_Quantity;
+    private javax.swing.JLabel NP_Available_Quantity_Label;
+    private javax.swing.JButton NP_Cancel_Button;
+    private javax.swing.JButton NP_Finish_Button;
+    private javax.swing.JTextField NP_GST_Rate;
+    private javax.swing.JLabel NP_GST_Rate_Label;
+    private javax.swing.JLabel NP_Heading;
+    private javax.swing.JTextField NP_Price;
+    private javax.swing.JLabel NP_Price_Label;
+    private javax.swing.JPanel NP_Product_Details;
+    private javax.swing.JTextField NP_Product_Name;
+    private javax.swing.JLabel NP_Product_Name_Label;
+    private javax.swing.JPanel New_Invoice;
+    private javax.swing.JPanel New_Product;
+    private javax.swing.JButton SB_About_Button;
+    private javax.swing.Box.Filler SB_Filler_01;
+    private javax.swing.Box.Filler SB_Filler_02;
+    private javax.swing.Box.Filler SB_Filler_03;
+    private javax.swing.Box.Filler SB_Filler_04;
+    private javax.swing.Box.Filler SB_Filler_05;
+    private javax.swing.Box.Filler SB_Filler_06;
+    private javax.swing.Box.Filler SB_Filler_07;
+    private javax.swing.JButton SB_Home_Button;
+    private javax.swing.JButton SB_Inventory_Button;
+    private javax.swing.JButton SB_Invoicing_Button;
+    private javax.swing.JButton SB_Settings_Button;
+    private javax.swing.JButton SB_SignOut_Button;
+    private javax.swing.JButton SD_Back_Button;
+    private javax.swing.JPanel SD_Business_Details;
+    private javax.swing.JTextField SD_Business_Location;
+    private javax.swing.JLabel SD_Business_Location_Label;
+    private javax.swing.JTextField SD_Business_Name;
+    private javax.swing.JLabel SD_Business_Name_Label;
+    private javax.swing.JTextField SD_Contact_Number;
+    private javax.swing.JLabel SD_Contact_Number_Label;
+    private javax.swing.JTextField SD_Email_Address;
+    private javax.swing.JLabel SD_Email_Address_Label;
+    private javax.swing.JLabel SD_Heading;
+    private javax.swing.JLabel SD_Paragraph;
+    private javax.swing.JButton SD_SignUp_Button;
+    private javax.swing.JPanel SE_Business_Location;
+    private javax.swing.JPanel SE_Business_Name;
+    private javax.swing.JPanel SE_Business_Tab;
+    private javax.swing.JButton SE_Change_Password_Button;
+    private javax.swing.JButton SE_Change_Username_Button;
+    private javax.swing.JPasswordField SE_Confirm_Password;
+    private javax.swing.JLabel SE_Confirm_Password_Label;
+    private javax.swing.JPanel SE_Contact_Number;
+    private javax.swing.JTextField SE_Current_Address;
+    private javax.swing.JLabel SE_Current_Address_Label;
+    private javax.swing.JLabel SE_Current_Business_Label;
+    private javax.swing.JTextField SE_Current_Business_Name;
+    private javax.swing.JLabel SE_Current_Contact_Label;
+    private javax.swing.JTextField SE_Current_Contact_Number;
+    private javax.swing.JTextField SE_Current_Email_Address;
+    private javax.swing.JLabel SE_Current_Email_Label;
+    private javax.swing.JPasswordField SE_Current_Password;
+    private javax.swing.JLabel SE_Current_Password_Label;
+    private javax.swing.JTextField SE_Current_Username;
+    private javax.swing.JLabel SE_Current_Username_Label;
+    private javax.swing.JPanel SE_Email_Address;
+    private javax.swing.JTextField SE_New_Address;
+    private javax.swing.JLabel SE_New_Address_Label;
+    private javax.swing.JLabel SE_New_Business_Label;
+    private javax.swing.JTextField SE_New_Business_Name;
+    private javax.swing.JLabel SE_New_Contact_Label;
+    private javax.swing.JTextField SE_New_Contact_Number;
+    private javax.swing.JTextField SE_New_Email_Address;
+    private javax.swing.JLabel SE_New_Email_Label;
+    private javax.swing.JPasswordField SE_New_Password;
+    private javax.swing.JLabel SE_New_Password_Label;
+    private javax.swing.JTextField SE_New_Username;
+    private javax.swing.JLabel SE_New_Username_Label;
+    private javax.swing.JPanel SE_Password;
+    private javax.swing.JPanel SE_Recovery_Key;
+    private javax.swing.JPasswordField SE_Recovery_Password;
+    private javax.swing.JLabel SE_Recovery_Password_Label;
+    private javax.swing.JButton SE_Reset_Key_Button;
+    private javax.swing.JButton SE_Save_Changes_Button;
+    private javax.swing.JTabbedPane SE_TabbedPane;
+    private javax.swing.JPanel SE_User_Tab;
+    private javax.swing.JPanel SE_Username;
+    private javax.swing.JButton SI_Button;
+    private javax.swing.JLabel SI_Forgot_Password;
+    private javax.swing.JLabel SI_Heading;
+    private javax.swing.JLabel SI_Paragraph;
+    private javax.swing.JPasswordField SI_Password;
+    private javax.swing.JLabel SI_Password_Label;
+    private javax.swing.JLabel SI_Sub_Heading;
+    private javax.swing.JTextField SI_Username;
+    private javax.swing.JLabel SI_Username_Label;
+    private javax.swing.JPasswordField SM_Confirm_Password;
+    private javax.swing.JLabel SM_Confirm_Password_Label;
+    private javax.swing.JPasswordField SM_Create_Password;
+    private javax.swing.JLabel SM_Create_Password_Label;
+    private javax.swing.JLabel SM_Heading;
+    private javax.swing.JButton SM_Next_Button;
+    private javax.swing.JLabel SM_Paragraph_01;
+    private javax.swing.JLabel SM_Paragraph_02;
+    private javax.swing.JLabel SM_Sub_Heading;
+    private javax.swing.JPanel SM_User_Details;
+    private javax.swing.JTextField SM_Username;
+    private javax.swing.JLabel SM_Username_Label;
+    private javax.swing.JPanel Settings;
     private javax.swing.JToolBar SideBar;
     private javax.swing.JPanel SignIn;
-    private javax.swing.JButton SignIn_Button;
-    private javax.swing.JLabel SignIn_Heading;
-    private javax.swing.JLabel SignIn_Para;
-    private javax.swing.JLabel SignIn_SubHeading;
-    private javax.swing.JButton SignOut_Button;
-    private javax.swing.JMenuItem SignOut_MenuItem;
-    private javax.swing.JButton SignUp_Button;
     private javax.swing.JPanel SignUp_Details;
-    private javax.swing.JLabel SignUp_Details_Heading;
-    private javax.swing.JPanel SignUp_Details_Panel;
-    private javax.swing.JLabel SignUp_Details_Para;
-    private javax.swing.JPanel SignUp_User;
-    private javax.swing.JLabel SignUp_User_Heading;
-    private javax.swing.JLabel SignUp_User_Para_A;
-    private javax.swing.JLabel SignUp_User_Para_B;
-    private javax.swing.JLabel SignUp_User_SubHeading;
-    private javax.swing.JPanel SignUp_User_SubPanel;
-    private javax.swing.JTextField SignUp_Username;
-    private javax.swing.JLabel SignUp_Username_Label;
-    private javax.swing.JLabel Speckle_Label;
-    private javax.swing.JLabel Speckle_Logo;
-    private javax.swing.JMenu Tools_Menu;
-    private javax.swing.JButton Update;
-    private javax.swing.JMenuItem Update_MenuItem;
-    private javax.swing.JPanel User_Tab;
-    private javax.swing.JTextField Username;
-    private javax.swing.JLabel Username_Label;
-    private javax.swing.JPanel Username_Panel;
-    private javax.swing.JLabel Verfiy_Contact_Number;
-    private javax.swing.JLabel Verify_Business_Location;
-    private javax.swing.JLabel Verify_Business_Location_Label;
-    private javax.swing.JLabel Verify_Business_Name;
-    private javax.swing.JLabel Verify_Business_Name_Label;
-    private javax.swing.JLabel Verify_Contact_Number_Label;
+    private javax.swing.JPanel SignUp_Main;
+    private javax.swing.JLabel VD_Business_Location;
+    private javax.swing.JLabel VD_Business_Location_Label;
+    private javax.swing.JLabel VD_Business_Name;
+    private javax.swing.JLabel VD_Business_Name_Label;
+    private javax.swing.JLabel VD_Contact_Number;
+    private javax.swing.JLabel VD_Contact_Number_Label;
+    private javax.swing.JLabel VD_Email_Address;
+    private javax.swing.JLabel VD_Email_Address_Label;
+    private javax.swing.JButton VD_Finish_Button;
+    private javax.swing.JLabel VD_Heading;
+    private javax.swing.JLabel VD_Recovery_Key;
+    private javax.swing.JLabel VD_Recovery_Key_Heading;
+    private javax.swing.JLabel VD_Recovery_Key_Paragraph;
+    private javax.swing.JLabel VD_Username;
+    private javax.swing.JLabel VD_Username_Label;
     private javax.swing.JPanel Verify_Details;
-    private javax.swing.JLabel Verify_Details_Heading;
-    private javax.swing.JLabel Verify_Email_Address;
-    private javax.swing.JLabel Verify_Email_Address_Label;
-    private javax.swing.JLabel Verify_Username;
-    private javax.swing.JLabel Verify_Username_Label;
-    private javax.swing.JLabel Version_Label;
-    private javax.swing.JButton View;
     // End of variables declaration//GEN-END:variables
     private final java.awt.CardLayout Container_Deck;
     private DefaultTableModel Inventory_Model;
-    private String usrname, passwd, key;
     private final String Version;
     private boolean LoggedIn;
     private String PID;
