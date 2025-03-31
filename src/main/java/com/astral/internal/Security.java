@@ -60,7 +60,7 @@ public class Security {
         return diff == 0;
     }
     
-    private static byte[] Hash(PBEKeySpec spec) {
+    static byte[] Hash(PBEKeySpec spec) {
         byte[] hash = null;
         try {
             SecretKeyFactory skf = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA512");
@@ -71,14 +71,14 @@ public class Security {
         return hash;
     }
 
-    private static String getSalt() {
+    static String getSalt() {
         SecureRandom random = new SecureRandom();
         byte[] salt = new byte[16];
         random.nextBytes(salt);
         return Arrays.toString(salt);
     }
 
-    private static String toHex(byte[] array) {
+    static String toHex(byte[] array) {
         BigInteger bi = new BigInteger(1, array);
         String hex = bi.toString(16);
         int paddingLength = (array.length * 2) - hex.length();
@@ -88,7 +88,7 @@ public class Security {
             return hex;
     }
 
-    private static byte[] fromHex(String hex) {
+    static byte[] fromHex(String hex) {
         byte[] bytes = new byte[hex.length() / 2];
         for (int i = 0; i < bytes.length ;i++)
             bytes[i] = (byte)Integer.parseInt(hex.substring(2 * i, 2 * i + 2), 16);
