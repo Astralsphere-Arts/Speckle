@@ -2123,6 +2123,7 @@ public class Main extends javax.swing.JFrame {
 
         MB_File_Menu.setText("File");
 
+        MB_New_Invoice.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MB_New_Invoice.setText("New Invoice");
         MB_New_Invoice.setEnabled(false);
         MB_New_Invoice.addActionListener(new java.awt.event.ActionListener() {
@@ -2132,6 +2133,7 @@ public class Main extends javax.swing.JFrame {
         });
         MB_File_Menu.add(MB_New_Invoice);
 
+        MB_Invoice_History.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MB_Invoice_History.setText("Invoice History");
         MB_Invoice_History.setEnabled(false);
         MB_Invoice_History.addActionListener(new java.awt.event.ActionListener() {
@@ -2141,6 +2143,7 @@ public class Main extends javax.swing.JFrame {
         });
         MB_File_Menu.add(MB_Invoice_History);
 
+        MB_Inventory.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MB_Inventory.setText("Inventory");
         MB_Inventory.setEnabled(false);
         MB_Inventory.addActionListener(new java.awt.event.ActionListener() {
@@ -2151,6 +2154,7 @@ public class Main extends javax.swing.JFrame {
         MB_File_Menu.add(MB_Inventory);
         MB_File_Menu.add(MB_Separator_01);
 
+        MB_Sign_Out.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MB_Sign_Out.setText("Sign Out");
         MB_Sign_Out.setEnabled(false);
         MB_Sign_Out.addActionListener(new java.awt.event.ActionListener() {
