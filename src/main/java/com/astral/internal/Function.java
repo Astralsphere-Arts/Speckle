@@ -376,22 +376,31 @@ public class Function {
         }
     }
     
-    public static void invenCSVim(File CSV) {
-        try {
-            String CSV_Line;
-            java.io.BufferedReader CSV_Reader = new java.io.BufferedReader(new java.io.FileReader(CSV));
-            while ((CSV_Line = CSV_Reader.readLine()) != null) {
-                String[] CSV_Parts = CSV_Line.replace("\"", "").split(",");
-                String PID = CSV_Parts[0];
-                String name = CSV_Parts[1];
-                String price = CSV_Parts[2];
-                String gst = CSV_Parts[3];
-                String quan = CSV_Parts[4];
-                if (!PID.equals("Product ID"))
-                    com.astral.internal.SQLite.updateInven(PID, name, price, gst, quan);
+    public static boolean InventoryImportActionPerformed() {
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Import from CSV");
+        fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
+        if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+            try {
+                String CSV_Line;
+                java.io.BufferedReader CSV_Reader = new java.io.BufferedReader(new java.io.FileReader(fileChooser.getSelectedFile()));
+                while ((CSV_Line = CSV_Reader.readLine()) != null) {
+                    String[] CSV_Parts = CSV_Line.replace("\"", "").split(",");
+                    String PID = CSV_Parts[0];
+                    String productName = CSV_Parts[1];
+                    String price = CSV_Parts[2];
+                    String gstRate = CSV_Parts[3];
+                    String availableQuantity = CSV_Parts[4];
+                    if (!PID.equals("Product ID"))
+                        com.astral.internal.SQLite.updateInven(PID, productName, price, gstRate, availableQuantity);
+                }
+                JOptionPane.showMessageDialog(null, "Inventory Data Imported Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                return true;
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+                return false;
             }
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
+        return false;
     }
 }

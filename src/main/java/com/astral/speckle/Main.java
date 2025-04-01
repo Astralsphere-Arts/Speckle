@@ -3,9 +3,7 @@ package com.astral.speckle;
 import java.awt.Component;
 import java.awt.Desktop;
 import java.io.IOException;
-import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
@@ -2562,7 +2560,8 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_INV_Update_ButtonActionPerformed
 
     private void INV_Import_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_Import_ButtonActionPerformed
-        Inventory_ImportActionPerformed();
+        if (com.astral.internal.Function.InventoryImportActionPerformed())
+            Inventory_ActionPerformed();
     }//GEN-LAST:event_INV_Import_ButtonActionPerformed
 
     private void INV_Export_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_Export_ButtonActionPerformed
@@ -2751,7 +2750,8 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_MB_INV_UpdateActionPerformed
 
     private void MB_INV_ImportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_INV_ImportActionPerformed
-        Inventory_ImportActionPerformed();
+        if (com.astral.internal.Function.InventoryImportActionPerformed())
+            Inventory_ActionPerformed();
     }//GEN-LAST:event_MB_INV_ImportActionPerformed
 
     private void MB_SettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_SettingsActionPerformed
@@ -2941,17 +2941,6 @@ public class Main extends javax.swing.JFrame {
                 update = "0";
             String quan = Integer.toString(quantity + Integer.parseInt(update));
             com.astral.internal.SQLite.updateStock(PID, quan);
-            Inventory_ActionPerformed();
-        }
-    }
-
-    private void Inventory_ImportActionPerformed() {
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Import from CSV");
-        fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
-        if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-            com.astral.internal.Function.invenCSVim(fileChooser.getSelectedFile());
-            JOptionPane.showMessageDialog(null, "Inventory Data Imported Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             Inventory_ActionPerformed();
         }
     }
