@@ -84,8 +84,7 @@ public class SQLite {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
-        return com.astral.internal.Security.getEncodedString(usrname).equals(username) &&
-            com.astral.internal.Security.validateHash(passwd, password);
+        return com.astral.internal.Security.getEncodedString(usrname).equals(username) && com.astral.internal.Security.validateHash(passwd, password);
     }
     
     public static String getConfigValue(String param) {
@@ -114,26 +113,27 @@ public class SQLite {
         }
     }
     
-    public static void userConfig(String usrname, String passwd) {
-        String configuration = "REPLACE INTO Configuration (Parameter, Value) VALUES ('Username', ?), ('Password', ?);";
+    public static void userConfig(String username, String password, String recoveryKey) {
+        String configuration = "REPLACE INTO Configuration (Parameter, Value) VALUES ('Username', ?), ('Password', ?), ('Recovery Key', ?);";
         try {
             PreparedStatement configDBquery = configDB.prepareStatement(configuration);
-            configDBquery.setString(1, usrname);
-            configDBquery.setString(2, passwd);
+            configDBquery.setString(1, username);
+            configDBquery.setString(2, password);
+            configDBquery.setString(3, recoveryKey);
             configDBquery.executeUpdate();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
     
-    public static void compConfig(String cname, String cnumber, String cmail, String caddress) {
+    public static void compConfig(String businessName, String contactNumber, String emailAddress, String businessLocation) {
         String configuration = "REPLACE INTO Configuration (Parameter, Value) VALUES ('Business Name', ?), ('Contact Number', ?), ('Email Address', ?), ('Business Location', ?);";
         try {
             PreparedStatement configDBquery = configDB.prepareStatement(configuration);
-            configDBquery.setString(1, cname);
-            configDBquery.setString(2, cnumber);
-            configDBquery.setString(3, cmail);
-            configDBquery.setString(4, caddress);
+            configDBquery.setString(1, businessName);
+            configDBquery.setString(2, contactNumber);
+            configDBquery.setString(3, emailAddress);
+            configDBquery.setString(4, businessLocation);
             configDBquery.executeUpdate();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
@@ -142,8 +142,7 @@ public class SQLite {
     
     public static String[][] dashData() {
         String data[][] = new String[5][2];
-        String inventory = "SELECT \"Product Name\", \"Available Quantity\" FROM Inventory"
-            + " ORDER BY \"Available Quantity\" LIMIT 5;";
+        String inventory = "SELECT \"Product Name\", \"Available Quantity\" FROM Inventory ORDER BY \"Available Quantity\" LIMIT 5;";
         try {
             Statement mainDBquery = mainDB.createStatement();
             ResultSet invResult = mainDBquery.executeQuery(inventory);
@@ -260,16 +259,15 @@ public class SQLite {
         }
     }
     
-    public static void updateInven(String PID, String name, String price, String gst, String quan) {
-        String inventory = "REPLACE INTO Inventory (\"Product ID\", \"Product Name\","
-            + " \"Price\", \"GST Rate\", \"Available Quantity\") VALUES(?, ?, ?, ?, ?);";
+    public static void updateInven(String PID, String productName, String price, String gstRate, String availableQuantity) {
+        String inventory = "REPLACE INTO Inventory (\"Product ID\", \"Product Name\", \"Price\", \"GST Rate\", \"Available Quantity\") VALUES(?, ?, ?, ?, ?);";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(inventory);
             mainDBquery.setString(1, PID);
-            mainDBquery.setString(2, name);
+            mainDBquery.setString(2, productName);
             mainDBquery.setString(3, price);
-            mainDBquery.setString(4, gst);
-            mainDBquery.setString(5, quan);
+            mainDBquery.setString(4, gstRate);
+            mainDBquery.setString(5, availableQuantity);
             mainDBquery.executeUpdate();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);

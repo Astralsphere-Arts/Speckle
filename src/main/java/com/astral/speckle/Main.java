@@ -2312,7 +2312,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_SI_Forgot_PasswordMousePressed
 
     private void SM_Next_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SM_Next_ButtonActionPerformed
-        String username = com.astral.internal.Security.getEncodedString(SM_Username.getText());
+        String username = SM_Username.getText();
         String password = new String(SM_Create_Password.getPassword());
         String confirmPassword = new String(SM_Confirm_Password.getPassword());
         String recoveryKey = com.astral.internal.Function.randomAlphaNumeric(16);
@@ -2325,9 +2325,8 @@ public class Main extends javax.swing.JFrame {
         else if (!password.equals(confirmPassword))
             JOptionPane.showMessageDialog(null, "The Passwords in Password Fields do not Match. Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
         else {
-            com.astral.internal.SQLite.userConfig(username, com.astral.internal.Security.generateHash(password));
-            com.astral.internal.SQLite.setConfigValue("Recovery Key", com.astral.internal.Security.generateHash(recoveryKey));
-            VD_Username.setText(com.astral.internal.Security.getDecodedString(username));
+            com.astral.internal.SQLite.userConfig(com.astral.internal.Security.getEncodedString(username), com.astral.internal.Security.generateHash(password), com.astral.internal.Security.generateHash(recoveryKey));
+            VD_Username.setText(username);
             VD_Recovery_Key.setText(recoveryKey);
             Container_Deck.show(Container, "signUpDetails");
         }
@@ -2355,21 +2354,21 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_SD_Back_ButtonActionPerformed
 
     private void SD_SignUp_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SD_SignUp_ButtonActionPerformed
-        String cname = SD_Business_Name.getText();
-        String cnum = SD_Contact_Number.getText();
-        String cmail = SD_Email_Address.getText();
-        String caddress = SD_Business_Location.getText();
-        if (cname.equals("") || cnum.equals("") || cmail.equals("") || caddress.equals(""))
+        String businessName = SD_Business_Name.getText();
+        String contactNumber = SD_Contact_Number.getText();
+        String emailAddress = SD_Email_Address.getText();
+        String businessLocation = SD_Business_Location.getText();
+        if (businessName.equals("") || contactNumber.equals("") || emailAddress.equals("") || businessLocation.equals(""))
             JOptionPane.showMessageDialog(null, "All Fields are Required to be Filled. Please Try Again!", "Empty Feilds", JOptionPane.ERROR_MESSAGE);
-        else if (cnum.length() != 10)
+        else if (contactNumber.length() != 10)
             JOptionPane.showMessageDialog(null, "Contact Number Must be 10 Digit Long. Please Try Again!", "Contact Number Too Short", JOptionPane.ERROR_MESSAGE);
         else {
-            com.astral.internal.SQLite.compConfig(cname, cnum, cmail, caddress);
+            com.astral.internal.SQLite.compConfig(businessName, contactNumber, emailAddress, businessLocation);
             com.astral.internal.SQLite.setConfigValue("Signed Up", "True");
-            VD_Business_Name.setText(cname);
-            VD_Contact_Number.setText(cnum);
-            VD_Email_Address.setText(cmail);
-            VD_Business_Location.setText(caddress);
+            VD_Business_Name.setText(businessName);
+            VD_Contact_Number.setText(contactNumber);
+            VD_Email_Address.setText(emailAddress);
+            VD_Business_Location.setText(businessLocation);
             Container_Deck.show(Container, "verifyDetails");
         }
     }//GEN-LAST:event_SD_SignUp_ButtonActionPerformed
@@ -2449,13 +2448,13 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_SB_SignOut_ButtonActionPerformed
 
     private void SE_Change_Username_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SE_Change_Username_ButtonActionPerformed
-        String username = com.astral.internal.Security.getEncodedString(SE_New_Username.getText());
-        if (username.equals(""))
+        String newUsername = SE_New_Username.getText();
+        if (newUsername.equals(""))
             JOptionPane.showMessageDialog(null, "Username cannot be Empty. Please Try Again!", "Username Field Empty", JOptionPane.ERROR_MESSAGE);
         else {
-            com.astral.internal.SQLite.setConfigValue("Username", username);
+            com.astral.internal.SQLite.setConfigValue("Username", com.astral.internal.Security.getEncodedString(newUsername));
             JOptionPane.showMessageDialog(null, "Your Username has been changed Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-            SE_Current_Username.setText(com.astral.internal.Security.getDecodedString(com.astral.internal.SQLite.getConfigValue("Username")));
+            SE_Current_Username.setText(newUsername);
             SE_New_Username.setText("");
         }
     }//GEN-LAST:event_SE_Change_Username_ButtonActionPerformed
@@ -2516,28 +2515,28 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_SE_New_Contact_NumberKeyPressed
 
     private void SE_Save_Changes_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SE_Save_Changes_ButtonActionPerformed
-        String cname = SE_New_Business_Name.getText();
-        String cnum = SE_New_Contact_Number.getText();
-        String cmail = SE_New_Email_Address.getText();
-        String caddress = SE_New_Address.getText();
-        if (cname.equals("") && cnum.equals("") && cmail.equals("") && caddress.equals(""))
+        String newBusinessName = SE_New_Business_Name.getText();
+        String newContactNumber = SE_New_Contact_Number.getText();
+        String newEmailAddress = SE_New_Email_Address.getText();
+        String newBusinessLocation = SE_New_Address.getText();
+        if (newBusinessName.equals("") && newContactNumber.equals("") && newEmailAddress.equals("") && newBusinessLocation.equals(""))
             JOptionPane.showMessageDialog(null, "You haven't made any Changes. Please Try Again!", "No Changes Found", JOptionPane.ERROR_MESSAGE);
         else {
-            if (cname.equals(""))
-                cname = SE_Current_Business_Name.getText();
-            if (cmail.equals(""))
-                cmail = SE_Current_Email_Address.getText();
-            if (caddress.equals(""))
-                caddress = SE_Current_Address.getText();
-            if (cnum.equals("")) {
-                cnum = SE_Current_Contact_Number.getText();
-                com.astral.internal.SQLite.compConfig(cname, cnum, cmail, caddress);
+            if (newBusinessName.equals(""))
+                newBusinessName = SE_Current_Business_Name.getText();
+            if (newEmailAddress.equals(""))
+                newEmailAddress = SE_Current_Email_Address.getText();
+            if (newBusinessLocation.equals(""))
+                newBusinessLocation = SE_Current_Address.getText();
+            if (newContactNumber.equals("")) {
+                newContactNumber = SE_Current_Contact_Number.getText();
+                com.astral.internal.SQLite.compConfig(newBusinessName, newContactNumber, newEmailAddress, newBusinessLocation);
                 JOptionPane.showMessageDialog(null, "Your Changes Have Been Saved Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             }
-            else if (cnum.length() != 10)
+            else if (newContactNumber.length() != 10)
                 JOptionPane.showMessageDialog(null, "Contact Number Must be 10 Digit Long. Please Try Again!", "Contact Number Too Short", JOptionPane.ERROR_MESSAGE);
             else {
-                com.astral.internal.SQLite.compConfig(cname, cnum, cmail, caddress);
+                com.astral.internal.SQLite.compConfig(newBusinessName, newContactNumber, newEmailAddress, newBusinessLocation);
                 JOptionPane.showMessageDialog(null, "Your Changes Have Been Saved Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             }
             Settings_ActionPerformed();
@@ -2693,14 +2692,14 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_MB_Sign_OutActionPerformed
 
     private void NP_Finish_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NP_Finish_ButtonActionPerformed
-        String name = NP_Product_Name.getText();
+        String productName = NP_Product_Name.getText();
         String price = NP_Price.getText();
-        String gst = NP_GST_Rate.getText();
-        String quan = NP_Available_Quantity.getText();
-        if (name.equals("") || price.equals("") || gst.equals("") || quan.equals (""))
+        String gstRate = NP_GST_Rate.getText();
+        String availableQuantity = NP_Available_Quantity.getText();
+        if (productName.equals("") || price.equals("") || gstRate.equals("") || availableQuantity.equals (""))
             JOptionPane.showMessageDialog(null, "Product Details can't be Empty. Please Try Again!", "Product Details Empty", JOptionPane.ERROR_MESSAGE);
         else {
-            com.astral.internal.SQLite.updateInven(PID, name, price, gst, quan);
+            com.astral.internal.SQLite.updateInven(PID, productName, price, gstRate, availableQuantity);
             Inventory_ActionPerformed();
         }
     }//GEN-LAST:event_NP_Finish_ButtonActionPerformed
