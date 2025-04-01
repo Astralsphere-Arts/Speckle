@@ -13,6 +13,8 @@ set seven_zip="C:\Program Files\7-Zip\7z.exe"
 
 set nospace=%name: =-%
 
+call mvn clean verify
+
 if exist "%working_dir%\app" rd "%working_dir%\app" /s /q
 if exist "%working_dir%\temp" rd "%working_dir%\temp" /s /q
 if exist "%output_dir%\%nospace%-%version%*.*" del "%output_dir%\%nospace%-%version%*.*"
