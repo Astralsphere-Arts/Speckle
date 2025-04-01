@@ -33,7 +33,7 @@ public class Main extends javax.swing.JFrame {
         }
         initComponents();
         Container_Deck = (java.awt.CardLayout)Container.getLayout();
-        if (com.astral.internal.SQLite.firstUse) {
+        if ((com.astral.internal.SQLite.getConfigValue("Signed Up")).equals("False")) {
             SB_Home_Button.setEnabled(false);
             SB_About_Button.setEnabled(false);
             MB_About.setEnabled(false);
@@ -2365,6 +2365,7 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Contact Number Must be 10 Digit Long. Please Try Again!", "Contact Number Too Short", JOptionPane.ERROR_MESSAGE);
         else {
             com.astral.internal.SQLite.compConfig(cname, cnum, cmail, caddress);
+            com.astral.internal.SQLite.setConfigValue("Signed Up", "True");
             VD_Business_Name.setText(cname);
             VD_Contact_Number.setText(cnum);
             VD_Email_Address.setText(cmail);
@@ -2760,6 +2761,7 @@ public class Main extends javax.swing.JFrame {
 
     private void SignIn_ActionPerformed() {
         LoggedIn = true;
+        com.astral.internal.SQLite.dbConnect();
         Home_ActionPerformed();
         MB_New_Invoice.setEnabled(true);
         MB_Invoice_History.setEnabled(true);
