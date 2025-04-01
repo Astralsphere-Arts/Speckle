@@ -2111,11 +2111,11 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="INV_Add_Button" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="INV_Edit_Button" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="INV_Remove_Button" min="-2" pref="50" max="-2" attributes="0"/>
+                                      <Component id="INV_Add_Button" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="INV_Edit_Button" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="INV_Remove_Button" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="INV_Update_Button" min="-2" pref="120" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -2140,7 +2140,7 @@
                       <Component id="INV_Table_Container" pref="344" max="32767" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="INV_Remove_Button" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="INV_Remove_Button" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="INV_Edit_Button" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="INV_Import_Button" alignment="1" min="-2" pref="39" max="-2" attributes="0"/>
                           <Component id="INV_Export_Button" alignment="1" min="-2" pref="39" max="-2" attributes="0"/>
