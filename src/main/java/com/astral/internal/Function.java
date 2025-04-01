@@ -40,8 +40,7 @@ public class Function {
     static String Seed = "0123456789";
     static String ALPHA_NUMERIC_STRING = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     static SecureRandom random = new SecureRandom();
-    static File invFolder = new File(FileSystemView.getFileSystemView()
-        .getDefaultDirectory().getPath() + File.separator + "Speckle");
+    static File invFolder = new File(FileSystemView.getFileSystemView().getDefaultDirectory().getPath() + File.separator + "Speckle");
     static java.awt.Color TableHeader = new java.awt.Color(224, 224, 224);
     
     public static String randomID(int length) {
@@ -182,8 +181,7 @@ public class Function {
         ResultSet invoTableData = com.astral.internal.SQLite.invoTableData(invID);
         try (Document document = new Document()) {
             PdfWriter.getInstance(document, new FileOutputStream(invPath));
-            Font IBMPlex = new Font(BaseFont.createFont("/fonts/IBMPlex.ttf", BaseFont.IDENTITY_H,
-                    BaseFont.EMBEDDED), 10);
+            Font IBMPlex = new Font(BaseFont.createFont("/fonts/IBMPlexSansDevanagari-Regular.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED), 10);
             document.open();
             Paragraph para = new Paragraph(com.astral.internal.SQLite.getConfigValue("Business Name"),
                 FontFactory.getFont(FontFactory.TIMES_BOLD, 20));
@@ -324,11 +322,11 @@ public class Function {
             table.setWidthPercentage(100);
             document.add(table);
             table = new PdfPTable(2);
-            cell = new PdfPCell(new Paragraph("THANK YOU FOR YOUR BUSINESS!", new Font(BaseFont.createFont("/fonts/IBMPlex.ttf",
+            cell = new PdfPCell(new Paragraph("THANK YOU FOR YOUR BUSINESS!", new Font(BaseFont.createFont("/fonts/IBMPlexSansDevanagari-Regular.ttf",
                 BaseFont.IDENTITY_H, BaseFont.EMBEDDED), 12, Font.BOLD)));
             cell.setBorder(Rectangle.NO_BORDER);
             table.addCell(cell);
-            cell = new PdfPCell(new Paragraph("AUTHORIZED SIGNATURE", new Font(BaseFont.createFont("/fonts/IBMPlex.ttf",
+            cell = new PdfPCell(new Paragraph("AUTHORIZED SIGNATURE", new Font(BaseFont.createFont("/fonts/IBMPlexSansDevanagari-Regular.ttf",
                 BaseFont.IDENTITY_H, BaseFont.EMBEDDED), 12)));
             cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
             cell.setBorder(Rectangle.NO_BORDER);
