@@ -3,11 +3,12 @@ package com.astral.speckle;
 import java.awt.Component;
 import java.awt.Desktop;
 import java.io.IOException;
+import java.util.Base64;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
-import com.astral.internal.Security;
+import com.password4j.Password;
 
 /**
  *
@@ -2069,7 +2070,7 @@ public class Main extends javax.swing.JFrame {
         AB_Credits_Text.setColumns(20);
         AB_Credits_Text.setFont(SpaceMono.deriveFont(java.awt.Font.PLAIN, 14));
         AB_Credits_Text.setRows(5);
-        AB_Credits_Text.setText("\n  Some features of Speckle rely on external libraries here is a list of them:\n\n  1. SQLite JDBC Crypt - https://github.com/Willena/sqlite-jdbc-crypt\n  2. FlatLaf - https://www.formdev.com/flatlaf\n  3. OpenPDF - https://github.com/LibrePDF/OpenPDF\n  4. ICU4J (International Components for Unicode) - https://icu.unicode.org\n");
+        AB_Credits_Text.setText("\n  Some features of Speckle rely on external libraries here is a list of them:\n\n  1. SQLite JDBC Crypt - https://github.com/Willena/sqlite-jdbc-crypt\n  2. Password4j - https://password4j.com\n  3. FlatLaf - https://www.formdev.com/flatlaf\n  4. OpenPDF - https://github.com/LibrePDF/OpenPDF\n  5. ICU4J (International Components for Unicode) - https://icu.unicode.org");
         AB_Credits_Container.setViewportView(AB_Credits_Text);
 
         javax.swing.GroupLayout AB_Credits_TabLayout = new javax.swing.GroupLayout(AB_Credits_Tab);
@@ -2321,12 +2322,12 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Username or Password cannot be Empty. Please Try Again!", "Username/Password Empty", JOptionPane.ERROR_MESSAGE);
         else if (password.length() < 8)
             JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least 8 Characters. Please Try Again!", "Password Too Short", JOptionPane.ERROR_MESSAGE);
-        else if (!Security.checkPass(password))
+        else if (!com.astral.internal.Function.checkPass(password))
             JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric, One Uppercase and One Lowercase Character. Please Try Again!", "Insecure Password", JOptionPane.ERROR_MESSAGE);
         else if (!password.equals(confirmPassword))
             JOptionPane.showMessageDialog(null, "The Passwords in Password Fields do not Match. Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
         else {
-            com.astral.internal.SQLite.userConfig(Security.getEncodedString(username), Security.generateHash(password), Security.generateHash(recoveryKey));
+            com.astral.internal.SQLite.userConfig(Base64.getEncoder().encodeToString(username.getBytes()), Password.hash(password).addRandomSalt().withArgon2().getResult(), Password.hash(recoveryKey).addRandomSalt().withArgon2().getResult());
             VD_Username.setText(username);
             VD_Recovery_Key.setText(recoveryKey);
             Container_Deck.show(Container, "signUpDetails");
@@ -2392,19 +2393,19 @@ public class Main extends javax.swing.JFrame {
         String newRecoveryKey = com.astral.internal.Function.randomAlphaNumeric(16);
         if (currentRecoveryKey.equals("") || newPassword.equals(""))
             JOptionPane.showMessageDialog(null, "Recovery Key or Password cannot be Empty. Please Try Again!", "Recovery Key/Password Empty", JOptionPane.ERROR_MESSAGE);
-        else if (!Security.validateHash(currentRecoveryKey, com.astral.internal.SQLite.getConfigValue("Recovery Key")))
+        else if (!Password.check(currentRecoveryKey, com.astral.internal.SQLite.getConfigValue("Recovery Key")).withArgon2())
             JOptionPane.showMessageDialog(null, "The Recovery Key You Have Entered is Incorrect. Please Try Again!", "Incorrect Recovery Key", JOptionPane.ERROR_MESSAGE);
         else if (newPassword.length() < 8)
             JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least 8 Characters. Please Try Again!", "Password Too Short", JOptionPane.ERROR_MESSAGE);
-        else if (!Security.checkPass(newPassword))
+        else if (!com.astral.internal.Function.checkPass(newPassword))
             JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric, One Uppercase and One Lowercase Character. Please Try Again!", "Insecure Password", JOptionPane.ERROR_MESSAGE);
         else if (!newPassword.equals(confirmPassword))
             JOptionPane.showMessageDialog(null, "New Password and Confirm Password Doesn't Match. Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
-        else if (Security.validateHash(newPassword, com.astral.internal.SQLite.getConfigValue("Password")))
+        else if (Password.check(newPassword, com.astral.internal.SQLite.getConfigValue("Password")).withArgon2())
             JOptionPane.showMessageDialog(null, "The Password Enterd has been used Already. Try Again with a Password You haven’t used Before!", "Old Password Used", JOptionPane.ERROR_MESSAGE);
         else {
-            com.astral.internal.SQLite.setConfigValue("Password", Security.generateHash(newPassword));
-            com.astral.internal.SQLite.setConfigValue("Recovery Key", Security.generateHash(newRecoveryKey));
+            com.astral.internal.SQLite.setConfigValue("Password", Password.hash(newPassword).addRandomSalt().withArgon2().getResult());
+            com.astral.internal.SQLite.setConfigValue("Recovery Key", Password.hash(newRecoveryKey).addRandomSalt().withArgon2().getResult());
             JOptionPane.showMessageDialog(null, "Password Has Been Changed Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             JOptionPane.showMessageDialog(null, "Your New Recovery Key is " + newRecoveryKey, "Recovery Key", JOptionPane.INFORMATION_MESSAGE);
             SI_Username.setText("");
@@ -2453,7 +2454,7 @@ public class Main extends javax.swing.JFrame {
         if (newUsername.equals(""))
             JOptionPane.showMessageDialog(null, "Username cannot be Empty. Please Try Again!", "Username Field Empty", JOptionPane.ERROR_MESSAGE);
         else {
-            com.astral.internal.SQLite.setConfigValue("Username", Security.getEncodedString(newUsername));
+            com.astral.internal.SQLite.setConfigValue("Username", Base64.getEncoder().encodeToString(newUsername.getBytes()));
             JOptionPane.showMessageDialog(null, "Your Username has been changed Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             SE_Current_Username.setText(newUsername);
             SE_New_Username.setText("");
@@ -2466,18 +2467,18 @@ public class Main extends javax.swing.JFrame {
         String confirmPassword = new String(SE_Confirm_Password.getPassword());
         if (currentPassword.equals("") || newPassword.equals(""))
             JOptionPane.showMessageDialog(null, "Both Current and New Passwords are needed for changing Password. Please Try Again!", "Password Fields Empty", JOptionPane.ERROR_MESSAGE);
-        else if (!Security.validateHash(currentPassword, com.astral.internal.SQLite.getConfigValue("Password")))
+        else if (!Password.check(currentPassword, com.astral.internal.SQLite.getConfigValue("Password")).withArgon2())
             JOptionPane.showMessageDialog(null, "The Current Password is Incorrect. Please Try Again!", "Incorrect Password", JOptionPane.ERROR_MESSAGE);
         else if (newPassword.length() < 8)
             JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least 8 Characters. Please Try Again!", "Password Too Short", JOptionPane.ERROR_MESSAGE);
-        else if (!Security.checkPass(newPassword))
+        else if (!com.astral.internal.Function.checkPass(newPassword))
             JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric, One Uppercase and One Lowercase Character. Please Try Again!", "Insecure Password", JOptionPane.ERROR_MESSAGE);
         else if (!newPassword.equals(confirmPassword))
             JOptionPane.showMessageDialog(null, "The Password in Confirm Password Field does not Match. Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
-        else if (Security.validateHash(newPassword, com.astral.internal.SQLite.getConfigValue("Password")))
+        else if (Password.check(newPassword, com.astral.internal.SQLite.getConfigValue("Password")).withArgon2())
             JOptionPane.showMessageDialog(null, "The Password Enterd has been used Already. Try Again with a Password You haven’t used Before!", "Old Password Used", JOptionPane.ERROR_MESSAGE);
         else {
-            com.astral.internal.SQLite.setConfigValue("Password", Security.generateHash(newPassword));
+            com.astral.internal.SQLite.setConfigValue("Password", Password.hash(newPassword).addRandomSalt().withArgon2().getResult());
             JOptionPane.showMessageDialog(null, "Your Password has been changed Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             SE_Current_Password.setText("");
             SE_New_Password.setText("");
@@ -2487,13 +2488,13 @@ public class Main extends javax.swing.JFrame {
 
     private void SE_Reset_Key_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SE_Reset_Key_ButtonActionPerformed
         String currentPassword = new String(SE_Recovery_Password.getPassword());
-        String recoveryKey = com.astral.internal.Function.randomAlphaNumeric(16);
-        if (!Security.validateHash(currentPassword, com.astral.internal.SQLite.getConfigValue("Password")))
+        String newRecoveryKey = com.astral.internal.Function.randomAlphaNumeric(16);
+        if (!Password.check(currentPassword, com.astral.internal.SQLite.getConfigValue("Password")).withArgon2())
             JOptionPane.showMessageDialog(null, "The Password You Have Entered is Incorrect. Please Try Again!", "Incorrect Password", JOptionPane.ERROR_MESSAGE);
         else {
-            com.astral.internal.SQLite.setConfigValue("Recovery Key", Security.generateHash(recoveryKey));
+            com.astral.internal.SQLite.setConfigValue("Recovery Key", Password.hash(newRecoveryKey).addRandomSalt().withArgon2().getResult());
             JOptionPane.showMessageDialog(null, "Your Recovery Key Has Been Successfully Reset!", "Success", JOptionPane.INFORMATION_MESSAGE);
-            JOptionPane.showMessageDialog(null, "Your New Recovery Key is " + recoveryKey, "Recovery Key", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Your New Recovery Key is " + newRecoveryKey, "Recovery Key", JOptionPane.INFORMATION_MESSAGE);
             SE_Recovery_Password.setText("");
         }
     }//GEN-LAST:event_SE_Reset_Key_ButtonActionPerformed
@@ -2813,7 +2814,7 @@ public class Main extends javax.swing.JFrame {
 
     private void Home_ActionPerformed() {
         if (LoggedIn) {
-            HOME_Help_Paragraph.setText("<html>Welcome <b>" + Security.getDecodedString(com.astral.internal.SQLite.getConfigValue("Username")) + "</b>! This is a Quick Overview of Speckle :</html>");
+            HOME_Help_Paragraph.setText("<html>Welcome <b>" + new String(Base64.getDecoder().decode(com.astral.internal.SQLite.getConfigValue("Username"))) + "</b>! This is a Quick Overview of Speckle :</html>");
             String data[][] = com.astral.internal.SQLite.dashData();
             HOME_Product_One_Label.setText(data[0][0]);
             HOME_Product_One_Quantity.setText(data[0][1]);
@@ -2948,7 +2949,7 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void Settings_ActionPerformed() {
-        SE_Current_Username.setText(Security.getDecodedString(com.astral.internal.SQLite.getConfigValue("Username")));
+        SE_Current_Username.setText(new String(Base64.getDecoder().decode(com.astral.internal.SQLite.getConfigValue("Username"))));
         SE_Current_Business_Name.setText(com.astral.internal.SQLite.getConfigValue("Business Name"));
         SE_Current_Contact_Number.setText(com.astral.internal.SQLite.getConfigValue("Contact Number"));
         SE_Current_Email_Address.setText(com.astral.internal.SQLite.getConfigValue("Email Address"));

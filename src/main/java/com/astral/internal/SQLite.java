@@ -10,7 +10,9 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import java.util.Base64;
 import javax.swing.JOptionPane;
+import com.password4j.Password;
 
 /**
  *
@@ -85,7 +87,7 @@ public class SQLite {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
-        return com.astral.internal.Security.getEncodedString(usrname).equals(username) && com.astral.internal.Security.validateHash(passwd, password);
+        return Base64.getEncoder().encodeToString(usrname.getBytes()).equals(username) && Password.check(passwd, password).withArgon2();
     }
     
     public static String getConfigValue(String param) {

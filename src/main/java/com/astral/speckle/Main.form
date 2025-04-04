@@ -3467,7 +3467,7 @@
                               <Connection code="SpaceMono.deriveFont(java.awt.Font.PLAIN, 14)" type="code"/>
                             </Property>
                             <Property name="rows" type="int" value="5"/>
-                            <Property name="text" type="java.lang.String" value="&#xa;  Some features of Speckle rely on external libraries here is a list of them:&#xa;&#xa;  1. SQLite JDBC Crypt - https://github.com/Willena/sqlite-jdbc-crypt&#xa;  2. FlatLaf - https://www.formdev.com/flatlaf&#xa;  3. OpenPDF - https://github.com/LibrePDF/OpenPDF&#xa;  4. ICU4J (International Components for Unicode) - https://icu.unicode.org&#xa;"/>
+                            <Property name="text" type="java.lang.String" value="&#xa;  Some features of Speckle rely on external libraries here is a list of them:&#xa;&#xa;  1. SQLite JDBC Crypt - https://github.com/Willena/sqlite-jdbc-crypt&#xa;  2. Password4j - https://password4j.com&#xa;  3. FlatLaf - https://www.formdev.com/flatlaf&#xa;  4. OpenPDF - https://github.com/LibrePDF/OpenPDF&#xa;  5. ICU4J (International Components for Unicode) - https://icu.unicode.org"/>
                           </Properties>
                         </Component>
                       </SubComponents>

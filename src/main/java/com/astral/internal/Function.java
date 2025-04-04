@@ -59,6 +59,21 @@ public class Function {
         return builder.toString();
     }
     
+    public static boolean checkPass(String password) {
+        int i; char c;
+        boolean hasNum = false, hasCap = false, hasLow = false;
+        for (i = 0; i < password.length(); i++) {
+            c = password.charAt(i);
+            if (Character.isDigit(c))
+                hasNum = true;
+            if (Character.isUpperCase(c))
+                hasCap = true;
+            if (Character.isLowerCase(c))
+                hasLow = true;
+        }
+        return hasNum && hasCap && hasLow;
+    }
+    
     public static TableModel invoTableModel() {
         ResultSet invResult = com.astral.internal.SQLite.invoData();
         DefaultTableModel invTableModel = new DefaultTableModel() {
