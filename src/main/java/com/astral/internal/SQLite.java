@@ -27,7 +27,8 @@ public class SQLite {
     public static void initDB() {
         if (!Files.isWritable(currentDirectory))
             dbFolder = new File(System.getenv("appdata") + File.separator + "Speckle");
-        boolean firstUse = dbFolder.mkdir();
+        dbFolder.mkdir();
+        boolean configExists = new File(dbFolder + File.separator + "config.sqlite").isFile();
         try {
             String configPath = "jdbc:sqlite:" + dbFolder + File.separator + "config.sqlite";
             String configSchema = "CREATE TABLE IF NOT EXISTS Configuration (Parameter TEXT NOT NULL UNIQUE, Value TEXT, PRIMARY KEY(Parameter));";
@@ -35,7 +36,7 @@ public class SQLite {
             configDB = DriverManager.getConnection(configPath, org.sqlite.mc.SQLiteMCChacha20Config.getDefault().withKey("7&NFV#&LuhDm7Zk#!ZYN").build().toProperties());
             Statement configDBquery = configDB.createStatement();
             configDBquery.execute(configSchema);
-            if (firstUse)
+            if (!configExists)
                 configDBquery.execute(configData);
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
