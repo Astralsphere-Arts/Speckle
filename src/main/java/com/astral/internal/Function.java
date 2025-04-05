@@ -192,21 +192,19 @@ public class Function {
         File invSubFolder = new File(invFolder + File.separator + new java.text.SimpleDateFormat("yyyy - MMMM").format(new java.util.Date()));
         invSubFolder.mkdir();
         invPath = new File(invSubFolder + File.separator + invID + ".pdf");
-        ResultSet invoData = com.astral.internal.SQLite.invoData(invID);
+        ResultSet invoiceData = com.astral.internal.SQLite.invoData(invID);
         ResultSet invoTableData = com.astral.internal.SQLite.invoTableData(invID);
         try (Document document = new Document()) {
             PdfWriter.getInstance(document, new FileOutputStream(invPath));
             Font IBMPlex = new Font(BaseFont.createFont("/fonts/IBMPlexSansDevanagari-Regular.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED), 10);
             document.open();
-            Paragraph para = new Paragraph(com.astral.internal.SQLite.getConfigValue("Business Name"),
-                FontFactory.getFont(FontFactory.TIMES_BOLD, 20));
+            Paragraph para = new Paragraph(com.astral.internal.SQLite.getConfigValue("Business Name"), FontFactory.getFont(FontFactory.TIMES_BOLD, 20));
             para.setAlignment(Element.ALIGN_CENTER);
             document.add(para);
             para = new Paragraph(com.astral.internal.SQLite.getConfigValue("Business Location"));
             para.setAlignment(Element.ALIGN_CENTER);
             document.add(para);
-            para = new Paragraph("Contact Number : " + com.astral.internal.SQLite.getConfigValue("Contact Number")
-                + "    Email : " + com.astral.internal.SQLite.getConfigValue("Email Address"));
+            para = new Paragraph("Contact Number : " + com.astral.internal.SQLite.getConfigValue("Contact Number") + "    Email : " + com.astral.internal.SQLite.getConfigValue("Email Address"));
             para.setAlignment(Element.ALIGN_CENTER);
             para.setSpacingAfter(30f);
             document.add(para);
@@ -215,7 +213,7 @@ public class Function {
             para = new Paragraph();
             Chunk chunk = new Chunk("Invoice Number : ", FontFactory.getFont(FontFactory.HELVETICA_BOLD));
             para.add(chunk);
-            chunk = new Chunk(invoData.getString("Invoice ID"), FontFactory.getFont(FontFactory.HELVETICA));
+            chunk = new Chunk(invoiceData.getString("Invoice ID"), FontFactory.getFont(FontFactory.HELVETICA));
             para.add(chunk);
             PdfPCell cell = new PdfPCell(para);
             cell.setBorder(Rectangle.NO_BORDER);
@@ -224,7 +222,7 @@ public class Function {
             para = new Paragraph();
             chunk = new Chunk("Invoice Date : ", FontFactory.getFont(FontFactory.HELVETICA_BOLD));
             para.add(chunk);
-            chunk = new Chunk(invoData.getString("Date of Sale"), FontFactory.getFont(FontFactory.HELVETICA));
+            chunk = new Chunk(invoiceData.getString("Date of Sale"), FontFactory.getFont(FontFactory.HELVETICA));
             para.add(chunk);
             cell = new PdfPCell(para);
             cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
@@ -238,19 +236,19 @@ public class Function {
             para = new Paragraph();
             chunk = new Chunk("Billed To : ", FontFactory.getFont(FontFactory.HELVETICA_BOLD));
             para.add(chunk);
-            chunk = new Chunk(invoData.getString("Customer Name"), FontFactory.getFont(FontFactory.HELVETICA));
+            chunk = new Chunk(invoiceData.getString("Customer Name"), FontFactory.getFont(FontFactory.HELVETICA));
             para.add(chunk);
             document.add(para);
             para = new Paragraph();
             chunk = new Chunk("Contact Number : ", FontFactory.getFont(FontFactory.HELVETICA_BOLD));
             para.add(chunk);
-            chunk = new Chunk(invoData.getString("Contact Number"), FontFactory.getFont(FontFactory.HELVETICA));
+            chunk = new Chunk(invoiceData.getString("Contact Number"), FontFactory.getFont(FontFactory.HELVETICA));
             para.add(chunk);
             document.add(para);
             para = new Paragraph();
             chunk = new Chunk("Billing Address : ", FontFactory.getFont(FontFactory.HELVETICA_BOLD));
             para.add(chunk);
-            chunk = new Chunk(invoData.getString("Address"), FontFactory.getFont(FontFactory.HELVETICA));
+            chunk = new Chunk(invoiceData.getString("Address"), FontFactory.getFont(FontFactory.HELVETICA));
             para.add(chunk);
             document.add(para);
             float[] widths = {10f, 36f, 13f, 16f, 8f, 17f};
@@ -316,8 +314,7 @@ public class Function {
             cell.setPadding(10f);
             cell.setColspan(5);
             table.addCell(cell);
-            cell = new PdfPCell(new Paragraph(com.ibm.icu.text.NumberFormat.getCurrencyInstance(Locale.of("en", "in"))
-                    .format(new BigDecimal(invoData.getString("Sale Amount"))), IBMPlex));
+            cell = new PdfPCell(new Paragraph(com.ibm.icu.text.NumberFormat.getCurrencyInstance(Locale.of("en", "in")).format(new BigDecimal(invoiceData.getString("Sale Amount"))), IBMPlex));
             cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
             cell.setPadding(10f);
             table.addCell(cell);
@@ -325,7 +322,7 @@ public class Function {
             chunk = new Chunk("Total Amount in Words : ", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10));
             para.add(chunk);
             chunk = new Chunk("Rupees " + com.ibm.icu.lang.UCharacter.toTitleCase(new com.ibm.icu.text.RuleBasedNumberFormat
-                (Locale.of("en", "in"), com.ibm.icu.text.RuleBasedNumberFormat.SPELLOUT).format(Double.parseDouble(invoData.getString("Sale Amount")), "%spellout-numbering"),
+                (Locale.of("en", "in"), com.ibm.icu.text.RuleBasedNumberFormat.SPELLOUT).format(Double.parseDouble(invoiceData.getString("Sale Amount")), "%spellout-numbering"),
                 com.ibm.icu.text.BreakIterator.getWordInstance()) + " Only", IBMPlex);
             para.add(chunk);
             cell = new PdfPCell(para);
@@ -371,23 +368,23 @@ public class Function {
                 ResultSetMetaData metaData = resultSet.getMetaData();
                 int columnCount = metaData.getColumnCount();
                 for (int i = 1; i <= columnCount; i++) {
-                    writer.append("\"" + metaData.getColumnName(i));
+                    writer.append("'" + metaData.getColumnName(i));
                     if (i < columnCount)
-                        writer.append("\",");
+                        writer.append("',");
                 }
-                writer.append("\"\r\n");
+                writer.append("'\r\n");
                 while (resultSet.next()) {
                     for (int i = 1; i <= columnCount; i++) {
-                        writer.append("\"" + resultSet.getString(i));
+                        writer.append("'" + resultSet.getString(i));
                         if (i < columnCount)
-                            writer.append("\",");
+                            writer.append("',");
                     }
-                    writer.append("\"\r\n");
+                    writer.append("'\r\n");
                 }
+                JOptionPane.showMessageDialog(null, TableName + " Data Exported Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             } catch (IOException | SQLException ex) {
                 JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
             }
-            JOptionPane.showMessageDialog(null, TableName + " Data Exported Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
         }
     }
     
@@ -400,7 +397,7 @@ public class Function {
                 String CSV_Line;
                 java.io.BufferedReader CSV_Reader = new java.io.BufferedReader(new java.io.FileReader(fileChooser.getSelectedFile()));
                 while ((CSV_Line = CSV_Reader.readLine()) != null) {
-                    String[] CSV_Parts = CSV_Line.replace("\"", "").split(",");
+                    String[] CSV_Parts = CSV_Line.replace("\"", "").replace("'", "").split(",");
                     String PID = CSV_Parts[0];
                     String productName = CSV_Parts[1];
                     String price = CSV_Parts[2];

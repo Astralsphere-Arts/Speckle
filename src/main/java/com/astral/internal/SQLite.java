@@ -20,11 +20,11 @@ import com.password4j.Password;
  */
 
 public class SQLite {
-    static File dbFolder = new File("data");
-    static Path currentDirectory = Paths.get(System.getProperty("user.dir"));
     static Connection mainDB = null;
     static Connection configDB = null;
     static Connection invoiceDB = null;
+    static File dbFolder = new File("data");
+    static Path currentDirectory = Paths.get(System.getProperty("user.dir"));
     
     public static void initDB() {
         if (!Files.isWritable(currentDirectory))
@@ -303,8 +303,7 @@ public class SQLite {
     }
     
     public static void updateStock(String PID, String quan) {
-        String inventory = "UPDATE Inventory SET \"Available Quantity\" = ? WHERE"
-            + " \"Product ID\" = ?;";
+        String inventory = "UPDATE Inventory SET \"Available Quantity\" = ? WHERE \"Product ID\" = ?;";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(inventory);
             mainDBquery.setString(1, quan);
