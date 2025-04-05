@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.util.Base64;
 import javax.swing.JOptionPane;
 import com.password4j.Password;
+import org.sqlite.mc.SQLiteMCChacha20Config;
 
 /**
  *
@@ -29,12 +30,12 @@ public class SQLite {
         if (!Files.isWritable(currentDirectory))
             dbFolder = new File(System.getenv("appdata") + File.separator + "Speckle");
         dbFolder.mkdir();
-        boolean configExists = new File(dbFolder + File.separator + "config.sqlite").isFile();
+        String configPath = dbFolder + File.separator + "config.sqlite";
+        boolean configExists = new File(configPath).isFile();
         try {
-            String configPath = "jdbc:sqlite:" + dbFolder + File.separator + "config.sqlite";
             String configSchema = "CREATE TABLE IF NOT EXISTS Configuration (Parameter TEXT NOT NULL UNIQUE, Value TEXT, PRIMARY KEY(Parameter));";
             String configData = "REPLACE INTO Configuration (Parameter, Value) VALUES ('Signed Up', 'False');";
-            configDB = DriverManager.getConnection(configPath, org.sqlite.mc.SQLiteMCChacha20Config.getDefault().withKey("7&NFV#&LuhDm7Zk#!ZYN").build().toProperties());
+            configDB = DriverManager.getConnection("jdbc:sqlite:" + configPath, SQLiteMCChacha20Config.getDefault().withKey("7&NFV#&LuhDm7Zk#!ZYN").build().toProperties());
             Statement configDBquery = configDB.createStatement();
             configDBquery.execute(configSchema);
             if (!configExists)
@@ -56,16 +57,19 @@ public class SQLite {
     }
     
     public static void initMainDB() {
-        String mainDBPath = "jdbc:sqlite:" + dbFolder + File.separator + "main.sqlite";
+        String mainDBPath = dbFolder + File.separator + "main.sqlite";
+        boolean mainDBExists = new File(mainDBPath).isFile();
         String invoiceSchema = "CREATE TABLE IF NOT EXISTS Invoice (\"Invoice ID\" TEXT NOT NULL UNIQUE, \"Customer Name\" TEXT, \"Contact Number\" TEXT,"
             + " \"Address\" TEXT, \"Date of Sale\" TEXT, \"GST Amount\" REAL, \"Sale Amount\" REAL, \"Products Purchased\" TEXT, PRIMARY KEY(\"Invoice ID\"));";
         String inventorySchema = "CREATE TABLE IF NOT EXISTS Inventory (\"Product ID\" TEXT NOT NULL UNIQUE, \"Product Name\" TEXT, \"Price\" REAL,"
             + " \"GST Rate\" INTEGER, \"Available Quantity\" INTEGER, PRIMARY KEY(\"Product ID\"));";
         try {
-            mainDB = DriverManager.getConnection(mainDBPath, org.sqlite.mc.SQLiteMCChacha20Config.getDefault().withKey("7&NFV#&LuhDm7Zk#!ZYN").build().toProperties());
-            Statement mainDBquery = mainDB.createStatement();
-            mainDBquery.execute(invoiceSchema);
-            mainDBquery.execute(inventorySchema);
+            mainDB = DriverManager.getConnection("jdbc:sqlite:" + mainDBPath, SQLiteMCChacha20Config.getDefault().withKey("7&NFV#&LuhDm7Zk#!ZYN").build().toProperties());
+            if (!mainDBExists) {
+                Statement mainDBquery = mainDB.createStatement();
+                mainDBquery.execute(invoiceSchema);
+                mainDBquery.execute(inventorySchema);
+            }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
