@@ -25,7 +25,7 @@ public class SQLite {
     static File dbFolder = new File("data");
     static Path currentDirectory = Paths.get(System.getProperty("user.dir"));
     
-    public static void initDB() {
+    public static void initConfigDB() {
         if (!Files.isWritable(currentDirectory))
             dbFolder = new File(System.getenv("appdata") + File.separator + "Speckle");
         dbFolder.mkdir();
@@ -44,16 +44,18 @@ public class SQLite {
         }
     }
     
-    public static void closeDB() {
-        try {
-            mainDB.close();
-            configDB.close();
-        } catch (SQLException ex) { 
-            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+    public static void closeConfigDB() {
+        if (configDB != null) {
+            try {
+                if (configDB.isValid(5))
+                    configDB.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
     
-    public static void dbConnect() {
+    public static void initMainDB() {
         String mainDBPath = "jdbc:sqlite:" + dbFolder + File.separator + "main.sqlite";
         String invoiceSchema = "CREATE TABLE IF NOT EXISTS Invoice (\"Invoice ID\" TEXT NOT NULL UNIQUE, \"Customer Name\" TEXT, \"Contact Number\" TEXT,"
             + " \"Address\" TEXT, \"Date of Sale\" TEXT, \"GST Amount\" REAL, \"Sale Amount\" REAL, \"Products Purchased\" TEXT, PRIMARY KEY(\"Invoice ID\"));";
@@ -66,6 +68,17 @@ public class SQLite {
             mainDBquery.execute(inventorySchema);
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public static void closeMainDB() {
+        if (mainDB != null) {
+            try {
+                if (mainDB.isValid(5))
+                    mainDB.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
     

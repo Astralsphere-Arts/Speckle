@@ -22,7 +22,7 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         LoggedIn = false;
         Version = "1.5.0";
-        com.astral.internal.SQLite.initDB();
+        com.astral.internal.SQLite.initConfigDB();
         if (java.awt.Desktop.getDesktop().isSupported(java.awt.Desktop.Action.APP_ABOUT)) {
             java.awt.Desktop.getDesktop().setAboutHandler(e -> {
                 About_ActionPerformed();
@@ -2768,7 +2768,7 @@ public class Main extends javax.swing.JFrame {
 
     private void SignIn_ActionPerformed() {
         LoggedIn = true;
-        com.astral.internal.SQLite.dbConnect();
+        com.astral.internal.SQLite.initMainDB();
         Home_ActionPerformed();
         MB_New_Invoice.setEnabled(true);
         MB_Invoice_History.setEnabled(true);
@@ -2788,6 +2788,7 @@ public class Main extends javax.swing.JFrame {
         SI_Username.setText("");
         SI_Password.setText("");
         Container_Deck.show(Container, "signIn");
+        com.astral.internal.SQLite.closeMainDB();
         MB_New_Invoice.setEnabled(false);
         MB_Invoice_History.setEnabled(false);
         MB_Inventory.setEnabled(false);
@@ -3000,6 +3001,14 @@ public class Main extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
             new Main().setVisible(true);
+        });
+        
+        Runtime.getRuntime().addShutdownHook(new Thread() {
+            @Override
+            public void run() {
+                com.astral.internal.SQLite.closeMainDB();
+                com.astral.internal.SQLite.closeConfigDB();
+            }
         });
     }
     
