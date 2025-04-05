@@ -123,5 +123,10 @@
             <artifactId>icu4j</artifactId>
             <version>77.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20250107</version>
+        </dependency>
     </dependencies>
 </project>

@@ -2070,7 +2070,7 @@ public class Main extends javax.swing.JFrame {
         AB_Credits_Text.setColumns(20);
         AB_Credits_Text.setFont(SpaceMono.deriveFont(java.awt.Font.PLAIN, 14));
         AB_Credits_Text.setRows(5);
-        AB_Credits_Text.setText("\n  Some features of Speckle rely on external libraries here is a list of them:\n\n  1. SQLite JDBC Crypt - https://github.com/Willena/sqlite-jdbc-crypt\n  2. Password4j - https://password4j.com\n  3. FlatLaf - https://www.formdev.com/flatlaf\n  4. OpenPDF - https://github.com/LibrePDF/OpenPDF\n  5. ICU4J (International Components for Unicode) - https://icu.unicode.org");
+        AB_Credits_Text.setText("\n  Some features of Speckle rely on external libraries here is a list of them:\n\n  1. SQLite JDBC Crypt - https://github.com/Willena/sqlite-jdbc-crypt\n  2. Password4j - https://password4j.com\n  3. FlatLaf - https://www.formdev.com/flatlaf\n  4. OpenPDF - https://github.com/LibrePDF/OpenPDF\n  5. JSON In Java - https://github.com/stleary/JSON-java\n  6. ICU4J (International Components for Unicode) - https://icu.unicode.org");
         AB_Credits_Container.setViewportView(AB_Credits_Text);
 
         javax.swing.GroupLayout AB_Credits_TabLayout = new javax.swing.GroupLayout(AB_Credits_Tab);
@@ -2659,26 +2659,32 @@ public class Main extends javax.swing.JFrame {
         else if (excessQuan)
             JOptionPane.showMessageDialog(null, "Purchased Quantity exceeds the Available Quantity for one or more Products. Please Try Again!", "Purchased Quantity Exceeded", JOptionPane.ERROR_MESSAGE);
         else {
-            com.astral.internal.SQLite.newInvoiceTable(invID);
-            for (int row = 0; row < NI_Table.getRowCount(); row++) {
+            org.json.JSONArray productsPurchased = new org.json.JSONArray();
+            for (int row = 0, rows = NI_Table.getRowCount(); row < rows; row++) {
                 if (Boolean.parseBoolean(NI_Table.getValueAt(row, 0).toString())) {
                     String prodID = (String) NI_Table.getValueAt(row, 1);
                     String prodName = (String) NI_Table.getValueAt(row, 2);
-                    String Price = Double.toString((Double) NI_Table.getValueAt(row, 3));
-                    String gstRate = Integer.toString((Integer) NI_Table.getValueAt(row, 4));
+                    double Price = (Double) NI_Table.getValueAt(row, 3);
+                    int gstRate = (Integer) NI_Table.getValueAt(row, 4);
                     int availQuan = (Integer) NI_Table.getValueAt(row, 5);
-                    String purchQuan = Integer.toString((Integer) NI_Table.getValueAt(row, 6));
-                    String remaingQuan = Integer.toString(availQuan - Integer.parseInt(purchQuan));
-                    double Amount = Double.parseDouble(Price) * Double.parseDouble(purchQuan);
-                    String gstAmount = Double.toString((Amount * Double.parseDouble(gstRate)) / 100);
-                    saleGST = Double.toString(Double.parseDouble(saleGST) + Double.parseDouble(gstAmount));
-                    String netAmount = Double.toString(Amount + Double.parseDouble(gstAmount));
-                    saleAmount = Double.toString(Double.parseDouble(saleAmount) + Double.parseDouble(netAmount));
-                    com.astral.internal.SQLite.updateStock(prodID, remaingQuan);
-                    com.astral.internal.SQLite.newInvoiceTable(invID, prodName, Price, purchQuan, gstRate, gstAmount, netAmount);
+                    int purchQuan = (Integer) NI_Table.getValueAt(row, 6);
+                    double Amount = Price * purchQuan;
+                    double gstAmount = (Amount * gstRate) / 100;
+                    double netAmount = Amount + gstAmount;
+                    org.json.JSONObject product = new org.json.JSONObject();
+                    product.put("Product Name", prodName);
+                    product.put("Price", Price);
+                    product.put("Purchased Quantity", purchQuan);
+                    product.put("GST Rate", gstRate);
+                    product.put("GST Amount", gstAmount);
+                    product.put("Net Amount", netAmount);
+                    productsPurchased.put(product);
+                    saleGST = Double.toString(Double.parseDouble(saleGST) + gstAmount);
+                    saleAmount = Double.toString(Double.parseDouble(saleAmount) + netAmount);
+                    com.astral.internal.SQLite.updateStock(prodID, Integer.toString(availQuan - purchQuan));
                 }
             }
-            com.astral.internal.SQLite.newInvoice(invID, custName, custContact, custAddress, saleDate, saleGST, saleAmount);
+            com.astral.internal.SQLite.newInvoice(invID, custName, custContact, custAddress, saleDate, saleGST, saleAmount, productsPurchased.toString());
             com.astral.internal.Function.invoicePDF(invID);
             Invoicing_ActionPerformed();
             try {

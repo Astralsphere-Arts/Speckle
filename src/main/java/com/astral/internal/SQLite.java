@@ -22,7 +22,6 @@ import com.password4j.Password;
 public class SQLite {
     static Connection mainDB = null;
     static Connection configDB = null;
-    static Connection invoiceDB = null;
     static File dbFolder = new File("data");
     static Path currentDirectory = Paths.get(System.getProperty("user.dir"));
     
@@ -49,7 +48,6 @@ public class SQLite {
         try {
             mainDB.close();
             configDB.close();
-            invoiceDB.close();
         } catch (SQLException ex) { 
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -57,14 +55,12 @@ public class SQLite {
     
     public static void dbConnect() {
         String mainDBPath = "jdbc:sqlite:" + dbFolder + File.separator + "main.sqlite";
-        String invoiceDBPath = "jdbc:sqlite:" + dbFolder + File.separator + "invoice.sqlite";
         String invoiceSchema = "CREATE TABLE IF NOT EXISTS Invoice (\"Invoice ID\" TEXT NOT NULL UNIQUE, \"Customer Name\" TEXT, \"Contact Number\" TEXT,"
-            + " \"Address\" TEXT, \"Date of Sale\" TEXT, \"GST\" REAL, \"Sale Amount\" REAL, PRIMARY KEY(\"Invoice ID\"));";
+            + " \"Address\" TEXT, \"Date of Sale\" TEXT, \"GST Amount\" REAL, \"Sale Amount\" REAL, \"Products Purchased\" TEXT, PRIMARY KEY(\"Invoice ID\"));";
         String inventorySchema = "CREATE TABLE IF NOT EXISTS Inventory (\"Product ID\" TEXT NOT NULL UNIQUE, \"Product Name\" TEXT, \"Price\" REAL,"
             + " \"GST Rate\" INTEGER, \"Available Quantity\" INTEGER, PRIMARY KEY(\"Product ID\"));";
         try {
             mainDB = DriverManager.getConnection(mainDBPath, org.sqlite.mc.SQLiteMCChacha20Config.getDefault().withKey("7&NFV#&LuhDm7Zk#!ZYN").build().toProperties());
-            invoiceDB = DriverManager.getConnection(invoiceDBPath, org.sqlite.mc.SQLiteMCChacha20Config.getDefault().withKey("7&NFV#&LuhDm7Zk#!ZYN").build().toProperties());
             Statement mainDBquery = mainDB.createStatement();
             mainDBquery.execute(invoiceSchema);
             mainDBquery.execute(inventorySchema);
@@ -186,18 +182,6 @@ public class SQLite {
         return invResult;
     }
     
-    public static ResultSet invoTableData(String invID) {
-        ResultSet invResult = null;
-        String inventory = "SELECT * FROM \"" + invID + "\";";
-        try {
-            Statement invoiceDBquery = invoiceDB.createStatement();
-            invResult = invoiceDBquery.executeQuery(inventory);
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
-        }
-        return invResult;
-    }
-    
     public static ResultSet invenData() {
         ResultSet invResult = null;
         String inventory = "SELECT * FROM Inventory;";
@@ -210,11 +194,9 @@ public class SQLite {
         return invResult;
     }
     
-    public static void newInvoice(String invID, String name, String contact, String address,
-        String date, String gst, String amount) {
-        String invoice = "REPLACE INTO Invoice (\"Invoice ID\", \"Customer Name\","
-            + " \"Contact Number\", \"Address\", \"Date of Sale\", \"GST\", \"Sale"
-            + " Amount\") VALUES(?, ?, ?, ?, ?, ?, ?);";
+    public static void newInvoice(String invID, String name, String contact, String address, String date, String gst, String amount, String products) {
+        String invoice = "REPLACE INTO Invoice (\"Invoice ID\", \"Customer Name\", \"Contact Number\", \"Address\", \"Date of Sale\", \"GST Amount\","
+            + " \"Sale Amount\", \"Products Purchased\") VALUES(?, ?, ?, ?, ?, ?, ?, ?);";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(invoice);
             mainDBquery.setString(1, invID);
@@ -224,39 +206,8 @@ public class SQLite {
             mainDBquery.setString(5, date);
             mainDBquery.setString(6, gst);
             mainDBquery.setString(7, amount);
+            mainDBquery.setString(8, products);
             mainDBquery.executeUpdate();
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }
-    
-    public static void newInvoiceTable(String invID) {
-        String invoice = "CREATE TABLE IF NOT EXISTS \"" + invID + "\" (\"Product Name\""
-            + " TEXT NOT NULL UNIQUE, \"Price\" REAL, \"Purchased Quantity\" INTEGER,"
-            + " \"GST Rate\" INTEGER, \"GST Amount\" REAL, \"Net Amount\" REAL, PRIMARY"
-            + " KEY(\"Product Name\"));";
-        try {
-            Statement invoiceDBquery = invoiceDB.createStatement();
-            invoiceDBquery.execute(invoice);
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }
-    
-    public static void newInvoiceTable(String invID, String name, String price, String quan,
-        String gstRate, String gstAmount, String amount) {
-        String invoice = "REPLACE INTO \"" + invID + "\" (\"Product Name\", \"Price\","
-            + " \"Purchased Quantity\", \"GST Rate\", \"GST Amount\", \"Net Amount\")"
-            + " VALUES(?, ?, ?, ?, ?, ?);";
-        try {
-            PreparedStatement invoiceDBquery = invoiceDB.prepareStatement(invoice);
-            invoiceDBquery.setString(1, name);
-            invoiceDBquery.setString(2, price);
-            invoiceDBquery.setString(3, quan);
-            invoiceDBquery.setString(4, gstRate);
-            invoiceDBquery.setString(5, gstAmount);
-            invoiceDBquery.setString(6, amount);
-            invoiceDBquery.executeUpdate();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -279,13 +230,10 @@ public class SQLite {
     
     public static void remInvoice(String invID) {
         String invoice = "DELETE FROM Invoice WHERE \"Invoice ID\" = ?;";
-        String invTable = "DROP TABLE \"" + invID + "\";";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(invoice);
-            Statement invoiceDBquery = invoiceDB.createStatement();
             mainDBquery.setString(1, invID);
             mainDBquery.executeUpdate();
-            invoiceDBquery.execute(invTable);
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }

@@ -193,7 +193,6 @@ public class Function {
         invSubFolder.mkdir();
         invPath = new File(invSubFolder + File.separator + invID + ".pdf");
         ResultSet invoiceData = com.astral.internal.SQLite.invoData(invID);
-        ResultSet invoTableData = com.astral.internal.SQLite.invoTableData(invID);
         try (Document document = new Document()) {
             PdfWriter.getInstance(document, new FileOutputStream(invPath));
             Font IBMPlex = new Font(BaseFont.createFont("/fonts/IBMPlexSansDevanagari-Regular.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED), 10);
@@ -282,29 +281,29 @@ public class Function {
             cell.setBackgroundColor(TableHeader);
             cell.setPadding(10f);
             table.addCell(cell);
-            while (invoTableData.next()) {
-                cell = new PdfPCell(new Paragraph(String.format("%02d", invoTableData.getRow()), IBMPlex));
+            org.json.JSONArray productData = new org.json.JSONArray(invoiceData.getString("Products Purchased"));
+            for (int i = 0, size = productData.length(); i < size; i++) {
+                org.json.JSONObject product = productData.getJSONObject(i);
+                cell = new PdfPCell(new Paragraph(String.format("%02d", i + 1), IBMPlex));
                 cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                 cell.setPadding(10f);
                 table.addCell(cell);
-                cell = new PdfPCell(new Paragraph(invoTableData.getString("Product Name"), IBMPlex));
+                cell = new PdfPCell(new Paragraph(product.getString("Product Name"), IBMPlex));
                 cell.setPadding(10f);
                 table.addCell(cell);
-                cell = new PdfPCell(new Paragraph(String.format("%02d", Integer.valueOf(invoTableData.getString("Purchased Quantity"))), IBMPlex));
+                cell = new PdfPCell(new Paragraph(String.format("%02d", product.getInt("Purchased Quantity")), IBMPlex));
                 cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                 cell.setPadding(10f);
                 table.addCell(cell);
-                cell = new PdfPCell(new Paragraph(com.ibm.icu.text.NumberFormat.getCurrencyInstance(Locale.of("en", "in"))
-                    .format(new BigDecimal(invoTableData.getString("Price"))), IBMPlex));
+                cell = new PdfPCell(new Paragraph(com.ibm.icu.text.NumberFormat.getCurrencyInstance(Locale.of("en", "in")).format(product.getBigDecimal("Price")), IBMPlex));
                 cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
                 cell.setPadding(10f);
                 table.addCell(cell);
-                cell = new PdfPCell(new Paragraph(String.format("%02d", Integer.valueOf(invoTableData.getString("GST Rate"))) + "%", IBMPlex));
+                cell = new PdfPCell(new Paragraph(String.format("%02d", product.getInt("GST Rate")) + "%", IBMPlex));
                 cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                 cell.setPadding(10f);
                 table.addCell(cell);
-                cell = new PdfPCell(new Paragraph(com.ibm.icu.text.NumberFormat.getCurrencyInstance(Locale.of("en", "in"))
-                    .format(new BigDecimal(invoTableData.getString("Net Amount"))), IBMPlex));
+                cell = new PdfPCell(new Paragraph(com.ibm.icu.text.NumberFormat.getCurrencyInstance(Locale.of("en", "in")).format(product.getBigDecimal("Net Amount")), IBMPlex));
                 cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
                 cell.setPadding(10f);
                 table.addCell(cell);

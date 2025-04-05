@@ -12,7 +12,8 @@ A Simple Invoicing and Inventory Management System written in Java and uses SQLi
 ## Dependencies
 
 1. **[SQLite JDBC Crypt](https://github.com/Willena/sqlite-jdbc-crypt)** : Version 3.47.2.0
-2. **[Password4j](https://password4j.com/)** : Version 1.8.2
-2. **[OpenPDF](https://github.com/LibrePDF/OpenPDF)** : Version 1.3.40
-3. **[FlatLaf](https://www.formdev.com/flatlaf/)** : Version 3.5.4
-4. **[ICU4J](https://icu.unicode.org/)** : Version 77.1
+2. **[JSON In Java](https://github.com/stleary/JSON-java)** : Version 20250107
+3. **[Password4j](https://password4j.com/)** : Version 1.8.2
+4. **[OpenPDF](https://github.com/LibrePDF/OpenPDF)** : Version 1.3.40
+5. **[FlatLaf](https://www.formdev.com/flatlaf/)** : Version 3.5.4
+6. **[ICU4J](https://icu.unicode.org/)** : Version 77.1
