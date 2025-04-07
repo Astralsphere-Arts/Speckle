@@ -120,8 +120,9 @@ public class Main extends javax.swing.JFrame {
         VD_Business_Location = new javax.swing.JLabel();
         VD_Recovery_Key_Heading = new javax.swing.JLabel();
         VD_Recovery_Key_Paragraph = new javax.swing.JLabel();
-        VD_Recovery_Key = new javax.swing.JLabel();
+        VD_Recovery_Key = new javax.swing.JTextField();
         VD_Finish_Button = new javax.swing.JButton();
+        VD_Finish_Filler = new javax.swing.Box.Filler(new java.awt.Dimension(16, 0), new java.awt.Dimension(16, 0), new java.awt.Dimension(16, 32767));
         Forgot_Password = new javax.swing.JPanel();
         FP_Heading = new javax.swing.JLabel();
         FP_Paragraph = new javax.swing.JLabel();
@@ -768,9 +769,9 @@ public class Main extends javax.swing.JFrame {
         VD_Recovery_Key_Paragraph.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         VD_Recovery_Key_Paragraph.setText("Following Is Your Recovery Key Code For Password Recovery. Please Keep This Code Safe and Do not Share This Code With Anyone.");
 
-        VD_Recovery_Key.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        VD_Recovery_Key.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        VD_Recovery_Key.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        VD_Recovery_Key.setEditable(false);
+        VD_Recovery_Key.setBackground(new java.awt.Color(255, 255, 255));
+        VD_Recovery_Key.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         VD_Finish_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         VD_Finish_Button.setText("Finish");
@@ -784,12 +785,12 @@ public class Main extends javax.swing.JFrame {
         Verify_Details.setLayout(Verify_DetailsLayout);
         Verify_DetailsLayout.setHorizontalGroup(
             Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Verify_DetailsLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Verify_DetailsLayout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(VD_Recovery_Key)
                     .addComponent(VD_Recovery_Key_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(VD_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
-                    .addComponent(VD_Recovery_Key, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(VD_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, 810, Short.MAX_VALUE)
                     .addComponent(VD_Recovery_Key_Paragraph, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Verify_DetailsLayout.createSequentialGroup()
                         .addComponent(VD_Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -807,10 +808,12 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(VD_Contact_Number, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(VD_Email_Address, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(VD_Business_Location, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(60, 60, 60))
-            .addGroup(Verify_DetailsLayout.createSequentialGroup()
+                .addGap(80, 80, 80))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Verify_DetailsLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(VD_Finish_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(VD_Finish_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(VD_Finish_Filler, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Verify_DetailsLayout.setVerticalGroup(
@@ -845,7 +848,9 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(VD_Recovery_Key, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(VD_Finish_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(VD_Finish_Button, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(VD_Finish_Filler, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(73, Short.MAX_VALUE))
         );
 
@@ -3231,8 +3236,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel VD_Email_Address;
     private javax.swing.JLabel VD_Email_Address_Label;
     private javax.swing.JButton VD_Finish_Button;
+    private javax.swing.Box.Filler VD_Finish_Filler;
     private javax.swing.JLabel VD_Heading;
-    private javax.swing.JLabel VD_Recovery_Key;
+    private javax.swing.JTextField VD_Recovery_Key;
     private javax.swing.JLabel VD_Recovery_Key_Heading;
     private javax.swing.JLabel VD_Recovery_Key_Paragraph;
     private javax.swing.JLabel VD_Username;
