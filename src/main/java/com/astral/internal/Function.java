@@ -205,7 +205,7 @@ public class Function {
             para = new Paragraph(SQLite.getConfigValue("Business Location"));
             para.setAlignment(Element.ALIGN_CENTER);
             document.add(para);
-            para = new Paragraph("Contact Number : " + SQLite.getConfigValue("Contact Number") + "    Email : " + SQLite.getConfigValue("Email Address"));
+            para = new Paragraph("Contact Number : " + SQLite.getConfigValue("Contact Number").replaceFirst("(\\d{5})(\\d+)", "+91-$1-$2") + "    Email : " + SQLite.getConfigValue("Email Address"));
             para.setAlignment(Element.ALIGN_CENTER);
             para.setSpacingAfter(30f);
             document.add(para);
