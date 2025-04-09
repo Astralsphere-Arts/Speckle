@@ -2234,7 +2234,7 @@ public class Main extends javax.swing.JFrame {
         if (username.equals("") && password.equals(""))
             JOptionPane.showMessageDialog(null, "Please enter Username and Password they cannot be Blank. Please Try Again!", "Credentials are Blank", JOptionPane.ERROR_MESSAGE);
         else if (com.astral.internal.SQLite.logIn(username, password))
-            SignIn_ActionPerformed();
+            SignIn_ActionPerformed(Password.hash(password).addSalt(com.astral.internal.SQLite.getConfigValue("Salt")).withPBKDF2().getResult());
         else
             JOptionPane.showMessageDialog(null, "The Username or Password entered are Incorrect. Please Try Again!", "Incorrect Credentials", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_SI_ButtonActionPerformed
@@ -2286,12 +2286,14 @@ public class Main extends javax.swing.JFrame {
         String contactNumber = SD_Contact_Number.getText();
         String emailAddress = SD_Email_Address.getText();
         String businessLocation = SD_Business_Location.getText();
+        String Salt = com.astral.internal.Function.randomAlphaNumeric(128);
         if (businessName.equals("") || contactNumber.equals("") || emailAddress.equals("") || businessLocation.equals(""))
             JOptionPane.showMessageDialog(null, "All Fields are Required to be Filled. Please Try Again!", "Empty Feilds", JOptionPane.ERROR_MESSAGE);
         else if (contactNumber.length() != 10)
             JOptionPane.showMessageDialog(null, "Contact Number Must be 10 Digit Long. Please Try Again!", "Contact Number Too Short", JOptionPane.ERROR_MESSAGE);
         else {
             com.astral.internal.SQLite.compConfig(businessName, contactNumber, emailAddress, businessLocation);
+            com.astral.internal.SQLite.setConfigValue("Salt", Salt);
             com.astral.internal.SQLite.setConfigValue("Signed Up", "True");
             //VD_Business_Name.setText(businessName);
             //VD_Contact_Number.setText(contactNumber);
@@ -2300,7 +2302,7 @@ public class Main extends javax.swing.JFrame {
             SB_Home_Button.setEnabled(true);
             SB_About_Button.setEnabled(true);
             MB_About.setEnabled(true);
-            SignIn_ActionPerformed();
+            SignIn_ActionPerformed(Password.hash(new String(SM_Create_Password.getPassword())).addSalt(Salt).withPBKDF2().getResult());
         }
     }//GEN-LAST:event_SD_SignUp_ButtonActionPerformed
 
@@ -2394,6 +2396,7 @@ public class Main extends javax.swing.JFrame {
         String currentPassword = new String(SE_Current_Password.getPassword());
         String newPassword = new String(SE_New_Password.getPassword());
         String confirmPassword = new String(SE_Confirm_Password.getPassword());
+        String Salt = com.astral.internal.Function.randomAlphaNumeric(128);
         if (currentPassword.equals("") || newPassword.equals(""))
             JOptionPane.showMessageDialog(null, "Both Current and New Passwords are needed for changing Password. Please Try Again!", "Password Fields Empty", JOptionPane.ERROR_MESSAGE);
         else if (!Password.check(currentPassword, com.astral.internal.SQLite.getConfigValue("Password")).withArgon2())
@@ -2408,6 +2411,8 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "The Password Enterd has been used Already. Try Again with a Password You haven’t used Before!", "Old Password Used", JOptionPane.ERROR_MESSAGE);
         else {
             com.astral.internal.SQLite.setConfigValue("Password", Password.hash(newPassword).addRandomSalt().withArgon2().getResult());
+            com.astral.internal.SQLite.setConfigValue("Salt", Salt);
+            com.astral.internal.SQLite.resetMainDB(Password.hash(newPassword).addSalt(Salt).withPBKDF2().getResult());
             JOptionPane.showMessageDialog(null, "Your Password has been changed Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             SE_Current_Password.setText("");
             SE_New_Password.setText("");
@@ -2682,9 +2687,9 @@ public class Main extends javax.swing.JFrame {
         Settings_ActionPerformed();
     }//GEN-LAST:event_MB_SettingsActionPerformed
 
-    private void SignIn_ActionPerformed() {
+    private void SignIn_ActionPerformed(String dbPass) {
         LoggedIn = true;
-        com.astral.internal.SQLite.initMainDB();
+        com.astral.internal.SQLite.initMainDB(dbPass);
         Home_ActionPerformed();
         MB_New_Invoice.setEnabled(true);
         MB_Invoice_History.setEnabled(true);

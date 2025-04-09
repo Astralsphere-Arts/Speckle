@@ -56,7 +56,7 @@ public class SQLite {
         }
     }
     
-    public static void initMainDB() {
+    public static void initMainDB(String dbPass) {
         String mainDBPath = dbFolder + File.separator + "main.sqlite";
         boolean mainDBExists = new File(mainDBPath).isFile();
         String invoiceSchema = "CREATE TABLE IF NOT EXISTS Invoice (\"Invoice ID\" TEXT NOT NULL UNIQUE, \"Customer Name\" TEXT, \"Contact Number\" TEXT,"
@@ -64,12 +64,22 @@ public class SQLite {
         String inventorySchema = "CREATE TABLE IF NOT EXISTS Inventory (\"Product ID\" TEXT NOT NULL UNIQUE, \"Product Name\" TEXT, \"Price\" REAL,"
             + " \"GST Rate\" INTEGER, \"Available Quantity\" INTEGER, PRIMARY KEY(\"Product ID\"));";
         try {
-            mainDB = DriverManager.getConnection("jdbc:sqlite:" + mainDBPath, SQLiteMCChacha20Config.getDefault().withKey("7&NFV#&LuhDm7Zk#!ZYN").build().toProperties());
+            mainDB = DriverManager.getConnection("jdbc:sqlite:" + mainDBPath, SQLiteMCChacha20Config.getDefault().withKey(dbPass).build().toProperties());
             if (!mainDBExists) {
                 Statement mainDBquery = mainDB.createStatement();
                 mainDBquery.execute(invoiceSchema);
                 mainDBquery.execute(inventorySchema);
             }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public static void resetMainDB(String dbPass) {
+        String mainDBPass = String.format("PRAGMA rekey='%s'", dbPass);
+        try {
+            Statement mainDBquery = mainDB.createStatement();
+            mainDBquery.execute(mainDBPass);
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
