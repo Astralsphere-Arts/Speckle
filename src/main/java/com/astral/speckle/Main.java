@@ -78,7 +78,6 @@ public class Main extends javax.swing.JFrame {
         SI_Password_Label = new javax.swing.JLabel();
         SI_Password = new javax.swing.JPasswordField();
         SI_Button = new javax.swing.JButton();
-        SI_Forgot_Password = new javax.swing.JLabel();
         SignUp_Main = new javax.swing.JPanel();
         SM_Heading = new javax.swing.JLabel();
         SM_Sub_Heading = new javax.swing.JLabel();
@@ -216,10 +215,6 @@ public class Main extends javax.swing.JFrame {
         SE_Confirm_Password_Label = new javax.swing.JLabel();
         SE_Confirm_Password = new javax.swing.JPasswordField();
         SE_Change_Password_Button = new javax.swing.JButton();
-        SE_Recovery_Key = new javax.swing.JPanel();
-        SE_Recovery_Password_Label = new javax.swing.JLabel();
-        SE_Recovery_Password = new javax.swing.JPasswordField();
-        SE_Reset_Key_Button = new javax.swing.JButton();
         SE_Business_Tab = new javax.swing.JPanel();
         SE_Business_Name = new javax.swing.JPanel();
         SE_Current_Business_Label = new javax.swing.JLabel();
@@ -405,22 +400,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        SI_Forgot_Password.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
-        SI_Forgot_Password.setForeground(new java.awt.Color(0, 102, 255));
-        SI_Forgot_Password.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SI_Forgot_Password.setText("Forgot Password?");
-        SI_Forgot_Password.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        SI_Forgot_Password.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                SI_Forgot_PasswordMouseMoved(evt);
-            }
-        });
-        SI_Forgot_Password.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                SI_Forgot_PasswordMousePressed(evt);
-            }
-        });
-
         javax.swing.GroupLayout SignInLayout = new javax.swing.GroupLayout(SignIn);
         SignIn.setLayout(SignInLayout);
         SignInLayout.setHorizontalGroup(
@@ -441,8 +420,7 @@ public class Main extends javax.swing.JFrame {
                         .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(SI_Username)
                             .addComponent(SI_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SI_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SI_Forgot_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(SI_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(270, Short.MAX_VALUE))
         );
         SignInLayout.setVerticalGroup(
@@ -464,9 +442,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(SI_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(22, 22, 22)
                 .addComponent(SI_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(SI_Forgot_Password)
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addContainerGap(171, Short.MAX_VALUE))
         );
 
         Container.add(SignIn, "signIn");
@@ -1696,47 +1672,6 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        SE_Recovery_Key.setBorder(javax.swing.BorderFactory.createTitledBorder("Reset Recovery Key"));
-
-        SE_Recovery_Password_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        SE_Recovery_Password_Label.setText("Current Password");
-
-        SE_Recovery_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
-        SE_Reset_Key_Button.setText("Reset Key");
-        SE_Reset_Key_Button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SE_Reset_Key_ButtonActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout SE_Recovery_KeyLayout = new javax.swing.GroupLayout(SE_Recovery_Key);
-        SE_Recovery_Key.setLayout(SE_Recovery_KeyLayout);
-        SE_Recovery_KeyLayout.setHorizontalGroup(
-            SE_Recovery_KeyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SE_Recovery_KeyLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(SE_Recovery_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(SE_Recovery_KeyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(SE_Recovery_KeyLayout.createSequentialGroup()
-                        .addComponent(SE_Reset_Key_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(SE_Recovery_Password))
-                .addContainerGap())
-        );
-        SE_Recovery_KeyLayout.setVerticalGroup(
-            SE_Recovery_KeyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SE_Recovery_KeyLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(SE_Recovery_KeyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(SE_Recovery_Password_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SE_Recovery_Password))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(SE_Reset_Key_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout SE_User_TabLayout = new javax.swing.GroupLayout(SE_User_Tab);
         SE_User_Tab.setLayout(SE_User_TabLayout);
         SE_User_TabLayout.setHorizontalGroup(
@@ -1745,8 +1680,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(SE_User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(SE_Username, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SE_Password, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SE_Recovery_Key, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(SE_Password, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         SE_User_TabLayout.setVerticalGroup(
@@ -1756,9 +1690,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(SE_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(SE_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(SE_Recovery_Key, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(184, Short.MAX_VALUE))
         );
 
         SE_TabbedPane.addTab("User Details", SE_User_Tab);
@@ -2307,22 +2239,11 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "The Username or Password entered are Incorrect. Please Try Again!", "Incorrect Credentials", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_SI_ButtonActionPerformed
 
-    private void SI_Forgot_PasswordMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SI_Forgot_PasswordMouseMoved
-        SI_Forgot_Password.setCursor(java.awt.Cursor.getPredefinedCursor(java.awt.Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_SI_Forgot_PasswordMouseMoved
-
-    private void SI_Forgot_PasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SI_Forgot_PasswordMousePressed
-        FP_Recovery_Key.setText("");
-        FP_New_Password.setText("");
-        FP_Confirm_Password.setText("");
-        Container_Deck.show(Container, "forgotPassword");
-    }//GEN-LAST:event_SI_Forgot_PasswordMousePressed
-
     private void SM_Next_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SM_Next_ButtonActionPerformed
         String username = SM_Username.getText();
         String password = new String(SM_Create_Password.getPassword());
         String confirmPassword = new String(SM_Confirm_Password.getPassword());
-        String recoveryKey = com.astral.internal.Function.randomAlphaNumeric(16);
+        //String recoveryKey = com.astral.internal.Function.randomAlphaNumeric(16);
         if (username.equals("") || password.equals(""))
             JOptionPane.showMessageDialog(null, "Username or Password cannot be Empty. Please Try Again!", "Username/Password Empty", JOptionPane.ERROR_MESSAGE);
         else if (password.length() < 8)
@@ -2332,9 +2253,9 @@ public class Main extends javax.swing.JFrame {
         else if (!password.equals(confirmPassword))
             JOptionPane.showMessageDialog(null, "The Passwords in Password Fields do not Match. Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
         else {
-            com.astral.internal.SQLite.userConfig(Base64.getEncoder().encodeToString(username.getBytes()), Password.hash(password).addRandomSalt().withArgon2().getResult(), Password.hash(recoveryKey).addRandomSalt().withArgon2().getResult());
-            VD_Username.setText(username);
-            VD_Recovery_Key.setText(recoveryKey);
+            com.astral.internal.SQLite.userConfig(Base64.getEncoder().encodeToString(username.getBytes()), Password.hash(password).addRandomSalt().withArgon2().getResult()/*, Password.hash(recoveryKey).addRandomSalt().withArgon2().getResult()*/);
+            //VD_Username.setText(username);
+            //VD_Recovery_Key.setText(recoveryKey);
             Container_Deck.show(Container, "signUpDetails");
         }
     }//GEN-LAST:event_SM_Next_ButtonActionPerformed
@@ -2372,27 +2293,30 @@ public class Main extends javax.swing.JFrame {
         else {
             com.astral.internal.SQLite.compConfig(businessName, contactNumber, emailAddress, businessLocation);
             com.astral.internal.SQLite.setConfigValue("Signed Up", "True");
-            VD_Business_Name.setText(businessName);
-            VD_Contact_Number.setText(contactNumber);
-            VD_Email_Address.setText(emailAddress);
-            VD_Business_Location.setText(businessLocation);
-            Container_Deck.show(Container, "verifyDetails");
+            //VD_Business_Name.setText(businessName);
+            //VD_Contact_Number.setText(contactNumber);
+            //VD_Email_Address.setText(emailAddress);
+            //VD_Business_Location.setText(businessLocation);
+            SB_Home_Button.setEnabled(true);
+            SB_About_Button.setEnabled(true);
+            MB_About.setEnabled(true);
+            SignIn_ActionPerformed();
         }
     }//GEN-LAST:event_SD_SignUp_ButtonActionPerformed
 
     private void VD_Finish_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VD_Finish_ButtonActionPerformed
-        SB_Home_Button.setEnabled(true);
-        SB_About_Button.setEnabled(true);
-        MB_About.setEnabled(true);
-        SignIn_ActionPerformed();
+        //SB_Home_Button.setEnabled(true);
+        //SB_About_Button.setEnabled(true);
+        //MB_About.setEnabled(true);
+        //SignIn_ActionPerformed();
     }//GEN-LAST:event_VD_Finish_ButtonActionPerformed
 
     private void FP_Cancel_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FP_Cancel_ButtonActionPerformed
-        Container_Deck.show(Container, "signIn");
+        //Container_Deck.show(Container, "signIn");
     }//GEN-LAST:event_FP_Cancel_ButtonActionPerformed
 
     private void FP_Reset_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FP_Reset_ButtonActionPerformed
-        String currentRecoveryKey = FP_Recovery_Key.getText();
+        /*String currentRecoveryKey = FP_Recovery_Key.getText();
         String newPassword = new String(FP_New_Password.getPassword());
         String confirmPassword = new String(FP_Confirm_Password.getPassword());
         String newRecoveryKey = com.astral.internal.Function.randomAlphaNumeric(16);
@@ -2419,7 +2343,7 @@ public class Main extends javax.swing.JFrame {
             FP_Recovery_Key.setText("");
             FP_New_Password.setText("");
             FP_Confirm_Password.setText("");
-        }
+        }*/
     }//GEN-LAST:event_FP_Reset_ButtonActionPerformed
 
     private void MB_AboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_AboutActionPerformed
@@ -2490,19 +2414,6 @@ public class Main extends javax.swing.JFrame {
             SE_Confirm_Password.setText("");
         }
     }//GEN-LAST:event_SE_Change_Password_ButtonActionPerformed
-
-    private void SE_Reset_Key_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SE_Reset_Key_ButtonActionPerformed
-        String currentPassword = new String(SE_Recovery_Password.getPassword());
-        String newRecoveryKey = com.astral.internal.Function.randomAlphaNumeric(16);
-        if (!Password.check(currentPassword, com.astral.internal.SQLite.getConfigValue("Password")).withArgon2())
-            JOptionPane.showMessageDialog(null, "The Password You Have Entered is Incorrect. Please Try Again!", "Incorrect Password", JOptionPane.ERROR_MESSAGE);
-        else {
-            com.astral.internal.SQLite.setConfigValue("Recovery Key", Password.hash(newRecoveryKey).addRandomSalt().withArgon2().getResult());
-            JOptionPane.showMessageDialog(null, "Your Recovery Key Has Been Successfully Reset!", "Success", JOptionPane.INFORMATION_MESSAGE);
-            JOptionPane.showMessageDialog(null, "Your New Recovery Key is " + newRecoveryKey, "Recovery Key", JOptionPane.INFORMATION_MESSAGE);
-            SE_Recovery_Password.setText("");
-        }
-    }//GEN-LAST:event_SE_Reset_Key_ButtonActionPerformed
 
     private void SE_New_Contact_NumberKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SE_New_Contact_NumberKeyPressed
         String Number = SE_New_Contact_Number.getText();
@@ -3193,16 +3104,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField SE_New_Username;
     private javax.swing.JLabel SE_New_Username_Label;
     private javax.swing.JPanel SE_Password;
-    private javax.swing.JPanel SE_Recovery_Key;
-    private javax.swing.JPasswordField SE_Recovery_Password;
-    private javax.swing.JLabel SE_Recovery_Password_Label;
-    private javax.swing.JButton SE_Reset_Key_Button;
     private javax.swing.JButton SE_Save_Changes_Button;
     private javax.swing.JTabbedPane SE_TabbedPane;
     private javax.swing.JPanel SE_User_Tab;
     private javax.swing.JPanel SE_Username;
     private javax.swing.JButton SI_Button;
-    private javax.swing.JLabel SI_Forgot_Password;
     private javax.swing.JLabel SI_Heading;
     private javax.swing.JLabel SI_Paragraph;
     private javax.swing.JPasswordField SI_Password;

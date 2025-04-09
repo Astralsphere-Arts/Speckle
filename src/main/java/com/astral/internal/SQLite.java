@@ -129,13 +129,13 @@ public class SQLite {
         }
     }
     
-    public static void userConfig(String username, String password, String recoveryKey) {
-        String configuration = "REPLACE INTO Configuration (Parameter, Value) VALUES ('Username', ?), ('Password', ?), ('Recovery Key', ?);";
+    public static void userConfig(String username, String password/*, String recoveryKey*/) {
+        String configuration = "REPLACE INTO Configuration (Parameter, Value) VALUES ('Username', ?), ('Password', ?);" /*, ('Recovery Key', ?);"*/;
         try {
             PreparedStatement configDBquery = configDB.prepareStatement(configuration);
             configDBquery.setString(1, username);
             configDBquery.setString(2, password);
-            configDBquery.setString(3, recoveryKey);
+            //configDBquery.setString(3, recoveryKey);
             configDBquery.executeUpdate();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
