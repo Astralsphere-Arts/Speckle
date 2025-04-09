@@ -8,6 +8,8 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
+import com.astral.internal.Function;
+import com.astral.internal.SQLite;
 import com.password4j.Password;
 
 /**
@@ -22,9 +24,9 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         LoggedIn = false;
         Version = "1.5.0";
-        com.astral.internal.SQLite.initConfigDB();
-        if (java.awt.Desktop.getDesktop().isSupported(java.awt.Desktop.Action.APP_ABOUT)) {
-            java.awt.Desktop.getDesktop().setAboutHandler(e -> {
+        SQLite.initConfigDB();
+        if (Desktop.getDesktop().isSupported(Desktop.Action.APP_ABOUT)) {
+            Desktop.getDesktop().setAboutHandler(e -> {
                 About_ActionPerformed();
             });
         }
@@ -35,7 +37,7 @@ public class Main extends javax.swing.JFrame {
         }
         initComponents();
         Container_Deck = (java.awt.CardLayout)Container.getLayout();
-        if ((com.astral.internal.SQLite.getConfigValue("Signed Up")).equals("False")) {
+        if ((SQLite.getConfigValue("Signed Up")).equals("False")) {
             SB_Home_Button.setEnabled(false);
             SB_About_Button.setEnabled(false);
             MB_About.setEnabled(false);
@@ -2233,8 +2235,8 @@ public class Main extends javax.swing.JFrame {
         String password = new String(SI_Password.getPassword());
         if (username.equals("") && password.equals(""))
             JOptionPane.showMessageDialog(null, "Please enter Username and Password they cannot be Blank. Please Try Again!", "Credentials are Blank", JOptionPane.ERROR_MESSAGE);
-        else if (com.astral.internal.SQLite.logIn(username, password))
-            SignIn_ActionPerformed(Password.hash(password).addSalt(com.astral.internal.SQLite.getConfigValue("Salt")).withPBKDF2().getResult());
+        else if (SQLite.logIn(username, password))
+            SignIn_ActionPerformed(Password.hash(password).addSalt(SQLite.getConfigValue("Salt")).withPBKDF2().getResult());
         else
             JOptionPane.showMessageDialog(null, "The Username or Password entered are Incorrect. Please Try Again!", "Incorrect Credentials", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_SI_ButtonActionPerformed
@@ -2243,17 +2245,17 @@ public class Main extends javax.swing.JFrame {
         String username = SM_Username.getText();
         String password = new String(SM_Create_Password.getPassword());
         String confirmPassword = new String(SM_Confirm_Password.getPassword());
-        //String recoveryKey = com.astral.internal.Function.randomAlphaNumeric(16);
+        //String recoveryKey = Function.randomAlphaNumeric(16);
         if (username.equals("") || password.equals(""))
             JOptionPane.showMessageDialog(null, "Username or Password cannot be Empty. Please Try Again!", "Username/Password Empty", JOptionPane.ERROR_MESSAGE);
         else if (password.length() < 8)
             JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least 8 Characters. Please Try Again!", "Password Too Short", JOptionPane.ERROR_MESSAGE);
-        else if (!com.astral.internal.Function.checkPass(password))
+        else if (!Function.checkPass(password))
             JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric, One Uppercase and One Lowercase Character. Please Try Again!", "Insecure Password", JOptionPane.ERROR_MESSAGE);
         else if (!password.equals(confirmPassword))
             JOptionPane.showMessageDialog(null, "The Passwords in Password Fields do not Match. Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
         else {
-            com.astral.internal.SQLite.userConfig(Base64.getEncoder().encodeToString(username.getBytes()), Password.hash(password).addRandomSalt().withArgon2().getResult()/*, Password.hash(recoveryKey).addRandomSalt().withArgon2().getResult()*/);
+            SQLite.userConfig(Base64.getEncoder().encodeToString(username.getBytes()), Password.hash(password).addRandomSalt().withArgon2().getResult()/*, Password.hash(recoveryKey).addRandomSalt().withArgon2().getResult()*/);
             //VD_Username.setText(username);
             //VD_Recovery_Key.setText(recoveryKey);
             Container_Deck.show(Container, "signUpDetails");
@@ -2286,15 +2288,15 @@ public class Main extends javax.swing.JFrame {
         String contactNumber = SD_Contact_Number.getText();
         String emailAddress = SD_Email_Address.getText();
         String businessLocation = SD_Business_Location.getText();
-        String Salt = com.astral.internal.Function.randomAlphaNumeric(128);
+        String Salt = Function.randomAlphaNumeric(128);
         if (businessName.equals("") || contactNumber.equals("") || emailAddress.equals("") || businessLocation.equals(""))
             JOptionPane.showMessageDialog(null, "All Fields are Required to be Filled. Please Try Again!", "Empty Feilds", JOptionPane.ERROR_MESSAGE);
         else if (contactNumber.length() != 10)
             JOptionPane.showMessageDialog(null, "Contact Number Must be 10 Digit Long. Please Try Again!", "Contact Number Too Short", JOptionPane.ERROR_MESSAGE);
         else {
-            com.astral.internal.SQLite.compConfig(businessName, contactNumber, emailAddress, businessLocation);
-            com.astral.internal.SQLite.setConfigValue("Salt", Salt);
-            com.astral.internal.SQLite.setConfigValue("Signed Up", "True");
+            SQLite.compConfig(businessName, contactNumber, emailAddress, businessLocation);
+            SQLite.setConfigValue("Salt", Salt);
+            SQLite.setConfigValue("Signed Up", "True");
             //VD_Business_Name.setText(businessName);
             //VD_Contact_Number.setText(contactNumber);
             //VD_Email_Address.setText(emailAddress);
@@ -2321,22 +2323,22 @@ public class Main extends javax.swing.JFrame {
         /*String currentRecoveryKey = FP_Recovery_Key.getText();
         String newPassword = new String(FP_New_Password.getPassword());
         String confirmPassword = new String(FP_Confirm_Password.getPassword());
-        String newRecoveryKey = com.astral.internal.Function.randomAlphaNumeric(16);
+        String newRecoveryKey = Function.randomAlphaNumeric(16);
         if (currentRecoveryKey.equals("") || newPassword.equals(""))
             JOptionPane.showMessageDialog(null, "Recovery Key or Password cannot be Empty. Please Try Again!", "Recovery Key/Password Empty", JOptionPane.ERROR_MESSAGE);
-        else if (!Password.check(currentRecoveryKey, com.astral.internal.SQLite.getConfigValue("Recovery Key")).withArgon2())
+        else if (!Password.check(currentRecoveryKey, SQLite.getConfigValue("Recovery Key")).withArgon2())
             JOptionPane.showMessageDialog(null, "The Recovery Key You Have Entered is Incorrect. Please Try Again!", "Incorrect Recovery Key", JOptionPane.ERROR_MESSAGE);
         else if (newPassword.length() < 8)
             JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least 8 Characters. Please Try Again!", "Password Too Short", JOptionPane.ERROR_MESSAGE);
-        else if (!com.astral.internal.Function.checkPass(newPassword))
+        else if (!Function.checkPass(newPassword))
             JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric, One Uppercase and One Lowercase Character. Please Try Again!", "Insecure Password", JOptionPane.ERROR_MESSAGE);
         else if (!newPassword.equals(confirmPassword))
             JOptionPane.showMessageDialog(null, "New Password and Confirm Password Doesn't Match. Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
-        else if (Password.check(newPassword, com.astral.internal.SQLite.getConfigValue("Password")).withArgon2())
+        else if (Password.check(newPassword, SQLite.getConfigValue("Password")).withArgon2())
             JOptionPane.showMessageDialog(null, "The Password Enterd has been used Already. Try Again with a Password You haven’t used Before!", "Old Password Used", JOptionPane.ERROR_MESSAGE);
         else {
-            com.astral.internal.SQLite.setConfigValue("Password", Password.hash(newPassword).addRandomSalt().withArgon2().getResult());
-            com.astral.internal.SQLite.setConfigValue("Recovery Key", Password.hash(newRecoveryKey).addRandomSalt().withArgon2().getResult());
+            SQLite.setConfigValue("Password", Password.hash(newPassword).addRandomSalt().withArgon2().getResult());
+            SQLite.setConfigValue("Recovery Key", Password.hash(newRecoveryKey).addRandomSalt().withArgon2().getResult());
             JOptionPane.showMessageDialog(null, "Password Has Been Changed Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             JOptionPane.showMessageDialog(null, "Your New Recovery Key is " + newRecoveryKey, "Recovery Key", JOptionPane.INFORMATION_MESSAGE);
             SI_Username.setText("");
@@ -2385,7 +2387,7 @@ public class Main extends javax.swing.JFrame {
         if (newUsername.equals(""))
             JOptionPane.showMessageDialog(null, "Username cannot be Empty. Please Try Again!", "Username Field Empty", JOptionPane.ERROR_MESSAGE);
         else {
-            com.astral.internal.SQLite.setConfigValue("Username", Base64.getEncoder().encodeToString(newUsername.getBytes()));
+            SQLite.setConfigValue("Username", Base64.getEncoder().encodeToString(newUsername.getBytes()));
             JOptionPane.showMessageDialog(null, "Your Username has been changed Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             SE_Current_Username.setText(newUsername);
             SE_New_Username.setText("");
@@ -2396,23 +2398,23 @@ public class Main extends javax.swing.JFrame {
         String currentPassword = new String(SE_Current_Password.getPassword());
         String newPassword = new String(SE_New_Password.getPassword());
         String confirmPassword = new String(SE_Confirm_Password.getPassword());
-        String Salt = com.astral.internal.Function.randomAlphaNumeric(128);
+        String Salt = Function.randomAlphaNumeric(128);
         if (currentPassword.equals("") || newPassword.equals(""))
             JOptionPane.showMessageDialog(null, "Both Current and New Passwords are needed for changing Password. Please Try Again!", "Password Fields Empty", JOptionPane.ERROR_MESSAGE);
-        else if (!Password.check(currentPassword, com.astral.internal.SQLite.getConfigValue("Password")).withArgon2())
+        else if (!Password.check(currentPassword, SQLite.getConfigValue("Password")).withArgon2())
             JOptionPane.showMessageDialog(null, "The Current Password is Incorrect. Please Try Again!", "Incorrect Password", JOptionPane.ERROR_MESSAGE);
         else if (newPassword.length() < 8)
             JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least 8 Characters. Please Try Again!", "Password Too Short", JOptionPane.ERROR_MESSAGE);
-        else if (!com.astral.internal.Function.checkPass(newPassword))
+        else if (!Function.checkPass(newPassword))
             JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric, One Uppercase and One Lowercase Character. Please Try Again!", "Insecure Password", JOptionPane.ERROR_MESSAGE);
         else if (!newPassword.equals(confirmPassword))
             JOptionPane.showMessageDialog(null, "The Password in Confirm Password Field does not Match. Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
-        else if (Password.check(newPassword, com.astral.internal.SQLite.getConfigValue("Password")).withArgon2())
+        else if (Password.check(newPassword, SQLite.getConfigValue("Password")).withArgon2())
             JOptionPane.showMessageDialog(null, "The Password Enterd has been used Already. Try Again with a Password You haven’t used Before!", "Old Password Used", JOptionPane.ERROR_MESSAGE);
         else {
-            com.astral.internal.SQLite.setConfigValue("Password", Password.hash(newPassword).addRandomSalt().withArgon2().getResult());
-            com.astral.internal.SQLite.setConfigValue("Salt", Salt);
-            com.astral.internal.SQLite.resetMainDB(Password.hash(newPassword).addSalt(Salt).withPBKDF2().getResult());
+            SQLite.setConfigValue("Password", Password.hash(newPassword).addRandomSalt().withArgon2().getResult());
+            SQLite.setConfigValue("Salt", Salt);
+            SQLite.resetMainDB(Password.hash(newPassword).addSalt(Salt).withPBKDF2().getResult());
             JOptionPane.showMessageDialog(null, "Your Password has been changed Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             SE_Current_Password.setText("");
             SE_New_Password.setText("");
@@ -2453,13 +2455,13 @@ public class Main extends javax.swing.JFrame {
                 newBusinessLocation = SE_Current_Address.getText();
             if (newContactNumber.equals("")) {
                 newContactNumber = SE_Current_Contact_Number.getText();
-                com.astral.internal.SQLite.compConfig(newBusinessName, newContactNumber, newEmailAddress, newBusinessLocation);
+                SQLite.compConfig(newBusinessName, newContactNumber, newEmailAddress, newBusinessLocation);
                 JOptionPane.showMessageDialog(null, "Your Changes Have Been Saved Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             }
             else if (newContactNumber.length() != 10)
                 JOptionPane.showMessageDialog(null, "Contact Number Must be 10 Digit Long. Please Try Again!", "Contact Number Too Short", JOptionPane.ERROR_MESSAGE);
             else {
-                com.astral.internal.SQLite.compConfig(newBusinessName, newContactNumber, newEmailAddress, newBusinessLocation);
+                SQLite.compConfig(newBusinessName, newContactNumber, newEmailAddress, newBusinessLocation);
                 JOptionPane.showMessageDialog(null, "Your Changes Have Been Saved Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             }
             Settings_ActionPerformed();
@@ -2483,12 +2485,12 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_INV_Update_ButtonActionPerformed
 
     private void INV_Import_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_Import_ButtonActionPerformed
-        if (com.astral.internal.Function.InventoryImportActionPerformed())
+        if (Function.InventoryImportActionPerformed())
             Inventory_ActionPerformed();
     }//GEN-LAST:event_INV_Import_ButtonActionPerformed
 
     private void INV_Export_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_Export_ButtonActionPerformed
-        com.astral.internal.Function.ExportActionPerformed("Inventory");
+        Function.ExportActionPerformed("Inventory");
     }//GEN-LAST:event_INV_Export_ButtonActionPerformed
 
     private void INVO_View_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_View_ButtonActionPerformed
@@ -2497,9 +2499,9 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please Select an Invoice from the Inovice List.", "No Invoice Selected", JOptionPane.ERROR_MESSAGE);
         else {
             String invID = INVO_Table.getValueAt(row, 0).toString();
-            com.astral.internal.Function.invoicePDF(invID);
+            Function.invoicePDF(invID);
             try {
-                Desktop.getDesktop().open(com.astral.internal.Function.invPath);
+                Desktop.getDesktop().open(Function.invPath);
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -2511,13 +2513,13 @@ public class Main extends javax.swing.JFrame {
         int[] rows = INVO_Table.getSelectedRows();
         for (int i=0; i<rows.length; i++) {
             String invID = INVO_Table.getValueAt(rows[i]-i, 0).toString();
-            com.astral.internal.SQLite.remInvoice(invID);
+            SQLite.remInvoice(invID);
             Invoice_Model.removeRow(rows[i]-i);
         }
     }//GEN-LAST:event_INVO_Remove_ButtonActionPerformed
 
     private void INVO_Export_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_Export_ButtonActionPerformed
-        com.astral.internal.Function.ExportActionPerformed("Invoice");
+        Function.ExportActionPerformed("Invoice");
     }//GEN-LAST:event_INVO_Export_ButtonActionPerformed
 
     private void INVO_New_Invoice_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_New_Invoice_ButtonActionPerformed
@@ -2549,7 +2551,7 @@ public class Main extends javax.swing.JFrame {
         int prodSelected = 0;
         boolean emptyQuan = false;
         boolean excessQuan = false;
-        String invID = "INV-" + new java.text.SimpleDateFormat("yyMMdd-HHmmss").format(new java.util.Date()) + "-" + com.astral.internal.Function.randomID(4);
+        String invID = "INV-" + new java.text.SimpleDateFormat("yyMMdd-HHmmss").format(new java.util.Date()) + "-" + Function.randomID(4);
         String custName = NI_Customer_Name.getText();
         String custContact = NI_Customer_Contact.getText();
         String custAddress = NI_Customer_Address.getText();
@@ -2602,14 +2604,14 @@ public class Main extends javax.swing.JFrame {
                     productsPurchased.put(product);
                     saleGST = Double.toString(Double.parseDouble(saleGST) + gstAmount);
                     saleAmount = Double.toString(Double.parseDouble(saleAmount) + netAmount);
-                    com.astral.internal.SQLite.updateStock(prodID, Integer.toString(availQuan - purchQuan));
+                    SQLite.updateStock(prodID, Integer.toString(availQuan - purchQuan));
                 }
             }
-            com.astral.internal.SQLite.newInvoice(invID, custName, custContact, custAddress, saleDate, saleGST, saleAmount, productsPurchased.toString());
-            com.astral.internal.Function.invoicePDF(invID);
+            SQLite.newInvoice(invID, custName, custContact, custAddress, saleDate, saleGST, saleAmount, productsPurchased.toString());
+            Function.invoicePDF(invID);
             Invoicing_ActionPerformed();
             try {
-                Desktop.getDesktop().open(com.astral.internal.Function.invPath);
+                Desktop.getDesktop().open(Function.invPath);
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -2628,7 +2630,7 @@ public class Main extends javax.swing.JFrame {
         if (productName.equals("") || price.equals("") || gstRate.equals("") || availableQuantity.equals (""))
             JOptionPane.showMessageDialog(null, "Product Details can't be Empty. Please Try Again!", "Product Details Empty", JOptionPane.ERROR_MESSAGE);
         else {
-            com.astral.internal.SQLite.updateInven(PID, productName, price, gstRate, availableQuantity);
+            SQLite.updateInven(PID, productName, price, gstRate, availableQuantity);
             Inventory_ActionPerformed();
         }
     }//GEN-LAST:event_NP_Finish_ButtonActionPerformed
@@ -2643,11 +2645,11 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_INV_Edit_ButtonActionPerformed
 
     private void MB_Export_InvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_Export_InvoiceActionPerformed
-        com.astral.internal.Function.ExportActionPerformed("Invoice");
+        Function.ExportActionPerformed("Invoice");
     }//GEN-LAST:event_MB_Export_InvoiceActionPerformed
 
     private void MB_Export_InventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_Export_InventoryActionPerformed
-        com.astral.internal.Function.ExportActionPerformed("Inventory");
+        Function.ExportActionPerformed("Inventory");
     }//GEN-LAST:event_MB_Export_InventoryActionPerformed
 
     private void MB_New_InvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_New_InvoiceActionPerformed
@@ -2679,7 +2681,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_MB_INV_UpdateActionPerformed
 
     private void MB_INV_ImportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_INV_ImportActionPerformed
-        if (com.astral.internal.Function.InventoryImportActionPerformed())
+        if (Function.InventoryImportActionPerformed())
             Inventory_ActionPerformed();
     }//GEN-LAST:event_MB_INV_ImportActionPerformed
 
@@ -2689,7 +2691,7 @@ public class Main extends javax.swing.JFrame {
 
     private void SignIn_ActionPerformed(String dbPass) {
         LoggedIn = true;
-        com.astral.internal.SQLite.initMainDB(dbPass);
+        SQLite.initMainDB(dbPass);
         Home_ActionPerformed();
         MB_New_Invoice.setEnabled(true);
         MB_Invoice_History.setEnabled(true);
@@ -2709,7 +2711,7 @@ public class Main extends javax.swing.JFrame {
         SI_Username.setText("");
         SI_Password.setText("");
         Container_Deck.show(Container, "signIn");
-        com.astral.internal.SQLite.closeMainDB();
+        SQLite.closeMainDB();
         MB_New_Invoice.setEnabled(false);
         MB_Invoice_History.setEnabled(false);
         MB_Inventory.setEnabled(false);
@@ -2742,8 +2744,8 @@ public class Main extends javax.swing.JFrame {
 
     private void Home_ActionPerformed() {
         if (LoggedIn) {
-            HOME_Help_Paragraph.setText("<html>Welcome <b>" + new String(Base64.getDecoder().decode(com.astral.internal.SQLite.getConfigValue("Username"))) + "</b>! This is a Quick Overview of Speckle :</html>");
-            String data[][] = com.astral.internal.SQLite.dashData();
+            HOME_Help_Paragraph.setText("<html>Welcome <b>" + new String(Base64.getDecoder().decode(SQLite.getConfigValue("Username"))) + "</b>! This is a Quick Overview of Speckle :</html>");
+            String data[][] = SQLite.dashData();
             HOME_Product_One_Label.setText(data[0][0]);
             HOME_Product_One_Quantity.setText(data[0][1]);
             HOME_Product_Two_Label.setText(data[1][0]);
@@ -2762,7 +2764,7 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void Invoicing_ActionPerformed() {
-        INVO_Table.setModel(com.astral.internal.Function.invoTableModel());
+        INVO_Table.setModel(Function.invoTableModel());
         final TableColumnModel columnModel = INVO_Table.getColumnModel();
         for (int column = 0; column < INVO_Table.getColumnCount(); column++) {
             int width = 15;
@@ -2779,7 +2781,7 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void NewInvoiceActionPerformed() {
-        NI_Table.setModel(com.astral.internal.Function.newInvoTableModel());
+        NI_Table.setModel(Function.newInvoTableModel());
         final TableColumnModel NewColumnModel = NI_Table.getColumnModel();
         for (int column = 0; column < NI_Table.getColumnCount(); column++) {
             int width = 15;
@@ -2805,7 +2807,7 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void Inventory_ActionPerformed() {
-        INV_Table.setModel(com.astral.internal.Function.invenTableModel());
+        INV_Table.setModel(Function.invenTableModel());
         final TableColumnModel columnModel = INV_Table.getColumnModel();
         for (int column = 0; column < INV_Table.getColumnCount(); column++) {
             int width = 15;
@@ -2823,7 +2825,7 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void Inventory_AddActionPerformed() {
-        PID = "SPK-" + com.astral.internal.Function.randomID(4) + "-" + com.astral.internal.Function.randomID(4);
+        PID = "SPK-" + Function.randomID(4) + "-" + Function.randomID(4);
         NP_Heading.setText("Add New Product");
         NP_Product_Name.setText("");
         NP_Price.setText("");
@@ -2853,7 +2855,7 @@ public class Main extends javax.swing.JFrame {
         int[] rows = INV_Table.getSelectedRows();
         for (int i=0; i<rows.length; i++) {
             String ProdID = INV_Table.getValueAt(rows[i]-i, 0).toString();
-            com.astral.internal.SQLite.remRowInven(ProdID);
+            SQLite.remRowInven(ProdID);
             Inventory_Model.removeRow(rows[i]-i);
         }
     }
@@ -2871,17 +2873,17 @@ public class Main extends javax.swing.JFrame {
             if (update == null || update.equals(""))
                 update = "0";
             String quan = Integer.toString(quantity + Integer.parseInt(update));
-            com.astral.internal.SQLite.updateStock(PID, quan);
+            SQLite.updateStock(PID, quan);
             Inventory_ActionPerformed();
         }
     }
 
     private void Settings_ActionPerformed() {
-        SE_Current_Username.setText(new String(Base64.getDecoder().decode(com.astral.internal.SQLite.getConfigValue("Username"))));
-        SE_Current_Business_Name.setText(com.astral.internal.SQLite.getConfigValue("Business Name"));
-        SE_Current_Contact_Number.setText(com.astral.internal.SQLite.getConfigValue("Contact Number"));
-        SE_Current_Email_Address.setText(com.astral.internal.SQLite.getConfigValue("Email Address"));
-        SE_Current_Address.setText(com.astral.internal.SQLite.getConfigValue("Business Location"));
+        SE_Current_Username.setText(new String(Base64.getDecoder().decode(SQLite.getConfigValue("Username"))));
+        SE_Current_Business_Name.setText(SQLite.getConfigValue("Business Name"));
+        SE_Current_Contact_Number.setText(SQLite.getConfigValue("Contact Number"));
+        SE_Current_Email_Address.setText(SQLite.getConfigValue("Email Address"));
+        SE_Current_Address.setText(SQLite.getConfigValue("Business Location"));
         DisableInventory_ActionPerformed();
         Container_Deck.show(Container, "settings");
     }
@@ -2927,8 +2929,8 @@ public class Main extends javax.swing.JFrame {
         Runtime.getRuntime().addShutdownHook(new Thread() {
             @Override
             public void run() {
-                com.astral.internal.SQLite.closeMainDB();
-                com.astral.internal.SQLite.closeConfigDB();
+                SQLite.closeMainDB();
+                SQLite.closeConfigDB();
             }
         });
     }

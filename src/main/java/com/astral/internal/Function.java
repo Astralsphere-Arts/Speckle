@@ -1,5 +1,7 @@
 package com.astral.internal;
 
+import com.ibm.icu.text.NumberFormat;
+import com.ibm.icu.text.RuleBasedNumberFormat;
 import com.lowagie.text.Chunk;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
@@ -75,7 +77,7 @@ public class Function {
     }
     
     public static TableModel invoTableModel() {
-        ResultSet invResult = com.astral.internal.SQLite.invoData();
+        ResultSet invResult = SQLite.invoData();
         DefaultTableModel invTableModel = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -114,7 +116,7 @@ public class Function {
     }
     
     public static TableModel newInvoTableModel() {
-        ResultSet invResult = com.astral.internal.SQLite.invenData();
+        ResultSet invResult = SQLite.invenData();
         DefaultTableModel invTableModel = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -153,7 +155,7 @@ public class Function {
     }
     
     public static TableModel invenTableModel() {
-        ResultSet invResult = com.astral.internal.SQLite.invenData();
+        ResultSet invResult = SQLite.invenData();
         DefaultTableModel invTableModel = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -192,18 +194,18 @@ public class Function {
         File invSubFolder = new File(invFolder + File.separator + new java.text.SimpleDateFormat("yyyy - MMMM").format(new java.util.Date()));
         invSubFolder.mkdir();
         invPath = new File(invSubFolder + File.separator + invID + ".pdf");
-        ResultSet invoiceData = com.astral.internal.SQLite.invoData(invID);
+        ResultSet invoiceData = SQLite.invoData(invID);
         try (Document document = new Document()) {
             PdfWriter.getInstance(document, new FileOutputStream(invPath));
             Font IBMPlex = new Font(BaseFont.createFont("/fonts/IBMPlexSansDevanagari-Regular.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED), 10);
             document.open();
-            Paragraph para = new Paragraph(com.astral.internal.SQLite.getConfigValue("Business Name"), FontFactory.getFont(FontFactory.TIMES_BOLD, 20));
+            Paragraph para = new Paragraph(SQLite.getConfigValue("Business Name"), FontFactory.getFont(FontFactory.TIMES_BOLD, 20));
             para.setAlignment(Element.ALIGN_CENTER);
             document.add(para);
-            para = new Paragraph(com.astral.internal.SQLite.getConfigValue("Business Location"));
+            para = new Paragraph(SQLite.getConfigValue("Business Location"));
             para.setAlignment(Element.ALIGN_CENTER);
             document.add(para);
-            para = new Paragraph("Contact Number : " + com.astral.internal.SQLite.getConfigValue("Contact Number") + "    Email : " + com.astral.internal.SQLite.getConfigValue("Email Address"));
+            para = new Paragraph("Contact Number : " + SQLite.getConfigValue("Contact Number") + "    Email : " + SQLite.getConfigValue("Email Address"));
             para.setAlignment(Element.ALIGN_CENTER);
             para.setSpacingAfter(30f);
             document.add(para);
@@ -295,7 +297,7 @@ public class Function {
                 cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                 cell.setPadding(10f);
                 table.addCell(cell);
-                cell = new PdfPCell(new Paragraph(com.ibm.icu.text.NumberFormat.getCurrencyInstance(Locale.of("en", "in")).format(product.getBigDecimal("Price")), IBMPlex));
+                cell = new PdfPCell(new Paragraph(NumberFormat.getCurrencyInstance(Locale.of("en", "in")).format(product.getBigDecimal("Price")), IBMPlex));
                 cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
                 cell.setPadding(10f);
                 table.addCell(cell);
@@ -303,7 +305,7 @@ public class Function {
                 cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                 cell.setPadding(10f);
                 table.addCell(cell);
-                cell = new PdfPCell(new Paragraph(com.ibm.icu.text.NumberFormat.getCurrencyInstance(Locale.of("en", "in")).format(product.getBigDecimal("Net Amount")), IBMPlex));
+                cell = new PdfPCell(new Paragraph(NumberFormat.getCurrencyInstance(Locale.of("en", "in")).format(product.getBigDecimal("Net Amount")), IBMPlex));
                 cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
                 cell.setPadding(10f);
                 table.addCell(cell);
@@ -313,15 +315,15 @@ public class Function {
             cell.setPadding(10f);
             cell.setColspan(5);
             table.addCell(cell);
-            cell = new PdfPCell(new Paragraph(com.ibm.icu.text.NumberFormat.getCurrencyInstance(Locale.of("en", "in")).format(new BigDecimal(invoiceData.getString("Sale Amount"))), IBMPlex));
+            cell = new PdfPCell(new Paragraph(NumberFormat.getCurrencyInstance(Locale.of("en", "in")).format(new BigDecimal(invoiceData.getString("Sale Amount"))), IBMPlex));
             cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
             cell.setPadding(10f);
             table.addCell(cell);
             para = new Paragraph();
             chunk = new Chunk("Total Amount in Words : ", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10));
             para.add(chunk);
-            chunk = new Chunk("Rupees " + com.ibm.icu.lang.UCharacter.toTitleCase(new com.ibm.icu.text.RuleBasedNumberFormat
-                (Locale.of("en", "in"), com.ibm.icu.text.RuleBasedNumberFormat.SPELLOUT).format(Double.parseDouble(invoiceData.getString("Sale Amount")), "%spellout-numbering"),
+            chunk = new Chunk("Rupees " + com.ibm.icu.lang.UCharacter.toTitleCase(new RuleBasedNumberFormat
+                (Locale.of("en", "in"), RuleBasedNumberFormat.SPELLOUT).format(Double.parseDouble(invoiceData.getString("Sale Amount")), "%spellout-numbering"),
                 com.ibm.icu.text.BreakIterator.getWordInstance()) + " Only", IBMPlex);
             para.add(chunk);
             cell = new PdfPCell(para);
@@ -360,9 +362,9 @@ public class Function {
         fileChooser.setFileFilter(new FileNameExtensionFilter("CSV File", "csv"));
         if (fileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
             if (TableName.equals("Inventory"))
-                resultSet = com.astral.internal.SQLite.invenData();
+                resultSet = SQLite.invenData();
             else
-                resultSet = com.astral.internal.SQLite.invoData();
+                resultSet = SQLite.invoData();
             try (FileWriter writer = new FileWriter(fileChooser.getSelectedFile())) {
                 ResultSetMetaData metaData = resultSet.getMetaData();
                 int columnCount = metaData.getColumnCount();
@@ -403,7 +405,7 @@ public class Function {
                     String gstRate = CSV_Parts[3];
                     String availableQuantity = CSV_Parts[4];
                     if (!PID.equals("Product ID"))
-                        com.astral.internal.SQLite.updateInven(PID, productName, price, gstRate, availableQuantity);
+                        SQLite.updateInven(PID, productName, price, gstRate, availableQuantity);
                 }
                 JOptionPane.showMessageDialog(null, "Inventory Data Imported Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
                 return true;
