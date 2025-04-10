@@ -30,7 +30,7 @@ public class SQLite {
         if (!Files.isWritable(currentDirectory))
             dbFolder = new File(System.getenv("appdata") + File.separator + "Speckle");
         dbFolder.mkdir();
-        String configPath = dbFolder + File.separator + "config.sqlite";
+        String configPath = dbFolder + File.separator + "config.dat";
         String configSchema = "CREATE TABLE IF NOT EXISTS Configuration (Parameter TEXT NOT NULL UNIQUE, Value TEXT, PRIMARY KEY(Parameter));";
         String configData = "REPLACE INTO Configuration (Parameter, Value) VALUES ('Signed Up', 'False');";
         boolean configExists = new File(configPath).isFile();
@@ -58,7 +58,7 @@ public class SQLite {
     }
     
     public static void initMainDB(String dbPass) {
-        String mainDBPath = dbFolder + File.separator + "main.sqlite";
+        String mainDBPath = dbFolder + File.separator + "main.dat";
         String invoiceSchema = "CREATE TABLE IF NOT EXISTS Invoice (\"Invoice ID\" TEXT NOT NULL UNIQUE, \"Customer Name\" TEXT, \"Contact Number\" TEXT,"
             + " \"Address\" TEXT, \"Date of Sale\" TEXT, \"GST Amount\" REAL, \"Sale Amount\" REAL, \"Products Purchased\" TEXT, PRIMARY KEY(\"Invoice ID\"));";
         String inventorySchema = "CREATE TABLE IF NOT EXISTS Inventory (\"Product ID\" TEXT NOT NULL UNIQUE, \"Product Name\" TEXT, \"Price\" REAL,"
