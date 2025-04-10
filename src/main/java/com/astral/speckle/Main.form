@@ -589,6 +589,9 @@
                       </FontInfo>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SI_UsernameKeyPressed"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="SI_Username.putClientProperty(&quot;JTextField.placeholderText&quot;, &quot;Username&quot;);&#xa;SI_Username.putClientProperty(&quot;JTextField.padding&quot;, new java.awt.Insets(0, 10, 0, 10));"/>
                   </AuxValues>
@@ -601,6 +604,9 @@
                       </FontInfo>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SI_PasswordKeyPressed"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="SI_Password.putClientProperty(&quot;JTextField.placeholderText&quot;, &quot;Password&quot;);&#xd;&#xa;SI_Password.putClientProperty(&quot;JTextField.padding&quot;, new java.awt.Insets(0, 10, 0, 10));"/>
                   </AuxValues>

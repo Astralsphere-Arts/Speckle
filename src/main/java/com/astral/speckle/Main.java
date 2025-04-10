@@ -386,10 +386,20 @@ public class Main extends javax.swing.JFrame {
         SI_Username.setFont(SI_Username.getFont().deriveFont(SI_Username.getFont().getSize()+2f));
         SI_Username.putClientProperty("JTextField.placeholderText", "Username");
         SI_Username.putClientProperty("JTextField.padding", new java.awt.Insets(0, 10, 0, 10));
+        SI_Username.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SI_UsernameKeyPressed(evt);
+            }
+        });
 
         SI_Password.setFont(SI_Password.getFont().deriveFont(SI_Password.getFont().getSize()+2f));
         SI_Password.putClientProperty("JTextField.placeholderText", "Password");
         SI_Password.putClientProperty("JTextField.padding", new java.awt.Insets(0, 10, 0, 10));
+        SI_Password.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SI_PasswordKeyPressed(evt);
+            }
+        });
 
         SI_Button.setText("Sign In");
         SI_Button.addActionListener(new java.awt.event.ActionListener() {
@@ -2255,14 +2265,7 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SI_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SI_ButtonActionPerformed
-        String username = SI_Username.getText();
-        String password = new String(SI_Password.getPassword());
-        if (username.equals("") && password.equals(""))
-            JOptionPane.showMessageDialog(null, "Please enter Username and Password they cannot be Blank. Please Try Again!", "Credentials are Blank", JOptionPane.ERROR_MESSAGE);
-        else if (SQLite.logIn(username, password))
-            SignIn_ActionPerformed(Password.hash(password).addSalt(SQLite.getConfigValue("Salt")).withPBKDF2().getResult());
-        else
-            JOptionPane.showMessageDialog(null, "The Username or Password entered are Incorrect. Please Try Again!", "Incorrect Credentials", JOptionPane.ERROR_MESSAGE);
+        LogIn_ActionPerformed();
     }//GEN-LAST:event_SI_ButtonActionPerformed
 
     private void SM_Next_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SM_Next_ButtonActionPerformed
@@ -2713,6 +2716,30 @@ public class Main extends javax.swing.JFrame {
         Settings_ActionPerformed();
     }//GEN-LAST:event_MB_SettingsActionPerformed
 
+    private void SI_UsernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SI_UsernameKeyPressed
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+             java.awt.KeyboardFocusManager FocusManager = java.awt.KeyboardFocusManager.getCurrentKeyboardFocusManager();
+             FocusManager.focusNextComponent();
+        }
+    }//GEN-LAST:event_SI_UsernameKeyPressed
+
+    private void SI_PasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SI_PasswordKeyPressed
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+            LogIn_ActionPerformed();
+        }
+    }//GEN-LAST:event_SI_PasswordKeyPressed
+
+    private void LogIn_ActionPerformed() {
+        String username = SI_Username.getText();
+        String password = new String(SI_Password.getPassword());
+        if (username.equals("") || password.equals(""))
+            JOptionPane.showMessageDialog(null, "Please enter Username and Password, they cannot be Blank. Please Try Again!", "Credentials are Blank", JOptionPane.ERROR_MESSAGE);
+        else if (SQLite.logIn(username, password))
+            SignIn_ActionPerformed(Password.hash(password).addSalt(SQLite.getConfigValue("Salt")).withPBKDF2().getResult());
+        else
+            JOptionPane.showMessageDialog(null, "The Username or Password entered are Incorrect. Please Try Again!", "Incorrect Credentials", JOptionPane.ERROR_MESSAGE);
+    }
+    
     private void SignIn_ActionPerformed(String dbPass) {
         LoggedIn = true;
         SQLite.initMainDB(dbPass);
