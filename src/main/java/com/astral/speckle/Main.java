@@ -72,14 +72,15 @@ public class Main extends javax.swing.JFrame {
         SB_Filler_07 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10));
         Container = new javax.swing.JPanel();
         SignIn = new javax.swing.JPanel();
+        SI_Form = new javax.swing.JPanel();
+        SI_Logo_01 = new javax.swing.JLabel();
         SI_Heading = new javax.swing.JLabel();
         SI_Paragraph = new javax.swing.JLabel();
         SI_Sub_Heading = new javax.swing.JLabel();
-        SI_Username_Label = new javax.swing.JLabel();
         SI_Username = new javax.swing.JTextField();
-        SI_Password_Label = new javax.swing.JLabel();
         SI_Password = new javax.swing.JPasswordField();
         SI_Button = new javax.swing.JButton();
+        SI_Logo_02 = new javax.swing.JLabel();
         SignUp_Main = new javax.swing.JPanel();
         SM_Heading = new javax.swing.JLabel();
         SM_Sub_Heading = new javax.swing.JLabel();
@@ -365,36 +366,31 @@ public class Main extends javax.swing.JFrame {
 
         Container.setLayout(new java.awt.CardLayout());
 
-        SI_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
+        SI_Logo_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/speckle-logo.png"))); // NOI18N
+
+        SI_Heading.setFont(SI_Heading.getFont().deriveFont(SI_Heading.getFont().getSize()+18f));
         SI_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SI_Heading.setText("Welcome To Speckle!");
         SI_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SI_Paragraph.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SI_Paragraph.setFont(SI_Paragraph.getFont().deriveFont(SI_Paragraph.getFont().getSize()+2f));
         SI_Paragraph.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SI_Paragraph.setText("A Simple Invoicing and Inventory Management System");
         SI_Paragraph.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SI_Sub_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        SI_Sub_Heading.setFont(SI_Sub_Heading.getFont().deriveFont(SI_Sub_Heading.getFont().getSize()+6f));
         SI_Sub_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SI_Sub_Heading.setText("Please Sign In");
+        SI_Sub_Heading.setText("Please Sign In ");
         SI_Sub_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SI_Username_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        SI_Username_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SI_Username_Label.setText("Username");
-        SI_Username_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SI_Username.setFont(SI_Username.getFont().deriveFont(SI_Username.getFont().getSize()+2f));
+        SI_Username.putClientProperty("JTextField.placeholderText", "Username");
+        SI_Username.putClientProperty("JTextField.padding", new java.awt.Insets(0, 10, 0, 10));
 
-        SI_Username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SI_Password.setFont(SI_Password.getFont().deriveFont(SI_Password.getFont().getSize()+2f));
+        SI_Password.putClientProperty("JTextField.placeholderText", "Password");
+        SI_Password.putClientProperty("JTextField.padding", new java.awt.Insets(0, 10, 0, 10));
 
-        SI_Password_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        SI_Password_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SI_Password_Label.setText("Password");
-        SI_Password_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        SI_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
-        SI_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         SI_Button.setText("Sign In");
         SI_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -402,49 +398,72 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        SI_Logo_02.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/speckle-logo-flipped.png"))); // NOI18N
+
+        javax.swing.GroupLayout SI_FormLayout = new javax.swing.GroupLayout(SI_Form);
+        SI_Form.setLayout(SI_FormLayout);
+        SI_FormLayout.setHorizontalGroup(
+            SI_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SI_FormLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(SI_Logo_01)
+                .addGroup(SI_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SI_FormLayout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addGroup(SI_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(SI_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SI_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(SI_FormLayout.createSequentialGroup()
+                        .addGap(140, 140, 140)
+                        .addComponent(SI_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(SI_FormLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(SI_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(SI_Sub_Heading, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SI_Heading, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SI_Paragraph, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(SI_Logo_02)
+                .addGap(30, 30, 30))
+        );
+        SI_FormLayout.setVerticalGroup(
+            SI_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SI_FormLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(SI_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SI_Logo_02)
+                    .addComponent(SI_Logo_01)
+                    .addGroup(SI_FormLayout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(SI_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(SI_Paragraph)
+                        .addGap(29, 29, 29)
+                        .addComponent(SI_Sub_Heading)
+                        .addGap(18, 18, 18)
+                        .addComponent(SI_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(SI_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(SI_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(30, 30, 30))
+        );
+
         javax.swing.GroupLayout SignInLayout = new javax.swing.GroupLayout(SignIn);
         SignIn.setLayout(SignInLayout);
         SignInLayout.setHorizontalGroup(
             SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SignInLayout.createSequentialGroup()
-                .addContainerGap(240, Short.MAX_VALUE)
-                .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(SI_Sub_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(SI_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(SI_Paragraph, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(SignInLayout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(SI_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SI_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(SI_Username)
-                            .addComponent(SI_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SI_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(270, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SignInLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(SI_Form, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         SignInLayout.setVerticalGroup(
             SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SignInLayout.createSequentialGroup()
-                .addContainerGap(101, Short.MAX_VALUE)
-                .addComponent(SI_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SI_Paragraph)
-                .addGap(40, 40, 40)
-                .addComponent(SI_Sub_Heading)
-                .addGap(18, 18, 18)
-                .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SI_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SI_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(SignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SI_Password_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SI_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
-                .addComponent(SI_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(SI_Form, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Container.add(SignIn, "signIn");
@@ -2924,6 +2943,7 @@ public class Main extends javax.swing.JFrame {
         javax.swing.UIManager.put("ScrollBar.thumbInsets", new java.awt.Insets(2, 2, 2, 2));
         javax.swing.UIManager.put("TabbedPane.showTabSeparators", true);
         javax.swing.UIManager.put("TitlePane.unifiedBackground", false);
+        javax.swing.UIManager.put("TextComponent.arc", 5 );
         //</editor-fold>
 
         /* Create and display the form */
@@ -3121,13 +3141,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel SE_User_Tab;
     private javax.swing.JPanel SE_Username;
     private javax.swing.JButton SI_Button;
+    private javax.swing.JPanel SI_Form;
     private javax.swing.JLabel SI_Heading;
+    private javax.swing.JLabel SI_Logo_01;
+    private javax.swing.JLabel SI_Logo_02;
     private javax.swing.JLabel SI_Paragraph;
     private javax.swing.JPasswordField SI_Password;
-    private javax.swing.JLabel SI_Password_Label;
     private javax.swing.JLabel SI_Sub_Heading;
     private javax.swing.JTextField SI_Username;
-    private javax.swing.JLabel SI_Username_Label;
     private javax.swing.JPasswordField SM_Confirm_Password;
     private javax.swing.JLabel SM_Confirm_Password_Label;
     private javax.swing.JPasswordField SM_Create_Password;
