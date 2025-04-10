@@ -280,7 +280,7 @@ public class Main extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Speckle");
-        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/speckle-frame-logo.png")).getImage());
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/app-icon-256x256.png")).getImage());
         setMinimumSize(new java.awt.Dimension(1100, 650));
 
         SideBar.setBackground(new java.awt.Color(255, 255, 255));
@@ -366,7 +366,7 @@ public class Main extends javax.swing.JFrame {
 
         Container.setLayout(new java.awt.CardLayout());
 
-        SI_Logo_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/speckle-logo.png"))); // NOI18N
+        SI_Logo_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/app-logo-large.png"))); // NOI18N
 
         SI_Heading.setFont(SI_Heading.getFont().deriveFont(SI_Heading.getFont().getSize()+18f));
         SI_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -408,7 +408,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        SI_Logo_02.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/speckle-logo-flipped.png"))); // NOI18N
+        SI_Logo_02.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/app-logo-large-flipped.png"))); // NOI18N
 
         javax.swing.GroupLayout SI_FormLayout = new javax.swing.GroupLayout(SI_Form);
         SI_Form.setLayout(SI_FormLayout);
@@ -979,7 +979,7 @@ public class Main extends javax.swing.JFrame {
 
         HOME_Main_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
         HOME_Main_Heading.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        HOME_Main_Heading.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/speckle-home-logo.png"))); // NOI18N
+        HOME_Main_Heading.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/app-logo-small.png"))); // NOI18N
         HOME_Main_Heading.setText("Speckle: Simple Invoicing & Inventory Management");
 
         javax.swing.GroupLayout HOME_BannerLayout = new javax.swing.GroupLayout(HOME_Banner);
@@ -1966,7 +1966,7 @@ public class Main extends javax.swing.JFrame {
 
         Container.add(Settings, "settings");
 
-        AB_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/app-logo.png"))); // NOI18N
+        AB_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/app-icon-100x100.png"))); // NOI18N
 
         AB_Heading.setFont(AB_Heading.getFont().deriveFont(AB_Heading.getFont().getStyle() | java.awt.Font.BOLD, AB_Heading.getFont().getSize()+24));
         AB_Heading.setText("Speckle");
