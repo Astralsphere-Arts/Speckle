@@ -2117,6 +2117,7 @@ public class Main extends javax.swing.JFrame {
 
         MB_Inventory_Menu.setText("Inventory");
 
+        MB_INV_Add.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MB_INV_Add.setText("Add");
         MB_INV_Add.setEnabled(false);
         MB_INV_Add.addActionListener(new java.awt.event.ActionListener() {
@@ -2126,6 +2127,7 @@ public class Main extends javax.swing.JFrame {
         });
         MB_Inventory_Menu.add(MB_INV_Add);
 
+        MB_INV_Edit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MB_INV_Edit.setText("Edit");
         MB_INV_Edit.setEnabled(false);
         MB_INV_Edit.addActionListener(new java.awt.event.ActionListener() {
@@ -2135,6 +2137,7 @@ public class Main extends javax.swing.JFrame {
         });
         MB_Inventory_Menu.add(MB_INV_Edit);
 
+        MB_INV_Remove.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_DELETE, 0));
         MB_INV_Remove.setText("Remove");
         MB_INV_Remove.setEnabled(false);
         MB_INV_Remove.addActionListener(new java.awt.event.ActionListener() {
@@ -2145,6 +2148,7 @@ public class Main extends javax.swing.JFrame {
         MB_Inventory_Menu.add(MB_INV_Remove);
         MB_Inventory_Menu.add(MB_Separator_03);
 
+        MB_INV_Update.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MB_INV_Update.setText("Update Stock");
         MB_INV_Update.setEnabled(false);
         MB_INV_Update.addActionListener(new java.awt.event.ActionListener() {
@@ -2186,6 +2190,7 @@ public class Main extends javax.swing.JFrame {
         MB_Tools_Menu.add(MB_Export_Inventory);
         MB_Tools_Menu.add(MB_Separator_04);
 
+        MB_Settings.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MB_Settings.setText("Settings");
         MB_Settings.setEnabled(false);
         MB_Settings.addActionListener(new java.awt.event.ActionListener() {
