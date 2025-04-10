@@ -41,7 +41,7 @@ public class Main extends javax.swing.JFrame {
             SB_Home_Button.setEnabled(false);
             SB_About_Button.setEnabled(false);
             MB_About.setEnabled(false);
-            Container_Deck.show(Container, "signUpUser");
+            Container_Deck.show(Container, "signUpMain");
         } else Container_Deck.show(Container, "signIn");
     }
 
@@ -598,7 +598,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(134, Short.MAX_VALUE))
         );
 
-        Container.add(SignUp_Main, "signUpUser");
+        Container.add(SignUp_Main, "signUpMain");
 
         SD_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         SD_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2262,6 +2262,100 @@ public class Main extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void MB_New_InvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_New_InvoiceActionPerformed
+        NewInvoiceActionPerformed();
+    }//GEN-LAST:event_MB_New_InvoiceActionPerformed
+
+    private void MB_Invoice_HistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_Invoice_HistoryActionPerformed
+        Invoicing_ActionPerformed();
+    }//GEN-LAST:event_MB_Invoice_HistoryActionPerformed
+
+    private void MB_InventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_InventoryActionPerformed
+        Inventory_ActionPerformed();
+    }//GEN-LAST:event_MB_InventoryActionPerformed
+
+    private void MB_Sign_OutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_Sign_OutActionPerformed
+        SignOut_ActionPerformed();
+    }//GEN-LAST:event_MB_Sign_OutActionPerformed
+
+    private void MB_ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_ExitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_MB_ExitActionPerformed
+
+    private void MB_INV_AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_INV_AddActionPerformed
+        Inventory_AddActionPerformed();
+    }//GEN-LAST:event_MB_INV_AddActionPerformed
+
+    private void MB_INV_EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_INV_EditActionPerformed
+        Inventory_EditActionPerformed();
+    }//GEN-LAST:event_MB_INV_EditActionPerformed
+
+    private void MB_INV_RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_INV_RemoveActionPerformed
+        Inventory_RemoveActionPerformed();
+    }//GEN-LAST:event_MB_INV_RemoveActionPerformed
+
+    private void MB_INV_UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_INV_UpdateActionPerformed
+        Inventory_UpdateActionPerformed();
+    }//GEN-LAST:event_MB_INV_UpdateActionPerformed
+
+    private void MB_INV_ImportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_INV_ImportActionPerformed
+        if (Function.InventoryImportActionPerformed())
+            Inventory_ActionPerformed();
+    }//GEN-LAST:event_MB_INV_ImportActionPerformed
+
+    private void MB_Export_InvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_Export_InvoiceActionPerformed
+        Function.ExportActionPerformed("Invoice");
+    }//GEN-LAST:event_MB_Export_InvoiceActionPerformed
+
+    private void MB_Export_InventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_Export_InventoryActionPerformed
+        Function.ExportActionPerformed("Inventory");
+    }//GEN-LAST:event_MB_Export_InventoryActionPerformed
+
+    private void MB_SettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_SettingsActionPerformed
+        Settings_ActionPerformed();
+    }//GEN-LAST:event_MB_SettingsActionPerformed
+
+    private void MB_AboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_AboutActionPerformed
+        About_ActionPerformed();
+    }//GEN-LAST:event_MB_AboutActionPerformed
+
+    private void SB_Home_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SB_Home_ButtonActionPerformed
+        Home_ActionPerformed();
+    }//GEN-LAST:event_SB_Home_ButtonActionPerformed
+
+    private void SB_Invoicing_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SB_Invoicing_ButtonActionPerformed
+        Invoicing_ActionPerformed();
+    }//GEN-LAST:event_SB_Invoicing_ButtonActionPerformed
+
+    private void SB_Inventory_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SB_Inventory_ButtonActionPerformed
+        Inventory_ActionPerformed();
+    }//GEN-LAST:event_SB_Inventory_ButtonActionPerformed
+
+    private void SB_Settings_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SB_Settings_ButtonActionPerformed
+        Settings_ActionPerformed();
+    }//GEN-LAST:event_SB_Settings_ButtonActionPerformed
+
+    private void SB_About_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SB_About_ButtonActionPerformed
+        About_ActionPerformed();
+    }//GEN-LAST:event_SB_About_ButtonActionPerformed
+
+    private void SB_SignOut_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SB_SignOut_ButtonActionPerformed
+        SignOut_ActionPerformed();
+    }//GEN-LAST:event_SB_SignOut_ButtonActionPerformed
+
+    private void SI_UsernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SI_UsernameKeyPressed
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+             java.awt.KeyboardFocusManager FocusManager = java.awt.KeyboardFocusManager.getCurrentKeyboardFocusManager();
+             FocusManager.focusNextComponent();
+        }
+    }//GEN-LAST:event_SI_UsernameKeyPressed
+
+    private void SI_PasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SI_PasswordKeyPressed
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+            LogIn_ActionPerformed();
+        }
+    }//GEN-LAST:event_SI_PasswordKeyPressed
+
     private void SI_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SI_ButtonActionPerformed
         LogIn_ActionPerformed();
     }//GEN-LAST:event_SI_ButtonActionPerformed
@@ -2305,7 +2399,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_SD_Contact_NumberKeyPressed
 
     private void SD_Back_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SD_Back_ButtonActionPerformed
-        Container_Deck.show(Container, "signUpUser");
+        Container_Deck.show(Container, "signUpMain");
     }//GEN-LAST:event_SD_Back_ButtonActionPerformed
 
     private void SD_SignUp_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SD_SignUp_ButtonActionPerformed
@@ -2375,148 +2469,9 @@ public class Main extends javax.swing.JFrame {
         }*/
     }//GEN-LAST:event_FP_Reset_ButtonActionPerformed
 
-    private void MB_AboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_AboutActionPerformed
-        About_ActionPerformed();
-    }//GEN-LAST:event_MB_AboutActionPerformed
-
-    private void MB_ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_ExitActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_MB_ExitActionPerformed
-
-    private void SB_Home_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SB_Home_ButtonActionPerformed
-        Home_ActionPerformed();
-    }//GEN-LAST:event_SB_Home_ButtonActionPerformed
-
-    private void SB_Invoicing_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SB_Invoicing_ButtonActionPerformed
-        Invoicing_ActionPerformed();
-    }//GEN-LAST:event_SB_Invoicing_ButtonActionPerformed
-
-    private void SB_Inventory_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SB_Inventory_ButtonActionPerformed
-        Inventory_ActionPerformed();
-    }//GEN-LAST:event_SB_Inventory_ButtonActionPerformed
-
-    private void SB_Settings_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SB_Settings_ButtonActionPerformed
-        Settings_ActionPerformed();
-    }//GEN-LAST:event_SB_Settings_ButtonActionPerformed
-
-    private void SB_About_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SB_About_ButtonActionPerformed
-        About_ActionPerformed();
-    }//GEN-LAST:event_SB_About_ButtonActionPerformed
-
-    private void SB_SignOut_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SB_SignOut_ButtonActionPerformed
-        SignOut_ActionPerformed();
-    }//GEN-LAST:event_SB_SignOut_ButtonActionPerformed
-
-    private void SE_Change_Username_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SE_Change_Username_ButtonActionPerformed
-        String newUsername = SE_New_Username.getText();
-        if (newUsername.equals(""))
-            JOptionPane.showMessageDialog(null, "Username cannot be Empty. Please Try Again!", "Username Field Empty", JOptionPane.ERROR_MESSAGE);
-        else {
-            SQLite.setConfigValue("Username", Base64.getEncoder().encodeToString(newUsername.getBytes()));
-            JOptionPane.showMessageDialog(null, "Your Username has been changed Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-            SE_Current_Username.setText(newUsername);
-            SE_New_Username.setText("");
-        }
-    }//GEN-LAST:event_SE_Change_Username_ButtonActionPerformed
-
-    private void SE_Change_Password_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SE_Change_Password_ButtonActionPerformed
-        String currentPassword = new String(SE_Current_Password.getPassword());
-        String newPassword = new String(SE_New_Password.getPassword());
-        String confirmPassword = new String(SE_Confirm_Password.getPassword());
-        String Salt = Function.randomAlphaNumeric(128);
-        if (currentPassword.equals("") || newPassword.equals(""))
-            JOptionPane.showMessageDialog(null, "Both Current and New Passwords are needed for changing Password. Please Try Again!", "Password Fields Empty", JOptionPane.ERROR_MESSAGE);
-        else if (!Password.check(currentPassword, SQLite.getConfigValue("Password")).withArgon2())
-            JOptionPane.showMessageDialog(null, "The Current Password is Incorrect. Please Try Again!", "Incorrect Password", JOptionPane.ERROR_MESSAGE);
-        else if (newPassword.length() < 8)
-            JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least 8 Characters. Please Try Again!", "Password Too Short", JOptionPane.ERROR_MESSAGE);
-        else if (!Function.checkPass(newPassword))
-            JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric, One Uppercase and One Lowercase Character. Please Try Again!", "Insecure Password", JOptionPane.ERROR_MESSAGE);
-        else if (!newPassword.equals(confirmPassword))
-            JOptionPane.showMessageDialog(null, "The Password in Confirm Password Field does not Match. Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
-        else if (Password.check(newPassword, SQLite.getConfigValue("Password")).withArgon2())
-            JOptionPane.showMessageDialog(null, "The Password Enterd has been used Already. Try Again with a Password You haven’t used Before!", "Old Password Used", JOptionPane.ERROR_MESSAGE);
-        else {
-            SQLite.setConfigValue("Password", Password.hash(newPassword).addRandomSalt().withArgon2().getResult());
-            SQLite.setConfigValue("Salt", Salt);
-            SQLite.resetMainDB(Password.hash(newPassword).addSalt(Salt).withPBKDF2().getResult());
-            JOptionPane.showMessageDialog(null, "Your Password has been changed Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-            SE_Current_Password.setText("");
-            SE_New_Password.setText("");
-            SE_Confirm_Password.setText("");
-        }
-    }//GEN-LAST:event_SE_Change_Password_ButtonActionPerformed
-
-    private void SE_New_Contact_NumberKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SE_New_Contact_NumberKeyPressed
-        String Number = SE_New_Contact_Number.getText();
-        int length = Number.length();
-        if (evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9') {
-            if (length < 10)
-                SE_New_Contact_Number.setEditable(true);
-            else
-                SE_New_Contact_Number.setEditable(false);
-        } else {
-            switch (evt.getExtendedKeyCode()) {
-                case java.awt.event.KeyEvent.VK_BACK_SPACE -> SE_New_Contact_Number.setEditable(true);
-                case java.awt.event.KeyEvent.VK_DELETE -> SE_New_Contact_Number.setEditable(true);
-                default -> SE_New_Contact_Number.setEditable(false);
-            }
-        }
-    }//GEN-LAST:event_SE_New_Contact_NumberKeyPressed
-
-    private void SE_Save_Changes_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SE_Save_Changes_ButtonActionPerformed
-        String newBusinessName = SE_New_Business_Name.getText();
-        String newContactNumber = SE_New_Contact_Number.getText();
-        String newEmailAddress = SE_New_Email_Address.getText();
-        String newBusinessLocation = SE_New_Address.getText();
-        if (newBusinessName.equals("") && newContactNumber.equals("") && newEmailAddress.equals("") && newBusinessLocation.equals(""))
-            JOptionPane.showMessageDialog(null, "You haven't made any Changes. Please Try Again!", "No Changes Found", JOptionPane.ERROR_MESSAGE);
-        else {
-            if (newBusinessName.equals(""))
-                newBusinessName = SE_Current_Business_Name.getText();
-            if (newEmailAddress.equals(""))
-                newEmailAddress = SE_Current_Email_Address.getText();
-            if (newBusinessLocation.equals(""))
-                newBusinessLocation = SE_Current_Address.getText();
-            if (newContactNumber.equals("")) {
-                newContactNumber = SE_Current_Contact_Number.getText();
-                SQLite.compConfig(newBusinessName, newContactNumber, newEmailAddress, newBusinessLocation);
-                JOptionPane.showMessageDialog(null, "Your Changes Have Been Saved Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-            }
-            else if (newContactNumber.length() != 10)
-                JOptionPane.showMessageDialog(null, "Contact Number Must be 10 Digit Long. Please Try Again!", "Contact Number Too Short", JOptionPane.ERROR_MESSAGE);
-            else {
-                SQLite.compConfig(newBusinessName, newContactNumber, newEmailAddress, newBusinessLocation);
-                JOptionPane.showMessageDialog(null, "Your Changes Have Been Saved Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-            }
-            Settings_ActionPerformed();
-            SE_New_Business_Name.setText("");
-            SE_New_Contact_Number.setText("");
-            SE_New_Email_Address.setText("");
-            SE_New_Address.setText("");
-        }
-    }//GEN-LAST:event_SE_Save_Changes_ButtonActionPerformed
-
-    private void INV_Add_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_Add_ButtonActionPerformed
-        Inventory_AddActionPerformed();
-    }//GEN-LAST:event_INV_Add_ButtonActionPerformed
-
-    private void INV_Remove_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_Remove_ButtonActionPerformed
-        Inventory_RemoveActionPerformed();
-    }//GEN-LAST:event_INV_Remove_ButtonActionPerformed
-
-    private void INV_Update_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_Update_ButtonActionPerformed
-        Inventory_UpdateActionPerformed();
-    }//GEN-LAST:event_INV_Update_ButtonActionPerformed
-
-    private void INV_Import_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_Import_ButtonActionPerformed
-        if (Function.InventoryImportActionPerformed())
-            Inventory_ActionPerformed();
-    }//GEN-LAST:event_INV_Import_ButtonActionPerformed
-
-    private void INV_Export_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_Export_ButtonActionPerformed
-        Function.ExportActionPerformed("Inventory");
-    }//GEN-LAST:event_INV_Export_ButtonActionPerformed
+    private void INVO_New_Invoice_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_New_Invoice_ButtonActionPerformed
+        NewInvoiceActionPerformed();
+    }//GEN-LAST:event_INVO_New_Invoice_ButtonActionPerformed
 
     private void INVO_View_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_View_ButtonActionPerformed
         int row = INVO_Table.getSelectedRow();
@@ -2546,10 +2501,6 @@ public class Main extends javax.swing.JFrame {
     private void INVO_Export_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_Export_ButtonActionPerformed
         Function.ExportActionPerformed("Invoice");
     }//GEN-LAST:event_INVO_Export_ButtonActionPerformed
-
-    private void INVO_New_Invoice_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_New_Invoice_ButtonActionPerformed
-        NewInvoiceActionPerformed();
-    }//GEN-LAST:event_INVO_New_Invoice_ButtonActionPerformed
 
     private void NI_Customer_ContactKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NI_Customer_ContactKeyPressed
         String Number = NI_Customer_Contact.getText();
@@ -2643,9 +2594,35 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_NI_Create_ButtonActionPerformed
 
-    private void MB_Sign_OutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_Sign_OutActionPerformed
-        SignOut_ActionPerformed();
-    }//GEN-LAST:event_MB_Sign_OutActionPerformed
+    private void INV_Add_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_Add_ButtonActionPerformed
+        Inventory_AddActionPerformed();
+    }//GEN-LAST:event_INV_Add_ButtonActionPerformed
+
+    private void INV_Edit_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_Edit_ButtonActionPerformed
+        Inventory_EditActionPerformed();
+    }//GEN-LAST:event_INV_Edit_ButtonActionPerformed
+
+    private void INV_Remove_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_Remove_ButtonActionPerformed
+        Inventory_RemoveActionPerformed();
+    }//GEN-LAST:event_INV_Remove_ButtonActionPerformed
+
+    private void INV_Update_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_Update_ButtonActionPerformed
+        Inventory_UpdateActionPerformed();
+    }//GEN-LAST:event_INV_Update_ButtonActionPerformed
+
+    private void INV_Import_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_Import_ButtonActionPerformed
+        if (Function.InventoryImportActionPerformed())
+            Inventory_ActionPerformed();
+    }//GEN-LAST:event_INV_Import_ButtonActionPerformed
+
+    private void INV_Export_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_Export_ButtonActionPerformed
+        Function.ExportActionPerformed("Inventory");
+    }//GEN-LAST:event_INV_Export_ButtonActionPerformed
+
+    private void NP_Cancel_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NP_Cancel_ButtonActionPerformed
+        EnableInventory_ActionPerformed();
+        Container_Deck.show(Container, "inventory");
+    }//GEN-LAST:event_NP_Cancel_ButtonActionPerformed
 
     private void NP_Finish_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NP_Finish_ButtonActionPerformed
         String productName = NP_Product_Name.getText();
@@ -2660,72 +2637,95 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_NP_Finish_ButtonActionPerformed
 
-    private void NP_Cancel_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NP_Cancel_ButtonActionPerformed
-        EnableInventory_ActionPerformed();
-        Container_Deck.show(Container, "inventory");
-    }//GEN-LAST:event_NP_Cancel_ButtonActionPerformed
-
-    private void INV_Edit_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_Edit_ButtonActionPerformed
-        Inventory_EditActionPerformed();
-    }//GEN-LAST:event_INV_Edit_ButtonActionPerformed
-
-    private void MB_Export_InvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_Export_InvoiceActionPerformed
-        Function.ExportActionPerformed("Invoice");
-    }//GEN-LAST:event_MB_Export_InvoiceActionPerformed
-
-    private void MB_Export_InventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_Export_InventoryActionPerformed
-        Function.ExportActionPerformed("Inventory");
-    }//GEN-LAST:event_MB_Export_InventoryActionPerformed
-
-    private void MB_New_InvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_New_InvoiceActionPerformed
-        NewInvoiceActionPerformed();
-    }//GEN-LAST:event_MB_New_InvoiceActionPerformed
-
-    private void MB_Invoice_HistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_Invoice_HistoryActionPerformed
-        Invoicing_ActionPerformed();
-    }//GEN-LAST:event_MB_Invoice_HistoryActionPerformed
-
-    private void MB_INV_AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_INV_AddActionPerformed
-        Inventory_AddActionPerformed();
-    }//GEN-LAST:event_MB_INV_AddActionPerformed
-
-    private void MB_InventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_InventoryActionPerformed
-        Inventory_ActionPerformed();
-    }//GEN-LAST:event_MB_InventoryActionPerformed
-
-    private void MB_INV_EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_INV_EditActionPerformed
-        Inventory_EditActionPerformed();
-    }//GEN-LAST:event_MB_INV_EditActionPerformed
-
-    private void MB_INV_RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_INV_RemoveActionPerformed
-        Inventory_RemoveActionPerformed();
-    }//GEN-LAST:event_MB_INV_RemoveActionPerformed
-
-    private void MB_INV_UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_INV_UpdateActionPerformed
-        Inventory_UpdateActionPerformed();
-    }//GEN-LAST:event_MB_INV_UpdateActionPerformed
-
-    private void MB_INV_ImportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_INV_ImportActionPerformed
-        if (Function.InventoryImportActionPerformed())
-            Inventory_ActionPerformed();
-    }//GEN-LAST:event_MB_INV_ImportActionPerformed
-
-    private void MB_SettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_SettingsActionPerformed
-        Settings_ActionPerformed();
-    }//GEN-LAST:event_MB_SettingsActionPerformed
-
-    private void SI_UsernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SI_UsernameKeyPressed
-        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
-             java.awt.KeyboardFocusManager FocusManager = java.awt.KeyboardFocusManager.getCurrentKeyboardFocusManager();
-             FocusManager.focusNextComponent();
+    private void SE_Change_Username_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SE_Change_Username_ButtonActionPerformed
+        String newUsername = SE_New_Username.getText();
+        if (newUsername.equals(""))
+            JOptionPane.showMessageDialog(null, "Username cannot be Empty. Please Try Again!", "Username Field Empty", JOptionPane.ERROR_MESSAGE);
+        else {
+            SQLite.setConfigValue("Username", Base64.getEncoder().encodeToString(newUsername.getBytes()));
+            JOptionPane.showMessageDialog(null, "Your Username has been changed Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            SE_Current_Username.setText(newUsername);
+            SE_New_Username.setText("");
         }
-    }//GEN-LAST:event_SI_UsernameKeyPressed
+    }//GEN-LAST:event_SE_Change_Username_ButtonActionPerformed
 
-    private void SI_PasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SI_PasswordKeyPressed
-        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
-            LogIn_ActionPerformed();
+    private void SE_Change_Password_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SE_Change_Password_ButtonActionPerformed
+        String currentPassword = new String(SE_Current_Password.getPassword());
+        String newPassword = new String(SE_New_Password.getPassword());
+        String confirmPassword = new String(SE_Confirm_Password.getPassword());
+        String Salt = Function.randomAlphaNumeric(128);
+        if (currentPassword.equals("") || newPassword.equals(""))
+            JOptionPane.showMessageDialog(null, "Both Current and New Passwords are needed for changing Password. Please Try Again!", "Password Fields Empty", JOptionPane.ERROR_MESSAGE);
+        else if (!Password.check(currentPassword, SQLite.getConfigValue("Password")).withArgon2())
+            JOptionPane.showMessageDialog(null, "The Current Password is Incorrect. Please Try Again!", "Incorrect Password", JOptionPane.ERROR_MESSAGE);
+        else if (newPassword.length() < 8)
+            JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least 8 Characters. Please Try Again!", "Password Too Short", JOptionPane.ERROR_MESSAGE);
+        else if (!Function.checkPass(newPassword))
+            JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric, One Uppercase and One Lowercase Character. Please Try Again!", "Insecure Password", JOptionPane.ERROR_MESSAGE);
+        else if (!newPassword.equals(confirmPassword))
+            JOptionPane.showMessageDialog(null, "The Password in Confirm Password Field does not Match. Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
+        else if (Password.check(newPassword, SQLite.getConfigValue("Password")).withArgon2())
+            JOptionPane.showMessageDialog(null, "The Password Enterd has been used Already. Try Again with a Password You haven’t used Before!", "Old Password Used", JOptionPane.ERROR_MESSAGE);
+        else {
+            SQLite.setConfigValue("Password", Password.hash(newPassword).addRandomSalt().withArgon2().getResult());
+            SQLite.setConfigValue("Salt", Salt);
+            SQLite.resetMainDB(Password.hash(newPassword).addSalt(Salt).withPBKDF2().getResult());
+            JOptionPane.showMessageDialog(null, "Your Password has been changed Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            SE_Current_Password.setText("");
+            SE_New_Password.setText("");
+            SE_Confirm_Password.setText("");
         }
-    }//GEN-LAST:event_SI_PasswordKeyPressed
+    }//GEN-LAST:event_SE_Change_Password_ButtonActionPerformed
+
+    private void SE_New_Contact_NumberKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SE_New_Contact_NumberKeyPressed
+        String Number = SE_New_Contact_Number.getText();
+        int length = Number.length();
+        if (evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9') {
+            if (length < 10)
+                SE_New_Contact_Number.setEditable(true);
+            else
+                SE_New_Contact_Number.setEditable(false);
+        } else {
+            switch (evt.getExtendedKeyCode()) {
+                case java.awt.event.KeyEvent.VK_BACK_SPACE -> SE_New_Contact_Number.setEditable(true);
+                case java.awt.event.KeyEvent.VK_DELETE -> SE_New_Contact_Number.setEditable(true);
+                default -> SE_New_Contact_Number.setEditable(false);
+            }
+        }
+    }//GEN-LAST:event_SE_New_Contact_NumberKeyPressed
+
+    private void SE_Save_Changes_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SE_Save_Changes_ButtonActionPerformed
+        String newBusinessName = SE_New_Business_Name.getText();
+        String newContactNumber = SE_New_Contact_Number.getText();
+        String newEmailAddress = SE_New_Email_Address.getText();
+        String newBusinessLocation = SE_New_Address.getText();
+        if (newBusinessName.equals("") && newContactNumber.equals("") && newEmailAddress.equals("") && newBusinessLocation.equals(""))
+            JOptionPane.showMessageDialog(null, "You haven't made any Changes. Please Try Again!", "No Changes Found", JOptionPane.ERROR_MESSAGE);
+        else {
+            if (newBusinessName.equals(""))
+                newBusinessName = SE_Current_Business_Name.getText();
+            if (newEmailAddress.equals(""))
+                newEmailAddress = SE_Current_Email_Address.getText();
+            if (newBusinessLocation.equals(""))
+                newBusinessLocation = SE_Current_Address.getText();
+            if (newContactNumber.equals("")) {
+                newContactNumber = SE_Current_Contact_Number.getText();
+                SQLite.compConfig(newBusinessName, newContactNumber, newEmailAddress, newBusinessLocation);
+                JOptionPane.showMessageDialog(null, "Your Changes Have Been Saved Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            }
+            else if (newContactNumber.length() != 10)
+                JOptionPane.showMessageDialog(null, "Contact Number Must be 10 Digit Long. Please Try Again!", "Contact Number Too Short", JOptionPane.ERROR_MESSAGE);
+            else {
+                SQLite.compConfig(newBusinessName, newContactNumber, newEmailAddress, newBusinessLocation);
+                JOptionPane.showMessageDialog(null, "Your Changes Have Been Saved Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            }
+            Settings_ActionPerformed();
+            SE_New_Business_Name.setText("");
+            SE_New_Contact_Number.setText("");
+            SE_New_Email_Address.setText("");
+            SE_New_Address.setText("");
+        }
+    }//GEN-LAST:event_SE_Save_Changes_ButtonActionPerformed
 
     private void LogIn_ActionPerformed() {
         String username = SI_Username.getText();
