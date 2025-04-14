@@ -884,7 +884,7 @@
                           <Component id="SD_Back_Button" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           <Component id="SD_SignUp_Button" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="148" max="32767" attributes="0"/>
+                      <EmptySpace pref="147" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -934,10 +934,14 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="SD_Contact_Number" alignment="1" max="32767" attributes="0"/>
                               <Component id="SD_Business_Name" alignment="0" max="32767" attributes="0"/>
                               <Component id="SD_Email_Address" max="32767" attributes="0"/>
                               <Component id="SD_Business_Location" alignment="1" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="SD_Contact_Country_Code" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="SD_Contact_Number" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -952,11 +956,12 @@
                               <Component id="SD_Business_Name" min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="SD_Contact_Number_Label" min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="SD_Contact_Number" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="SD_Contact_Number" alignment="0" pref="27" max="32767" attributes="0"/>
+                              <Component id="SD_Contact_Country_Code" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="SD_Email_Address_Label" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="SD_Email_Address" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -998,6 +1003,20 @@
                     <Property name="text" type="java.lang.String" value="Contact Number"/>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="SD_Contact_Country_Code">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" value="5"/>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(Constant.COUNTRY_CODES)" type="code"/>
+                    </Property>
+                    <Property name="selectedItem" type="java.lang.Object" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="&quot;+91&quot;" type="code"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JTextField" name="SD_Contact_Number">
                   <Properties>
@@ -2931,8 +2950,12 @@
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="SE_Current_Contact_Number" max="32767" attributes="0"/>
-                                      <Component id="SE_New_Contact_Number" max="32767" attributes="0"/>
+                                      <Component id="SE_Current_Contact_Number" pref="828" max="32767" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Component id="SE_New_Contact_Country_Code" min="-2" pref="60" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="SE_New_Contact_Number" max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -2947,9 +2970,12 @@
                                       <Component id="SE_Current_Contact_Number" alignment="3" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="SE_New_Contact_Label" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                                      <Component id="SE_New_Contact_Number" alignment="3" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="SE_New_Contact_Label" alignment="3" max="32767" attributes="0"/>
+                                          <Component id="SE_New_Contact_Number" alignment="3" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="SE_New_Contact_Country_Code" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -2988,6 +3014,20 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="New"/>
                           </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="SE_New_Contact_Country_Code">
+                          <Properties>
+                            <Property name="maximumRowCount" type="int" value="5"/>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(Constant.COUNTRY_CODES)" type="code"/>
+                            </Property>
+                            <Property name="selectedItem" type="java.lang.Object" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot;+91&quot;" type="code"/>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JTextField" name="SE_New_Contact_Number">
                           <Properties>
