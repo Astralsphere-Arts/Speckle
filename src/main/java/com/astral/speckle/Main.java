@@ -289,6 +289,7 @@ public class Main extends javax.swing.JFrame {
         SideBar.add(SB_Filler_01);
 
         SB_Home_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/house_3d.png"))); // NOI18N
+        SB_Home_Button.setToolTipText("Home");
         SB_Home_Button.setFocusable(false);
         SB_Home_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         SB_Home_Button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -301,6 +302,7 @@ public class Main extends javax.swing.JFrame {
         SideBar.add(SB_Filler_02);
 
         SB_Invoicing_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/scroll_3d.png"))); // NOI18N
+        SB_Invoicing_Button.setToolTipText("Invoicing");
         SB_Invoicing_Button.setEnabled(false);
         SB_Invoicing_Button.setFocusable(false);
         SB_Invoicing_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -314,6 +316,7 @@ public class Main extends javax.swing.JFrame {
         SideBar.add(SB_Filler_03);
 
         SB_Inventory_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/package_3d.png"))); // NOI18N
+        SB_Inventory_Button.setToolTipText("Inventory");
         SB_Inventory_Button.setEnabled(false);
         SB_Inventory_Button.setFocusable(false);
         SB_Inventory_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -327,6 +330,7 @@ public class Main extends javax.swing.JFrame {
         SideBar.add(SB_Filler_04);
 
         SB_Settings_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gear_3d.png"))); // NOI18N
+        SB_Settings_Button.setToolTipText("Settings");
         SB_Settings_Button.setEnabled(false);
         SB_Settings_Button.setFocusable(false);
         SB_Settings_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -340,6 +344,7 @@ public class Main extends javax.swing.JFrame {
         SideBar.add(SB_Filler_05);
 
         SB_About_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bubbles_3d.png"))); // NOI18N
+        SB_About_Button.setToolTipText("About");
         SB_About_Button.setFocusable(false);
         SB_About_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         SB_About_Button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -352,6 +357,7 @@ public class Main extends javax.swing.JFrame {
         SideBar.add(SB_Filler_06);
 
         SB_SignOut_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/high_voltage_3d.png"))); // NOI18N
+        SB_SignOut_Button.setToolTipText("Sign Out");
         SB_SignOut_Button.setEnabled(false);
         SB_SignOut_Button.setFocusable(false);
         SB_SignOut_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
