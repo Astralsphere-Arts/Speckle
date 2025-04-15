@@ -2866,12 +2866,12 @@ public class Main extends javax.swing.JFrame {
             if (width > 300) width=300;
             NewColumnModel.getColumn(column).setPreferredWidth(width);
         }
-        NI_Table.getColumnModel().getColumn(1).setMinWidth(0);
-        NI_Table.getColumnModel().getColumn(1).setMaxWidth(0);
-        NI_Table.getColumnModel().getColumn(1).setWidth(0);
-        NI_Table.getColumnModel().getColumn(4).setMinWidth(0);
-        NI_Table.getColumnModel().getColumn(4).setMaxWidth(0);
-        NI_Table.getColumnModel().getColumn(4).setWidth(0);
+        NewColumnModel.getColumn(1).setMinWidth(0);
+        NewColumnModel.getColumn(1).setMaxWidth(0);
+        NewColumnModel.getColumn(1).setWidth(0);
+        NewColumnModel.getColumn(4).setMinWidth(0);
+        NewColumnModel.getColumn(4).setMaxWidth(0);
+        NewColumnModel.getColumn(4).setWidth(0);
         NI_Customer_Name.setText("");
         NI_Customer_Contact.setText("");
         NI_Customer_Address.setText("");
