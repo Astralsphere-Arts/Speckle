@@ -1072,7 +1072,7 @@ public class Main extends javax.swing.JFrame {
         HOME_Help_Heading.setFont(HOME_Help_Heading.getFont().deriveFont(HOME_Help_Heading.getFont().getSize()+6f));
         HOME_Help_Heading.setText("Quick Start Guide");
 
-        HOME_Help_Content.setText("<html><ol style=\"margin: 0 0 0 20;\">\n<li style=\"padding: 4;\">The First Tab is <b>Home</b> which has two Sections one is Quick Start Guide(This One) and second one is has Information\nabout Products with Low amount Stocks in the Inventory.</li>\n<li style=\"padding: 4;\">The Second Tab is <b>Invoicing</b> through which you can create new Invoices or can view previously created Invoices.</li>\n<li style=\"padding: 4;\">The Third Tab is <b>Inventory</b> where you can add or remove Products from Speckle's Inventory.</li>\n<li style=\"padding: 4;\">The Forth Tab is <b>Settings</b> where you can change your Login Credentials and the information related to your\nBusiness that gets printed on your Invoices.</li>\n<li style=\"padding: 4;\">The Last Tab is <b>About</b> which has three Sections Authors, License, Credits they contain a List of Developers who\nContributed to Speckle, the EULA and Credits to the External Libraries we used.</li>\n</ol></html>");
+        HOME_Help_Content.setText(Constant.HELP_TEXT);
         HOME_Help_Content.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         HOME_Help_Content.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 

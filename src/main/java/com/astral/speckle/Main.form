@@ -1774,7 +1774,9 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="HOME_Help_Content">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;ol style=&quot;margin: 0 0 0 20;&quot;&gt;&#xa;&lt;li style=&quot;padding: 4;&quot;&gt;The First Tab is &lt;b&gt;Home&lt;/b&gt; which has two Sections one is Quick Start Guide(This One) and second one is has Information&#xa;about Products with Low amount Stocks in the Inventory.&lt;/li&gt;&#xa;&lt;li style=&quot;padding: 4;&quot;&gt;The Second Tab is &lt;b&gt;Invoicing&lt;/b&gt; through which you can create new Invoices or can view previously created Invoices.&lt;/li&gt;&#xa;&lt;li style=&quot;padding: 4;&quot;&gt;The Third Tab is &lt;b&gt;Inventory&lt;/b&gt; where you can add or remove Products from Speckle&apos;s Inventory.&lt;/li&gt;&#xa;&lt;li style=&quot;padding: 4;&quot;&gt;The Forth Tab is &lt;b&gt;Settings&lt;/b&gt; where you can change your Login Credentials and the information related to your&#xa;Business that gets printed on your Invoices.&lt;/li&gt;&#xa;&lt;li style=&quot;padding: 4;&quot;&gt;The Last Tab is &lt;b&gt;About&lt;/b&gt; which has three Sections Authors, License, Credits they contain a List of Developers who&#xa;Contributed to Speckle, the EULA and Credits to the External Libraries we used.&lt;/li&gt;&#xa;&lt;/ol&gt;&lt;/html&gt;"/>
+                    <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="Constant.HELP_TEXT" type="code"/>
+                    </Property>
                     <Property name="verticalAlignment" type="int" value="1"/>
                     <Property name="verticalTextPosition" type="int" value="1"/>
                   </Properties>
