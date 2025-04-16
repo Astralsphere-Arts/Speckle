@@ -663,7 +663,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace pref="81" max="32767" attributes="0"/>
+                      <EmptySpace pref="80" max="32767" attributes="0"/>
                       <Component id="SM_Heading" min="-2" pref="60" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="SM_Sub_Heading" min="-2" max="-2" attributes="0"/>
@@ -675,7 +675,7 @@
                       <Component id="SM_User_Details" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="SM_Next_Button" min="-2" pref="36" max="-2" attributes="0"/>
-                      <EmptySpace pref="134" max="32767" attributes="0"/>
+                      <EmptySpace pref="133" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -683,8 +683,10 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="SM_Heading">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Semibold" size="30" style="0"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                  <FontInfo relative="true">
+                    <Font component="SM_Heading" property="font" relativeSize="true" size="18"/>
+                  </FontInfo>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Welcome To Speckle!"/>
@@ -693,8 +695,10 @@
             </Component>
             <Component class="javax.swing.JLabel" name="SM_Sub_Heading">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Semibold" size="14" style="0"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                  <FontInfo relative="true">
+                    <Font component="SM_Sub_Heading" property="font" relativeSize="true" size="4"/>
+                  </FontInfo>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="A Simple Invoicing and Inventory Management System"/>
@@ -787,8 +791,10 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="SM_Username_Label">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="14" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="SM_Username_Label" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Your Username"/>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -796,15 +802,19 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="SM_Username">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="SM_Username" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
                     </Property>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="SM_Create_Password_Label">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="14" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="SM_Create_Password_Label" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
                     <Property name="text" type="java.lang.String" value="Create Password"/>
@@ -813,15 +823,19 @@
                 </Component>
                 <Component class="javax.swing.JPasswordField" name="SM_Create_Password">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="SM_Create_Password" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
                     </Property>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="SM_Confirm_Password_Label">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="14" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="SM_Confirm_Password_Label" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
                     <Property name="text" type="java.lang.String" value="Confirm Password"/>
@@ -830,8 +844,10 @@
                 </Component>
                 <Component class="javax.swing.JPasswordField" name="SM_Confirm_Password">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="SM_Confirm_Password" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
                     </Property>
                   </Properties>
                 </Component>
@@ -839,9 +855,6 @@
             </Container>
             <Component class="javax.swing.JButton" name="SM_Next_Button">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Semibold" size="12" style="0"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Next"/>
               </Properties>
               <Events>
@@ -898,8 +911,10 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="SD_Heading">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Semibold" size="24" style="0"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                  <FontInfo relative="true">
+                    <Font component="SD_Heading" property="font" relativeSize="true" size="12"/>
+                  </FontInfo>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Just a little more and you&apos;ll be all ready to go."/>
@@ -985,8 +1000,10 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="SD_Business_Name_Label">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="14" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="SD_Business_Name_Label" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
                     <Property name="text" type="java.lang.String" value="Business Name"/>
@@ -995,15 +1012,19 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="SD_Business_Name">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="SD_Business_Name" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
                     </Property>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="SD_Contact_Number_Label">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="14" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="SD_Contact_Number_Label" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
                     <Property name="text" type="java.lang.String" value="Contact Number"/>
@@ -1026,8 +1047,10 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="SD_Contact_Number">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="SD_Contact_Number" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
                     </Property>
                   </Properties>
                   <Events>
@@ -1036,8 +1059,10 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="SD_Email_Address_Label">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="14" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="SD_Email_Address_Label" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
                     <Property name="text" type="java.lang.String" value="Email Address"/>
@@ -1046,15 +1071,19 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="SD_Email_Address">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="SD_Email_Address" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
                     </Property>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="SD_Business_Location_Label">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="14" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="SD_Business_Location_Label" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
                     <Property name="text" type="java.lang.String" value="Business Location (Address)"/>
@@ -1063,8 +1092,10 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="SD_Business_Location">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="SD_Business_Location" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
                     </Property>
                   </Properties>
                 </Component>
@@ -1072,9 +1103,6 @@
             </Container>
             <Component class="javax.swing.JButton" name="SD_Back_Button">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Semibold" size="12" style="0"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Back"/>
               </Properties>
               <Events>
@@ -1083,9 +1111,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="SD_SignUp_Button">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Semibold" size="12" style="0"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Sign Up"/>
               </Properties>
               <Events>
@@ -1192,8 +1217,10 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="VD_Heading">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Semibold" size="24" style="0"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                  <FontInfo relative="true">
+                    <Font component="VD_Heading" property="font" relativeSize="true" size="12"/>
+                  </FontInfo>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Please Verify Your Details"/>
@@ -1202,83 +1229,105 @@
             </Component>
             <Component class="javax.swing.JLabel" name="VD_Username_Label">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Semibold" size="14" style="0"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                  <FontInfo relative="true">
+                    <Font component="VD_Username_Label" property="font" relativeSize="true" size="2"/>
+                  </FontInfo>
                 </Property>
                 <Property name="text" type="java.lang.String" value="User Name"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="VD_Username">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                  <FontInfo relative="true">
+                    <Font component="VD_Username" property="font" relativeSize="true" size="2"/>
+                  </FontInfo>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="VD_Business_Name_Label">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Semibold" size="14" style="0"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                  <FontInfo relative="true">
+                    <Font component="VD_Business_Name_Label" property="font" relativeSize="true" size="2"/>
+                  </FontInfo>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Business Name"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="VD_Business_Name">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                  <FontInfo relative="true">
+                    <Font component="VD_Business_Name" property="font" relativeSize="true" size="2"/>
+                  </FontInfo>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="VD_Contact_Number_Label">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Semibold" size="14" style="0"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                  <FontInfo relative="true">
+                    <Font component="VD_Contact_Number_Label" property="font" relativeSize="true" size="2"/>
+                  </FontInfo>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Contact Number"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="VD_Contact_Number">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                  <FontInfo relative="true">
+                    <Font component="VD_Contact_Number" property="font" relativeSize="true" size="2"/>
+                  </FontInfo>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="VD_Email_Address_Label">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Semibold" size="14" style="0"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                  <FontInfo relative="true">
+                    <Font component="VD_Email_Address_Label" property="font" relativeSize="true" size="2"/>
+                  </FontInfo>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Email Address"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="VD_Email_Address">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                  <FontInfo relative="true">
+                    <Font component="VD_Email_Address" property="font" relativeSize="true" size="2"/>
+                  </FontInfo>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="VD_Business_Location_Label">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Semibold" size="14" style="0"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                  <FontInfo relative="true">
+                    <Font component="VD_Business_Location_Label" property="font" relativeSize="true" size="2"/>
+                  </FontInfo>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Business Location"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="VD_Business_Location">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                  <FontInfo relative="true">
+                    <Font component="VD_Business_Location" property="font" relativeSize="true" size="2"/>
+                  </FontInfo>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="VD_Recovery_Key_Heading">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Semibold" size="18" style="0"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                  <FontInfo relative="true">
+                    <Font component="VD_Recovery_Key_Heading" property="font" relativeSize="true" size="6"/>
+                  </FontInfo>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Recovery Key"/>
@@ -1302,9 +1351,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="VD_Finish_Button">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Semibold" size="12" style="0"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Finish"/>
               </Properties>
               <Events>
@@ -1380,8 +1426,10 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="FP_Heading">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Semibold" size="24" style="0"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                  <FontInfo relative="true">
+                    <Font component="FP_Heading" property="font" relativeSize="true" size="12"/>
+                  </FontInfo>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Forgot Password"/>
@@ -1390,8 +1438,10 @@
             </Component>
             <Component class="javax.swing.JLabel" name="FP_Paragraph">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="13" style="0"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                  <FontInfo relative="true">
+                    <Font component="FP_Paragraph" property="font" relativeSize="true" size="1"/>
+                  </FontInfo>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p style=&quot;text-align: center;&quot;&gt;If You&apos;ve Forgotten Your Password. Then Enter the Recovery Code that had been Given to You on the First Use and then You can create a New Password.&lt;/p&gt;&lt;/html&gt;"/>
               </Properties>
@@ -1451,8 +1501,10 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="FP_Recovery_Key_Label">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="14" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="FP_Recovery_Key_Label" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Recovery Key"/>
                   </Properties>
@@ -1466,8 +1518,10 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="FP_New_Password_Label">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="14" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="FP_New_Password_Label" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
                     </Property>
                     <Property name="text" type="java.lang.String" value="New Password"/>
                   </Properties>
@@ -1481,8 +1535,10 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="FP_Confirm_Password_Label">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="14" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="FP_Confirm_Password_Label" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Confirm Password"/>
                   </Properties>
@@ -1498,9 +1554,6 @@
             </Container>
             <Component class="javax.swing.JButton" name="FP_Cancel_Button">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Semibold" size="12" style="0"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Cancel"/>
               </Properties>
               <Events>
@@ -1509,9 +1562,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="FP_Reset_Button">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Semibold" size="12" style="0"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Reset"/>
               </Properties>
               <Events>
@@ -1597,8 +1647,10 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="HOME_Main_Heading">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="30" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="HOME_Main_Heading" property="font" relativeSize="true" size="18"/>
+                      </FontInfo>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -1654,8 +1706,10 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="HOME_Help_Heading">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="18" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="HOME_Help_Heading" property="font" relativeSize="true" size="6"/>
+                      </FontInfo>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Quick Start Guide"/>
                   </Properties>
@@ -1763,8 +1817,10 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="HOME_Low_Stock_Heading">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="18" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="HOME_Low_Stock_Heading" property="font" relativeSize="true" size="6"/>
+                      </FontInfo>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Low Stock"/>
                   </Properties>
@@ -1776,15 +1832,19 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="HOME_Product_One_Label">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="12" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="HOME_Product_One_Label" property="font" relativeSize="true" size="1"/>
+                      </FontInfo>
                     </Property>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="HOME_Product_One_Quantity">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="12" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="HOME_Product_One_Quantity" property="font" relativeSize="true" size="1"/>
+                      </FontInfo>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="4"/>
                     <Property name="horizontalTextPosition" type="int" value="4"/>
@@ -1792,15 +1852,19 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="HOME_Product_Two_Label">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="12" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="HOME_Product_Two_Label" property="font" relativeSize="true" size="1"/>
+                      </FontInfo>
                     </Property>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="HOME_Product_Two_Quantity">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="12" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="HOME_Product_Two_Quantity" property="font" relativeSize="true" size="1"/>
+                      </FontInfo>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="4"/>
                     <Property name="horizontalTextPosition" type="int" value="4"/>
@@ -1808,15 +1872,19 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="HOME_Product_Three_Label">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="12" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="HOME_Product_Three_Label" property="font" relativeSize="true" size="1"/>
+                      </FontInfo>
                     </Property>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="HOME_Product_Three_Quantity">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="12" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="HOME_Product_Three_Quantity" property="font" relativeSize="true" size="1"/>
+                      </FontInfo>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="4"/>
                     <Property name="horizontalTextPosition" type="int" value="4"/>
@@ -1824,15 +1892,19 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="HOME_Product_Four_Label">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="12" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="HOME_Product_Four_Label" property="font" relativeSize="true" size="1"/>
+                      </FontInfo>
                     </Property>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="HOME_Product_Four_Quantity">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="12" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="HOME_Product_Four_Quantity" property="font" relativeSize="true" size="1"/>
+                      </FontInfo>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="4"/>
                     <Property name="horizontalTextPosition" type="int" value="4"/>
@@ -1840,15 +1912,19 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="HOME_Product_Five_Label">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="12" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="HOME_Product_Five_Label" property="font" relativeSize="true" size="1"/>
+                      </FontInfo>
                     </Property>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="HOME_Product_Five_Quantity">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="12" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="HOME_Product_Five_Quantity" property="font" relativeSize="true" size="1"/>
+                      </FontInfo>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="4"/>
                     <Property name="horizontalTextPosition" type="int" value="4"/>
@@ -2063,7 +2139,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="NI_Customer_Name" pref="402" max="32767" attributes="0"/>
+                                  <Component id="NI_Customer_Name" pref="400" max="32767" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="NI_Customer_Contact_Label" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -2100,9 +2176,6 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="NI_Customer_Name_Label">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="12" style="0"/>
-                    </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Customer&apos;s Name"/>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -2112,9 +2185,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="NI_Customer_Contact_Label">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="12" style="0"/>
-                    </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Contact Number"/>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -2127,9 +2197,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="NI_Customer_Address_Label">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="12" style="0"/>
-                    </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Customer&apos;s Address"/>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -2450,8 +2517,10 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="NP_Product_Name_Label">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="NP_Product_Name_Label" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="4"/>
                     <Property name="text" type="java.lang.String" value="Product Name"/>
@@ -2461,8 +2530,10 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="NP_Price_Label">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="NP_Price_Label" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="4"/>
                     <Property name="text" type="java.lang.String" value="Price"/>
@@ -2472,8 +2543,10 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="NP_GST_Rate_Label">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="NP_GST_Rate_Label" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="4"/>
                     <Property name="text" type="java.lang.String" value="GST Rate"/>
@@ -2483,8 +2556,10 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="NP_Available_Quantity_Label">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="0"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="NP_Available_Quantity_Label" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="4"/>
                     <Property name="text" type="java.lang.String" value="Available Quantity"/>
@@ -2635,8 +2710,10 @@
                       <SubComponents>
                         <Component class="javax.swing.JLabel" name="SE_Current_Username_Label">
                           <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI" size="14" style="0"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                              <FontInfo relative="true">
+                                <Font component="SE_Current_Username_Label" property="font" relativeSize="true" size="2"/>
+                              </FontInfo>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Current Username"/>
                           </Properties>
@@ -2647,24 +2724,30 @@
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
                             </Property>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI Semibold" size="14" style="0"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                              <FontInfo relative="true">
+                                <Font bold="true" component="SE_Current_Username" property="font" relativeSize="true" size="2"/>
+                              </FontInfo>
                             </Property>
                             <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="SE_New_Username_Label">
                           <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI" size="14" style="0"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                              <FontInfo relative="true">
+                                <Font component="SE_New_Username_Label" property="font" relativeSize="true" size="2"/>
+                              </FontInfo>
                             </Property>
                             <Property name="text" type="java.lang.String" value="New Username"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="SE_New_Username">
                           <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI" size="14" style="0"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                              <FontInfo relative="true">
+                                <Font component="SE_New_Username" property="font" relativeSize="true" size="2"/>
+                              </FontInfo>
                             </Property>
                           </Properties>
                         </Component>
@@ -2747,46 +2830,58 @@
                       <SubComponents>
                         <Component class="javax.swing.JLabel" name="SE_Current_Password_Label">
                           <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI" size="14" style="0"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                              <FontInfo relative="true">
+                                <Font component="SE_Current_Password_Label" property="font" relativeSize="true" size="2"/>
+                              </FontInfo>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Current Password"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JPasswordField" name="SE_Current_Password">
                           <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI" size="14" style="0"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                              <FontInfo relative="true">
+                                <Font component="SE_Current_Password" property="font" relativeSize="true" size="2"/>
+                              </FontInfo>
                             </Property>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="SE_New_Password_Label">
                           <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI" size="14" style="0"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                              <FontInfo relative="true">
+                                <Font component="SE_New_Password_Label" property="font" relativeSize="true" size="2"/>
+                              </FontInfo>
                             </Property>
                             <Property name="text" type="java.lang.String" value="New Password"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JPasswordField" name="SE_New_Password">
                           <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI" size="14" style="0"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                              <FontInfo relative="true">
+                                <Font component="SE_New_Password" property="font" relativeSize="true" size="2"/>
+                              </FontInfo>
                             </Property>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="SE_Confirm_Password_Label">
                           <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI" size="14" style="0"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                              <FontInfo relative="true">
+                                <Font component="SE_Confirm_Password_Label" property="font" relativeSize="true" size="2"/>
+                              </FontInfo>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Confirm Password"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JPasswordField" name="SE_Confirm_Password">
                           <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI" size="14" style="0"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                              <FontInfo relative="true">
+                                <Font component="SE_Confirm_Password" property="font" relativeSize="true" size="2"/>
+                              </FontInfo>
                             </Property>
                           </Properties>
                         </Component>
@@ -2913,8 +3008,10 @@
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
                             </Property>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI Semibold" size="14" style="0"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                              <FontInfo relative="true">
+                                <Font bold="true" component="SE_Current_Business_Name" property="font" relativeSize="true" size="2"/>
+                              </FontInfo>
                             </Property>
                             <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
@@ -2932,8 +3029,10 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="SE_New_Business_Name">
                           <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI" size="14" style="0"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                              <FontInfo relative="true">
+                                <Font component="SE_New_Business_Name" property="font" relativeSize="true" size="2"/>
+                              </FontInfo>
                             </Property>
                           </Properties>
                         </Component>
@@ -3008,8 +3107,10 @@
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
                             </Property>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI Semibold" size="14" style="0"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                              <FontInfo relative="true">
+                                <Font bold="true" component="SE_Current_Contact_Number" property="font" relativeSize="true" size="2"/>
+                              </FontInfo>
                             </Property>
                             <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
@@ -3040,8 +3141,10 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="SE_New_Contact_Number">
                           <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI" size="14" style="0"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                              <FontInfo relative="true">
+                                <Font component="SE_New_Contact_Number" property="font" relativeSize="true" size="2"/>
+                              </FontInfo>
                             </Property>
                           </Properties>
                           <Events>
@@ -3112,8 +3215,10 @@
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
                             </Property>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI Semibold" size="14" style="0"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                              <FontInfo relative="true">
+                                <Font bold="true" component="SE_Current_Email_Address" property="font" relativeSize="true" size="2"/>
+                              </FontInfo>
                             </Property>
                             <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
@@ -3130,8 +3235,10 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="SE_New_Email_Address">
                           <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI" size="14" style="0"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                              <FontInfo relative="true">
+                                <Font component="SE_New_Email_Address" property="font" relativeSize="true" size="2"/>
+                              </FontInfo>
                             </Property>
                           </Properties>
                         </Component>
@@ -3199,8 +3306,10 @@
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
                             </Property>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI Semibold" size="14" style="0"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                              <FontInfo relative="true">
+                                <Font bold="true" component="SE_Current_Address" property="font" relativeSize="true" size="2"/>
+                              </FontInfo>
                             </Property>
                             <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
@@ -3217,8 +3326,10 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="SE_New_Address">
                           <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI" size="14" style="0"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                              <FontInfo relative="true">
+                                <Font component="SE_New_Address" property="font" relativeSize="true" size="2"/>
+                              </FontInfo>
                             </Property>
                           </Properties>
                         </Component>

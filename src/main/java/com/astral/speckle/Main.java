@@ -483,12 +483,12 @@ public class Main extends javax.swing.JFrame {
 
         Container.add(SignIn, "signIn");
 
-        SM_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
+        SM_Heading.setFont(SM_Heading.getFont().deriveFont(SM_Heading.getFont().getSize()+18f));
         SM_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SM_Heading.setText("Welcome To Speckle!");
         SM_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SM_Sub_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SM_Sub_Heading.setFont(SM_Sub_Heading.getFont().deriveFont(SM_Sub_Heading.getFont().getSize()+4f));
         SM_Sub_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SM_Sub_Heading.setText("A Simple Invoicing and Inventory Management System");
         SM_Sub_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -505,25 +505,25 @@ public class Main extends javax.swing.JFrame {
 
         SM_User_Details.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        SM_Username_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SM_Username_Label.setFont(SM_Username_Label.getFont().deriveFont(SM_Username_Label.getFont().getSize()+2f));
         SM_Username_Label.setText("Your Username");
         SM_Username_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SM_Username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SM_Username.setFont(SM_Username.getFont().deriveFont(SM_Username.getFont().getSize()+2f));
 
-        SM_Create_Password_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SM_Create_Password_Label.setFont(SM_Create_Password_Label.getFont().deriveFont(SM_Create_Password_Label.getFont().getSize()+2f));
         SM_Create_Password_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         SM_Create_Password_Label.setText("Create Password");
         SM_Create_Password_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SM_Create_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SM_Create_Password.setFont(SM_Create_Password.getFont().deriveFont(SM_Create_Password.getFont().getSize()+2f));
 
-        SM_Confirm_Password_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SM_Confirm_Password_Label.setFont(SM_Confirm_Password_Label.getFont().deriveFont(SM_Confirm_Password_Label.getFont().getSize()+2f));
         SM_Confirm_Password_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         SM_Confirm_Password_Label.setText("Confirm Password");
         SM_Confirm_Password_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SM_Confirm_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SM_Confirm_Password.setFont(SM_Confirm_Password.getFont().deriveFont(SM_Confirm_Password.getFont().getSize()+2f));
 
         javax.swing.GroupLayout SM_User_DetailsLayout = new javax.swing.GroupLayout(SM_User_Details);
         SM_User_Details.setLayout(SM_User_DetailsLayout);
@@ -564,7 +564,6 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        SM_Next_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         SM_Next_Button.setText("Next");
         SM_Next_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -590,7 +589,7 @@ public class Main extends javax.swing.JFrame {
         SignUp_MainLayout.setVerticalGroup(
             SignUp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SignUp_MainLayout.createSequentialGroup()
-                .addContainerGap(81, Short.MAX_VALUE)
+                .addContainerGap(80, Short.MAX_VALUE)
                 .addComponent(SM_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(SM_Sub_Heading)
@@ -602,12 +601,12 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(SM_User_Details, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(SM_Next_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addContainerGap(133, Short.MAX_VALUE))
         );
 
         Container.add(SignUp_Main, "signUpMain");
 
-        SD_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        SD_Heading.setFont(SD_Heading.getFont().deriveFont(SD_Heading.getFont().getSize()+12f));
         SD_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SD_Heading.setText("Just a little more and you'll be all ready to go.");
         SD_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -619,14 +618,14 @@ public class Main extends javax.swing.JFrame {
 
         SD_Business_Details.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        SD_Business_Name_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SD_Business_Name_Label.setFont(SD_Business_Name_Label.getFont().deriveFont(SD_Business_Name_Label.getFont().getSize()+2f));
         SD_Business_Name_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         SD_Business_Name_Label.setText("Business Name");
         SD_Business_Name_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SD_Business_Name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SD_Business_Name.setFont(SD_Business_Name.getFont().deriveFont(SD_Business_Name.getFont().getSize()+2f));
 
-        SD_Contact_Number_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SD_Contact_Number_Label.setFont(SD_Contact_Number_Label.getFont().deriveFont(SD_Contact_Number_Label.getFont().getSize()+2f));
         SD_Contact_Number_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         SD_Contact_Number_Label.setText("Contact Number");
         SD_Contact_Number_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -635,26 +634,26 @@ public class Main extends javax.swing.JFrame {
         SD_Country_Code.setModel(new javax.swing.DefaultComboBoxModel<>(Constant.COUNTRY_CODES));
         SD_Country_Code.setSelectedItem("+91");
 
-        SD_Contact_Number.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SD_Contact_Number.setFont(SD_Contact_Number.getFont().deriveFont(SD_Contact_Number.getFont().getSize()+2f));
         SD_Contact_Number.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 SD_Contact_NumberKeyPressed(evt);
             }
         });
 
-        SD_Email_Address_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SD_Email_Address_Label.setFont(SD_Email_Address_Label.getFont().deriveFont(SD_Email_Address_Label.getFont().getSize()+2f));
         SD_Email_Address_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         SD_Email_Address_Label.setText("Email Address");
         SD_Email_Address_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SD_Email_Address.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SD_Email_Address.setFont(SD_Email_Address.getFont().deriveFont(SD_Email_Address.getFont().getSize()+2f));
 
-        SD_Business_Location_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SD_Business_Location_Label.setFont(SD_Business_Location_Label.getFont().deriveFont(SD_Business_Location_Label.getFont().getSize()+2f));
         SD_Business_Location_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         SD_Business_Location_Label.setText("Business Location (Address)");
         SD_Business_Location_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SD_Business_Location.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SD_Business_Location.setFont(SD_Business_Location.getFont().deriveFont(SD_Business_Location.getFont().getSize()+2f));
 
         javax.swing.GroupLayout SD_Business_DetailsLayout = new javax.swing.GroupLayout(SD_Business_Details);
         SD_Business_Details.setLayout(SD_Business_DetailsLayout);
@@ -701,7 +700,6 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        SD_Back_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         SD_Back_Button.setText("Back");
         SD_Back_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -709,7 +707,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        SD_SignUp_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         SD_SignUp_Button.setText("Sign Up");
         SD_SignUp_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -751,37 +748,37 @@ public class Main extends javax.swing.JFrame {
 
         Container.add(SignUp_Details, "signUpDetails");
 
-        VD_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        VD_Heading.setFont(VD_Heading.getFont().deriveFont(VD_Heading.getFont().getSize()+12f));
         VD_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         VD_Heading.setText("Please Verify Your Details");
         VD_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        VD_Username_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        VD_Username_Label.setFont(VD_Username_Label.getFont().deriveFont(VD_Username_Label.getFont().getSize()+2f));
         VD_Username_Label.setText("User Name");
 
-        VD_Username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        VD_Username.setFont(VD_Username.getFont().deriveFont(VD_Username.getFont().getSize()+2f));
 
-        VD_Business_Name_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        VD_Business_Name_Label.setFont(VD_Business_Name_Label.getFont().deriveFont(VD_Business_Name_Label.getFont().getSize()+2f));
         VD_Business_Name_Label.setText("Business Name");
 
-        VD_Business_Name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        VD_Business_Name.setFont(VD_Business_Name.getFont().deriveFont(VD_Business_Name.getFont().getSize()+2f));
 
-        VD_Contact_Number_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        VD_Contact_Number_Label.setFont(VD_Contact_Number_Label.getFont().deriveFont(VD_Contact_Number_Label.getFont().getSize()+2f));
         VD_Contact_Number_Label.setText("Contact Number");
 
-        VD_Contact_Number.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        VD_Contact_Number.setFont(VD_Contact_Number.getFont().deriveFont(VD_Contact_Number.getFont().getSize()+2f));
 
-        VD_Email_Address_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        VD_Email_Address_Label.setFont(VD_Email_Address_Label.getFont().deriveFont(VD_Email_Address_Label.getFont().getSize()+2f));
         VD_Email_Address_Label.setText("Email Address");
 
-        VD_Email_Address.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        VD_Email_Address.setFont(VD_Email_Address.getFont().deriveFont(VD_Email_Address.getFont().getSize()+2f));
 
-        VD_Business_Location_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        VD_Business_Location_Label.setFont(VD_Business_Location_Label.getFont().deriveFont(VD_Business_Location_Label.getFont().getSize()+2f));
         VD_Business_Location_Label.setText("Business Location");
 
-        VD_Business_Location.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        VD_Business_Location.setFont(VD_Business_Location.getFont().deriveFont(VD_Business_Location.getFont().getSize()+2f));
 
-        VD_Recovery_Key_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        VD_Recovery_Key_Heading.setFont(VD_Recovery_Key_Heading.getFont().deriveFont(VD_Recovery_Key_Heading.getFont().getSize()+6f));
         VD_Recovery_Key_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         VD_Recovery_Key_Heading.setText("Recovery Key");
         VD_Recovery_Key_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -793,7 +790,6 @@ public class Main extends javax.swing.JFrame {
         VD_Recovery_Key.setBackground(new java.awt.Color(255, 255, 255));
         VD_Recovery_Key.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        VD_Finish_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         VD_Finish_Button.setText("Finish");
         VD_Finish_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -876,27 +872,27 @@ public class Main extends javax.swing.JFrame {
 
         Container.add(Verify_Details, "verifyDetails");
 
-        FP_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        FP_Heading.setFont(FP_Heading.getFont().deriveFont(FP_Heading.getFont().getSize()+12f));
         FP_Heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FP_Heading.setText("Forgot Password");
         FP_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        FP_Paragraph.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        FP_Paragraph.setFont(FP_Paragraph.getFont().deriveFont(FP_Paragraph.getFont().getSize()+1f));
         FP_Paragraph.setText("<html><p style=\"text-align: center;\">If You've Forgotten Your Password. Then Enter the Recovery Code that had been Given to You on the First Use and then You can create a New Password.</p></html>");
 
         FP_New_Details.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        FP_Recovery_Key_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        FP_Recovery_Key_Label.setFont(FP_Recovery_Key_Label.getFont().deriveFont(FP_Recovery_Key_Label.getFont().getSize()+2f));
         FP_Recovery_Key_Label.setText("Recovery Key");
 
         FP_Recovery_Key.setPreferredSize(new java.awt.Dimension(7, 26));
 
-        FP_New_Password_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        FP_New_Password_Label.setFont(FP_New_Password_Label.getFont().deriveFont(FP_New_Password_Label.getFont().getSize()+2f));
         FP_New_Password_Label.setText("New Password");
 
         FP_New_Password.setPreferredSize(new java.awt.Dimension(7, 26));
 
-        FP_Confirm_Password_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        FP_Confirm_Password_Label.setFont(FP_Confirm_Password_Label.getFont().deriveFont(FP_Confirm_Password_Label.getFont().getSize()+2f));
         FP_Confirm_Password_Label.setText("Confirm Password");
 
         FP_Confirm_Password.setPreferredSize(new java.awt.Dimension(7, 26));
@@ -936,7 +932,6 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        FP_Cancel_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         FP_Cancel_Button.setText("Cancel");
         FP_Cancel_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -944,7 +939,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        FP_Reset_Button.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         FP_Reset_Button.setText("Reset");
         FP_Reset_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -990,7 +984,7 @@ public class Main extends javax.swing.JFrame {
         HOME_Banner.setBackground(new java.awt.Color(253, 253, 253));
         HOME_Banner.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(180, 180, 180), 1, true));
 
-        HOME_Main_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
+        HOME_Main_Heading.setFont(HOME_Main_Heading.getFont().deriveFont(HOME_Main_Heading.getFont().getSize()+18f));
         HOME_Main_Heading.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         HOME_Main_Heading.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/app-logo-small.png"))); // NOI18N
         HOME_Main_Heading.setText("Speckle: Simple Invoicing & Inventory Management");
@@ -1015,7 +1009,7 @@ public class Main extends javax.swing.JFrame {
         HOME_Help.setBackground(new java.awt.Color(248, 248, 248));
         HOME_Help.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(180, 180, 180), 1, true));
 
-        HOME_Help_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        HOME_Help_Heading.setFont(HOME_Help_Heading.getFont().deriveFont(HOME_Help_Heading.getFont().getSize()+6f));
         HOME_Help_Heading.setText("Quick Start Guide");
 
         HOME_Help_Content.setText("<html><ol style=\"margin: 0 0 0 20;\">\n<li style=\"padding: 4;\">The First Tab is <b>Home</b> which has two Sections one is Quick Start Guide(This One) and second one is has Information\nabout Products with Low amount Stocks in the Inventory.</li>\n<li style=\"padding: 4;\">The Second Tab is <b>Invoicing</b> through which you can create new Invoices or can view previously created Invoices.</li>\n<li style=\"padding: 4;\">The Third Tab is <b>Inventory</b> where you can add or remove Products from Speckle's Inventory.</li>\n<li style=\"padding: 4;\">The Forth Tab is <b>Settings</b> where you can change your Login Credentials and the information related to your\nBusiness that gets printed on your Invoices.</li>\n<li style=\"padding: 4;\">The Last Tab is <b>About</b> which has three Sections Authors, License, Credits they contain a List of Developers who\nContributed to Speckle, the EULA and Credits to the External Libraries we used.</li>\n</ol></html>");
@@ -1049,38 +1043,38 @@ public class Main extends javax.swing.JFrame {
         HOME_Low_Stock.setBackground(new java.awt.Color(248, 248, 248));
         HOME_Low_Stock.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(180, 180, 180), 1, true));
 
-        HOME_Low_Stock_Heading.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        HOME_Low_Stock_Heading.setFont(HOME_Low_Stock_Heading.getFont().deriveFont(HOME_Low_Stock_Heading.getFont().getSize()+6f));
         HOME_Low_Stock_Heading.setText("Low Stock");
 
         HOME_Low_Stock_Paragraph.setText("<html><p>The following five Products have the least amount of Stock available. If you think you might run out of stock for a Product then please Restock.</p></html>");
 
-        HOME_Product_One_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        HOME_Product_One_Label.setFont(HOME_Product_One_Label.getFont().deriveFont(HOME_Product_One_Label.getFont().getSize()+1f));
 
-        HOME_Product_One_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        HOME_Product_One_Quantity.setFont(HOME_Product_One_Quantity.getFont().deriveFont(HOME_Product_One_Quantity.getFont().getSize()+1f));
         HOME_Product_One_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         HOME_Product_One_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
-        HOME_Product_Two_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        HOME_Product_Two_Label.setFont(HOME_Product_Two_Label.getFont().deriveFont(HOME_Product_Two_Label.getFont().getSize()+1f));
 
-        HOME_Product_Two_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        HOME_Product_Two_Quantity.setFont(HOME_Product_Two_Quantity.getFont().deriveFont(HOME_Product_Two_Quantity.getFont().getSize()+1f));
         HOME_Product_Two_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         HOME_Product_Two_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
-        HOME_Product_Three_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        HOME_Product_Three_Label.setFont(HOME_Product_Three_Label.getFont().deriveFont(HOME_Product_Three_Label.getFont().getSize()+1f));
 
-        HOME_Product_Three_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        HOME_Product_Three_Quantity.setFont(HOME_Product_Three_Quantity.getFont().deriveFont(HOME_Product_Three_Quantity.getFont().getSize()+1f));
         HOME_Product_Three_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         HOME_Product_Three_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
-        HOME_Product_Four_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        HOME_Product_Four_Label.setFont(HOME_Product_Four_Label.getFont().deriveFont(HOME_Product_Four_Label.getFont().getSize()+1f));
 
-        HOME_Product_Four_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        HOME_Product_Four_Quantity.setFont(HOME_Product_Four_Quantity.getFont().deriveFont(HOME_Product_Four_Quantity.getFont().getSize()+1f));
         HOME_Product_Four_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         HOME_Product_Four_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
-        HOME_Product_Five_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        HOME_Product_Five_Label.setFont(HOME_Product_Five_Label.getFont().deriveFont(HOME_Product_Five_Label.getFont().getSize()+1f));
 
-        HOME_Product_Five_Quantity.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        HOME_Product_Five_Quantity.setFont(HOME_Product_Five_Quantity.getFont().deriveFont(HOME_Product_Five_Quantity.getFont().getSize()+1f));
         HOME_Product_Five_Quantity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         HOME_Product_Five_Quantity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
@@ -1262,12 +1256,10 @@ public class Main extends javax.swing.JFrame {
 
         NI_Customer_Details.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        NI_Customer_Name_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         NI_Customer_Name_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NI_Customer_Name_Label.setText("Customer's Name");
         NI_Customer_Name_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        NI_Customer_Contact_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         NI_Customer_Contact_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NI_Customer_Contact_Label.setText("Contact Number");
         NI_Customer_Contact_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -1278,7 +1270,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        NI_Customer_Address_Label.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         NI_Customer_Address_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NI_Customer_Address_Label.setText("Customer's Address");
         NI_Customer_Address_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -1295,7 +1286,7 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(NI_Customer_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(NI_Customer_DetailsLayout.createSequentialGroup()
-                        .addComponent(NI_Customer_Name, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
+                        .addComponent(NI_Customer_Name, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addComponent(NI_Customer_Contact_Label)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1488,19 +1479,19 @@ public class Main extends javax.swing.JFrame {
 
         NP_Product_Details.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        NP_Product_Name_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        NP_Product_Name_Label.setFont(NP_Product_Name_Label.getFont().deriveFont(NP_Product_Name_Label.getFont().getSize()+2f));
         NP_Product_Name_Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         NP_Product_Name_Label.setText("Product Name");
 
-        NP_Price_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        NP_Price_Label.setFont(NP_Price_Label.getFont().deriveFont(NP_Price_Label.getFont().getSize()+2f));
         NP_Price_Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         NP_Price_Label.setText("Price");
 
-        NP_GST_Rate_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        NP_GST_Rate_Label.setFont(NP_GST_Rate_Label.getFont().deriveFont(NP_GST_Rate_Label.getFont().getSize()+2f));
         NP_GST_Rate_Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         NP_GST_Rate_Label.setText("GST Rate");
 
-        NP_Available_Quantity_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        NP_Available_Quantity_Label.setFont(NP_Available_Quantity_Label.getFont().deriveFont(NP_Available_Quantity_Label.getFont().getSize()+2f));
         NP_Available_Quantity_Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         NP_Available_Quantity_Label.setText("Available Quantity");
 
@@ -1596,18 +1587,18 @@ public class Main extends javax.swing.JFrame {
 
         SE_Username.setBorder(javax.swing.BorderFactory.createTitledBorder("Change Username"));
 
-        SE_Current_Username_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_Current_Username_Label.setFont(SE_Current_Username_Label.getFont().deriveFont(SE_Current_Username_Label.getFont().getSize()+2f));
         SE_Current_Username_Label.setText("Current Username");
 
         SE_Current_Username.setEditable(false);
         SE_Current_Username.setBackground(new java.awt.Color(255, 255, 255));
-        SE_Current_Username.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SE_Current_Username.setFont(SE_Current_Username.getFont().deriveFont(SE_Current_Username.getFont().getStyle() | java.awt.Font.BOLD, SE_Current_Username.getFont().getSize()+2));
         SE_Current_Username.setEnabled(false);
 
-        SE_New_Username_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_New_Username_Label.setFont(SE_New_Username_Label.getFont().deriveFont(SE_New_Username_Label.getFont().getSize()+2f));
         SE_New_Username_Label.setText("New Username");
 
-        SE_New_Username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_New_Username.setFont(SE_New_Username.getFont().deriveFont(SE_New_Username.getFont().getSize()+2f));
 
         SE_Change_Username_Button.setText("Change Username");
         SE_Change_Username_Button.addActionListener(new java.awt.event.ActionListener() {
@@ -1652,20 +1643,20 @@ public class Main extends javax.swing.JFrame {
 
         SE_Password.setBorder(javax.swing.BorderFactory.createTitledBorder("Change Password"));
 
-        SE_Current_Password_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_Current_Password_Label.setFont(SE_Current_Password_Label.getFont().deriveFont(SE_Current_Password_Label.getFont().getSize()+2f));
         SE_Current_Password_Label.setText("Current Password");
 
-        SE_Current_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_Current_Password.setFont(SE_Current_Password.getFont().deriveFont(SE_Current_Password.getFont().getSize()+2f));
 
-        SE_New_Password_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_New_Password_Label.setFont(SE_New_Password_Label.getFont().deriveFont(SE_New_Password_Label.getFont().getSize()+2f));
         SE_New_Password_Label.setText("New Password");
 
-        SE_New_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_New_Password.setFont(SE_New_Password.getFont().deriveFont(SE_New_Password.getFont().getSize()+2f));
 
-        SE_Confirm_Password_Label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_Confirm_Password_Label.setFont(SE_Confirm_Password_Label.getFont().deriveFont(SE_Confirm_Password_Label.getFont().getSize()+2f));
         SE_Confirm_Password_Label.setText("Confirm Password");
 
-        SE_Confirm_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_Confirm_Password.setFont(SE_Confirm_Password.getFont().deriveFont(SE_Confirm_Password.getFont().getSize()+2f));
 
         SE_Change_Password_Button.setText("Change Password");
         SE_Change_Password_Button.addActionListener(new java.awt.event.ActionListener() {
@@ -1750,14 +1741,14 @@ public class Main extends javax.swing.JFrame {
 
         SE_Current_Business_Name.setEditable(false);
         SE_Current_Business_Name.setBackground(new java.awt.Color(255, 255, 255));
-        SE_Current_Business_Name.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SE_Current_Business_Name.setFont(SE_Current_Business_Name.getFont().deriveFont(SE_Current_Business_Name.getFont().getStyle() | java.awt.Font.BOLD, SE_Current_Business_Name.getFont().getSize()+2));
         SE_Current_Business_Name.setEnabled(false);
 
         SE_New_Business_Label.setFont(SE_New_Business_Label.getFont().deriveFont(SE_New_Business_Label.getFont().getSize()+2f));
         SE_New_Business_Label.setText("New");
         SE_New_Business_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SE_New_Business_Name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_New_Business_Name.setFont(SE_New_Business_Name.getFont().deriveFont(SE_New_Business_Name.getFont().getSize()+2f));
 
         javax.swing.GroupLayout SE_Business_NameLayout = new javax.swing.GroupLayout(SE_Business_Name);
         SE_Business_Name.setLayout(SE_Business_NameLayout);
@@ -1795,7 +1786,7 @@ public class Main extends javax.swing.JFrame {
 
         SE_Current_Contact_Number.setEditable(false);
         SE_Current_Contact_Number.setBackground(new java.awt.Color(255, 255, 255));
-        SE_Current_Contact_Number.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SE_Current_Contact_Number.setFont(SE_Current_Contact_Number.getFont().deriveFont(SE_Current_Contact_Number.getFont().getStyle() | java.awt.Font.BOLD, SE_Current_Contact_Number.getFont().getSize()+2));
         SE_Current_Contact_Number.setEnabled(false);
 
         SE_New_Contact_Label.setFont(SE_New_Contact_Label.getFont().deriveFont(SE_New_Contact_Label.getFont().getSize()+2f));
@@ -1805,7 +1796,7 @@ public class Main extends javax.swing.JFrame {
         SE_New_Country_Code.setModel(new javax.swing.DefaultComboBoxModel<>(Constant.COUNTRY_CODES));
         SE_New_Country_Code.setSelectedItem("+91");
 
-        SE_New_Contact_Number.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_New_Contact_Number.setFont(SE_New_Contact_Number.getFont().deriveFont(SE_New_Contact_Number.getFont().getSize()+2f));
         SE_New_Contact_Number.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 SE_New_Contact_NumberKeyPressed(evt);
@@ -1853,13 +1844,13 @@ public class Main extends javax.swing.JFrame {
 
         SE_Current_Email_Address.setEditable(false);
         SE_Current_Email_Address.setBackground(new java.awt.Color(255, 255, 255));
-        SE_Current_Email_Address.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SE_Current_Email_Address.setFont(SE_Current_Email_Address.getFont().deriveFont(SE_Current_Email_Address.getFont().getStyle() | java.awt.Font.BOLD, SE_Current_Email_Address.getFont().getSize()+2));
         SE_Current_Email_Address.setEnabled(false);
 
         SE_New_Email_Label.setFont(SE_New_Email_Label.getFont().deriveFont(SE_New_Email_Label.getFont().getSize()+2f));
         SE_New_Email_Label.setText("New");
 
-        SE_New_Email_Address.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_New_Email_Address.setFont(SE_New_Email_Address.getFont().deriveFont(SE_New_Email_Address.getFont().getSize()+2f));
 
         javax.swing.GroupLayout SE_Email_AddressLayout = new javax.swing.GroupLayout(SE_Email_Address);
         SE_Email_Address.setLayout(SE_Email_AddressLayout);
@@ -1897,13 +1888,13 @@ public class Main extends javax.swing.JFrame {
 
         SE_Current_Address.setEditable(false);
         SE_Current_Address.setBackground(new java.awt.Color(255, 255, 255));
-        SE_Current_Address.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        SE_Current_Address.setFont(SE_Current_Address.getFont().deriveFont(SE_Current_Address.getFont().getStyle() | java.awt.Font.BOLD, SE_Current_Address.getFont().getSize()+2));
         SE_Current_Address.setEnabled(false);
 
         SE_New_Address_Label.setFont(SE_New_Address_Label.getFont().deriveFont(SE_New_Address_Label.getFont().getSize()+2f));
         SE_New_Address_Label.setText("New");
 
-        SE_New_Address.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SE_New_Address.setFont(SE_New_Address.getFont().deriveFont(SE_New_Address.getFont().getSize()+2f));
 
         javax.swing.GroupLayout SE_Business_LocationLayout = new javax.swing.GroupLayout(SE_Business_Location);
         SE_Business_Location.setLayout(SE_Business_LocationLayout);
