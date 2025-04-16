@@ -7,6 +7,8 @@ package com.astral.internal;
 
 public class Constant {
     public static final String VERSION = "1.5.0";
+    public static final String[] CURRENCIES = { "CAD", "CNY", "EUR", "GBP",
+        "INR", "JPY", "KRW", "USD" };
     public static final String[] COUNTRY_CODES = { "+1", "+20", "+211", "+212",
         "+213", "+216", "+218", "+220", "+221", "+222", "+223", "+224", "+225",
         "+226", "+227", "+228", "+229", "+230", "+231", "+232", "+233", "+234",

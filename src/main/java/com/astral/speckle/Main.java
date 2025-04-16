@@ -104,6 +104,8 @@ public class Main extends javax.swing.JFrame {
         SD_Email_Address = new javax.swing.JTextField();
         SD_Business_Location_Label = new javax.swing.JLabel();
         SD_Business_Location = new javax.swing.JTextField();
+        SD_Currency_Code_Label = new javax.swing.JLabel();
+        SD_Currency_Code = new javax.swing.JComboBox<>();
         SD_Back_Button = new javax.swing.JButton();
         SD_SignUp_Button = new javax.swing.JButton();
         Verify_Details = new javax.swing.JPanel();
@@ -201,7 +203,7 @@ public class Main extends javax.swing.JFrame {
         NP_Finish_Button = new javax.swing.JButton();
         Settings = new javax.swing.JPanel();
         SE_TabbedPane = new javax.swing.JTabbedPane();
-        SE_User_Tab = new javax.swing.JPanel();
+        SE_General_Tab = new javax.swing.JPanel();
         SE_Username = new javax.swing.JPanel();
         SE_Current_Username_Label = new javax.swing.JLabel();
         SE_Current_Username = new javax.swing.JTextField();
@@ -216,6 +218,10 @@ public class Main extends javax.swing.JFrame {
         SE_Confirm_Password_Label = new javax.swing.JLabel();
         SE_Confirm_Password = new javax.swing.JPasswordField();
         SE_Change_Password_Button = new javax.swing.JButton();
+        SE_Currency = new javax.swing.JPanel();
+        SE_Currency_Code_Label = new javax.swing.JLabel();
+        SE_Currency_Code = new javax.swing.JComboBox<>();
+        SE_Change_Currency_Button = new javax.swing.JButton();
         SE_Business_Tab = new javax.swing.JPanel();
         SE_Business_Name = new javax.swing.JPanel();
         SE_Current_Business_Label = new javax.swing.JLabel();
@@ -655,6 +661,14 @@ public class Main extends javax.swing.JFrame {
 
         SD_Business_Location.setFont(SD_Business_Location.getFont().deriveFont(SD_Business_Location.getFont().getSize()+2f));
 
+        SD_Currency_Code_Label.setFont(SD_Currency_Code_Label.getFont().deriveFont(SD_Currency_Code_Label.getFont().getSize()+2f));
+        SD_Currency_Code_Label.setText("Invoice Currency");
+        SD_Currency_Code_Label.setToolTipText("");
+
+        SD_Currency_Code.setMaximumRowCount(5);
+        SD_Currency_Code.setModel(new javax.swing.DefaultComboBoxModel<>(Constant.CURRENCIES));
+        SD_Currency_Code.setSelectedItem("INR");
+
         javax.swing.GroupLayout SD_Business_DetailsLayout = new javax.swing.GroupLayout(SD_Business_Details);
         SD_Business_Details.setLayout(SD_Business_DetailsLayout);
         SD_Business_DetailsLayout.setHorizontalGroup(
@@ -662,19 +676,21 @@ public class Main extends javax.swing.JFrame {
             .addGroup(SD_Business_DetailsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(SD_Business_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(SD_Currency_Code_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(SD_Business_Location_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(SD_Email_Address_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(SD_Contact_Number_Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SD_Business_Name_Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(SD_Business_Name_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(SD_Business_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(SD_Business_Name, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SD_Email_Address)
-                    .addComponent(SD_Business_Location)
-                    .addGroup(SD_Business_DetailsLayout.createSequentialGroup()
+                .addGroup(SD_Business_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SD_Business_Name)
+                    .addComponent(SD_Email_Address, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(SD_Business_Location, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SD_Business_DetailsLayout.createSequentialGroup()
                         .addComponent(SD_Country_Code, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(SD_Contact_Number)))
+                        .addComponent(SD_Contact_Number))
+                    .addComponent(SD_Currency_Code, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         SD_Business_DetailsLayout.setVerticalGroup(
@@ -689,7 +705,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(SD_Contact_Number_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SD_Contact_Number, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
                     .addComponent(SD_Country_Code))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(SD_Business_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SD_Email_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SD_Email_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -697,7 +713,11 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(SD_Business_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(SD_Business_Location_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(SD_Business_Location, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(SD_Business_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(SD_Currency_Code_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SD_Currency_Code, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         SD_Back_Button.setText("Back");
@@ -733,7 +753,7 @@ public class Main extends javax.swing.JFrame {
         SignUp_DetailsLayout.setVerticalGroup(
             SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SignUp_DetailsLayout.createSequentialGroup()
-                .addContainerGap(98, Short.MAX_VALUE)
+                .addContainerGap(79, Short.MAX_VALUE)
                 .addComponent(SD_Heading)
                 .addGap(18, 18, 18)
                 .addComponent(SD_Paragraph, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -743,7 +763,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(SignUp_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SD_Back_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SD_SignUp_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(147, Short.MAX_VALUE))
+                .addContainerGap(128, Short.MAX_VALUE))
         );
 
         Container.add(SignUp_Details, "signUpDetails");
@@ -1710,28 +1730,73 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout SE_User_TabLayout = new javax.swing.GroupLayout(SE_User_Tab);
-        SE_User_Tab.setLayout(SE_User_TabLayout);
-        SE_User_TabLayout.setHorizontalGroup(
-            SE_User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SE_User_TabLayout.createSequentialGroup()
+        SE_Currency.setBorder(javax.swing.BorderFactory.createTitledBorder("Change Currency"));
+
+        SE_Currency_Code_Label.setFont(SE_Currency_Code_Label.getFont().deriveFont(SE_Currency_Code_Label.getFont().getSize()+2f));
+        SE_Currency_Code_Label.setText("Selected Currency");
+
+        SE_Currency_Code.setMaximumRowCount(5);
+        SE_Currency_Code.setModel(new javax.swing.DefaultComboBoxModel<>(Constant.CURRENCIES));
+
+        SE_Change_Currency_Button.setText("Change Currency");
+        SE_Change_Currency_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SE_Change_Currency_ButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout SE_CurrencyLayout = new javax.swing.GroupLayout(SE_Currency);
+        SE_Currency.setLayout(SE_CurrencyLayout);
+        SE_CurrencyLayout.setHorizontalGroup(
+            SE_CurrencyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SE_CurrencyLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(SE_User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SE_Username, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SE_Password, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(SE_Currency_Code_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(SE_CurrencyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SE_Currency_Code, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(SE_CurrencyLayout.createSequentialGroup()
+                        .addComponent(SE_Change_Currency_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-        SE_User_TabLayout.setVerticalGroup(
-            SE_User_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SE_User_TabLayout.createSequentialGroup()
+        SE_CurrencyLayout.setVerticalGroup(
+            SE_CurrencyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SE_CurrencyLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(SE_CurrencyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(SE_Currency_Code_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SE_Currency_Code, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE))
+                .addGap(12, 12, 12)
+                .addComponent(SE_Change_Currency_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(7, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout SE_General_TabLayout = new javax.swing.GroupLayout(SE_General_Tab);
+        SE_General_Tab.setLayout(SE_General_TabLayout);
+        SE_General_TabLayout.setHorizontalGroup(
+            SE_General_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SE_General_TabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(SE_General_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SE_Username, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SE_Password, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SE_Currency, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        SE_General_TabLayout.setVerticalGroup(
+            SE_General_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SE_General_TabLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(SE_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(SE_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(184, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(SE_Currency, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
-        SE_TabbedPane.addTab("User Details", SE_User_Tab);
+        SE_TabbedPane.addTab("General Settings", SE_General_Tab);
 
         SE_Business_Name.setBorder(javax.swing.BorderFactory.createTitledBorder("Business Name"));
 
@@ -2426,6 +2491,7 @@ public class Main extends javax.swing.JFrame {
         String contactNumber = SD_Contact_Number.getText();
         String emailAddress = SD_Email_Address.getText();
         String businessLocation = SD_Business_Location.getText();
+        String currencyCode = SD_Currency_Code.getSelectedItem().toString();
         String Salt = Function.randomAlphaNumeric(128);
         if (businessName.equals("") || contactNumber.equals("") || emailAddress.equals("") || businessLocation.equals(""))
             JOptionPane.showMessageDialog(null, "All Fields are Required to be Filled. Please Try Again!", "Empty Feilds", JOptionPane.ERROR_MESSAGE);
@@ -2433,6 +2499,7 @@ public class Main extends javax.swing.JFrame {
             SQLite.setConfigValue("Salt", Salt);
             SQLite.setConfigValue("Signed Up", "True");
             SQLite.compConfig(businessName, countryCode, contactNumber, emailAddress, businessLocation);
+            SQLite.setConfigValue("Currency Code", currencyCode);
             //VD_Business_Name.setText(businessName);
             //VD_Contact_Number.setText(contactNumber);
             //VD_Email_Address.setText(emailAddress);
@@ -2699,6 +2766,13 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_SE_Change_Password_ButtonActionPerformed
 
+    private void SE_Change_Currency_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SE_Change_Currency_ButtonActionPerformed
+        String newCurrencyCode = SE_Currency_Code.getSelectedItem().toString();
+        SQLite.setConfigValue("Currency Code", newCurrencyCode);
+        SE_Currency_Code.setSelectedItem(SQLite.getConfigValue("Currency Code"));
+        JOptionPane.showMessageDialog(null, "Currency has been changed Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_SE_Change_Currency_ButtonActionPerformed
+
     private void SE_New_Contact_NumberKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SE_New_Contact_NumberKeyPressed
         String Number = SE_New_Contact_Number.getText();
         int length = Number.length();
@@ -2956,6 +3030,7 @@ public class Main extends javax.swing.JFrame {
 
     private void Settings_ActionPerformed() {
         SE_Current_Username.setText(new String(Base64.getDecoder().decode(SQLite.getConfigValue("Username"))));
+        SE_Currency_Code.setSelectedItem(SQLite.getConfigValue("Currency Code"));
         SE_Current_Business_Name.setText(SQLite.getConfigValue("Business Name"));
         SE_Current_Contact_Number.setText(SQLite.getConfigValue("Country Code") + "-" + SQLite.getConfigValue("Contact Number"));
         SE_Current_Email_Address.setText(SQLite.getConfigValue("Email Address"));
@@ -3150,6 +3225,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField SD_Contact_Number;
     private javax.swing.JLabel SD_Contact_Number_Label;
     private javax.swing.JComboBox<String> SD_Country_Code;
+    private javax.swing.JComboBox<String> SD_Currency_Code;
+    private javax.swing.JLabel SD_Currency_Code_Label;
     private javax.swing.JTextField SD_Email_Address;
     private javax.swing.JLabel SD_Email_Address_Label;
     private javax.swing.JLabel SD_Heading;
@@ -3158,11 +3235,15 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel SE_Business_Location;
     private javax.swing.JPanel SE_Business_Name;
     private javax.swing.JPanel SE_Business_Tab;
+    private javax.swing.JButton SE_Change_Currency_Button;
     private javax.swing.JButton SE_Change_Password_Button;
     private javax.swing.JButton SE_Change_Username_Button;
     private javax.swing.JPasswordField SE_Confirm_Password;
     private javax.swing.JLabel SE_Confirm_Password_Label;
     private javax.swing.JPanel SE_Contact_Number;
+    private javax.swing.JPanel SE_Currency;
+    private javax.swing.JComboBox<String> SE_Currency_Code;
+    private javax.swing.JLabel SE_Currency_Code_Label;
     private javax.swing.JTextField SE_Current_Address;
     private javax.swing.JLabel SE_Current_Address_Label;
     private javax.swing.JLabel SE_Current_Business_Label;
@@ -3176,6 +3257,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField SE_Current_Username;
     private javax.swing.JLabel SE_Current_Username_Label;
     private javax.swing.JPanel SE_Email_Address;
+    private javax.swing.JPanel SE_General_Tab;
     private javax.swing.JTextField SE_New_Address;
     private javax.swing.JLabel SE_New_Address_Label;
     private javax.swing.JLabel SE_New_Business_Label;
@@ -3192,7 +3274,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel SE_Password;
     private javax.swing.JButton SE_Save_Changes_Button;
     private javax.swing.JTabbedPane SE_TabbedPane;
-    private javax.swing.JPanel SE_User_Tab;
     private javax.swing.JPanel SE_Username;
     private javax.swing.JButton SI_Button;
     private javax.swing.JPanel SI_Form;

@@ -1,5 +1,7 @@
 package com.astral.internal;
 
+import com.ibm.icu.lang.UCharacter;
+import com.ibm.icu.text.BreakIterator;
 import com.ibm.icu.text.NumberFormat;
 import com.ibm.icu.text.RuleBasedNumberFormat;
 import com.lowagie.text.Chunk;
@@ -194,6 +196,44 @@ public class Function {
         File invSubFolder = new File(invFolder + File.separator + new java.text.SimpleDateFormat("yyyy - MMMM").format(new java.util.Date()));
         invSubFolder.mkdir();
         invPath = new File(invSubFolder + File.separator + invID + ".pdf");
+        String currencyName, currencyCode = SQLite.getConfigValue("Currency Code");
+        NumberFormat currencyFormat;
+        RuleBasedNumberFormat currencySpellout;
+        switch (currencyCode) {
+            case "CAD" -> {
+                currencyName = " Dollars";
+                currencyFormat = NumberFormat.getCurrencyInstance(Locale.CANADA);
+                currencySpellout = new RuleBasedNumberFormat(Locale.CANADA, RuleBasedNumberFormat.SPELLOUT);
+            } case "CNY" -> {
+                currencyName = " Yuan";
+                currencyFormat = NumberFormat.getCurrencyInstance(Locale.CHINA);
+                currencySpellout = new RuleBasedNumberFormat(Locale.US, RuleBasedNumberFormat.SPELLOUT);
+            } case "EUR" -> {
+                currencyName = " Euros";
+                currencyFormat = NumberFormat.getCurrencyInstance(Locale.FRANCE);
+                currencySpellout = new RuleBasedNumberFormat(Locale.UK, RuleBasedNumberFormat.SPELLOUT);
+            } case "GBP" -> {
+                currencyName = " Pounds";
+                currencyFormat = NumberFormat.getCurrencyInstance(Locale.UK);
+                currencySpellout = new RuleBasedNumberFormat(Locale.UK, RuleBasedNumberFormat.SPELLOUT);
+            } case "JPY" -> {
+                currencyName = " Yen";
+                currencyFormat = NumberFormat.getCurrencyInstance(Locale.JAPAN);
+                currencySpellout = new RuleBasedNumberFormat(Locale.US, RuleBasedNumberFormat.SPELLOUT);
+            } case "KRW" -> {
+                currencyName = " Wones";
+                currencyFormat = NumberFormat.getCurrencyInstance(Locale.KOREA);
+                currencySpellout = new RuleBasedNumberFormat(Locale.US, RuleBasedNumberFormat.SPELLOUT);
+            } case "USD" -> {
+                currencyName = " Dollars";
+                currencyFormat = NumberFormat.getCurrencyInstance(Locale.US);
+                currencySpellout = new RuleBasedNumberFormat(Locale.US, RuleBasedNumberFormat.SPELLOUT);
+            } default -> {
+                currencyName = " Rupees";
+                currencyFormat = NumberFormat.getCurrencyInstance(Locale.of("en", "in"));
+                currencySpellout = new RuleBasedNumberFormat(Locale.of("en", "in"), RuleBasedNumberFormat.SPELLOUT);
+            }
+        }
         ResultSet invoiceData = SQLite.invoData(invID);
         try (Document document = new Document()) {
             PdfWriter.getInstance(document, new FileOutputStream(invPath));
@@ -298,7 +338,7 @@ public class Function {
                 cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                 cell.setPadding(10f);
                 table.addCell(cell);
-                cell = new PdfPCell(new Paragraph(NumberFormat.getCurrencyInstance(Locale.of("en", "in")).format(product.getBigDecimal("Price")), IBMPlex));
+                cell = new PdfPCell(new Paragraph(currencyFormat.format(product.getBigDecimal("Price")), IBMPlex));
                 cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
                 cell.setPadding(10f);
                 table.addCell(cell);
@@ -306,7 +346,7 @@ public class Function {
                 cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                 cell.setPadding(10f);
                 table.addCell(cell);
-                cell = new PdfPCell(new Paragraph(NumberFormat.getCurrencyInstance(Locale.of("en", "in")).format(product.getBigDecimal("Net Amount")), IBMPlex));
+                cell = new PdfPCell(new Paragraph(currencyFormat.format(product.getBigDecimal("Net Amount")), IBMPlex));
                 cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
                 cell.setPadding(10f);
                 table.addCell(cell);
@@ -316,16 +356,17 @@ public class Function {
             cell.setPadding(10f);
             cell.setColspan(5);
             table.addCell(cell);
-            cell = new PdfPCell(new Paragraph(NumberFormat.getCurrencyInstance(Locale.of("en", "in")).format(new BigDecimal(invoiceData.getString("Sale Amount"))), IBMPlex));
+            cell = new PdfPCell(new Paragraph(currencyFormat.format(new BigDecimal(invoiceData.getString("Sale Amount"))), IBMPlex));
             cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
             cell.setPadding(10f);
             table.addCell(cell);
             para = new Paragraph();
             chunk = new Chunk("Total Amount in Words : ", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10));
             para.add(chunk);
-            chunk = new Chunk("Rupees " + com.ibm.icu.lang.UCharacter.toTitleCase(new RuleBasedNumberFormat
-                (Locale.of("en", "in"), RuleBasedNumberFormat.SPELLOUT).format(Double.parseDouble(invoiceData.getString("Sale Amount")), "%spellout-numbering"),
-                com.ibm.icu.text.BreakIterator.getWordInstance()) + " Only", IBMPlex);
+            double saleAmount = Double.parseDouble(invoiceData.getString("Sale Amount"));
+            if (currencyCode.equals("JPY") || currencyCode.equals("KRW"))
+                saleAmount = Math.round(saleAmount);
+            chunk = new Chunk(UCharacter.toTitleCase(currencySpellout.format(saleAmount, "%spellout-numbering"), BreakIterator.getWordInstance()) + currencyName + " Only", IBMPlex);
             para.add(chunk);
             cell = new PdfPCell(para);
             cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
