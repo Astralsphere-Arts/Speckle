@@ -5,7 +5,6 @@ import java.awt.Desktop;
 import java.io.IOException;
 import java.util.Base64;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
 import com.astral.internal.Constant;
@@ -2513,12 +2512,17 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_INVO_View_ButtonActionPerformed
 
     private void INVO_Remove_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_Remove_ButtonActionPerformed
-        DefaultTableModel Invoice_Model = (DefaultTableModel) INVO_Table.getModel();
         int[] rows = INVO_Table.getSelectedRows();
-        for (int i=0; i<rows.length; i++) {
-            String invID = INVO_Table.getValueAt(rows[i]-i, 0).toString();
-            SQLite.remInvoice(invID);
-            Invoice_Model.removeRow(rows[i]-i);
+        if (rows.length == 0)
+            JOptionPane.showMessageDialog(null, "Please Select atleast one Invoice to be Deleted.", "No Invoice Selected", JOptionPane.ERROR_MESSAGE);
+        else {
+            int response = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete selected Invoices?", "Delete Selected Invoices", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (response == JOptionPane.YES_OPTION) {
+                for (int i = 0; i < rows.length; i++) {
+                    SQLite.remInvoice(INVO_Table.getValueAt(rows[i], 0).toString());
+                }
+                Invoicing_ActionPerformed();
+            }
         }
     }//GEN-LAST:event_INVO_Remove_ButtonActionPerformed
 
@@ -2892,7 +2896,6 @@ public class Main extends javax.swing.JFrame {
             if (width > 300) width=300;
             columnModel.getColumn(column).setPreferredWidth(width);
         }
-        Inventory_Model = (DefaultTableModel) INV_Table.getModel();
         EnableInventory_ActionPerformed();
         Container_Deck.show(Container, "inventory");
     }
@@ -2926,10 +2929,16 @@ public class Main extends javax.swing.JFrame {
 
     private void Inventory_RemoveActionPerformed() {
         int[] rows = INV_Table.getSelectedRows();
-        for (int i=0; i<rows.length; i++) {
-            String ProdID = INV_Table.getValueAt(rows[i]-i, 0).toString();
-            SQLite.remRowInven(ProdID);
-            Inventory_Model.removeRow(rows[i]-i);
+        if (rows.length == 0)
+            JOptionPane.showMessageDialog(null, "Please Select atleast one Product to be Deleted.", "No Product Selected", JOptionPane.ERROR_MESSAGE);
+        else {
+            int response = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete selected Products?", "Delete Selected Products", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (response == JOptionPane.YES_OPTION) {
+                for (int i = 0; i < rows.length; i++) {
+                    SQLite.remRowInven(INV_Table.getValueAt(rows[i], 0).toString());
+                }
+                Inventory_ActionPerformed();
+            }
         }
     }
 
@@ -3236,7 +3245,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel Verify_Details;
     // End of variables declaration//GEN-END:variables
     private final java.awt.CardLayout Container_Deck;
-    private DefaultTableModel Inventory_Model;
     private java.awt.Font SpaceMono;
     private boolean LoggedIn;
     private String PID;
