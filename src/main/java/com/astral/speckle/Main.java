@@ -110,18 +110,21 @@ public class Main extends javax.swing.JFrame {
         SD_SignUp_Button = new javax.swing.JButton();
         Verify_Details = new javax.swing.JPanel();
         VD_Heading = new javax.swing.JLabel();
+        VD_Data_Panel = new javax.swing.JPanel();
         VD_Username_Label = new javax.swing.JLabel();
-        VD_Username = new javax.swing.JLabel();
+        VD_Username = new javax.swing.JTextField();
         VD_Business_Name_Label = new javax.swing.JLabel();
-        VD_Business_Name = new javax.swing.JLabel();
+        VD_Business_Name = new javax.swing.JTextField();
         VD_Contact_Number_Label = new javax.swing.JLabel();
-        VD_Contact_Number = new javax.swing.JLabel();
+        VD_Contact_Number = new javax.swing.JTextField();
         VD_Email_Address_Label = new javax.swing.JLabel();
-        VD_Email_Address = new javax.swing.JLabel();
+        VD_Email_Address = new javax.swing.JTextField();
         VD_Business_Location_Label = new javax.swing.JLabel();
-        VD_Business_Location = new javax.swing.JLabel();
+        VD_Business_Location = new javax.swing.JTextField();
+        VD_Currency_Code_Label = new javax.swing.JLabel();
+        VD_Currency_Code = new javax.swing.JTextField();
+        VD_Back_Button = new javax.swing.JButton();
         VD_Finish_Button = new javax.swing.JButton();
-        VD_Finish_Filler = new javax.swing.Box.Filler(new java.awt.Dimension(16, 0), new java.awt.Dimension(16, 0), new java.awt.Dimension(16, 32767));
         Home = new javax.swing.JPanel();
         HOME_Banner = new javax.swing.JPanel();
         HOME_Main_Heading = new javax.swing.JLabel();
@@ -799,30 +802,110 @@ public class Main extends javax.swing.JFrame {
         VD_Heading.setText("Please Verify Your Details");
         VD_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        VD_Data_Panel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
         VD_Username_Label.setFont(VD_Username_Label.getFont().deriveFont(VD_Username_Label.getFont().getSize()+2f));
         VD_Username_Label.setText("User Name");
 
+        VD_Username.setEditable(false);
+        VD_Username.setBackground(new java.awt.Color(255, 255, 255));
         VD_Username.setFont(VD_Username.getFont().deriveFont(VD_Username.getFont().getSize()+2f));
 
         VD_Business_Name_Label.setFont(VD_Business_Name_Label.getFont().deriveFont(VD_Business_Name_Label.getFont().getSize()+2f));
         VD_Business_Name_Label.setText("Business Name");
 
+        VD_Business_Name.setEditable(false);
+        VD_Business_Name.setBackground(new java.awt.Color(255, 255, 255));
         VD_Business_Name.setFont(VD_Business_Name.getFont().deriveFont(VD_Business_Name.getFont().getSize()+2f));
 
         VD_Contact_Number_Label.setFont(VD_Contact_Number_Label.getFont().deriveFont(VD_Contact_Number_Label.getFont().getSize()+2f));
         VD_Contact_Number_Label.setText("Contact Number");
 
+        VD_Contact_Number.setEditable(false);
+        VD_Contact_Number.setBackground(new java.awt.Color(255, 255, 255));
         VD_Contact_Number.setFont(VD_Contact_Number.getFont().deriveFont(VD_Contact_Number.getFont().getSize()+2f));
 
         VD_Email_Address_Label.setFont(VD_Email_Address_Label.getFont().deriveFont(VD_Email_Address_Label.getFont().getSize()+2f));
         VD_Email_Address_Label.setText("Email Address");
 
+        VD_Email_Address.setEditable(false);
+        VD_Email_Address.setBackground(new java.awt.Color(255, 255, 255));
         VD_Email_Address.setFont(VD_Email_Address.getFont().deriveFont(VD_Email_Address.getFont().getSize()+2f));
 
         VD_Business_Location_Label.setFont(VD_Business_Location_Label.getFont().deriveFont(VD_Business_Location_Label.getFont().getSize()+2f));
         VD_Business_Location_Label.setText("Business Location");
 
+        VD_Business_Location.setEditable(false);
+        VD_Business_Location.setBackground(new java.awt.Color(255, 255, 255));
         VD_Business_Location.setFont(VD_Business_Location.getFont().deriveFont(VD_Business_Location.getFont().getSize()+2f));
+
+        VD_Currency_Code_Label.setFont(VD_Currency_Code_Label.getFont().deriveFont(VD_Currency_Code_Label.getFont().getSize()+2f));
+        VD_Currency_Code_Label.setText("Invoice Currency");
+
+        VD_Currency_Code.setEditable(false);
+        VD_Currency_Code.setBackground(new java.awt.Color(255, 255, 255));
+        VD_Currency_Code.setFont(VD_Currency_Code.getFont().deriveFont(VD_Currency_Code.getFont().getSize()+2f));
+
+        javax.swing.GroupLayout VD_Data_PanelLayout = new javax.swing.GroupLayout(VD_Data_Panel);
+        VD_Data_Panel.setLayout(VD_Data_PanelLayout);
+        VD_Data_PanelLayout.setHorizontalGroup(
+            VD_Data_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(VD_Data_PanelLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(VD_Data_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(VD_Data_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(VD_Username_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(VD_Business_Name_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(VD_Email_Address_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(VD_Contact_Number_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(VD_Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(VD_Currency_Code_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(VD_Data_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(VD_Username)
+                    .addComponent(VD_Business_Name)
+                    .addComponent(VD_Contact_Number)
+                    .addComponent(VD_Email_Address)
+                    .addComponent(VD_Business_Location)
+                    .addComponent(VD_Currency_Code))
+                .addGap(12, 12, 12))
+        );
+        VD_Data_PanelLayout.setVerticalGroup(
+            VD_Data_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(VD_Data_PanelLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(VD_Data_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(VD_Username, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .addComponent(VD_Username_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(VD_Data_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(VD_Business_Name)
+                    .addComponent(VD_Business_Name_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(VD_Data_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(VD_Contact_Number)
+                    .addComponent(VD_Contact_Number_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(VD_Data_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(VD_Email_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(VD_Email_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(VD_Data_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(VD_Business_Location, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(VD_Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(VD_Data_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(VD_Currency_Code, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(VD_Currency_Code_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12))
+        );
+
+        VD_Back_Button.setText("Back");
+        VD_Back_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VD_Back_ButtonActionPerformed(evt);
+            }
+        });
 
         VD_Finish_Button.setText("Finish");
         VD_Finish_Button.addActionListener(new java.awt.event.ActionListener() {
@@ -835,64 +918,29 @@ public class Main extends javax.swing.JFrame {
         Verify_Details.setLayout(Verify_DetailsLayout);
         Verify_DetailsLayout.setHorizontalGroup(
             Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Verify_DetailsLayout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(VD_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, 810, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Verify_DetailsLayout.createSequentialGroup()
-                        .addComponent(VD_Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(Verify_DetailsLayout.createSequentialGroup()
+                .addContainerGap(92, Short.MAX_VALUE)
+                .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(Verify_DetailsLayout.createSequentialGroup()
-                        .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(VD_Username_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(VD_Business_Name_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(VD_Email_Address_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(VD_Contact_Number_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(VD_Username, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(VD_Business_Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(VD_Contact_Number, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(VD_Email_Address, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(VD_Business_Location, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(80, 80, 80))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Verify_DetailsLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(VD_Finish_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(VD_Finish_Filler, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(VD_Back_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(VD_Finish_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(VD_Data_Panel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(VD_Heading, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 752, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
         Verify_DetailsLayout.setVerticalGroup(
             Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Verify_DetailsLayout.createSequentialGroup()
-                .addGap(60, 60, 60)
+                .addContainerGap(92, Short.MAX_VALUE)
                 .addComponent(VD_Heading)
                 .addGap(30, 30, 30)
-                .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(VD_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(VD_Username_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(VD_Data_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(VD_Business_Name_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
-                    .addComponent(VD_Business_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(VD_Contact_Number_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
-                    .addComponent(VD_Contact_Number, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(VD_Email_Address_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
-                    .addComponent(VD_Email_Address, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(VD_Business_Location_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(VD_Business_Location, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(166, 166, 166)
                 .addGroup(Verify_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(VD_Finish_Button, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                    .addComponent(VD_Finish_Filler, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(73, Short.MAX_VALUE))
+                    .addComponent(VD_Back_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
         Container.add(Verify_Details, "verifyDetails");
@@ -2413,11 +2461,16 @@ public class Main extends javax.swing.JFrame {
         SignUpDetails_ActionPerformed();
     }//GEN-LAST:event_SD_SignUp_ButtonActionPerformed
 
+    private void VD_Back_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VD_Back_ButtonActionPerformed
+        Container_Deck.show(Container, "signUpDetails");
+    }//GEN-LAST:event_VD_Back_ButtonActionPerformed
+
     private void VD_Finish_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VD_Finish_ButtonActionPerformed
-        //SB_Home_Button.setEnabled(true);
-        //SB_About_Button.setEnabled(true);
-        //MB_About.setEnabled(true);
-        //SignIn_ActionPerformed();
+        SB_Home_Button.setEnabled(true);
+        SB_About_Button.setEnabled(true);
+        MB_About.setEnabled(true);
+        SQLite.setConfigValue("Signed Up", "True");
+        SignIn_ActionPerformed(Password.hash(new String(SM_Create_Password.getPassword())).addSalt(SQLite.getConfigValue("Salt")).withPBKDF2().getResult());
     }//GEN-LAST:event_VD_Finish_ButtonActionPerformed
 
     private void INVO_New_Invoice_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_New_Invoice_ButtonActionPerformed
@@ -2719,6 +2772,7 @@ public class Main extends javax.swing.JFrame {
         String username = SM_Username.getText();
         String password = new String(SM_Create_Password.getPassword());
         String confirmPassword = new String(SM_Confirm_Password.getPassword());
+        String Salt = Function.randomAlphaNumeric(128);
         if (username.equals("") || password.equals(""))
             JOptionPane.showMessageDialog(null, "Username or Password cannot be Empty. Please Try Again!", "Username/Password Empty", JOptionPane.ERROR_MESSAGE);
         else if (password.length() < 8)
@@ -2729,7 +2783,8 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "The Passwords in Password Fields do not Match. Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
         else {
             SQLite.userConfig(Base64.getEncoder().encodeToString(username.getBytes()), Password.hash(password).addRandomSalt().withArgon2().getResult());
-            //VD_Username.setText(username);
+            SQLite.setConfigValue("Salt", Salt);
+            VD_Username.setText(username);
             Container_Deck.show(Container, "signUpDetails");
         }
     }
@@ -2741,22 +2796,17 @@ public class Main extends javax.swing.JFrame {
         String emailAddress = SD_Email_Address.getText();
         String businessLocation = SD_Business_Location.getText();
         String currencyCode = SD_Currency_Code.getSelectedItem().toString();
-        String Salt = Function.randomAlphaNumeric(128);
         if (businessName.equals("") || contactNumber.equals("") || emailAddress.equals("") || businessLocation.equals(""))
             JOptionPane.showMessageDialog(null, "All Fields are Required to be Filled. Please Try Again!", "Empty Feilds", JOptionPane.ERROR_MESSAGE);
         else {
-            SQLite.setConfigValue("Salt", Salt);
-            SQLite.setConfigValue("Signed Up", "True");
             SQLite.compConfig(businessName, countryCode, contactNumber, emailAddress, businessLocation);
             SQLite.setConfigValue("Currency Code", currencyCode);
-            //VD_Business_Name.setText(businessName);
-            //VD_Contact_Number.setText(contactNumber);
-            //VD_Email_Address.setText(emailAddress);
-            //VD_Business_Location.setText(businessLocation);
-            SB_Home_Button.setEnabled(true);
-            SB_About_Button.setEnabled(true);
-            MB_About.setEnabled(true);
-            SignIn_ActionPerformed(Password.hash(new String(SM_Create_Password.getPassword())).addSalt(Salt).withPBKDF2().getResult());
+            VD_Business_Name.setText(businessName);
+            VD_Contact_Number.setText(countryCode + "-" + contactNumber);
+            VD_Email_Address.setText(emailAddress);
+            VD_Business_Location.setText(businessLocation);
+            VD_Currency_Code.setText(currencyCode);
+            Container_Deck.show(Container, "verifyDetails");
         }
     }
     
@@ -3216,18 +3266,21 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel SignIn;
     private javax.swing.JPanel SignUp_Details;
     private javax.swing.JPanel SignUp_Main;
-    private javax.swing.JLabel VD_Business_Location;
+    private javax.swing.JButton VD_Back_Button;
+    private javax.swing.JTextField VD_Business_Location;
     private javax.swing.JLabel VD_Business_Location_Label;
-    private javax.swing.JLabel VD_Business_Name;
+    private javax.swing.JTextField VD_Business_Name;
     private javax.swing.JLabel VD_Business_Name_Label;
-    private javax.swing.JLabel VD_Contact_Number;
+    private javax.swing.JTextField VD_Contact_Number;
     private javax.swing.JLabel VD_Contact_Number_Label;
-    private javax.swing.JLabel VD_Email_Address;
+    private javax.swing.JTextField VD_Currency_Code;
+    private javax.swing.JLabel VD_Currency_Code_Label;
+    private javax.swing.JPanel VD_Data_Panel;
+    private javax.swing.JTextField VD_Email_Address;
     private javax.swing.JLabel VD_Email_Address_Label;
     private javax.swing.JButton VD_Finish_Button;
-    private javax.swing.Box.Filler VD_Finish_Filler;
     private javax.swing.JLabel VD_Heading;
-    private javax.swing.JLabel VD_Username;
+    private javax.swing.JTextField VD_Username;
     private javax.swing.JLabel VD_Username_Label;
     private javax.swing.JPanel Verify_Details;
     // End of variables declaration//GEN-END:variables

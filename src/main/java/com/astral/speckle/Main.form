@@ -1185,78 +1185,34 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="VD_Heading" pref="810" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="VD_Business_Location_Label" min="-2" pref="130" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace pref="92" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="VD_Username_Label" max="32767" attributes="0"/>
-                                  <Component id="VD_Business_Name_Label" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="VD_Email_Address_Label" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="VD_Contact_Number_Label" alignment="0" pref="130" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="VD_Username" max="32767" attributes="0"/>
-                                  <Component id="VD_Business_Name" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="VD_Contact_Number" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="VD_Email_Address" max="32767" attributes="0"/>
-                                  <Component id="VD_Business_Location" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="VD_Back_Button" min="-2" pref="120" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="VD_Finish_Button" min="-2" pref="120" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="VD_Data_Panel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="VD_Heading" alignment="0" pref="752" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="VD_Finish_Button" min="-2" pref="123" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="VD_Finish_Filler" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="106" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <EmptySpace pref="92" max="32767" attributes="0"/>
                       <Component id="VD_Heading" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="VD_Username" min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="VD_Username_Label" min="-2" pref="20" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="VD_Data_Panel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="VD_Business_Name_Label" pref="22" max="32767" attributes="0"/>
-                          <Component id="VD_Business_Name" min="-2" pref="20" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="VD_Contact_Number_Label" pref="22" max="32767" attributes="0"/>
-                          <Component id="VD_Contact_Number" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="VD_Email_Address_Label" pref="22" max="32767" attributes="0"/>
-                          <Component id="VD_Email_Address" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="VD_Business_Location_Label" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                          <Component id="VD_Business_Location" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="VD_Finish_Button" pref="36" max="32767" attributes="0"/>
-                          <Component id="VD_Finish_Filler" max="32767" attributes="0"/>
+                          <Component id="VD_Back_Button" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="73" max="32767" attributes="0"/>
+                      <EmptySpace pref="101" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1274,100 +1230,229 @@
                 <Property name="horizontalTextPosition" type="int" value="0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="VD_Username_Label">
+            <Container class="javax.swing.JPanel" name="VD_Data_Panel">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
-                  <FontInfo relative="true">
-                    <Font component="VD_Username_Label" property="font" relativeSize="true" size="2"/>
-                  </FontInfo>
-                </Property>
-                <Property name="text" type="java.lang.String" value="User Name"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="VD_Username">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
-                  <FontInfo relative="true">
-                    <Font component="VD_Username" property="font" relativeSize="true" size="2"/>
-                  </FontInfo>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                    <EtchetBorder/>
+                  </Border>
                 </Property>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="VD_Business_Name_Label">
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="VD_Username_Label" max="32767" attributes="0"/>
+                                  <Component id="VD_Business_Name_Label" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="VD_Email_Address_Label" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="VD_Contact_Number_Label" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="VD_Business_Location_Label" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                              <Component id="VD_Currency_Code_Label" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="VD_Username" max="32767" attributes="0"/>
+                              <Component id="VD_Business_Name" max="32767" attributes="0"/>
+                              <Component id="VD_Contact_Number" alignment="0" max="32767" attributes="0"/>
+                              <Component id="VD_Email_Address" alignment="0" max="32767" attributes="0"/>
+                              <Component id="VD_Business_Location" alignment="0" max="32767" attributes="0"/>
+                              <Component id="VD_Currency_Code" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="VD_Username" pref="30" max="32767" attributes="0"/>
+                              <Component id="VD_Username_Label" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="VD_Business_Name" alignment="3" max="32767" attributes="0"/>
+                              <Component id="VD_Business_Name_Label" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="VD_Contact_Number" alignment="3" max="32767" attributes="0"/>
+                              <Component id="VD_Contact_Number_Label" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="VD_Email_Address_Label" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="VD_Email_Address" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="VD_Business_Location" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="VD_Business_Location_Label" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="VD_Currency_Code" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="VD_Currency_Code_Label" min="-2" pref="30" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="VD_Username_Label">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="VD_Username_Label" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="User Name"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="VD_Username">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="VD_Username" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="VD_Business_Name_Label">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="VD_Business_Name_Label" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Business Name"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="VD_Business_Name">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="VD_Business_Name" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="VD_Contact_Number_Label">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="VD_Contact_Number_Label" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Contact Number"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="VD_Contact_Number">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="VD_Contact_Number" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="VD_Email_Address_Label">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="VD_Email_Address_Label" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Email Address"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="VD_Email_Address">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="VD_Email_Address" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="VD_Business_Location_Label">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="VD_Business_Location_Label" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Business Location"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="VD_Business_Location">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="VD_Business_Location" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="VD_Currency_Code_Label">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="VD_Currency_Code_Label" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Invoice Currency"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="VD_Currency_Code">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                      <FontInfo relative="true">
+                        <Font component="VD_Currency_Code" property="font" relativeSize="true" size="2"/>
+                      </FontInfo>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JButton" name="VD_Back_Button">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
-                  <FontInfo relative="true">
-                    <Font component="VD_Business_Name_Label" property="font" relativeSize="true" size="2"/>
-                  </FontInfo>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Business Name"/>
+                <Property name="text" type="java.lang.String" value="Back"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="VD_Business_Name">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
-                  <FontInfo relative="true">
-                    <Font component="VD_Business_Name" property="font" relativeSize="true" size="2"/>
-                  </FontInfo>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="VD_Contact_Number_Label">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
-                  <FontInfo relative="true">
-                    <Font component="VD_Contact_Number_Label" property="font" relativeSize="true" size="2"/>
-                  </FontInfo>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Contact Number"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="VD_Contact_Number">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
-                  <FontInfo relative="true">
-                    <Font component="VD_Contact_Number" property="font" relativeSize="true" size="2"/>
-                  </FontInfo>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="VD_Email_Address_Label">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
-                  <FontInfo relative="true">
-                    <Font component="VD_Email_Address_Label" property="font" relativeSize="true" size="2"/>
-                  </FontInfo>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Email Address"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="VD_Email_Address">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
-                  <FontInfo relative="true">
-                    <Font component="VD_Email_Address" property="font" relativeSize="true" size="2"/>
-                  </FontInfo>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="VD_Business_Location_Label">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
-                  <FontInfo relative="true">
-                    <Font component="VD_Business_Location_Label" property="font" relativeSize="true" size="2"/>
-                  </FontInfo>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Business Location"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="VD_Business_Location">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
-                  <FontInfo relative="true">
-                    <Font component="VD_Business_Location" property="font" relativeSize="true" size="2"/>
-                  </FontInfo>
-                </Property>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VD_Back_ButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="VD_Finish_Button">
               <Properties>
@@ -1376,22 +1461,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VD_Finish_ButtonActionPerformed"/>
               </Events>
-            </Component>
-            <Component class="javax.swing.Box$Filler" name="VD_Finish_Filler">
-              <Properties>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[16, 32767]"/>
-                </Property>
-                <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[16, 0]"/>
-                </Property>
-                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[16, 0]"/>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.HorizontalStrut"/>
-              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
