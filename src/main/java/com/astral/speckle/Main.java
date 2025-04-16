@@ -98,7 +98,7 @@ public class Main extends javax.swing.JFrame {
         SD_Business_Name_Label = new javax.swing.JLabel();
         SD_Business_Name = new javax.swing.JTextField();
         SD_Contact_Number_Label = new javax.swing.JLabel();
-        SD_Contact_Country_Code = new javax.swing.JComboBox<>();
+        SD_Country_Code = new javax.swing.JComboBox<>();
         SD_Contact_Number = new javax.swing.JTextField();
         SD_Email_Address_Label = new javax.swing.JLabel();
         SD_Email_Address = new javax.swing.JTextField();
@@ -226,7 +226,7 @@ public class Main extends javax.swing.JFrame {
         SE_Current_Contact_Label = new javax.swing.JLabel();
         SE_Current_Contact_Number = new javax.swing.JTextField();
         SE_New_Contact_Label = new javax.swing.JLabel();
-        SE_New_Contact_Country_Code = new javax.swing.JComboBox<>();
+        SE_New_Country_Code = new javax.swing.JComboBox<>();
         SE_New_Contact_Number = new javax.swing.JTextField();
         SE_Email_Address = new javax.swing.JPanel();
         SE_Current_Email_Label = new javax.swing.JLabel();
@@ -631,9 +631,9 @@ public class Main extends javax.swing.JFrame {
         SD_Contact_Number_Label.setText("Contact Number");
         SD_Contact_Number_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        SD_Contact_Country_Code.setMaximumRowCount(5);
-        SD_Contact_Country_Code.setModel(new javax.swing.DefaultComboBoxModel<>(Constant.COUNTRY_CODES));
-        SD_Contact_Country_Code.setSelectedItem("+91");
+        SD_Country_Code.setMaximumRowCount(5);
+        SD_Country_Code.setModel(new javax.swing.DefaultComboBoxModel<>(Constant.COUNTRY_CODES));
+        SD_Country_Code.setSelectedItem("+91");
 
         SD_Contact_Number.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         SD_Contact_Number.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -673,7 +673,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(SD_Email_Address)
                     .addComponent(SD_Business_Location)
                     .addGroup(SD_Business_DetailsLayout.createSequentialGroup()
-                        .addComponent(SD_Contact_Country_Code, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(SD_Country_Code, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(SD_Contact_Number)))
                 .addContainerGap())
@@ -689,7 +689,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(SD_Business_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(SD_Contact_Number_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SD_Contact_Number, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
-                    .addComponent(SD_Contact_Country_Code))
+                    .addComponent(SD_Country_Code))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(SD_Business_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SD_Email_Address_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1801,9 +1801,9 @@ public class Main extends javax.swing.JFrame {
         SE_New_Contact_Label.setFont(SE_New_Contact_Label.getFont().deriveFont(SE_New_Contact_Label.getFont().getSize()+2f));
         SE_New_Contact_Label.setText("New");
 
-        SE_New_Contact_Country_Code.setMaximumRowCount(5);
-        SE_New_Contact_Country_Code.setModel(new javax.swing.DefaultComboBoxModel<>(Constant.COUNTRY_CODES));
-        SE_New_Contact_Country_Code.setSelectedItem("+91");
+        SE_New_Country_Code.setMaximumRowCount(5);
+        SE_New_Country_Code.setModel(new javax.swing.DefaultComboBoxModel<>(Constant.COUNTRY_CODES));
+        SE_New_Country_Code.setSelectedItem("+91");
 
         SE_New_Contact_Number.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         SE_New_Contact_Number.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1825,7 +1825,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(SE_Contact_NumberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(SE_Current_Contact_Number, javax.swing.GroupLayout.DEFAULT_SIZE, 828, Short.MAX_VALUE)
                     .addGroup(SE_Contact_NumberLayout.createSequentialGroup()
-                        .addComponent(SE_New_Contact_Country_Code, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(SE_New_Country_Code, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(SE_New_Contact_Number)))
                 .addContainerGap())
@@ -1842,7 +1842,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(SE_Contact_NumberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(SE_New_Contact_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(SE_New_Contact_Number))
-                    .addComponent(SE_New_Contact_Country_Code, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(SE_New_Country_Code, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -2431,7 +2431,7 @@ public class Main extends javax.swing.JFrame {
 
     private void SD_SignUp_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SD_SignUp_ButtonActionPerformed
         String businessName = SD_Business_Name.getText();
-        String contactCountryCode = SD_Contact_Country_Code.getSelectedItem().toString();
+        String countryCode = SD_Country_Code.getSelectedItem().toString();
         String contactNumber = SD_Contact_Number.getText();
         String emailAddress = SD_Email_Address.getText();
         String businessLocation = SD_Business_Location.getText();
@@ -2439,9 +2439,9 @@ public class Main extends javax.swing.JFrame {
         if (businessName.equals("") || contactNumber.equals("") || emailAddress.equals("") || businessLocation.equals(""))
             JOptionPane.showMessageDialog(null, "All Fields are Required to be Filled. Please Try Again!", "Empty Feilds", JOptionPane.ERROR_MESSAGE);
         else {
-            SQLite.compConfig(businessName, contactCountryCode, contactNumber, emailAddress, businessLocation);
             SQLite.setConfigValue("Salt", Salt);
             SQLite.setConfigValue("Signed Up", "True");
+            SQLite.compConfig(businessName, countryCode, contactNumber, emailAddress, businessLocation);
             //VD_Business_Name.setText(businessName);
             //VD_Contact_Number.setText(contactNumber);
             //VD_Email_Address.setText(emailAddress);
@@ -2727,7 +2727,7 @@ public class Main extends javax.swing.JFrame {
 
     private void SE_Save_Changes_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SE_Save_Changes_ButtonActionPerformed
         String newBusinessName = SE_New_Business_Name.getText();
-        String newContactCountryCode = SE_New_Contact_Country_Code.getSelectedItem().toString();
+        String newCountryCode = SE_New_Country_Code.getSelectedItem().toString();
         String newContactNumber = SE_New_Contact_Number.getText();
         String newEmailAddress = SE_New_Email_Address.getText();
         String newBusinessLocation = SE_New_Address.getText();
@@ -2741,13 +2741,13 @@ public class Main extends javax.swing.JFrame {
             if (newBusinessLocation.equals(""))
                 newBusinessLocation = SE_Current_Address.getText();
             if (newContactNumber.equals("")) {
-                newContactCountryCode = SQLite.getConfigValue("Country Code");
+                newCountryCode = SQLite.getConfigValue("Country Code");
                 newContactNumber = SQLite.getConfigValue("Contact Number");
-                SQLite.compConfig(newBusinessName, newContactCountryCode, newContactNumber, newEmailAddress, newBusinessLocation);
+                SQLite.compConfig(newBusinessName, newCountryCode, newContactNumber, newEmailAddress, newBusinessLocation);
                 JOptionPane.showMessageDialog(null, "Your Changes Have Been Saved Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             }
             else {
-                SQLite.compConfig(newBusinessName, newContactCountryCode, newContactNumber, newEmailAddress, newBusinessLocation);
+                SQLite.compConfig(newBusinessName, newCountryCode, newContactNumber, newEmailAddress, newBusinessLocation);
                 JOptionPane.showMessageDialog(null, "Your Changes Have Been Saved Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             }
             Settings_ActionPerformed();
@@ -3156,9 +3156,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel SD_Business_Location_Label;
     private javax.swing.JTextField SD_Business_Name;
     private javax.swing.JLabel SD_Business_Name_Label;
-    private javax.swing.JComboBox<String> SD_Contact_Country_Code;
     private javax.swing.JTextField SD_Contact_Number;
     private javax.swing.JLabel SD_Contact_Number_Label;
+    private javax.swing.JComboBox<String> SD_Country_Code;
     private javax.swing.JTextField SD_Email_Address;
     private javax.swing.JLabel SD_Email_Address_Label;
     private javax.swing.JLabel SD_Heading;
@@ -3189,9 +3189,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel SE_New_Address_Label;
     private javax.swing.JLabel SE_New_Business_Label;
     private javax.swing.JTextField SE_New_Business_Name;
-    private javax.swing.JComboBox<String> SE_New_Contact_Country_Code;
     private javax.swing.JLabel SE_New_Contact_Label;
     private javax.swing.JTextField SE_New_Contact_Number;
+    private javax.swing.JComboBox<String> SE_New_Country_Code;
     private javax.swing.JTextField SE_New_Email_Address;
     private javax.swing.JLabel SE_New_Email_Label;
     private javax.swing.JPasswordField SE_New_Password;

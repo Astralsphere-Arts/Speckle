@@ -944,7 +944,7 @@
                               <Component id="SD_Email_Address" max="32767" attributes="0"/>
                               <Component id="SD_Business_Location" alignment="1" max="32767" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="SD_Contact_Country_Code" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Component id="SD_Country_Code" min="-2" pref="60" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="SD_Contact_Number" max="32767" attributes="0"/>
                               </Group>
@@ -965,7 +965,7 @@
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="SD_Contact_Number_Label" min="-2" pref="26" max="-2" attributes="0"/>
                               <Component id="SD_Contact_Number" alignment="0" pref="27" max="32767" attributes="0"/>
-                              <Component id="SD_Contact_Country_Code" alignment="0" max="32767" attributes="0"/>
+                              <Component id="SD_Country_Code" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -1010,7 +1010,7 @@
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="SD_Contact_Country_Code">
+                <Component class="javax.swing.JComboBox" name="SD_Country_Code">
                   <Properties>
                     <Property name="maximumRowCount" type="int" value="5"/>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
@@ -2961,7 +2961,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="SE_Current_Contact_Number" pref="828" max="32767" attributes="0"/>
                                       <Group type="102" attributes="0">
-                                          <Component id="SE_New_Contact_Country_Code" min="-2" pref="60" max="-2" attributes="0"/>
+                                          <Component id="SE_New_Country_Code" min="-2" pref="60" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="SE_New_Contact_Number" max="32767" attributes="0"/>
                                       </Group>
@@ -2984,7 +2984,7 @@
                                           <Component id="SE_New_Contact_Label" alignment="3" max="32767" attributes="0"/>
                                           <Component id="SE_New_Contact_Number" alignment="3" max="32767" attributes="0"/>
                                       </Group>
-                                      <Component id="SE_New_Contact_Country_Code" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                                      <Component id="SE_New_Country_Code" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -3024,7 +3024,7 @@
                             <Property name="text" type="java.lang.String" value="New"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="SE_New_Contact_Country_Code">
+                        <Component class="javax.swing.JComboBox" name="SE_New_Country_Code">
                           <Properties>
                             <Property name="maximumRowCount" type="int" value="5"/>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">

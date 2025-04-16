@@ -153,13 +153,13 @@ public class SQLite {
         }
     }
     
-    public static void compConfig(String businessName, String contactCountryCode, String contactNumber, String emailAddress, String businessLocation) {
+    public static void compConfig(String businessName, String countryCode, String contactNumber, String emailAddress, String businessLocation) {
         String configuration = "REPLACE INTO Configuration (Parameter, Value) VALUES ('Business Name', ?), ('Country Code', ?), ('Contact Number', ?),"
             + " ('Email Address', ?), ('Business Location', ?);";
         try {
             PreparedStatement configDBquery = configDB.prepareStatement(configuration);
             configDBquery.setString(1, businessName);
-            configDBquery.setString(2, contactCountryCode);
+            configDBquery.setString(2, countryCode);
             configDBquery.setString(3, contactNumber);
             configDBquery.setString(4, emailAddress);
             configDBquery.setString(5, businessLocation);
