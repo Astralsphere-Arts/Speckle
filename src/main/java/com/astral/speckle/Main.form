@@ -2015,6 +2015,8 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="INVO_Remove_Button" min="-2" pref="120" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
+                              <Component id="INVO_Invoice_Folder_Button" min="-2" pref="120" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="INVO_Export_Button" min="-2" pref="120" max="-2" attributes="0"/>
                           </Group>
                           <Component id="INVO_Table_Container" alignment="0" pref="846" max="32767" attributes="0"/>
@@ -2038,6 +2040,7 @@
                           <Component id="INVO_View_Button" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           <Component id="INVO_Remove_Button" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           <Component id="INVO_Export_Button" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="INVO_Invoice_Folder_Button" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                   </Group>
@@ -2106,6 +2109,15 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="INVO_Remove_ButtonActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="INVO_Invoice_Folder_Button">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Invoice Folder"/>
+                <Property name="toolTipText" type="java.lang.String" value="Open Folder Containing Previously Created Invoices"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="INVO_Invoice_Folder_ButtonActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="INVO_Export_Button">

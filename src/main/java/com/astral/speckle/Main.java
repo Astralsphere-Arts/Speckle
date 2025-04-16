@@ -164,6 +164,7 @@ public class Main extends javax.swing.JFrame {
         INVO_Table = new javax.swing.JTable();
         INVO_View_Button = new javax.swing.JButton();
         INVO_Remove_Button = new javax.swing.JButton();
+        INVO_Invoice_Folder_Button = new javax.swing.JButton();
         INVO_Export_Button = new javax.swing.JButton();
         New_Invoice = new javax.swing.JPanel();
         NI_Heading = new javax.swing.JLabel();
@@ -1263,6 +1264,14 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        INVO_Invoice_Folder_Button.setText("Invoice Folder");
+        INVO_Invoice_Folder_Button.setToolTipText("Open Folder Containing Previously Created Invoices");
+        INVO_Invoice_Folder_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                INVO_Invoice_Folder_ButtonActionPerformed(evt);
+            }
+        });
+
         INVO_Export_Button.setText("Export");
         INVO_Export_Button.setToolTipText("Export Invoice List to a CSV File");
         INVO_Export_Button.addActionListener(new java.awt.event.ActionListener() {
@@ -1287,6 +1296,8 @@ public class Main extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(INVO_Remove_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(INVO_Invoice_Folder_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(INVO_Export_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(INVO_Table_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 846, Short.MAX_VALUE))
                 .addGap(60, 60, 60))
@@ -1304,7 +1315,8 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(InvoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(INVO_View_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(INVO_Remove_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(INVO_Export_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(INVO_Export_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(INVO_Invoice_Folder_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(73, 73, 73))
         );
 
@@ -2622,6 +2634,15 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_INVO_Remove_ButtonActionPerformed
 
+    private void INVO_Invoice_Folder_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_Invoice_Folder_ButtonActionPerformed
+        Function.invFolder.mkdir();
+        try {
+            Desktop.getDesktop().open(Function.invFolder);
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_INVO_Invoice_Folder_ButtonActionPerformed
+
     private void INVO_Export_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_Export_ButtonActionPerformed
         Function.ExportActionPerformed("Invoice");
     }//GEN-LAST:event_INVO_Export_ButtonActionPerformed
@@ -3225,6 +3246,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel Home;
     private javax.swing.JButton INVO_Export_Button;
     private javax.swing.JLabel INVO_Heading;
+    private javax.swing.JButton INVO_Invoice_Folder_Button;
     private javax.swing.JButton INVO_New_Invoice_Button;
     private javax.swing.JButton INVO_Remove_Button;
     private javax.swing.JTable INVO_Table;
