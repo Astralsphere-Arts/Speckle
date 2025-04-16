@@ -53,6 +53,15 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        InvoicePopupMenu = new javax.swing.JPopupMenu();
+        INVO_PM_New = new javax.swing.JMenuItem();
+        INVO_PM_View = new javax.swing.JMenuItem();
+        INVO_PM_Remove = new javax.swing.JMenuItem();
+        InventoryPopupMenu = new javax.swing.JPopupMenu();
+        INV_PM_Add = new javax.swing.JMenuItem();
+        INV_PM_Edit = new javax.swing.JMenuItem();
+        INV_PM_Remove = new javax.swing.JMenuItem();
+        INV_PM_Update = new javax.swing.JMenuItem();
         SideBar = new javax.swing.JToolBar();
         SB_Filler_01 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10));
         SB_Home_Button = new javax.swing.JButton();
@@ -271,6 +280,62 @@ public class Main extends javax.swing.JFrame {
         MB_Settings = new javax.swing.JMenuItem();
         MB_Help_Menu = new javax.swing.JMenu();
         MB_About = new javax.swing.JMenuItem();
+
+        INVO_PM_New.setText("New");
+        INVO_PM_New.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                INVO_PM_NewActionPerformed(evt);
+            }
+        });
+        InvoicePopupMenu.add(INVO_PM_New);
+
+        INVO_PM_View.setText("View");
+        INVO_PM_View.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                INVO_PM_ViewActionPerformed(evt);
+            }
+        });
+        InvoicePopupMenu.add(INVO_PM_View);
+
+        INVO_PM_Remove.setText("Remove");
+        INVO_PM_Remove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                INVO_PM_RemoveActionPerformed(evt);
+            }
+        });
+        InvoicePopupMenu.add(INVO_PM_Remove);
+
+        INV_PM_Add.setText("Add");
+        INV_PM_Add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                INV_PM_AddActionPerformed(evt);
+            }
+        });
+        InventoryPopupMenu.add(INV_PM_Add);
+
+        INV_PM_Edit.setText("Edit");
+        INV_PM_Edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                INV_PM_EditActionPerformed(evt);
+            }
+        });
+        InventoryPopupMenu.add(INV_PM_Edit);
+
+        INV_PM_Remove.setText("Remove");
+        INV_PM_Remove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                INV_PM_RemoveActionPerformed(evt);
+            }
+        });
+        InventoryPopupMenu.add(INV_PM_Remove);
+
+        INV_PM_Update.setText("Update Stock");
+        INV_PM_Update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                INV_PM_UpdateActionPerformed(evt);
+            }
+        });
+        InventoryPopupMenu.add(INV_PM_Update);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Speckle");
@@ -1146,9 +1211,15 @@ public class Main extends javax.swing.JFrame {
         });
 
         INVO_Table.setAutoCreateRowSorter(true);
+        INVO_Table.setComponentPopupMenu(InvoicePopupMenu);
         INVO_Table.setRowHeight(24);
         INVO_Table.setShowGrid(true);
         INVO_Table.getTableHeader().setReorderingAllowed(false);
+        INVO_Table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                INVO_TableMousePressed(evt);
+            }
+        });
         INVO_Table_Container.setViewportView(INVO_Table);
 
         INVO_View_Button.setText("View Invoice");
@@ -1349,9 +1420,15 @@ public class Main extends javax.swing.JFrame {
         INV_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
         INV_Table.setAutoCreateRowSorter(true);
+        INV_Table.setComponentPopupMenu(InventoryPopupMenu);
         INV_Table.setRowHeight(24);
         INV_Table.setShowGrid(true);
         INV_Table.getTableHeader().setReorderingAllowed(false);
+        INV_Table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                INV_TableMousePressed(evt);
+            }
+        });
         INV_Table_Container.setViewportView(INV_Table);
 
         INV_Add_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/plus.png"))); // NOI18N
@@ -2303,6 +2380,34 @@ public class Main extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void INVO_PM_NewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_PM_NewActionPerformed
+        NewInvoiceActionPerformed();
+    }//GEN-LAST:event_INVO_PM_NewActionPerformed
+
+    private void INVO_PM_ViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_PM_ViewActionPerformed
+        Invoicing_ViewActionPerformed();
+    }//GEN-LAST:event_INVO_PM_ViewActionPerformed
+
+    private void INVO_PM_RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_PM_RemoveActionPerformed
+        Invoicing_RemoveActionPerformed();
+    }//GEN-LAST:event_INVO_PM_RemoveActionPerformed
+
+    private void INV_PM_AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_PM_AddActionPerformed
+        Inventory_AddActionPerformed();
+    }//GEN-LAST:event_INV_PM_AddActionPerformed
+
+    private void INV_PM_EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_PM_EditActionPerformed
+        Inventory_EditActionPerformed();
+    }//GEN-LAST:event_INV_PM_EditActionPerformed
+
+    private void INV_PM_RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_PM_RemoveActionPerformed
+        Inventory_RemoveActionPerformed();
+    }//GEN-LAST:event_INV_PM_RemoveActionPerformed
+
+    private void INV_PM_UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_PM_UpdateActionPerformed
+        Inventory_UpdateActionPerformed();
+    }//GEN-LAST:event_INV_PM_UpdateActionPerformed
+
     private void MB_New_InvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MB_New_InvoiceActionPerformed
         NewInvoiceActionPerformed();
     }//GEN-LAST:event_MB_New_InvoiceActionPerformed
@@ -2473,38 +2578,25 @@ public class Main extends javax.swing.JFrame {
         SignIn_ActionPerformed(Password.hash(new String(SM_Create_Password.getPassword())).addSalt(SQLite.getConfigValue("Salt")).withPBKDF2().getResult());
     }//GEN-LAST:event_VD_Finish_ButtonActionPerformed
 
+    private void INVO_TableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_INVO_TableMousePressed
+        if (evt.getButton() == java.awt.event.MouseEvent.BUTTON3) {
+            int row = INVO_Table.rowAtPoint(evt.getPoint());
+            int column = INVO_Table.columnAtPoint(evt.getPoint());
+            if (!INVO_Table.isRowSelected(row))
+                INVO_Table.changeSelection(row, column, false, false);
+        }
+    }//GEN-LAST:event_INVO_TableMousePressed
+
     private void INVO_New_Invoice_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_New_Invoice_ButtonActionPerformed
         NewInvoiceActionPerformed();
     }//GEN-LAST:event_INVO_New_Invoice_ButtonActionPerformed
 
     private void INVO_View_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_View_ButtonActionPerformed
-        int row = INVO_Table.getSelectedRow();
-        if (row == -1)
-            JOptionPane.showMessageDialog(null, "Please Select an Invoice from the Inovice List.", "No Invoice Selected", JOptionPane.ERROR_MESSAGE);
-        else {
-            String invID = INVO_Table.getValueAt(row, 0).toString();
-            Function.invoicePDF(invID);
-            try {
-                Desktop.getDesktop().open(Function.invPath);
-            } catch (IOException ex) {
-                JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        }
+        Invoicing_ViewActionPerformed();
     }//GEN-LAST:event_INVO_View_ButtonActionPerformed
 
     private void INVO_Remove_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_Remove_ButtonActionPerformed
-        int[] rows = INVO_Table.getSelectedRows();
-        if (rows.length == 0)
-            JOptionPane.showMessageDialog(null, "Please Select atleast one Invoice to be Deleted.", "No Invoice Selected", JOptionPane.ERROR_MESSAGE);
-        else {
-            int response = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete selected Invoices?", "Delete Selected Invoices", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if (response == JOptionPane.YES_OPTION) {
-                for (int i = 0; i < rows.length; i++) {
-                    SQLite.remInvoice(INVO_Table.getValueAt(rows[i], 0).toString());
-                }
-                Invoicing_ActionPerformed();
-            }
-        }
+        Invoicing_RemoveActionPerformed();
     }//GEN-LAST:event_INVO_Remove_ButtonActionPerformed
 
     private void INVO_Invoice_Folder_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_Invoice_Folder_ButtonActionPerformed
@@ -2611,6 +2703,15 @@ public class Main extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_NI_Create_ButtonActionPerformed
+
+    private void INV_TableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_INV_TableMousePressed
+        if (evt.getButton() == java.awt.event.MouseEvent.BUTTON3) {
+            int row = INV_Table.rowAtPoint(evt.getPoint());
+            int column = INV_Table.columnAtPoint(evt.getPoint());
+            if (!INV_Table.isRowSelected(row))
+                INV_Table.changeSelection(row, column, false, false);
+        }
+    }//GEN-LAST:event_INV_TableMousePressed
 
     private void INV_Add_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INV_Add_ButtonActionPerformed
         Inventory_AddActionPerformed();
@@ -2756,7 +2857,7 @@ public class Main extends javax.swing.JFrame {
         if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER)
             java.awt.KeyboardFocusManager.getCurrentKeyboardFocusManager().focusNextComponent();
     }
-    
+
     private void LogIn_ActionPerformed() {
         String username = SI_Username.getText();
         String password = new String(SI_Password.getPassword());
@@ -2767,7 +2868,7 @@ public class Main extends javax.swing.JFrame {
         else
             JOptionPane.showMessageDialog(null, "The Username or Password entered are Incorrect. Please Try Again!", "Incorrect Credentials", JOptionPane.ERROR_MESSAGE);
     }
-    
+
     private void SignUpMain_ActionPerformed() {
         String username = SM_Username.getText();
         String password = new String(SM_Create_Password.getPassword());
@@ -2788,7 +2889,7 @@ public class Main extends javax.swing.JFrame {
             Container_Deck.show(Container, "signUpDetails");
         }
     }
-    
+
     private void SignUpDetails_ActionPerformed() {
         String businessName = SD_Business_Name.getText();
         String countryCode = SD_Country_Code.getSelectedItem().toString();
@@ -2809,7 +2910,7 @@ public class Main extends javax.swing.JFrame {
             Container_Deck.show(Container, "verifyDetails");
         }
     }
-    
+
     private void SignIn_ActionPerformed(String dbPass) {
         LoggedIn = true;
         SQLite.initMainDB(dbPass);
@@ -2899,6 +3000,36 @@ public class Main extends javax.swing.JFrame {
         }
         DisableInventory_ActionPerformed();
         Container_Deck.show(Container, "invMain");
+    }
+
+    private void Invoicing_ViewActionPerformed() {
+        int row = INVO_Table.getSelectedRow();
+        if (row == -1)
+            JOptionPane.showMessageDialog(null, "Please Select an Invoice from the Inovice List.", "No Invoice Selected", JOptionPane.ERROR_MESSAGE);
+        else {
+            String invID = INVO_Table.getValueAt(row, 0).toString();
+            Function.invoicePDF(invID);
+            try {
+                Desktop.getDesktop().open(Function.invPath);
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
+
+    private void Invoicing_RemoveActionPerformed() {
+        int[] rows = INVO_Table.getSelectedRows();
+        if (rows.length == 0)
+            JOptionPane.showMessageDialog(null, "Please Select atleast one Invoice to be Deleted.", "No Invoice Selected", JOptionPane.ERROR_MESSAGE);
+        else {
+            int response = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete selected Invoices?", "Delete Selected Invoices", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (response == JOptionPane.YES_OPTION) {
+                for (int i = 0; i < rows.length; i++) {
+                    SQLite.remInvoice(INVO_Table.getValueAt(rows[i], 0).toString());
+                }
+                Invoicing_ActionPerformed();
+            }
+        }
     }
 
     private void NewInvoiceActionPerformed() {
@@ -3104,6 +3235,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel INVO_Heading;
     private javax.swing.JButton INVO_Invoice_Folder_Button;
     private javax.swing.JButton INVO_New_Invoice_Button;
+    private javax.swing.JMenuItem INVO_PM_New;
+    private javax.swing.JMenuItem INVO_PM_Remove;
+    private javax.swing.JMenuItem INVO_PM_View;
     private javax.swing.JButton INVO_Remove_Button;
     private javax.swing.JTable INVO_Table;
     private javax.swing.JScrollPane INVO_Table_Container;
@@ -3113,12 +3247,18 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton INV_Export_Button;
     private javax.swing.JLabel INV_Heading;
     private javax.swing.JButton INV_Import_Button;
+    private javax.swing.JMenuItem INV_PM_Add;
+    private javax.swing.JMenuItem INV_PM_Edit;
+    private javax.swing.JMenuItem INV_PM_Remove;
+    private javax.swing.JMenuItem INV_PM_Update;
     private javax.swing.JButton INV_Remove_Button;
     private javax.swing.JTable INV_Table;
     private javax.swing.JScrollPane INV_Table_Container;
     private javax.swing.JButton INV_Update_Button;
     private javax.swing.JPanel Inventory;
+    private javax.swing.JPopupMenu InventoryPopupMenu;
     private javax.swing.JPanel Invoice;
+    private javax.swing.JPopupMenu InvoicePopupMenu;
     private javax.swing.JMenuItem MB_About;
     private javax.swing.JMenuItem MB_Exit;
     private javax.swing.JMenuItem MB_Export_Inventory;
