@@ -140,8 +140,8 @@ public class SQLite {
         }
     }
     
-    public static void userConfig(String username, String password/*, String recoveryKey*/) {
-        String configuration = "REPLACE INTO Configuration (Parameter, Value) VALUES ('Username', ?), ('Password', ?);" /*, ('Recovery Key', ?);"*/;
+    public static void userConfig(String username, String password) {
+        String configuration = "REPLACE INTO Configuration (Parameter, Value) VALUES ('Username', ?), ('Password', ?);";
         try {
             PreparedStatement configDBquery = configDB.prepareStatement(configuration);
             configDBquery.setString(1, username);

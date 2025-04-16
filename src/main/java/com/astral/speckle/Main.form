@@ -1188,10 +1188,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="VD_Recovery_Key" max="32767" attributes="0"/>
-                          <Component id="VD_Recovery_Key_Heading" max="32767" attributes="0"/>
                           <Component id="VD_Heading" pref="810" max="32767" attributes="0"/>
-                          <Component id="VD_Recovery_Key_Paragraph" alignment="1" pref="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="VD_Business_Location_Label" min="-2" pref="130" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -1254,13 +1251,7 @@
                           <Component id="VD_Business_Location_Label" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                           <Component id="VD_Business_Location" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                      <Component id="VD_Recovery_Key_Heading" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="VD_Recovery_Key_Paragraph" min="-2" pref="40" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="VD_Recovery_Key" min="-2" pref="31" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="VD_Finish_Button" pref="36" max="32767" attributes="0"/>
                           <Component id="VD_Finish_Filler" max="32767" attributes="0"/>
@@ -1378,33 +1369,6 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="VD_Recovery_Key_Heading">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
-                  <FontInfo relative="true">
-                    <Font component="VD_Recovery_Key_Heading" property="font" relativeSize="true" size="6"/>
-                  </FontInfo>
-                </Property>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Recovery Key"/>
-                <Property name="horizontalTextPosition" type="int" value="0"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="VD_Recovery_Key_Paragraph">
-              <Properties>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Following Is Your Recovery Key Code For Password Recovery. Please Keep This Code Safe and Do not Share This Code With Anyone."/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="VD_Recovery_Key">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JButton" name="VD_Finish_Button">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Finish"/>
@@ -1428,201 +1392,6 @@
               <AuxValues>
                 <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.HorizontalStrut"/>
               </AuxValues>
-            </Component>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JPanel" name="Forgot_Password">
-          <AccessibilityProperties>
-            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
-          </AccessibilityProperties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-              <CardConstraints cardName="forgotPassword"/>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace pref="162" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="FP_Cancel_Button" min="-2" pref="120" max="-2" attributes="0"/>
-                              <EmptySpace pref="360" max="32767" attributes="0"/>
-                              <Component id="FP_Reset_Button" min="-2" pref="120" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="FP_Heading" max="32767" attributes="0"/>
-                          <Component id="FP_Paragraph" pref="0" max="32767" attributes="0"/>
-                          <Component id="FP_New_Details" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="188" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace pref="101" max="32767" attributes="0"/>
-                      <Component id="FP_Heading" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="FP_Paragraph" min="-2" pref="60" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="FP_New_Details" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="FP_Cancel_Button" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                          <Component id="FP_Reset_Button" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="166" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JLabel" name="FP_Heading">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
-                  <FontInfo relative="true">
-                    <Font component="FP_Heading" property="font" relativeSize="true" size="12"/>
-                  </FontInfo>
-                </Property>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Forgot Password"/>
-                <Property name="horizontalTextPosition" type="int" value="0"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="FP_Paragraph">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
-                  <FontInfo relative="true">
-                    <Font component="FP_Paragraph" property="font" relativeSize="true" size="1"/>
-                  </FontInfo>
-                </Property>
-                <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p style=&quot;text-align: center;&quot;&gt;If You&apos;ve Forgotten Your Password. Then Enter the Recovery Code that had been Given to You on the First Use and then You can create a New Password.&lt;/p&gt;&lt;/html&gt;"/>
-              </Properties>
-            </Component>
-            <Container class="javax.swing.JPanel" name="FP_New_Details">
-              <Properties>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-                    <EtchetBorder/>
-                  </Border>
-                </Property>
-              </Properties>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="FP_New_Password_Label" min="-2" pref="130" max="-2" attributes="0"/>
-                              <Component id="FP_Recovery_Key_Label" min="-2" pref="130" max="-2" attributes="0"/>
-                              <Component id="FP_Confirm_Password_Label" min="-2" pref="130" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="FP_New_Password" alignment="1" max="32767" attributes="0"/>
-                              <Component id="FP_Recovery_Key" alignment="0" pref="448" max="32767" attributes="0"/>
-                              <Component id="FP_Confirm_Password" alignment="1" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="FP_Recovery_Key_Label" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="FP_Recovery_Key" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="FP_New_Password_Label" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="FP_New_Password" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="FP_Confirm_Password" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="FP_Confirm_Password_Label" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JLabel" name="FP_Recovery_Key_Label">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
-                      <FontInfo relative="true">
-                        <Font component="FP_Recovery_Key_Label" property="font" relativeSize="true" size="2"/>
-                      </FontInfo>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Recovery Key"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="FP_Recovery_Key">
-                  <Properties>
-                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[7, 26]"/>
-                    </Property>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="FP_New_Password_Label">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
-                      <FontInfo relative="true">
-                        <Font component="FP_New_Password_Label" property="font" relativeSize="true" size="2"/>
-                      </FontInfo>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="New Password"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JPasswordField" name="FP_New_Password">
-                  <Properties>
-                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[7, 26]"/>
-                    </Property>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="FP_Confirm_Password_Label">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
-                      <FontInfo relative="true">
-                        <Font component="FP_Confirm_Password_Label" property="font" relativeSize="true" size="2"/>
-                      </FontInfo>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Confirm Password"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JPasswordField" name="FP_Confirm_Password">
-                  <Properties>
-                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[7, 26]"/>
-                    </Property>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JButton" name="FP_Cancel_Button">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Cancel"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FP_Cancel_ButtonActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="FP_Reset_Button">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Reset"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FP_Reset_ButtonActionPerformed"/>
-              </Events>
             </Component>
           </SubComponents>
         </Container>
