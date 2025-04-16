@@ -1187,6 +1187,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        INVO_Table.setAutoCreateRowSorter(true);
         INVO_Table.setShowGrid(true);
         INVO_Table.getTableHeader().setReorderingAllowed(false);
         INVO_Table_Container.setViewportView(INVO_Table);
@@ -1319,6 +1320,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        NI_Table.setAutoCreateRowSorter(true);
         NI_Table.setShowGrid(true);
         NI_Table.getTableHeader().setReorderingAllowed(false);
         NI_Table_Container.setViewportView(NI_Table);
@@ -1378,6 +1380,7 @@ public class Main extends javax.swing.JFrame {
         INV_Heading.setText("Inventory");
         INV_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
+        INV_Table.setAutoCreateRowSorter(true);
         INV_Table.setShowGrid(true);
         INV_Table.getTableHeader().setReorderingAllowed(false);
         INV_Table_Container.setViewportView(INV_Table);
