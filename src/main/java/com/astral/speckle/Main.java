@@ -516,6 +516,11 @@ public class Main extends javax.swing.JFrame {
         SM_Username_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         SM_Username.setFont(SM_Username.getFont().deriveFont(SM_Username.getFont().getSize()+2f));
+        SM_Username.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SM_UsernameKeyPressed(evt);
+            }
+        });
 
         SM_Create_Password_Label.setFont(SM_Create_Password_Label.getFont().deriveFont(SM_Create_Password_Label.getFont().getSize()+2f));
         SM_Create_Password_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -523,6 +528,11 @@ public class Main extends javax.swing.JFrame {
         SM_Create_Password_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         SM_Create_Password.setFont(SM_Create_Password.getFont().deriveFont(SM_Create_Password.getFont().getSize()+2f));
+        SM_Create_Password.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SM_Create_PasswordKeyPressed(evt);
+            }
+        });
 
         SM_Confirm_Password_Label.setFont(SM_Confirm_Password_Label.getFont().deriveFont(SM_Confirm_Password_Label.getFont().getSize()+2f));
         SM_Confirm_Password_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -530,6 +540,11 @@ public class Main extends javax.swing.JFrame {
         SM_Confirm_Password_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         SM_Confirm_Password.setFont(SM_Confirm_Password.getFont().deriveFont(SM_Confirm_Password.getFont().getSize()+2f));
+        SM_Confirm_Password.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SM_Confirm_PasswordKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout SM_User_DetailsLayout = new javax.swing.GroupLayout(SM_User_Details);
         SM_User_Details.setLayout(SM_User_DetailsLayout);
@@ -630,6 +645,11 @@ public class Main extends javax.swing.JFrame {
         SD_Business_Name_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         SD_Business_Name.setFont(SD_Business_Name.getFont().deriveFont(SD_Business_Name.getFont().getSize()+2f));
+        SD_Business_Name.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SD_Business_NameKeyPressed(evt);
+            }
+        });
 
         SD_Contact_Number_Label.setFont(SD_Contact_Number_Label.getFont().deriveFont(SD_Contact_Number_Label.getFont().getSize()+2f));
         SD_Contact_Number_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -639,6 +659,11 @@ public class Main extends javax.swing.JFrame {
         SD_Country_Code.setMaximumRowCount(5);
         SD_Country_Code.setModel(new javax.swing.DefaultComboBoxModel<>(Constant.COUNTRY_CODES));
         SD_Country_Code.setSelectedItem("+91");
+        SD_Country_Code.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SD_Country_CodeKeyPressed(evt);
+            }
+        });
 
         SD_Contact_Number.setFont(SD_Contact_Number.getFont().deriveFont(SD_Contact_Number.getFont().getSize()+2f));
         SD_Contact_Number.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -653,6 +678,11 @@ public class Main extends javax.swing.JFrame {
         SD_Email_Address_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         SD_Email_Address.setFont(SD_Email_Address.getFont().deriveFont(SD_Email_Address.getFont().getSize()+2f));
+        SD_Email_Address.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SD_Email_AddressKeyPressed(evt);
+            }
+        });
 
         SD_Business_Location_Label.setFont(SD_Business_Location_Label.getFont().deriveFont(SD_Business_Location_Label.getFont().getSize()+2f));
         SD_Business_Location_Label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -660,6 +690,11 @@ public class Main extends javax.swing.JFrame {
         SD_Business_Location_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         SD_Business_Location.setFont(SD_Business_Location.getFont().deriveFont(SD_Business_Location.getFont().getSize()+2f));
+        SD_Business_Location.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SD_Business_LocationKeyPressed(evt);
+            }
+        });
 
         SD_Currency_Code_Label.setFont(SD_Currency_Code_Label.getFont().deriveFont(SD_Currency_Code_Label.getFont().getSize()+2f));
         SD_Currency_Code_Label.setText("Invoice Currency");
@@ -668,6 +703,11 @@ public class Main extends javax.swing.JFrame {
         SD_Currency_Code.setMaximumRowCount(5);
         SD_Currency_Code.setModel(new javax.swing.DefaultComboBoxModel<>(Constant.CURRENCIES));
         SD_Currency_Code.setSelectedItem("INR");
+        SD_Currency_Code.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SD_Currency_CodeKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout SD_Business_DetailsLayout = new javax.swing.GroupLayout(SD_Business_Details);
         SD_Business_Details.setLayout(SD_Business_DetailsLayout);
@@ -2427,42 +2467,42 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_SB_SignOut_ButtonActionPerformed
 
     private void SI_UsernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SI_UsernameKeyPressed
-        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
-             java.awt.KeyboardFocusManager FocusManager = java.awt.KeyboardFocusManager.getCurrentKeyboardFocusManager();
-             FocusManager.focusNextComponent();
-        }
+        FocusNextComponent(evt);
     }//GEN-LAST:event_SI_UsernameKeyPressed
 
     private void SI_PasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SI_PasswordKeyPressed
-        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER)
             LogIn_ActionPerformed();
-        }
     }//GEN-LAST:event_SI_PasswordKeyPressed
 
     private void SI_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SI_ButtonActionPerformed
         LogIn_ActionPerformed();
     }//GEN-LAST:event_SI_ButtonActionPerformed
 
+    private void SM_UsernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SM_UsernameKeyPressed
+        FocusNextComponent(evt);
+    }//GEN-LAST:event_SM_UsernameKeyPressed
+
+    private void SM_Create_PasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SM_Create_PasswordKeyPressed
+        FocusNextComponent(evt);
+    }//GEN-LAST:event_SM_Create_PasswordKeyPressed
+
+    private void SM_Confirm_PasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SM_Confirm_PasswordKeyPressed
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER)
+            SignUpMain_ActionPerformed();
+    }//GEN-LAST:event_SM_Confirm_PasswordKeyPressed
+
     private void SM_Next_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SM_Next_ButtonActionPerformed
-        String username = SM_Username.getText();
-        String password = new String(SM_Create_Password.getPassword());
-        String confirmPassword = new String(SM_Confirm_Password.getPassword());
-        //String recoveryKey = Function.randomAlphaNumeric(16);
-        if (username.equals("") || password.equals(""))
-            JOptionPane.showMessageDialog(null, "Username or Password cannot be Empty. Please Try Again!", "Username/Password Empty", JOptionPane.ERROR_MESSAGE);
-        else if (password.length() < 8)
-            JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least 8 Characters. Please Try Again!", "Password Too Short", JOptionPane.ERROR_MESSAGE);
-        else if (!Function.checkPass(password))
-            JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric, One Uppercase and One Lowercase Character. Please Try Again!", "Insecure Password", JOptionPane.ERROR_MESSAGE);
-        else if (!password.equals(confirmPassword))
-            JOptionPane.showMessageDialog(null, "The Passwords in Password Fields do not Match. Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
-        else {
-            SQLite.userConfig(Base64.getEncoder().encodeToString(username.getBytes()), Password.hash(password).addRandomSalt().withArgon2().getResult()/*, Password.hash(recoveryKey).addRandomSalt().withArgon2().getResult()*/);
-            //VD_Username.setText(username);
-            //VD_Recovery_Key.setText(recoveryKey);
-            Container_Deck.show(Container, "signUpDetails");
-        }
+        SignUpMain_ActionPerformed();
     }//GEN-LAST:event_SM_Next_ButtonActionPerformed
+
+    private void SD_Business_NameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SD_Business_NameKeyPressed
+        FocusNextComponent(evt);
+    }//GEN-LAST:event_SD_Business_NameKeyPressed
+
+    private void SD_Country_CodeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SD_Country_CodeKeyPressed
+        FocusNextComponent(evt);
+    }//GEN-LAST:event_SD_Country_CodeKeyPressed
 
     private void SD_Contact_NumberKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SD_Contact_NumberKeyPressed
         String Number = SD_Contact_Number.getText();
@@ -2479,36 +2519,28 @@ public class Main extends javax.swing.JFrame {
                 default -> SD_Contact_Number.setEditable(false);
             }
         }
+        FocusNextComponent(evt);
     }//GEN-LAST:event_SD_Contact_NumberKeyPressed
+
+    private void SD_Email_AddressKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SD_Email_AddressKeyPressed
+        FocusNextComponent(evt);
+    }//GEN-LAST:event_SD_Email_AddressKeyPressed
+
+    private void SD_Business_LocationKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SD_Business_LocationKeyPressed
+        FocusNextComponent(evt);
+    }//GEN-LAST:event_SD_Business_LocationKeyPressed
+
+    private void SD_Currency_CodeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SD_Currency_CodeKeyPressed
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER)
+            SignUpDetails_ActionPerformed();
+    }//GEN-LAST:event_SD_Currency_CodeKeyPressed
 
     private void SD_Back_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SD_Back_ButtonActionPerformed
         Container_Deck.show(Container, "signUpMain");
     }//GEN-LAST:event_SD_Back_ButtonActionPerformed
 
     private void SD_SignUp_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SD_SignUp_ButtonActionPerformed
-        String businessName = SD_Business_Name.getText();
-        String countryCode = SD_Country_Code.getSelectedItem().toString();
-        String contactNumber = SD_Contact_Number.getText();
-        String emailAddress = SD_Email_Address.getText();
-        String businessLocation = SD_Business_Location.getText();
-        String currencyCode = SD_Currency_Code.getSelectedItem().toString();
-        String Salt = Function.randomAlphaNumeric(128);
-        if (businessName.equals("") || contactNumber.equals("") || emailAddress.equals("") || businessLocation.equals(""))
-            JOptionPane.showMessageDialog(null, "All Fields are Required to be Filled. Please Try Again!", "Empty Feilds", JOptionPane.ERROR_MESSAGE);
-        else {
-            SQLite.setConfigValue("Salt", Salt);
-            SQLite.setConfigValue("Signed Up", "True");
-            SQLite.compConfig(businessName, countryCode, contactNumber, emailAddress, businessLocation);
-            SQLite.setConfigValue("Currency Code", currencyCode);
-            //VD_Business_Name.setText(businessName);
-            //VD_Contact_Number.setText(contactNumber);
-            //VD_Email_Address.setText(emailAddress);
-            //VD_Business_Location.setText(businessLocation);
-            SB_Home_Button.setEnabled(true);
-            SB_About_Button.setEnabled(true);
-            MB_About.setEnabled(true);
-            SignIn_ActionPerformed(Password.hash(new String(SM_Create_Password.getPassword())).addSalt(Salt).withPBKDF2().getResult());
-        }
+        SignUpDetails_ActionPerformed();
     }//GEN-LAST:event_SD_SignUp_ButtonActionPerformed
 
     private void VD_Finish_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VD_Finish_ButtonActionPerformed
@@ -2823,6 +2855,11 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_SE_Save_Changes_ButtonActionPerformed
 
+    private void FocusNextComponent(java.awt.event.KeyEvent evt) {
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER)
+            java.awt.KeyboardFocusManager.getCurrentKeyboardFocusManager().focusNextComponent();
+    }
+    
     private void LogIn_ActionPerformed() {
         String username = SI_Username.getText();
         String password = new String(SI_Password.getPassword());
@@ -2832,6 +2869,53 @@ public class Main extends javax.swing.JFrame {
             SignIn_ActionPerformed(Password.hash(password).addSalt(SQLite.getConfigValue("Salt")).withPBKDF2().getResult());
         else
             JOptionPane.showMessageDialog(null, "The Username or Password entered are Incorrect. Please Try Again!", "Incorrect Credentials", JOptionPane.ERROR_MESSAGE);
+    }
+    
+    private void SignUpMain_ActionPerformed() {
+        String username = SM_Username.getText();
+        String password = new String(SM_Create_Password.getPassword());
+        String confirmPassword = new String(SM_Confirm_Password.getPassword());
+        //String recoveryKey = Function.randomAlphaNumeric(16);
+        if (username.equals("") || password.equals(""))
+            JOptionPane.showMessageDialog(null, "Username or Password cannot be Empty. Please Try Again!", "Username/Password Empty", JOptionPane.ERROR_MESSAGE);
+        else if (password.length() < 8)
+            JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least 8 Characters. Please Try Again!", "Password Too Short", JOptionPane.ERROR_MESSAGE);
+        else if (!Function.checkPass(password))
+            JOptionPane.showMessageDialog(null, "Your Password Must Contain at Least One Numeric, One Uppercase and One Lowercase Character. Please Try Again!", "Insecure Password", JOptionPane.ERROR_MESSAGE);
+        else if (!password.equals(confirmPassword))
+            JOptionPane.showMessageDialog(null, "The Passwords in Password Fields do not Match. Please Try Again!", "Password Mismatch", JOptionPane.ERROR_MESSAGE);
+        else {
+            SQLite.userConfig(Base64.getEncoder().encodeToString(username.getBytes()), Password.hash(password).addRandomSalt().withArgon2().getResult()/*, Password.hash(recoveryKey).addRandomSalt().withArgon2().getResult()*/);
+            //VD_Username.setText(username);
+            //VD_Recovery_Key.setText(recoveryKey);
+            Container_Deck.show(Container, "signUpDetails");
+        }
+    }
+    
+    private void SignUpDetails_ActionPerformed() {
+        String businessName = SD_Business_Name.getText();
+        String countryCode = SD_Country_Code.getSelectedItem().toString();
+        String contactNumber = SD_Contact_Number.getText();
+        String emailAddress = SD_Email_Address.getText();
+        String businessLocation = SD_Business_Location.getText();
+        String currencyCode = SD_Currency_Code.getSelectedItem().toString();
+        String Salt = Function.randomAlphaNumeric(128);
+        if (businessName.equals("") || contactNumber.equals("") || emailAddress.equals("") || businessLocation.equals(""))
+            JOptionPane.showMessageDialog(null, "All Fields are Required to be Filled. Please Try Again!", "Empty Feilds", JOptionPane.ERROR_MESSAGE);
+        else {
+            SQLite.setConfigValue("Salt", Salt);
+            SQLite.setConfigValue("Signed Up", "True");
+            SQLite.compConfig(businessName, countryCode, contactNumber, emailAddress, businessLocation);
+            SQLite.setConfigValue("Currency Code", currencyCode);
+            //VD_Business_Name.setText(businessName);
+            //VD_Contact_Number.setText(contactNumber);
+            //VD_Email_Address.setText(emailAddress);
+            //VD_Business_Location.setText(businessLocation);
+            SB_Home_Button.setEnabled(true);
+            SB_About_Button.setEnabled(true);
+            MB_About.setEnabled(true);
+            SignIn_ActionPerformed(Password.hash(new String(SM_Create_Password.getPassword())).addSalt(Salt).withPBKDF2().getResult());
+        }
     }
     
     private void SignIn_ActionPerformed(String dbPass) {
