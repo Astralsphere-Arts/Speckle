@@ -60,9 +60,9 @@ public class SQLite {
     public static void initMainDB(String dbPass) {
         String mainDBPath = dbFolder + File.separator + "main.dat";
         String invoiceSchema = "CREATE TABLE IF NOT EXISTS Invoice (\"Invoice ID\" TEXT NOT NULL UNIQUE, \"Customer Name\" TEXT, \"Contact Number\" TEXT,"
-            + " \"Address\" TEXT, \"Date of Sale\" TEXT, \"GST Amount\" REAL, \"Sale Amount\" REAL, \"Products Purchased\" TEXT, PRIMARY KEY(\"Invoice ID\"));";
+            + " \"Address\" TEXT, \"Date of Sale\" TEXT, \"Tax Amount\" REAL, \"Sale Amount\" REAL, \"Products Purchased\" TEXT, PRIMARY KEY(\"Invoice ID\"));";
         String inventorySchema = "CREATE TABLE IF NOT EXISTS Inventory (\"Product ID\" TEXT NOT NULL UNIQUE, \"Product Name\" TEXT, \"Price\" REAL,"
-            + " \"GST Rate\" INTEGER, \"Available Quantity\" INTEGER, PRIMARY KEY(\"Product ID\"));";
+            + " \"Tax Rate\" INTEGER, \"Available Quantity\" INTEGER, PRIMARY KEY(\"Product ID\"));";
         boolean mainDBExists = new File(mainDBPath).isFile();
         try {
             mainDB = DriverManager.getConnection("jdbc:sqlite:" + mainDBPath, SQLiteMCChacha20Config.getDefault().withKey(dbPass).build().toProperties());
@@ -224,8 +224,8 @@ public class SQLite {
         return invResult;
     }
     
-    public static void newInvoice(String invID, String name, String contact, String address, String date, String gst, String amount, String products) {
-        String invoice = "REPLACE INTO Invoice (\"Invoice ID\", \"Customer Name\", \"Contact Number\", \"Address\", \"Date of Sale\", \"GST Amount\","
+    public static void newInvoice(String invID, String name, String contact, String address, String date, String tax, String amount, String products) {
+        String invoice = "REPLACE INTO Invoice (\"Invoice ID\", \"Customer Name\", \"Contact Number\", \"Address\", \"Date of Sale\", \"Tax Amount\","
             + " \"Sale Amount\", \"Products Purchased\") VALUES(?, ?, ?, ?, ?, ?, ?, ?);";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(invoice);
@@ -234,7 +234,7 @@ public class SQLite {
             mainDBquery.setString(3, contact);
             mainDBquery.setString(4, address);
             mainDBquery.setString(5, date);
-            mainDBquery.setString(6, gst);
+            mainDBquery.setString(6, tax);
             mainDBquery.setString(7, amount);
             mainDBquery.setString(8, products);
             mainDBquery.executeUpdate();
@@ -243,14 +243,14 @@ public class SQLite {
         }
     }
     
-    public static void updateInven(String PID, String productName, String price, String gstRate, String availableQuantity) {
-        String inventory = "REPLACE INTO Inventory (\"Product ID\", \"Product Name\", \"Price\", \"GST Rate\", \"Available Quantity\") VALUES(?, ?, ?, ?, ?);";
+    public static void updateInven(String PID, String productName, String price, String taxRate, String availableQuantity) {
+        String inventory = "REPLACE INTO Inventory (\"Product ID\", \"Product Name\", \"Price\", \"Tax Rate\", \"Available Quantity\") VALUES(?, ?, ?, ?, ?);";
         try {
             PreparedStatement mainDBquery = mainDB.prepareStatement(inventory);
             mainDBquery.setString(1, PID);
             mainDBquery.setString(2, productName);
             mainDBquery.setString(3, price);
-            mainDBquery.setString(4, gstRate);
+            mainDBquery.setString(4, taxRate);
             mainDBquery.setString(5, availableQuantity);
             mainDBquery.executeUpdate();
         } catch (SQLException ex) {

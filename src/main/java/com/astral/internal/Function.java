@@ -314,7 +314,7 @@ public class Function {
             cell.setBackgroundColor(TableHeader);
             cell.setPadding(10f);
             table.addCell(cell);
-            cell = new PdfPCell(new Paragraph("GST", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10)));
+            cell = new PdfPCell(new Paragraph("Tax", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10)));
             cell.setHorizontalAlignment(Element.ALIGN_CENTER);
             cell.setBackgroundColor(TableHeader);
             cell.setPadding(10f);
@@ -342,7 +342,7 @@ public class Function {
                 cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
                 cell.setPadding(10f);
                 table.addCell(cell);
-                cell = new PdfPCell(new Paragraph(String.format("%02d", product.getInt("GST Rate")) + "%", IBMPlex));
+                cell = new PdfPCell(new Paragraph(String.format("%02d", product.getInt("Tax Rate")) + "%", IBMPlex));
                 cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                 cell.setPadding(10f);
                 table.addCell(cell);
@@ -444,10 +444,10 @@ public class Function {
                     String PID = CSV_Parts[0];
                     String productName = CSV_Parts[1];
                     String price = CSV_Parts[2];
-                    String gstRate = CSV_Parts[3];
+                    String taxRate = CSV_Parts[3];
                     String availableQuantity = CSV_Parts[4];
                     if (!PID.equals("Product ID"))
-                        SQLite.updateInven(PID, productName, price, gstRate, availableQuantity);
+                        SQLite.updateInven(PID, productName, price, taxRate, availableQuantity);
                 }
                 JOptionPane.showMessageDialog(null, "Inventory Data Imported Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
                 return true;

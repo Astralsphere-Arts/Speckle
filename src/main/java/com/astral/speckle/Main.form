@@ -1931,7 +1931,7 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="INVO_Remove_Button" min="-2" pref="120" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="INVO_Invoice_Folder_Button" min="-2" pref="120" max="-2" attributes="0"/>
+                              <Component id="INVO_Folder_Button" min="-2" pref="120" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="INVO_Export_Button" min="-2" pref="120" max="-2" attributes="0"/>
                           </Group>
@@ -1956,7 +1956,7 @@
                           <Component id="INVO_View_Button" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           <Component id="INVO_Remove_Button" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           <Component id="INVO_Export_Button" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                          <Component id="INVO_Invoice_Folder_Button" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="INVO_Folder_Button" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                   </Group>
@@ -2033,13 +2033,13 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="INVO_Remove_ButtonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="INVO_Invoice_Folder_Button">
+            <Component class="javax.swing.JButton" name="INVO_Folder_Button">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Invoice Folder"/>
                 <Property name="toolTipText" type="java.lang.String" value="Open Folder Containing Previously Created Invoices"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="INVO_Invoice_Folder_ButtonActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="INVO_Folder_ButtonActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="INVO_Export_Button">
@@ -2472,13 +2472,13 @@
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="NP_Available_Quantity_Label" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
-                              <Component id="NP_GST_Rate_Label" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
+                              <Component id="NP_Tax_Rate_Label" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
                               <Component id="NP_Price_Label" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
                               <Component id="NP_Product_Name_Label" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="NP_GST_Rate" alignment="0" max="32767" attributes="0"/>
+                              <Component id="NP_Tax_Rate" alignment="0" max="32767" attributes="0"/>
                               <Component id="NP_Price" alignment="0" max="32767" attributes="0"/>
                               <Component id="NP_Product_Name" max="32767" attributes="0"/>
                               <Component id="NP_Available_Quantity" pref="644" max="32767" attributes="0"/>
@@ -2502,8 +2502,8 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="NP_GST_Rate_Label" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="NP_GST_Rate" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="NP_Tax_Rate_Label" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="NP_Tax_Rate" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -2542,18 +2542,18 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="NP_Price">
                 </Component>
-                <Component class="javax.swing.JLabel" name="NP_GST_Rate_Label">
+                <Component class="javax.swing.JLabel" name="NP_Tax_Rate_Label">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
                       <FontInfo relative="true">
-                        <Font component="NP_GST_Rate_Label" property="font" relativeSize="true" size="2"/>
+                        <Font component="NP_Tax_Rate_Label" property="font" relativeSize="true" size="2"/>
                       </FontInfo>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="4"/>
-                    <Property name="text" type="java.lang.String" value="GST Rate"/>
+                    <Property name="text" type="java.lang.String" value="Tax Rate"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="NP_GST_Rate">
+                <Component class="javax.swing.JTextField" name="NP_Tax_Rate">
                 </Component>
                 <Component class="javax.swing.JLabel" name="NP_Available_Quantity_Label">
                   <Properties>
@@ -3494,13 +3494,16 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
                   <FontInfo relative="true">
-                    <Font bold="true" component="AB_Heading" property="font" relativeSize="true" size="24"/>
+                    <Font component="AB_Heading" property="font" relativeSize="true" size="24"/>
                   </FontInfo>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Speckle"/>
                 <Property name="verticalAlignment" type="int" value="3"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="AB_Heading.putClientProperty( &quot;FlatLaf.style&quot;, &quot;font: +24 $semibold.font&quot; );"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="AB_Version_Label">
               <Properties>

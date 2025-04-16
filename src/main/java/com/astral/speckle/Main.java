@@ -161,7 +161,7 @@ public class Main extends javax.swing.JFrame {
         INVO_Table = new javax.swing.JTable();
         INVO_View_Button = new javax.swing.JButton();
         INVO_Remove_Button = new javax.swing.JButton();
-        INVO_Invoice_Folder_Button = new javax.swing.JButton();
+        INVO_Folder_Button = new javax.swing.JButton();
         INVO_Export_Button = new javax.swing.JButton();
         New_Invoice = new javax.swing.JPanel();
         NI_Heading = new javax.swing.JLabel();
@@ -193,8 +193,8 @@ public class Main extends javax.swing.JFrame {
         NP_Product_Name = new javax.swing.JTextField();
         NP_Price_Label = new javax.swing.JLabel();
         NP_Price = new javax.swing.JTextField();
-        NP_GST_Rate_Label = new javax.swing.JLabel();
-        NP_GST_Rate = new javax.swing.JTextField();
+        NP_Tax_Rate_Label = new javax.swing.JLabel();
+        NP_Tax_Rate = new javax.swing.JTextField();
         NP_Available_Quantity_Label = new javax.swing.JLabel();
         NP_Available_Quantity = new javax.swing.JTextField();
         NP_Cancel_Button = new javax.swing.JButton();
@@ -1241,11 +1241,11 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        INVO_Invoice_Folder_Button.setText("Invoice Folder");
-        INVO_Invoice_Folder_Button.setToolTipText("Open Folder Containing Previously Created Invoices");
-        INVO_Invoice_Folder_Button.addActionListener(new java.awt.event.ActionListener() {
+        INVO_Folder_Button.setText("Invoice Folder");
+        INVO_Folder_Button.setToolTipText("Open Folder Containing Previously Created Invoices");
+        INVO_Folder_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                INVO_Invoice_Folder_ButtonActionPerformed(evt);
+                INVO_Folder_ButtonActionPerformed(evt);
             }
         });
 
@@ -1273,7 +1273,7 @@ public class Main extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(INVO_Remove_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(INVO_Invoice_Folder_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(INVO_Folder_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(INVO_Export_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(INVO_Table_Container, javax.swing.GroupLayout.DEFAULT_SIZE, 846, Short.MAX_VALUE))
@@ -1293,7 +1293,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(INVO_View_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(INVO_Remove_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(INVO_Export_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(INVO_Invoice_Folder_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(INVO_Folder_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(73, 73, 73))
         );
 
@@ -1545,9 +1545,9 @@ public class Main extends javax.swing.JFrame {
         NP_Price_Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         NP_Price_Label.setText("Price");
 
-        NP_GST_Rate_Label.setFont(NP_GST_Rate_Label.getFont().deriveFont(NP_GST_Rate_Label.getFont().getSize()+2f));
-        NP_GST_Rate_Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        NP_GST_Rate_Label.setText("GST Rate");
+        NP_Tax_Rate_Label.setFont(NP_Tax_Rate_Label.getFont().deriveFont(NP_Tax_Rate_Label.getFont().getSize()+2f));
+        NP_Tax_Rate_Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        NP_Tax_Rate_Label.setText("Tax Rate");
 
         NP_Available_Quantity_Label.setFont(NP_Available_Quantity_Label.getFont().deriveFont(NP_Available_Quantity_Label.getFont().getSize()+2f));
         NP_Available_Quantity_Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -1561,12 +1561,12 @@ public class Main extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(NP_Product_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(NP_Available_Quantity_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NP_GST_Rate_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NP_Tax_Rate_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(NP_Price_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(NP_Product_Name_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(NP_Product_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(NP_GST_Rate, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NP_Tax_Rate, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(NP_Price, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(NP_Product_Name)
                     .addComponent(NP_Available_Quantity, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE))
@@ -1585,8 +1585,8 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(NP_Price, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(NP_Product_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(NP_GST_Rate_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NP_GST_Rate, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NP_Tax_Rate_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NP_Tax_Rate, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(NP_Product_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(NP_Available_Quantity_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2090,10 +2090,11 @@ public class Main extends javax.swing.JFrame {
 
         AB_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/app-icon-100x100.png"))); // NOI18N
 
-        AB_Heading.setFont(AB_Heading.getFont().deriveFont(AB_Heading.getFont().getStyle() | java.awt.Font.BOLD, AB_Heading.getFont().getSize()+24));
+        AB_Heading.setFont(AB_Heading.getFont().deriveFont(AB_Heading.getFont().getSize()+24f));
         AB_Heading.setText("Speckle");
         AB_Heading.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         AB_Heading.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        AB_Heading.putClientProperty( "FlatLaf.style", "font: +24 $semibold.font" );
 
         AB_Version_Label.setFont(AB_Version_Label.getFont().deriveFont(AB_Version_Label.getFont().getSize()+4f));
         AB_Version_Label.setText("Version " + Constant.VERSION);
@@ -2605,14 +2606,14 @@ public class Main extends javax.swing.JFrame {
         Invoicing_RemoveActionPerformed();
     }//GEN-LAST:event_INVO_Remove_ButtonActionPerformed
 
-    private void INVO_Invoice_Folder_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_Invoice_Folder_ButtonActionPerformed
+    private void INVO_Folder_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_Folder_ButtonActionPerformed
         Function.invFolder.mkdir();
         try {
             Desktop.getDesktop().open(Function.invFolder);
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_INVO_Invoice_Folder_ButtonActionPerformed
+    }//GEN-LAST:event_INVO_Folder_ButtonActionPerformed
 
     private void INVO_Export_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INVO_Export_ButtonActionPerformed
         Function.ExportActionPerformed("Invoice");
@@ -2648,7 +2649,7 @@ public class Main extends javax.swing.JFrame {
         String custContact = NI_Customer_Contact.getText();
         String custAddress = NI_Customer_Address.getText();
         String saleDate = new java.text.SimpleDateFormat("dd MMMM yyyy").format(new java.util.Date());
-        String saleGST = "0";
+        String saleTax = "0";
         String saleAmount = "0";
         for (int row = 0; row < NI_Table.getRowCount(); row++) {
             if (Boolean.parseBoolean(NI_Table.getValueAt(row, 0).toString())) {
@@ -2680,26 +2681,26 @@ public class Main extends javax.swing.JFrame {
                     String prodID = (String) NI_Table.getValueAt(row, 1);
                     String prodName = (String) NI_Table.getValueAt(row, 2);
                     double Price = (Double) NI_Table.getValueAt(row, 3);
-                    int gstRate = (Integer) NI_Table.getValueAt(row, 4);
+                    int taxRate = (Integer) NI_Table.getValueAt(row, 4);
                     int availQuan = (Integer) NI_Table.getValueAt(row, 5);
                     int purchQuan = (Integer) NI_Table.getValueAt(row, 6);
                     double Amount = Price * purchQuan;
-                    double gstAmount = (Amount * gstRate) / 100;
-                    double netAmount = Amount + gstAmount;
+                    double taxAmount = (Amount * taxRate) / 100;
+                    double netAmount = Amount + taxAmount;
                     org.json.JSONObject product = new org.json.JSONObject();
                     product.put("Product Name", prodName);
                     product.put("Price", Price);
                     product.put("Purchased Quantity", purchQuan);
-                    product.put("GST Rate", gstRate);
-                    product.put("GST Amount", gstAmount);
+                    product.put("Tax Rate", taxRate);
+                    product.put("Tax Amount", taxAmount);
                     product.put("Net Amount", netAmount);
                     productsPurchased.put(product);
-                    saleGST = Double.toString(Double.parseDouble(saleGST) + gstAmount);
+                    saleTax = Double.toString(Double.parseDouble(saleTax) + taxAmount);
                     saleAmount = Double.toString(Double.parseDouble(saleAmount) + netAmount);
                     SQLite.updateStock(prodID, Integer.toString(availQuan - purchQuan));
                 }
             }
-            SQLite.newInvoice(invID, custName, custContact, custAddress, saleDate, saleGST, saleAmount, productsPurchased.toString());
+            SQLite.newInvoice(invID, custName, custContact, custAddress, saleDate, saleTax, saleAmount, productsPurchased.toString());
             Function.invoicePDF(invID);
             Invoicing_ActionPerformed();
             try {
@@ -2752,12 +2753,12 @@ public class Main extends javax.swing.JFrame {
     private void NP_Finish_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NP_Finish_ButtonActionPerformed
         String productName = NP_Product_Name.getText();
         String price = NP_Price.getText();
-        String gstRate = NP_GST_Rate.getText();
+        String taxRate = NP_Tax_Rate.getText();
         String availableQuantity = NP_Available_Quantity.getText();
-        if (productName.equals("") || price.equals("") || gstRate.equals("") || availableQuantity.equals (""))
+        if (productName.equals("") || price.equals("") || taxRate.equals("") || availableQuantity.equals (""))
             JOptionPane.showMessageDialog(null, "Product Details can't be Empty. Please Try Again!", "Product Details Empty", JOptionPane.ERROR_MESSAGE);
         else {
-            SQLite.updateInven(PID, productName, price, gstRate, availableQuantity);
+            SQLite.updateInven(PID, productName, price, taxRate, availableQuantity);
             Inventory_ActionPerformed();
         }
     }//GEN-LAST:event_NP_Finish_ButtonActionPerformed
@@ -3086,7 +3087,7 @@ public class Main extends javax.swing.JFrame {
         NP_Heading.setText("Add New Product");
         NP_Product_Name.setText("");
         NP_Price.setText("");
-        NP_GST_Rate.setText("");
+        NP_Tax_Rate.setText("");
         NP_Available_Quantity.setText("");
         DisableInventory_ActionPerformed();
         Container_Deck.show(Container, "invenNew");
@@ -3101,7 +3102,7 @@ public class Main extends javax.swing.JFrame {
             NP_Heading.setText("Edit Product Details");
             NP_Product_Name.setText(INV_Table.getValueAt(row, 1).toString());
             NP_Price.setText(INV_Table.getValueAt(row, 2).toString());
-            NP_GST_Rate.setText(INV_Table.getValueAt(row, 3).toString());
+            NP_Tax_Rate.setText(INV_Table.getValueAt(row, 3).toString());
             NP_Available_Quantity.setText(INV_Table.getValueAt(row, 4).toString());
             DisableInventory_ActionPerformed();
             Container_Deck.show(Container, "invenNew");
@@ -3239,8 +3240,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel HOME_Product_Two_Quantity;
     private javax.swing.JPanel Home;
     private javax.swing.JButton INVO_Export_Button;
+    private javax.swing.JButton INVO_Folder_Button;
     private javax.swing.JLabel INVO_Heading;
-    private javax.swing.JButton INVO_Invoice_Folder_Button;
     private javax.swing.JButton INVO_New_Invoice_Button;
     private javax.swing.JMenuItem INVO_PM_New;
     private javax.swing.JMenuItem INVO_PM_Remove;
@@ -3305,14 +3306,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel NP_Available_Quantity_Label;
     private javax.swing.JButton NP_Cancel_Button;
     private javax.swing.JButton NP_Finish_Button;
-    private javax.swing.JTextField NP_GST_Rate;
-    private javax.swing.JLabel NP_GST_Rate_Label;
     private javax.swing.JLabel NP_Heading;
     private javax.swing.JTextField NP_Price;
     private javax.swing.JLabel NP_Price_Label;
     private javax.swing.JPanel NP_Product_Details;
     private javax.swing.JTextField NP_Product_Name;
     private javax.swing.JLabel NP_Product_Name_Label;
+    private javax.swing.JTextField NP_Tax_Rate;
+    private javax.swing.JLabel NP_Tax_Rate_Label;
     private javax.swing.JPanel New_Invoice;
     private javax.swing.JPanel New_Product;
     private javax.swing.JButton SB_About_Button;
