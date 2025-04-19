@@ -38,7 +38,7 @@ jpackage^
   --copyright "Copyright (c) %year% %vendor%"^
   --icon "%resources_dir%/app.ico"^
   --add-modules java.base,java.desktop,java.sql^
-  --jlink-options "--no-header-files --no-man-pages --strip-debug --strip-native-commands --compress=2"^
+  --jlink-options "--no-header-files --no-man-pages --strip-debug --strip-native-commands --compress=zip-9"^
   --type exe^
   --license-file "%resources_dir%/LICENSE.rtf"^
   --win-dir-chooser^
@@ -50,6 +50,7 @@ jpackage^
 ren "%output_dir%\%name%-%version%.exe" "%nospace%-%version%-win-x64.exe"
 copy "%working_dir%\temp\images\win-exe.image\%name%-%version%.msi" "%output_dir%\%nospace%-%version%-win-x64.msi"
 del "%working_dir%\temp\images\win-msi.image\%name%\app\.jpackage.xml"
+del "%working_dir%\temp\images\win-msi.image\%name%\app\.package"
 %seven_zip% a "%output_dir%\%nospace%-%version%-win-x64.zip" ".\%working_dir%\temp\images\win-msi.image\%name%\*"
 del "%working_dir%\temp\images\win-msi.image\%name%\app\%name%.cfg"
 %seven_zip% a "%output_dir%\%nospace%-%version%.zip" ".\%working_dir%\temp\images\win-msi.image\%name%\app\*"
