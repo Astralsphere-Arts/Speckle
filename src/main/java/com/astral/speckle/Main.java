@@ -347,7 +347,7 @@ public class Main extends javax.swing.JFrame {
         SideBar.setRollover(true);
         SideBar.add(SB_Filler_01);
 
-        SB_Home_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/house_3d.png"))); // NOI18N
+        SB_Home_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sb-home.png"))); // NOI18N
         SB_Home_Button.setToolTipText("Home");
         SB_Home_Button.setFocusable(false);
         SB_Home_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -360,7 +360,7 @@ public class Main extends javax.swing.JFrame {
         SideBar.add(SB_Home_Button);
         SideBar.add(SB_Filler_02);
 
-        SB_Invoicing_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/scroll_3d.png"))); // NOI18N
+        SB_Invoicing_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sb-invoicing.png"))); // NOI18N
         SB_Invoicing_Button.setToolTipText("Invoicing");
         SB_Invoicing_Button.setEnabled(false);
         SB_Invoicing_Button.setFocusable(false);
@@ -374,7 +374,7 @@ public class Main extends javax.swing.JFrame {
         SideBar.add(SB_Invoicing_Button);
         SideBar.add(SB_Filler_03);
 
-        SB_Inventory_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/package_3d.png"))); // NOI18N
+        SB_Inventory_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sb-inventory.png"))); // NOI18N
         SB_Inventory_Button.setToolTipText("Inventory");
         SB_Inventory_Button.setEnabled(false);
         SB_Inventory_Button.setFocusable(false);
@@ -388,7 +388,7 @@ public class Main extends javax.swing.JFrame {
         SideBar.add(SB_Inventory_Button);
         SideBar.add(SB_Filler_04);
 
-        SB_Settings_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gear_3d.png"))); // NOI18N
+        SB_Settings_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sb-settings.png"))); // NOI18N
         SB_Settings_Button.setToolTipText("Settings");
         SB_Settings_Button.setEnabled(false);
         SB_Settings_Button.setFocusable(false);
@@ -402,7 +402,7 @@ public class Main extends javax.swing.JFrame {
         SideBar.add(SB_Settings_Button);
         SideBar.add(SB_Filler_05);
 
-        SB_About_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bubbles_3d.png"))); // NOI18N
+        SB_About_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sb-about.png"))); // NOI18N
         SB_About_Button.setToolTipText("About");
         SB_About_Button.setFocusable(false);
         SB_About_Button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -415,7 +415,7 @@ public class Main extends javax.swing.JFrame {
         SideBar.add(SB_About_Button);
         SideBar.add(SB_Filler_06);
 
-        SB_SignOut_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/high_voltage_3d.png"))); // NOI18N
+        SB_SignOut_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sb-signout.png"))); // NOI18N
         SB_SignOut_Button.setToolTipText("Sign Out");
         SB_SignOut_Button.setEnabled(false);
         SB_SignOut_Button.setFocusable(false);
@@ -1431,7 +1431,7 @@ public class Main extends javax.swing.JFrame {
         });
         INV_Table_Container.setViewportView(INV_Table);
 
-        INV_Add_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/plus.png"))); // NOI18N
+        INV_Add_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/inv-add.png"))); // NOI18N
         INV_Add_Button.setToolTipText("Add a New Product to Inventory");
         INV_Add_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1439,7 +1439,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        INV_Edit_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit.png"))); // NOI18N
+        INV_Edit_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/inv-edit.png"))); // NOI18N
         INV_Edit_Button.setToolTipText("Edit Details of the Selected Product");
         INV_Edit_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1447,7 +1447,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        INV_Remove_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cross.png"))); // NOI18N
+        INV_Remove_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/inv-remove.png"))); // NOI18N
         INV_Remove_Button.setToolTipText("Remove Selected Products from Inventory");
         INV_Remove_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

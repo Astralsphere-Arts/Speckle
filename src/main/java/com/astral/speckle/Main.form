@@ -344,7 +344,7 @@
         <Component class="javax.swing.JButton" name="SB_Home_Button">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/house_3d.png"/>
+              <Image iconType="3" name="/images/sb-home.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Home"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -374,7 +374,7 @@
         <Component class="javax.swing.JButton" name="SB_Invoicing_Button">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/scroll_3d.png"/>
+              <Image iconType="3" name="/images/sb-invoicing.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Invoicing"/>
             <Property name="enabled" type="boolean" value="false"/>
@@ -405,7 +405,7 @@
         <Component class="javax.swing.JButton" name="SB_Inventory_Button">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/package_3d.png"/>
+              <Image iconType="3" name="/images/sb-inventory.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Inventory"/>
             <Property name="enabled" type="boolean" value="false"/>
@@ -436,7 +436,7 @@
         <Component class="javax.swing.JButton" name="SB_Settings_Button">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/gear_3d.png"/>
+              <Image iconType="3" name="/images/sb-settings.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Settings"/>
             <Property name="enabled" type="boolean" value="false"/>
@@ -467,7 +467,7 @@
         <Component class="javax.swing.JButton" name="SB_About_Button">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/bubbles_3d.png"/>
+              <Image iconType="3" name="/images/sb-about.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="About"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -491,7 +491,7 @@
         <Component class="javax.swing.JButton" name="SB_SignOut_Button">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/high_voltage_3d.png"/>
+              <Image iconType="3" name="/images/sb-signout.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Sign Out"/>
             <Property name="enabled" type="boolean" value="false"/>
@@ -2336,7 +2336,7 @@
             <Component class="javax.swing.JButton" name="INV_Add_Button">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/images/plus.png"/>
+                  <Image iconType="3" name="/images/inv-add.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Add a New Product to Inventory"/>
               </Properties>
@@ -2347,7 +2347,7 @@
             <Component class="javax.swing.JButton" name="INV_Edit_Button">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/images/edit.png"/>
+                  <Image iconType="3" name="/images/inv-edit.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Edit Details of the Selected Product"/>
               </Properties>
@@ -2358,7 +2358,7 @@
             <Component class="javax.swing.JButton" name="INV_Remove_Button">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/images/cross.png"/>
+                  <Image iconType="3" name="/images/inv-remove.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Remove Selected Products from Inventory"/>
               </Properties>
