@@ -450,7 +450,7 @@ public class Main extends javax.swing.JFrame {
 
         SI_Username.setFont(SI_Username.getFont().deriveFont(SI_Username.getFont().getSize()+2f));
         SI_Username.putClientProperty("JTextField.placeholderText", "Username");
-        SI_Username.putClientProperty("JTextField.padding", new java.awt.Insets(0, 10, 0, 10));
+        SI_Username.putClientProperty("JTextField.padding", new java.awt.Insets(0, 7, 0, 7));
         SI_Username.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 SI_UsernameKeyPressed(evt);
@@ -459,7 +459,8 @@ public class Main extends javax.swing.JFrame {
 
         SI_Password.setFont(SI_Password.getFont().deriveFont(SI_Password.getFont().getSize()+2f));
         SI_Password.putClientProperty("JTextField.placeholderText", "Password");
-        SI_Password.putClientProperty("JTextField.padding", new java.awt.Insets(0, 10, 0, 10));
+        SI_Password.putClientProperty("JTextField.padding", new java.awt.Insets(0, 7, 0, 7));
+        SI_Password.putClientProperty("FlatLaf.style", "showRevealButton: true; showCapsLock: true;");
         SI_Password.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 SI_PasswordKeyPressed(evt);
@@ -582,6 +583,7 @@ public class Main extends javax.swing.JFrame {
         SM_Create_Password_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         SM_Create_Password.setFont(SM_Create_Password.getFont().deriveFont(SM_Create_Password.getFont().getSize()+2f));
+        SM_Create_Password.putClientProperty("FlatLaf.style", "showRevealButton: true; showCapsLock: true;");
         SM_Create_Password.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 SM_Create_PasswordKeyPressed(evt);
@@ -594,6 +596,7 @@ public class Main extends javax.swing.JFrame {
         SM_Confirm_Password_Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         SM_Confirm_Password.setFont(SM_Confirm_Password.getFont().deriveFont(SM_Confirm_Password.getFont().getSize()+2f));
+        SM_Confirm_Password.putClientProperty("FlatLaf.style", "showRevealButton: true; showCapsLock: true;");
         SM_Confirm_Password.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 SM_Confirm_PasswordKeyPressed(evt);
@@ -1702,16 +1705,19 @@ public class Main extends javax.swing.JFrame {
         SE_Current_Password_Label.setText("Current Password");
 
         SE_Current_Password.setFont(SE_Current_Password.getFont().deriveFont(SE_Current_Password.getFont().getSize()+2f));
+        SE_Current_Password.putClientProperty("FlatLaf.style", "showRevealButton: true; showCapsLock: true;");
 
         SE_New_Password_Label.setFont(SE_New_Password_Label.getFont().deriveFont(SE_New_Password_Label.getFont().getSize()+2f));
         SE_New_Password_Label.setText("New Password");
 
         SE_New_Password.setFont(SE_New_Password.getFont().deriveFont(SE_New_Password.getFont().getSize()+2f));
+        SE_New_Password.putClientProperty("FlatLaf.style", "showRevealButton: true; showCapsLock: true;");
 
         SE_Confirm_Password_Label.setFont(SE_Confirm_Password_Label.getFont().deriveFont(SE_Confirm_Password_Label.getFont().getSize()+2f));
         SE_Confirm_Password_Label.setText("Confirm Password");
 
         SE_Confirm_Password.setFont(SE_Confirm_Password.getFont().deriveFont(SE_Confirm_Password.getFont().getSize()+2f));
+        SE_Confirm_Password.putClientProperty("FlatLaf.style", "showRevealButton: true; showCapsLock: true;");
 
         SE_Change_Password_Button.setText("Change Password");
         SE_Change_Password_Button.addActionListener(new java.awt.event.ActionListener() {
@@ -3175,6 +3181,7 @@ public class Main extends javax.swing.JFrame {
         }
         javax.swing.UIManager.put("ScrollBar.thumbArc", 999);
         javax.swing.UIManager.put("ScrollBar.thumbInsets", new java.awt.Insets(2, 2, 2, 2));
+        javax.swing.UIManager.put("[style]ToggleButton.revealButton", "border: 0, 7, 0, 7;" );
         javax.swing.UIManager.put("TabbedPane.showTabSeparators", true);
         javax.swing.UIManager.put("TitlePane.unifiedBackground", false);
         javax.swing.UIManager.put("TextComponent.arc", 5 );

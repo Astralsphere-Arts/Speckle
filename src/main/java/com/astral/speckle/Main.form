@@ -671,7 +671,7 @@
                     <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SI_UsernameKeyPressed"/>
                   </Events>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="SI_Username.putClientProperty(&quot;JTextField.placeholderText&quot;, &quot;Username&quot;);&#xa;SI_Username.putClientProperty(&quot;JTextField.padding&quot;, new java.awt.Insets(0, 10, 0, 10));"/>
+                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="SI_Username.putClientProperty(&quot;JTextField.placeholderText&quot;, &quot;Username&quot;);&#xa;SI_Username.putClientProperty(&quot;JTextField.padding&quot;, new java.awt.Insets(0, 7, 0, 7));"/>
                   </AuxValues>
                 </Component>
                 <Component class="javax.swing.JPasswordField" name="SI_Password">
@@ -686,7 +686,7 @@
                     <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SI_PasswordKeyPressed"/>
                   </Events>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="SI_Password.putClientProperty(&quot;JTextField.placeholderText&quot;, &quot;Password&quot;);&#xd;&#xa;SI_Password.putClientProperty(&quot;JTextField.padding&quot;, new java.awt.Insets(0, 10, 0, 10));"/>
+                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="SI_Password.putClientProperty(&quot;JTextField.placeholderText&quot;, &quot;Password&quot;);&#xd;&#xa;SI_Password.putClientProperty(&quot;JTextField.padding&quot;, new java.awt.Insets(0, 7, 0, 7));&#xd;&#xa;SI_Password.putClientProperty(&quot;FlatLaf.style&quot;, &quot;showRevealButton: true; showCapsLock: true;&quot;);"/>
                   </AuxValues>
                 </Component>
                 <Component class="javax.swing.JButton" name="SI_Button">
@@ -907,6 +907,9 @@
                   <Events>
                     <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SM_Create_PasswordKeyPressed"/>
                   </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="SM_Create_Password.putClientProperty(&quot;FlatLaf.style&quot;, &quot;showRevealButton: true; showCapsLock: true;&quot;);"/>
+                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="SM_Confirm_Password_Label">
                   <Properties>
@@ -931,6 +934,9 @@
                   <Events>
                     <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SM_Confirm_PasswordKeyPressed"/>
                   </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="SM_Confirm_Password.putClientProperty(&quot;FlatLaf.style&quot;, &quot;showRevealButton: true; showCapsLock: true;&quot;);"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
@@ -2844,6 +2850,9 @@
                               </FontInfo>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="SE_Current_Password.putClientProperty(&quot;FlatLaf.style&quot;, &quot;showRevealButton: true; showCapsLock: true;&quot;);"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JLabel" name="SE_New_Password_Label">
                           <Properties>
@@ -2863,6 +2872,9 @@
                               </FontInfo>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="SE_New_Password.putClientProperty(&quot;FlatLaf.style&quot;, &quot;showRevealButton: true; showCapsLock: true;&quot;);"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JLabel" name="SE_Confirm_Password_Label">
                           <Properties>
@@ -2882,6 +2894,9 @@
                               </FontInfo>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="SE_Confirm_Password.putClientProperty(&quot;FlatLaf.style&quot;, &quot;showRevealButton: true; showCapsLock: true;&quot;);"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JButton" name="SE_Change_Password_Button">
                           <Properties>
