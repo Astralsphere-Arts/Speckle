@@ -6,7 +6,7 @@ package com.astral.internal;
  */
 
 public class Constant {
-    public static final String VERSION = "1.5.0";
+    public static final String VERSION = "2.0.0";
     public static final String[] CURRENCIES = { "CAD", "CNY", "EUR", "GBP",
         "INR", "JPY", "KRW", "USD" };
     public static final String[] COUNTRY_CODES = { "+1", "+20", "+211", "+212",

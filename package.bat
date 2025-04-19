@@ -3,7 +3,7 @@
 set name=Speckle
 set vendor=Astralsphere Arts
 set year=2021-2025
-set version=1.5.0
+set version=2.0.0
 
 set input_dir=target
 set working_dir=target
